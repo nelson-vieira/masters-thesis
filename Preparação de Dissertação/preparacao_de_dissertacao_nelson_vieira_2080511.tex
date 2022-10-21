@@ -5,15 +5,14 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
+\graphicspath{ {./assets/} }
 \usepackage{textcomp}
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Conference Paper Title*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
-should not be used}
+\title{About Privacy in Internet of Things\\
 }
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Nelson Vieira}
@@ -26,40 +25,82 @@ Funchal, Portugal \\
 \maketitle
 
 \begin{abstract}
+Internet of things devices are everywhere, since the birth of the idea of ubiquous
+computing that human every day life is envisioned containg millions of devices
+that control every aspect of our lives. Today we have smart cars, smart houses,
+smart cities, wearables among other things that use various types of devices
+and various types of networks to communicate, these devices are designed with
+usability in mind as a way for us to live a more confortable life. 
+One thing that is not though about much is how these devices treat our 
+privacy rights. Our information is used, traded and sold without the user
+having much say in the matter besides refusing to use these devices or 
+not having access to certain features. I propose a system that gives 
+the user the crucial information about the devices that are nearby and how
+to protect the data that the user doesn't want to share with the systems, this
+system is capable of detecting what type of devices are nearby, what kind
+of data is collected by these devices and what can be done to protect
+unwanted data from being collected.
+
 This document is a model and instructions for \LaTeX.
 This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
 or Math in Paper Title or Abstract.
 \end{abstract}
 
 \begin{IEEEkeywords}
-privacidade, iot, computação ubíqua, centrado no utilizador
+privacidade, iot, computação ubíqua, sniffer
 \end{IEEEkeywords}
 
 \section{Introdução}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+Iot as a term began being used in the 90's, a connection can be drawn
+with Mark Weber's article on ubiquous computing and the rise
+of devices of various sizes, but mostly the size of a small phone, that
+make the idea of Weber a reality. These devices are used in various applications
+starting at home with thermostats, fridges, microwaves, getting embeded in cars
+in the education system, in our clothes, our phones, watches and even into
+space.
+
+Privacy and security might at first appear almost the same thing, but 
+privacy is about the user's data and security is about protecting that data.
 
 \section{Trabalhos Relacionados}
 
-\subsection{Maintaining the Integrity of the Specifications}
+\subsection{Privacy Assistants}
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+There exists a number of privacy assistants in the market. Privacy assistants
+have the objective of giving the user flexibility in choosing the
+prefered privacy options in available applications, most are used in
+smartphones, very few are made for devices in the internet of things. The
+university of Carniege Mellon developed one privacy assistant focused on
+internet of things called "IoT Assistant" \cite{test}. This assistant was
+created because the designers felt that this part of the market was being
+ignored and decided to create it. The creation of this system started with
+a user test case to determine the public's knowledge on this matter, it was
+tested with a group of 17 people choosed randomly.
 
 \section{Metadologia}
-Before you begin to format your paper, first write and save the content as a 
-separate text file. Complete all content and organizational editing before 
-formatting. Please note sections \ref{AA}--\ref{SCM} below for more information on 
-proofreading, spelling and grammar.
 
-Keep your text and graphic files separate until after the text has been 
-formatted and styled. Do not number text heads---{\LaTeX} will do that 
-for you.
+The proposed methology is composed of two phases, the first phase consists of
+making a study on the region's general concern with their privacy when
+using iot devices, their knowledge of privacy rights, what they do to
+protect their privacy rigths. One one side the objective of this study
+consist in demistefying the privacy paradox in the region and gather
+information about their idea to solve this problem with respect
+to iot devices.
+The second phase consists in doing an application that can detect iot devices
+nearby the user with at least a 10 meters radius. The application should
+do the following when detecting a device:
+1. it should show some information about the device;
+2. it should categorize the device;
+3. it should provide the user with privacy options, if the device allows the
+user to decline data harvesting.
+This application at first sight might appear to be a mere privacy assistant but
+it's not, beacause iot assistants merely choose what privacy options
+the user first sets and mantains it for every other application that the user
+might use. The proposed app doesn't have the objective to conform to the
+user's prefered privacy choices, it merely informs the user about nearby iot
+devices and can provide the user with privacy options. But the main objective
+is creating awareness in individuals about the various devices that are around
+and make the user questions their choices.
 
 \subsection{Abbreviations and Acronyms}\label{AA}
 Define abbreviations and acronyms the first time they are used in the text, 
@@ -142,7 +183,7 @@ surrounding equation.
 \item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
 \item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
 \end{itemize}
-An excellent style manual for science writers is \cite{b7}.
+An excellent style manual for science writers is.
 
 \subsection{Authors and Affiliations}
 \textbf{The class file is designed for, but not limited to, six authors.} A 
@@ -222,10 +263,10 @@ acknowledgments in the unnumbered footnote on the first page.
 
 \section*{References}
 
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+Please number citations consecutively within brackets. The 
+sentence punctuation follows the bracket. Refer simply to the reference 
+number, as in ---do not use ``Ref. '' or ``reference '' except at 
+the beginning of a sentence: ``Reference was the first $\ldots$''
 
 Number footnotes separately in superscripts. Place the actual footnote at 
 the bottom of the column in which it was cited. Do not put footnotes in the 
@@ -233,28 +274,15 @@ abstract or reference list. Use letters for table footnotes.
 
 Unless there are six authors or more give all authors' names; do not use 
 ``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
+submitted for publication, should be cited as ``unpublished''. Papers 
+that have been accepted for publication should be cited as ``in press''. 
 Capitalize only the first word in a paper title, except for proper nouns and 
 element symbols.
 
 For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
+citation first, followed by the original foreign-language citation. \cite{test}
 
-%\bibliographystyle{IEEEtran}
-%\bibliography{assets/references}
-
-\begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\end{thebibliography}
-\vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+\bibliographystyle{IEEEtran}
+\bibliography{assets/references}
 
 \end{document}
