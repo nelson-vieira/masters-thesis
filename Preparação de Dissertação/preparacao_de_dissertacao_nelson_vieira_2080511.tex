@@ -32,9 +32,10 @@ smart cities, wearables among other things that use various types of devices
 and various types of networks to communicate. These devices create new ways 
 of collecting and process personal data from users and non-users.
 Most end users aren't even aware or have little control over the information that
-is being collected by these systems. We started by doing a survey to gather
+is being collected by these systems. I tried to take a holistic approach to this
+problem by first doing a systematic literature review, then by doing a survey to gather
 information about the general knowledge of Portugal's population in this
-very topic and then partly based in the information we gathered we propose
+very topic and then partly based in the information I gathered I propose
 a system that gives users information about the devices that are nearby
 and how to protect the data that they don't want to share with these devices,
 this system is capable of detecting what type of devices are nearby,
@@ -48,7 +49,18 @@ privacy, Internet of Things, ubiquitous computing, privacy assistant
 \end{IEEEkeywords}
 
 \section{Introduction}
-Privacy can be defined \cite{InternationalWhat, SpiekermannEngineering} as the right to govern
+Privacy as we know it is a somewhat recent concept \cite{vincent2016privacy, moore2017privacy},
+before the digital age there was barely any notion of privacy for most people. For many centuries
+most people used to reside in small communities where they were continuously involved in one
+another's lives. Even more recent is the idea that privacy is a crucial component of
+personal security, in contrast to the undeniable necessity of public security, including
+the requirement for guarded walls and closed doors. Long considered a luxury, privacy is
+still frequently viewed as nice-to-have rather than an absolute necessity, even if it is
+recognized as an human right, as present in article 12 of the Universal Declaration of Human Rights
+\cite{RooseveltUniversal}: ``No one shall be subjected to arbitrary interference with his privacy, family,
+home or correspondence, nor to attacks upon his honour and reputation. Everyone has
+the right to the protection of the law against such interference or attacks.''. Privacy can
+be defined \cite{InternationalWhat, SpiekermannEngineering} as the right to govern
 how personal information and data is collected, stored, and used, it frequently
 involves handling sensitive information with care, and as such, organizations must
 be open and honest about the kind of data they plan to gather, why they need it, and
@@ -60,32 +72,21 @@ security \cite{HIVDifference} and although privacy and security are interconnect
 involves measures taken to safeguard data from risk, threat or danger,
 it frequently alludes to safety. It is the practice of keeping users'
 personal information and data safe and preventing unauthorized access to it.
+The main distinction between privacy and security is that the former deals with information
+that is specific to users and how they wish their data is used and managed, whilst the
+latter deals with its protection from potential dangers. Security can exist without privacy,
+but the opposite is not true. For managing sensitive and personal data, privacy and
+computer security are equally crucial.
 
-Privacy as we know it is a somewhat recent concept \cite{vincent2016privacy, moore2017privacy},
-before the digital age there was barely any 
-
-Concerns about digital privacy have been growing in last few
-years, specially after the anonymous group attacks, wikileaks and NSA controversies,
-these concerns can be noted with the increase of papers on the subject,
-when searching for terms like "privacy", "online privacy",
-"digital privacy" in Google Scholar, ACM Digital Libary or Science Direct it
-can be seen that, in the last 5 years, it returns about 1500000, 200000 and 60000
-papers repectively.
-We have to address the privacy paradox before going any further, there have been some studies
-done on this subject and it is an interesting one because of it's premise:
-even though privacy concerns have been increasing the bahaviour of people
-when online doesn't seems to have changed, people still continue to use same
-applications they have been using before and companies still take
-advantage of the informations the users have been providing on their
-platforms. According to \cite{} this paradox can be seen from three diferrent
-perpectives, on one side people use whatever platforms they want to use
-even though they say they are worried about their online privacy making them
-hypocrites in the process, another way to look at it is that people use
-the platforms because they get something in return and so they
-are ok losing some privacy because the convenience is too great a factor, and 
-the third perspective is this bla bla bla. This paradox has been proven
-to be false in a number of other studies but some still take it as fact 
-propagating this false believe that people just don't care.
+Concerns about digital privacy have been growing \cite{emami2019exploring, park2022personal, zhang2022peer} in the last few
+years, specially after the \textit{Anonymous} decentralized hacker group
+cyberattacks, \textit{WikiLeaks} and Snowden's leaked top secret documents from United State's
+National Security Agency,
+these concerns can be noted with the increase of written literature on the subject,
+when searching for terms like ``privacy'', ``online privacy'',
+``digital privacy'' in Google Scholar, ACM Digital Libary or Science Direct it
+can be seen that, in the last 5 years, it returns about 5000000, 650000 and 80000
+documents repectively, including articles, books, conference papers etc.
 
 Most research has been done with focus on the web, while privacy in IoT
 systems has not been explored as much, although IoT systems have been
@@ -117,20 +118,33 @@ autonomous vehicles), IoT services (like video analytics services linked to
 smart cameras and indoor position tracking systems), or IoT apps
 (like smart TV remote apps) that track and use information about us.
 
-Privacy and security might at first appear almost the same thing, but 
-privacy is about the user's data and security is about protecting that data.
+We have to address the privacy paradox before going any further, there have been some studies
+done on this subject and it is an interesting one because of it's premise:
+even though privacy concerns have been increasing the bahaviour of people
+when online doesn't seems to have changed, people still continue to use same
+applications they have been using before and companies still take
+advantage of the informations the users have been providing on their
+platforms. According to \cite{} this paradox can be seen from three diferrent
+perpectives, on one side people use whatever platforms they want to use
+even though they say they are worried about their online privacy making them
+hypocrites in the process, another way to look at it is that people use
+the platforms because they get something in return and so they
+are ok losing some privacy because the convenience is too great a factor, and 
+the third perspective is this bla bla bla. This paradox has been proven
+to be false in a number of other studies but some still take it as fact 
+propagating this false believe that people just don't care.
 
 \section{Literature review}
 
-In this section we conduct a systematic literature review (SLR) of the most relevant papers
+In this section I conduct a systematic literature review (SLR) of the most relevant papers
 discussing methodologies and tecnhiques for the protection of users' privacy data
-with special focus on IoT systems. For this SLR we considered focusing only
+with special focus on IoT systems. For this SLR I considered focusing only
 on papers from the last 12 years, from 2010 until 2022, since papers before then
-become out of date with the evolution of techonolgy. We reviewed 100 papers published
+become out of date with the evolution of technology. I reviewed 100 papers published
 in top computer science, security, privacy and software engeneering outlets.
 
-We followed Keshav's three-pass aproach \cite{KeshavHow} when choosing which
-papers to read fully and which ones to ignore, first we would read the title, abstract,
+I followed Keshav's three-pass aproach \cite{KeshavHow} when choosing which
+papers to read fully and which ones to ignore, first I would read the title, abstract,
 introduction and conclusion and briefly skim the rest of the paper and then
 decide if it was worth reading any further, the focal point in this phase was
 aswering the following question: does the paper present a new methodology or
@@ -228,7 +242,7 @@ better understand the implications of their privacy choices. Additionally, the a
 work to implement the integrated notice and option in the IoT Assistant without bias or framing,
 attempting to offer consumers a neutral space to execute their privacy choices.
 Although the authors consider the IoT Assistant to be a significant step towards
-"meaningful privacy options" in IoT, this assistant still has many issues such As
+``meaningful privacy options'' in IoT, this assistant still has many issues such as
 this application is still in the early stages of it's existence, and because this was
 created in 2020 and we are in 2022 there was not much growth. Maybe the main reason
 this application was not able to be developed further is that he application iself
