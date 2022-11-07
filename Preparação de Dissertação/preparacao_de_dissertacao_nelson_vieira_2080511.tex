@@ -27,15 +27,15 @@ Funchal, Portugal \\
 \begin{abstract}
 Internet of things (IoT) devices are everywhere, since the birth of ubiquous
 computing that human every day life is envisioned containg millions of devices
-that control every aspect of our lives, today we have smart cars, smart houses,
+that control every aspect of our lives. Today we have smart cars, smart houses,
 smart cities, wearables among other things that use various types of devices
 and various types of networks to communicate. These devices create new ways 
 of collecting and process personal data from users and non-users.
 Most end users aren't even aware or have little control over the information that
 is being collected by these systems. I tried to take a holistic approach to this
-problem by first doing a systematic literature review, then by doing a survey to gather
+problem by first doing a systematic literature review (SLR), then by doing a survey to gather
 information about the general knowledge of Portugal's population in this
-very topic and then partly based in the information I gathered I propose
+very topic and then, partly based in the information I gathered, I propose
 a system that gives users information about the devices that are nearby
 and how to protect the data that they don't want to share with these devices,
 this system is capable of detecting what type of devices are nearby,
@@ -72,15 +72,16 @@ security \cite{HIVDifference} and although privacy and security are interconnect
 involves measures taken to safeguard data from risk, threat or danger,
 it frequently alludes to safety. It is the practice of keeping users'
 personal information and data safe and preventing unauthorized access to it.
-The main distinction between privacy and security is that the former deals with information
-that is specific to users and how they wish their data is used and managed, whilst the
-latter deals with its protection from potential dangers. Security can exist without privacy,
+The main distinction between privacy and security is that the former deals with
+information that is specific to users and how they wish their data is to
+be used and managed, whilst the latter deals with its protection from
+potential dangers. Security can exist without privacy,
 but the opposite is not true. For managing sensitive and personal data, privacy and
 computer security are equally crucial.
 
 Concerns about digital privacy have been growing \cite{emami2019exploring, park2022personal, zhang2022peer} in the last few
-years, specially after the \textit{Anonymous} decentralized hacker group
-cyberattacks, \textit{WikiLeaks} and Snowden's leaked top secret documents from United State's
+years, especially after the \textit{Anonymous} decentralized hacker group
+cyber attacks, \textit{WikiLeaks} and Snowden's leaked top secret documents from United State's
 National Security Agency,
 these concerns can be noted with the increase of written literature on the subject,
 when searching for terms like ``privacy'', ``online privacy'',
@@ -90,33 +91,45 @@ documents repectively, including articles, books, conference papers etc.
 
 Most research has been done with focus on the web, while privacy in IoT
 systems has not been explored as much, although IoT systems have been
-growing each year and many companies allocate much of their budget to
-develop these systems and create new ways to interact, collect data and
-analyse such data, privacy in these systems in not seen as a crucial
-factor in development, maybe because there isn't much
-interest in researching this aspect of IoT or because companies view other
-aspects of the development process has having higher priority.
+growing each year, this creates new ways to interact,
+collect and analyze data.
 Because it already exists a healthy amount of research out there
 focusing on web privacy and not on IoT privacy, it is a much more
 fertile ground to explore the theme of privacy in the context of
 Internet of Things devices.
 
 Iot as a term began being used in the 90's, a connection can be drawn
-with Mark Weiser's article on ubiquous computing and the rise
+with Mark Weiser's article on ubiquous computing \cite{weiser1991computer} and the rise
 of devices of various sizes that comunicate with each other to do
 various (small) tasks, that make Weiser's idea a reality. These devices are
-used in various applications starting at home with thermostats,
-fridges, microwaves, etc, and embeded in cars, in the education system,
-in our clothes, our phones, watches and even into outer space. The
-first use of the term Internet of Things was in 1999  Kevin Ashton
-
-IoT connected devices are one of the fastest growing tecnhologies \cite{MohammadState},
-it is predicted that iot will grow into the trillions of devices by 2030 \cite{SarawiInternet}
-
+used in various applications, beginning at home \cite{marikyan2019systematic} with thermostats,
+fridges, microwaves, etc, in smart cars \cite{arena2020overview}, in the education system \cite{al2020survey},
+in our clothes and our watches \cite{niknejad2020comprehensive} and even into outer space \cite{AkyildizInternet}.
 IoT resources may include IoT equipment (like smart home assistants and
 autonomous vehicles), IoT services (like video analytics services linked to
 smart cameras and indoor position tracking systems), or IoT apps
 (like smart TV remote apps) that track and use information about us.
+The first use of the term \textit{Internet of Things} was in 1999 by Kevin Ashton \cite{KevinThat},
+executive director of the Auto-ID Center of MIT, during a presentation for Procter \& Gamble.
+A definition for the Internet of Things can be: “An open and
+comprehensive network of intelligent objects that have the capacity to auto-organize,
+share information, data and resources, reacting and acting in face of situations
+and changes in the environment” \cite{madakam2015internet}.
+
+IoT is one of the fastest growing tecnhologies \cite{MohammadState},
+it is predicted that it will grow into the trillions of devices by 2030 \cite{SarawiInternet},
+and with this expansion new security vulnerabilities and data gathering dangers appear, the lack
+of security in these devices makes them ideal targets for privacy violations and inadequate
+customer disclosure of device capabilities and data practices aggravates
+privacy and security issues.
+
+Privacy in IoT systems in not seen as a crucial factor in development \cite{alhirabi2021security}.
+Specific standards for privacy options have been imposed by
+data privacy regulations including the General Data Protection Regulation (GDPR)
+and California Consumer Privacy Act (CCPA), but even these regulations have
+been criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022deficient, green2022flaws, byun2019privacy}.
+
+\subsection{Privacy paradox}
 
 We have to address the privacy paradox before going any further, there have been some studies
 done on this subject and it is an interesting one because of it's premise:
@@ -136,7 +149,7 @@ propagating this false believe that people just don't care.
 
 \section{Literature review}
 
-In this section I conduct a systematic literature review (SLR) of the most relevant papers
+In this section I conduct a systematic literature review of the most relevant papers
 discussing methodologies and tecnhiques for the protection of users' privacy data
 with special focus on IoT systems. For this SLR I considered focusing only
 on papers from the last 12 years, from 2010 until 2022, since papers before then
