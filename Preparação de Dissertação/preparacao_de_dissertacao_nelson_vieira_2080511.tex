@@ -8,6 +8,10 @@
 \graphicspath{ {./assets/} }
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=false,
+}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -25,19 +29,19 @@ Funchal, Portugal \\
 \maketitle
 
 \begin{abstract}
-Internet of things (IoT) devices are everywhere, since the birth of ubiquitous
+Internet of things (IoT) devices are everywhere123, since the birth of ubiquitous
 computing that human every day life is envisioned containing millions of devices
 that control every aspect of our lives. Today we have smart cars, smart houses,
 smart cities, wearables among other things that use various types of devices
 and various types of networks to communicate. These devices create new ways
 of collecting and process personal data from users and non-users.
-Most end users aren't even aware or have little control over the information that
-is being collected by these systems. I tried to take a holistic approach to this
-problem by first doing a literature review (LR), then by doing a survey to gather
+Most end users are not even aware or have little control over the information that
+is being collected by these systems. This work takes an holistic approach to this
+problem by first doing a literature review, then by doing a survey to gather
 information about the general knowledge of Portugal's population in this
-very topic and then, partly based in the information I gathered, I propose
+very topic and then, based on the information gathered, it is proposed
 a system that gives users information about the devices that are nearby
-and how to protect the data that they don't want to share with these devices,
+and how to protect the data that they do not want to share with these devices,
 this system is capable of detecting what type of devices are nearby,
 what kind of data is collected by these devices, show privacy choices
 to the user when it is possible to do so and what can be done to protect
@@ -49,17 +53,18 @@ privacy, Internet of Things, ubiquitous computing, privacy assistant
 \end{IEEEkeywords}
 
 \section{Introduction}
+
 Privacy as we know it is a somewhat recent concept \cite{vincent2016privacy, moore2017privacy},
 before the digital age there was barely any notion of privacy for most people. For many centuries
 most people used to reside in small communities where they were continuously involved in one
 another's lives. Even more recent is the idea that privacy is a crucial component of
 personal security, in contrast to the undeniable necessity of public security, including
-the requirement for guarded walls and closed doors. Long considered a luxury, privacy is
-still frequently viewed as nice-to-have rather than an absolute necessity, even if it is
-recognized as an human right, as present in article 12 of the Universal Declaration of Human Rights
+the requirement for guarded walls and closed doors. Long seen as a luxury, privacy is still
+usually regarded as a good to have rather than an essential requirement, even though it is
+acknowledged as a human right, as present in article 12 of the Universal Declaration of Human Rights
 \cite{RooseveltUniversal}: ``No one shall be subjected to arbitrary interference with his privacy, family,
 home or correspondence, nor to attacks upon his honour and reputation. Everyone has
-the right to the protection of the law against such interference or attacks.''. Privacy can
+the right to the protection of the law against such interference or attacks''. Privacy can
 be defined \cite{InternationalWhat, SpiekermannEngineering} as the right to govern
 how personal information and data is collected, stored, and used, it frequently
 involves handling sensitive information with care, and as such, organizations must
@@ -72,18 +77,17 @@ security \cite{HIVDifference} and although privacy and security are interconnect
 involves measures taken to safeguard data from risk, threat or danger,
 it frequently alludes to safety. It is the practice of keeping users'
 personal information and data safe and preventing unauthorized access to it.
-The main distinction between privacy and security is that the former deals with
-information that is specific to users and how they wish their data is to
-be used and managed, whilst the latter deals with its protection from
-potential dangers. Security can exist without privacy,
-but the opposite is not true. For managing sensitive and personal data, privacy and
-computer security are equally crucial.
+The primary contrast between privacy and security is that the former deals with
+information personal to individuals and how they want their data used and maintained,
+whilst the latter deals with its protection from possible threats.
+Security can exist without privacy, but the opposite is not true. For managing
+sensitive and personal data, privacy and computer security are equally crucial.
 
 Concerns about digital privacy have been growing \cite{emami2019exploring, park2022personal, zhang2022peer} in the last few
-years, especially after the \textit{Anonymous} decentralized hacker group
-cyber attacks, \textit{WikiLeaks} and Snowden's leaked top secret documents from United State's
-National Security Agency,
-these concerns can be noted with the increase of written literature on the subject,
+years, especially after the Anonymous decentralized hacker group
+cyber attacks, WikiLeaks and Snowden's leaked top secret documents from United State's
+National Security Agency.
+These concerns can be noted with the increase of written literature on the subject,
 when searching for terms like ``privacy'', ``online privacy'',
 ``digital privacy'' in Google Scholar, ACM Digital Library or Science Direct it
 can be seen that, in the last 5 years, it returns about 5000000, 650000 and 80000
@@ -98,7 +102,7 @@ focusing on web privacy and not on IoT privacy, it is a much more
 fertile ground to explore the theme of privacy in the context of
 Internet of Things devices.
 
-Iot as a term began being used in the 90's, a connection can be drawn
+IoT is a term that began being used in the 90's, a connection can be drawn
 with Mark Weiser's article on ubiquitous computing \cite{weiser1991computer} and the rise
 of devices of various sizes that communicate with each other to do
 various (small) tasks, that make Weiser's idea a reality. These devices are
@@ -131,26 +135,6 @@ and California Consumer Privacy Act (CCPA), but even these regulations have
 been criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022deficient, green2022flaws, byun2019privacy}.
 
 \section{Literature review}
-
-In this section I conduct a systematic literature review of the most relevant papers
-discussing methodologies and techniques for the protection of users' privacy data
-with special focus on IoT systems. For this SLR I considered focusing only
-on papers from the last 12 years, from 2010 until 2022, since papers before then
-become out of date with the evolution of technology. I reviewed 100 (*\textbf{\color{red}number to be adjusted}) papers published
-in top computer science, security, privacy and software engineering outlets.
-
-I followed Keshav's three-pass approach \cite{KeshavHow} when choosing which
-papers to read fully and which ones to ignore, first I would read the title, abstract,
-introduction and conclusion and briefly skim the rest of the paper and then
-decide if it was worth reading any further, the focal point in this phase was
-answering the following question: does the paper present a new methodology or
-interesting angle to tackle users' privacy concerns? Only then the document would
-be read in it's entirety while ignoring any tables, figures, images or graphs.
-If the paper failed to present any interesting idea, approach, or
-technique it would be discarded, but if not, it would be read carefully from
-the beginning again in order to fully understand what it presents.
-
-\subsection{What is the privacy paradox?}
 
 The use of a variety of digital devices have numerous advantages, but
 they also bring with them the ubiquity of data capturing equipment, therefore,
@@ -189,21 +173,21 @@ online privacy practices are founded on separate privacy mindsets and so they ar
 
 \subsection{Literature overview}
 
-There have been a number of systematic literature reviews \cite{shi2020applications, atlam2020iot, LoukilPrivacy, SICARI2015146, vcolakovic2018internet, chitanya2018robustness, chanal2020security, LinSurvey, Kraijaksurvey}
+There have been a number of systematic literature reviews (SLR) \cite{shi2020applications, atlam2020iot, LoukilPrivacy, SICARI2015146, vcolakovic2018internet, chitanya2018robustness, chanal2020security, LinSurvey, Kraijaksurvey}
 and systematic mapping reviews \cite{porras2018security, ahmed2019aspects}
 done to study privacy and security issues in IoT.
 
 In Gupta and Ghanavati's \cite{Gupta2022Privacy} SLR,
 the authors review papers with methodologies and techniques that identify privacy risks or
-notify users about these risks. The authors divide the papers into the following
+notify users about these risks. They divide the papers into the following
 categories: `Ontological Modeling and Semantic-based Approaches', `Data-Driven Approaches',
 `Source Code Analysis-based Approaches', `User Studies and Survey-based Approaches',
 `Blockchain-based Approaches' and `Architectural and Framework-based Approaches'.
 However, this SLR has the following limitations: the authors focus solely on privacy
-while ignoring security aspects, they only chose articles and not thesis or books and only
-written in english.
+while ignoring security aspects, they only chose articles and not thesis or books and from
+the selected papers, only the ones written in english were considered.
 
-another SLR \cite{KUHTREIBER2022101656} analyses what tools are available for developers
+Another SLR \cite{Kuhtreiber2022survey} analyses what tools are available for developers
 to implement iot systems with privacy in mind.
 
 \cite{AbbottPrivacy} explores privacy in the context of smart homes.
@@ -342,6 +326,27 @@ signals in order to precisely pinpoint mobile users.
 
 \section{Methodology}
 
+It is conducted a systematic literature review of the most relevant papers
+discussing methodologies and techniques for the protection of users' privacy data
+with special focus on IoT systems. For this SLR I considered focusing only
+on papers from the last 12 years, from 2010 until 2022, since papers before then
+become out of date with the evolution of technology. I reviewed 100 (*\textbf{\color{red}number to be adjusted}) papers published
+in top computer science, security, privacy and software engineering outlets.
+
+I followed Keshav's three-pass approach \cite{KeshavHow} when choosing which
+papers to read fully and which ones to ignore, first I would read the title, abstract,
+introduction and conclusion and briefly skim the rest of the paper and then
+decide if it was worth reading any further, the focal point in this phase was
+answering the following question: does the paper present a new methodology or
+interesting angle to tackle users' privacy concerns? Only then the document would
+be read in it's entirety while ignoring any tables, figures, images or graphs.
+If the paper failed to present any interesting idea, approach, or
+technique it would be discarded, but if not, it would be read carefully from
+the beginning again in order to fully understand what it presents.
+
+
+
+
 The proposed methodology is composed of two phases, the first phase consists of
 making a study on the region's general concern with their privacy when
 using and interacting with IoT devices, their knowledge of privacy rights, what they do to
@@ -396,7 +401,7 @@ is guaranteed to reach most people in the country.
 
 \section{Application}
 
-I created something and ...
+I created something and...
 
 \section{Discussion}
 
