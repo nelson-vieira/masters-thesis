@@ -173,7 +173,7 @@ online privacy practices are founded on separate privacy mindsets and so they ar
 
 \subsection{Literature overview}
 
-There have been a number of systematic literature reviews (SLR) \cite{shi2020applications, atlam2020iot, LoukilPrivacy, SICARI2015146, vcolakovic2018internet, chitanya2018robustness, chanal2020security, LinSurvey, Kraijaksurvey}
+There have been a number of systematic literature reviews (SLR) \cite{Gupta2022Privacy, Kuhtreiber2022survey, sicari2015security, LinSurvey}
 and systematic mapping reviews \cite{porras2018security, ahmed2019aspects}
 done to study privacy and security issues in IoT.
 
@@ -183,20 +183,51 @@ privacy risks or notify users about these risks. They divide the literature
 into the following categories: `Ontological Modeling and Semantic-based Approaches',
 `Data-Driven Approaches', `Source Code Analysis-based Approaches', `User Studies
 and Survey-based Approaches', `Blockchain-based Approaches' and `Architectural
-and Framework-based Approaches'.
+and Framework-based Approaches'. They then examine current literature
+on these three prerequisites. The findings show that: most works concentrate
+on single IoT devices when addressing privacy threats; When analyzing
+privacy issues, key privacy factors such as data reduction and data
+aggregation are overlooked; existing studies ignored the sensitivity of
+the obtained information; most useful studies did not include a diverse
+range of users when assessing privacy problems; no work has been done to
+discover compliance difficulties between an IoT application and different
+privacy rules; and current research does not place a premium on providing
+consumers with real-time privacy notices. However, this SLR has the following
+limitations: the authors only chose articles and not thesis or books and
+from the selected papers, only the ones written in english were considered.
 
+\textbf{\color{red}redo these three paragraphs}
 
-
-
-However, this SLR has the following limitations:
-the authors focus solely on privacy while ignoring security aspects, they only
-chose articles and not thesis or books and from the selected papers, only the
-ones written in english were considered.
-
-Another SLR \cite{Kuhtreiber2022survey} analyses what tools are available for
+Kühtreiber et al. SLR \cite{Kuhtreiber2022survey} analyses what tools are available for
 developers to implement IoT systems with privacy in mind.
 
-\cite{AbbottPrivacy} explores privacy in the context of smart homes.
+Sicari et al. conduct an analysis of recent studies and active initiatives
+that emphasize IoT privacy and security solutions. They begin by outlining
+the needs for IoT privacy and security, including access control, confidentiality,
+and authentication. They then review the literature that already exists in
+relation to these three needs. They concluded that IoT privacy
+concerns are only partially investigated and need further attention.
+The study, however, has its shortcomings, the analysis of
+prior research focuses primarily on security needs and leaves out privacy
+considerations, they don't perform a thorough gap analysis
+on the publications that were examined, and they don't provide
+a thorough summary of the future research topics in the field of IoT
+privacy that need more attention.
+
+Lin et al. undertake a literature review to find security and privacy
+concerns in the network layer, perception layer, and application
+layer, the three IoT architectural levels. Confidentiality, integrity,
+availability, identity and authentication, privacy, and trust are
+the first six essential security properties that the authors list
+for these levels. Then, for each of the three tiers, they examine
+a number of security attacks. They conclude by providing a brief
+overview of a number of privacy-preserving data procedures,
+including data gathering, data aggregations, and data analysis stages.
+They do, however, primarily focus on the security elements of the
+IoT and see privacy as one of the most important security
+characteristics, as was already established. Additionally, a
+thorough gap analysis to determine the shortcomings of the previous
+works is not done in the research.
 
 \subsection{Proposed solutions}
 
