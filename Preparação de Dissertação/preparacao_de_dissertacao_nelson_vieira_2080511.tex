@@ -206,7 +206,7 @@ privacy problems inherent in IoT development. This study lacks a comprehensive
 gap analysis of the chosen literature and it does not specify the research
 questions that define the relevancy of the selected papers.
 
-Sicari et al. conduct an analysis of recent studies and active initiatives
+Sicari et al. \cite{sicari2015security} conduct an analysis of recent studies and active initiatives
 that emphasize IoT privacy and security solutions. They begin by outlining
 the needs for IoT privacy and security, including access control, confidentiality,
 and authentication. They then review the literature that already exists in
@@ -219,9 +219,9 @@ on the publications that were examined, and they don't provide
 a thorough summary of the future research topics in the field of IoT
 privacy that need more attention.
 
-Lin et al. undertake a literature review to find security and privacy
+Lin et al. \cite{LinSurvey} undertake a literature review to find security and privacy
 concerns in the network layer, perception layer, and application
-layer, the three IoT architectural levels. Confidentiality, integrity,
+layer, the three IoT architectural layers. Confidentiality, integrity,
 availability, identity and authentication, privacy, and trust are
 the first six essential security properties that the authors list
 for these levels. Then, for each of the three tiers, they examine
@@ -255,10 +255,6 @@ and only a small fraction of the audience actually participated in this
 data collection, they also noted that after contacting people months
 after the interviews that they did not really changed their behaviour
 regarding their privacy rights.
-
-
-
-
 % Skirpan et al. \cite{SkirpanPrivacy} built
 % an interactive theatre experience, this was proposed in order to expose privacy
 % violations in companies, particularly in the capitalistic world where profit
@@ -314,47 +310,32 @@ communication data security.
 Antunes et al. \cite{AntunesFederated} do a SLR on federated learning in the area of
 healthcare and make an architecture proposal. The technique known as federated learning
 allows for the distributed training of machine learning models using remotely hosted
-datasets without the requirement for data amplification.
+datasets without the requirement for data amplification. The fundamental goal of
+the proposed architecture is to allow healthcare institutions that have access to
+sensitive medical information to use it in distributed data analysis and machine
+learning research while ensuring patient confidentiality. Because information
+transmitted among institutions need confidentiality guarantees for learning model
+parameters and analysis results, the architecture can adopt a number of ways based
+on a zero-trust security paradigm \cite{ChenSecurity}. Furthermore, the institutions develop a
+learning algorithm verification system that can store and disseminate manifestos,
+as well as engage in distributed analytic procedures that need unanimous agreement
+from all participants. This study also demonstrates that previous literature implies
+that homomorphic encryption and differential privacy are effective approaches for
+preventing data breaches without incurring prohibitively high computing costs.
+% The proposed architecture's main goal is to enable healthcare institutions with access
+% to private medical datasets to employ them in distributed data analysis and machine
+% learning studies without compromising patient confidentiality, as the information that
+% is shared among institutions requires confidentiality guarantees for learning model
+% parameters and analyses results, the architecture can implement different methodologies
+% based on a zero-trust security model [67]. The institutions also implement a learning
+% algorithm verification, which can store and provide manifestos and participate in
+% distributed analysis mechanisms requiring consensus among all participants. This study
+% also finds that Current literature shows that homomorphic encryption and differential
+% privacy are techniques with substantial results to avoid data leaks without prohibitive
+% computational costs [98].
 
-
-The main goal of this architecture is to enable healthcare institutions (e.g., hospitals and laboratories) with
-access to private medical datasets to employ them in distributed data analysis and ML studies
-without compromising patient confidentiality.
-
-
-Information sharing among data holders requires confidentiality guarantees for learning model
-parameters and analyses results. To that end, a data confidentiality module analyzes outgoing
-information (e.g., analysis results and learning models) to guarantee that it does not contain any
-sensitive information. To that end, this module can implement different methodologies based on
-a zero-trust security model [67].
-
-
-Collaborating institutions will use public networks to exchange
-analysis results and learning models that may reveal private information. As such, security mech-
-anisms must provide strong confidentiality guarantees, even if the institutions can establish trust
-among themselves for sharing medical data. Current literature shows that homomorphic encryp-
-tion and differential privacy are techniques with substantial results to avoid data leaks without
-prohibitive computational costs [98].
-
-
-The dataset processing module implements mechanisms that enable external learning algo-
-rithms to access and interpret the data contained in local datasets.
-The learning algorithm verification module implements mechanisms to analyze
-algorithms received from third parties and guarantee they will not purposely expose sensitive
-information from private datasets. One possibility to implement such verification is to include a
-"manifesto" with each learning algorithm that specifies input and outputs. Learning algorithms can
-then be checked to guarantee that they follow the manifesto specification.
-
-
-The model training module is responsible for executing the training algorithm. In turn, the federated data
-analysis module focuses on private or remote requests for data analyses that do not require learn-
-ing algorithms.
-
-
-The
-public entity also implements its learning algorithm verification module, which can store and pro-
-vide manifestos and participate in distributed analysis mechanisms requiring consensus among
-all participants.
+Opara et al. \cite{opara2022framework} propose a framework for detecting potential
+problems with privacy or security policies, this framework is aimed at developers...
 
 \subsubsection{Other?}
 
@@ -488,6 +469,12 @@ signals in order to precisely pinpoint mobile users.
 \\*[11pt]
 \textbf{TODO: from here forward}
 
+
+\section{Challenges}
+
+IoT is a composed of a complex web of architectures, applications and technologies.
+In terms of architectures, it can be decomposed in three layers: the perception layer,
+the network layer and the application or business layer.
 
 \section{Methodology}
 
