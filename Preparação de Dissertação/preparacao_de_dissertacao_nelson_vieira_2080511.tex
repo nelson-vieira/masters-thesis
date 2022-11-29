@@ -309,9 +309,52 @@ scheme and tested it on the Freenet, demonstrating that the method can effective
 resist the influence of flow analysis on communication anonymity while preserving
 communication data security.
 
-\subsubsection{Architecture Proposal}
+\subsubsection{Architecture Proposals}
 
-\cite{AntunesFederated} makes an Architecture Proposal.
+Antunes et al. \cite{AntunesFederated} do a SLR on federated learning in the area of
+healthcare and make an architecture proposal. The technique known as federated learning
+allows for the distributed training of machine learning models using remotely hosted
+datasets without the requirement for data amplification.
+
+
+The main goal of this architecture is to enable healthcare institutions (e.g., hospitals and laboratories) with
+access to private medical datasets to employ them in distributed data analysis and ML studies
+without compromising patient confidentiality.
+
+
+Information sharing among data holders requires confidentiality guarantees for learning model
+parameters and analyses results. To that end, a data confidentiality module analyzes outgoing
+information (e.g., analysis results and learning models) to guarantee that it does not contain any
+sensitive information. To that end, this module can implement different methodologies based on
+a zero-trust security model [67].
+
+
+Collaborating institutions will use public networks to exchange
+analysis results and learning models that may reveal private information. As such, security mech-
+anisms must provide strong confidentiality guarantees, even if the institutions can establish trust
+among themselves for sharing medical data. Current literature shows that homomorphic encryp-
+tion and differential privacy are techniques with substantial results to avoid data leaks without
+prohibitive computational costs [98].
+
+
+The dataset processing module implements mechanisms that enable external learning algo-
+rithms to access and interpret the data contained in local datasets.
+The learning algorithm verification module implements mechanisms to analyze
+algorithms received from third parties and guarantee they will not purposely expose sensitive
+information from private datasets. One possibility to implement such verification is to include a
+"manifesto" with each learning algorithm that specifies input and outputs. Learning algorithms can
+then be checked to guarantee that they follow the manifesto specification.
+
+
+The model training module is responsible for executing the training algorithm. In turn, the federated data
+analysis module focuses on private or remote requests for data analyses that do not require learn-
+ing algorithms.
+
+
+The
+public entity also implements its learning algorithm verification module, which can store and pro-
+vide manifestos and participate in distributed analysis mechanisms requiring consensus among
+all participants.
 
 \subsubsection{Other?}
 
@@ -505,6 +548,21 @@ I created something and...
 \section{Discussion}
 
 The study found the following... The app...
+
+\section{Future work}
+
+Although there exist some hardware devices that can detect some devices on some network,
+like ZigBee or Bluetooth LE, namely IoT sniffers and there exist some georeferencing applications that try to
+pinpoint certain IoT devices, there is still a need for some kind of device or framework
+that is network agnostic and can detect where the devices are located and what kind of
+data the IoT devices that are around it are collecting. This gadget should also be capable
+of informing the users about the privacy notices of the devices and what can the users do
+to safeguard their data. The IoT sniffers that are available are primarily used in the
+detection of problems in the communication of devices in the network or to solve problems
+of interoperability between different IoT networks. There are many obstacles that impede the creation of such a gadget
+and the fact that it still doesn't exist anything like it shows that maybe there is not
+enough interest form users or researchers to focus on such an endeavour or the complexity
+of such a task is greater than the rewards.
 
 \section{Conclusion}
 
