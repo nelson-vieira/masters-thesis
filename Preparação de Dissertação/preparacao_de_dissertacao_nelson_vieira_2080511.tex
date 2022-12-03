@@ -136,17 +136,32 @@ been criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022
 
 \section{Literature review}
 
+In this section the existing literature is discussed, the chosen literature
+is based on the following research questions:
+
+Q1: What are the tools available related to IoT that empower users to protect
+their privacy rights?
+
+Q2: What issues are prevalent in IoT that make it difficult to address privacy
+and security problems.
+
+Some relevant topics are discussed before analyzing the proposals that the
+literature regards as solutions to resolve privacy issues in IoT.
+
+\subsection{Privacy Paradox}
+
 The use of a variety of digital devices have numerous advantages, but
 they also bring with them the ubiquity of data capturing equipment, therefore,
 it is understandable why the majority of online users have serious concerns
 about the privacy of their personal data. However, the opinions expressed
-are starkly at odds with the reality that just one in four European users
+are starkly at odds with the reality, according to Thomson et al. \cite{DarrenState}
+report on the state of privacy, that just one in four European users
 read the terms and conditions in their entirety prior to making an online
 purchase or subscribing to a service, 59\% admitted to only quickly scanning
 the terms and conditions before completing a purchase, while 14\% admitted
 to never reading them at all, 30\% of the respondents would even swap
 their email address to win a reward, or entry into a raffle, while 17\% would
-do so to get an app and 30\% would do it for money \cite{DarrenState}.
+do so to get an app and 30\% would do it for money.
 
 This is what is called a privacy paradox, there have been multiple papers
 written on this subject \cite{solove2021myth, WilliamsPrivacy, lee2021investigating, goad2021privacy, gerber2018explaining},
@@ -233,6 +248,25 @@ IoT and see privacy as one of the most important security
 characteristics, as was already established. Additionally, a
 thorough gap analysis to determine the shortcomings of the previous
 works is not done in the research.
+
+\subsection{Differential Privacy}
+
+\cite{ZhaoSurvey} proposes Differential Privacy for Unstructured Data Content.
+
+
+
+
+
+
+Privacy concerns arise with the millions of real-world unstructured data including
+images, audios, videos, and texts. Differential privacy has emerged as a de facto
+standard to protect a wide range of data types. This article has presented
+differential privacy methods for sensitive content in these unstructured
+data. We have identified that unstructured data are obfuscated based on
+appropriate vector representations, specific privacy models, and vector
+reconstructions. We have discussed possible challenges faced with these
+privacy methods. We have provided an overview of privacy guarantees and
+utility losses in these methods and possible approaches to improve data utility.
 
 \subsection{Proposed solutions}
 
@@ -364,6 +398,10 @@ authors also don't compare their proposal with others already available.
 
 % The key contributions of this paper include (1) A domain-specific ontology for modeling IoT security and privacy policies, (2) a notation for representing IoT security and privacy policies and validating the policies for inconsistencies, conflicts, ambiguities, and incompleteness, (3) a set of guidelines and rules for detecting IoT policy errors, and 4) a tool for visually modeling and capturing IoT security policies and discovering problems with the policies.
 
+\subsubsection{Blockchain}
+
+Blockchain proposals that try to resolve privacy issues in IoT.
+
 \subsubsection{Other?}
 
 % Zhu et al. \cite{ZhuIntegrating} explores an integrated paradigm called ``hybrid sensing''
@@ -400,8 +438,6 @@ machine learning model and the effects of crowdsourcing.
 
 
 % Zhu et al. offer a hybrid sensor system that safeguards privacy while also monitoring parking availability. The researchers merged IoT sensing with crowdsensing and enhanced it with privacy-preserving methods. They employed physical hazy filters to mask IoT sensors in IoT sensing, and a cryptographic technique based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials in crowdsensing. In addition, crowdsourcing was used to create a machine learning model for parking recognition in the presence of foggy filters. The report included proof-of-concept prototypes such as a Raspberry Pi system and a mobile app, as well as an evaluation study of the machine learning model and the effects of crowdsourcing.
-
-\cite{ZhaoSurvey} proposes Differential Privacy for Unstructured Data Content.
 
 \subsubsection{Privacy Assistants}
 
