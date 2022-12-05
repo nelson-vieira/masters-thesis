@@ -251,16 +251,52 @@ works is not done in the research.
 
 \subsection{Differential Privacy}
 
-\cite{ZhaoSurvey} proposes Differential Privacy for Unstructured Data Content.
+The notion of differential privacy, according to Michael Kearns, is based
+on three important principles. The first being that "differential privacy
+requires that adding or removing the data record of a single individual
+not change the probability of any outcome by much". The second principle
+being that "no outside observer can learn very much about any individual
+because of that person's specific data". The third important principle being
+that "for every individual in the dataset, and for any observer no matter
+what their initial beliefs about the world were, after observing the output
+of a differentially private computation, their posterior belief about
+anything is close to what it would have been had they observed the output
+of the same computation run without the individual's data."
+
+Differential privacy has the potential to significantly increase individual
+privacy protection, by purposefully adding noise into a dataset,
+it gives plausible deniability to any individual who may have had their
+data exploited while still being able to calculate statistics with relatively
+high precision. Although algorithms that deal with notions of fairness,
+ethics, and privacy are hard to create because of the subjectivity of these
+concepts and differential privacy algorithms are no different they can still
+help in regards to addressing technology's inherent moral quandaries.
+
+% Differential privacy is an important component of machine learning algorithms
+% and massive datasets, and it has the potential to significantly increase
+% individual privacy protection. By purposefully adding noise into a dataset,
+% we may give plausible deniability to any individual who may have had their
+% data exploited to damage them while still being able to calculate critical
+% statistics with high precision. While differential privacy has obvious drawbacks,
+% as do many algorithms used to address societal issues, the use of automation and
+% machine learning to address subjective notions of fairness, ethics, and privacy
+% is a tremendously groundbreaking discovery in the world of computation, and is
+% moving us as a society closer to addressing technology's inherent moral quandaries.
+% Differential privacy is a fundamental aspect of machine learning algorithms and huge datasets that may substantially increase individual privacy protection. We can provide plausible deniability to every individual who may have their data used to harm them by purposely injecting noise into a dataset, while yet being able to calculate required statistics with high accuracy. While differential privacy, like many algorithms used to address societal issues, has obvious drawbacks, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing the inherent moral dilemmas of technology.
+% Differential privacy is a crucial component of machine learning algorithms and massive datasets that has the potential to significantly boost individual privacy protection. By purposefully inserting noise into a dataset, we can give plausible deniability to any individual who may have their data exploited to harm them while still being able to calculate needed statistics with high precision. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing the inherent moral dilemmas of technology.
+% Differential privacy is a critical component of machine learning algorithms and large datasets, with the potential to greatly improve individual privacy protection. We can provide plausible deniability to any individual who may have their data misused to harm them while still being able to calculate essential statistics with high accuracy by purposely injecting noise into a dataset. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing technology's inherent moral dilemmas.
 
 
+\textbf{\color{red}add more articles/content on this subsection}
+
+Zhao et al. \cite{ZhaoSurvey} conduct a SLR on differential privacy
+for Unstructured Data Content.
 
 
-
-
-Privacy concerns arise with the millions of real-world unstructured data including
-images, audios, videos, and texts. Differential privacy has emerged as a de facto
-standard to protect a wide range of data types. This article has presented
+% Privacy concerns arise with the millions of real-world unstructured data including
+% images, audios, videos, and texts. Differential privacy has emerged as a de facto
+% standard to protect a wide range of data types.
+This article has presented
 differential privacy methods for sensitive content in these unstructured
 data. We have identified that unstructured data are obfuscated based on
 appropriate vector representations, specific privacy models, and vector
@@ -412,18 +448,14 @@ Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
 privacy while also monitoring parking availability. The researchers merged IoT
 sensing with crowdsensing and enhanced it with privacy-preserving methods.
 The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
-and a cryptographic technique based on cryptographic commitments, zero-knowledge proofs,
-and anonymous credentials in crowdsensing. In addition, crowdsourcing was used
+and a cryptographic technique based on cryptographic commitments, zero-knowledge
+proofs, and anonymous credentials in crowdsensing. In addition, crowdsourcing was used
 to create a machine learning model for parking recognition in the presence
 of foggy filters. The report included proof-of-concept prototypes such as a
 Raspberry Pi system and a mobile app, as well as an evaluation study of the
 machine learning model and the effects of crowdsourcing.
 
-
-
-
 % Zhu et al. describe a privacy-preserving hybrid sensor system with a smart parking availability monitoring application. We combined IoT sensing with crowdsensing and augmented it using privacy-protecting approaches. In particular, in IoT sensing, we concealed IoT sensors using physical hazy filters, and in crowdsensing, we used a cryptographic approach based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials. We also used crowdsourcing to build a machine learning model for parking detection under hazy filters. The paper showed proof-of-concept prototypes, including a Raspberry Pi system and a mobile app, as well as an assessment study of the machine learning model and the impacts of crowdsourcing.
-
 
 % This study offers a hybrid sensor system that protects privacy while also monitoring parking availability.
 % We merged IoT sensing with crowdsensing and enhanced it using privacy-preserving techniques.
@@ -431,11 +463,7 @@ machine learning model and the effects of crowdsourcing.
 % We also used crowdsourcing to create a machine learning model for parking recognition in the presence of hazy filters.
 % The report included proof-of-concept prototypes such as a Raspberry Pi system and a mobile app, as well as an evaluation study of the machine learning model and the effects of crowdsourcing.
 
-
-
-
 % Zhu et al. propose a hybrid sensor system that both protects privacy and monitors parking availability. We combined IoT sensing with crowdsensing and improved it with privacy-preserving approaches. In IoT sensing, we used physical hazy filters to hide IoT sensors, and in crowdsensing, we used a cryptographic approach based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials. Crowdsourcing was also utilized to develop a machine learning model for parking detection in the presence of foggy filters. Proof-of-concept prototypes such as a Raspberry Pi system and a mobile app were included in the paper, as well as an assessment study of the machine learning model and the impacts of crowdsourcing.
-
 
 % Zhu et al. offer a hybrid sensor system that safeguards privacy while also monitoring parking availability. The researchers merged IoT sensing with crowdsensing and enhanced it with privacy-preserving methods. They employed physical hazy filters to mask IoT sensors in IoT sensing, and a cryptographic technique based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials in crowdsensing. In addition, crowdsourcing was used to create a machine learning model for parking recognition in the presence of foggy filters. The report included proof-of-concept prototypes such as a Raspberry Pi system and a mobile app, as well as an evaluation study of the machine learning model and the effects of crowdsourcing.
 
@@ -632,24 +660,27 @@ The study found the following... The app...
 
 \section{Future work}
 
-Although there exist some hardware devices that can detect some devices on some network,
-like ZigBee or Bluetooth LE, namely IoT sniffers and there exist some georeferencing applications that try to
-pinpoint certain IoT devices, there is still a need for some kind of device or framework
-that is network agnostic and can detect where the devices are located and what kind of
-data the IoT devices that are around it are collecting. This gadget should also be capable
-of informing the users about the privacy notices of the devices and what can the users do
-to safeguard their data. The IoT sniffers that are available are primarily used in the
-detection of problems in the communication of devices in the network or to solve problems
-of interoperability between different IoT networks. There are many obstacles that impede the creation of such a gadget
-and the fact that it still doesn't exist anything like it shows that maybe there is not
-enough interest form users or researchers to focus on such an endeavour or the complexity
+Although there exist some hardware devices that can detect some devices
+on some networks, like ZigBee or Bluetooth LE, namely IoT sniffers and
+there exist some georeferencing applications that try to pinpoint certain
+IoT devices, there is still a need for some kind of device or framework
+that is network agnostic and can detect where the devices are located and
+what kind of data the IoT devices that are around it are collecting.
+This gadget should also be capable of informing the users about the privacy
+notices of the devices and what can the users do to safeguard their data.
+The IoT sniffers that are available are primarily used in the detection of
+problems in the communication of devices in the network or to solve problems
+of interoperability between different IoT networks. There are many obstacles
+that impede the creation of such a gadget and the fact that it still doesn't
+exist anything like it shows that maybe there is not enough interest form
+users or researchers to focus on such an endeavour or the complexity
 of such a task is greater than the rewards.
 
 \section{Conclusion}
 
 In this thesis I explored people's perception of privacy of IoT systems and
 made an application that aims to create more awareness in users about their
-environment with IoT devices around them.
+environment and the IoT devices that inhabit it.
 
 \section*{Acknowledgment}
 
