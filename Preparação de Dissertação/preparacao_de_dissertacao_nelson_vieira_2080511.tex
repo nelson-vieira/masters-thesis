@@ -30,22 +30,22 @@ Funchal, Portugal \\
 
 \begin{abstract}
 Internet of things (IoT) devices are everywhere, since the birth of ubiquitous
-computing that human every day life is envisioned containing millions of devices
-that control every aspect of our lives. Today we have smart cars, smart houses,
-smart cities, wearables among other things that use various types of devices
-and various types of networks to communicate. These devices create new ways
-of collecting and process personal data from users and non-users.
-Most end users are not even aware or have little control over the information that
-is being collected by these systems. This work takes an holistic approach to this
-problem by first doing a literature review, then by doing a survey to gather
-information about the general knowledge of Portugal's population in this
-very topic and then, based on the information gathered, it is proposed
-a system that gives users information about the devices that are nearby
-and how to protect the data that they do not want to share with these devices,
-this system is capable of detecting what type of devices are nearby,
-what kind of data is collected by these devices, show privacy choices
-to the user when it is possible to do so and what can be done to protect
-unwanted data from being collected.
+computing that human every day life is envisioned containing millions of
+devices that control every aspect of our lives. Today we have smart cars,
+smart houses, smart cities, wearables among other things that use various
+types of devices and various types of networks to communicate. These devices
+create new ways of collecting and process personal data from users and
+non-users. Most end users are not even aware or have little control over
+the information that is being collected by these systems. This work takes
+an holistic approach to this problem by first doing a literature review,
+then by doing a survey to gather information about the general knowledge
+of Portugal's population in this very topic and then, based on the information
+gathered, it is proposed a system that gives users information about the
+devices that are nearby and how to protect the data that they do not want
+to share with these devices, this system is capable of detecting what type
+of devices are nearby, what kind of data is collected by these devices,
+show privacy choices to the user when it is possible to do so and what can
+be done to protect unwanted data from being collected.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -55,89 +55,89 @@ privacy, Internet of Things, ubiquitous computing, privacy assistant
 \section{Introduction}
 
 Privacy as we know it is a somewhat recent concept \cite{vincent2016privacy, moore2017privacy},
-before the digital age there was barely any notion of privacy for most people. For many centuries
-most people used to reside in small communities where they were continuously involved in one
-another's lives. Even more recent is the idea that privacy is a crucial component of
-personal security, in contrast to the undeniable necessity of public security, including
-the requirement for guarded walls and closed doors. Long seen as a luxury, privacy is still
-usually regarded as a good to have rather than an essential requirement, even though it is
-acknowledged as a human right, as present in article 12 of the Universal Declaration of Human Rights
-\cite{RooseveltUniversal}: ``No one shall be subjected to arbitrary interference with his privacy, family,
-home or correspondence, nor to attacks upon his honour and reputation. Everyone has
-the right to the protection of the law against such interference or attacks''. Privacy can
-be defined \cite{InternationalWhat, SpiekermannEngineering} as the right to govern
-how personal information and data is collected, stored, and used, it frequently
-involves handling sensitive information with care, and as such, organizations must
-be open and honest about the kind of data they plan to gather, why they need it, and
-where and with whom they plan to share it. Users should have the right to control their
-shared information.
+before the digital age there was barely any notion of privacy for most
+people. For many centuries most people used to reside in small communities
+where they were continuously involved in one another's lives. Even more
+recent is the idea that privacy is a crucial component of personal security,
+in contrast to the undeniable necessity of public security, including the
+requirement for guarded walls and closed doors. Long seen as a luxury, privacy
+is still usually regarded as a good to have rather than an essential requirement,
+even though it is acknowledged as a human right, as present in article 12
+of the Universal Declaration of Human Rights \cite{RooseveltUniversal}: ``No
+one shall be subjected to arbitrary interference with his privacy, family,
+home or correspondence, nor to attacks upon his honour and reputation. Everyone
+has the right to the protection of the law against such interference or attacks''.
+Privacy can be defined \cite{InternationalWhat, SpiekermannEngineering} as
+the right to govern how personal information and data is collected, stored,
+and used, it frequently involves handling sensitive information with care, and
+as such, organizations must be open and honest about the kind of data they plan
+to gather, why they need it, and where and with whom they plan to share it.
+Users should have the right to control their shared information.
 
-This definition can cause some confusion with the idea of
-security \cite{HIVDifference} and although privacy and security are interconnected, security
-involves measures taken to safeguard data from risk, threat or danger,
-it frequently alludes to safety. It is the practice of keeping users'
-personal information and data safe and preventing unauthorized access to it.
-The primary contrast between privacy and security is that the former deals with
-information personal to individuals and how they want their data used and maintained,
-whilst the latter deals with its protection from possible threats.
-Security can exist without privacy, but the opposite is not true. For managing
-sensitive and personal data, privacy and computer security are equally crucial.
+This definition can cause some confusion with the idea of security \cite{HIVDifference}
+and although privacy and security are interconnected, security involves
+measures taken to safeguard data from risk, threat or danger, it frequently
+alludes to safety. It is the practice of keeping users' personal information
+and data safe and preventing unauthorized access to it. The primary contrast
+between privacy and security is that the former deals with information personal
+to individuals and how they want their data used and maintained, whilst the
+latter deals with its protection from possible threats. Security can exist
+without privacy, but the opposite is not true. For managing sensitive and
+personal data, privacy and computer security are equally crucial.
 
-Concerns about digital privacy have been growing \cite{emami2019exploring, park2022personal, zhang2022peer} in the last few
-years, especially after the Anonymous decentralized hacker group
-cyber attacks, WikiLeaks and Snowden's leaked top secret documents from United State's
-National Security Agency.
-These concerns can be noted with the increase of written literature on the subject,
-when searching for terms like ``privacy'', ``online privacy'',
-``digital privacy'' in Google Scholar, ACM Digital Library or Science Direct it
-can be seen that, in the last 5 years, it returns about 5000000, 650000 and 80000
-documents respectively, including articles, books, conference papers etc.
+Concerns about digital privacy have been growing \cite{emami2019exploring, park2022personal, zhang2022peer}
+in the last few years, especially after the Anonymous decentralized hacker
+group cyber attacks, WikiLeaks and Snowden's leaked top secret documents
+from United State's National Security Agency. These concerns can be noted
+with the increase of written literature on the subject, when searching for
+terms like ``privacy'', ``online privacy'', ``digital privacy'' in Google
+Scholar, ACM Digital Library or Science Direct it can be seen that, in the
+last 5 years, it returns about 5000000, 650000 and 80000 documents respectively,
+including articles, books, conference papers etc.
 
-Most research has been done with focus on the web, while privacy in IoT
-systems has not been explored as much, although IoT systems have been
-growing each year, this creates new ways to interact,
-collect and analyze data.
-Because it already exists a healthy amount of research out there
-focusing on privacy on the web and not on IoT privacy, it is a much more
-fertile ground to explore the theme of privacy in the context of
-Internet of Things devices.
+Most research has been done with focus on the web, while privacy in IoT systems
+has not been explored as much, although IoT systems have been growing each
+year, this creates new ways to interact, collect and analyze data. Because
+it already exists a healthy amount of research out there focusing on privacy
+on the web and not on IoT privacy, it is a much more fertile ground to explore
+the theme of privacy in the context of Internet of Things.
 
 IoT is a term that began being used in the 90's, a connection can be drawn
-with Mark Weiser's article on ubiquitous computing \cite{weiser1991computer} and the rise
-of devices of various sizes that communicate with each other to do
-various (small) tasks, that make Weiser's idea a reality. These devices are
-used in various applications, beginning at home \cite{marikyan2019systematic} with thermostats,
-fridges, microwaves, etc, in smart cars \cite{arena2020overview}, in the education system \cite{al2020survey},
-in our clothes and our watches \cite{niknejad2020comprehensive} and even into outer space \cite{AkyildizInternet}.
-IoT resources may include IoT equipment (like smart home assistants and
-autonomous vehicles), IoT services (like video analytics services linked to
-smart cameras and indoor position tracking systems), or IoT apps
-(like smart TV remote apps) that track and use information about us.
-The first use of the term \textit{Internet of Things} was in 1999 by Kevin Ashton \cite{KevinThat},
-executive director of the Auto-ID Center of MIT, during a presentation for Procter \& Gamble.
+with Mark Weiser's article on ubiquitous computing \cite{weiser1991computer}
+and the rise of devices of various sizes that communicate with each other to
+do various (small) tasks, that make Weiser's idea a reality. These devices are
+used in various applications, beginning at home \cite{marikyan2019systematic}
+with thermostats, fridges, microwaves, etc, in smart cars \cite{arena2020overview},
+in the education system \cite{al2020survey}, in our clothes and our watches \cite{niknejad2020comprehensive}
+and even into outer space \cite{AkyildizInternet}. IoT resources may include IoT
+equipment (like smart home assistants and autonomous vehicles), IoT services
+(like video analytics services linked to smart cameras and indoor position tracking
+systems), or IoT apps (like smart TV remote apps) that track and use information
+about us. The first use of the term \textit{Internet of Things} was in 1999 by
+Kevin Ashton \cite{KevinThat}, executive director of the Auto-ID Center of MIT,
+during a presentation for Procter \& Gamble.
 
-The Internet of Things can be defined as: ``An open and
-comprehensive network of intelligent objects that have the capacity to auto-organize,
-share information, data and resources, reacting and acting in face of situations
-and changes in the environment'' \cite{madakam2015internet}.
+The Internet of Things can be defined as: ``An open and comprehensive network
+of intelligent objects that have the capacity to auto-organize, share information,
+data and resources, reacting and acting in face of situations and changes in
+the environment'' \cite{madakam2015internet}.
 
-IoT is one of the fastest growing technologies \cite{MohammadState},
-it is predicted that it will grow into the trillions of devices by 2030 \cite{SarawiInternet},
-and with this expansion new security vulnerabilities and data gathering dangers appear, the lack
-of security in these devices makes them ideal targets for privacy violations and inadequate
-customer disclosure of device capabilities and data practices aggravates
-privacy and security issues.
+IoT is one of the fastest growing technologies \cite{MohammadState}, it is predicted
+that it will grow into the trillions of devices by 2030 \cite{SarawiInternet},
+and with this expansion new security vulnerabilities and data gathering dangers
+appear, the lack of security in these devices makes them ideal targets for privacy
+violations and inadequate customer disclosure of device capabilities and data
+practices aggravates privacy and security issues.
 
 Privacy in IoT systems in not seen as a crucial factor in development \cite{alhirabi2021security}.
-Specific standards for privacy options have been imposed by
-data privacy regulations including the General Data Protection Regulation (GDPR)
-and California Consumer Privacy Act (CCPA), but even these regulations have
-been criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022deficient, green2022flaws, byun2019privacy}.
+Specific standards for privacy options have been imposed by data privacy regulations
+including the General Data Protection Regulation (GDPR) and California Consumer
+Privacy Act (CCPA), but even these regulations have been criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022deficient, green2022flaws, byun2019privacy}.
 
 \section{Literature review}
 
-In this section the existing literature is discussed, the chosen literature
-is based on the following research questions:
+In this section the existing literature is discussed, the chosen literature is
+based on the following research questions:
 
 Q1: What are the tools available related to IoT that empower users to protect
 their privacy rights?
@@ -145,132 +145,128 @@ their privacy rights?
 Q2: What issues are prevalent in IoT that make it difficult to address privacy
 and security problems.
 
-Some relevant topics are discussed before analyzing the proposals that the
-literature regards as solutions to resolve privacy issues in IoT.
+Some relevant topics are discussed before analyzing the proposals that the literature
+regards as solutions to resolve privacy issues in IoT.
 
 \subsection{Privacy Paradox}
 
-The use of a variety of digital devices have numerous advantages, but
-they also bring with them the ubiquity of data capturing equipment, therefore,
-it is understandable why the majority of online users have serious concerns
-about the privacy of their personal data. However, the opinions expressed
-are starkly at odds with the reality, according to Thomson et al. \cite{DarrenState}
-report on the state of privacy, that just one in four European users
-read the terms and conditions in their entirety prior to making an online
-purchase or subscribing to a service, 59\% admitted to only quickly scanning
-the terms and conditions before completing a purchase, while 14\% admitted
-to never reading them at all, 30\% of the respondents would even swap
-their email address to win a reward, or entry into a raffle, while 17\% would
-do so to get an app and 30\% would do it for money.
+The use of a variety of digital devices have numerous advantages, but they also
+bring with them the ubiquity of data capturing equipment, therefore, it is
+understandable why the majority of online users have serious concerns about
+the privacy of their personal data. However, the opinions expressed are starkly
+at odds with the reality, according to Thomson et al. \cite{DarrenState} report
+on the state of privacy, that just one in four European users read the terms
+and conditions in their entirety prior to making an online purchase or subscribing
+to a service, 59\% admitted to only quickly scanning the terms and conditions before
+completing a purchase, while 14\% admitted to never reading them at all, 30\% of
+the respondents would even swap their email address to win a reward, or entry
+into a raffle, while 17\% would do so to get an app and 30\% would do it for money.
 
-This is what is called a privacy paradox, there have been multiple papers
-written on this subject \cite{solove2021myth, WilliamsPrivacy, lee2021investigating, goad2021privacy, gerber2018explaining},
+This is what is called a privacy paradox, there have been multiple papers written
+on this subject \cite{solove2021myth, WilliamsPrivacy, lee2021investigating, goad2021privacy, gerber2018explaining},
 some papers attempt a theoretical explanation while others attempt an empirical one.
 There has been very different interpretations or explanations of this paradox,
-a few papers \cite{wilson2012unpacking, warshaw2015can, lee2015privacy} apply the theoretical concept of the \textit{homo economicus} \cite{zak2008moral},
-which is the representation of people as beings who constantly act in a way
-that is logical and self-interested, not worrying about morality or ethics, and
-who do so to the best of their ability, to the context of privacy.
-Different cognitive biases and heuristics can influence how consumers make decisions,
-according to several studies on consumer choice behavior \cite{acquisti2007can, knijnenburg2013dimensionality, wakefield2013influence, flender2012type}.
-According to several articles \cite{dienlin2015privacy, baek2014solving}, this paradox might be explained by the
-fact that some people have genuinely experienced online privacy assaults
-and that most privacy views are therefore based on heuristics or secondhand accounts.
-Taddicken's study \cite{taddicken2014privacy} argues that peer pressure is the reason people have this contradictory behavior,
-Norberg et al. \cite{norberg2007privacy} explains this paradox by suggesting that while perceived
-risk affects reported attitudes and behavioral intentions, trust has a direct
-impact on privacy behavior, while others \cite{flender2012type, kokolakis2017privacy} rely on quantum theory.
-Brandimarte et al. \cite{brandimarte2013misplaced} have explored the idea that when it comes to their
-data privacy, users have an \textit{illusion of control}.
+a few papers \cite{wilson2012unpacking, warshaw2015can, lee2015privacy} apply the
+theoretical concept of the \textit{homo economicus} \cite{zak2008moral}, which is
+the representation of people as beings who constantly act in a way that is logical
+and self-interested, not worrying about morality or ethics, and who do so to the
+best of their ability, to the context of privacy. Different cognitive biases and
+heuristics can influence how consumers make decisions, according to several studies
+on consumer choice behavior \cite{acquisti2007can, knijnenburg2013dimensionality, wakefield2013influence, flender2012type}.
+According to several articles \cite{dienlin2015privacy, baek2014solving}, this
+paradox might be explained by the fact that some people have genuinely experienced
+online privacy assaults and that most privacy views are therefore based on heuristics
+or secondhand accounts. Taddicken's study \cite{taddicken2014privacy} argues that
+peer pressure is the reason people have this contradictory behavior, Norberg et al. \cite{norberg2007privacy}
+explains this paradox by suggesting that while perceived risk affects reported
+attitudes and behavioral intentions, trust has a direct impact on privacy behavior,
+while others \cite{flender2012type, kokolakis2017privacy} rely on quantum theory.
+Brandimarte et al. \cite{brandimarte2013misplaced} have explored the idea that when
+it comes to their data privacy, users have an \textit{illusion of control}.
 
 This paradox has been proven to be vitiated by a number of empirical studies \cite{dienlin2015privacy, xie2019consumers, SCHWAIG20131, sannon2018privacy},
-online privacy practices are founded on separate privacy mindsets and so they are not inherently paradoxical.
+online privacy practices are founded on separate privacy mindsets and so they are
+not inherently paradoxical.
 
 \subsection{Literature overview}
 
 There have been a number of systematic literature reviews (SLR) \cite{Gupta2022Privacy, Kuhtreiber2022survey, sicari2015security, LinSurvey}
-and systematic mapping reviews \cite{porras2018security, ahmed2019aspects}
-done to study privacy and security issues in IoT.
+and systematic mapping reviews \cite{porras2018security, ahmed2019aspects} done to
+study privacy and security issues in IoT.
 
-In Gupta and Ghanavati's \cite{Gupta2022Privacy} SLR,
-the authors review papers with methodologies and techniques that identify
-privacy risks or notify users about these risks. They divide the literature
-into the following categories: `Ontological Modeling and Semantic-based Approaches',
-`Data-Driven Approaches', `Source Code Analysis-based Approaches', `User Studies
-and Survey-based Approaches', `Blockchain-based Approaches' and `Architectural
-and Framework-based Approaches'. They then examine current literature
-on these three prerequisites. The findings show that: most works concentrate
-on single IoT devices when addressing privacy threats; When analyzing
-privacy issues, key privacy factors such as data reduction and data
-aggregation are overlooked; existing studies ignored the sensitivity of
-the obtained information; most useful studies did not include a diverse
-range of users when assessing privacy problems; no work has been done to
-discover compliance difficulties between an IoT application and different
-privacy rules; and current research does not place a premium on providing
+In Gupta and Ghanavati's \cite{Gupta2022Privacy} SLR, the authors review papers with
+methodologies and techniques that identify privacy risks or notify users about these
+risks. They divide the literature into the following categories: `Ontological Modeling
+and Semantic-based Approaches', `Data-Driven Approaches', `Source Code Analysis-based
+Approaches', `User Studies and Survey-based Approaches', `Blockchain-based Approaches'
+and `Architectural and Framework-based Approaches'. They then examine current literature
+on these three prerequisites. The findings show that: most works concentrate on single
+IoT devices when addressing privacy threats; When analyzing privacy issues, key
+privacy factors such as data reduction and data aggregation are overlooked; existing
+studies ignored the sensitivity of the obtained information; most useful studies
+did not include a diverse range of users when assessing privacy problems; no work
+has been done to discover compliance difficulties between an IoT application and
+different privacy rules; and current research does not place a premium on providing
 consumers with real-time privacy notices. However, this SLR has the following
-limitations: the authors only chose articles and not thesis or books and
-from the selected papers, only the ones written in english were considered.
+limitations: the authors only chose articles and not thesis or books and from the
+selected papers, only the ones written in english were considered.
 
 \textbf{\color{red}rephrase the next three paragraphs}
 
-Kühtreiber et al. \cite{Kuhtreiber2022survey} conduct a survey of the
-frameworks and tools created for developers, particularly in the case of IoT,
-and they conclude that present solutions are difficult to use, only
-effective in specific circumstances, and insufficient to address the
-privacy problems inherent in IoT development. This study lacks a comprehensive
-gap analysis of the chosen literature and it does not specify the research
-questions that define the relevancy of the selected papers.
+Kühtreiber et al. \cite{Kuhtreiber2022survey} conduct a survey of the frameworks
+and tools created for developers, particularly in the case of IoT, and they conclude
+that present solutions are difficult to use, only effective in specific circumstances,
+and insufficient to address the privacy problems inherent in IoT development. This
+study lacks a comprehensive gap analysis of the chosen literature and it does not
+specify the research questions that define the relevancy of the selected papers.
 
-Sicari et al. \cite{sicari2015security} conduct an analysis of recent studies and active initiatives
-that emphasize IoT privacy and security solutions. They begin by outlining
-the needs for IoT privacy and security, including access control, confidentiality,
-and authentication. They then review the literature that already exists in
-relation to these three needs. They concluded that IoT privacy
-concerns are only partially investigated and need further attention.
-The study, however, has its shortcomings, the analysis of
-prior research focuses primarily on security needs and leaves out privacy
-considerations, they don't perform a thorough gap analysis
-on the publications that were examined, and they don't provide
-a thorough summary of the future research topics in the field of IoT
-privacy that need more attention.
+Sicari et al. \cite{sicari2015security} conduct an analysis of recent studies and
+active initiatives that emphasize IoT privacy and security solutions. They begin
+by outlining the needs for IoT privacy and security, including access control,
+confidentiality, and authentication. They then review the literature that already
+exists in relation to these three needs. They concluded that IoT privacy concerns
+are only partially investigated and need further attention. The study, however,
+has its shortcomings, the analysis of prior research focuses primarily on security
+needs and leaves out privacy considerations, they don't perform a thorough gap
+analysis on the publications that were examined, and they don't provide a thorough
+summary of the future research topics in the field of IoT privacy that need more
+attention.
 
-Lin et al. \cite{LinSurvey} undertake a literature review to find security and privacy
-concerns in the network layer, perception layer, and application
-layer, the three IoT architectural layers. Confidentiality, integrity,
-availability, identity and authentication, privacy, and trust are
-the first six essential security properties that the authors list
-for these levels. Then, for each of the three tiers, they examine
-a number of security attacks. They conclude by providing a brief
-overview of a number of privacy-preserving data procedures,
-including data gathering, data aggregations, and data analysis stages.
-They do, however, primarily focus on the security elements of the
-IoT and see privacy as one of the most important security
-characteristics, as was already established. Additionally, a
-thorough gap analysis to determine the shortcomings of the previous
-works is not done in the research.
+Lin et al. \cite{LinSurvey} undertake a literature review to find security and
+privacy concerns in the network layer, perception layer, and application layer,
+the three IoT architectural layers. Confidentiality, integrity, availability,
+identity and authentication, privacy, and trust are the first six essential security
+properties that the authors list for these levels. Then, for each of the three
+tiers, they examine a number of security attacks. They conclude by providing a
+brief overview of a number of privacy-preserving data procedures, including data
+gathering, data aggregations, and data analysis stages. They do, however, primarily
+focus on the security elements of the IoT and see privacy as one of the most important
+security characteristics, as was already established. Additionally, a thorough gap
+analysis to determine the shortcomings of the previous works is not done in the
+research.
 
 \subsection{Differential Privacy}
 
-The notion of differential privacy, according to Michael Kearns, is based
-on three important principles. The first being that "differential privacy
-requires that adding or removing the data record of a single individual
-not change the probability of any outcome by much". The second principle
-being that "no outside observer can learn very much about any individual
-because of that person's specific data". The third important principle being
-that "for every individual in the dataset, and for any observer no matter
-what their initial beliefs about the world were, after observing the output
-of a differentially private computation, their posterior belief about
-anything is close to what it would have been had they observed the output
-of the same computation run without the individual's data."
+The notion of differential privacy, according to Michael Kearns, is based on
+three important principles. The first being that "differential privacy requires
+that adding or removing the data record of a single individual not change the
+probability of any outcome by much". The second principle being that "no outside
+observer can learn very much about any individual because of that person's
+specific data". The third important principle being that "for every individual
+in the dataset, and for any observer no matter what their initial beliefs about
+the world were, after observing the output of a differentially private computation,
+their posterior belief about anything is close to what it would have been had
+they observed the output of the same computation run without the individual's
+data."
 
 Differential privacy has the potential to significantly increase individual
-privacy protection, by purposefully adding noise into a dataset,
-it gives plausible deniability to any individual who may have had their
-data exploited while still being able to calculate statistics with relatively
-high precision. Although algorithms that deal with notions of fairness,
-ethics, and privacy are hard to create because of the subjectivity of these
-concepts and differential privacy algorithms are no different they can still
-help in regards to addressing technology's inherent moral quandaries.
+privacy protection, by purposefully adding noise into a dataset, it gives
+plausible deniability to any individual who may have had their data exploited
+while still being able to calculate statistics with relatively high precision.
+Although algorithms that deal with notions of fairness, ethics, and privacy
+are hard to create because of the subjectivity of these concepts and differential
+privacy algorithms are no different they can still help in regards to addressing
+technology's inherent moral quandaries.
 
 % Differential privacy is an important component of machine learning algorithms
 % and massive datasets, and it has the potential to significantly increase
@@ -308,23 +304,21 @@ utility losses in these methods and possible approaches to improve data utility.
 
 \subsubsection{Creating new ways for user awareness}
 
-There has been some work done to determine the users awareness of
-their actions online regarding their privacy. Skirpan et al. \cite{SkirpanPrivacy} built
-an interactive theatre experience, this was created to try to prove that
-a simulated experience with a credible privacy problem may encourage
-people to take action before actually encountering a catastrophe.
-The plot of the play consist in a fledgling tech company that unveiled
-its revolutionary AI technology while dealing with a company whistleblower
-and an untimely zero-day hack on their system. The public is able
-to interact with the actors and influence how the story plays out.
-Audiences and actors were given the chance to try on roles, behaviors,
-and opinions that they would not normally have access to in ordinary life.
-The authors had interviews and surveys done after the plays with
-audience members however they only did interviews halfway through production
-and only a small fraction of the audience actually participated in this
-data collection, they also noted that after contacting people months
-after the interviews that they did not really changed their behaviour
-regarding their privacy rights.
+There has been some work done to determine the users awareness of their actions
+online regarding their privacy. Skirpan et al. \cite{SkirpanPrivacy} built an
+interactive theatre experience, this was created to try to prove that a simulated
+experience with a credible privacy problem may encourage people to take action
+before actually encountering a catastrophe. The plot of the play consist in a
+fledgling tech company that unveiled its revolutionary AI technology while
+dealing with a company whistleblower and an untimely zero-day hack on their system.
+The public is able to interact with the actors and influence how the story plays
+out. Audiences and actors were given the chance to try on roles, behaviors, and
+opinions that they would not normally have access to in ordinary life. The authors
+had interviews and surveys done after the plays with audience members however they
+only did interviews halfway through production and only a small fraction of the
+audience actually participated in this data collection, they also noted that
+after contacting people months after the interviews that they did not really
+changed their behaviour regarding their privacy rights.
 % Skirpan et al. \cite{SkirpanPrivacy} built
 % an interactive theatre experience, this was proposed in order to expose privacy
 % violations in companies, particularly in the capitalistic world where profit
@@ -356,42 +350,43 @@ regarding their privacy rights.
 
 \subsubsection{Legislation}
 
-Some papers seek to improve legislation \cite{WEBER2015618, FabianoInternet} because
-otherwise, in their view, privacy rights won't be respected if they are not enforceable
-legally, they defend that without the express agreement of the individual
-concerned, private information obtained by IoT devices must not be retained
-or processed in any form, and necessary procedures must be taken to guarantee
-that the data collected is not that of an unrelated individual.
+Some papers seek to improve legislation \cite{WEBER2015618, FabianoInternet}
+because otherwise, in their view, privacy rights won't be respected if they
+are not enforceable legally, they defend that without the express agreement
+of the individual concerned, private information obtained by IoT devices must
+not be retained or processed in any form, and necessary procedures must be
+taken to guarantee that the data collected is not that of an unrelated individual.
 But better protection laws for the user would also create opposition from
-most companies that want to extract as much private data from their
-users without (m)any restrictions in order to increase their profit margins.
+most companies that want to extract as much private data from their users
+without (m)any restrictions in order to increase their profit margins.
 
 \subsubsection{Privacy through security}
 
-Sun et al. \cite{SunSecure} design a lightweight communication strategy for a
-remote-control system, employing two types of Virtual-Spaces to achieve the aim of
-identity announcement and data exchange. They constructed a prototype system of the
-scheme and tested it on the Freenet, demonstrating that the method can effectively
-resist the influence of flow analysis on communication anonymity while preserving
-communication data security.
+Sun et al. \cite{SunSecure} design a lightweight communication strategy for
+a remote-control system, employing two types of Virtual-Spaces to achieve the
+aim of identity announcement and data exchange. They constructed a prototype
+system of the scheme and tested it on the Freenet, demonstrating that the method
+can effectively resist the influence of flow analysis on communication anonymity
+while preserving communication data security.
 
 \subsubsection{Architecture / Framework Proposals}
 
-Antunes et al. \cite{AntunesFederated} do a SLR on federated learning in the area of
-healthcare and make an architecture proposal. The technique known as federated learning
-allows for the distributed training of machine learning models using remotely hosted
-datasets without the requirement for data amplification. The fundamental goal of
-the proposed architecture is to allow healthcare institutions that have access to
-sensitive medical information to use it in distributed data analysis and machine
-learning research while ensuring patient confidentiality. Because information
-transmitted among institutions need confidentiality guarantees for learning model
-parameters and analysis results, the architecture can adopt a number of ways based
-on a zero-trust security paradigm \cite{ChenSecurity}. Furthermore, the institutions develop a
-learning algorithm verification system that can store and disseminate manifestos,
-as well as engage in distributed analytic procedures that need unanimous agreement
-from all participants. This study also demonstrates that previous literature implies
-that homomorphic encryption and differential privacy are effective approaches for
-preventing data breaches without incurring prohibitively high computing costs.
+Antunes et al. \cite{AntunesFederated} do a SLR on federated learning in the area
+of healthcare and make an architecture proposal. The technique known as federated
+learning allows for the distributed training of machine learning models using
+remotely hosted datasets without the requirement for data amplification. The
+fundamental goal of the proposed architecture is to allow healthcare institutions
+that have access to sensitive medical information to use it in distributed data
+analysis and machine learning research while ensuring patient confidentiality.
+Because information transmitted among institutions need confidentiality guarantees
+for learning model parameters and analysis results, the architecture can adopt a
+number of ways based on a zero-trust security paradigm \cite{ChenSecurity}.
+Furthermore, the institutions develop a learning algorithm verification system
+that can store and disseminate manifestos, as well as engage in distributed
+analytic procedures that need unanimous agreement from all participants. This
+study also demonstrates that previous literature implies that homomorphic
+encryption and differential privacy are effective approaches for preventing
+data breaches without incurring prohibitively high computing costs.
 % The proposed architecture's main goal is to enable healthcare institutions with access
 % to private medical datasets to employ them in distributed data analysis and machine
 % learning studies without compromising patient confidentiality, as the information that
@@ -404,16 +399,16 @@ preventing data breaches without incurring prohibitively high computing costs.
 % privacy are techniques with substantial results to avoid data leaks without prohibitive
 % computational costs [98].
 
-Opara et al. \cite{opara2022framework} present a system for spotting possible problems with privacy or
-security regulations in the early stages of development, this approach is
-intended at developers. The paper proposes a domain-specific ontology for
-modeling IoT security and privacy policies, a notation for representing and
-validating IoT security and privacy policies, a set of guidelines and rules
-for detecting IoT policy errors, and a tool for visually modeling and
-capturing IoT security policies and discovering policy problems. Although
-the framework that is presented is theoretically promising it has not been
-tested in a real environment so the effectiveness can't yet be measured. The
-authors also don't compare their proposal with others already available.
+Opara et al. \cite{opara2022framework} present a system for spotting possible
+problems with privacy or security regulations in the early stages of development,
+this approach is intended at developers. The paper proposes a domain-specific
+ontology for modeling IoT security and privacy policies, a notation for
+representing and validating IoT security and privacy policies, a set of
+guidelines and rules for detecting IoT policy errors, and a tool for visually
+modeling and capturing IoT security policies and discovering policy problems.
+Although the framework that is presented is theoretically promising it has not
+been tested in a real environment so the effectiveness can't yet be measured.
+The authors also don't compare their proposal with others already available.
 
 % Opara et al. \cite{opara2022framework} propose a framework for detecting potential
 % problems with privacy or security policies from the early pre-production stage,
@@ -449,11 +444,11 @@ privacy while also monitoring parking availability. The researchers merged IoT
 sensing with crowdsensing and enhanced it with privacy-preserving methods.
 The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
 and a cryptographic technique based on cryptographic commitments, zero-knowledge
-proofs, and anonymous credentials in crowdsensing. In addition, crowdsourcing was used
-to create a machine learning model for parking recognition in the presence
-of foggy filters. The report included proof-of-concept prototypes such as a
-Raspberry Pi system and a mobile app, as well as an evaluation study of the
-machine learning model and the effects of crowdsourcing.
+proofs, and anonymous credentials in crowdsensing. In addition, crowdsourcing
+was used to create a machine learning model for parking recognition in the
+presence of foggy filters. The report included proof-of-concept prototypes
+such as a Raspberry Pi system and a mobile app, as well as an evaluation study
+of the machine learning model and the effects of crowdsourcing.
 
 % Zhu et al. describe a privacy-preserving hybrid sensor system with a smart parking availability monitoring application. We combined IoT sensing with crowdsensing and augmented it using privacy-protecting approaches. In particular, in IoT sensing, we concealed IoT sensors using physical hazy filters, and in crowdsensing, we used a cryptographic approach based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials. We also used crowdsourcing to build a machine learning model for parking detection under hazy filters. The paper showed proof-of-concept prototypes, including a Raspberry Pi system and a mobile app, as well as an assessment study of the machine learning model and the impacts of crowdsourcing.
 
@@ -470,45 +465,44 @@ machine learning model and the effects of crowdsourcing.
 \subsubsection{Privacy Assistants}
 
 There exists a number of privacy assistants in the market. Privacy assistants
-have the objective of giving the user flexibility in choosing the
-preferred privacy options in available applications, most are used in
-smartphones, very few are made for devices in the internet of things.
+have the objective of giving the user flexibility in choosing the preferred
+privacy options in available applications, most are used in smartphones,
+very few are made for devices in the internet of things.
 
-The Carnegie Mellon University CyLab, which is the university's security and
-privacy research institute, started developing in 2019 an IoT Infrastructure
+The Carnegie Mellon University CyLab, which is the university's security
+and privacy research institute, started developing in 2019 an IoT Infrastructure
 that intended to be free of privacy leaks and software covered by their
-Secure and Private IoT Initiative 2019, this project would fall under their
-main research theme of Trust. In this project they started the design of a
-Personalized Privacy Assistant (PPA) \cite{ColnagoInforming}, this would involve the use of semi-structured
-interviews with 17 participants to examine user perceptions of three hypothetical
-PPA implementations, each of which is potentially more autonomous,
-while outlining the advantages and disadvantages of each implementation.
-The interviews were divided into three sections: exploratory, anchoring and the PPA;
-While the exploratory phase's purpose was to learn about participants' attitudes
-and understanding of IoT, the anchoring phase aimed to normalize participants' basic
-understanding of how IoT functions. In order to get people to think about potential
-privacy concerns towards the end of the anchoring section, the authors asked
-participants about their opinions on data privacy. In the PPA section, it was proposed
-the idea of a PPA for IoT as a potential future project. The authors clarified that
-the PPA could distinguish between active data requests such as a gadget asking
-biometric information from the user's health tracker and passive data collection
-such as a smart device with a microphone that could record people's utterances
-while they were nearby. The Notification, Recommendation, and Auto implementations
-of an IoT PPA were the three that the authors and attendees discussed.
-Notification PPAs can determine which adjacent devices are requesting data
-and alert users to those devices' presence and requests so that users can
-approve or reject each request.
-Building on notification PPAs, recommendation PPAs offer consumers advice
-on how to share their data based on their preferences.
-The user's data sharing decisions would be made by auto PPAs. This would
-lessen the cognitive load on consumers but also take away their ability to
-influence the process.
-They found that The participants' attitudes regarding the various implementations
-were generally favorable, although they also voiced worries, which varied
-depending on the degree of automation. Given the divergent motivations of
-participants some desired increased control, while others wished to avoid
-being overtaken by notifications and the lack of agreement regarding the
-optimal PPA implementation.
+Secure and Private IoT Initiative 2019, this project would fall under
+their main research theme of Trust. In this project they started the design
+of a Personalized Privacy Assistant (PPA) \cite{ColnagoInforming}, this
+would involve the use of semi-structured interviews with 17 participants
+to examine user perceptions of three hypothetical PPA implementations,
+each of which is potentially more autonomous, while outlining the advantages
+and disadvantages of each implementation. The interviews were divided into
+three sections: exploratory, anchoring and the PPA; While the exploratory
+phase's purpose was to learn about participants' attitudes and understanding
+of IoT, the anchoring phase aimed to normalize participants' basic understanding
+of how IoT functions. In order to get people to think about potential privacy
+concerns towards the end of the anchoring section, the authors asked participants
+about their opinions on data privacy. In the PPA section, it was proposed
+the idea of a PPA for IoT as a potential future project. The authors clarified
+that the PPA could distinguish between active data requests such as a gadget
+asking biometric information from the user's health tracker and passive data
+collection such as a smart device with a microphone that could record people's
+utterances while they were nearby. The Notification, Recommendation, and Auto
+implementations of an IoT PPA were the three that the authors and attendees
+discussed. Notification PPAs can determine which adjacent devices are requesting
+data and alert users to those devices' presence and requests so that users
+can approve or reject each request. Building on notification PPAs, recommendation
+PPAs offer consumers advice on how to share their data based on their preferences.
+The user's data sharing decisions would be made by auto PPAs. This would lessen
+the cognitive load on consumers but also take away their ability to influence
+the process. They found that The participants' attitudes regarding the various
+implementations were generally favorable, although they also voiced worries,
+which varied depending on the degree of automation. Given the divergent
+motivations of participants some desired increased control, while others
+wished to avoid being overtaken by notifications and the lack of agreement
+regarding the optimal PPA implementation.
 
 After the design phase, the institute implemented a privacy assistant (PA) \cite{FengDesign},
 the authors called it IoT Assistant, because the predominant approach of
@@ -516,58 +510,62 @@ the authors called it IoT Assistant, because the predominant approach of
 also fall into this approach, but because many systems implement notice as
 a form of consent, without sometimes offering choices to the end user, they
 also wanted this work to provide a conceptual framework that views user-centered
-privacy choice as well as a taxonomy for practitioners to use when designing meaningful
-privacy choices for their systems. The authors define
-meaningful privacy choices as "the capabilities provided by digital
-systems for users to control different data practices over their personal data", They
-extend the notion of privacy choices with five facets: effectiveness (the opportunity to
-establish privacy preferences that precisely and completely match the data
-collection and use methods that a user is okay with), efficiency
-(the capacity to specify these options with the least amount of effort and time),
-user awareness (where significant privacy options should be prominently and clearly
-communicated to users), comprehensiveness (users should understand their options,
-how they affect the gathering and potential use of their data, as well as what
-conclusions might be drawn from this data and the potential repercussions of
-these conclusions) and neutrality (meaningful privacy decisions should not be
-subject to manipulation or bias). The IoT Assistant offers four privacy settings, giving end users
-a variety of alternatives to better suit their varied privacy preferences and as a result,
-privacy options are more effective in the IoT environment. The IoT Assistant acts as a
-centralized privacy choice platform by implementing various privacy options, allowing
-consumers to more effectively govern their data privacy in IoT. The three IoT system
-discovery modes that the IoT Assistant supports are QR codes, push notifications,
-and location-based map interfaces. These discovery tools are probably going to make
-users more aware of the installed IoT devices and the privacy options they have.
-Additionally, the united viewpoint of the integrated notification and option in the
-the IoT Assistant gives succinct yet thorough information regarding IoT data practices to help users
-better understand the implications of their privacy choices. Additionally, the authors
-work to implement the integrated notice and option in the IoT Assistant without bias or framing,
-attempting to offer consumers a neutral space to execute their privacy choices.
-Although the authors consider the IoT Assistant to be a significant step towards
-``meaningful privacy options'' in IoT, this assistant still has many issues such as
-this application is still in the early stages of it's existence, and because this was
-created in 2020 and we are in 2022 there was not much growth. Maybe the main reason
-this application was not able to be developed further is that he application itself
-serves to show the user the data that is already in the IoT infrastructure that was created before,
-and as such it is not capable of identifying new IoT devices without the end users themselves
-create on the infrastructure's main webpage \cite{DasPersonalized} a new entry for the device in question that the
-user wants to interact with. Another reason that cripples this application and many like
-it that want to provide better privacy in IoT systems is that many systems don't
-offer any type of privacy choices to the end user or to other users that are not
-the intended end users but the devices are still collecting data about.
+privacy choice as well as a taxonomy for practitioners to use when designing
+meaningful privacy choices for their systems. The authors define meaningful
+privacy choices as "the capabilities provided by digital systems for users to
+control different data practices over their personal data", They extend the
+notion of privacy choices with five facets: effectiveness (the opportunity
+to establish privacy preferences that precisely and completely match the data
+collection and use methods that a user is okay with), efficiency (the capacity
+to specify these options with the least amount of effort and time), user awareness
+(where significant privacy options should be prominently and clearly communicated
+to users), comprehensiveness (users should understand their options, how they
+affect the gathering and potential use of their data, as well as what conclusions
+might be drawn from this data and the potential repercussions of these conclusions)
+and neutrality (meaningful privacy decisions should not be subject to manipulation
+or bias). The IoT Assistant offers four privacy settings, giving end users a
+variety of alternatives to better suit their varied privacy preferences and
+as a result, privacy options are more effective in the IoT environment. The
+IoT Assistant acts as a centralized privacy choice platform by implementing
+various privacy options, allowing consumers to more effectively govern their
+data privacy in IoT. The three IoT system discovery modes that the IoT Assistant
+supports are QR codes, push notifications, and location-based map interfaces.
+These discovery tools are probably going to make users more aware of the installed
+IoT devices and the privacy options they have. Additionally, the united viewpoint
+of the integrated notification and option in the the IoT Assistant gives succinct
+yet thorough information regarding IoT data practices to help users better
+understand the implications of their privacy choices. Additionally, the authors
+work to implement the integrated notice and option in the IoT Assistant without
+bias or framing, attempting to offer consumers a neutral space to execute their
+privacy choices. Although the authors consider the IoT Assistant to be a significant
+step towards ``meaningful privacy options'' in IoT, this assistant still has many
+issues such as this application is still in the early stages of it's existence,
+and because this was created in 2020 and we are in 2022 there was not much growth.
+Maybe the main reason this application was not able to be developed further is
+that the application itself serves to show the user the data that is already in
+the IoT infrastructure that was created before, and as such it is not capable of
+identifying new IoT devices without the end users themselves create on the
+infrastructure's main webpage \cite{DasPersonalized} a new entry for the device
+in question that the user wants to interact with. Another reason that cripples this
+application and many like it that want to provide better privacy in IoT systems is
+that many systems don't offer any type of privacy choices to the end user or to
+other users that are not the intended end users but the devices are still collecting
+data about.
 
-The IoT infrastructure that was developed \cite{DasPersonalized} is built on an open, distributed design
-that allows for the deployment and management of IoT resources to be carried out
-by any number of actors. Part of this infrastructure is the Internet of Things Resource Registry,
-it is a web platform that enables resource owners to declare not only the place where a
-resource is deployed but also data practices like the reason(s) for a particular data collecting
-process, the level of detail in the data being gathered, retention, the recipients of the data,
-and more. Additionally, it discloses any user-configurable privacy settings that might be
+The IoT infrastructure that was developed \cite{DasPersonalized} is built on an open,
+distributed design that allows for the deployment and management of IoT resources
+to be carried out by any number of actors. Part of this infrastructure is the
+Internet of Things Resource Registry, it is a web platform that enables resource
+owners to declare not only the place where a resource is deployed but also data
+practices like the reason(s) for a particular data collecting process, the level of
+detail in the data being gathered, retention, the recipients of the data, and more.
+Additionally, it discloses any user-configurable privacy settings that might be
 connected to a particular resource.
 
-A similar project is LTEye \cite{KumarLTE} that is an open
-platform that provides granular temporal and spatial analytics on the performance of LTE
-radios without access to private user data or provider assistance. Despite the presence of
-multipath, LTEye uses a revolutionary extension of synthetic aperture radar to communication
+A similar project is LTEye \cite{KumarLTE} that is an open platform that provides
+granular temporal and spatial analytics on the performance of LTE radios without
+access to private user data or provider assistance. Despite the presence of multipath,
+LTEye uses a revolutionary extension of synthetic aperture radar to communication
 signals in order to precisely pinpoint mobile users.
 % \subsection{User Awareness}\label{AA}
 % There has been some work done to determine the users awareness of
@@ -595,60 +593,60 @@ signals in order to precisely pinpoint mobile users.
 \section{Challenges}
 
 IoT is a composed of a complex web of architectures, applications and technologies.
-In terms of architectures, it can be decomposed in three layers: the perception layer,
-the network layer and the application or business layer.
+In terms of architectures, it can be decomposed in three layers: the perception
+layer, the network layer and the application or business layer.
 
 \section{Methodology}
 
 It is conducted a systematic literature review of the most relevant papers
-discussing methodologies and techniques for the protection of users' privacy data
-with special focus on IoT systems. For this SLR I considered focusing only
-on papers from the last 12 years, from 2010 until 2022, since papers before then
-become out of date with the evolution of technology. I reviewed 100 (*\textbf{\color{red}number to be adjusted}) papers published
-in top computer science, security, privacy and software engineering outlets.
+discussing methodologies and techniques for the protection of users' privacy
+data with special focus on IoT systems. For this SLR I considered focusing
+only on papers from the last 12 years, from 2010 until 2022, since papers before
+then become out of date with the evolution of technology. I reviewed 100
+(*\textbf{\color{red}number to be adjusted}) papers published in top computer
+science, security, privacy and software engineering outlets.
 
 I followed Keshav's three-pass approach \cite{KeshavHow} when choosing which
-papers to read fully and which ones to ignore, first I would read the title, abstract,
-introduction and conclusion and briefly skim the rest of the paper and then
-decide if it was worth reading any further, the focal point in this phase was
-answering the following question: does the paper present a new methodology or
-interesting angle to tackle users' privacy concerns? Only then the document would
-be read in it's entirety while ignoring any tables, figures, images or graphs.
-If the paper failed to present any interesting idea, approach, or
-technique it would be discarded, but if not, it would be read carefully from
-the beginning again in order to fully understand what it presents.
+papers to read fully and which ones to ignore, first I would read the title,
+abstract, introduction and conclusion and briefly skim the rest of the paper
+and then decide if it was worth reading any further, the focal point in this
+phase was answering the following question: does the paper present a new
+methodology or interesting angle to tackle users' privacy concerns? Only then
+the document would be read in it's entirety while ignoring any tables, figures,
+images or graphs. If the paper failed to present any interesting idea, approach,
+or technique it would be discarded, but if not, it would be read carefully
+from the beginning again in order to fully understand what it presents.
 
-The proposed methodology is composed of two phases, the first phase consists of
-making a study on the region's general concern with their privacy when
-using and interacting with IoT devices, their knowledge of privacy rights, what they do to
-protect their privacy rights. One one side the objective of this study
-consist in demystifying the privacy paradox in the region and gather
-information about their idea to solve this problem with respect
-to IoT devices.
-The second phase consists in doing an application that can detect IoT devices
-nearby the user with at least a 10 meters radius. The application should
-do the following when detecting a device:
+The proposed methodology is composed of two phases, the first phase consists
+of making a study on the region's general concern with their privacy when using
+and interacting with IoT devices, their knowledge of privacy rights, what they
+do to protect their privacy rights. One one side the objective of this study
+consist in demystifying the privacy paradox in the region and gather information
+about their idea to solve this problem with respect to IoT devices. The second
+phase consists in doing an application that can detect IoT devices nearby the
+user with at least a 10 meters radius. The application should do the following
+when detecting a device:
 1. it should show some information about the device;
 2. it should categorize the device;
 3. it should provide the user with privacy options, if the device allows the
 user to decline data harvesting.
 This application at first sight might appear to be a mere privacy assistant but
-it's not, because IoT assistants merely choose what privacy options
-the user first sets and maintains it for every other application that the user
-might use. The proposed app doesn't have the objective to conform to the
-user's preferred privacy choices, it merely informs the user about nearby IoT
-devices and can provide the user with privacy options. But the main objective
-is creating awareness in individuals about the various devices that are around
-and make the user questions their choices.
+it's not, because IoT assistants merely choose what privacy options the user
+first sets and maintains it for every other application that the user might use.
+The proposed app doesn't have the objective to conform to the user's preferred
+privacy choices, it merely informs the user about nearby IoT devices and can
+provide the user with privacy options. But the main objective is creating
+awareness in individuals about the various devices that are around and make the
+user questions their choices.
 
 \section{Study}
 
 This study was done to try to understand people's perception of IoT and their
-privacy practices online. It was partially based in a study done in the Philippines by the
-government in the context of their privacy act of 2012, this was the second survey done
-on the population.
-This survey was done through the internet, it was created in google forms, this way it
-is guaranteed to reach most people in the country.
+privacy practices online. It was partially based in a study done in the Philippines
+by the government in the context of their privacy act of 2012, this was the second
+survey done on the population. This survey was done through the internet, it
+was created in google forms, this way it is guaranteed to reach most people in
+the country.
 
 \section{Application}
 
