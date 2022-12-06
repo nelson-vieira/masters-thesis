@@ -247,25 +247,25 @@ research.
 
 \subsection{Differential Privacy}
 
-The notion of differential privacy, according to Michael Kearns, is based on
-three important principles. The first being that "differential privacy requires
+The notion of differential privacy, according to Michael Kearns \cite{kearns2019ethical}, is based on
+three important principles. The first being that ``differential privacy requires
 that adding or removing the data record of a single individual not change the
-probability of any outcome by much". The second principle being that "no outside
+probability of any outcome by much''. The second principle being that ``no outside
 observer can learn very much about any individual because of that person's
-specific data". The third important principle being that "for every individual
+specific data''. The third important principle being that ``for every individual
 in the dataset, and for any observer no matter what their initial beliefs about
 the world were, after observing the output of a differentially private computation,
 their posterior belief about anything is close to what it would have been had
 they observed the output of the same computation run without the individual's
-data."
+data''.
 
 Differential privacy has the potential to significantly increase individual
 privacy protection, by purposefully adding noise into a dataset, it gives
 plausible deniability to any individual who may have had their data exploited
 while still being able to calculate statistics with relatively high precision.
 Although algorithms that deal with notions of fairness, ethics, and privacy
-are hard to create because of the subjectivity of these concepts and differential
-privacy algorithms are no different they can still help in regards to addressing
+are hard to implement because of the subjectivity of these concepts, and differential
+privacy algorithms are no different, they can still help in regards to addressing
 technology's inherent moral quandaries.
 
 % Differential privacy is an important component of machine learning algorithms
@@ -282,6 +282,12 @@ technology's inherent moral quandaries.
 % Differential privacy is a crucial component of machine learning algorithms and massive datasets that has the potential to significantly boost individual privacy protection. By purposefully inserting noise into a dataset, we can give plausible deniability to any individual who may have their data exploited to harm them while still being able to calculate needed statistics with high precision. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing the inherent moral dilemmas of technology.
 % Differential privacy is a critical component of machine learning algorithms and large datasets, with the potential to greatly improve individual privacy protection. We can provide plausible deniability to any individual who may have their data misused to harm them while still being able to calculate essential statistics with high accuracy by purposely injecting noise into a dataset. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing technology's inherent moral dilemmas.
 
+There exist other algorithms that aim to preserve privacy in the same way as
+differential privacy such as Google's box blurring algorithm \cite{} that is
+used in the map's street view, Microsoft's Visor \cite{} which is a video-analytics-as-a-service
+tool, Shokri and Shmatikov's \cite{} system for collaborative deep learning, but
+these algorithms suffer from heavy computational overhead, inner attacks, or
+nonprovable privacy.
 
 \textbf{\color{red}add more articles/content on this subsection}
 
