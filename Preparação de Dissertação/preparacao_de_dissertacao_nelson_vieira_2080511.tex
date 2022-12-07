@@ -136,13 +136,16 @@ Privacy Act (CCPA), but even these regulations have been criticized \cite{peloqu
 
 \section{Literature review}
 
-In this section the existing literature is discussed, the chosen literature is
-based on the following research questions:
+The literature selected for discussion further down in this section is derived
+from the following research questions:
 
-Q1: What are the tools available related to IoT that empower users to protect
+Q2: What are the approaches to privacy issues in IoT that are
+being discussed in the literature?
+
+Q2: What are the tools available related to IoT that empower users to protect
 their privacy rights?
 
-Q2: What issues are prevalent in IoT that make it difficult to address privacy
+Q3: What issues are prevalent in IoT that make it difficult to address privacy
 and security problems.
 
 Some relevant topics are discussed before analyzing the proposals that the literature
@@ -598,15 +601,15 @@ wished to avoid being overtaken by notifications and the lack of agreement
 regarding the optimal PPA implementation.
 
 After the design phase, the institute implemented a privacy assistant (PA) \cite{FengDesign},
-the authors called it IoT Assistant, because the predominant approach of
+the authors called it IoT Assistant. Because the predominant approach of
 "Notice and choice" for data privacy protection, they decided the PA would
 also fall into this approach, but because many systems implement notice as
 a form of consent, without sometimes offering choices to the end user, they
 also wanted this work to provide a conceptual framework that views user-centered
 privacy choice as well as a taxonomy for practitioners to use when designing
 meaningful privacy choices for their systems. The authors define meaningful
-privacy choices as "the capabilities provided by digital systems for users to
-control different data practices over their personal data", They extend the
+privacy choices as ``the capabilities provided by digital systems for users to
+control different data practices over their personal data'', They extend the
 notion of privacy choices with five facets: effectiveness (the opportunity
 to establish privacy preferences that precisely and completely match the data
 collection and use methods that a user is okay with), efficiency (the capacity
@@ -655,7 +658,11 @@ detail in the data being gathered, retention, the recipients of the data, and mo
 Additionally, it discloses any user-configurable privacy settings that might be
 connected to a particular resource.
 
-A similar project is LTEye \cite{KumarLTE} that is an open platform that provides
+\subsubsection{Sniffers}
+
+IoT sniffers are usually used to detect problems in the networks, they rarely
+are used to provide privacy for the users.
+The LTEye project \cite{KumarLTE} is an open platform that provides
 granular temporal and spatial analytics on the performance of LTE radios without
 access to private user data or provider assistance. Despite the presence of multipath,
 LTEye uses a revolutionary extension of synthetic aperture radar to communication
@@ -679,27 +686,124 @@ signals in order to precisely pinpoint mobile users.
 % information that made available online because it had a bad experience before
 % where some private data was exposed that should have not been exposed. All in
 % all the experiment did not prove to be a success in changing people's behavior.
-\\*[11pt]
-\textbf{TODO: from here forward}
 
-
-\section{Challenges}
+\section{Privacy Challenges}
 
 IoT is a composed of a complex web of architectures, applications and
 technologies. In terms of architectures, it can be decomposed in three
 layers: the perception layer, the network layer and the application or
 business layer.
 
-Qu et al. \cite{Qu2018Privacy} highlight several key challenges that we
-still need to overcome. The lack of theoretical foundation limits the
-development of IoT, and so it is necessary to bridge the gap from practice
-to theory with the utilization of multiple tools, for instance, information
-theory, graph theory, machine learning, and convex optimization.
+The perception layer, also known as the sensor layer, interacts with physical
+objects and components via smart devices (RFID, sensors, actuators, and so on).
+Its key objectives are to connect objects to the IoT network and to monitor,
+collect, and analyze status information about these things using deployed
+smart devices. This layer can often be unreliable, for instance with autonomous
+vehicles where they find it hard to read road signs or to predict if certain
+objects are inanimate or not, but this unreliability also brings privacy
+even though the some of the data might be unusable. Noise can also be added in
+this layer to provide extra privacy.
+
+In the network layer there are many competing networks like ZigBee, Z-Wave,
+Bluetooth Low Energy, LoRa, Wi-fi, etc., this layer is fragmented specially
+in regards to wireless networks and that makes it very difficult to create
+an IoT architecture that can use various networks and have the various
+devices communicate with each other, even though interoperability is seen
+as a very important factor in IoT. Some of these networks are open standard
+protocols while others are proprietary and use different protocols of communication,
+use different frequencies, different ranges and different data rates. When
+creating an IoT architecture the designers often think of how to solve
+specific problems and use what is best for the current needs, and the way
+that IoT is fragmented doesn't help in providing progress.
+
+The application layer receives data from the network layer and uses it to
+execute essential services or operations. This layer, for example, can provide
+the storage service to backup incoming data into a database or the analysis
+service to analyze received data in order to predict the future state of
+physical devices. This layer encompasses a wide range of applications,
+each with its own set of requirements. A few examples are smart grids,
+smart transportation, and smart cities.
+
+% In the network layer there are many competing networks like ZigBee, Z-wave
+% Bluetooth Low Energy, LoRa, Wi-fi, etc., this layer is fragmented specially
+% in regards to wireless networks, and that makes it very difficult to create
+% an IoT architecture that can use various networks and have the various
+% devices communicate with each other, even though interoperability is seen
+% as a very important factor in IoT. Some of these networks are free to use
+% while others are proprietary and use different protocols of communication,
+% use different frequencies, different ranges and different data rates. When
+% creating an IoT architecture the designers often think of how to solve
+% specific problems and use what is best for the current needs, and the way
+% that IoT is fragmented doesn't help in providing progress.
+
+% In the network layer there are many competing networks like ZigBee, Z-wave
+% Bluetooth Low Energy, LoRa, Wi-fi, etc., this layer is fragmented specially
+% in regards to wireless networks, and that makes it very difficult to create
+% an IoT architecture that can use various networks and have the various
+% devices communicate with each other, even though interoperability is seen
+% as a very important factor in IoT. Some of these networks are free to use
+% while others are proprietary and use different protocols of communication,
+% use different frequencies, different ranges and different data rates. When
+% creating an IoT architecture the designers often think of how to solve
+% specific problems and use what is best for the current needs, and the way
+% that IoT is fragmented doesn't help in providing progress.
 
 
 
 
 
+
+According to Qu et al. \cite{Qu2018Privacy}, several significant barriers
+remain, including the lack of a theoretical foundation, the trade-off
+optimization between privacy and data value, and system isomerism
+over-complexity. Because there are no mathematical foundations for IoT
+structure design, IoT system designs are planned and executed using empirical
+approaches, which have limitations in IoT development. Scientific theory
+and quantitative analysis must enable trade-off optimization, yet, there
+are multiple parties with diverse characteristics and requirements, making
+this optimization highly challenging. A plethora of standards and protocols
+add to the unneeded complexity of system isomerism. Ensuring effective
+IoT applications while wasting as little resources as feasible implies
+less resources available for privacy protection, however, lightweight
+privacy protection cannot fulfill all of the criteria, and attackers can
+exploit structural information to launch several concurrent attacks.
+\\*[11pt]
+\textbf{TODO: from here forward}
+
+% According to Qu et al. \cite{Qu2018Privacy}, several substantial barriers
+% remain, including the lack of a theoretical framework, the trade-off optimization
+% between privacy and data utility, and system isomerism over-complexity.
+% There are no mathematical foundations for IoT structure design, IoT system
+% designs are planned and performed using empirical ways, the shortcomings of
+% empirical methods limit IoT progress. To begin with, improving IoT performance
+% entirely on human experience is tough. Second, developing privacy protection
+% systems is difficult without theoretical guidance. Third, opponents may
+% utilize this function to increase the success rate of their attacks. Trade-off
+% optimization must be supported by scientific theory and quantitative analysis.
+
+% Trade-off optimization has to be built on
+% scientific theory and quantitative analysis. However, there are multiple
+% parties with dynamic characteristics and diversified requirements, which
+% greatly complicates this optimization. A massive number of standards
+% and protocols facilitate the over-complication of the isomerism of systems.
+% An over-complicated isomerism causes inconveniences to communication and
+% system integration. Ensuring effective IoT applications without wasting
+% too many resources leaves fewer resources for privacy protection. Nevertheless,
+% lightweight privacy protection cannot satisfy all the requirements. In
+% addition, adversaries can utilize the structural information to launch
+% various and continuous attacks.
+
+% Qu et al. highlight several key challenges that still need to be overcome namely the lack of a theoretical foundation, the trade-off optimization between privacy and data utility and system isomerism over-complexity. There are no mathematical foundations for IoT structure design, IoT system architectures are designed and implemented using empirical methods, the disadvantages of empirical methods limit the development of IoT. First, it is not easy to optimize IoT performance simply based on human experience. Second, it is difficult to implement privacy protection mechanisms without theoretical guidance. Third, adversaries can utilize this fact and increase the success rates of attacks. Trade-off optimization has to be built on scientific theory and quantitative analysis. However, there are multiple parties with dynamic characteristics and diversified requirements, which greatly complicates this optimization. Moreover, a lack of theoretical foundation causes non-uniform quantitative measurements and thereby introduces uncertainty into trade-off optimization. A massive number of standards and protocols facilitate the over-complication of the isomerism of systems. An over-complicated isomerism causes inconveniences to communication and system integration. Ensuring effective IoT applications without wasting too many resources leaves fewer resources for privacy protection. Nevertheless, lightweight privacy protection cannot satisfy all the requirements. In addition, adversaries can utilize the structural information to launch various and continuous attacks.
+
+% The lack of theoretical foundation limits the development of IoT, and
+% so it is necessary to bridge the gap from practice to theory with the
+% utilization of multiple tools, like for instance, information theory, graph
+% theory, machine learning, and convex optimization. When it comes to security,
+% lightweight encryption can be used to ensure secure communication and data
+% transmission among multiple and cross-layer networks, lightweight attribute-based
+% encryption can be used to achieve proofs against attacks, especially collusion
+% attacks, in addition to these, lightweight searchable encryption can be
+% utilized to address query-based searchable content problems.
 
 % Since the lack of theoretical foundation limits
 % the development of IoT, it is necessary to bridge
@@ -711,7 +815,6 @@ theory, graph theory, machine learning, and convex optimization.
 % need to utilize multiple tools, for instance, infor-
 % mation theory, graph theory, machine learning,
 % and convex optimization
-
 
 % Leveraging lightweight encryption for ensur-
 % ing secure communication and data transmission
@@ -727,7 +830,6 @@ theory, graph theory, machine learning, and convex optimization.
 % attacks. In addition, lightweight searchable encryp-
 % tion can be utilized to address query-based search-
 % able content problems.
-
 
 % Personalized privacy can provide satisfactory pri-
 % vacy protection while reducing the overall privacy
@@ -752,7 +854,7 @@ theory, graph theory, machine learning, and convex optimization.
 
 % Trade-off denotes the balance between privacy
 % and data/service utility since both of these indi-
-% ces affect a system’s quality of service. Howev-
+% ces affect a system's quality of service. Howev-
 % er, this trade-off is not linear or even polynomial
 % sometimes, which makes it difficult to measure or
 % analyze quantitatively. Normally, we use entropy
@@ -775,7 +877,6 @@ theory, graph theory, machine learning, and convex optimization.
 % machine learning methods to derive the overall
 % Nash equilibrium with long-term protection
 
-
 % New technologies, such as artificial intelligence,
 % quantum computing, autonomous vehicles, and
 % biocomputing, are emerging. These technologies
@@ -791,19 +892,19 @@ theory, graph theory, machine learning, and convex optimization.
 
 \section{Methodology}
 
-It is conducted a systematic literature review of the most relevant papers
+This paper conducted a systematic literature review of the most relevant papers
 discussing methodologies and techniques for the protection of users' privacy
-data with special focus on IoT systems. For this SLR I considered focusing
+data with special focus on IoT systems. For this SLR, this paper considered focusing
 only on papers from the last 12 years, from 2010 until 2022, since papers before
-then become out of date with the evolution of technology. I reviewed 100
+then become out of date with the evolution of technology. In this SLR, it was reviewed 100
 (*\textbf{\color{red}number to be adjusted}) papers published in top computer
 science, security, privacy and software engineering outlets.
 
-I followed Keshav's three-pass approach \cite{KeshavHow} when choosing which
-papers to read fully and which ones to ignore, first I would read the title,
-abstract, introduction and conclusion and briefly skim the rest of the paper
+This paper followed Keshav's three-pass approach \cite{KeshavHow} when choosing which
+papers to read fully and which ones to ignore, first the title would be read,
+then the abstract, the introduction and conclusion and briefly skim the rest of the paper
 and then decide if it was worth reading any further, the focal point in this
-phase was answering the following question: does the paper present a new
+phase was ans wering the following question: does the paper present a new
 methodology or interesting angle to tackle users' privacy concerns? Only then
 the document would be read in it's entirety while ignoring any tables, figures,
 images or graphs. If the paper failed to present any interesting idea, approach,
@@ -863,7 +964,7 @@ The IoT sniffers that are available are primarily used in the detection of
 problems in the communication of devices in the network or to solve problems
 of interoperability between different IoT networks. There are many obstacles
 that impede the creation of such a gadget and the fact that it still doesn't
-exist anything like it shows that maybe there is not enough interest form
+exist anything like it shows that maybe there is not enough interest from
 users or researchers to focus on such an endeavour or the complexity
 of such a task is greater than the rewards.
 
