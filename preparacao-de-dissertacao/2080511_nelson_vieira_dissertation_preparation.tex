@@ -83,7 +83,9 @@ between privacy and security is that the former deals with information personal
 to individuals and how they want their data used and maintained, whilst the
 latter deals with its protection from possible threats. Security can exist
 without privacy, but the opposite is not true. For managing sensitive and
-personal data, privacy and computer security are equally crucial.
+personal data, privacy and computer security are equally crucial. Users should
+be aware of the internal procedures regarding the collection, processing, retention,
+and sharing of personal information.
 
 Concerns about digital privacy have been growing \cite{emami2019exploring, park2022personal, zhang2022peer}
 in the last few years, especially after the Anonymous decentralized hacker
@@ -585,7 +587,37 @@ The authors also don't compare their proposal with others already available.
 
 \subsubsection{Blockchain}
 
-Blockchain proposals that try to resolve privacy issues in IoT.
+Because of zero knowledge proof of knowledge and zero knowledge argument of
+knowledge, blockchain is a popular option to guarantee privacy in IoT, the use
+of symmetric encryption, such as AES encryption, can also be used.
+
+Yu et al. \cite{yu2018blockchain} shows various implementations of blockchain
+that provide privacy through security, based on different categories like data
+integrity, data sharing and authentication and access control. The authors
+use privacy as a proxy for security, they also don't discuss the weak and
+strong points of each implementation or make any comparison, they also don't
+don't provide further research questions.
+
+% Ali et al. \cite{AliIoT} propose a software stack of blockchain smart contracts
+% and peer-to-peer file storage, to give IoT users authority over
+% their data in order to eliminate the need for centralized IoT data
+% management. In the proposed `modular consortium' architecture, blockchain
+% smart contracts perform access control, while providing
+% accountability for both the data owners and the third parties
+% whom the users allow access to.
+
+Ali et al. \cite{AliIoT} suggest a software stack that combines peer-to-peer file sharing
+with blockchain smart contracts to offer IoT users control over their data
+and do away with the necessity for centralized IoT data management. Blockchain
+smart contracts are used in the proposed `modular consortium' architecture
+to regulate access while establishing responsibility for both data owners
+and other parties that users grant access to.
+
+
+
+
+
+
 
 \subsubsection{Other?}
 
@@ -598,9 +630,9 @@ privacy while also monitoring parking availability. The authors merged IoT
 sensing with crowdsensing and enhanced it with privacy-preserving methods.
 The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
 and a cryptographic technique based on cryptographic commitments, zero-knowledge
-proofs, and anonymous credentials in crowdsensing. In addition, they used crowdsourcing
-to create a machine learning model for parking recognition in the
-presence of foggy filters. Their paper included proof-of-concept prototypes
+proofs, and anonymous credentials in crowdsensing. In addition, they used
+crowdsourcing to create a machine learning model for parking recognition in
+the presence of foggy filters. Their paper included proof-of-concept prototypes
 such as a Raspberry Pi system and a mobile app, as well as an evaluation study
 of the machine learning model and the effects of crowdsourcing.
 
@@ -745,116 +777,29 @@ signals in order to precisely pinpoint mobile users.
 % where some private data was exposed that should have not been exposed. All in
 % all the experiment did not prove to be a success in changing people's behavior.
 
+\subsubsection{Discussion}
+
+There are two main ways to provide privacy in IoT systems, through security
+or using privacy notices, other ways like through legislation or with the
+creation/usage of a framework that provides privacy fall into these two
+categories. Most of the literature assumes that security and privacy are
+synonyms, for example \cite{opara2022framework, FabianoInternet, SunSecure},
+and so most of the proposed solutions fall under privacy through security.
+The proposed solutions that use privacy notices, like \cite{FengDesign}, are
+implemented in a way that use other devices like smartphones that provide the
+notices themselves, it is hard to provide privacy notices on the IoT devices
+themselves because many of these devices don't have a screen or the screen is
+too small to provide the necessary information to the user. Because there are
+still no standards for implementing privacy notices, and best practices are
+scattered throughout the literature, they are mostly implemented haphazardly,
+little guidance is given to designers and developers on how to make a privacy
+notice design that is sufficient and acceptable for their particular system and
+its features. Designers may be unaware of the numerous possibilities for creating
+acceptable privacy notifications and, as a result, do not systematically explore
+them.
 
 
 
-
-
-
-
-
-
-
-% TODO: SUMMARIZE
-
-% The purpose of a privacy notice is to make a system’s users
-% or a company’s customers aware of data practices involving
-% personal information. Internal practices with regard to the
-% collection, processing, retention, and sharing of personal in-
-% formation should be transparent to users. The privacy notice
-% acts as a public announcement of those practices. Privacy
-% notices can take different shapes and leverage different chan-
-% nels, ranging from a privacy policy document posted on a
-% ∗Rebecca Balebako and Adam Durity performed this work
-% while at Carnegie Mellon University.
-% Copyright is held by the author/owner. Permission to make digital or hard
-% copies of all or part of this work for personal or classroom use is granted
-% without fee.
-% Symposium on Usable Privacy and Security (SOUPS) 2015, July 22–24,
-% 2015, Ottawa, Canada.
-% website, or linked to from mobile app stores or mobile apps,
-% to signs posted in public places to inform about CCTV cam-
-% eras in operation. Even an LED indicating that a camera
-% or microphone is active and recording constitutes a privacy
-% notice, albeit one with limited information about the data
-% practices associated with the recording. Providing notice
-% about data practices is an essential aspect of data protec-
-% tion frameworks and regulation around the world [57]. While
-% transparency has been emphasized as an important practice
-% for decades, existing privacy notices often fail to help users
-% make informed choices. They can be lengthy or overly com-
-% plex, discouraging users from reading them.
-% Smartphones and mobile apps introduce additional pri-
-% vacy issues as they support recording of sensor and behav-
-% ioral information that enables inference of behavior patterns
-% and profiling of users. Yet, comparatively smaller screens
-% and other device restrictions constrain how users can be
-% given notice about and control over data practices.
-% The increasing adoption of wearable devices, such as smart
-% watches or fitness trackers, as well as smart home devices,
-% such as smart thermostats, connected light bulbs, or smart
-% meters, represents a trend towards smaller devices that are
-% even more constrained in terms of interaction capabilities,
-% but are also highly connected with each other and the cloud.
-% While providing notice and choice is still considered essential
-% in the “Internet of Things” (IoT) [48, 74], finding appropriate
-% and usable notice and choice mechanisms can be challenging.
-% The challenges of providing usable privacy notice have
-% been recognized by regulators and researchers. For instance,
-% FTC chairwoman Edith Ramirez [107] stated in the IoT con-
-% text: “In my mind, the question is not whether consumers
-% should be given a say over unexpected uses of their data;
-% rather, the question is how to provide simplified notice and
-% choice.” An extensive body of research has studied usability
-% issues of privacy notices (e.g., [14, 33, 64, 51]) and proposed
-% improved notice interfaces (e.g., [34, 66, 67]), as well as tech-
-% nical means to support them (e.g., [75, 127, 131]). Multi-
-% stakeholder processes have been initiated in the wake of the
-% White House’s proposed Consumer Bill of Rights [122] to
-% tackle transparency and control issues of mobile privacy [92]
-% and facial recognition [93]. While such efforts have resulted
-% in guidance for notices in the context of particular systems,
-% they have given little consideration to usability [14].
-% Existing frameworks and processes for building privacy-
-% friendly systems, such as Privacy by Design [36] or privacy
-% impact assessments [136], focus on the analysis of a system’s
-% data practices and less so on the design of notices. Even the
-% OECD report on “making privacy notices simple” [94] basi-
-% 1
-% 2 2015 Symposium on Usable Privacy and Security USENIX Association
-% cally states that one should design a simplified notice, con-
-% duct usability tests, and deploy it – the crucial point of how
-% to design a simplified notice is not addressed. Common pro-
-% posals to improve the usability of privacy notices are the use
-% of multi-layered notices [9, 26] or just-in-time notices [47].
-% Despite the previous work on privacy notices, transparency
-% tools, and privacy mechanisms, a system designer or devel-
-% oper has very little guidance on how to arrive at a privacy
-% notice design suitable and appropriate for their specific sys-
-% tem and its respective characteristics. Existing best prac-
-% tices are spread throughout the literature and have not pre-
-% viously been organized into a comprehensive design frame-
-% work. As a result, privacy notices are often hastily bolted
-% on rather than well-integrated into a system’s interaction de-
-% sign. Designers may not be aware of the many alternatives
-% for designing usable privacy notices and therefore do not
-% systematically consider the options. Furthermore, designers
-% and researchers do not yet have a standard vocabulary for
-% describing privacy notice options.
-% In this paper, we make multiple contributions to ease the
-% design of privacy notices and their integration into a system.
-% The goal is to help developers embed privacy notices and
-% choice options into their system design where relevant, with
-% minimal disruption to the system’s interaction flow. First,
-% we identify challenges, requirements, and best practices for
-% the design of privacy notices. Based on a survey of existing
-% literature and privacy notice examples, we develop a design
-% space of privacy notices. This design space and its dimen-
-% sions provide a systemization of knowledge and a taxonomy
-% to foster understanding and reasoning about opportunities
-% for privacy notices and controls. We demonstrate the util-
-% ity of our design space by discussing existing privacy notice
-% approaches in different domains.
 
 
 
