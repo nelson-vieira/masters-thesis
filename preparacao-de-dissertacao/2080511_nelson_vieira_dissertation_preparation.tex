@@ -192,22 +192,11 @@ regulations including the General Data Protection Regulation (GDPR) and
 California Consumer Privacy Act (CCPA), but even these regulations have been
 criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022deficient, green2022flaws, byun2019privacy}.
 
-\section{Literature review}
+\section{Literature Review}
 
-The literature selected for discussion further down in this section is derived
-from the following research questions:
-
-\textbf{RQ1:} What approaches are being considered for privacy issues in
-IoT in the literature currently available?
-
-\textbf{RQ2:} What IoT-related tools are accessible to users to empower
-them to protect their privacy rights?
-
-\textbf{RQ3:} What issues are prevalent in IoT that make it difficult to
-address privacy and security problems?
-
-Some relevant topics are discussed before analyzing the proposals that the
-literature regards as solutions to resolve privacy issues in IoT.
+\par
+This section provides an overview of the recent literature with the themes
+that were found to be more relevant for this work.
 
 \subsection{Privacy Paradox}
 
@@ -251,7 +240,7 @@ This paradox has been proven to be vitiated by a number of empirical studies \ci
 online privacy practices are founded on separate privacy mindsets and so
 they are not inherently paradoxical.
 
-\subsection{Literature overview}
+\subsection{State of the Art}
 
 There have been a number of systematic literature reviews (SLR) \cite{Gupta2022Privacy, Kuhtreiber2022survey, sicari2015security, LinSurvey}
 and systematic mapping reviews \cite{porras2018security, ahmed2019aspects}
@@ -371,6 +360,50 @@ weaknesses of prior efforts.
 % security features, and, as previously said, they see privacy as one of the most
 % essential security issues. Furthermore, the study did not undertake a detailed gap
 % analysis to identify the shortcomings of previous studies.
+
+Based on Ziegeldorf's \cite{ziegeldorf2014privacy} analysis of the literature,
+the following are the most prominent privacy concerns in IoT:
+
+\begin{enumerate}
+    \item
+    The most prominent concern is \textit{identification}, which binds an identifier,
+    such as a name and location, with an individual's identity, this also enables
+    and aggravates other threats;
+    \item
+    \textit{Localization and tracking} is the threat of detecting an individual's
+    locations through numerous techniques, such as GPS, internet traffic, or
+    smartphone location. This threat requires \textit{identification} of some
+    kind;
+    \item
+    In e-commerce, \textit{profiling} is often used for personalization. Organizations
+    collect information about individuals in order to deduce their interests
+    via association with other profiles and data sources.
+    \item
+    \textit{Interaction and presentation} allude to the sharing of private
+    information with an unintended audience while doing so through a public
+    medium. IoT applications often need extensive user interaction, it is expected
+    that users of these systems will obtain information via smart devices in
+    their immediate surroundings and that users will interface with systems
+    in creative, natural ways. However, many of those modes of communication
+    and presentation are already available to the broader public, making them
+    apparent to anybody around. When personal information is transferred between
+    a system and its user, privacy is breached.
+    \item
+    \textit{Lifecycle transitions} occur when an IoT device is sold, utilized
+    by its owner and eventually disposed of. There may be an expectation that
+    the object deletes all information, yet smart devices frequently keep massive
+    volumes of data about their own past throughout their entire existence.
+    This might contain personal images and videos, which are not always erased
+    following ownership transfer.
+    \item
+    \textit{Inventory attacks} involve unauthorized entry and the acquisition
+    of information about the presence and characteristics of personal things.
+    Malicious users might use inventory data to profile the property and break in.
+    \item
+    \textit{Linkage} is the process of connecting disparate systems, when
+    systems are connecting different data sources, there is a higher danger
+    of unauthorized access and data leakage.
+\end{enumerate}
 
 \subsection{Differential Privacy}
 
@@ -853,6 +886,22 @@ and its features. Designers may be unaware of the numerous possibilities for
 creating acceptable privacy notifications and, as a result, do not systematically
 explore them.
 
+Aleisa and Renaud \cite{aleisa2016privacy} also identifies security and privacy
+awareness as potential solutions to privacy issues in IoT, but also identifies
+data minimization, hitchhiking and introspection. Data minimization entails
+limiting the collecting of personal information to what is absolutely central
+and retaining the data just for as long as is required to satisfy the goal
+of the technology's services \cite{ojDirective281}. Hitchhiking \cite{tang2006putting}
+is a method of protecting the privacy of users who divulge their location,
+applications regard locations as the object of their attention. The fidelity
+tradeoff is removed as it is not important to know who is in a certain
+location. The introspection \cite{kang2015protection} method examines VM
+actions to adequately safeguard users' private information. Every VM's
+CPU status, memory contents, network information provided by the hypervisor,
+and any malicious software that may be present on the VM are all collected
+and analyzed. The privacy of consumers is jeopardized if an IoT device
+loses integrity due to a hostile assault.
+
 \section{Privacy Challenges}
 
 IoT is a composed of a complex web of architectures, applications and technologies.
@@ -958,120 +1007,6 @@ exploit structural information to launch several concurrent attacks.
 % In addition, adversaries can utilize the structural information to launch various
 % and continuous attacks.
 
-\cite{aleisa2016privacy}
-https://arxiv.org/ftp/arxiv/papers/1611/1611.03340.pdf
-% TODO: Resume THIS
-% C. Privacy Threats
-% Nowadays, it is even harder for us to retain our privacy, as
-% the Internet of Things technologies take over our daily lives.
-% Conflicts over how organizations can access individual data
-% are pervasive, and IoT will add to this. Ziegeldorf’s literature
-% review [84] //Privacy in the internet of things: threats and challenges 2014// enumerates the most common privacy threats in
-% the Internet of Things:
-% 1) Identification is the most dominant threat that connects
-% an identifier, e.g. a name and address, with an individual
-% entity;
-% 2) Localization and tracking are the threat of locating an
-% individual’s location through different means, e.g. GPS,
-% internet traffic, or smartphone location;
-% 3) Profiling is mostly used for personalization in e-
-% commerce (e.g. in newsletters and advertisements). Or-
-% ganizations compile information about individuals to
-% infer interests by association with other profiles and data
-% sources;
-% 4) Interaction and presentation refers to the number of
-% smart things and new ways of interacting with systems
-% and presenting feedback to users. This becomes a threat
-% to privacy when private data is exchanged between the
-% system and the users;
-% 5) Lifecycle transitions occur when an IoT items is sold,
-% used by its owner and finally disposed of. There could be
-% an assumption that all information is deleted by the ob-
-% ject, but smart devices often store huge amounts of data
-% about their own history throughout their entire lifecycle.
-% This could include personal photos and videos and are
-% sometimes not deleted upon transfer of ownership;
-% 6) Inventory attacks apply to the unauthorized access and
-% collection of data about the presence and characteristics
-% of personal things. Burglars can use inventory data to
-% case the property to find a safe time to break in;
-% 7) Linkage consists in linking different systems, the chance
-% of unauthorized access and leaks of private data grow
-% when systems are linking to combine separate data
-% sources.
-% D. Privacy Principles
-% The ISO [32] and the OECD [46] have identified 11 privacy
-% principles from privacy laws and regulations based on the
-% international guidelines that have been defined to protect
-% privacy. Wright and Raab [78] extend that to 20 principles.
-% They argue that these principles be considered as new products
-% and services are developed.
-% Some of the principles are particularly applicable to IoT,
-% such as "Right to confidentiality and secrecy of communi-
-% cations" (violated by Samsung [42]), "Consent and choice"
-% (violated by LG [60]) and "People should not ... be denied
-% goods or services or offered them on a less preferential basis"
-% (violated by Toshiba [50]). It seems as if the IoT developers
-% have not taken Wright and Raab's [78] admonition to heart,
-% hence the need for privacy-related IoT privacy-preserving
-% solutions.
-% E. Privacy Preserving Solutions
-% In order to address the privacy concerns of end-users and
-% privacy considerations of service providers, several approaches
-% have been proposed by the research community:
-% 1) Cryptographic techniques and information manipula-
-% tion: Although researchers have spent many years
-% proposing novel privacy-preserving schemes, cryptogra-
-% phy is still the dominant one in most current proposed
-% solutions, even though, for all of the obstacles they
-% may face, many of the sensors cannot offer adequate
-% security protocols due to the limited amount of storage
-% and computation resources [16].
-% 2) Privacy awareness or context awareness: Solutions for
-% privacy awareness have been mainly focused on individ-
-% ual applications that provide a basic privacy awareness
-% to their users that smart devices, such as smart TVs,
-% wearable fitness devices, and health monitor systems
-% could collect personal data about them. For instance,
-% in recent research, a framework called SeCoMan was
-% proposed to act as a trusted third party for the users
-% as applications might not be reliable enough with the
-% location information that they manage [31].
-% 3) Access control: Access control is one of the viable
-% solutions to be used in addition to encryption and privacy
-% awareness. This gives users the power to manage their
-% own data. An example of this approach is CapBAC [59],
-% proposed by Skarmeta, Hernandez, and Moreno. It is
-% essentially a distributed approach in which smart things
-% themselves are able to make fine-grained authorization
-% decisions.
-% 4) Data minimization: The principle of "data minimization"
-% means that the IoT service providers should limit the
-% collection of personal information to what is directly
-% relevant. They should also retain the data only for as
-% long as is necessary to fulfill the purpose of the services
-% provided by the technology. In other words, they should
-% 3
-% collect only the personal data they really need, and
-% should keep it only for as long as they need it [66].
-% There are other proposed solutions that do not fall into
-% the previous four categories, such as hitchhiking. This is a
-% new approach to ensure the anonymity of users who provide
-% their locations. Hitchhiking applications handle locations as
-% the entity of interest. Because the knowledge of who is at
-% a particular location is unnecessary, the fidelity tradeoff is
-% removed [68].
-% Another example is the introspection technique that pro-
-% actively protects users' personal information by examining
-% the activities of the VM. It gathers and analyzes the CPU
-% state of every VM, the memory contents, file I/O activity,
-% network information that is delivered via hypervisor and
-% detects malicious software on the VM. However, if IoT device
-% loses integrity due to any malicious attack, it creates risks to
-% the users' privacy [34
-\\*[11pt]
-\textbf{TODO: from here forward}
-
 \section{Methodology}
 
 This paper conducted a systematic literature review of the most relevant papers
@@ -1095,40 +1030,81 @@ any interesting idea, approach, or technique it would be discarded, but if
 not, it would be read carefully from the beginning again in order to fully
 understand what it presents.
 
-The proposed methodology is composed of two phases, the first phase consists
-of making a study on the region's general concern with their privacy when
-using and interacting with IoT devices, their knowledge of privacy rights,
-what they do to protect their privacy rights. One one side the objective of
-this study consist in demystifying the privacy paradox in the region and
-gather information about their idea to solve this problem with respect to
-IoT devices. The second phase consists in doing an application that can detect
-IoT devices nearby the user with at least a 10 meters radius. The application
-should do the following when detecting a device:
-1. it should show some information about the device;
-2. it should categorize the device;
-3. it should provide the user with privacy options, if the device allows the
-user to decline data harvesting.
-This application at first sight might appear to be a mere privacy assistant
-but it's not, because IoT assistants merely choose what privacy options the
-user first sets and maintains it for every other application that the user
-might use. The proposed app doesn't have the objective to conform to the user's
-preferred privacy choices, it merely informs the user about nearby IoT devices
-and can provide the user with privacy options. But the main objective is creating
-awareness in individuals about the various devices that are around and make
-the user questions their choices.
+Having collected the major findings, this work then aims to conduct a throughout
+study split in several stages and around the following research questions:
 
-\section{Study}
+\textbf{RQ1:} What approaches are being considered for privacy issues in
+IoT in the currently available literature?
+
+\textbf{RQ2:} What IoT-related tools are available that empower users to
+protect their privacy rights? OR How to empower users to protect their privacy
+rights?
+
+\textbf{RQ3:} What issues are prevalent in IoT that make it difficult to
+address privacy and security problems?
+
+The proposed methodology is composed of two phases, the first phase consists
+on doing a study on people's general privacy concerns while using and interacting
+with IoT devices. This study will consist on preparing a questionnaire to assess
+general user's knowledge on privacy concepts, their habits and concerns, their
+understanding of privacy rights, and what they do to safeguard those rights.
+The goal of this study is to both understand the privacy
+paradox and collect data on their proposal to address privacy issues with regard
+to IoT devices.
+
+\textbf{\color{red}TODO: ADD PHASE TWO}
+
+% The second phase consists
+% in doing an application that can detect IoT devices nearby the user with
+% at least a 10 meters radius. The application should do the following when
+% detecting a device:
+% 1. it should show some information about the device;
+% 2. it should categorize the device;
+% 3. it should provide the user with privacy options, if the device allows the
+% user to decline data harvesting.
+% This application at first sight might appear to be a mere privacy assistant
+% but it's not, because IoT assistants merely choose what privacy options the
+% user first sets and maintains it for every other application that the user
+% might use. The proposed app doesn't have the objective to conform to the user's
+% preferred privacy choices, it merely informs the user about nearby IoT devices
+% and can provide the user with privacy options. But the main objective is creating
+% awareness in individuals about the various devices that are around and make
+% the user questions their choices.
+
+\subsection{Study}
 
 This study was done to try to understand people's perception of IoT and their
-privacy practices online. It was partially based in a study done in the Philippines
-by the government in the context of their privacy act of 2012, this was the
-second survey done on the population. This survey was done through the internet,
-it was created in google forms, this way it is guaranteed to reach most people
-in the country.
+privacy practices online. It also serves to demystify the privacy paradox
+and also to help provide a solution to the privacy issue in IoT. The questionnaire
+consists of 92 questions divided into 7 sections to access users' knowledge,
+it follows a kind of narrative, the first section being general privacy
+questions then about the predisposition
+to data sharing, to preoccupations with privacy then about daily digital
+routines, then about profile identification, and then about IoT general
+knowledge before a section about non-identifiable demographic data.
+The scale that is used in the questionnaire is based on the work of Philip K.
+Masur \cite{masur2018situational}.
+Great care is taken when it comes to this survey's data collection, in order
+to not identify any individual or group of individuals, for instance, when it
+comes to differential privacy, any data that might identify someone will not
+be disclosed, even though the data might suffer from some inaccuracy because
+of this.
 
-\section{Application}
+This survey was partially based in a study done in the Philippines
+by the government in the context of their privacy act of 2012 \cite{Philippine2022Conduct}, this was the
+second survey done on the country's population. It was also inspired by
+Alves's master's thesis \cite{alves2021}, which was about citizen's perception about privacy
+in the wake of GDPR.
 
-I created something and...
+This survey was done through the internet, it was created in Google Forms,
+this way it is guaranteed to reach the most people possible in the country and
+abroad.
+
+\textbf{TODO: Extend this subsection}
+
+\subsection{Application}
+
+The main objective of this application is the following:
 
 \section{Discussion}
 
