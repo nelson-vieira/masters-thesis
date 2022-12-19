@@ -98,11 +98,11 @@ last 5 years, it returns about 5000000, 650000 and 80000 documents respectively,
 including articles, books, conference papers etc.
 
 Most research has focused on the web, while privacy in IoT systems has not
-been explored as much. Although IoT devices are becoming more prevalent,
+been explored as much. Because IoT devices are becoming more prevalent,
 new methods of communicating, gathering, and analyzing data emerge.
 Because there is already a substantial quantity of research focusing on web
 privacy rather than IoT privacy, it is a lot more fertile ground to explore
-the issue of privacy in the context of the Internet of Things.
+the issue of privacy in the context of the IoT.
 
 \textit{Internet of Things} is a term that first appeared in the 1990s,
 and it may be linked to Mark Weiser's paper on ubiquitous computing \cite{weiser1991computer}
@@ -111,10 +111,10 @@ to do various tasks, making Weiser's dream a reality. The first use of the
 term \textit{Internet of Things} was in 1999 by British technology pioneer
 Kevin Ashton \cite{KevinThat}, executive director of the Auto-ID Center at
 Massachusetts Institute of Technology (MIT), to describe a system in which
-items may be connected to the Internet by sensors. He came up with the phrase
+items may be connected to the internet by sensors. He came up with the phrase
 while giving a presentation for Procter \& Gamble to highlight the value
 of linking Radio-Frequency Identification (RFID) tags used in corporate
-supply chains to the Internet in order to count and track goods without the
+supply chains to the internet in order to count and track goods without the
 need for human assistance. These devices are used in various applications,
 starting at home \cite{marikyan2019systematic} with thermostats, fridges,
 microwaves, etc, moving on to smart cars \cite{arena2020overview}, the
@@ -125,7 +125,7 @@ services (like video analytics services linked to smart cameras and indoor
 position tracking systems), or IoT apps (like smart TV remote apps) that
 track and use information about us. Internet of Things is now widely used
 to describe situations in which a range of objects, gadgets, sensors, and
-ordinary items are connected to the Internet and have computational capabilities.
+ordinary items are connected to the internet and have computational capabilities.
 
 The idea of using computers and networks in order to monitor and manage devices
 is nothing new, despite the term \textit{Internet of Things} being relatively
@@ -135,15 +135,15 @@ sector. Wireless technology improvements in the 1990s permitted the widespread
 adoption of corporate and industrial machine-to-machine (M2M) solutions for
 equipment monitoring and operation. Many early M2M solutions, on the other
 hand, relied on proprietary purpose-built networks or industry-specific
-standards rather than Internet standards. To connect devices other than
-computers to the Internet is not a new concept. A Coke machine at Carnegie
+standards rather than internet standards. To connect devices other than
+computers to the internet is not a new concept. A Coke machine at Carnegie
 Mellon University's Computer Science Department \cite{EverhartInteresting}
 was the first ubiquitous device to be linked to the internet. The system,
 which was created in 1982, remotely observed the out of stock lights on the
 pressing buttons of the vending machine and broadcast the state of each row
 of the vending machine on the network so that it could be accessed using
 the Name/Finger protocol through a terminal. In 1990, a toaster that could
-be turned on and off over the Internet that was created by John Romkey \cite{RomkeyToast},
+be turned on and off over the internet that was created by John Romkey \cite{RomkeyToast},
 was demonstrated at the Interop Internet Networking show.
 
 % \cite{rose2015internet}
@@ -594,58 +594,59 @@ The authors also don't compare their proposal with others already available.
 
 \subsubsection{Blockchain}
 
-Because of zero knowledge proof of knowledge and zero knowledge argument of
-knowledge, blockchain is a popular option to guarantee privacy in IoT, the
-use of symmetric encryption, such as AES encryption, can also be used.
+Blockchain is an option to guarantee privacy in IoT because of zero-knowledge
+proofs, ring signatures and mixing.
 
+A zero-knowledge proof is a cryptographic technique that enables one party
+(the prover) to demonstrate to another (the verifier) that a certain claim
+is true without disclosing any information other than the validity of that
+claim. Completeness, soundness, and zero-knowledge are the three requirements
+that must be satisfied by a zero-knowledge proof method. Completeness means
+that the verifier must be able to confirm that the prover is stating the truth
+if the information supplied by the prover is true. Soundness indicates that
+the verifier must be given the opportunity to contradict the prover's claims
+of speaking the truth if the information provided by the prover is untrue.
+Zero-knowledge refers to the need that the method only reveal to the verifier
+whether the prover is speaking the truth or not.
 
+% A zero-knowledge proving technique must meet the three criteria of completeness,
+% soundness, and zero-knowledge. If the information provided by the prover is accurate,
+% completeness means that the verifier must be able to verify that the prover is
+% telling the truth. Soundness states that if the information provided by the prover
+% is false, the verifier must be given the chance to refute the prover's assertions
+% that they are telling the truth. The concept of zero-knowledge states that the
+% technique must only inform the verifier of whether the prover is telling the truth
+% or not.
 
+Ring signatures create a single, recognizable signature that is used to sign
+a transaction by combining a number of partial digital signatures from diverse
+users. This group, known as the ring, can be chosen at random from the outputs
+that other users have made to the blockchain. A ring signature has the security
+property that it should be computationally expensive to determine which
+of the group's members' keys was used to produce the signature, this is because
+it obfuscates the input side of a transaction. A user's anonymity cannot be
+taken away from their signature, and any group of users can act as a signing
+group automatically.
 
-Blockchain is an option to guarantee privacy in IoT because of zero-knowledge proofs,
-ring signatures and mixing.
+% Ring signatures consists of a group of partial digital signatures from various
+% users that come together to form a unique signature that is used to sign a
+% transaction. This group is known as the ring and can be arbitrarily selected
+% from outputs from other users on the blockchain. One of the security properties
+% of a ring signature is that it should be computationally infeasible to determine
+% which of the group's members' keys was used to produce the signature, because
+% it obfuscates the input side of a transaction. Also there is no way to revoke
+% the anonymity of an individual signature and any group of users can be used
+% as a signing group without additional setup.
 
-
-
-
-% Zero-knowledge proofs
-% A Zero-knowledge proof (known as ZKP) is a cryptographic method by which one
-% party (the prover) can prove to another party (the verifier) that a given
-% statement is true, without conveying any information apart from the fact that
-% the statement is indeed true. The "prover" does not reveal any information
-% about the transaction. Such proofs are typically introduced into blockchain
-% systems using ZK-SNARKs in order to increase privacy in blockchains.[10] In
-% typical "non-private" public blockchain systems such as Bitcoin, a block contains
-% information about a transaction such as the sender and receivers addresses and
-% the amount sent.[10] This public information can be used in conjunction with
-% Clustering algorithms to link these "pseudo-anonymous" addresses to users or
-% real-world identities. Since zero-knowledge proofs reveal nothing about a
-% transaction, except that it is valid,[10] the effectiveness of such techniques
-% are drastically reduced. A prominent example of a cryptocurrency using ZK proofs
-% is Zcash.
-
-% Ring signatures
-% Another method of obfuscating the flow of transactions on the public blockchain
-% are Ring signatures, a method used by Monero.
-
-% Mixing
-% Cryptocurrency tumblers can also be used as a method to increase privacy even
-% in a pseudoanonymous cryptocurrency. Additionally, instead of using mixers as
-% an add-on service, the mixing of public addresses can be built-in as a method
-% in the blockchain system, as in Dash.
-% The popular mixing service Tornado Cash was sanctioned by the US Department of
-% Treasury in early August 2022, who accused it of laundering \$455 million in
-% stolen cryptocurrency by the Lazarus Group. The sanctions made it illegal for
-% US citizens, residents and companies to use the service.[11]
-
-
-
-
-
-
-
-
-
-
+Mixing is the process of blending possibly traceable digital assets
+with others to obscure the original assets' sources. This is frequently done
+by pooling source assets from different inputs for a long period and at random
+intervals, then spitting them back out to destination addresses. Since they
+are all packed together and then delivered at random intervals, it is very
+difficult to pinpoint particular assets. Due to the fact that cryptocurrencies
+provide a public record of every transaction, mixers have been developed to
+improve cryptocurrency privacy. Because of their emphasis on secrecy, mixers
+have been used to launder money using cryptocurrency.
 
 Yu et al. \cite{yu2018blockchain} shows various implementations of blockchain
 that provide privacy through security, based on different categories like data
@@ -669,13 +670,7 @@ smart contracts are used in the proposed `modular consortium' architecture
 to regulate access while establishing responsibility for both data owners
 and other parties that users grant access to.
 
-\textbf{\color{red}Add more}
-
-
-
-
-
-\subsubsection{Other?}
+\subsubsection{Other proposals}
 
 % Zhu et al. \cite{ZhuIntegrating} explores an integrated paradigm called ``hybrid sensing''
 % where users interact with a crowdsensing server via a privacy-preserving protocol
@@ -709,7 +704,7 @@ of the machine learning model and the effects of crowdsourcing.
 There exists a number of privacy assistants in the market. Privacy assistants
 have the objective of giving the user flexibility in choosing the preferred
 privacy options in available applications, most are used in smartphones,
-very few are made for devices in the internet of things.
+very few are made for devices in the IoT.
 
 The Carnegie Mellon University CyLab, which is the university's security
 and privacy research institute, started developing in 2019 an IoT Infrastructure
