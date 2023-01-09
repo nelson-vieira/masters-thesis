@@ -5,7 +5,9 @@
 \usepackage{graphicx}
 \graphicspath{ {./assets/} }
 \usepackage{textcomp}
-\usepackage{xcolor}
+\usepackage{xcolor,colortbl}
+\usepackage{tikz}
+\usepackage{adjustbox}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
     colorlinks=false,
@@ -37,19 +39,19 @@ mary.barreto@staff.uma.pt}
 Os dispositivos da Internet of Things (IoT), ou Internet das Coisas, estão
 em toda parte, desde o nascimento da computação ubíqua que a vida quotidiana
 humana é imaginada contendo milhões de dispositivos que controlam todos os
-aspectos de nossas vidas. Hoje em dia temos carros inteligentes, casas inteligentes,
+aspectos das nossas vidas. Hoje em dia temos carros inteligentes, casas inteligentes,
 cidades inteligentes, \textit{wearables} entre outras coisas que usam vários
 tipos de dispositivos e vários tipos de redes para comunicarem entre si. Estes
 dispositivos criam novas formas de recolher e processar dados pessoais de
 utilizadores e não utilizadores. A maioria dos utilizadores finais nem sabem
-ou têm pouco controlo sobre as informações que estão sendo recolhidas por
-esses sistemas. Este trabalho faz uma abordagem holística para este problema,
-fazendo primeiro uma revisão da literatura, em seguida, realizando uma pesquisa
+ou têm pouco controlo sobre as informações que estão a ser recolhidas por
+estes sistemas. Este trabalho faz uma abordagem holística para este problema,
+fazendo primeiro uma revisão da literatura, em seguida, realizando um questionário
 para saber mais sobre o conhecimento geral do público e, finalmente, com base
 nas informações recolhidas, é proposto um sistema que fornece aos utilizadores
 informações sobre os dispositivos que estão próximos e como proteger os dados
 que não desejam compartilhar com esses dispositivos, este sistema é capaz de
-detectar que tipo de dispositivos estão próximos, que tipo de dados são recolhidos
+detetar que tipo de dispositivos estão próximos, que tipo de dados são recolhidos
 por esses dispositivos, mostrar opções de privacidade ao utilizador quando
 é possível fazê-lo e o que pode ser feito para evitar que dados indesejados
 sejam recolhidos.
@@ -801,10 +803,82 @@ and abroad.
 \subsection{Application}
 
 The main objective of this application is the following:
+This work proposes an application that gives users information about IoT
+devices in their surroundings like the type of information these devices
+collect and what offer privacy options, if available. This application will
+be developed for mobile phones because it is the most used device that people take
+everywhere they go, and because the application will use georeferencing to show the
+location of the IoT devices. This application will
 
 \section{Discussion}
 
 The study found the following... The app...
+
+\begin{table}[ht]
+\centering
+\begin{adjustbox}{width=0.5\textwidth}
+\small
+\noindent\begin{tabular}{p{0.17\textwidth}*{20}{|p{0.01\textwidth}}|}
+\hline
+\multicolumn{0}{|c|}{Plano de trabalhos}
+    & \multicolumn{4}{c|}{Janeiro}
+    & \multicolumn{4}{c|}{Fevereiro}
+    & \multicolumn{4}{c|}{Março}
+    & \multicolumn{4}{c|}{Abril}
+    & \multicolumn{4}{c|}{Maio}
+    \\
+\hline
+\hline
+% Pega o borra entre las & este comando para colorear o descolorear:\cellcolor[cmyk]{1,1,0,0}
+\multicolumn{0}{|l|}{}
+    & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4& 1 & 2 & 3 & 4& 1 & 2 & 3 & 4& 1 & 2 & 3 & 4 \\
+\hline
+% using the on macro to fill in twenty cells as `on'
+\multicolumn{0}{|l|}{Design}
+    & \cellcolor[cmyk]{1,1,0,0} &&&& &&&&  &&&& &&&& &&& \\
+\hline
+\multicolumn{0}{|l|}{Desenvolvimento}
+    && \cellcolor[cmyk]{1,1,0,0}&&& &&&& &&&& &&&&&&& \\
+\hline
+\multicolumn{0}{|l|}{Testes}
+    &&&& &\cellcolor[cmyk]{1,1,0,0}&&&& &&&& &&&&  &&& \\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&& &\cellcolor[cmyk]{1,1,0,0}&&&& &&&& &&&& &&& \\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&& && \cellcolor[cmyk]{1,1,0,0}&&&&  & &&&&  &&&&& \\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&&&&& \cellcolor[cmyk]{1,1,0,0}&&&& &&&& &&&& &  \\
+\hline
+\multicolumn{0}{|l|}{TODOl}
+    &&&& &&&\cellcolor[cmyk]{1,1,0,0} &&&&  & &&& &&&&&  \\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&&&&&& \cellcolor[cmyk]{1,1,0,0}&&&&&& &&&&&&\\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&& &&&& \cellcolor[cmyk]{1,1,0,0}&&&& & &&&& &&&  \\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&&&&&&&\cellcolor[cmyk]{1,1,0,0}&&&&& & &&&&& \\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&&  &&&&& &\cellcolor[cmyk]{1,1,0,0} & &&&& &&&&& \\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&& &&&& &&&\cellcolor[cmyk]{1,1,0,0} & &&&& &&&&  \\
+\hline
+\multicolumn{0}{|l|}{TODO}
+    &&&&& &&&& &&&\cellcolor[cmyk]{1,1,0,0} & &&& &&&&  \\
+\hline
+\end{tabular}
+\end{adjustbox}
+\vspace{1em}
+\caption{Plano de trabalhos}
+\label{workchart}
+\end{table}
 
 \section{Future work}
 
