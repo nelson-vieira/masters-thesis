@@ -1,0 +1,856 @@
+\documentclass{scrreprt}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage{graphicx}
+% \usepackage[tableposition=below]{caption}
+% \captionsetup[longtable]{skip=1em}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage[T1]{fontenc}
+\usepackage[table]{xcolor}
+\usepackage{adjustbox}
+% \usepackage{array,longtable,ltxtable,filecontents}
+\usepackage{float}
+% \usepackage{showframe}
+% \renewcommand*\ShowFrameColor{\color{red}}
+\def\UrlBreaks{\do\/\do-}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage[utf8]{inputenc}
+% \usepackage[english]{babel}
+\hypersetup{
+    bookmarks=false,    % show bookmarks bar?
+    pdftitle={Relatório de requisitos de software para Time4People},    % title
+    pdfauthor={Nelson Vieira},                     % author
+    pdfsubject={Masters Thesis Application},                        % subject of the document
+    pdfkeywords={privacy application, internet of things, user empowerment, privacy assistant}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+\def\myversion{1.0 }
+\date{}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{flushright}
+    \includegraphics[width=5cm]{../../assets/images/uma_logo.png}
+    \rule{16cm}{5pt}\vskip1cm
+    \Huge{\textbf{\uppercase{Software Requirement}} \\ \textbf{\uppercase{Specification}}} \\
+    \vspace{1cm}
+    \textbf{for} \\
+    \vspace{1cm}
+    \textbf{Masters Thesis Application} \\
+    \vspace{2cm}
+    \LARGE{Version 0.1 \\}
+    \vspace{2cm}
+    Written by Nelson Vieira \\
+    \vspace{2cm}
+    \today
+    % 16 de Janeiro de 2022
+    \vfill
+    \rule{16cm}{5pt}
+\end{flushright}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+Text
+
+\section{Purpose}
+
+Text
+
+\section{Project Scope and Product Features}
+
+Text
+
+\chapter{Overall Description}
+
+Text
+
+\section{Product Perspective}
+
+Text
+
+\section{User Classes and Characteristics}
+
+Text
+
+\chapter{Introduction}
+
+Text
+
+\section{O âmbito e visão do projeto}
+
+Text
+
+\section{Stakeholders}
+
+Text
+% \cite{fulton2017chapter}
+\newline
+Text
+\newline
+Text
+\begin{itemize}
+    \item Text
+\end{itemize}
+
+\chapter{Requisitos de software}
+
+\section{Requisitos de negócio}
+
+Text
+\newline
+Text
+
+\section{Requisitos de tecnologia}
+
+Text
+\newline
+Os requisitos de tecnologia que foram identificados são os seguintes:
+\begin{itemize}
+    \item Servidor HTTP
+    \item Servidor MariaDB ou semelhante de base de dados relacional
+    \item Linguagens de programação: PHP, HTML, CSS (ou SCSS ou semelhante), Javascript (ou Typescript ou semelhante)
+    \item Acessível em qualquer hardware (através do browser)
+\end{itemize}
+Text
+
+\section{Diagrama contextual}
+
+Text
+\newline
+Text
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=17cm]{assets/diagrama_contextual.png}
+    \caption{Diagrama contextual}
+    \label{fig:diagrama contextual}
+\end{figure}
+Text \\
+\newline
+Utilizador: \\
+\newline
+→ Recebe:
+
+- Text
+
+- Text
+\newline
+→ Envia:
+
+- Atualização de Informações \\
+\newline
+Gestor: \\
+\newline
+→ Recebe:
+
+- Text
+\newline
+→ Envia:
+
+- Text
+
+- Text
+
+\section{Diagramas de fluxo de dados}
+
+Text
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=12cm]{assets/diagrama_fluxo_de_dados.png}
+    \caption{Diagrama de fluxo de dados}
+    \label{fig:diagrama de fluxo de dados}
+\end{figure}
+Text
+
+\section{Diagrama swimlane (de alto nível)}
+
+Text
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=15cm]{assets/diagrama_swimlane.png}
+    \caption{Diagrama swimlane}
+    \label{fig:diagrama swimlane}
+\end{figure}
+Text
+
+\section{Tabela de rastreio}
+
+Text
+\newline
+Text
+\newline
+Text
+\newline
+Text \\
+
+\begin{table}[H]
+\centering
+\begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+% \rowcolors{5}{gray!10}{gray!40}
+\begin{tabular}{|>{\columncolor{yellow!30}}l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|p{0.15\textwidth}|}
+    \hline
+    \rowcolor{green!20}
+    \textbf{R\#} & \textbf{Feature} & \textbf{Intervenientes Aplicáveis} & \textbf{Descrição} & \textbf{Fonte} \\
+    \hline
+    \textbf{1} & Text & Text & Text & Email \cite{} \\
+    \hline
+    \textbf{2} & Text & Text & Text & Email \cite{} \\
+    \hline
+    \textbf{3} & Text & Text & Text & Email \cite{} \\
+    \hline
+    \textbf{4} & Text & Text & Text & Email \cite{} \\
+    \hline
+    \textbf{5} & Text & Text & Text & Email \cite{} \\
+    \hline
+    \textbf{6} & Text & Text & Text & Email \cite{} \\
+    \hline
+    \textbf{7} & Text & Text & Text & Email \cite{} \\
+    \hline
+    \textbf{8} & Text & Text & Text & Email \cite{} \\
+    \hline
+    \textbf{9} & Text & Text & Text & Discussão 18/04/2022 \\
+    \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Tabela de rastreio}
+\label{table:table1}
+\end{table}
+
+\section{Requisitos funcionais}
+
+Text
+% \cite{fulton2017chapter}
+Text
+% \cite{wiegers2013software}
+Text
+
+\subsection{Requisitos de Utilizador}
+
+\textbf{RU1.1} - O sistema deverá permitir que o utilizador possa usar o botão esquerdo do rato para percorrer o mapa de entidades;
+\newline
+\textbf{RU1.2} - O sistema deverá permitir que o utilizador possa selecionar uma entidade no mapa para visualizar mais informações;
+\newline
+\textbf{RU1.3} - O sistema deverá permitir que o cliente pesquise uma entidade pelo nome;
+\newline
+\textbf{RU1.4} - O sistema deverá permitir ao utilizador consultar entidades de apenas uma determinada área de atuação, de um estatuto legal, de um concelho;
+\newline
+\textbf{RU1.5} - O sistema deverá permitir consultar estatísticas das entidades, como percentagem de entidades por área de atuação, concelho e por estatuto legal;
+\newline
+\textbf{RU1.6} - O sistema deverá permitir que o cliente pesquise uma entidade pelo nome;
+\newline
+\textbf{RU1.7} - O sistema deverá permitir que um cliente avalie um profissional após a conclusão de um serviço;
+
+\subsection{Requisitos de Gestor}
+
+\textbf{RG2.1} - Na criação de uma nova entidade o sistema deverá obrigar o gestor a preencher os seguintes dados obrigatórios:
+
+\textbf{RG2.1.1} - Nome comum da entidade.
+
+\textbf{RG2.1.2} - Nome legal da entidade.
+
+\textbf{RG2.1.3} - Uma área de atuação.
+
+\textbf{RG2.1.4} - Morada da entidade.
+
+\textbf{RG2.1.5} - Estatuto legal.
+\newline
+\textbf{RP.2.2} - O sistema deverá permitir ao gestor apagar uma entidade;
+\newline
+\textbf{RP.2.3} - O sistema deverá permitir ao gestor alterar algum dado de uma entidade;
+
+\subsection{Requisitos de Sistema}
+
+\textbf{RS.4.1} - O sistema deverá mostrar estatísticas relativas às entidades;
+
+\chapter{Use cases}
+
+\section{Diagrama de use cases}
+
+O diagrama de use cases fornece uma visualização de alto nível dos requisitos de utilizador. A caixa representa a fronteira do sistema. Uma seta de um ator para um use case indica que ele é o ator primário para o mesmo.
+\newline
+O ator primário inicia o use case e deriva o valor principal dele. Uma seta vai de um use case para um ator secundário, onde participa de alguma forma no sucesso da conclusão do use case.
+% \cite{wiegers2013software}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=12cm]{assets/diagrama_use_cases.png}
+    \caption{Diagrama de use cases}
+    \label{fig:diagrama use cases}
+\end{figure}
+
+\section{Use cases}
+
+Na Engenharia de Software, um use case é um tipo de classificador representando uma unidade funcional coerente provida pelo sistema, subsistema, ou classe manifestada por sequências de mensagens intercambiáveis entre os sistemas e um ou mais atores.
+% \cite{UseUsability}
+\newline
+Usando esta técnica descreve-se as tarefas que os utilizadores necessitam executar com o sistema ou a interação utilizador-sistema que pode ser importante para alguns stakeholders. Também ajudam nos testes ao verificar se a funcionalidade foi implementada corretamente. O use case usa a notação UML (Unified Modeling Language).
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-01 Consulta de informação de uma entidade \\
+            \hline
+            Created By: & Nelson Vieira 11/04/2022 \\
+            \hline
+            Primary Actor: & Utilizador \\
+            \hline
+            Description: & O utilizador faz uma consulta de informação de uma entidade \\
+            \hline
+            Trigger: & O utilizador quer procurar informações de uma entidade \\
+            \hline
+            Preconditions: & N/A \\
+            \hline
+            Postconditions: & POST-1. O utilizador encontra informações da entidade \\
+            \hline
+            Normal Flow: & \textbf{1.0 Consulta de informação de uma entidade no mapa}
+            \begin{enumerate}
+                \item O utilizador navega no mapa
+                \item O utilizador clica no ícone para mostrar alguma informação da entidade
+                \item O utilizador clica no pop-up da entidade
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & \textbf{1.1 Pesquisa de informação de uma entidade}
+            \begin{enumerate}
+                \item O utilizador insere o nome na entidade na barra de pesquisa
+                \item O utilizador escolhe a entidade que pretende de uma lista gerada a partir da pesquisa realizada
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & \textbf{1.2 Pesquisa alternativa de informação de uma entidade}
+            \begin{enumerate}
+                \item O utilizador seleciona um dos parâmetros:
+                \begin{enumerate}
+                    \item Àrea de atuação
+                    \item Contribuinte
+                    \item Concelho
+                    \item Grupo de famílias
+                    \item Estatuto legal
+                \end{enumerate}
+                \item O utilizador escolhe a entidade que pretende de uma lista gerada a partir da pesquisa realizada
+            \end{enumerate} \\
+            \hline
+            Exceptions: & \textbf{1.0.E1  O API não está funcionando corretamente}
+            \begin{enumerate}
+                \item O sistema apresenta uma mensagem de alerta: ``Estamos a ter problemas de ligação, por favor aguarde um pouco''
+            \end{enumerate} \\
+            \hline
+            Priority: & Alta \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & N/A \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 1 - consulta de informação de uma entidade}
+    \label{use case 1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-02 Consulta de estatísticas das entidades \\
+            \hline
+            Created By: & Nelson Vieira 13/04/2022 \\
+            \hline
+            Primary Actor: & Utilizador \\
+            \hline
+            Description: & O utilizador faz uma consulta de estatísticas das entidades \\
+            \hline
+            Trigger: & O utilizador pretende encontrar estatísticas das entidades \\
+            \hline
+            Preconditions: & N/A \\
+            \hline
+            Postconditions: & POST-1. O utilizador encontra estatísticas das entidades \\
+            \hline
+            Normal Flow: & \textbf{2.0 Consulta de estatísticas das entidades}
+            \begin{enumerate}
+                \item O utilizador seleciona o separador de estatísticas
+                \item O utilizador pode selecionar apenas certos parâmetros, tais como:
+                \begin{enumerate}
+                    \item Àrea de atuação
+                    \item Concelho
+                    \item Grupo de famílias
+                    \item Estatuto legal
+                \end{enumerate}
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & N/A \\
+            \hline
+            Exceptions: & N/A \\
+            \hline
+            Priority: & Alta \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & N/A \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 2 - consulta de estatísticas das entidades}
+    \label{use case 2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.15\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-03 Adicionar uma entidade \\
+            \hline
+            Created By: & Nelson Vieira 13/04/2022 \\
+            \hline
+            Primary Actor: & Gestor do Portal \\
+            \hline
+            Description: & Adição de uma nova entidade no portal \\
+            \hline
+            Trigger: & O gestor pretende adicionar uma nova entidade \\
+            \hline
+            Preconditions: & N/A \\
+            \hline
+            Postconditions: & POST-1. Uma nova entidade é adicionada ao portal \\
+            \hline
+            Normal Flow: & \textbf{3.0 Adicionar uma entidade}
+            \begin{enumerate}
+                \item O gestor insere os seguintes dados de uma nova entidade:
+                \begin{enumerate}
+                    \item Nome da entidade
+                    \item Nº de Contribuinte
+                    \item Morada da entidade
+                    \item Concelho da entidade
+                    \item Contacto da entidade:
+                    \begin{enumerate}
+                        \item Telefone
+                        \item Email
+                        \item Website
+                        \item Página de Rede Social
+                    \end{enumerate}
+                    \item Área de atuação
+                    \item Natureza jurídica
+                    \item Estatuto jurídico
+                    \item Estatuto especial
+                    \item Abrangência geográfica
+                \end{enumerate}
+                \item O gestor clica em submeter
+                \item O gestor cria a página associada da entidade
+                \item O gestor adiciona  a localização da entidade no mapa de entidades
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & N/A \\
+            \hline
+            Exceptions: & \textbf{3.0.E1  Nº de contribuinte já registado}
+            \begin{enumerate}
+                \item O sistema apresenta uma mensagem de erro
+                \item O sistema pede para inserir outro nº de contribuinte
+            \end{enumerate} \\
+            \hline
+            Priority: & Alta \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & É assumido que o gestor tem acesso direto à base de dados \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 3 - adicionar uma entidade}
+    \label{use case 3}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.1\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-04 Editar dados de uma entidade \\
+            \hline
+            Created By: & Nelson Vieira 13/04/2022 \\
+            \hline
+            Primary Actor: & Gestor do Portal \\
+            \hline
+            Description: & Edição dos dados de uma entidade no portal \\
+            \hline
+            Trigger: & O gestor pretende editar dados de uma entidade \\
+            \hline
+            Preconditions: & N/A \\
+            \hline
+            Postconditions: & POST-1. Os dados que foram alterados aparecem no portal \\
+            \hline
+            Normal Flow: & \textbf{4.0 Editar dados de uma entidade}
+            \begin{enumerate}
+                \item O gestor pode alterar quaisquer dos seguintes dados de uma entidade:
+                \begin{enumerate}
+                    \item Nome da entidade
+                    \item Nº de Contribuinte
+                    \item Morada da entidade
+                    \item Concelho da entidade
+                    \item Contacto da entidade:
+                    \begin{enumerate}
+                        \item Telefone
+                        \item Email
+                        \item Website
+                        \item Página de Rede Social
+                    \end{enumerate}
+                    \item Área de atuação
+                    \item Estatuto legal / Grupo de famílias
+                    \item Estatuto especial
+                    \item Abrangência geográfica
+                \end{enumerate}
+                \item O gestor clica em submeter
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & N/A \\
+            \hline
+            Exceptions: & \textbf{4.0.E1  Nº de contribuinte já registado}
+            \begin{enumerate}
+                \item O sistema apresenta uma mensagem de erro
+                \item O sistema pede para inserir outro nº de contribuinte
+            \end{enumerate}
+            \textbf{4.0.E1  A entidade a ser editada foi eliminada entretanto}
+            \begin{enumerate}
+                \item O sistema apresenta uma mensagem de erro
+                \item O sistema proíbe a edição
+            \end{enumerate} \\
+            \hline
+            Priority: & Alta \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & É assumido que o gestor tem acesso direto à base de dados \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 4 - editar dados de uma entidade}
+    \label{use case 4}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-05 Eliminar uma entidade \\
+            \hline
+            Created By: & Nelson Vieira 13/04/2022 \\
+            \hline
+            Primary Actor: & Gestor do Portal \\
+            \hline
+            Description: & Eliminação de uma entidade no portal \\
+            \hline
+            Trigger: & O gestor pretende eliminar uma entidade \\
+            \hline
+            Preconditions: & PRE-1. A entidade a ser eliminada tem de estar na base de dados do Portal \\
+            \hline
+            Postconditions: & POST-1. É eliminada a entidade do portal \\
+            \hline
+            Normal Flow: & \textbf{5.0 Eliminar uma entidade}
+            \begin{enumerate}
+                \item O gestor elimina a entidade pretendida, através de:
+                \begin{enumerate}
+                    \item ID da entidade
+                    \item Nº de contribuinte
+                \end{enumerate}
+                \item O gestor confirma que quer eliminar a entidade
+                \item O gestor apaga a página da entidade
+                \item O gestor elimina a localização da entidade do mapa de entidades
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & N/A \\
+            \hline
+            Exceptions: & \textbf{5.0.E1  A entidade a ser eliminada já não existe na base de dados}
+            \begin{enumerate}
+                \item O sistema apresenta uma mensagem de erro
+                \item O sistema proíbe a eliminação
+            \end{enumerate} \\
+            \hline
+            Priority: & Alta \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & É assumido que o gestor tem acesso direto à base de dados \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 5 - eliminar uma entidade}
+    \label{use case 5}
+\end{table}
+
+% \begin{filecontents}{long.tex}
+%     \begin{longtable}[c]{|p{0.26\textwidth}|*{1}{X|}}
+%         \hline
+%         ID and Name: & UC-06 Criar conta - Entidade \\
+%         \hline
+%         Created By: & Nelson Vieira 13/04/2022 \\
+%         \hline
+%         Primary Actor: & Entidade da Economia Social \\
+%         \hline
+%         Description: & Para modificar dados da sua Entidade, a Entidade tem que criar uma conta. \\
+%         \hline
+%         Trigger: & A Entidade quer criar uma conta \\
+%         \hline
+%         Preconditions: & A Entidade quer modificar os seus dados \\
+%         \hline
+%         Postconditions: & A Entidade pode usufruir da aplicação \\
+%         \hline
+%         Normal Flow: & \textbf{6.0 Processo de criação de conta de Entidade}
+%         \begin{enumerate}
+%             \item A Entidade insere os seguintes dados:
+%             \begin{enumerate}
+%                 \item Insere a morada
+%                 \item Insere o NIF
+%                 \item Insere o número de telefone
+%                 \item Insere o nome completo
+%                 \item Insere o email
+%             \end{enumerate}
+%             \item Insere a Entidade na base de dados
+%             \item É enviado um email de confirmação à Entidade
+%             \item A Entidade confirma a conta
+%         \end{enumerate} \\
+%         \hline
+%         Alternative Flow: & \textbf{6.1 Processo alternativo de criação de conta de Entidade}
+%         \begin{enumerate}
+%             \item A Entidade envia um email para o Gestor do Portal a pedir para que crie uma conta da Entidade
+%             \item O Gestor do Portal insere os seguintes dados:
+%             \begin{enumerate}
+%                 \item Insere a morada
+%                 \item Insere o NIF
+%                 \item Insere o número de telefone
+%                 \item Insere o nome completo
+%                 \item Insere o email
+%             \end{enumerate}
+%             \item Insere a Entidade na base de dados
+%             \item É enviado um email de confirmação à Entidade
+%             \item A Entidade confirma a conta
+%         \end{enumerate} \\
+%         \hline
+%         Exceptions: & \textbf{6.[0-1].E1  Email já registado}
+%         \begin{enumerate}
+%             \item O sistema apresenta uma mensagem de alerta. ``O email que inseriu já está registado''
+%             \item O sistema permite recuperar a conta
+%         \end{enumerate}
+%         \textbf{6.[0-1].E2 NIF já registado}
+%         \begin{enumerate}
+%             \item O sistema apresenta uma mensagem de alerta. ``O NIF que inseriu já está registado''
+%             \item O sistema permite recuperar a conta
+%         \end{enumerate}
+%         \textbf{6.[0-1].E3 Email não corresponde a um email associado a uma entidade}
+%         \begin{enumerate}
+%             \item O sistema apresenta uma mensagem de alerta. ``O email que inseriu não se encontra no portal''
+%         \end{enumerate} \\
+%         \hline
+%         Priority: & Média \\
+%         \hline
+%         Business Requirements: & N/A \\
+%         \hline
+%         Assumptions: & N/A \\
+%         \hline
+%         \caption[Caption]{Use case 6 - criar uma conta}\label{use case 6}
+%     \end{longtable}
+% \end{filecontents}
+% \LTXtable{1.0\linewidth}{long.tex}
+
+\chapter{Priorização de requisitos}
+
+Em relação à priorização de requisitos, é usada a técnica Quality Function Deployment proposta por Cohen em 1995, que serve para estimar a prioridade de um grupo de requisitos. Baseado no benefício da inclusão de uma feature/requisito, da penalização da mesma não ser incluída e ainda o custo e riscos associados à implementação. Com o método MoSCoW, a partir dos features iniciais é feita ainda uma redução para facilitar o uso da tabela de Quality Function Deployment.
+\newline
+Nesta abordagem são usados os valores 0 e 1. No caso de 1 significa que o requisito/feature da coluna é mais prioritário que o da linha e se for 0 o contrário verifica-se.
+
+\begin{table}[H]
+    \centering
+    % \rowcolors{5}{gray!10}{gray!40}
+    \begin{tabular}{|>{\columncolor{blue!30!white}}r|r|r|r|r|r|r|r|r|r|}
+        \hline
+        \rowcolor{blue!30!white}
+        \cellcolor{white}Tabela MoSCoW & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+        \hline
+        1 && 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+        \hline
+        2 & 1 && 1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+        \hline
+        3 & 1 & 0 && 0 & 0 & 1 & 1 & 0 & 0 \\
+        \hline
+        4 & 1 & 0 & 1 && 0 & 1 & 1 & 0 & 0 \\
+        \hline
+        5 & 1 & 1 & 1 & 1 && 1 & 1 & 1 & 1 \\
+        \hline
+        6 & 0 & 0 & 0 & 0 & 0 && 1 & 0 & 0 \\
+        \hline
+        7 & 0 & 0 & 0 & 0 & 0 & 0 && 0 & 0 \\
+        \hline
+        8 & 1 & 1 & 1 & 1 & 0 & 1 & 1 && 0 \\
+        \hline
+        9 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & \\
+        \hline
+        \rowcolor{green!10}
+        Total & 6 & 3 & 5 & 4 & 0 & 7 & 8 & 2 & 1 \\
+        \hline
+    \end{tabular}
+    \caption{Tabela de priorização usando a técnica MoSCoW}
+    \label{table:tabela moscow}
+\end{table}
+
+Após esta seleção inicial é criada uma tabela de priorização onde é pedido , numa escala de 1-9, para classificar o benefício e penalização de cada requisito. É também estimado o custo e risco de implementação associado a cada feature.
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+    \begin{tabular}{|>{\columncolor{green!10!white}}r|r|r|r|r|r|r|r|r|r|r|}
+        \hline
+        \rowcolor{blue!20}
+        \multicolumn{2}{|c|}{\textbf{Feature}} & \textbf{Benefício relativo} & \textbf{Penalização relativa} & \textbf{Valor Total} & \textbf{Valor \%} & \textbf{Custo relativo} & \textbf{Custo \%} & \textbf{Risco relativo} & \textbf{Risco \%} & \textbf{Prioridade} \\
+        \hline
+        Eliminar uma entidade & 7 & 7 & 6 & 20 & 10,10 & 1 & 2,56 & 1 & 2,70 & 1,92 \\
+        \hline
+        Adicionar uma entidade & 6 & 8 & 8 & 22 & 11,11 & 1 & 2,56 & 1 & 2,70 & 2,11 \\
+        \hline
+        Navegar no mapa & 1 & 9 & 9 & 27 & 13,64 & 8 & 20,51 & 1 & 2,70 & 0,59 \\
+        \hline
+        Pesquisar entidades & 3 & 8 & 8 & 26 & 13,13 & 6 & 15,38 & 9 & 24,32 & 0,33 \\
+        \hline
+        Consultar entidades através de parâmetros & 4 & 9 & 7 & 25 & 12,63 & 4 & 10,26 & 2 & 5,41 & 0,81 \\
+        \hline
+        Selecionar entidade no mapa & 2 & 7 & 7 & 25 & 12,63 & 5 & 12,82 & 1 & 2,70 & 0,81 \\
+        \hline
+        Editar uma entidade & 8 & 6 & 6 & 18 & 9,09 & 1 & 2,56 & 9 & 24,32 & 0,34 \\
+        \hline
+        Consultar estatísticas das entidades & 5 & 7 & 6 & 18 & 9,09 & 5 & 12,82 & 4 & 10,81 & 0,38 \\
+        \hline
+        Criar conta (associada à entidade) & 9 & 6 & 5 & 17 & 8,59 & 8 & 20,51 & 9 & 24,32 & 0,19 \\
+        \hline
+        \rowcolor{gray!20}
+        \multicolumn{2}{|c|}{\textbf{Total}} & 67 & 62 & \textbf{198} & 100,00 & \textbf{39} & 100,00 & \textbf{37} & 100,00 & \\
+        \hline
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Tabela de priorização das features}
+    \label{table:tabela de priorizacao}
+\end{table}
+
+Utilizando este método obtemos os requisitos ordenados por prioridade:
+
+\begin{table}[H]
+    \centering
+    % \rowcolors{5}{gray!10}{gray!40}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \rowcolor{blue!20!white}
+        \textbf{Rank} & \textbf{Feature} & \textbf{\# Feature} & \textbf{Prioridade} \\
+        \hline
+        1 & Adicionar uma entidade & 6 & 2,11 \\
+        \hline
+        2 & Eliminar uma entidade & 7 & 1,92 \\
+        \hline
+        3 & Consultar entidades através de parâmetros & 4 & 0,81 \\
+        \hline
+        4 & Selecionar entidade no mapa & 2 & 0,81 \\
+        \hline
+        5 & Navegar no mapa & 1 & 0,59 \\
+        \hline
+        6 & Consultar estatísticas das entidades & 5 & 0,38 \\
+        \hline
+        7 & Editar uma entidade & 8 & 0,34 \\
+        \hline
+        8 & Pesquisar entidades & 3 & 0,33 \\
+        \hline
+        9 & Criar conta (associada à entidade) & 9 & 0,19 \\
+        \hline
+    \end{tabular}
+    \caption{Requisitos mais prioritários ordenados}
+    \label{table:requisitos ordenados}
+\end{table}
+
+\section{Critérios de aceitação}
+
+Para mais facilmente conseguir-se testar se as features mais prioritárias que foram escolhidas anteriormente foram bem implementadas foram criados estes critérios de aceitação para cada uma delas. Estes critérios ajudam-nos a perceber as condições mínimas para que esta aplicação possa ser considerada um MVP, “minimum viable product”, ou seja, para que este projeto tenha os requisitos mínimos possíveis de forma a que este seja considerado production ready.
+\newline
+Para estes critérios de aceitação foi considerado o seguinte:
+
+\begin{itemize}
+    \item Funcionalidade de alto nível que tem de estar presente para que o sistema seja usável
+    \item Critérios não funcionais e métricas de qualidade que têm de ser satisfeitas
+    \item Possibilidade de problemas em aberto ou defeitos (podemos garantir que nenhum defeito ou TBD esteja presente para o sistema ser aceite)
+    \item Restrições legais ou contratuais (que têm de ser satisfeitas para o sistema ser aceite)
+\end{itemize}
+
+\subsection{Features}
+
+\subsubsection{Eliminar uma entidade}
+
+\begin{itemize}
+    \item O sistema deverá permitir a eliminação de uma entidade
+\end{itemize}
+
+\subsubsection{Adicionar uma entidade}
+
+\begin{itemize}
+    \item O sistema permite ao Gestor do Portal adicionar uma entidade com os seguintes parâmetros: nome, NIF, morada, contactos (site, email, telefone, redes sociais), natureza jurídica, estatuto jurídico, data de criação, âmbito geográfico, área de intervenção
+\end{itemize}
+
+\subsubsection{Navegar no mapa}
+
+\begin{itemize}
+    \item O sistema consegue representar as entidades da região no mapa
+\end{itemize}
+
+\subsubsection{Pesquisar entidades}
+
+\begin{itemize}
+    \item O sistema permite pesquisar entidades pelo nome
+\end{itemize}
+
+\subsubsection{Consultar entidades através de parâmetros}
+
+\begin{itemize}
+    \item O sistema permite pesquisar entidades pelos seguintes parâmetros: NIF, morada, natureza jurídica, estatuto jurídico, data de criação, âmbito geográfico, área de intervenção
+\end{itemize}
+
+\subsubsection{Selecionar entidade no mapa}
+
+\begin{itemize}
+    \item O sistema permite a selecionar uma entidade no mapa
+\end{itemize}
+
+\subsubsection{Editar uma entidade}
+
+\begin{itemize}
+    \item O sistema permite a edição de uma entidade
+    \item O sistema guarda na base de dados as modificações que foram realizadas
+\end{itemize}
+
+\subsubsection{Consultar estatísticas das entidades}
+
+\begin{itemize}
+    \item O sistema permite que o utilizador possa consultar estatísticas relativas às entidades
+\end{itemize}
+
+\subsubsection{Criar conta (associada à entidade)}
+
+\begin{itemize}
+    \item O sistema consegue criar um novo perfil do tipo Entidade
+    \item A Entidade tem que inserir o seu nome, NIF, morada, nº de telefone, email e uma password
+    \item O sistema consegue detectar se o email já está em uso
+    \item O sistema consegue detectar se o NIF da entidade já está em uso
+    \item O sistema consegue enviar email de confirmação de criação de perfil
+    \item O utilizador consegue confirmar criação de perfil
+\end{itemize}
+
+\section{Protótipo}
+
+Para o protótipo é realizado primeiramente vários drafts com ferramentas de design, como Figma e Vectr. Depois, com as ferramentas referidas anteriormente em \textbf{Requisitos de Tecnologia} (PHP, HTML, CSS e Javascript), é criado um website.
+
+\bibliographystyle{IEEEtran}
+\bibliography{assets/references}
+
+\end{document}
