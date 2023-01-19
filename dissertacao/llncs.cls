@@ -57,23 +57,23 @@
 \renewcommand\@tocrmarg{3.5em}
 %
 \def\@dottedtocline#1#2#3#4#5{%
-  \ifnum #1>\c@tocdepth \else
+    \ifnum #1>\c@tocdepth \else
     \vskip \z@ \@plus.2\p@
     {\leftskip #2\relax \rightskip \@tocrmarg \advance\rightskip by 0pt plus 2cm
-               \parfillskip -\rightskip \pretolerance=10000
-     \parindent #2\relax\@afterindenttrue
-     \interlinepenalty\@M
-     \leavevmode
-     \@tempdima #3\relax
-     \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
-     {#4}\nobreak
-     \leaders\hbox{$\m@th
+        \parfillskip -\rightskip \pretolerance=10000
+        \parindent #2\relax\@afterindenttrue
+        \interlinepenalty\@M
+        \leavevmode
+        \@tempdima #3\relax
+        \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+        {#4}\nobreak
+        \leaders\hbox{$\m@th
         \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
         mu$}\hfill
-     \nobreak
-     \hb@xt@\@pnumwidth{\hfil\normalfont \normalcolor #5}%
-     \par}%
-  \fi}
+        \nobreak
+        \hb@xt@\@pnumwidth{\hfil\normalfont \normalcolor #5}%
+    \par}%
+\fi}
 %
 \def\switcht@albion{%
 \def\abstractname{Abstract.}
@@ -117,79 +117,79 @@
 %
 % French section
 \def\switcht@francais{%\typeout{On parle francais.}%
- \def\abstractname{R\'esum\'e.}%
- \def\ackname{Remerciements.}%
- \def\andname{et}%
- \def\lastandname{ et}%
- \def\appendixname{Appendice}
- \def\chaptername{Chapitre}%
- \def\claimname{Pr\'etention}%
- \def\conjecturename{Hypoth\`ese}%
- \def\contentsname{Table des mati\`eres}%
- \def\corollaryname{Corollaire}%
- \def\definitionname{D\'efinition}%
- \def\examplename{Exemple}%
- \def\exercisename{Exercice}%
- \def\figurename{Fig.}%
- \def\keywordname{{\bf Mots-cl\'e:}}
- \def\indexname{Index}
- \def\lemmaname{Lemme}%
- \def\contriblistname{Liste des contributeurs}
- \def\listfigurename{Liste des figures}%
- \def\listtablename{Liste des tables}%
- \def\mailname{{\it Correspondence to\/}:}
- \def\noteaddname{Note ajout\'ee \`a l'\'epreuve}%
- \def\notename{Remarque}%
- \def\partname{Partie}%
- \def\problemname{Probl\`eme}%
- \def\proofname{Preuve}%
- \def\propertyname{Caract\'eristique}%
+\def\abstractname{R\'esum\'e.}%
+\def\ackname{Remerciements.}%
+\def\andname{et}%
+\def\lastandname{ et}%
+\def\appendixname{Appendice}
+\def\chaptername{Chapitre}%
+\def\claimname{Pr\'etention}%
+\def\conjecturename{Hypoth\`ese}%
+\def\contentsname{Table des mati\`eres}%
+\def\corollaryname{Corollaire}%
+\def\definitionname{D\'efinition}%
+\def\examplename{Exemple}%
+\def\exercisename{Exercice}%
+\def\figurename{Fig.}%
+\def\keywordname{{\bf Mots-cl\'e:}}
+\def\indexname{Index}
+\def\lemmaname{Lemme}%
+\def\contriblistname{Liste des contributeurs}
+\def\listfigurename{Liste des figures}%
+\def\listtablename{Liste des tables}%
+\def\mailname{{\it Correspondence to\/}:}
+\def\noteaddname{Note ajout\'ee \`a l'\'epreuve}%
+\def\notename{Remarque}%
+\def\partname{Partie}%
+\def\problemname{Probl\`eme}%
+\def\proofname{Preuve}%
+\def\propertyname{Caract\'eristique}%
 %\def\propositionname{Proposition}%
- \def\questionname{Question}%
- \def\remarkname{Remarque}%
- \def\seename{voir}
- \def\solutionname{Solution}%
- \def\subclassname{{\it Subject Classifications\/}:}
- \def\tablename{Tableau}%
- \def\theoremname{Th\'eor\`eme}%
+\def\questionname{Question}%
+\def\remarkname{Remarque}%
+\def\seename{voir}
+\def\solutionname{Solution}%
+\def\subclassname{{\it Subject Classifications\/}:}
+\def\tablename{Tableau}%
+\def\theoremname{Th\'eor\`eme}%
 }
 %
 % German section
 \def\switcht@deutsch{%\typeout{Man spricht deutsch.}%
- \def\abstractname{Zusammenfassung.}%
- \def\ackname{Danksagung.}%
- \def\andname{und}%
- \def\lastandname{ und}%
- \def\appendixname{Anhang}%
- \def\chaptername{Kapitel}%
- \def\claimname{Behauptung}%
- \def\conjecturename{Hypothese}%
- \def\contentsname{Inhaltsverzeichnis}%
- \def\corollaryname{Korollar}%
+\def\abstractname{Zusammenfassung.}%
+\def\ackname{Danksagung.}%
+\def\andname{und}%
+\def\lastandname{ und}%
+\def\appendixname{Anhang}%
+\def\chaptername{Kapitel}%
+\def\claimname{Behauptung}%
+\def\conjecturename{Hypothese}%
+\def\contentsname{Inhaltsverzeichnis}%
+\def\corollaryname{Korollar}%
 %\def\definitionname{Definition}%
- \def\examplename{Beispiel}%
- \def\exercisename{\"Ubung}%
- \def\figurename{Abb.}%
- \def\keywordname{{\bf Schl\"usselw\"orter:}}
- \def\indexname{Index}
+\def\examplename{Beispiel}%
+\def\exercisename{\"Ubung}%
+\def\figurename{Abb.}%
+\def\keywordname{{\bf Schl\"usselw\"orter:}}
+\def\indexname{Index}
 %\def\lemmaname{Lemma}%
- \def\contriblistname{Mitarbeiter}
- \def\listfigurename{Abbildungsverzeichnis}%
- \def\listtablename{Tabellenverzeichnis}%
- \def\mailname{{\it Correspondence to\/}:}
- \def\noteaddname{Nachtrag}%
- \def\notename{Anmerkung}%
- \def\partname{Teil}%
+\def\contriblistname{Mitarbeiter}
+\def\listfigurename{Abbildungsverzeichnis}%
+\def\listtablename{Tabellenverzeichnis}%
+\def\mailname{{\it Correspondence to\/}:}
+\def\noteaddname{Nachtrag}%
+\def\notename{Anmerkung}%
+\def\partname{Teil}%
 %\def\problemname{Problem}%
- \def\proofname{Beweis}%
- \def\propertyname{Eigenschaft}%
+\def\proofname{Beweis}%
+\def\propertyname{Eigenschaft}%
 %\def\propositionname{Proposition}%
- \def\questionname{Frage}%
- \def\remarkname{Anmerkung}%
- \def\seename{siehe}
- \def\solutionname{L\"osung}%
- \def\subclassname{{\it Subject Classifications\/}:}
- \def\tablename{Tabelle}%
+\def\questionname{Frage}%
+\def\remarkname{Anmerkung}%
+\def\seename{siehe}
+\def\solutionname{L\"osung}%
+\def\subclassname{{\it Subject Classifications\/}:}
+\def\tablename{Tabelle}%
 %\def\theoremname{Theorem}%
 }
 
@@ -198,15 +198,15 @@
 \global\let\@textbottom\relax}}
 
 \renewcommand\small{%
-   \@setfontsize\small\@ixpt{11}%
-   \abovedisplayskip 8.5\p@ \@plus3\p@ \@minus4\p@
-   \abovedisplayshortskip \z@ \@plus2\p@
-   \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
-   \def\@listi{\leftmargin\leftmargini
-               \parsep 0\p@ \@plus1\p@ \@minus\p@
-               \topsep 8\p@ \@plus2\p@ \@minus4\p@
-               \itemsep0\p@}%
-   \belowdisplayskip \abovedisplayskip
+\@setfontsize\small\@ixpt{11}%
+\abovedisplayskip 8.5\p@ \@plus3\p@ \@minus4\p@
+\abovedisplayshortskip \z@ \@plus2\p@
+\belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
+\def\@listi{\leftmargin\leftmargini
+    \parsep 0\p@ \@plus1\p@ \@minus\p@
+    \topsep 8\p@ \@plus2\p@ \@minus4\p@
+\itemsep0\p@}%
+\belowdisplayskip \abovedisplayskip
 }
 
 \frenchspacing
@@ -230,134 +230,134 @@
 
 \newif\if@mainmatter \@mainmattertrue
 \newcommand\frontmatter{\cleardoublepage
-            \@mainmatterfalse\pagenumbering{Roman}}
+\@mainmatterfalse\pagenumbering{Roman}}
 \newcommand\mainmatter{\cleardoublepage
-       \@mainmattertrue\pagenumbering{arabic}}
+\@mainmattertrue\pagenumbering{arabic}}
 \newcommand\backmatter{\if@openright\cleardoublepage\else\clearpage\fi
-      \@mainmatterfalse}
+\@mainmatterfalse}
 
 \renewcommand\part{\cleardoublepage
-                 \thispagestyle{empty}%
-                 \if@twocolumn
-                     \onecolumn
-                     \@tempswatrue
-                   \else
-                     \@tempswafalse
-                 \fi
-                 \null\vfil
-                 \secdef\@part\@spart}
+    \thispagestyle{empty}%
+    \if@twocolumn
+        \onecolumn
+        \@tempswatrue
+    \else
+        \@tempswafalse
+    \fi
+    \null\vfil
+\secdef\@part\@spart}
 
 \def\@part[#1]#2{%
     \ifnum \c@secnumdepth >-2\relax
-      \refstepcounter{part}%
-      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+        \refstepcounter{part}%
+        \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
     \else
-      \addcontentsline{toc}{part}{#1}%
+        \addcontentsline{toc}{part}{#1}%
     \fi
     \markboth{}{}%
     {\centering
-     \interlinepenalty \@M
-     \normalfont
-     \ifnum \c@secnumdepth >-2\relax
-       \huge\bfseries \partname~\thepart
-       \par
-       \vskip 20\p@
-     \fi
-     \Huge \bfseries #2\par}%
+        \interlinepenalty \@M
+        \normalfont
+        \ifnum \c@secnumdepth >-2\relax
+            \huge\bfseries \partname~\thepart
+            \par
+            \vskip 20\p@
+        \fi
+    \Huge \bfseries #2\par}%
     \@endpart}
 \def\@spart#1{%
     {\centering
-     \interlinepenalty \@M
-     \normalfont
-     \Huge \bfseries #1\par}%
+        \interlinepenalty \@M
+        \normalfont
+    \Huge \bfseries #1\par}%
     \@endpart}
 \def\@endpart{\vfil\newpage
-              \if@twoside
-                \null
-                \thispagestyle{empty}%
-                \newpage
-              \fi
-              \if@tempswa
-                \twocolumn
-              \fi}
+    \if@twoside
+        \null
+        \thispagestyle{empty}%
+        \newpage
+    \fi
+    \if@tempswa
+        \twocolumn
+\fi}
 
 \newcommand\chapter{\clearpage
-                    \thispagestyle{empty}%
-                    \global\@topnum\z@
-                    \@afterindentfalse
-                    \secdef\@chapter\@schapter}
+    \thispagestyle{empty}%
+    \global\@topnum\z@
+    \@afterindentfalse
+    \secdef\@chapter\@schapter}
 \def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
-                       \if@mainmatter
-                         \refstepcounter{chapter}%
-                         \typeout{\@chapapp\space\thechapter.}%
-                         \addcontentsline{toc}{chapter}%
-                                  {\protect\numberline{\thechapter}#1}%
-                       \else
-                         \addcontentsline{toc}{chapter}{#1}%
-                       \fi
-                    \else
-                      \addcontentsline{toc}{chapter}{#1}%
-                    \fi
-                    \chaptermark{#1}%
-                    \addtocontents{lof}{\protect\addvspace{10\p@}}%
-                    \addtocontents{lot}{\protect\addvspace{10\p@}}%
-                    \if@twocolumn
-                      \@topnewpage[\@makechapterhead{#2}]%
-                    \else
-                      \@makechapterhead{#2}%
-                      \@afterheading
-                    \fi}
+    \if@mainmatter
+        \refstepcounter{chapter}%
+        \typeout{\@chapapp\space\thechapter.}%
+        \addcontentsline{toc}{chapter}%
+        {\protect\numberline{\thechapter}#1}%
+    \else
+        \addcontentsline{toc}{chapter}{#1}%
+    \fi
+    \else
+        \addcontentsline{toc}{chapter}{#1}%
+    \fi
+    \chaptermark{#1}%
+    \addtocontents{lof}{\protect\addvspace{10\p@}}%
+    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+    \if@twocolumn
+        \@topnewpage[\@makechapterhead{#2}]%
+    \else
+        \@makechapterhead{#2}%
+        \@afterheading
+    \fi}
 \def\@makechapterhead#1{%
 % \vspace*{50\p@}%
-  {\centering
+    {\centering
     \ifnum \c@secnumdepth >\m@ne
-      \if@mainmatter
-        \large\bfseries \@chapapp{} \thechapter
-        \par\nobreak
-        \vskip 20\p@
-      \fi
+        \if@mainmatter
+            \large\bfseries \@chapapp{} \thechapter
+            \par\nobreak
+            \vskip 20\p@
+        \fi
     \fi
     \interlinepenalty\@M
     \Large \bfseries #1\par\nobreak
     \vskip 40\p@
-  }}
+}}
 \def\@schapter#1{\if@twocolumn
-                   \@topnewpage[\@makeschapterhead{#1}]%
-                 \else
-                   \@makeschapterhead{#1}%
-                   \@afterheading
-                 \fi}
+        \@topnewpage[\@makeschapterhead{#1}]%
+    \else
+        \@makeschapterhead{#1}%
+        \@afterheading
+\fi}
 \def\@makeschapterhead#1{%
 % \vspace*{50\p@}%
-  {\centering
-    \normalfont
-    \interlinepenalty\@M
-    \Large \bfseries  #1\par\nobreak
-    \vskip 40\p@
-  }}
+    {\centering
+        \normalfont
+        \interlinepenalty\@M
+        \Large \bfseries  #1\par\nobreak
+        \vskip 40\p@
+}}
 
 \renewcommand\section{\@startsection{section}{1}{\z@}%
-                       {-18\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {12\p@ \@plus 4\p@ \@minus 4\p@}%
-                       {\normalfont\large\bfseries\boldmath
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
+    {-18\p@ \@plus -4\p@ \@minus -4\p@}%
+    {12\p@ \@plus 4\p@ \@minus 4\p@}%
+    {\normalfont\large\bfseries\boldmath
+\rightskip=\z@ \@plus 8em\pretolerance=10000 }}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-                       {-18\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {8\p@ \@plus 4\p@ \@minus 4\p@}%
-                       {\normalfont\normalsize\bfseries\boldmath
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
+    {-18\p@ \@plus -4\p@ \@minus -4\p@}%
+    {8\p@ \@plus 4\p@ \@minus 4\p@}%
+    {\normalfont\normalsize\bfseries\boldmath
+\rightskip=\z@ \@plus 8em\pretolerance=10000 }}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-                       {-18\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {4\p@ \@plus 2\p@ \@minus 2\p@}%
-                       {\normalfont\normalsize\bfseries\boldmath
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
+    {-18\p@ \@plus -4\p@ \@minus -4\p@}%
+    {4\p@ \@plus 2\p@ \@minus 2\p@}%
+    {\normalfont\normalsize\bfseries\boldmath
+\rightskip=\z@ \@plus 8em\pretolerance=10000 }}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-                       {-12\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {2\p@ \@plus 1\p@ \@minus 1\p@}%
-                       {\normalfont\normalsize\itshape
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
+    {-12\p@ \@plus -4\p@ \@minus -4\p@}%
+    {2\p@ \@plus 1\p@ \@minus 1\p@}%
+    {\normalfont\normalsize\itshape
+\rightskip=\z@ \@plus 8em\pretolerance=10000 }}
 \renewcommand\subparagraph[1]{\typeout{LLNCS warning: You should not use
-                  \string\subparagraph\space with this class}\vskip0.5cm
+    \string\subparagraph\space with this class}\vskip0.5cm
 You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 
 \DeclareMathSymbol{\Gamma}{\mathalpha}{letters}{"00}
@@ -492,15 +492,15 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 \let\@listi\@listI
 \@listi
 \def\@listii {\leftmargin\leftmarginii
-              \labelwidth\leftmarginii
-              \advance\labelwidth-\labelsep
-              \topsep    0\p@ \@plus2\p@ \@minus\p@}
+    \labelwidth\leftmarginii
+    \advance\labelwidth-\labelsep
+\topsep    0\p@ \@plus2\p@ \@minus\p@}
 \def\@listiii{\leftmargin\leftmarginiii
-              \labelwidth\leftmarginiii
-              \advance\labelwidth-\labelsep
-              \topsep    0\p@ \@plus\p@\@minus\p@
-              \parsep    \z@
-              \partopsep \p@ \@plus\z@ \@minus\p@}
+    \labelwidth\leftmarginiii
+    \advance\labelwidth-\labelsep
+    \topsep    0\p@ \@plus\p@\@minus\p@
+    \parsep    \z@
+\partopsep \p@ \@plus\z@ \@minus\p@}
 
 \renewcommand\labelitemi{\normalfont\bfseries --}
 \renewcommand\labelitemii{$\m@th\bullet$}
@@ -509,36 +509,36 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 \setlength\tabcolsep{1.4\p@}
 
 \def\tableofcontents{\chapter*{\contentsname\@mkboth{{\contentsname}}%
-                                                    {{\contentsname}}}
- \def\authcount##1{\setcounter{auco}{##1}\setcounter{@auth}{1}}
- \def\lastand{\ifnum\value{auco}=2\relax
-                 \unskip{} \andname\
-              \else
-                 \unskip \lastandname\
-              \fi}%
- \def\and{\stepcounter{@auth}\relax
-          \ifnum\value{@auth}=\value{auco}%
-             \lastand
-          \else
-             \unskip,
-          \fi}%
- \@starttoc{toc}\if@restonecol\twocolumn\fi}
+{{\contentsname}}}
+    \def\authcount##1{\setcounter{auco}{##1}\setcounter{@auth}{1}}
+    \def\lastand{\ifnum\value{auco}=2\relax
+        \unskip{} \andname\
+    \else
+        \unskip \lastandname\
+    \fi}%
+    \def\and{\stepcounter{@auth}\relax
+        \ifnum\value{@auth}=\value{auco}%
+            \lastand
+        \else
+            \unskip,
+        \fi}%
+\@starttoc{toc}\if@restonecol\twocolumn\fi}
 
 \def\l@part#1#2{\addpenalty{\@secpenalty}%
-   \addvspace{2em plus\p@}%  % space above part line
-   \begingroup
-     \parindent \z@
-     \rightskip \z@ plus 5em
-     \hrule\vskip5pt
-     \large               % same size as for a contribution heading
-     \bfseries\boldmath   % set line in boldface
-     \leavevmode          % TeX command to enter horizontal mode.
-     #1\par
-     \vskip5pt
-     \hrule
-     \vskip1pt
-     \nobreak             % Never break after part entry
-   \endgroup}
+    \addvspace{2em plus\p@}%  % space above part line
+    \begingroup
+        \parindent \z@
+        \rightskip \z@ plus 5em
+        \hrule\vskip5pt
+        \large               % same size as for a contribution heading
+        \bfseries\boldmath   % set line in boldface
+        \leavevmode          % TeX command to enter horizontal mode.
+        #1\par
+        \vskip5pt
+        \hrule
+        \vskip1pt
+        \nobreak             % Never break after part entry
+\endgroup}
 
 \def\@dotsep{2}
 
@@ -548,8 +548,8 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 {}\fi}
 
 \def\addnumcontentsmark#1#2#3{%
-\addtocontents{#1}{\protect\contentsline{#2}{\protect\numberline
-                     {\thechapter}#3}{\thepage}\hyperhrefextend}}%
+    \addtocontents{#1}{\protect\contentsline{#2}{\protect\numberline
+{\thechapter}#3}{\thepage}\hyperhrefextend}}%
 \def\addcontentsmark#1#2#3{%
 \addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}\hyperhrefextend}}%
 \def\addcontentsmarkwop#1#2#3{%
@@ -557,9 +557,9 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 
 \def\@adcmk[#1]{\ifcase #1 \or
 \def\@gtempa{\addnumcontentsmark}%
-  \or    \def\@gtempa{\addcontentsmark}%
-  \or    \def\@gtempa{\addcontentsmarkwop}%
-  \fi\@gtempa{toc}{chapter}%
+    \or    \def\@gtempa{\addcontentsmark}%
+    \or    \def\@gtempa{\addcontentsmarkwop}%
+    \fi\@gtempa{toc}{chapter}%
 }
 \def\addtocmark{%
 \phantomsection
@@ -567,43 +567,43 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 }
 
 \def\l@chapter#1#2{\addpenalty{-\@highpenalty}
- \vskip 1.0em plus 1pt \@tempdima 1.5em \begingroup
- \parindent \z@ \rightskip \@tocrmarg
- \advance\rightskip by 0pt plus 2cm
- \parfillskip -\rightskip \pretolerance=10000
- \leavevmode \advance\leftskip\@tempdima \hskip -\leftskip
- {\large\bfseries\boldmath#1}\ifx0#2\hfil\null
- \else
-      \nobreak
-      \leaders\hbox{$\m@th \mkern \@dotsep mu.\mkern
-      \@dotsep mu$}\hfill
-      \nobreak\hbox to\@pnumwidth{\hss #2}%
- \fi\par
- \penalty\@highpenalty \endgroup}
+    \vskip 1.0em plus 1pt \@tempdima 1.5em \begingroup
+    \parindent \z@ \rightskip \@tocrmarg
+    \advance\rightskip by 0pt plus 2cm
+    \parfillskip -\rightskip \pretolerance=10000
+    \leavevmode \advance\leftskip\@tempdima \hskip -\leftskip
+    {\large\bfseries\boldmath#1}\ifx0#2\hfil\null
+    \else
+        \nobreak
+        \leaders\hbox{$\m@th \mkern \@dotsep mu.\mkern
+        \@dotsep mu$}\hfill
+        \nobreak\hbox to\@pnumwidth{\hss #2}%
+    \fi\par
+\penalty\@highpenalty \endgroup}
 
 \def\l@title#1#2{\addpenalty{-\@highpenalty}
- \addvspace{8pt plus 1pt}
- \@tempdima \z@
- \begingroup
- \parindent \z@ \rightskip \@tocrmarg
- \advance\rightskip by 0pt plus 2cm
- \parfillskip -\rightskip \pretolerance=10000
- \leavevmode \advance\leftskip\@tempdima \hskip -\leftskip
- #1\nobreak
- \leaders\hbox{$\m@th \mkern \@dotsep mu.\mkern
- \@dotsep mu$}\hfill
- \nobreak\hbox to\@pnumwidth{\hss #2}\par
- \penalty\@highpenalty \endgroup}
+    \addvspace{8pt plus 1pt}
+    \@tempdima \z@
+    \begingroup
+    \parindent \z@ \rightskip \@tocrmarg
+    \advance\rightskip by 0pt plus 2cm
+    \parfillskip -\rightskip \pretolerance=10000
+    \leavevmode \advance\leftskip\@tempdima \hskip -\leftskip
+    #1\nobreak
+    \leaders\hbox{$\m@th \mkern \@dotsep mu.\mkern
+    \@dotsep mu$}\hfill
+    \nobreak\hbox to\@pnumwidth{\hss #2}\par
+\penalty\@highpenalty \endgroup}
 
 \def\l@author#1#2{\addpenalty{\@highpenalty}
- \@tempdima=15\p@ %\z@
- \begingroup
- \parindent \z@ \rightskip \@tocrmarg
- \advance\rightskip by 0pt plus 2cm
- \pretolerance=10000
- \leavevmode \advance\leftskip\@tempdima %\hskip -\leftskip
- \textit{#1}\par
- \penalty\@highpenalty \endgroup}
+    \@tempdima=15\p@ %\z@
+    \begingroup
+    \parindent \z@ \rightskip \@tocrmarg
+    \advance\rightskip by 0pt plus 2cm
+    \pretolerance=10000
+    \leavevmode \advance\leftskip\@tempdima %\hskip -\leftskip
+    \textit{#1}\par
+\penalty\@highpenalty \endgroup}
 
 \setcounter{tocdepth}{0}
 \newdimen\tocchpnum
@@ -640,26 +640,26 @@ to0pt{\kern0.55\wd0\vrule height0.45\ht0\hss}\box0}}}}
 \def\l@subparagraph{\@dottedtocline{5}{\tocparatotal}{\tocsubparanum}}
 
 \def\listoffigures{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
- \fi\section*{\listfigurename\@mkboth{{\listfigurename}}{{\listfigurename}}}
- \@starttoc{lof}\if@restonecol\twocolumn\fi}
+    \fi\section*{\listfigurename\@mkboth{{\listfigurename}}{{\listfigurename}}}
+\@starttoc{lof}\if@restonecol\twocolumn\fi}
 \def\l@figure{\@dottedtocline{1}{0em}{1.5em}}
 
 \def\listoftables{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
- \fi\section*{\listtablename\@mkboth{{\listtablename}}{{\listtablename}}}
- \@starttoc{lot}\if@restonecol\twocolumn\fi}
+    \fi\section*{\listtablename\@mkboth{{\listtablename}}{{\listtablename}}}
+\@starttoc{lot}\if@restonecol\twocolumn\fi}
 \let\l@table\l@figure
 
 \renewcommand\listoffigures{%
     \section*{\listfigurename
-      \@mkboth{\listfigurename}{\listfigurename}}%
+        \@mkboth{\listfigurename}{\listfigurename}}%
     \@starttoc{lof}%
-    }
+}
 
 \renewcommand\listoftables{%
     \section*{\listtablename
-      \@mkboth{\listtablename}{\listtablename}}%
+        \@mkboth{\listtablename}{\listtablename}}%
     \@starttoc{lot}%
-    }
+}
 
 \ifx\oribibl\undefined
 \ifx\citeauthoryear\undefined

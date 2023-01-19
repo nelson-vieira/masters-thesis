@@ -1,19 +1,6 @@
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
 
-
-\usepackage[document]{ragged2e}
-\usepackage[nottoc]{tocbibind}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[portuguese, english]{babel}
-\usepackage[shortlabels]{enumitem}
-% \usepackage{a4wide}
-\usepackage[hidelinks]{hyperref}
-\usepackage{nome\setcounter{secnumdepth}{5}
-\setcounter{tocdepth}{5}
-
-
 \usepackage[document]{ragged2e}
 \usepackage[nottoc]{tocbibind}
 \usepackage[utf8]{inputenc}
@@ -55,71 +42,18 @@
 
 \onehalfspacing
 
-
-
 %% Fix for the sub sub section
 \makeatletter
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-                       {-18\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {4\p@ \@plus 2\p@ \@minus 2\p@}%
-                       {\normalfont\normalsize\bfseries\boldmath
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
+    {-18\p@ \@plus -4\p@ \@minus -4\p@}%
+    {4\p@ \@plus 2\p@ \@minus 2\p@}%
+    {\normalfont\normalsize\bfseries\boldmath
+    \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-                       {-12\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {2\p@ \@plus 1\p@ \@minus 1\p@}%
-        	         {\normalfont\normalsize\bfseries\boldmath
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
-\makeatother
-
-\makenomenclature
-
-ncl}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{array}
-\usepackage{tablefootnote} % table footnotes
-\usepackage{url}
-% \usepackage[hyphenbreaks]{breakurl} % disabled to fix warning
-% \usepackage{lineno}
-\usepackage{setspace}
-\usepackage[version=4]{mhchem}
-\usepackage[flushleft]{threeparttable}
-\usepackage{multirow}
-\usepackage{import}
-\usepackage{eurosym}
-\usepackage{parskip}
-\usepackage{cite}
-\usepackage{pgfgantt}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{textcomp}
-\usepackage{xcolor}
-\usepackage{tabularx} % in the preamble
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{datatool}
-\usepackage{datetime}
-
-\usepackage[a4paper, total={15cm, 24cm}]{geometry}
-
-\graphicspath{ {figures/} }
-\def\UrlBreaks{\do\/\do-}
-
-\onehalfspacing
-
-
-
-%% Fix for the sub sub section
-\makeatletter
-\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-                       {-18\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {4\p@ \@plus 2\p@ \@minus 2\p@}%
-                       {\normalfont\normalsize\bfseries\boldmath
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-                       {-12\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {2\p@ \@plus 1\p@ \@minus 1\p@}%
-        	         {\normalfont\normalsize\bfseries\boldmath
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
+    {-12\p@ \@plus -4\p@ \@minus -4\p@}%
+    {2\p@ \@plus 1\p@ \@minus 1\p@}%
+    {\normalfont\normalsize\bfseries\boldmath
+    \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
 \makeatother
 
 \makenomenclature
