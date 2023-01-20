@@ -1,0 +1,105 @@
+\section{Privacy Challenges}
+
+IoT is a composed of a complex web of architectures, applications and technologies.
+In terms of architectures, it can be decomposed in three layers: the perception
+layer, the network layer and the application layer.
+
+The perception layer, also known as the sensor layer, interacts with physical
+objects and components via smart devices (RFID, sensors, actuators, and
+so on). Its key objectives are to connect objects to the IoT network and
+to monitor, collect, and analyze status information about these things using
+deployed smart devices. This layer can often be unreliable, for instance
+with autonomous vehicles where they find it hard to read road signs or to
+predict if certain objects are inanimate or not, but this unreliability
+also brings privacy even though some of the data might be unusable. Noise
+can also be added in this layer to provide extra privacy.
+
+In the network layer there are many competing networks like ZigBee, Z-Wave,
+Bluetooth Low Energy, LoRa, Wi-fi, etc., this layer is fragmented specially
+in regards to wireless networks and that makes it very difficult to create
+an IoT architecture that can use various networks and have the various
+devices communicate with each other, even though interoperability is seen
+as a very important factor in IoT. Some of these networks are open standard
+protocols while others are proprietary and use different protocols of communication,
+use different frequencies, different ranges and different data rates. When
+creating an IoT architecture the designers often think of how to solve
+specific problems and use what is best for the current needs, and the way
+that IoT is fragmented doesn't help in providing progress.
+
+The application layer receives data from the network layer and uses it to
+execute essential services or operations. This layer, for example, can provide
+the storage service to backup incoming data into a database or the analysis
+service to analyze received data in order to predict the future state of
+physical devices. This layer encompasses a wide range of applications, each
+with its own set of requirements. A few examples are smart grids, smart
+transportation, and smart cities.
+
+% In the network layer there are many competing networks like ZigBee, Z-wave
+% Bluetooth Low Energy, LoRa, Wi-fi, etc., this layer is fragmented specially
+% in regards to wireless networks, and that makes it very difficult to create
+% an IoT architecture that can use various networks and have the various
+% devices communicate with each other, even though interoperability is seen
+% as a very important factor in IoT. Some of these networks are free to use
+% while others are proprietary and use different protocols of communication,
+% use different frequencies, different ranges and different data rates. When
+% creating an IoT architecture the designers often think of how to solve
+% specific problems and use what is best for the current needs, and the way
+% that IoT is fragmented doesn't help in providing progress.
+% In the network layer there are many competing networks like ZigBee, Z-wave
+% Bluetooth Low Energy, LoRa, Wi-fi, etc., this layer is fragmented specially
+% in regards to wireless networks, and that makes it very difficult to create
+% an IoT architecture that can use various networks and have the various
+% devices communicate with each other, even though interoperability is seen
+% as a very important factor in IoT. Some of these networks are free to use
+% while others are proprietary and use different protocols of communication,
+% use different frequencies, different ranges and different data rates. When
+% creating an IoT architecture the designers often think of how to solve
+% specific problems and use what is best for the current needs, and the way
+% that IoT is fragmented doesn't help in providing progress.
+
+According to Qu et al. \cite{Qu2018Privacy}, several significant barriers
+remain, including the lack of a theoretical foundation, the trade-off optimization
+between privacy and data value, and system isomerism over-complexity. Because
+there are no mathematical foundations for IoT structure design, IoT system
+designs are planned and executed using empirical approaches, which have
+limitations in IoT development. Scientific theory and quantitative analysis
+must enable trade-off optimization, yet, there are multiple parties with
+diverse characteristics and requirements, making this optimization highly
+challenging. A plethora of standards and protocols add to the unneeded complexity
+of system isomerism. Ensuring effective IoT applications while wasting as
+little resources as feasible implies less resources available for privacy
+protection, however, lightweight privacy protection cannot fulfill all of
+the criteria, and attackers can exploit structural information to launch
+several concurrent attacks.
+
+% According to Qu et al. \cite{Qu2018Privacy}, several substantial barriers
+% remain, including the lack of a theoretical framework, the trade-off optimization
+% between privacy and data utility, and system isomerism over-complexity.
+% There are no mathematical foundations for IoT structure design, IoT system
+% designs are planned and performed using empirical ways, the shortcomings of
+% empirical methods limit IoT progress. To begin with, improving IoT performance
+% entirely on human experience is tough. Second, developing privacy protection
+% systems is difficult without theoretical guidance. Third, opponents may
+% utilize this function to increase the success rate of their attacks. Trade-off
+% optimization must be supported by scientific theory and quantitative analysis.
+% Qu et al. highlight several key challenges that still need to be overcome
+% namely the lack of a theoretical foundation, the trade-off optimization between
+% privacy and data utility and system isomerism over-complexity. There are no
+% mathematical foundations for IoT structure design, IoT system architectures
+% are designed and implemented using empirical methods, the disadvantages of
+% empirical methods limit the development of IoT. First, it is not easy to
+% optimize IoT performance simply based on human experience. Second, it is
+% difficult to implement privacy protection mechanisms without theoretical
+% guidance. Third, adversaries can utilize this fact and increase the success
+% rates of attacks. Trade-off optimization has to be built on scientific theory
+% and quantitative analysis. However, there are multiple parties with dynamic
+% characteristics and diversified requirements, which greatly complicates this
+% optimization. Moreover, a lack of theoretical foundation causes non-uniform
+% quantitative measurements and thereby introduces uncertainty into trade-off
+% optimization. A massive number of standards and protocols facilitate the over-complication
+% of the isomerism of systems. An over-complicated isomerism causes inconveniences
+% to communication and system integration. Ensuring effective IoT applications
+% without wasting too many resources leaves fewer resources for privacy protection.
+% Nevertheless, lightweight privacy protection cannot satisfy all the requirements.
+% In addition, adversaries can utilize the structural information to launch various
+% and continuous attacks.

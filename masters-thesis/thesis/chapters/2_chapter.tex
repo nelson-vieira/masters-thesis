@@ -1,0 +1,319 @@
+\section{State of the Art}
+
+\par
+This section provides an overview of the recent literature with the themes
+that were found to be more relevant for this work.
+
+\subsection{Privacy Paradox}
+
+The use of a variety of digital devices have numerous advantages, but they
+also bring with them the ubiquity of data capturing equipment, therefore,
+it is understandable why the majority of online users have serious concerns
+about the privacy of their personal data. However, the opinions expressed
+are starkly at odds with the reality, according to Thomson et al. \cite{DarrenState}
+report on the state of privacy, that just one in four European users read
+the terms and conditions in their entirety prior to making an online purchase
+or subscribing to a service, 59\% admitted to only quickly scanning the
+terms and conditions before completing a purchase, while 14\% admitted to
+never reading them at all, 30\% of the respondents would even swap their
+email address to win a reward, or entry into a raffle, while 17\% would do
+so to get an app and 30\% would do it for money.
+
+This is what is called a privacy paradox, there have been multiple papers
+written on this subject \cite{solove2021myth, WilliamsPrivacy, lee2021investigating, goad2021privacy, gerber2018explaining},
+some papers attempt a theoretical explanation while others attempt an empirical
+one. There has been very different interpretations or explanations of this
+paradox, a few papers \cite{wilson2012unpacking, warshaw2015can, lee2015privacy}
+apply the theoretical concept of the \textit{homo economicus} \cite{zak2008moral},
+which is the representation of people as beings who constantly act in a
+way that is logical and self-interested, not worrying about morality or
+ethics, and who do so to the best of their ability, to the context of privacy.
+Different cognitive biases and heuristics can influence how consumers make
+decisions, according to several studies on consumer choice behavior \cite{acquisti2007can, knijnenburg2013dimensionality, wakefield2013influence, flender2012type}.
+According to several articles \cite{dienlin2015privacy, baek2014solving},
+this paradox might be explained by the fact that some people have genuinely
+experienced online privacy assaults and that most privacy views are therefore
+based on heuristics or secondhand accounts. Taddicken's study \cite{taddicken2014privacy}
+argues that peer pressure is the reason people have this contradictory behavior,
+Norberg et al. \cite{norberg2007privacy} explains this paradox by suggesting
+that while perceived risk affects reported attitudes and behavioral intentions,
+trust has a direct impact on privacy behavior, while others \cite{flender2012type, kokolakis2017privacy}
+rely on quantum theory. Brandimarte et al. \cite{brandimarte2013misplaced}
+have explored the idea that when it comes to their data privacy, users have
+an \textit{illusion of control}.
+
+This paradox has been proven to be vitiated by a number of empirical studies \cite{dienlin2015privacy, xie2019consumers, SCHWAIG20131, sannon2018privacy},
+online privacy practices are founded on separate privacy mindsets and so
+they are not inherently paradoxical.
+
+\subsection{Privacy in IoT: Approaches}
+
+There have been a number of systematic literature reviews (SLR) \cite{Gupta2022Privacy, Kuhtreiber2022survey, sicari2015security, LinSurvey}
+and systematic mapping reviews \cite{porras2018security, ahmed2019aspects}
+done to study privacy and security issues in IoT.
+
+In Gupta and Ghanavati's \cite{Gupta2022Privacy} SLR, the authors review
+papers with methodologies and techniques that identify privacy risks or
+notify users about these risks. They divide the literature into the following
+categories: `Ontological Modeling and Semantic-based Approaches', `Data-Driven
+Approaches', `Source Code Analysis-based Approaches', `User Studies and
+Survey-based Approaches', `Blockchain-based Approaches' and `Architectural
+and Framework-based Approaches'. They then examine current literature on
+these three prerequisites. The findings show that: most works concentrate
+on single IoT devices when addressing privacy threats; When analyzing privacy
+issues, key privacy factors such as data reduction and data aggregation
+are overlooked; existing studies ignored the sensitivity of the obtained
+information; most useful studies did not include a diverse range of users
+when assessing privacy problems; no work has been done to discover compliance
+difficulties between an IoT application and different privacy rules; and
+current research does not place a premium on providing consumers with real-time
+privacy notices. However, this SLR has the following limitations: the authors
+only chose articles and not thesis or books and from the selected papers,
+only the ones written in english were considered.
+
+% Kühtreiber et al. \cite{Kuhtreiber2022survey} conduct a survey of the frameworks
+% and tools created for developers, particularly in the case of IoT, and they conclude
+% that present solutions are difficult to use, only effective in specific circumstances,
+% and insufficient to address the privacy problems inherent in IoT development. This
+% study lacks a comprehensive gap analysis of the chosen literature and it does not
+% specify the research questions that define the relevancy of the selected papers.
+
+% Kühtreiber et al. \cite{Kuhtreiber2022survey} evaluate the frameworks and tools
+% established for developers, notably in the case of IoT, and find that current
+% solutions are difficult to use, only successful in limited contexts, and insufficient
+% to handle the privacy issues inherent in IoT development. This study lacks a detailed
+% gap analysis of the selected literature, as well as the research questions that
+% characterize the relevance of the selected publications.
+
+Kühtreiber et al. \cite{Kuhtreiber2022survey} evaluate the frameworks and
+tools established for developers, specifically in the case of IoT, and find
+that current solutions are difficult to use, only successful in limited
+scenarios, and insufficient to handle the privacy problems inherent in IoT
+development. This study lacks a comprehensive gap review of the chosen
+literature, along with research questions establishing the significance
+of the articles chosen.
+
+% Sicari et al. \cite{sicari2015security} conduct an analysis of recent studies and
+% active initiatives that emphasize IoT privacy and security solutions. They begin
+% by outlining the needs for IoT privacy and security, including access control,
+% confidentiality, and authentication. They then review the literature that already
+% exists in relation to these three needs. They concluded that IoT privacy concerns
+% are only partially investigated and need further attention. The study, however,
+% has its shortcomings, the analysis of prior research focuses primarily on security
+% needs and leaves out privacy considerations, they don't perform a thorough gap
+% analysis on the publications that were examined, and they don't provide a thorough
+% summary of the future research topics in the field of IoT privacy that need more
+% attention.
+
+% Sicari et al. \cite{sicari2015security} examine current research and ongoing activities
+% that focus on IoT privacy and security solutions. They start by stating the
+% requirements for IoT privacy and security, such as access control, confidentiality,
+% and authentication. They next go over the existing literature in connection to these
+% three needs. They came to the conclusion that IoT privacy risks have only been
+% partially examined and require more attention. The study, however, has flaws: the
+% analysis of prior research focuses primarily on security needs and ignores privacy
+% considerations; they do not perform a thorough gap analysis on the publications
+% examined; and they do not provide a comprehensive summary of future research topics
+% in the field of IoT privacy that require more attention.
+
+Sicari et al. \cite{sicari2015security} examine current research and ongoing
+activities that focus on IoT privacy and security solutions. The authors
+start by describing the requirements for IoT privacy and security, such
+as access control, confidentiality, and authentication. The authors then
+conduct a literature study in connection to these three needs. The authors
+came to the conclusion that IoT privacy issues have only been partially
+examined and that further attention is required. The study, however, has
+flaws: the prior research analysis focuses primarily on security needs while
+ignoring privacy considerations; the authors do not conduct a thorough gap
+analysis on the publications examined; and they do not provide a comprehensive
+summary of future research topics in the field of IoT privacy that require
+more attention.
+
+% Lin et al. \cite{LinSurvey} undertake a literature review to find security and
+% privacy concerns in the network layer, perception layer, and application layer,
+% the three IoT architectural layers. Confidentiality, integrity, availability,
+% identity and authentication, privacy, and trust are the first six essential security
+% properties that the authors list for these levels. Then, for each of the three
+% tiers, they examine a number of security attacks. They conclude by providing a
+% brief overview of a number of privacy-preserving data procedures, including data
+% gathering, data aggregations, and data analysis stages. They do, however, primarily
+% focus on the security elements of the IoT and see privacy as one of the most important
+% security characteristics, as was already established. Additionally, a thorough gap
+% analysis to determine the shortcomings of the previous works is not done in the
+% research.
+
+Lin et al. \cite{LinSurvey} undertake a literature review to identify security
+and privacy vulnerabilities in the three IoT architecture layers: network,
+perception, and application. The authors describe the first six fundamental
+security properties for these tiers as confidentiality, integrity, availability,
+identification and authentication, privacy, and trust. Then, the authors
+look at a variety of security threats for each of the three stages. The
+authors wrap up by giving a succinct summary of many privacy-preserving
+data techniques, including the stages of data collection, data aggregation,
+and data analysis. The authors do, however, largely focus on the IoT's security
+components and, as was already said, consider privacy to be one of the most
+crucial security aspects, rather than viewing privacy as a distinct concern.
+Furthermore, the research does not conduct a thorough gap analysis to discover
+the weaknesses of prior efforts.
+
+% Lin et al. \cite{LinSurvey} conduct a literature research to identify security and
+% privacy issues in IoT architecture's three levels: network, perception, and
+% application. The authors describe the first six fundamental security features
+% for these tiers as confidentiality, integrity, availability, identification and
+% authentication, privacy, and trust. They next investigate a variety of security
+% concerns for each of the three processes. The authors end by offering a succinct
+% review of a number of privacy-preserving data methodologies, including data
+% collecting, aggregation, and analysis. They do, however, focus mostly on IoT
+% security features, and, as previously said, they see privacy as one of the most
+% essential security issues. Furthermore, the study did not undertake a detailed gap
+% analysis to identify the shortcomings of previous studies.
+
+Based on Ziegeldorf's \cite{ziegeldorf2014privacy} analysis of the literature,
+the following are the most prominent privacy concerns in IoT:
+
+\begin{enumerate}
+    \item
+    The most prominent concern is \textit{identification}, which binds an
+    identifier, such as a name and location, with an individual's identity,
+    this also enables and aggravates other threats;
+    \item
+    \textit{Localization and tracking} is the threat of detecting an individual's
+    locations through numerous techniques, such as GPS, internet traffic,
+    or smartphone location. This threat requires \textit{identification}
+    of some kind;
+    \item
+    In e-commerce, \textit{profiling} is often used for personalization.
+    Organizations collect information about individuals in order to deduce
+    their interests via association with other profiles and data sources.
+    \item
+    \textit{Interaction and presentation} allude to the sharing of private
+    information with an unintended audience while doing so through a public
+    medium. IoT applications often need extensive user interaction, it is
+    expected that users of these systems will obtain information via smart
+    devices in their immediate surroundings and that users will interface
+    with systems in creative, natural ways. However, many of those modes
+    of communication and presentation are already available to the broader
+    public, making them apparent to anybody around. When personal information
+    is transferred between a system and its user, privacy is breached.
+    \item
+    \textit{Lifecycle transitions} occur when an IoT device is sold, utilized
+    by its owner and eventually disposed of. There may be an expectation
+    that the object deletes all information, yet smart devices frequently
+    keep massive volumes of data about their own past throughout their entire
+    existence. This might contain personal images and videos, which are
+    not always erased following ownership transfer.
+    \item
+    \textit{Inventory attacks} involve unauthorized entry and the acquisition
+    of information about the presence and characteristics of personal things.
+    Malicious users might use inventory data to profile the property and
+    break in.
+    \item
+    \textit{Linkage} is the process of connecting disparate systems, when
+    systems are connecting different data sources, there is a higher danger
+    of unauthorized access and data leakage.
+\end{enumerate}
+
+Another concept worth analyzing is differential privacy which relates more
+closely to the survey that will be conducted but also to the general
+collection and analysis of user data by applications and systems.
+
+\subsection{Differential Privacy}
+
+The notion of differential privacy, according to Michael Kearns \cite{kearns2019ethical},
+is based on three important principles. The first being that ``differential
+privacy requires that adding or removing the data record of a single individual
+not change the probability of any outcome by much''. The second principle
+being that ``no outside observer can learn very much about any individual
+because of that person's specific data''. The third important principle
+being that ``for every individual in the dataset, and for any observer no
+matter what their initial beliefs about the world were, after observing
+the output of a differentially private computation, their posterior belief
+about anything is close to what it would have been had they observed the
+output of the same computation run without the individual's data''.
+
+Differential privacy has the potential to significantly increase individual
+privacy protection, by purposefully adding noise into a dataset, it gives
+plausible deniability to any individual who may have had their data exploited
+while still being able to calculate statistics with relatively high precision.
+Although algorithms that deal with notions of fairness, ethics, and privacy
+are hard to implement because of the subjectivity of these concepts, and
+differential privacy algorithms are no different, they can still help in
+regards to addressing technology's inherent moral quandaries.
+
+% Differential privacy is an important component of machine learning algorithms
+% and massive datasets, and it has the potential to significantly increase
+% individual privacy protection. By purposefully adding noise into a dataset,
+% we may give plausible deniability to any individual who may have had their
+% data exploited to damage them while still being able to calculate critical
+% statistics with high precision. While differential privacy has obvious drawbacks,
+% as do many algorithms used to address societal issues, the use of automation and
+% machine learning to address subjective notions of fairness, ethics, and privacy
+% is a tremendously groundbreaking discovery in the world of computation, and is
+% moving us as a society closer to addressing technology's inherent moral quandaries.
+% Differential privacy is a fundamental aspect of machine learning algorithms and huge datasets that may substantially increase individual privacy protection. We can provide plausible deniability to every individual who may have their data used to harm them by purposely injecting noise into a dataset, while yet being able to calculate required statistics with high accuracy. While differential privacy, like many algorithms used to address societal issues, has obvious drawbacks, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing the inherent moral dilemmas of technology.
+% Differential privacy is a crucial component of machine learning algorithms and massive datasets that has the potential to significantly boost individual privacy protection. By purposefully inserting noise into a dataset, we can give plausible deniability to any individual who may have their data exploited to harm them while still being able to calculate needed statistics with high precision. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing the inherent moral dilemmas of technology.
+% Differential privacy is a critical component of machine learning algorithms and large datasets, with the potential to greatly improve individual privacy protection. We can provide plausible deniability to any individual who may have their data misused to harm them while still being able to calculate essential statistics with high accuracy by purposely injecting noise into a dataset. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing technology's inherent moral dilemmas.
+
+There exist other algorithms that aim to preserve privacy in the same way
+as differential privacy such as Google's box blurring algorithm \cite{FromeLarge}
+that is used in the Google Map's street view, Microsoft's Visor \cite{poddar2020visor}
+which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
+\cite{ShokriPrivacy} system for collaborative deep learning, however, in
+general, these algorithms struggle with high computational cost, internal
+attacks, or non-provable privacy.
+
+% Zhao et al. \cite{ZhaoSurvey} conduct a SLR on differential privacy
+% for unstructured data. The authors present differential privacy methods
+% for sensitive content in image, audio, video and text data, they compare
+% the various methods and do an utility analysis for each method showing
+% the pros and cons of each, the utility loss is measured between the real
+% data and its obfuscated version in the experimental evaluations. They
+% conclude that differential privacy and its variants have provided
+% rigorous privacy guarantees for unstructured data against adversaries
+% with arbitrary background information. They also provide possible future
+% research topics that have yet to be explored.
+
+Zhao et al. \cite{ZhaoSurvey} conduct a SLR on differential privacy for
+unstructured data. The authors present differential privacy methods for
+sensitive content in image, audio, video, and text data. They compare the
+various methods and perform utility analyses for each method, highlighting
+the benefits and drawbacks of each, the utility loss is measured in experimental
+evaluations between the actual data and its obfuscated variant. They come
+to the conclusion that differential privacy as well as its variations give
+stringent privacy protections for unstructured data against attackers with
+unpredictable background knowledge. They also suggest potential future study
+subjects that have yet to be investigated.
+
+% Privacy concerns arise with the millions of real-world unstructured data including
+% images, audios, videos, and texts. Differential privacy has emerged as a de facto
+% standard to protect a wide range of data types.
+% This article has presented
+% differential privacy methods for sensitive content in these unstructured
+% data. We have identified that unstructured data are obfuscated based on
+% appropriate vector representations, specific privacy models, and vector
+% reconstructions. We have discussed possible challenges faced with these
+% privacy methods. We have provided an overview of privacy guarantees and
+% utility losses in these methods and possible approaches to improve data utility.
+
+% DP and its variants have provided rigorous privacy guarantees for
+% unstructured data against adversaries with arbitrary background information.
+% While privacy loss has been quantified with the ε value, the utility
+% loss is measured between the real data and its obfuscated version in
+% the experimental evaluations. Different utility loss metrics are
+% adopted to quantify utility losses in different data types. Besides,
+% it has been shown that other privacy-protecting methods for unstructured
+% data are commonly vulnerable to machine-learning-model-based attacks.
+% It is crucial to identify whether DP methods can do away with these
+% AI attacks.
+
+\subsection{Título subsecção}
+
+ABC
+
+\subsection{Título subsecção}
+
+ABC
+
+\subsection{Título subsecção}
+
+ABC

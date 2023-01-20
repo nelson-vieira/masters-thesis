@@ -1,0 +1,401 @@
+\section{Proposed solutions}
+
+\par This section list seven solutions that emerged from the structured
+literature review to improve the gap between privacy and security concepts
+among systems and users.
+
+\subsection{Creating new ways for user awareness}
+
+There has been some work done to determine the users awareness of their
+actions online regarding their privacy. Skirpan et al. \cite{SkirpanPrivacy}
+built an interactive theatre experience, this was created to try to prove
+that a simulated experience with a credible privacy problem may encourage
+people to take action before actually encountering a catastrophe. The plot
+of the play consist in a fledgling tech company that unveiled its revolutionary
+AI technology while dealing with a company whistleblower and an untimely
+zero-day hack on their system. The public is able to interact with the actors
+and influence how the story plays out. Audiences and actors were given the
+chance to try on roles, behaviors, and opinions that they would not normally
+have access to in ordinary life. The authors had interviews and surveys
+done after the plays with audience members however they only did interviews
+halfway through production and only a small fraction of the audience actually
+participated in this data collection, they also noted that after contacting
+people months after the interviews that they did not really changed their
+behaviour regarding their privacy rights.
+
+% Skirpan et al. \cite{SkirpanPrivacy} built
+% an interactive theatre experience, this was proposed in order to expose privacy
+% violations in companies, particularly in the capitalistic world where profit
+% is prioritized above all else. In this experiment, the public is able to interact
+% with the actors and influence the story of the play; there are various endings
+% depending on the public's choices throughout the play; in some endings, the
+% company would bury the corruption that was going on; in another ending, a
+% team of hackers is abducted. Following the performance, the experiment's crew
+% would speak with public members about their experiences and explain
+% what it was all about, as well as the members' everyday practices with their data.
+
+% An interactive theatre experience \cite{SkirpanPrivacy}
+% was proposed in order to expose privacy malpractices in companies,
+% specially in the capitalistic world where profit is prioritize
+% above all else, in this experiment the public is able to interact with
+% the actors and influence the story of the play, there are various endings depending
+% on the public's choices throughout the play, some endings the company would
+% bury the corruption that was going on, in another ending a team of hackers
+% is able to expose the company's practices to the world. After the play
+% the team responsible for the experiment would talk with public members about
+% what they experienced and discussed what was it about and the members
+% practices with their data on their daily life. After some months
+% the team would talk again with the members that were present in the play and
+% talk about any changes they have done in the meantime, most said they did
+% not change their behavior, one member said that it took more care of The
+% information that made available online because it had a bad experience before
+% where some private data was exposed that should have not been exposed. All in
+% all the experiment did not prove to be a success in changing people's behavior.
+
+\subsection{Legislation}
+
+Some papers seek to improve legislation \cite{WEBER2015618, FabianoInternet}
+because otherwise, in their view, privacy rights won't be respected if they
+are not enforceable legally, they defend that without the express agreement
+of the individual concerned, private information obtained by IoT devices
+must not be retained or processed in any form, and necessary procedures
+must be taken to guarantee that the data collected is not that of an unrelated
+individual. But better protection laws for the user would also create opposition
+from most companies that want to extract as much private data from their
+users without (m)any restrictions in order to increase their profit margins.
+
+\subsection{Privacy through security}
+
+Sun et al. \cite{SunSecure} design a lightweight communication strategy
+for a remote-control system, employing two types of Virtual-Spaces to achieve
+the aim of identity announcement and data exchange. They constructed a prototype
+system of the scheme and tested it on the Freenet, demonstrating that the
+method can effectively resist the influence of flow analysis on communication
+anonymity while preserving communication data security.
+
+\subsection{Architecture / Framework Proposals}
+
+Antunes et al. \cite{AntunesFederated} do a SLR on federated learning in
+the area of healthcare and make an architecture proposal. The technique
+known as federated learning allows for the distributed training of machine
+learning models using remotely hosted datasets without the requirement for
+data amplification. The fundamental goal of the proposed architecture is
+to allow healthcare institutions that have access to sensitive medical information
+to use it in distributed data analysis and machine learning research while
+ensuring patient confidentiality. Because information transmitted among
+institutions need confidentiality guarantees for learning model parameters
+and analysis results, the architecture can adopt a number of ways based on
+a zero-trust security paradigm \cite{ChenSecurity}. Furthermore, the institutions
+develop a learning algorithm verification system that can store and disseminate
+manifestos, as well as engage in distributed analytic procedures that need
+unanimous agreement from all participants. This study also demonstrates
+that previous literature implies that homomorphic encryption and differential
+privacy are effective approaches for preventing data breaches without incurring
+prohibitively high computing costs.
+
+% The proposed architecture's main goal is to enable healthcare institutions with access
+% to private medical datasets to employ them in distributed data analysis and machine
+% learning studies without compromising patient confidentiality, as the information that
+% is shared among institutions requires confidentiality guarantees for learning model
+% parameters and analyses results, the architecture can implement different methodologies
+% based on a zero-trust security model [67]. The institutions also implement a learning
+% algorithm verification, which can store and provide manifestos and participate in
+% distributed analysis mechanisms requiring consensus among all participants. This study
+% also finds that Current literature shows that homomorphic encryption and differential
+% privacy are techniques with substantial results to avoid data leaks without prohibitive
+% computational costs [98].
+
+Opara et al. \cite{opara2022framework} present a system for spotting possible
+problems with privacy or security regulations in the early stages of development,
+this approach is intended at developers. The paper proposes a domain-specific
+ontology for modeling IoT security and privacy policies, a notation for
+representing and validating IoT security and privacy policies, a set of
+guidelines and rules for detecting IoT policy errors, and a tool for visually
+modeling and capturing IoT security policies and discovering policy problems.
+Although the framework that is presented is theoretically promising it has
+not been tested in a real environment so the effectiveness can't yet be
+measured. The authors also do not compare their proposal with others already
+available.
+
+% Opara et al. \cite{opara2022framework} propose a framework for detecting potential
+% problems with privacy or security policies from the early pre-production stage,
+% this framework is aimed at developers. This paper proposes a domain-specific
+% ontology for modeling IoT security and privacy policies, a notation for
+% representing IoT security and privacy policies and validating the policies
+% for inconsistencies, conflicts, ambiguities, and incompleteness, a set of
+% guidelines and rules for detecting IoT policy errors, and a tool for
+% visually modeling and capturing IoT security policies and discovering
+% policy problems.
+
+% This paper's main contributions are: a domain-specific ontology for modeling
+% IoT security and privacy policies, a notation for representing IoT security
+% and privacy policies and validating the policies for inconsistencies, conflicts,
+% ambiguities, and incompleteness, a set of guidelines and rules for
+% detecting IoT policy errors, and a tool for visually modeling and capturing
+% IoT security policies and discovering problems with the policies.
+
+% The key contributions of this paper include (1) A domain-specific ontology for modeling IoT security and privacy policies, (2) a notation for representing IoT security and privacy policies and validating the policies for inconsistencies, conflicts, ambiguities, and incompleteness, (3) a set of guidelines and rules for detecting IoT policy errors, and 4) a tool for visually modeling and capturing IoT security policies and discovering problems with the policies.
+
+\subsection{Blockchain}
+
+Blockchain is an option to guarantee privacy in IoT because of zero-knowledge
+proofs, ring signatures and mixing \cite{PrivacyblockchainWikipedia}.
+
+A zero-knowledge proof is a cryptographic technique that enables one party
+(the prover) to demonstrate to another (the verifier) that a certain claim
+is true without disclosing any information other than the validity of that
+claim. Completeness, soundness, and zero-knowledge are the three requirements
+that must be satisfied by a zero-knowledge proof method. Completeness means
+that the verifier must be able to confirm that the prover is stating the truth
+if the information supplied by the prover is true. Soundness indicates that
+the verifier must be given the opportunity to contradict the prover's claims
+of speaking the truth if the information provided by the prover is untrue.
+Zero-knowledge refers to the need that the method only reveal to the verifier
+whether the prover is speaking the truth or not.
+
+Ring signatures create a single, recognizable signature that is used to sign
+a transaction by combining a number of partial digital signatures from diverse
+users. This group, known as the ring, can be chosen at random from the outputs
+that other users have made to the blockchain. A ring signature has the security
+property that it should be computationally expensive to determine which
+of the group's members' keys was used to produce the signature, this is because
+it obfuscates the input side of a transaction. A user's anonymity cannot
+be taken away from their signature, and any group of users can act as a signing
+group automatically.
+
+Mixing is the process of blending possibly traceable digital assets
+with others to obscure the original assets' sources. This is frequently done
+by pooling source assets from different inputs for a long period and at random
+intervals, then spitting them back out to destination addresses. Since they
+are all packed together and then delivered at random intervals, it is very
+difficult to pinpoint particular assets. Due to the fact that cryptocurrencies
+provide a public record of every transaction, mixers have been developed
+to improve cryptocurrency privacy. Because of their emphasis on secrecy,
+mixers have been used to launder money using cryptocurrency.
+
+Yu et al. \cite{yu2018blockchain} shows various implementations of blockchain
+that provide privacy through security, based on different categories like
+data integrity, data sharing and authentication and access control. The
+authors use privacy as a proxy for security, they also do not discuss the
+weak and strong points of each implementation or make any comparison, they
+also do not provide further research questions.
+
+% Ali et al. \cite{AliIoT} propose a software stack of blockchain smart contracts
+% and peer-to-peer file storage, to give IoT users authority over
+% their data in order to eliminate the need for centralized IoT data
+% management. In the proposed `modular consortium' architecture, blockchain
+% smart contracts perform access control, while providing
+% accountability for both the data owners and the third parties
+% whom the users allow access to.
+
+Ali et al. \cite{AliIoT} suggest a software stack that combines peer-to-peer
+file sharing with blockchain smart contracts to offer IoT users control
+over their data and do away with the necessity for centralized IoT data
+management. Blockchain smart contracts are used in the proposed `modular
+consortium' architecture to regulate access while establishing responsibility
+for both data owners and other parties that users grant access to.
+
+\subsection{Other proposals}
+
+% Zhu et al. \cite{ZhuIntegrating} explores an integrated paradigm called ``hybrid sensing''
+% where users interact with a crowdsensing server via a privacy-preserving protocol
+% to preserve their anonymity.
+
+Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
+privacy while also monitoring parking availability. The authors merged IoT
+sensing with crowdsensing and enhanced it with privacy-preserving methods.
+The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
+and a cryptographic technique based on cryptographic commitments, zero-knowledge
+proofs, and anonymous credentials in crowdsensing. In addition, they used
+crowdsourcing to create a machine learning model for parking recognition
+in the presence of foggy filters. Their paper included proof-of-concept
+prototypes such as a Raspberry Pi system and a mobile app, as well as an
+evaluation study of the machine learning model and the effects of crowdsourcing.
+
+% Zhu et al. describe a privacy-preserving hybrid sensor system with a smart parking availability monitoring application. We combined IoT sensing with crowdsensing and augmented it using privacy-protecting approaches. In particular, in IoT sensing, we concealed IoT sensors using physical hazy filters, and in crowdsensing, we used a cryptographic approach based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials. We also used crowdsourcing to build a machine learning model for parking detection under hazy filters. The paper showed proof-of-concept prototypes, including a Raspberry Pi system and a mobile app, as well as an assessment study of the machine learning model and the impacts of crowdsourcing.
+
+% This study offers a hybrid sensor system that protects privacy while also monitoring parking availability.
+% We merged IoT sensing with crowdsensing and enhanced it using privacy-preserving techniques.
+% We employed physical hazy filters to disguise IoT sensors in IoT sensing, and a cryptographic technique based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials in crowdsensing.
+% We also used crowdsourcing to create a machine learning model for parking recognition in the presence of hazy filters.
+% The report included proof-of-concept prototypes such as a Raspberry Pi system and a mobile app, as well as an evaluation study of the machine learning model and the effects of crowdsourcing.
+
+% Zhu et al. propose a hybrid sensor system that both protects privacy and monitors parking availability. We combined IoT sensing with crowdsensing and improved it with privacy-preserving approaches. In IoT sensing, we used physical hazy filters to hide IoT sensors, and in crowdsensing, we used a cryptographic approach based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials. Crowdsourcing was also utilized to develop a machine learning model for parking detection in the presence of foggy filters. Proof-of-concept prototypes such as a Raspberry Pi system and a mobile app were included in the paper, as well as an assessment study of the machine learning model and the impacts of crowdsourcing.
+
+% Zhu et al. offer a hybrid sensor system that safeguards privacy while also monitoring parking availability. The researchers merged IoT sensing with crowdsensing and enhanced it with privacy-preserving methods. They employed physical hazy filters to mask IoT sensors in IoT sensing, and a cryptographic technique based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials in crowdsensing. In addition, crowdsourcing was used to create a machine learning model for parking recognition in the presence of foggy filters. The report included proof-of-concept prototypes such as a Raspberry Pi system and a mobile app, as well as an evaluation study of the machine learning model and the effects of crowdsourcing.
+
+\subsection{Privacy Assistants}
+
+There exists a number of privacy assistants in the market. Privacy assistants
+have the objective of giving the user flexibility in choosing the preferred
+privacy options in available applications, most are used in smartphones,
+very few are made for devices in the IoT.
+
+The Carnegie Mellon University CyLab, which is the university's security
+and privacy research institute, started developing in 2019 an IoT Infrastructure
+that intended to be free of privacy leaks and software covered by their
+Secure and Private IoT Initiative 2019, this project would fall under
+their main research theme of Trust. In this project they started the design
+of a Personalized Privacy Assistant (PPA) \cite{ColnagoInforming}, this
+would involve the use of semi-structured interviews with 17 participants
+to examine user perceptions of three hypothetical PPA implementations,
+each of which is potentially more autonomous, while outlining the advantages
+and disadvantages of each implementation. The interviews were divided into
+three sections: exploratory, anchoring and the PPA; While the exploratory
+phase's purpose was to learn about participants' attitudes and understanding
+of IoT, the anchoring phase aimed to normalize participants' basic understanding
+of how IoT functions. In order to get people to think about potential privacy
+concerns towards the end of the anchoring section, the authors asked participants
+about their opinions on data privacy. In the PPA section, it was proposed
+the idea of a PPA for IoT as a potential future project. The authors clarified
+that the PPA could distinguish between active data requests such as a gadget
+asking biometric information from the user's health tracker and passive
+data collection such as a smart device with a microphone that could record
+people's utterances while they were nearby. The Notification, Recommendation,
+and Auto implementations of an IoT PPA were the three that the authors and
+attendees discussed. Notification PPAs can determine which adjacent devices
+are requesting data and alert users to those devices' presence and requests
+so that users can approve or reject each request. Building on notification
+PPAs, recommendation PPAs offer consumers advice on how to share their data
+based on their preferences. The user's data sharing decisions would be made
+by auto PPAs. This would lessen the cognitive load on consumers but also
+take away their ability to influence the process. They found that the participants'
+attitudes regarding the various implementations were generally favorable,
+although they also voiced worries, which varied depending on the degree
+of automation. Given the divergent motivations of participants some desired
+increased control, while others wished to avoid being overtaken by notifications
+and the lack of agreement regarding the optimal PPA implementation.
+
+After the design phase, the institute implemented a privacy assistant (PA) \cite{FengDesign},
+the authors called it IoT Assistant. Because the predominant approach of
+"notice and choice" for data privacy protection, they decided the PA would
+also fall into this approach, but because many systems implement notice
+as a form of consent, without sometimes offering choices to the end user,
+they also wanted this work to provide a conceptual framework that views
+user-centered privacy choice as well as a taxonomy for practitioners to
+use when designing meaningful privacy choices for their systems. The authors
+define meaningful privacy choices as ``the capabilities provided by digital
+systems for users to control different data practices over their personal
+data'', They extend the notion of privacy choices with five facets: effectiveness
+(the opportunity to establish privacy preferences that precisely and completely
+match the data collection and use methods that a user is okay with), efficiency
+(the capacity to specify these options with the least amount of effort and
+time), user awareness (where significant privacy options should be prominently
+and clearly communicated to users), comprehensiveness (users should understand
+their options, how they affect the gathering and potential use of their
+data, as well as what conclusions might be drawn from this data and the
+potential repercussions of these conclusions) and neutrality (meaningful
+privacy decisions should not be subject to manipulation or bias). The IoT
+Assistant offers four privacy settings, giving end users a variety of alternatives
+to better suit their varied privacy preferences and as a result, privacy
+options are more effective in the IoT environment. The IoT Assistant acts
+as a centralized privacy choice platform by implementing various privacy
+options, allowing consumers to more effectively govern their data privacy
+in IoT. The three IoT system discovery modes that the IoT Assistant supports
+are QR codes, push notifications, and location-based map interfaces. These
+discovery tools are probably going to make users more aware of the installed
+IoT devices and the privacy options they have. Additionally, the united
+viewpoint of the integrated notification and option in the the IoT Assistant
+gives succinct yet thorough information regarding IoT data practices to
+help users better understand the implications of their privacy choices.
+Additionally, the authors work to implement the integrated notice and option
+in the IoT Assistant without bias or framing, attempting to offer consumers
+a neutral space to execute their privacy choices. Although the authors view
+the IoT Assistant as a significant step towards ``meaningful privacy options''
+in IoT, this assistant still has many problems, such as the fact that it
+is still in its early stages of development and that there hasn't been much
+growth given that it was created in 2020 and we are in 2023. Maybe the main
+reason this application was not able to be developed further is that the
+application itself serves to show the user the data that is already in the
+IoT infrastructure that was created before, and as such it is not capable
+of identifying new IoT devices without the end users themselves create on
+the infrastructure's main webpage \cite{DasPersonalized} a new entry for
+the device in question that the user wants to interact with. Another reason
+that cripples this application as well as others that seek to provide better
+privacy in IoT systems is that many systems do not offer any type of privacy
+choices to the end user or to other users that are not the intended end
+users but the devices are still collecting data about.
+
+The IoT infrastructure that was developed \cite{DasPersonalized} is built
+on an open, distributed design that allows for the deployment and management
+of IoT resources to be carried out by any number of actors. Part of this
+infrastructure is the Internet of Things Resource Registry, it is a web
+platform that enables resource owners to declare not only the place where
+a resource is deployed but also data practices like the reason(s) for a
+particular data collecting process, the level of detail in the data being
+gathered, retention, the recipients of the data, and more. Additionally,
+it discloses any user-configurable privacy settings that might be connected
+to a particular resource.
+
+\subsection{Sniffers}
+
+IoT sniffers are usually used to detect problems in the networks, they rarely
+are used to provide privacy for the users.
+
+The LTEye project \cite{KumarLTE} is an open platform that provides granular
+temporal and spatial analytics on the performance of LTE radios without access
+to private user data or provider assistance. Despite the presence of multipath,
+LTEye uses a revolutionary extension of synthetic aperture radar to communication
+signals in order to precisely pinpoint mobile users.
+
+% \subsection{User Awareness}\label{AA}
+% There has been some work done to determine the users awareness of
+% their actions online in regard to privacy. An interactive theatre experience \cite{ColnagoInforming}
+% was proposed in order to expose privacy malpractices in companies,
+% specially in the capitalistic world where profit is prioritize
+% above all else, in this experiment the public is able to interact with
+% the actors and influence the story of the play, there are various endings depending
+% on the public's choices throughout the play, some endings the company would
+% bury the corruption that was going on, in another ending a team of hackers
+% is able to expose the company's practices to the world. After the play
+% the team responsible for the experiment would talk with public members about
+% what they experienced and discussed what was it about and the members
+% practices with their data on their daily life. After some months
+% the team would talk again with the members that were present in the play and
+% talk about any changes they have done in the meantime, most said they did
+% not change their behavior, one member said that it took more care of The
+% information that made available online because it had a bad experience before
+% where some private data was exposed that should have not been exposed. All in
+% all the experiment did not prove to be a success in changing people's behavior.
+
+\subsection{Main Takeaways}
+
+There are two main ways to provide privacy in IoT systems, through security
+or using privacy notices, other ways like through legislation or with the
+creation/usage of a framework that provides privacy fall into these two
+categories. Most of the literature assumes that security and privacy are
+synonyms, for example \cite{opara2022framework, FabianoInternet, SunSecure},
+and so most of the proposed solutions fall under privacy through security.
+The proposed solutions that use privacy notices, like \cite{FengDesign},
+are implemented in a way that use other devices like smartphones that provide
+the notices themselves, it is hard to provide privacy notices on the IoT
+devices themselves because many of these devices do not have a screen or
+the screen is too small to provide the necessary information to the user.
+Because there are still no standards for implementing privacy notices, and
+best practices are scattered throughout the literature, they are mostly
+implemented haphazardly, little guidance is given to designers and developers
+on how to make a privacy notice design that is sufficient and acceptable
+for their particular system and its features. Designers may be unaware of
+the numerous possibilities for creating acceptable privacy notifications
+and, as a result, do not systematically explore them.
+
+Aleisa and Renaud \cite{aleisa2016privacy} also identify security and privacy
+awareness as potential solutions to privacy issues in IoT, but also identify
+data minimization, hitchhiking and introspection. Data minimization entails
+limiting the collecting of personal information to what is absolutely central
+and retaining the data just for as long as is required to satisfy the goal
+of the technology's services \cite{ojDirective281}. Hitchhiking \cite{tang2006putting}
+is a method of protecting the privacy of users who divulge their location,
+applications regard locations as the object of their attention. The fidelity
+tradeoff is removed as it is not important to know who is in a certain
+location. The introspection \cite{kang2015protection} method examines VM
+actions to adequately safeguard users' private information. Every VM's
+CPU status, memory contents, network information provided by the hypervisor,
+and any malicious software that may be present on the VM are all collected
+and analyzed. The privacy of consumers is jeopardized if an IoT device
+loses integrity due to a hostile assault.
+
+\subsection{Título subsecção}
+
+\subsubsection{Título subsubsecção}
+

@@ -1,0 +1,35 @@
+\chapter*{List of Acronyms}
+
+% Source: https://latex.org/forum/viewtopic.php?t=16419
+
+% Define a convenient command to add a line
+% to the database
+\newcommand*{\addacronym}[2]{%
+    \DTLnewrow{acronyms}%
+    \DTLnewdbentry{acronyms}{Acronym}{#1}%
+    \DTLnewdbentry{acronyms}{Description}{#2}%
+}
+
+
+% Create the database
+\DTLnewdb{acronyms}
+\addacronym{IOT}{Internet of Things}
+\addacronym{RFID}{Radio-frequency identification}
+\addacronym{MIT}{Massachusetts Institute of Technology}
+\addacronym{M2M}{Machine-to-machine}
+\addacronym{IP}{Internet Protocol}
+\addacronym{GDPR}{General data protection regulation}
+\addacronym{CCPA}{California consumer privacy act}
+\addacronym{SLR}{Systematic literature review}
+\addacronym{PA}{Privacy assistant}
+\addacronym{PPA}{Personalized privacy assistant}
+
+
+% Sort the database
+\DTLsort{Acronym}{acronyms}
+
+% Display the contents of the database
+\begin{itemize}
+\DTLforeach*{acronyms}{\thisAcronym=Acronym,\thisDesc=Description}%
+    {\item[] \textbf{\thisAcronym} \thisDesc}%
+\end{itemize}

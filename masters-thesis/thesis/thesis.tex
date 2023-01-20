@@ -1,6 +1,10 @@
-\RequirePackage{amsmath}% fixes warning
-
 \documentclass[runningheads]{llncs}
+
+\RequirePackage{amsmath}% fixes warning
+\RequirePackage{adjustbox}
+\RequirePackage{xcolor}
+\RequirePackage{colortbl}
+\RequirePackage{tikz}
 
 \input{settings}
 
@@ -9,10 +13,10 @@
     \pagenumbering{roman}
     \selectlanguage{english}
 
-    \input{chapters/0_capa}
-    \input{chapters/0_resumo.tex}
+    \input{chapters/0_front_cover.tex}
+    % \input{chapters/0_summary.tex}
     \input{chapters/0_abstract.tex}
-    \input{chapters/0_agradecimentos}
+    \input{chapters/0_acknowledgment.tex}
 
     \bfseries
     \tableofcontents
@@ -22,7 +26,7 @@
 
     \listoftables
 
-    \input{chapters/0_acrónimos}
+    \input{chapters/0_acronyms.tex}
 
     %% Fix for the nomenclature spacing
     \newlength{\nomitemorigsep}
@@ -35,11 +39,19 @@
     \setcounter{page}{1}
     \pagenumbering{arabic}
     %\linenumbers
-    \input{chapters/1_Capítulo}
+    \input{chapters/1_chapter.tex}
     \clearpage
-    \input{chapters/2_Capítulo}
+    \input{chapters/2_chapter.tex}
     \clearpage
-    \input{chapters/3_Capítulo}
+    \input{chapters/3_chapter.tex}
+    \clearpage
+    \input{chapters/4_chapter.tex}
+    \clearpage
+    \input{chapters/5_chapter.tex}
+    \clearpage
+    \input{chapters/6_chapter.tex}
+    \clearpage
+    \input{chapters/7_chapter.tex}
     \clearpage
     %% add as many chapters as needed, each in its own file .tex
 

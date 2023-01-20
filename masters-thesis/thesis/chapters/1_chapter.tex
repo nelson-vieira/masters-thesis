@@ -1,0 +1,153 @@
+%%% CHAPTER 1/Capitulo 1
+%
+\section{Introduction}
+
+Privacy as we know it is a somewhat recent concept \cite{vincent2016privacy, moore2017privacy},
+before the digital age there was barely any notion of privacy for most
+people. For many centuries most people used to reside in small communities
+where they were continuously involved in one another's lives. Even more
+recent is the idea that privacy is a crucial component of personal security,
+in contrast to the undeniable necessity of public security, including the
+requirement for guarded walls and closed doors. Long seen as a luxury, privacy
+is still usually regarded as a good to have rather than an essential
+requirement, even though it is acknowledged as a human right, as present
+in article 12 of the Universal Declaration of Human Rights \cite{RooseveltUniversal}:
+``No one shall be subjected to arbitrary interference with his privacy,
+family, home or correspondence, nor to attacks upon his honour and reputation.
+Everyone has the right to the protection of the law against such interference
+or attacks''. Privacy can be defined \cite{InternationalWhat, SpiekermannEngineering}
+as the right to govern how personal information and data is collected, stored,
+and used, it frequently involves handling sensitive information with care,
+and as such, organizations must be open and honest about the kind of data
+they plan to gather, why they need it, and where and with whom they plan
+to share it. Users should have the right to control their shared information.
+
+This definition can cause some confusion with the idea of security \cite{HIVDifference}
+and although privacy and security are interconnected, security involves
+measures taken to safeguard data from risk, threat or danger, it frequently
+alludes to safety. It is the practice of keeping users' personal information
+and data safe and preventing unauthorized access to it. The primary contrast
+between privacy and security is that the former deals with personal information
+to individuals and how they want their data used and maintained, whilst
+the latter deals with its protection from possible threats. Security can
+exist without privacy, but the opposite is not true. For managing sensitive
+and personal data, privacy and computer security are equally crucial. Users
+should be aware of the internal procedures regarding the collection, processing,
+retention, and sharing of personal information.
+
+Concerns about digital privacy have been growing \cite{emami2019exploring, park2022personal, zhang2022peer}
+in the last few years, especially after the Anonymous decentralized hacker
+group cyber attacks, WikiLeaks and Snowden's leaked top secret documents
+from United State's National Security Agency. These concerns can be noted
+with the increase of written literature on the subject, when searching for
+terms like ``privacy'', ``online privacy'', ``digital privacy'' in Google
+Scholar, ACM Digital Library or Science Direct it can be seen that, in the
+last 5 years, it returns about 5000000, 650000 and 80000 documents respectively,
+including articles, books, conference papers etc.
+
+Most research has focused on the web, while privacy in IoT systems has not
+been explored as much. Because IoT devices are becoming more prevalent,
+new methods of communicating, gathering, and analyzing data emerge.
+Because there is already a substantial quantity of research focusing on
+web privacy rather than IoT privacy, it is a lot more fertile ground to
+explore the issue of privacy in the context of the IoT.
+
+\textit{Internet of Things} is a term that first appeared in the 1990s,
+and it may be linked to Mark Weiser's paper on ubiquitous computing \cite{weiser1991computer}
+and the growth of devices of all sizes that communicate with one another
+to do various tasks, making Weiser's dream a reality. The first use of the
+term \textit{Internet of Things} was in 1999 by British technology pioneer
+Kevin Ashton \cite{KevinThat}, executive director of the Auto-ID Center
+at Massachusetts Institute of Technology (MIT), to describe a system in
+which items may be connected to the internet by sensors. He came up with
+the phrase while giving a presentation for Procter \& Gamble to highlight
+the value of linking Radio-Frequency Identification (RFID) tags used in
+corporate supply chains to the internet in order to count and track goods
+without the need for human assistance. These devices are used in various
+applications, starting at home \cite{marikyan2019systematic} with thermostats,
+fridges, microwaves, etc, moving on to smart cars \cite{arena2020overview},
+the educational system \cite{al2020survey}, our clothes and our watches \cite{niknejad2020comprehensive}
+and even into outer space \cite{AkyildizInternet}. IoT resources may include
+IoT equipment (like smart home assistants and autonomous vehicles), IoT
+services (like video analytics services linked to smart cameras and indoor
+position tracking systems), or IoT apps (like smart TV remote apps) that
+track and use information about us. Internet of Things is now widely used
+to describe situations in which a range of objects, gadgets, sensors, and
+ordinary items are connected to the internet and have computational capabilities.
+
+The idea of using computers and networks in order to monitor and manage
+devices is nothing new, despite the term \textit{Internet of Things} being
+relatively recent.
+% By the late 1970s, technologies for remotely monitoring electricity
+% grid meters through telephone lines were already in use in the corporate
+% sector \cite{}.
+Wireless technology improvements in the 1990s permitted the widespread
+adoption of corporate and industrial machine-to-machine (M2M) solutions
+for equipment monitoring and operation. Many early M2M solutions, on the
+other hand, relied on proprietary purpose-built networks or industry-specific
+standards rather than internet standards. To connect devices other than
+computers to the internet is not a new concept. A Coke machine at Carnegie
+Mellon University's Computer Science Department \cite{EverhartInteresting}
+was the first ubiquitous device to be linked to the internet. The system,
+which was created in 1982, remotely observed the out of stock lights on
+the pressing buttons of the vending machine and broadcast the state of each
+row of the vending machine on the network so that it could be accessed using
+the Name/Finger protocol through a terminal. In 1990, a toaster that could
+be turned on and off over the internet that was created by John Romkey \cite{RomkeyToast},
+was demonstrated at the Interop Internet Networking show.
+
+% \cite{rose2015internet}
+% The term "Internet of Things" (IoT) was first used in 1999 by British technology
+% pioneer Kevin Ashton to describe a system in which objects in the physical world
+% could be connected to the Internet by sensors.12 Ashton coined the term to
+% illustrate the power of connecting Radio-Frequency Identification (RFID) tags13
+% used in corporate supply chains to the Internet in order to count and track goods
+% without the need for human intervention. Today, the Internet of Things has become
+% a popular term for describing scenarios in which Internet connectivity and computing
+% capability extend to a variety of objects, devices, sensors, and everyday items.
+
+% While the term "Internet of Things" is relatively new, the concept of combining
+% computers and networks to monitor and control devices has been around for decades.
+% By the late 1970s, for example, systems for remotely monitoring meters on the
+% electrical grid via telephone lines were already in commercial use. In the
+% 1990s, advances in wireless technology allowed "machine-to-machine" (M2M)
+% enterprise and industrial solutions for equipment monitoring and operation to
+% become widespread. Many of these early M2M solutions, however, were based on closed
+% purpose-built networks and proprietary or industry-specific standards, rather than
+% on Internet Protocol (IP)-based networks and Internet standards. Using IP to connect
+% devices other than computers to the Internet is not a new idea. The first Internet
+% "device"—an IP-enabled toaster that could be turned on and off over the Internet—was
+% featured at an Internet conference in 1990. Over the next several years, other
+% "things" were IP-enabled, including a soda machine at Carnegie Mellon University in
+% the US and a coffee pot in the Trojan Room at the University of Cambridge in the UK
+% (which remained Internet-connected until 2001). From these whimsical beginnings, a
+% robust field of research and development into "smart object networking" helped
+% create the foundation for today's Internet of Things.
+
+The Internet of Things can be defined as: ``An open and comprehensive network
+of intelligent objects that have the capacity to auto-organize, share information,
+data and resources, reacting and acting in face of situations and changes
+in the environment'' \cite{madakam2015internet}.
+
+IoT is one of the fastest growing technologies \cite{MohammadState}, it
+is predicted that it will grow into the trillions of devices by 2030 \cite{SarawiInternet},
+and with this expansion new security vulnerabilities and data gathering
+dangers appear, the lack of security in these devices makes them ideal targets
+for privacy violations and inadequate customer disclosure of device capabilities
+and data practices aggravates privacy and security issues.
+
+Privacy in IoT systems in not seen as a crucial factor in development \cite{alhirabi2021security}.
+Specific standards for privacy options have been imposed by data privacy
+regulations including the General Data Protection Regulation (GDPR) and
+California Consumer Privacy Act (CCPA), but even these regulations have
+been criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022deficient, green2022flaws, byun2019privacy}.
+
+\subsection{Título subsecção}
+
+ABC
+
+\subsection{Título subsecção}
+
+ABC
+
+\subsection{Estrutura do Documento}
