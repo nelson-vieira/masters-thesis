@@ -1,0 +1,51 @@
+\RequirePackage{amsmath}% fixes warning
+
+\documentclass[runningheads]{llncs}
+
+\input{settings}
+
+%makeindex thesis.nlo -s nomencl.ist -o thesis.nls
+\begin{document}
+    \pagenumbering{roman}
+    \selectlanguage{english}
+
+    \input{chapters/0_capa}
+    \input{chapters/0_resumo.tex}
+    \input{chapters/0_abstract.tex}
+    \input{chapters/0_agradecimentos}
+
+    \bfseries
+    \tableofcontents
+    \normalfont
+
+    \listoffigures
+
+    \listoftables
+
+    \input{chapters/0_acrónimos}
+
+    %% Fix for the nomenclature spacing
+    \newlength{\nomitemorigsep}
+    \setlength{\nomitemorigsep}{\nomitemsep}
+    \setlength{\nomitemsep}{-\parsep}
+    \newcommand\bparagraph[1]{\vspace{1.0mm}\noindent\textbf{#1.}}
+    \hypertarget{abbr}{\printnomenclature{}}
+    \clearpage
+
+    \setcounter{page}{1}
+    \pagenumbering{arabic}
+    %\linenumbers
+    \input{chapters/1_Capítulo}
+    \clearpage
+    \input{chapters/2_Capítulo}
+    \clearpage
+    \input{chapters/3_Capítulo}
+    \clearpage
+    %% add as many chapters as needed, each in its own file .tex
+
+    %\nolinenumbers
+
+    % ---- References ----
+    \bibliographystyle{IEEEtran}
+    \bibliography{assets/references.bib}
+\end{document}
