@@ -27,6 +27,8 @@
 % \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm]
 
 \usepackage[utf8]{inputenc}
+\usepackage{adjustbox}
+\usepackage{xcolor,colortbl}
 \usepackage[all]{xy}
 \usepackage{tikz}
 \usetikzlibrary{mindmap,backgrounds}
@@ -73,103 +75,191 @@
 \section{Introduction}
 
 \begin{frame}{Introduction}
-    Internet of things (IoT) devices are everywhere, since the birth of ubiquitous
-    computing that human every day life is envisioned containing millions of
-    devices that control every aspect of our lives. Today we have smart cars,
-    smart houses, smart cities, wearables among other things that use various
-    types of devices and various types of networks to communicate. These devices
+    Internet of things (IoT) devices are everywhere. These devices
     create new ways of collecting and process personal data from users and
     non-users. Most end users are not even aware or have little control over
-    the information that is being collected by these systems. This work takes
-    an holistic approach to this problem by first doing a literature review,
-    then by doing a survey to gather information about the general knowledge
-    of Portugal's population in this very topic and then, based on the information
-    gathered, it is proposed a system that gives users information about the
-    devices that are nearby and how to protect the data that they do not want
-    to share with these devices, this system is capable of detecting what type
-    of devices are nearby, what kind of data is collected by these devices,
-    show privacy choices to the user when it is possible to do so and what can
-    be done to protect unwanted data from being collected.
+    the information that is being collected by these systems.
+
+    This work takes an holistic approach to this problem by doing:
+    \begin{itemize}
+        \item<1-> Systematic literature review;
+        \item<2-> A survey;
+        \item<3-> A mobile application.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Internet of Things}
+    \begin{multicols}{2}
+        \begin{figure}
+            \centering\includegraphics[width=80pt]{assets/images/mark_weiser.png}
+            \caption{Mark Weiser \cite{weiser1991computer}}
+        \end{figure}
+
+        \columnbreak
+        \begin{figure}
+            \centering\includegraphics[width=120pt]{assets/images/kevin_ashton.png}
+            \caption{Kevin Ashton \cite{KevinThat}}
+        \end{figure}
+    \end{multicols}
 \end{frame}
 
 \section{State of the Art}
 
-\begin{frame}{Privacy Paradox}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
+\subsection{Privacy Paradox}
 
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
+\begin{frame}{Privacy Paradox}
+    \begin{multicols}{2}
+        What is it?
+
+        Why even worry about privacy?
+
+        \columnbreak
+        \begin{figure}
+            \centering\includegraphics[width=90pt]{assets/images/privacy_paradox.png}
+            \caption{How much privacy are we willing to give up online? \cite{ClareParadox}}
+        \end{figure}
+    \end{multicols}
 \end{frame}
 
-\begin{frame}{Differential Privacy}
-    In order to successfully create presentations with this theme, the following requirements must be met by the system:
+\subsection{Differential Privacy}
 
+\begin{frame}{Differential Privacy}
+    \begin{figure}
+        \centering\includegraphics[width=180pt]{assets/images/dp.png}
+        \caption{Differential Privacy \cite{WintonDifferential}}
+    \end{figure}
+\end{frame}
+
+\subsection{Literature Approaches}
+
+\begin{frame}{Literature Approaches}
     \begin{itemize}
-        \item<1-> LuaLaTeX must be used to typeset the slides.
-        \item<2-> Besides some standard packages, the packages \texttt{beamer}, \texttt{pgf} and \texttt{xcolor} must be installed.
-        \item<3-> The fonts Flama-Light, Flama-Book and Flama-Medium should be installed. Alternative: Arial\\\url{http://www.felicianotypefoundry.com/}
+        \item<1-> User awareness;
+        \item<2-> Privacy through security;
+        \item<3-> Framework proposals;
+        \item<4-> Blockchain;
     \end{itemize}
 \end{frame}
 
-\section{Literature Approaches}
-
-\begin{frame}{User Awareness}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
-
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
-\end{frame}
-
-\begin{frame}{Legislation}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
-
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
-\end{frame}
-
-\begin{frame}{Privacy through security}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
-
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
-\end{frame}
-
-\begin{frame}{Architecture / Framework Proposals}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
-
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
-\end{frame}
-
-\begin{frame}{Blockchain}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
-
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
-\end{frame}
-
 \begin{frame}{Privacy Assistants}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
+    \begin{multicols}{2}
+        \begin{figure}
+            \centering\includegraphics[width=180pt]{assets/images/iot_portal.png}
+            \caption{Internet of Things Portal}
+        \end{figure}
 
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
-\end{frame}
-
-\section{Privacy Challenges}
-
-\begin{frame}{Privacy Challenges}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
-
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
+        \columnbreak
+        \begin{figure}
+            \centering\includegraphics[width=210pt]{assets/images/iot_assistant.png}
+            \caption{Internet of Things Assistant}
+        \end{figure}
+    \end{multicols}
 \end{frame}
 
 \section{Methodology}
 
-\begin{frame}{Privacy Challenges}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
+\subsection{Survey}
 
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
+\begin{frame}[shrink]{Survey}
+    \begin{multicols}{2}
+        92 Questions
+        \begin{itemize}
+            \item General knowledge and attitudes towards privacy
+            \item Disposition for sharing personal information
+            \item Privacy concerns
+            \item Current online habits and practices
+            \item Profile identification
+            \item Knowledge and habits regarding the Internet of Things
+            \item Demographic data
+        \end{itemize}
+
+        \columnbreak
+        \begin{figure}
+            \centering\includegraphics[width=45pt]{assets/images/forms.png}
+            % \caption{LFE channel frequency spectrum}
+        \end{figure}
+        \begin{figure}
+            \centering\includegraphics[width=70pt]{assets/images/mturk.jpg}
+            % \caption{LFE channel frequency spectrum}
+        \end{figure}
+    \end{multicols}
+\end{frame}
+
+\subsection{Application}
+
+\begin{frame}{Application}
+    \begin{multicols}{2}
+        Will be composed of the following things:
+        \begin{itemize}
+            \item Show the geolocation of the IoT devices;
+            \item What type of device it is;
+            \item What type of data is being collect by the device;
+            \item Insert IoT devices and associated information about them.
+        \end{itemize}
+
+        \columnbreak
+        \begin{figure}
+            \centering\includegraphics[width=120pt]{assets/images/flutter.png}
+            % \caption{LFE channel frequency spectrum}
+        \end{figure}
+    \end{multicols}
 \end{frame}
 
 \section{Work Plan}
 
-\begin{frame}{Privacy Challenges}
-    The beamer classes for \LaTeX\ are used to create presentations that are to be shown with a beamer. The text typesetting system creates PDF files that can be shown by a large number of programmes.
-
-    The present theme was adapted from HSRM theme by Benjamin Weiss and it makes the creation of slides (assuming basic knowledge of \LaTeX\ ) child's play.
+\begin{frame}{Work Plan}
+    \begin{table}[ht]
+        \centering
+        \begin{adjustbox}{width=0.9\textwidth}
+        \small
+        \noindent\begin{tabular}{p{0.17\textwidth}*{20}{|p{0.01\textwidth}}|}
+        \hline
+        \multicolumn{0}{|c|}{Work plan}
+            & \multicolumn{4}{c|}{January}
+            & \multicolumn{4}{c|}{February}
+            & \multicolumn{4}{c|}{March}
+            & \multicolumn{4}{c|}{April}
+            & \multicolumn{4}{c|}{May}
+            \\
+        \hline
+        \hline
+        \multicolumn{0}{|l|}{Week}
+            & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4& 1 & 2 & 3 & 4& 1 & 2 & 3 & 4& 1 & 2 & 3 & 4 \\
+        \hline
+        % using the on macro to fill in twenty cells as `on'
+        \multicolumn{0}{|l|}{Discovery and planning}
+            & \cellcolor[cmyk]{1,1,0,0}&&&& &&&& &&&& &&&&&&& \\
+        \hline
+        \multicolumn{0}{|l|}{Research enquiry}
+            & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& \\
+        \hline
+        \multicolumn{0}{|l|}{State of the art}
+            & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& &&&& \\
+        \hline
+        \multicolumn{0}{|l|}{Project requirements}
+            & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& &&&& &&&& \\
+        \hline
+        \multicolumn{0}{|l|}{Wireframes and user stories}
+            &&&& & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& &&&& \\
+        \hline
+        \multicolumn{0}{|l|}{Prototyping and refinement}
+            &&&&&& && \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& &  \\
+        \hline
+        \multicolumn{0}{|l|}{Development}
+            &&&& &&&& & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} \\
+        \hline
+        \multicolumn{0}{|l|}{Tests and iterations}
+            &&&& &&&& &&& & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&&  \\
+        \hline
+        \multicolumn{0}{|l|}{Release and documentation}
+            &&&& &&&& &&&& &&&& & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} \\
+        \hline
+        \end{tabular}
+        \end{adjustbox}
+        \vspace{1em}
+        \caption{Work plan timeline}
+        \label{workchart}
+        \end{table}
 \end{frame}
 
 % \begin{frame}[shrink]{Theme options}
@@ -235,10 +325,10 @@
 %     Block environments are defined in Beamer for structuring purposes.
 
 %     \begin{block}{Block with an enumeration}
-%         \begin{itemize}
+%         \begin{enumerate}
 %             \item point 1
 %             \item point 2
-%         \end{itemize}
+%         \end{enumerate}
 %     \end{block}
 
 %     \begin{block}{block with a bullet}
@@ -427,9 +517,12 @@
 % \end{frame}
 
 \begin{frame}{Conclusion}
-    In this thesis I explored people's perception of privacy of IoT systems and
-    made an application that aims to create more awareness in users about their
-    environment and the IoT devices that inhabit it.
+    This project aims to do an exploratory analysis of privacy in
+    IoT systems. It proposes a survey to better understand user's
+    knowledge on this subject and an application that aims to
+    create more users awareness and better inform about their
+    environment, as well as the IoT devices that inhabit it and
+    how they can respond accordingly.
 \end{frame}
 
 \begin{frame}{References}
