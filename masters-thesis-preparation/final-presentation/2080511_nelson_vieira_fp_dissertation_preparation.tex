@@ -1,4 +1,4 @@
-\documentclass[xcolor={svgnames},12pt,aspectratio=169,handout]{beamer}
+\documentclass[xcolor={svgnames},12pt,aspectratio=169]{beamer}
 \usetheme{Berlin}
 \usecolortheme{dolphin}
 
@@ -21,7 +21,10 @@
 
 % \setbeamertemplate{navigation symbols}{} % Hides navigation buttons at the bottom
 % \setbeamertemplate{headline}{} % Hides navigation bar at the top
+
 \setbeamercovered{transparent}
+
+\setbeamertemplate{caption}[numbered]
 
 % \usepackage{pgfpages}
 % \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm]
@@ -42,7 +45,9 @@
 
 \title[Empowering Users' Privacy Rights in the Internet of Things]{Master's Thesis Preparation \\ {\normalsize Empowering Users' Privacy Rights in the Internet of Things}}
 % \subtitle{Empowering Users' Privacy Rights in the Internet of Things}
-\author{\href{mailto:2080511@student.uma.pt}{Nelson Vieira}}
+\author{\href{mailto:2080511@student.uma.pt}{Nelson Vieira}
+% \\ \and \href{mailto:mary.barreto@staff.uma.pt}{Mary Barreto (advisor)}
+}
 \institute[\href{https://www.uma.pt/}{University of Madeira}]{University of Madeira\\Faculty of Exact Sciences and Engineering}
 \date{Last Update: \today}
 
@@ -82,10 +87,27 @@
 
     This work takes an holistic approach to this problem by doing:
     \begin{itemize}
-        \item<1-> Systematic literature review;
-        \item<2-> A survey;
-        \item<3-> A mobile application.
+        \item<2-> Systematic literature review;
+        \item<3-> A survey;
+        \item<4-> A mobile application.
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Privacy}
+    \begin{multicols}{2}
+        What is privacy?
+        \begin{figure}
+            \centering\includegraphics[width=200pt]{assets/images/privacy_history.png}
+            \caption{Privacy history \cite{MukherjeePrivacy}}
+        \end{figure}
+
+        \columnbreak
+        % \onslide*<2>
+        \centering
+        \vspace*{\fill}
+        Privacy $\ne$ Security
+        \vspace*{\fill}
+    \end{multicols}
 \end{frame}
 
 \begin{frame}{Internet of Things}
@@ -111,7 +133,9 @@
     \begin{multicols}{2}
         What is it?
 
+        \vspace*{\fill}
         Why even worry about privacy?
+        \vspace*{\fill}
 
         \columnbreak
         \begin{figure}
@@ -205,61 +229,97 @@
     \end{multicols}
 \end{frame}
 
-\section{Work Plan}
+\section{Conclusion and Future Work}
 
-\begin{frame}{Work Plan}
+\subsection{Future Work}
+
+\begin{frame}{Future Work}
     \begin{table}[ht]
         \centering
         \begin{adjustbox}{width=0.9\textwidth}
         \small
-        \noindent\begin{tabular}{p{0.17\textwidth}*{20}{|p{0.01\textwidth}}|}
+        \noindent\begin{tabular}{p{0.17\textwidth}*{20}{p{0.01\textwidth}}|}
         \hline
-        \multicolumn{0}{|c|}{Work plan}
+        \multicolumn{0}{|c|}{}
             & \multicolumn{4}{c|}{January}
             & \multicolumn{4}{c|}{February}
             & \multicolumn{4}{c|}{March}
             & \multicolumn{4}{c|}{April}
             & \multicolumn{4}{c|}{May}
             \\
-        \hline
-        \hline
-        \multicolumn{0}{|l|}{Week}
-            & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4& 1 & 2 & 3 & 4& 1 & 2 & 3 & 4& 1 & 2 & 3 & 4 \\
+        % \hline
+        % \hline
+        \multicolumn{0}{|l|}{}
+            & 1 & 2 & 3 & \multicolumn{0}{c|}{4} & 1 & 2 & 3 & \multicolumn{0}{c|}{4}& 1 & 2 & 3 & \multicolumn{0}{c|}{4}& 1 & 2 & 3 & \multicolumn{0}{c|}{4}& 1 & 2 & 3 & 4 \\
         \hline
         % using the on macro to fill in twenty cells as `on'
         \multicolumn{0}{|l|}{Discovery and planning}
             & \cellcolor[cmyk]{1,1,0,0}&&&& &&&& &&&& &&&&&&& \\
-        \hline
+        % \hline
         \multicolumn{0}{|l|}{Research enquiry}
-            & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& \\
-        \hline
+            & \multicolumn{12}{c}{\cellcolor[cmyk]{1,1,0,0}} &&&& &&&& \\
+        % \hline
         \multicolumn{0}{|l|}{State of the art}
-            & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& &&&& \\
-        \hline
+            & \multicolumn{8}{c}{\cellcolor[cmyk]{1,1,0,0}} &&&& &&&& &&&& \\
+        % \hline
         \multicolumn{0}{|l|}{Project requirements}
-            & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& &&&& &&&& \\
-        \hline
+            & \multicolumn{4}{c}{\cellcolor[cmyk]{1,1,0,0}} &&&& &&&& &&&& &&&& \\
+        % \hline
         \multicolumn{0}{|l|}{Wireframes and user stories}
-            &&&& & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& &&&& \\
-        \hline
+            &&&& & \multicolumn{4}{c}{\cellcolor[cmyk]{1,1,0,0}} &&&& &&&& &&&& \\
+        % \hline
         \multicolumn{0}{|l|}{Prototyping and refinement}
-            &&&&&& && \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&& &&&& &  \\
-        \hline
+            &&&&&& && \multicolumn{4}{c}{\cellcolor[cmyk]{1,1,0,0}} &&&& &&&& &  \\
+        % \hline
         \multicolumn{0}{|l|}{Development}
-            &&&& &&&& & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} \\
-        \hline
+            &&&& &&&& & \multicolumn{12}{c}{\cellcolor[cmyk]{1,1,0,0}} \\
+        % \hline
         \multicolumn{0}{|l|}{Tests and iterations}
-            &&&& &&&& &&& & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} &&&&  \\
-        \hline
+            &&&& &&&& &&& & \multicolumn{5}{c}{\cellcolor[cmyk]{1,1,0,0}} &&&&  \\
+        % \hline
         \multicolumn{0}{|l|}{Release and documentation}
-            &&&& &&&& &&&& &&&& & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} & \cellcolor[cmyk]{1,1,0,0} \\
+            &&&& &&&& &&&& &&&& & \multicolumn{4}{c}{\cellcolor[cmyk]{1,1,0,0}} \\
         \hline
         \end{tabular}
         \end{adjustbox}
         \vspace{1em}
-        \caption{Work plan timeline}
+        \caption{Gantt chart showing project timeline}
         \label{workchart}
         \end{table}
+\end{frame}
+
+\subsection{References}
+
+\begin{frame}[allowframebreaks]{References}
+    \bibliographystyle{IEEEtran}
+    \bibliography{assets/references}
+    % \begin{thebibliography}{10}
+    %     \beamertemplatebookbibitems
+    %     \bibitem{Oppenheim2009}
+    %     Alan~V.~Oppenheim
+    %     \newblock Discrete-Time Signal Processing
+    %     \newblock Prentice Hall Press, 2009
+    %     \beamertemplatearticlebibitems
+    %     \bibitem{EBU2011}
+    %     European~Broadcasting~Union
+    %     \newblock Specification of the Broadcast Wave Format (BWF)
+    %     \newblock 2011
+    % \end{thebibliography}
+\end{frame}
+
+\subsection{Conclusion}
+
+\begin{frame}{Conclusion}
+    This project aims to do an exploratory analysis of privacy in
+    IoT systems. It proposes a survey to better understand user's
+    knowledge on this subject and an application that aims to
+    create more users awareness and better inform about their
+    environment, as well as the IoT devices that inhabit it and
+    how they can respond accordingly.
+\end{frame}
+
+\begin{frame}{Questions and Comments}
+    Thank you for your attention. Any questions?
 \end{frame}
 
 % \begin{frame}[shrink]{Theme options}
@@ -506,44 +566,5 @@
 %         \end{itemize}
 %     \end{multicols}
 % \end{frame}
-
-\section{Conclusion and Future Work}
-
-% \begin{frame}{Future Work}
-%     \begin{itemize}
-%         \item Do this
-%         \item Do that
-%     \end{itemize}
-% \end{frame}
-
-\begin{frame}{Conclusion}
-    This project aims to do an exploratory analysis of privacy in
-    IoT systems. It proposes a survey to better understand user's
-    knowledge on this subject and an application that aims to
-    create more users awareness and better inform about their
-    environment, as well as the IoT devices that inhabit it and
-    how they can respond accordingly.
-\end{frame}
-
-\begin{frame}{References}
-    \bibliographystyle{IEEEtran}
-    \bibliography{assets/references}
-    % \begin{thebibliography}{10}
-    %     \beamertemplatebookbibitems
-    %     \bibitem{Oppenheim2009}
-    %     Alan~V.~Oppenheim
-    %     \newblock Discrete-Time Signal Processing
-    %     \newblock Prentice Hall Press, 2009
-    %     \beamertemplatearticlebibitems
-    %     \bibitem{EBU2011}
-    %     European~Broadcasting~Union
-    %     \newblock Specification of the Broadcast Wave Format (BWF)
-    %     \newblock 2011
-    % \end{thebibliography}
-\end{frame}
-
-\begin{frame}{Questions and Comments}
-    Thank you for your attention. Any questions?
-\end{frame}
 
 \end{document}
