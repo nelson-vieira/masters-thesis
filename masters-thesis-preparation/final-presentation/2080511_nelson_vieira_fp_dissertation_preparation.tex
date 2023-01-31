@@ -1,4 +1,4 @@
-\documentclass[xcolor={svgnames},12pt,aspectratio=169]{beamer}
+\documentclass[xcolor={svgnames},aspectratio=169]{beamer}
 \usetheme{Berlin}
 \usecolortheme{dolphin}
 
@@ -131,6 +131,7 @@
 
 \begin{frame}{Privacy Paradox}
     \begin{multicols}{2}
+        \vspace*{\fill}
         What is it?
 
         \vspace*{\fill}
@@ -149,7 +150,7 @@
 
 \begin{frame}{Differential Privacy}
     \begin{figure}
-        \centering\includegraphics[width=180pt]{assets/images/dp.png}
+        \centering\includegraphics[width=200pt]{assets/images/dp.png}
         \caption{Differential Privacy \cite{WintonDifferential}}
     \end{figure}
 \end{frame}
@@ -157,30 +158,57 @@
 \subsection{Literature Approaches}
 
 \begin{frame}{Literature Approaches}
-    \begin{itemize}
-        \item<1-> User awareness;
-        \item<2-> Privacy through security;
-        \item<3-> Framework proposals;
-        \item<4-> Blockchain;
-    \end{itemize}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item<1-> User awareness;
+            \item<2-> Privacy through security;
+            \item<3-> Framework proposals;
+            \item<4-> Blockchain;
+        \end{itemize}
+
+        \columnbreak
+        \begin{itemize}
+            \only<1>{\item Interactive theatre experience \cite{SkirpanPrivacy}}
+            \only<2>{\item Communication strategy for a remote-control system \cite{SunSecure}}
+            \only<3>{\item Domain-specific ontology for modeling IoT security and privacy policies \cite{opara2022framework}}
+            \only<4>{\item Software stack that combines peer-to-peer file sharing with blockchain smart contracts \cite{AliIoT}}
+        \end{itemize}
+    \end{multicols}
 \end{frame}
 
 \begin{frame}{Privacy Assistants}
     \begin{multicols}{2}
         \begin{figure}
             \centering\includegraphics[width=180pt]{assets/images/iot_portal.png}
-            \caption{Internet of Things Portal}
+            \caption{Internet of Things Portal \cite{DasPersonalized}}
         \end{figure}
 
         \columnbreak
         \begin{figure}
             \centering\includegraphics[width=210pt]{assets/images/iot_assistant.png}
-            \caption{Internet of Things Assistant}
+            \caption{Internet of Things Assistant \cite{FengDesign}}
         \end{figure}
     \end{multicols}
 \end{frame}
 
 \section{Methodology}
+
+\subsection{Research Questions}
+
+\begin{frame}{Research Questions}
+    \begin{itemize}
+        \item<1-> \textbf{Phase 1:}
+        \begin{itemize}
+            \item<2-> \textbf{RQ1:} What approaches are being considered for privacy issues in IoT in the currently available literature?
+            \item<2-> \textbf{RQ2:} What are user perceptions on online privacy?
+        \end{itemize}
+        \item<1-> \textbf{Phase 2:}
+        \begin{itemize}
+            \item<3-> \textbf{RQ3:} How to empower users to protect their privacy rights?
+            \item<3-> \textbf{RQ4:} What issues are prevalent in IoT that make it difficult to address privacy and security problems?
+        \end{itemize}
+    \end{itemize}
+\end{frame}
 
 \subsection{Survey}
 
@@ -288,6 +316,21 @@
         \end{table}
 \end{frame}
 
+\subsection{Conclusion}
+
+\begin{frame}{Conclusion}
+    This project aims to do an exploratory analysis of privacy in
+    IoT systems. It proposes a survey to better understand user's
+    knowledge on this subject and an application that aims to
+    create more users awareness and better inform about their
+    environment, as well as the IoT devices that inhabit it and
+    how they can respond accordingly.
+\end{frame}
+
+\begin{frame}{Questions and Comments}
+    Thank you for your attention. Any questions?
+\end{frame}
+
 \subsection{References}
 
 \begin{frame}[allowframebreaks]{References}
@@ -305,21 +348,6 @@
     %     \newblock Specification of the Broadcast Wave Format (BWF)
     %     \newblock 2011
     % \end{thebibliography}
-\end{frame}
-
-\subsection{Conclusion}
-
-\begin{frame}{Conclusion}
-    This project aims to do an exploratory analysis of privacy in
-    IoT systems. It proposes a survey to better understand user's
-    knowledge on this subject and an application that aims to
-    create more users awareness and better inform about their
-    environment, as well as the IoT devices that inhabit it and
-    how they can respond accordingly.
-\end{frame}
-
-\begin{frame}{Questions and Comments}
-    Thank you for your attention. Any questions?
 \end{frame}
 
 % \begin{frame}[shrink]{Theme options}
