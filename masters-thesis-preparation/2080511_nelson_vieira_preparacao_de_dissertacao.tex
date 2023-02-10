@@ -14,6 +14,7 @@
 }
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+% \def\myversion{1.0}
 
 \begin{document}
 
@@ -554,23 +555,23 @@ IoT:
     \item
     No comércio electrónico, o \textit{profiling} é frequentemente utilizado
     para personalização. As organizações recolhem informação sobre indivíduos
-    a fim de deduzir os seus interesses através da associação com outros perfis
-    e fontes de dados.
+    a fim de deduzir os seus interesses através da associação com outros
+    perfis e fontes de dados.
 
     % In e-commerce, \textit{profiling} is often used for personalization.
     % Organizations collect information about individuals in order to deduce
     % their interests via association with other profiles and data sources.
     \item
     \textit{Interacção e apresentação} faz alusão à partilha de informação
-    privada com um público não intencional enquanto o faz através de um meio
-    público. As aplicações IoT necessitam frequentemente de uma interacção extensa
-    com o utilizador, espera-se que os utilizadores destes sistemas obtenham
-    informações através de dispositivos inteligentes no seu ambiente imediato
-    e que os utilizadores interagem com sistemas de formas criativas e naturais.
-    No entanto, muitos desses modos de comunicação e apresentação já estão
-    disponíveis para o público em geral, tornando-os aparentes a qualquer pessoa
-    por perto. Quando a informação pessoal é transferida entre um sistema e
-    o seu utilizador, a privacidade é violada.
+    privada com um público não intencional enquanto o faz através de um
+    meio público. As aplicações IoT necessitam frequentemente de uma interacção
+    extensa com o utilizador, espera-se que os utilizadores destes sistemas
+    obtenham informações através de dispositivos inteligentes no seu ambiente
+    imediato e que os utilizadores interagem com sistemas de formas criativas
+    e naturais. No entanto, muitos desses modos de comunicação e apresentação
+    já estão disponíveis para o público em geral, tornando-os aparentes
+    a qualquer pessoa por perto. Quando a informação pessoal é transferida
+    entre um sistema e o seu utilizador, a privacidade é violada.
 
     % \textit{Interaction and presentation} allude to the sharing of private
     % information with an unintended audience while doing so through a public
@@ -582,12 +583,13 @@ IoT:
     % public, making them apparent to anybody around. When personal information
     % is transferred between a system and its user, privacy is breached.
     \item
-    \textit{Transições do ciclo de vida} ocorrem quando um dispositivo IoT é
-    vendido, utilizado pelo seu proprietário e eventualmente eliminado. Pode
-    haver uma expectativa que o objecto apaga todas as informações, mas dispositivos
-    inteligentes frequentemente mantêm grandes volumes de dados sobre o seu próprio
-    passado ao longo de toda a sua existência. Isto pode conter imagens e vídeos
-    pessoais, que nem sempre são apagados após a transferência de propriedade.
+    \textit{Transições do ciclo de vida} ocorrem quando um dispositivo IoT
+    é vendido, utilizado pelo seu proprietário e eventualmente eliminado.
+    Pode haver uma expectativa que o objecto apaga todas as informações,
+    mas dispositivos inteligentes frequentemente mantêm grandes volumes de
+    dados sobre o seu próprio passado ao longo de toda a sua existência.
+    Isto pode conter imagens e vídeos pessoais, que nem sempre são apagados
+    após a transferência de propriedade.
 
     % \textit{Lifecycle transitions} occur when an IoT device is sold, utilized
     % by its owner and eventually disposed of. There may be an expectation
@@ -596,10 +598,10 @@ IoT:
     % existence. This might contain personal images and videos, which are
     % not always erased following ownership transfer.
     \item
-    \textit{Ataques ao inventário} envolvem a entrada não autorizada e a aquisição
-    de informação sobre a presença e as características das coisas pessoais. Os
-    utilizadores maliciosos podem utilizar dados de inventário para traçar o perfil
-    da propriedade e assaltar.
+    \textit{Ataques ao inventário} envolvem a entrada não autorizada e a
+    aquisição de informação sobre a presença e as características das coisas
+    pessoais. Os utilizadores maliciosos podem utilizar dados de inventário
+    para traçar o perfil da propriedade e assaltar.
 
     % \textit{Inventory attacks} involve unauthorized entry and the acquisition
     % of information about the presence and characteristics of personal things.
@@ -607,8 +609,8 @@ IoT:
     % break in.
     \item
     A \textit{interligação} é o processo de ligar sistemas díspares, quando
-    os sistemas estão a ligar diferentes fontes de dados, existe um maior perigo
-    de acesso não autorizado e de fuga de dados.
+    os sistemas estão a ligar diferentes fontes de dados, existe um maior
+    perigo de acesso não autorizado e de fuga de dados.
 
     % \textit{Linkage} is the process of connecting disparate systems, when
     % systems are connecting different data sources, there is a higher danger
@@ -628,15 +630,15 @@ geral e análise de dados dos utilizadores por aplicações e sistemas.
 A noção de privacidade diferencial, de acordo com Michael Kearns \cite{kearns2019ethical},
 baseia-se em três princípios importantes. O primeiro é que ``a privacidade
 diferencial exige que a adição ou remoção do registo de dados de um único
-indivíduo não alterar a probabilidade de qualquer resultado por muito''. O
-segundo princípio sendo que ``nenhum observador exterior pode aprender muito
-sobre qualquer indivíduo por causa dos dados específicos dessa pessoa''. O
-terceiro princípio importante sendo que ``para cada indivíduo no conjunto de
-dados, e para qualquer observador não independentemente das suas crenças iniciais
-sobre o mundo, depois de observarem o resultado de um cálculo diferencialmente
+indivíduo não alterar a probabilidade de qualquer resultado por muito''.
+O segundo princípio sendo que ``nenhum observador exterior pode aprender
+muito sobre qualquer indivíduo por causa dos dados específicos dessa pessoa''.
+O terceiro princípio importante sendo que ``para cada indivíduo no conjunto
+de dados, e para qualquer observador não independentemente das suas crenças
+iniciais sobre o mundo, depois de observarem o resultado de um cálculo diferencialmente
 privado, a sua crença posterior sobre qualquer coisa está perto do que teria
-sido se tivessem observado a saída do mesmo cálculo executado sem os dados do
-indivíduo''.
+sido se tivessem observado a saída do mesmo cálculo executado sem os dados
+do indivíduo''.
 
 % The notion of differential privacy, according to Michael Kearns \cite{kearns2019ethical},
 % is based on three important principles. The first being that ``differential
@@ -651,14 +653,14 @@ indivíduo''.
 % output of the same computation run without the individual's data''.
 
 A privacidade diferencial tem o potencial de aumentar significativamente a
-protecção da privacidade individual, ao adicionar propositadamente
-ruído a um conjunto de dados, dá negabilidade plausível a qualquer indivíduo
-que possa ter tido os seus dados explorados enquanto ainda é capaz de calcular
-estatísticas com uma precisão relativamente elevada. Embora os algoritmos que
-lidam com noções de justiça, ética e privacidade são difíceis de implementar
-devido à subjectividade destes conceitos, e os algoritmos de privacidade diferencial
-não são diferentes, ainda podem ajudar em no que diz respeito à abordagem dos
-dilemas morais inerentes à tecnologia.
+protecção da privacidade individual, ao adicionar propositadamente ruído a
+um conjunto de dados, dá negabilidade plausível a qualquer indivíduo que possa
+ter tido os seus dados explorados enquanto ainda é capaz de calcular estatísticas
+com uma precisão relativamente elevada. Embora os algoritmos que lidam com
+noções de justiça, ética e privacidade são difíceis de implementar devido à
+subjectividade destes conceitos, e os algoritmos de privacidade diferencial
+não são diferentes, ainda podem ajudar em no que diz respeito à abordagem
+dos dilemas morais inerentes à tecnologia.
 
 % Differential privacy has the potential to significantly increase individual
 % privacy protection, by purposefully adding noise into a dataset, it gives
@@ -670,179 +672,342 @@ dilemas morais inerentes à tecnologia.
 % regards to addressing technology's inherent moral quandaries.
 
 Existem outros algoritmos que visam preservar a privacidade da mesma forma
-que a privacidade diferencial, tais como o algoritmo \textit{box blurring} da
-Google \cite{FromeLarge} que é utilizado na vista de rua do Google Maps, O Visor \cite{poddar2020visor} da Microsoft que é uma ferramenta de análise de vídeo como serviço e o sistema Shokri e Shmatikov {ShokriPrivacy} do Shokri e Shmatikov para aprendizagem colaborativa profunda, no entanto, em geral, estes algoritmos lutam com elevados custos computacionais, ataques internos, ou privacidade não comprovável.
+que a privacidade diferencial, tais como o algoritmo de \textit{box blurring}
+da Google \cite{FromeLarge} que é utilizado na vista de rua do Google Maps,
+o Visor da Microsoft \cite{poddar2020visor} que é uma ferramenta de análise
+de vídeo como serviço e o sistema de aprendizagem profunda colaborativa de
+Shokri e Shmatikov \cite{ShokriPrivacy}, no entanto, em geral, estes algoritmos
+lutam com elevados custos computacionais, ataques internos, ou privacidade
+não comprovável.
 
-There exist other algorithms that aim to preserve privacy in the same way
-as differential privacy such as Google's box blurring algorithm \cite{FromeLarge}
-that is used in the Google Map's street view, Microsoft's Visor \cite{poddar2020visor}
-which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
-\cite{ShokriPrivacy} system for collaborative deep learning, however, in
-general, these algorithms struggle with high computational cost, internal
-attacks, or non-provable privacy.
+% There exist other algorithms that aim to preserve privacy in the same way
+% as differential privacy such as Google's box blurring algorithm \cite{FromeLarge}
+% that is used in the Google Map's street view, Microsoft's Visor \cite{poddar2020visor}
+% which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
+% \cite{ShokriPrivacy} system for collaborative deep learning, however, in
+% general, these algorithms struggle with high computational cost, internal
+% attacks, or non-provable privacy.
 
-Zhao et al. \cite{ZhaoSurvey} conduct a SLR on differential privacy for
-unstructured data. The authors present differential privacy methods for
-sensitive content in image, audio, video, and text data. They compare the
-various methods and perform utility analyses for each method, highlighting
-the benefits and drawbacks of each, the utility loss is measured in experimental
-evaluations between the actual data and its obfuscated variant. They come
-to the conclusion that differential privacy as well as its variations give
-stringent privacy protections for unstructured data against attackers with
-unpredictable background knowledge. They also suggest potential future study
-subjects that have yet to be investigated.
+Zhao et al. \cite{ZhaoSurvey} conduzem um SLR sobre a privacidade diferencial
+para dados não estruturados. Os autores apresentam métodos de privacidade
+diferencial para conteúdos sensíveis em dados de imagem, áudio, vídeo, e texto.
+Comparam os vários métodos e efectuam análises de utilidade para cada método,
+destacando os benefícios e desvantagens de cada um, a perda de utilidade é
+medida em avaliações experimentais entre os dados reais e a sua variante ofuscada.
+Chegam à conclusão de que a privacidade diferencial, bem como as suas variações,
+dão protecção rigorosa à privacidade de dados não estruturados contra atacantes
+com conhecimentos de base imprevisíveis. Sugerem também potenciais temas de
+estudo futuros que ainda têm de ser investigados.
+
+% Zhao et al. \cite{ZhaoSurvey} conduct a SLR on differential privacy for
+% unstructured data. The authors present differential privacy methods for
+% sensitive content in image, audio, video, and text data. They compare the
+% various methods and perform utility analyses for each method, highlighting
+% the benefits and drawbacks of each, the utility loss is measured in experimental
+% evaluations between the actual data and its obfuscated variant. They come
+% to the conclusion that differential privacy as well as its variations give
+% stringent privacy protections for unstructured data against attackers with
+% unpredictable background knowledge. They also suggest potential future study
+% subjects that have yet to be investigated.
 
 \subsection{Soluções Propostas}
 
-\par This section list seven solutions that emerged from the structured
-literature review to improve the gap between privacy and security concepts
-among systems and users.
+\par
+Esta secção enumera sete soluções que emergiram da revisão de literatura
+estruturada para melhorar o fosso entre os conceitos de privacidade e segurança
+entre sistemas e utilizadores.
+
+% This section list seven solutions that emerged from the structured
+% literature review to improve the gap between privacy and security concepts
+% among systems and users.
 
 \subsubsection{Criando Novas Formas de Conscienlização para o Utilizador}
 
-There has been some work done to determine the users awareness of their
-actions online regarding their privacy. Skirpan et al. \cite{SkirpanPrivacy}
-built an interactive theatre experience, this was created to try to prove
-that a simulated experience with a credible privacy problem may encourage
-people to take action before actually encountering a catastrophe. The plot
-of the play consist in a fledgling tech company that unveiled its revolutionary
-AI technology while dealing with a company whistleblower and an untimely
-zero-day hack on their system. The public is able to interact with the actors
-and influence how the story plays out. Audiences and actors were given the
-chance to try on roles, behaviors, and opinions that they would not normally
-have access to in ordinary life. The authors had interviews and surveys
-done after the plays with audience members however they only did interviews
-halfway through production and only a small fraction of the audience actually
-participated in this data collection, they also noted that after contacting
-people months after the interviews that they did not really changed their
-behaviour regarding their privacy rights.
+Tem sido feito algum trabalho para determinar o conhecimento dos utilizadores
+sobre as suas acções online relativamente à sua privacidade. Skirpan et al.
+\cite{SkirpanPrivacy} construíram uma experiência de teatro interactivo, esta
+foi criada para tentar provar que uma experiência simulada com um problema
+de privacidade credível pode encorajar as pessoas a tomar medidas antes de
+se depararem realmente com uma catástrofe. O enredo da peça consiste numa
+companhia tecnológica inexperiente que revelou a sua revolucionária tecnologia
+de IA enquanto lidava com um denunciante da empresa e um hack inoportuno de
+dia zero no seu sistema. O público é capaz de interagir com os actores e influenciar
+a forma como a história se desenrola. O público e os actores tiveram a oportunidade
+de experimentar papéis, comportamentos e opiniões a que normalmente não teriam
+acesso na vida quotidiana. Os autores tiveram entrevistas e inquéritos feitos
+após as peças com membros do público, no entanto, apenas fizeram entrevistas
+a meio da produção e apenas a uma pequena fracção do público participou efectivamente
+nesta recolha de dados, observaram também que, após contactarem as pessoas
+meses após as entrevistas, não mudaram realmente o seu comportamento relativamente
+aos seus direitos de privacidade.
+
+% There has been some work done to determine the users awareness of their
+% actions online regarding their privacy. Skirpan et al. \cite{SkirpanPrivacy}
+% built an interactive theatre experience, this was created to try to prove
+% that a simulated experience with a credible privacy problem may encourage
+% people to take action before actually encountering a catastrophe. The plot
+% of the play consist in a fledgling tech company that unveiled its revolutionary
+% AI technology while dealing with a company whistleblower and an untimely
+% zero-day hack on their system. The public is able to interact with the actors
+% and influence how the story plays out. Audiences and actors were given the
+% chance to try on roles, behaviors, and opinions that they would not normally
+% have access to in ordinary life. The authors had interviews and surveys
+% done after the plays with audience members however they only did interviews
+% halfway through production and only a small fraction of the audience actually
+% participated in this data collection, they also noted that after contacting
+% people months after the interviews that they did not really changed their
+% behaviour regarding their privacy rights.
 
 \subsubsection{Legislação}
 
-Some papers seek to improve legislation \cite{WEBER2015618, FabianoInternet}
-because otherwise, in their view, privacy rights won't be respected if they
-are not enforceable legally, they defend that without the express agreement
-of the individual concerned, private information obtained by IoT devices
-must not be retained or processed in any form, and necessary procedures
-must be taken to guarantee that the data collected is not that of an unrelated
-individual. But better protection laws for the user would also create opposition
-from most companies that want to extract as much private data from their
-users without (m)any restrictions in order to increase their profit margins.
+Alguns documentos procuram melhorar a legislação \cite{WEBER2015618, FabianoInternet}
+porque, caso contrário, nas suas opiniões, os direitos de privacidade não serão
+respeitados se não forem legalmente exigíveis, defendem que, sem o acordo expresso
+do indivíduo em causa, as informações privadas obtidas por dispositivos IoT
+não devem ser retidas ou processadas sob qualquer forma, e devem ser adoptados
+os procedimentos necessários para garantir que os dados recolhidos não sejam
+os de um indivíduo não relacionado. Mas melhores leis de protecção para o utilizador
+também criariam oposição da maioria das empresas que pretendem extrair o máximo
+de dados privados dos seus utilizadores sem quaisquer restrições, a fim de
+aumentar as suas margens de lucro.
+
+% Some papers seek to improve legislation \cite{WEBER2015618, FabianoInternet}
+% because otherwise, in their view, privacy rights won't be respected if they
+% are not enforceable legally, they defend that without the express agreement
+% of the individual concerned, private information obtained by IoT devices
+% must not be retained or processed in any form, and necessary procedures
+% must be taken to guarantee that the data collected is not that of an unrelated
+% individual. But better protection laws for the user would also create opposition
+% from most companies that want to extract as much private data from their
+% users without (m)any restrictions in order to increase their profit margins.
 
 \subsubsection{Privacidade Através da Segurança}
 
-Sun et al. \cite{SunSecure} design a lightweight communication strategy
-for a remote-control system, employing two types of Virtual-Spaces to achieve
-the aim of identity announcement and data exchange. They constructed a prototype
-system of the scheme and tested it on the Freenet, demonstrating that the
-method can effectively resist the influence of flow analysis on communication
-anonymity while preserving communication data security.
+Sun et al. \cite{SunSecure} concebem uma estratégia de comunicação leve para
+um sistema de controlo remoto, utilizando dois tipos de espaços virtuais para
+alcançar o objectivo de anúncio de identidade e troca de dados. Construíram
+um sistema protótipo do esquema e testaram-no na Freenet, demonstrando que
+o método pode resistir eficazmente à influência da análise de fluxo no anonimato
+da comunicação, preservando ao mesmo tempo a segurança dos dados de comunicação.
 
-\subsubsection{Propostas de Arquitetura / Frameworks}
+% Sun et al. \cite{SunSecure} design a lightweight communication strategy
+% for a remote-control system, employing two types of Virtual-Spaces to achieve
+% the aim of identity announcement and data exchange. They constructed a prototype
+% system of the scheme and tested it on the Freenet, demonstrating that the
+% method can effectively resist the influence of flow analysis on communication
+% anonymity while preserving communication data security.
 
-Antunes et al. \cite{AntunesFederated} do a SLR on federated learning in
-the area of healthcare and make an architecture proposal. The technique
-known as federated learning allows for the distributed training of machine
-learning models using remotely hosted datasets without the requirement for
-data amplification. The fundamental goal of the proposed architecture is
-to allow healthcare institutions that have access to sensitive medical information
-to use it in distributed data analysis and machine learning research while
-ensuring patient confidentiality. Because information transmitted among
-institutions need confidentiality guarantees for learning model parameters
-and analysis results, the architecture can adopt a number of ways based on
-a zero-trust security paradigm \cite{ChenSecurity}. Furthermore, the institutions
-develop a learning algorithm verification system that can store and disseminate
-manifestos, as well as engage in distributed analytic procedures that need
-unanimous agreement from all participants. This study also demonstrates
-that previous literature implies that homomorphic encryption and differential
-privacy are effective approaches for preventing data breaches without incurring
-prohibitively high computing costs.
+\subsubsection{Propostas de Arquiteturas / Frameworks}
 
-Opara et al. \cite{opara2022framework} present a system for spotting possible
-problems with privacy or security regulations in the early stages of development,
-this approach is intended at developers. The paper proposes a domain-specific
-ontology for modeling IoT security and privacy policies, a notation for
-representing and validating IoT security and privacy policies, a set of
-guidelines and rules for detecting IoT policy errors, and a tool for visually
-modeling and capturing IoT security policies and discovering policy problems.
-Although the framework that is presented is theoretically promising it has
-not been tested in a real environment so the effectiveness can't yet be
-measured. The authors also do not compare their proposal with others already
-available.
+Antunes et al. \cite{AntunesFederated} fazem um SLR sobre aprendizagem federada
+na área dos cuidados de saúde e fazem uma proposta de arquitectura. A técnica
+conhecida como aprendizagem federada permite a formação distribuída de modelos
+de aprendizagem de máquinas utilizando conjuntos de dados hospedados remotamente
+sem a necessidade de amplificação de dados. O objectivo fundamental da arquitectura
+proposta é permitir que as instituições de saúde que têm acesso a informação
+médica sensível a utilizem na análise de dados distribuídos e na investigação
+da aprendizagem automática, assegurando ao mesmo tempo a confidencialidade dos
+pacientes. Uma vez que a informação transmitida entre instituições necessita
+de garantias de confidencialidade para os parâmetros do modelo de aprendizagem
+e resultados de análise, a arquitectura pode adoptar uma série de formas baseadas
+num paradigma de segurança de confiança zero \cite{ChenSecurity}. Além disso,
+as instituições desenvolvem um sistema de verificação de algoritmos de aprendizagem
+que pode armazenar e disseminar manifestos, bem como envolver-se em procedimentos
+analíticos distribuídos que necessitam do acordo unânime de todos os participantes.
+Este estudo demonstra também que a literatura anterior implica que a encriptação
+homomórfica e a privacidade diferencial são abordagens eficazes para prevenir
+violações de dados sem incorrer em custos de computação proibitivamente elevados.
+
+% Antunes et al. \cite{AntunesFederated} do a SLR on federated learning in
+% the area of healthcare and make an architecture proposal. The technique
+% known as federated learning allows for the distributed training of machine
+% learning models using remotely hosted datasets without the requirement for
+% data amplification. The fundamental goal of the proposed architecture is
+% to allow healthcare institutions that have access to sensitive medical information
+% to use it in distributed data analysis and machine learning research while
+% ensuring patient confidentiality. Because information transmitted among
+% institutions need confidentiality guarantees for learning model parameters
+% and analysis results, the architecture can adopt a number of ways based on
+% a zero-trust security paradigm \cite{ChenSecurity}. Furthermore, the institutions
+% develop a learning algorithm verification system that can store and disseminate
+% manifestos, as well as engage in distributed analytic procedures that need
+% unanimous agreement from all participants. This study also demonstrates
+% that previous literature implies that homomorphic encryption and differential
+% privacy are effective approaches for preventing data breaches without incurring
+% prohibitively high computing costs.
+
+Opara et al. \cite{opara2022framework} apresentam um sistema para detectar
+possíveis problemas com regulamentos de privacidade ou segurança nas fases
+iniciais de desenvolvimento, esta abordagem destina-se aos programadores. O
+documento propõe uma ontologia de domínio específico para a modelagem de políticas
+de segurança e privacidade da IoT, uma notação para representar e validar políticas
+de segurança e privacidade da IoT, um conjunto de directrizes e regras para
+detectar erros de políticas da IoT, e uma ferramenta para modelar e capturar
+visualmente políticas de segurança da IoT e descobrir problemas de políticas.
+Embora a framework apresentada seja teoricamente promissora, ainda não foi
+testada num ambiente real, pelo que a sua eficácia ainda não pode ser medida.
+Os autores também não comparam a sua proposta com outras já disponíveis.
+
+% Opara et al. \cite{opara2022framework} present a system for spotting possible
+% problems with privacy or security regulations in the early stages of development,
+% this approach is intended at developers. The paper proposes a domain-specific
+% ontology for modeling IoT security and privacy policies, a notation for
+% representing and validating IoT security and privacy policies, a set of
+% guidelines and rules for detecting IoT policy errors, and a tool for visually
+% modeling and capturing IoT security policies and discovering policy problems.
+% Although the framework that is presented is theoretically promising it has
+% not been tested in a real environment so the effectiveness can't yet be
+% measured. The authors also do not compare their proposal with others already
+% available.
 
 \subsubsection{Blockchain}
 
-Blockchain is an option to guarantee privacy in IoT because of zero-knowledge
-proofs, ring signatures and mixing \cite{PrivacyblockchainWikipedia}.
+Blockchain é uma opção para garantir a privacidade em IoT devido a provas de
+conhecimento zero, assinaturas de anéis e \textit{mixing} \cite{PrivacyblockchainWikipedia}.
 
-Yu et al. \cite{yu2018blockchain} shows various implementations of blockchain
-that provide privacy through security, based on different categories like
-data integrity, data sharing and authentication and access control. The
-authors use privacy as a proxy for security, they also do not discuss the
-weak and strong points of each implementation or make any comparison, they
-also do not provide further research questions.
+% Blockchain is an option to guarantee privacy in IoT because of zero-knowledge
+% proofs, ring signatures and mixing \cite{PrivacyblockchainWikipedia}.
 
-Ali et al. \cite{AliIoT} suggest a software stack that combines peer-to-peer
-file sharing with blockchain smart contracts to offer IoT users control
-over their data and do away with the necessity for centralized IoT data
-management. Blockchain smart contracts are used in the proposed `modular
-consortium' architecture to regulate access while establishing responsibility
-for both data owners and other parties that users grant access to.
+Yu et al. \cite{yu2018blockchain} mostra várias implementações de blockchain
+que proporcionam privacidade através da segurança, com base em diferentes
+categorias como integridade de dados, partilha de dados e autenticação e controlo
+de acesso. Os autores utilizam a privacidade como um proxy para a segurança,
+também não discutem os pontos fracos e fortes de cada implementação ou fazem
+qualquer comparação, também não proporcionam quaisquer outras questões de investigação.
+
+% Yu et al. \cite{yu2018blockchain} shows various implementations of blockchain
+% that provide privacy through security, based on different categories like
+% data integrity, data sharing and authentication and access control. The
+% authors use privacy as a proxy for security, they also do not discuss the
+% weak and strong points of each implementation or make any comparison, they
+% also do not provide further research questions.
+
+Ali et al. \cite{AliIoT} sugerem um stack de software que combina a partilha
+de ficheiros \textit{peer-to-peer} com contratos inteligentes de blockchain
+para oferecer aos utilizadores de IoT o controlo sobre os seus dados e eliminar
+a necessidade de uma gestão centralizada de dados de IoT. Os contratos inteligentes
+de blockchain são utilizados na arquitectura proposta do `consórcio modular'
+para regular o acesso, estabelecendo simultaneamente a responsabilidade tanto
+dos proprietários dos dados como de outras partes a que os utilizadores concedem
+acesso.
+
+% Ali et al. \cite{AliIoT} suggest a software stack that combines peer-to-peer
+% file sharing with blockchain smart contracts to offer IoT users control
+% over their data and do away with the necessity for centralized IoT data
+% management. Blockchain smart contracts are used in the proposed `modular
+% consortium' architecture to regulate access while establishing responsibility
+% for both data owners and other parties that users grant access to.
 
 \subsubsection{Outras Propostas}
 
-Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
-privacy while also monitoring parking availability. The authors merged IoT
-sensing with crowdsensing and enhanced it with privacy-preserving methods.
-The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
-and a cryptographic technique based on cryptographic commitments, zero-knowledge
-proofs, and anonymous credentials in crowdsensing. In addition, they used
-crowdsourcing to create a machine learning model for parking recognition
-in the presence of foggy filters. Their paper included proof-of-concept
-prototypes such as a Raspberry Pi system and a mobile app, as well as an
-evaluation study of the machine learning model and the effects of crowdsourcing.
+Zhu et al. \cite{ZhuIntegrating} apresentam um sistema de sensor híbrido que
+salvaguarda a privacidade, ao mesmo tempo que monitoriza a disponibilidade de
+estacionamento. Os autores fundiram a detecção IoT com \textit{crowdsensing}
+e melhoraram-na com métodos de preservação da privacidade. Os autores empregaram
+filtros físicos nebulosos para mascarar os sensores IoT na detecção de IoT,
+e uma técnica criptográfica baseada em compromissos criptográficos, provas
+de conhecimento zero, e credenciais anónimas em \textit{crowdsensing}. Além
+disso, utilizaram o \textit{crowdsourcing} para criar um modelo de aprendizagem
+de máquinas para reconhecimento de estacionamento na presença de filtros de
+nevoeiro. O seu papel incluía protótipos de prova de conceito como um sistema
+Raspberry Pi e uma aplicação móvel, bem como um estudo de avaliação do modelo
+de aprendizagem de máquinas e os efeitos do \textit{crowdsourcing}.
+
+% Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
+% privacy while also monitoring parking availability. The authors merged IoT
+% sensing with crowdsensing and enhanced it with privacy-preserving methods.
+% The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
+% and a cryptographic technique based on cryptographic commitments, zero-knowledge
+% proofs, and anonymous credentials in crowdsensing. In addition, they used
+% crowdsourcing to create a machine learning model for parking recognition
+% in the presence of foggy filters. Their paper included proof-of-concept
+% prototypes such as a Raspberry Pi system and a mobile app, as well as an
+% evaluation study of the machine learning model and the effects of crowdsourcing.
 
 \subsubsection{Assistentes de Privacidade}
 
-There exists a number of privacy assistants in the market. Privacy assistants
-have the objective of giving the user flexibility in choosing the preferred
-privacy options in available applications, most are used in smartphones,
-very few are made for devices in the IoT.
+Existe uma série de assistentes de privacidade no mercado. Os assistentes de
+privacidade têm o objectivo de dar ao utilizador flexibilidade na escolha das
+opções de privacidade preferidas nas aplicações disponíveis, a maioria é utilizada
+em smartphones, muito poucos são feitos para dispositivos na IoT.
 
-The Carnegie Mellon University CyLab, which is the university's security
-and privacy research institute, started developing in 2019 an IoT Infrastructure
-that intended to be free of privacy leaks and software covered by their
-Secure and Private IoT Initiative 2019, this project would fall under
-their main research theme of Trust. In this project they started the design
-of a Personalized Privacy Assistant (PPA) \cite{ColnagoInforming}, this
-would involve the use of semi-structured interviews with 17 participants
-to examine user perceptions of three hypothetical PPA implementations,
-each of which is potentially more autonomous, while outlining the advantages
-and disadvantages of each implementation. The interviews were divided into
-three sections: exploratory, anchoring and the PPA; While the exploratory
-phase's purpose was to learn about participants' attitudes and understanding
-of IoT, the anchoring phase aimed to normalize participants' basic understanding
-of how IoT functions. In order to get people to think about potential privacy
-concerns towards the end of the anchoring section, the authors asked participants
-about their opinions on data privacy. In the PPA section, it was proposed
-the idea of a PPA for IoT as a potential future project. The authors clarified
-that the PPA could distinguish between active data requests such as a gadget
-asking biometric information from the user's health tracker and passive
-data collection such as a smart device with a microphone that could record
-people's utterances while they were nearby. The Notification, Recommendation,
-and Auto implementations of an IoT PPA were the three that the authors and
-attendees discussed. Notification PPAs can determine which adjacent devices
-are requesting data and alert users to those devices' presence and requests
-so that users can approve or reject each request. Building on notification
-PPAs, recommendation PPAs offer consumers advice on how to share their data
-based on their preferences. The user's data sharing decisions would be made
-by auto PPAs. This would lessen the cognitive load on consumers but also
-take away their ability to influence the process. They found that the participants'
-attitudes regarding the various implementations were generally favorable,
-although they also voiced worries, which varied depending on the degree
-of automation. Given the divergent motivations of participants some desired
-increased control, while others wished to avoid being overtaken by notifications
-and the lack of agreement regarding the optimal PPA implementation.
+% There exists a number of privacy assistants in the market. Privacy assistants
+% have the objective of giving the user flexibility in choosing the preferred
+% privacy options in available applications, most are used in smartphones,
+% very few are made for devices in the IoT.
+
+O CyLab da Carnegie Mellon University, que é o instituto de investigação de
+segurança e privacidade da universidade, começou a desenvolver em 2019 uma
+infra-estrutura IoT que pretendia estar livre de fugas de privacidade e de
+software coberto pela sua iniciativa ``Secure and Private IoT 2019'', este
+projecto enquadrar-se-ia no seu principal tema de investigação, a Confiança.
+Neste projecto, iniciaram a concepção de um Assistente de Privacidade Personalizado
+(PPA) \cite{ColnagoInforming}, que envolveria o uso de entrevistas semi-estruturadas
+com 17 participantes para examinar a percepção dos utilizadores de três hipotéticas
+implementações PPA, cada uma das quais potencialmente mais autónoma, ao mesmo
+tempo que delineavam as vantagens e desvantagens de cada implementação. As
+entrevistas foram divididas em três secções: exploratória, ancoragem e PPA;
+enquanto o objectivo da fase exploratória era aprender sobre as atitudes dos
+participantes e a compreensão da IoT, a fase de ancoragem visava normalizar
+a compreensão básica dos participantes sobre como a IoT funciona. A fim de
+levar as pessoas a pensar sobre potenciais preocupações de privacidade no final
+da secção de ancoragem, os autores perguntaram aos participantes sobre as suas
+opiniões sobre privacidade de dados. Na secção PPA, foi proposta a ideia de
+uma PPA para a IoT como um potencial projecto futuro. Os autores esclareceram
+que o PPA poderia distinguir entre pedidos de dados activos, tais como um dispositivo
+que pedia informações biométricas do rastreador de saúde do utilizador, e recolha
+de dados passivos, tais como um dispositivo inteligente com um microfone que
+poderia gravar as afirmações das pessoas enquanto estas estivessem por perto.
+A Notificação, Recomendação, e Implementação automática de uma PPA IoT foram
+as três que os autores e participantes discutiram. Os PPA de Notificação podem
+determinar que dispositivos adjacentes estão a solicitar dados e alertar os
+utilizadores para a presença e pedidos desses dispositivos, para que os utilizadores
+possam aprovar ou rejeitar cada pedido. Com base nos PPA de notificação, os
+PPA de recomendação oferecem aos consumidores conselhos sobre como partilhar
+os seus dados com base nas suas preferências. As decisões de partilha de dados
+dos utilizadores seriam tomadas pelos PPA automáticos. Isto diminuiria a carga
+cognitiva dos consumidores, mas também retiraria a sua capacidade de influenciar
+o processo. Verificaram que as atitudes dos participantes em relação às várias
+implementações eram geralmente favoráveis, embora também manifestassem preocupações,
+que variavam consoante o grau de automatização. Dadas as motivações divergentes
+dos participantes, alguns desejavam um maior controlo, enquanto outros desejavam
+evitar ser ultrapassados por notificações e pela falta de acordo relativamente
+à implementação óptima dos PPA.
+
+% The Carnegie Mellon University CyLab, which is the university's security
+% and privacy research institute, started developing in 2019 an IoT Infrastructure
+% that intended to be free of privacy leaks and software covered by their
+% Secure and Private IoT Initiative 2019, this project would fall under
+% their main research theme of Trust. In this project they started the design
+% of a Personalized Privacy Assistant (PPA) \cite{ColnagoInforming}, this
+% would involve the use of semi-structured interviews with 17 participants
+% to examine user perceptions of three hypothetical PPA implementations,
+% each of which is potentially more autonomous, while outlining the advantages
+% and disadvantages of each implementation. The interviews were divided into
+% three sections: exploratory, anchoring and the PPA; While the exploratory
+% phase's purpose was to learn about participants' attitudes and understanding
+% of IoT, the anchoring phase aimed to normalize participants' basic understanding
+% of how IoT functions. In order to get people to think about potential privacy
+% concerns towards the end of the anchoring section, the authors asked participants
+% about their opinions on data privacy. In the PPA section, it was proposed
+% the idea of a PPA for IoT as a potential future project. The authors clarified
+% that the PPA could distinguish between active data requests such as a gadget
+% asking biometric information from the user's health tracker and passive
+% data collection such as a smart device with a microphone that could record
+% people's utterances while they were nearby. The Notification, Recommendation,
+% and Auto implementations of an IoT PPA were the three that the authors and
+% attendees discussed. Notification PPAs can determine which adjacent devices
+% are requesting data and alert users to those devices' presence and requests
+% so that users can approve or reject each request. Building on notification
+% PPAs, recommendation PPAs offer consumers advice on how to share their data
+% based on their preferences. The user's data sharing decisions would be made
+% by auto PPAs. This would lessen the cognitive load on consumers but also
+% take away their ability to influence the process. They found that the participants'
+% attitudes regarding the various implementations were generally favorable,
+% although they also voiced worries, which varied depending on the degree
+% of automation. Given the divergent motivations of participants some desired
+% increased control, while others wished to avoid being overtaken by notifications
+% and the lack of agreement regarding the optimal PPA implementation.
 
 After the design phase, the institute implemented a privacy assistant (PA) \cite{FengDesign},
 the authors called it IoT Assistant. Because the predominant approach of
