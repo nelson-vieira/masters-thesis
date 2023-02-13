@@ -244,7 +244,7 @@ generalizada de soluções máquina-a-máquina (M2M) corporativas e industriais
 para monitorização e operação de equipamentos. Muitas das primeiras soluções
 M2M, por outro lado, baseavam-se em redes proprietárias ou em normas específicas
 da indústria, em vez de normas da internet. Ligar outros dispositivos que
-não computadores à internet não é um conceito novo. Uma máquina de Coca-Cola
+não um computador à internet não é um conceito novo. Uma máquina de Coca-Cola
 no Departamento de Informática da Universidade de Carnegie Mellon \cite{EverhartInteresting}
 foi o primeiro dispositivo ubíquo a ser ligado à internet. O sistema, criado
 em 1982, observou remotamente as luzes de esgotamento de stock nos botões
@@ -1009,168 +1009,344 @@ evitar ser ultrapassados por notificações e pela falta de acordo relativamente
 % increased control, while others wished to avoid being overtaken by notifications
 % and the lack of agreement regarding the optimal PPA implementation.
 
-After the design phase, the institute implemented a privacy assistant (PA) \cite{FengDesign},
-the authors called it IoT Assistant. Because the predominant approach of
-"notice and choice" for data privacy protection, they decided the PA would
-also fall into this approach, but because many systems implement notice
-as a form of consent, without sometimes offering choices to the end user,
-they also wanted this work to provide a conceptual framework that views
-user-centered privacy choice as well as a taxonomy for practitioners to
-use when designing meaningful privacy choices for their systems. The authors
-define meaningful privacy choices as ``the capabilities provided by digital
-systems for users to control different data practices over their personal
-data'', They extend the notion of privacy choices with five facets: effectiveness
-(the opportunity to establish privacy preferences that precisely and completely
-match the data collection and use methods that a user is okay with), efficiency
-(the capacity to specify these options with the least amount of effort and
-time), user awareness (where significant privacy options should be prominently
-and clearly communicated to users), comprehensiveness (users should understand
-their options, how they affect the gathering and potential use of their
-data, as well as what conclusions might be drawn from this data and the
-potential repercussions of these conclusions) and neutrality (meaningful
-privacy decisions should not be subject to manipulation or bias). The IoT
-Assistant offers four privacy settings, giving end users a variety of alternatives
-to better suit their varied privacy preferences and as a result, privacy
-options are more effective in the IoT environment. The IoT Assistant acts
-as a centralized privacy choice platform by implementing various privacy
-options, allowing consumers to more effectively govern their data privacy
-in IoT. The three IoT system discovery modes that the IoT Assistant supports
-are QR codes, push notifications, and location-based map interfaces. These
-discovery tools are probably going to make users more aware of the installed
-IoT devices and the privacy options they have. Additionally, the united
-viewpoint of the integrated notification and option in the the IoT Assistant
-gives succinct yet thorough information regarding IoT data practices to
-help users better understand the implications of their privacy choices.
-Additionally, the authors work to implement the integrated notice and option
-in the IoT Assistant without bias or framing, attempting to offer consumers
-a neutral space to execute their privacy choices. Although the authors view
-the IoT Assistant as a significant step towards ``meaningful privacy options''
-in IoT, this assistant still has many problems, such as the fact that it
-is still in its early stages of development and that there hasn't been much
-growth given that it was created in 2020 and we are in 2023. Maybe the main
-reason this application was not able to be developed further is that the
-application itself serves to show the user the data that is already in the
-IoT infrastructure that was created before, and as such it is not capable
-of identifying new IoT devices without the end users themselves create on
-the infrastructure's main webpage \cite{DasPersonalized} a new entry for
-the device in question that the user wants to interact with. Another reason
-that cripples this application as well as others that seek to provide better
-privacy in IoT systems is that many systems do not offer any type of privacy
-choices to the end user or to other users that are not the intended end
-users but the devices are still collecting data about.
+Após a fase de concepção, o instituto implementou um assistente de privacidade
+(PA) \cite{FengDesign}, os autores chamaram-lhe IoT Assistant. Devido à
+abordagem predominante de ``aviso e escolha'' para a protecção da privacidade
+dos dados, decidiram que o PA também cairia nesta abordagem, mas como muitos
+sistemas implementam o aviso como forma de consentimento, sem por vezes
+oferecerem escolhas ao utilizador final, queriam também que este trabalho
+fornecesse um quadro conceptual que visse uma escolha de privacidade centrada
+no utilizador, bem como uma taxonomia para os profissionais a utilizar na
+concepção de escolhas de privacidade significativas para os seus sistemas.
+Os autores definem escolhas de privacidade significativas como ``as capacidades
+fornecidas pelos sistemas digitais para os utilizadores controlarem diferentes
+práticas de dados sobre os seus dados pessoais'', alargam a noção de escolhas
+de privacidade com cinco facetas: eficácia (a oportunidade de estabelecer
+preferências de privacidade que correspondam precisa e completamente à recolha
+de dados e métodos de utilização que um utilizador está de acordo), eficiência
+(a capacidade de especificar estas opções com o mínimo esforço e tempo),
+consciência do utilizador (em que as opções de privacidade significativas devem
+ser comunicadas de forma proeminente e clara aos utilizadores), abrangência (os
+utilizadores devem compreender as suas opções, como afectam a recolha e a
+potencial utilização dos seus dados, bem como que conclusões se podem tirar
+destes dados e as repercussões potenciais das mesmas) e neutralidade (as decisões
+de privacidade significativas não devem ser sujeitas a manipulação ou parcialidade).
+O IoT Assistant oferece quatro configurações de privacidade, dando aos
+utilizadores finais uma variedade de alternativas para melhor se adequarem
+às suas variadas preferências de privacidade e, como resultado, as opções
+de privacidade são mais eficazes no ambiente IoT. O IoT Assistant funciona
+como uma plataforma centralizada de escolha de privacidade, implementando
+várias opções de privacidade, permitindo aos consumidores governar mais
+eficazmente a sua privacidade de dados em IoT. Os três modos de descoberta
+do sistema IoT que o IoT Assistant suporta são códigos QR, notificações
+push, e interfaces de mapa baseadas em localização. Estas ferramentas de
+descoberta vão provavelmente tornar os utilizadores mais conscientes dos
+dispositivos IoT instalados e das opções de privacidade que têm. Além disso,
+o ponto de vista unido da notificação integrada e da opção no IoT Assistant
+dá informações sucintas mas completas sobre as práticas de dados IoT para ajudar
+os utilizadores a compreender melhor as implicações das suas escolhas de
+privacidade. Além disso, os autores trabalham para implementar a notificação
+integrada e a opção no IoT Assistant sem preconceitos ou enquadramentos,
+tentando oferecer aos consumidores um espaço neutro para executar as suas
+escolhas de privacidade. Embora os autores encarem o IoT Assistant como
+um passo significativo no sentido de ``opções de privacidade significativas''
+na IoT, este assistente ainda tem muitos problemas, tais como o facto de
+ainda se encontrar nas suas fases iniciais de desenvolvimento e de não ter
+havido muito crescimento dado que foi criado em 2020 e nós estamos em 2023.
+Talvez a principal razão pela qual esta aplicação não foi capaz de ser
+desenvolvida mais é que a própria aplicação serve para mostrar ao utilizador
+os dados que já se encontram na infra-estrutura da IoT que foi criada
+anteriormente, e como tal não é capaz de identificar novos dispositivos
+IoT sem que os próprios utilizadores finais criem na página web principal \cite{DasPersonalized}
+da infra-estrutura uma nova entrada para o dispositivo em questão com o
+qual o utilizador quer interagir. Outra razão que paralisa esta aplicação,
+bem como outras que procuram proporcionar melhor privacidade nos sistemas de
+IoT é que muitos sistemas não oferecem qualquer tipo de escolhas de privacidade
+ao utilizador final ou a outros utilizadores que não são os utilizadores
+finais pretendidos, mas sobre os quais os dispositivos ainda estão a recolher
+dados.
 
-The IoT infrastructure that was developed \cite{DasPersonalized} is built
-on an open, distributed design that allows for the deployment and management
-of IoT resources to be carried out by any number of actors. Part of this
-infrastructure is the Internet of Things Resource Registry, it is a web
-platform that enables resource owners to declare not only the place where
-a resource is deployed but also data practices like the reason(s) for a
-particular data collecting process, the level of detail in the data being
-gathered, retention, the recipients of the data, and more. Additionally,
-it discloses any user-configurable privacy settings that might be connected
-to a particular resource.
+% After the design phase, the institute implemented a privacy assistant (PA) \cite{FengDesign},
+% the authors called it IoT Assistant. Because the predominant approach of
+% "notice and choice" for data privacy protection, they decided the PA would
+% also fall into this approach, but because many systems implement notice
+% as a form of consent, without sometimes offering choices to the end user,
+% they also wanted this work to provide a conceptual framework that views
+% user-centered privacy choice as well as a taxonomy for practitioners to
+% use when designing meaningful privacy choices for their systems. The authors
+% define meaningful privacy choices as ``the capabilities provided by digital
+% systems for users to control different data practices over their personal
+% data'', They extend the notion of privacy choices with five facets: effectiveness
+% (the opportunity to establish privacy preferences that precisely and completely
+% match the data collection and use methods that a user is okay with), efficiency
+% (the capacity to specify these options with the least amount of effort and
+% time), user awareness (where significant privacy options should be prominently
+% and clearly communicated to users), comprehensiveness (users should understand
+% their options, how they affect the gathering and potential use of their
+% data, as well as what conclusions might be drawn from this data and the
+% potential repercussions of these conclusions) and neutrality (meaningful
+% privacy decisions should not be subject to manipulation or bias). The IoT
+% Assistant offers four privacy settings, giving end users a variety of alternatives
+% to better suit their varied privacy preferences and as a result, privacy
+% options are more effective in the IoT environment. The IoT Assistant acts
+% as a centralized privacy choice platform by implementing various privacy
+% options, allowing consumers to more effectively govern their data privacy
+% in IoT. The three IoT system discovery modes that the IoT Assistant supports
+% are QR codes, push notifications, and location-based map interfaces. These
+% discovery tools are probably going to make users more aware of the installed
+% IoT devices and the privacy options they have. Additionally, the united
+% viewpoint of the integrated notification and option in the the IoT Assistant
+% gives succinct yet thorough information regarding IoT data practices to
+% help users better understand the implications of their privacy choices.
+% Additionally, the authors work to implement the integrated notice and option
+% in the IoT Assistant without bias or framing, attempting to offer consumers
+% a neutral space to execute their privacy choices. Although the authors view
+% the IoT Assistant as a significant step towards ``meaningful privacy options''
+% in IoT, this assistant still has many problems, such as the fact that it
+% is still in its early stages of development and that there hasn't been much
+% growth given that it was created in 2020 and we are in 2023. Maybe the main
+% reason this application was not able to be developed further is that the
+% application itself serves to show the user the data that is already in the
+% IoT infrastructure that was created before, and as such it is not capable
+% of identifying new IoT devices without the end users themselves create on
+% the infrastructure's main webpage \cite{DasPersonalized} a new entry for
+% the device in question that the user wants to interact with. Another reason
+% that cripples this application as well as others that seek to provide better
+% privacy in IoT systems is that many systems do not offer any type of privacy
+% choices to the end user or to other users that are not the intended end
+% users but the devices are still collecting data about.
+
+A infra-estrutura da IoT que foi desenvolvida \cite{DasPersonalized} é
+construída sobre um design aberto e distribuído que permite a implementação
+e gestão de recursos da IoT a ser realizada por qualquer número de actores.
+Parte desta infra-estrutura é a Internet of Things Resource Registry, é uma
+plataforma web que permite aos proprietários de recursos declarar não só o
+local onde um recurso é implantado, mas também práticas de dados como o(s)
+motivo(s) para um determinado processo de recolha de dados, o nível de
+detalhe nos dados a serem recolhidos, a retenção, os destinatários dos
+dados, e muito mais. Além disso, revela quaisquer definições de privacidade
+configuráveis pelo utilizador que possam estar ligadas a um determinado
+recurso.
+
+% The IoT infrastructure that was developed \cite{DasPersonalized} is built
+% on an open, distributed design that allows for the deployment and management
+% of IoT resources to be carried out by any number of actors. Part of this
+% infrastructure is the Internet of Things Resource Registry, it is a web
+% platform that enables resource owners to declare not only the place where
+% a resource is deployed but also data practices like the reason(s) for a
+% particular data collecting process, the level of detail in the data being
+% gathered, retention, the recipients of the data, and more. Additionally,
+% it discloses any user-configurable privacy settings that might be connected
+% to a particular resource.
 
 \subsection{Principais Levantamentos}
 
-There are two main ways to provide privacy in IoT systems, through security
-or using privacy notices, other ways like through legislation or with the
-creation/usage of a framework that provides privacy fall into these two
-categories. Most of the literature assumes that security and privacy are
-synonyms, for example \cite{opara2022framework, FabianoInternet, SunSecure},
-and so most of the proposed solutions fall under privacy through security.
-The proposed solutions that use privacy notices, like \cite{FengDesign},
-are implemented in a way that use other devices like smartphones that provide
-the notices themselves, it is hard to provide privacy notices on the IoT
-devices themselves because many of these devices do not have a screen or
-the screen is too small to provide the necessary information to the user.
-Because there are still no standards for implementing privacy notices, and
-best practices are scattered throughout the literature, they are mostly
-implemented haphazardly, little guidance is given to designers and developers
-on how to make a privacy notice design that is sufficient and acceptable
-for their particular system and its features. Designers may be unaware of
-the numerous possibilities for creating acceptable privacy notifications
-and, as a result, do not systematically explore them.
+Existem duas formas principais de proporcionar privacidade nos sistemas de
+IoT, através da segurança ou da utilização de avisos de privacidade, outras
+formas como através de legislação ou com a criação/utilização de uma estrutura
+que proporcione privacidade enquadram-se nestas duas categorias. A maior
+parte da literatura assume que segurança e privacidade são sinónimos, por
+exemplo \cite{opara2022framework, FabianoInternet, SunSecure}, pelo que a
+maior parte das soluções propostas são abrangidas pela privacidade através
+da segurança. As soluções propostas que utilizam avisos de privacidade,
+como \cite{FengDesign}, são implementadas de uma forma que utiliza outros
+dispositivos como smartphones que fornecem os próprios avisos, é difícil
+fornecer avisos de privacidade nos próprios dispositivos IoT porque muitos
+destes dispositivos não têm ecrã ou o ecrã é demasiado pequeno para fornecer
+as informações necessárias ao utilizador. Como ainda não existem normas para
+a implementação de avisos de privacidade, e as melhores práticas estão dispersas
+por toda a literatura, são na sua maioria implementadas de forma aleatória,
+pouca orientação é dada aos designers e programadores sobre como fazer um
+desenho de aviso de privacidade que seja suficiente e aceitável para o seu
+sistema particular e as suas características. Os designers podem desconhecer
+as numerosas possibilidades de criar notificações de privacidade aceitáveis e,
+como resultado, não as exploram sistematicamente.
 
-Aleisa and Renaud \cite{aleisa2016privacy} also identify security and privacy
-awareness as potential solutions to privacy issues in IoT, but also identify
-data minimization, hitchhiking and introspection. Data minimization entails
-limiting the collecting of personal information to what is absolutely central
-and retaining the data just for as long as is required to satisfy the goal
-of the technology's services \cite{ojDirective281}. Hitchhiking \cite{tang2006putting}
-is a method of protecting the privacy of users who divulge their location,
-applications regard locations as the object of their attention. The fidelity
-tradeoff is removed as it is not important to know who is in a certain
-location. The introspection \cite{kang2015protection} method examines VM
-actions to adequately safeguard users' private information. Every VM's
-CPU status, memory contents, network information provided by the hypervisor,
-and any malicious software that may be present on the VM are all collected
-and analyzed. The privacy of consumers is jeopardized if an IoT device
-loses integrity due to a hostile assault.
+% There are two main ways to provide privacy in IoT systems, through security
+% or using privacy notices, other ways like through legislation or with the
+% creation/usage of a framework that provides privacy fall into these two
+% categories. Most of the literature assumes that security and privacy are
+% synonyms, for example \cite{opara2022framework, FabianoInternet, SunSecure},
+% and so most of the proposed solutions fall under privacy through security.
+% The proposed solutions that use privacy notices, like \cite{FengDesign},
+% are implemented in a way that use other devices like smartphones that provide
+% the notices themselves, it is hard to provide privacy notices on the IoT
+% devices themselves because many of these devices do not have a screen or
+% the screen is too small to provide the necessary information to the user.
+% Because there are still no standards for implementing privacy notices, and
+% best practices are scattered throughout the literature, they are mostly
+% implemented haphazardly, little guidance is given to designers and developers
+% on how to make a privacy notice design that is sufficient and acceptable
+% for their particular system and its features. Designers may be unaware of
+% the numerous possibilities for creating acceptable privacy notifications
+% and, as a result, do not systematically explore them.
+
+Aleisa e Renaud \cite{aleisa2016privacy} também identificam a segurança e a
+consciêncialização da privacidade como potenciais soluções para as questões de
+privacidade na IoT, mas também identificam a minimização dos
+dados, o método de boleia e a introspecção. A minimização de dados implica limitar a
+recolha de informações pessoais ao que é absolutamente central e reter os
+dados apenas pelo tempo necessário para satisfazer o objectivo dos serviços
+da tecnologia \cite{ojDirective281}. A boleia \cite{tang2006putting} é um
+método de protecção da privacidade dos utilizadores que divulgam a sua
+localização, as aplicações consideram a localização como o objecto da sua
+atenção. A troca de fidelidade é eliminada, pois não é importante saber
+quem se encontra num determinado local. O método de introspecção \cite{kang2015protection}
+examina as acções de VM para salvaguardar adequadamente a informação privada
+dos utilizadores. O estado do CPU de cada VM, conteúdos de memória, informação
+de rede fornecida pelo hipervisor, e qualquer software malicioso que possa
+estar presente na VM são todos recolhidos e analisados. A privacidade dos
+consumidores é posta em risco se um dispositivo IoT perder integridade devido
+a uma agressão hostil.
+
+% Aleisa and Renaud \cite{aleisa2016privacy} also identify security and privacy
+% awareness as potential solutions to privacy issues in IoT, but also identify
+% data minimization, hitchhiking and introspection. Data minimization entails
+% limiting the collecting of personal information to what is absolutely central
+% and retaining the data just for as long as is required to satisfy the goal
+% of the technology's services \cite{ojDirective281}. Hitchhiking \cite{tang2006putting}
+% is a method of protecting the privacy of users who divulge their location,
+% applications regard locations as the object of their attention. The fidelity
+% tradeoff is removed as it is not important to know who is in a certain
+% location. The introspection \cite{kang2015protection} method examines VM
+% actions to adequately safeguard users' private information. Every VM's
+% CPU status, memory contents, network information provided by the hypervisor,
+% and any malicious software that may be present on the VM are all collected
+% and analyzed. The privacy of consumers is jeopardized if an IoT device
+% loses integrity due to a hostile assault.
 
 \section{Desafios de Privacidade}
 
-IoT is a composed of a complex web of architectures, applications and technologies.
-In terms of architectures, it can be decomposed in three layers: the perception
-layer, the network layer and the application layer.
+IoT é uma teia complexa de arquitecturas, aplicações e tecnologias. Em termos
+de arquitecturas, pode ser decomposta em três camadas: a camada de percepção,
+a camada de rede e a camada de aplicação.
 
-The perception layer, also known as the sensor layer, interacts with physical
-objects and components via smart devices (RFID, sensors, actuators, and
-so on). Its key objectives are to connect objects to the IoT network and
-to monitor, collect, and analyze status information about these things using
-deployed smart devices. This layer can often be unreliable, for instance
-with autonomous vehicles where they find it hard to read road signs or to
-predict if certain objects are inanimate or not, but this unreliability
-also brings privacy even though some of the data might be unusable. Noise
-can also be added in this layer to provide extra privacy.
+% IoT is a composed of a complex web of architectures, applications and technologies.
+% In terms of architectures, it can be decomposed in three layers: the perception
+% layer, the network layer and the application layer.
 
-In the network layer there are many competing networks like ZigBee, Z-Wave,
-Bluetooth Low Energy, LoRa, Wi-fi, etc., this layer is fragmented specially
-in regards to wireless networks and that makes it very difficult to create
-an IoT architecture that can use various networks and have the various
-devices communicate with each other, even though interoperability is seen
-as a very important factor in IoT. Some of these networks are open standard
-protocols while others are proprietary and use different protocols of communication,
-use different frequencies, different ranges and different data rates. When
-creating an IoT architecture the designers often think of how to solve
-specific problems and use what is best for the current needs, and the way
-that IoT is fragmented doesn't help in providing progress.
+A camada de percepção, também conhecida como camada de sensores, interage
+com objectos e componentes físicos através de dispositivos inteligentes
+(RFID, sensores, actuadores, e assim por diante). Os seus principais objectivos
+são a ligação de objectos à rede IoT e a monitorização, recolha e análise de
+informação de estado sobre estas coisas utilizando dispositivos inteligentes
+implantados. Esta camada pode muitas vezes não ser fiável, por exemplo com
+veículos autónomos onde é difícil ler sinais rodoviários ou prever se certos
+objectos são inanimados ou não, mas esta falta de fiabilidade também traz
+privacidade mesmo que alguns dos dados possam ser inutilizáveis. O ruído
+também pode ser acrescentado a esta camada para proporcionar privacidade
+extra.
 
-The application layer receives data from the network layer and uses it to
-execute essential services or operations. This layer, for example, can provide
-the storage service to backup incoming data into a database or the analysis
-service to analyze received data in order to predict the future state of
-physical devices. This layer encompasses a wide range of applications, each
-with its own set of requirements. A few examples are smart grids, smart
-transportation, and smart cities.
+% The perception layer, also known as the sensor layer, interacts with physical
+% objects and components via smart devices (RFID, sensors, actuators, and
+% so on). Its key objectives are to connect objects to the IoT network and
+% to monitor, collect, and analyze status information about these things using
+% deployed smart devices. This layer can often be unreliable, for instance
+% with autonomous vehicles where they find it hard to read road signs or to
+% predict if certain objects are inanimate or not, but this unreliability
+% also brings privacy even though some of the data might be unusable. Noise
+% can also be added in this layer to provide extra privacy.
 
-According to Qu et al. \cite{Qu2018Privacy}, several significant barriers
-remain, including the lack of a theoretical foundation, the trade-off optimization
-between privacy and data value, and system isomerism over-complexity. Because
-there are no mathematical foundations for IoT structure design, IoT system
-designs are planned and executed using empirical approaches, which have
-limitations in IoT development. Scientific theory and quantitative analysis
-must enable trade-off optimization, yet, there are multiple parties with
-diverse characteristics and requirements, making this optimization highly
-challenging. A plethora of standards and protocols add to the unneeded complexity
-of system isomerism. Ensuring effective IoT applications while wasting as
-little resources as feasible implies less resources available for privacy
-protection, however, lightweight privacy protection cannot fulfill all of
-the criteria, and attackers can exploit structural information to launch
-several concurrent attacks.
+Na camada de rede existem muitas redes concorrentes como ZigBee, Z-Wave,
+Bluetooth Low Energy, LoRa, Wi-fi, etc., esta camada está fragmentada
+especialmente no que diz respeito a redes sem fios e isso torna muito
+difícil criar uma arquitectura IoT que possa utilizar várias redes e
+ter os vários dispositivos a comunicar entre si, apesar de a interoperabilidade
+ser vista como um factor muito importante na IoT. Algumas destas redes
+são protocolos padrão abertos enquanto outras são proprietárias e utilizam
+diferentes protocolos de comunicação, utilizam diferentes frequências,
+diferentes gamas e diferentes taxas de dados. Ao criar uma arquitectura
+IoT, os designers pensam frequentemente em como resolver problemas específicos
+e utilizar o que é melhor para as necessidades actuais, e a forma como a
+IoT é fragmentada não ajuda a proporcionar progresso.
+
+% In the network layer there are many competing networks like ZigBee, Z-Wave,
+% Bluetooth Low Energy, LoRa, Wi-fi, etc., this layer is fragmented specially
+% in regards to wireless networks and that makes it very difficult to create
+% an IoT architecture that can use various networks and have the various
+% devices communicate with each other, even though interoperability is seen
+% as a very important factor in IoT. Some of these networks are open standard
+% protocols while others are proprietary and use different protocols of communication,
+% use different frequencies, different ranges and different data rates. When
+% creating an IoT architecture the designers often think of how to solve
+% specific problems and use what is best for the current needs, and the way
+% that IoT is fragmented doesn't help in providing progress.
+
+A camada de aplicação recebe dados da camada de rede e utiliza-os para
+executar serviços ou operações essenciais. Esta camada, por exemplo,
+pode fornecer o serviço de armazenamento para fazer o backup dos dados
+recebidos numa base de dados ou o serviço de análise para analisar os
+dados recebidos, a fim de prever o estado futuro dos dispositivos físicos.
+Esta camada engloba uma vasta gama de aplicações, cada uma com o seu
+próprio conjunto de requisitos. Alguns exemplos são redes inteligentes,
+transporte inteligente, e cidades inteligentes.
+
+% The application layer receives data from the network layer and uses it to
+% execute essential services or operations. This layer, for example, can provide
+% the storage service to backup incoming data into a database or the analysis
+% service to analyze received data in order to predict the future state of
+% physical devices. This layer encompasses a wide range of applications, each
+% with its own set of requirements. A few examples are smart grids, smart
+% transportation, and smart cities.
+
+De acordo com Qu et al. \cite{Qu2018Privacy}, permanecem várias barreiras
+significativas, incluindo a falta de uma base teórica, a optimização do
+trade-off entre privacidade e valor dos dados, e a sobre-complexidade de
+isomerismo do sistema. Uma vez que não existem fundamentos matemáticos para
+a concepção da estrutura da IoT, os projectos do sistema IoT são planeados
+e executados utilizando abordagens empíricas, que têm limitações no desenvolvimento
+da IoT. A teoria científica e a análise quantitativa devem permitir uma optimização
+trade-off, no entanto, existem múltiplas partes com características e requisitos
+diversos, tornando esta optimização altamente desafiante. Uma pletora de normas
+e protocolos aumenta a complexidade desnecessária do isomerismo do sistema.
+Assegurar aplicações IoT eficazes enquanto desperdiça tão poucos recursos
+quanto possível implica menos recursos disponíveis para a protecção da
+privacidade, contudo, a protecção da privacidade leve não pode preencher
+todos os critérios, e os atacantes podem explorar informação estrutural
+para lançar vários ataques simultâneos.
+
+% According to Qu et al. \cite{Qu2018Privacy}, several significant barriers
+% remain, including the lack of a theoretical foundation, the trade-off optimization
+% between privacy and data value, and system isomerism over-complexity. Because
+% there are no mathematical foundations for IoT structure design, IoT system
+% designs are planned and executed using empirical approaches, which have
+% limitations in IoT development. Scientific theory and quantitative analysis
+% must enable trade-off optimization, yet, there are multiple parties with
+% diverse characteristics and requirements, making this optimization highly
+% challenging. A plethora of standards and protocols add to the unneeded complexity
+% of system isomerism. Ensuring effective IoT applications while wasting as
+% little resources as feasible implies less resources available for privacy
+% protection, however, lightweight privacy protection cannot fulfill all of
+% the criteria, and attackers can exploit structural information to launch
+% several concurrent attacks.
 
 \section{Metadologia}
 
-The overall work will be comprised of two phases which will be described
-in the following paragraphs. Phase one mainly described throughout this
-paper, focuses on collecting the state of the art in terms of the most relevant
-topics, from which main privacy concepts were selected to be explored in
-the stage 1 of Phase 2 with the preparation of a questionnaire to collect
-user perceptions regarding privacy and topics collected in the systematic
-literature review. The second stage of Phase 2 consists in developing an
-application, partially based on the information generated by the survey,
-that can identify what sort of devices are around, what kind of data is
-gathered by these devices, present privacy options to the user when available,
-and what can be done to prevent undesirable data from being collected.
+O trabalho global será composto por duas fases que serão descritas nos
+parágrafos seguintes. A primeira fase, descrita principalmente ao longo
+deste trabalho, centra-se na recolha do estado da arte em termos dos tópicos
+mais relevantes, dos quais foram seleccionados os principais conceitos de
+privacidade a serem explorados na fase 1 da fase 2, com a preparação de
+um questionário para recolher as percepções dos utilizadores relativamente
+à privacidade e aos tópicos recolhidos na revisão sistemática da literatura.
+A segunda fase da Fase 2 consiste em desenvolver uma aplicação, parcialmente
+baseada na informação gerada pelo inquérito, que possa identificar que tipo
+de dispositivos existem, que tipo de dados são recolhidos por esses
+dispositivos, apresentar opções de privacidade ao utilizador quando
+disponíveis, e o que pode ser feito para evitar que dados indesejáveis
+sejam recolhidos.
+
+% The overall work will be comprised of two phases which will be described
+% in the following paragraphs. Phase one mainly described throughout this
+% paper, focuses on collecting the state of the art in terms of the most relevant
+% topics, from which main privacy concepts were selected to be explored in
+% the stage 1 of Phase 2 with the preparation of a questionnaire to collect
+% user perceptions regarding privacy and topics collected in the systematic
+% literature review. The second stage of Phase 2 consists in developing an
+% application, partially based on the information generated by the survey,
+% that can identify what sort of devices are around, what kind of data is
+% gathered by these devices, present privacy options to the user when available,
+% and what can be done to prevent undesirable data from being collected.
 \par
 The Phase 1 Systematic Literature Review gathered the most relevant papers
 discussing methodologies and techniques for the protection of users' privacy
