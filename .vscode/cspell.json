@@ -1,0 +1,12 @@
+// {
+//     "version": "0.2",
+//     "language": "en-GB",
+//     "dictionaries": [
+//         "portuguese",
+//         "english"
+//     ],
+//     "dictionaryDefinitions": [
+//         { "name": "portuguese", "path": "./portuguese.txt" },
+//         { "name": "english", "path": "./english.txt" }
+//     ]
+// }
