@@ -33,7 +33,7 @@
     urlcolor=purple,        % color of external links
     linktoc=page            % only page is linked
 }%
-\def\myversion{0.2}
+\def\myversion{alpha 0.3}
 \date{}
 \usepackage{hyperref}
 
@@ -48,12 +48,12 @@
     \vspace{1cm}
     \textbf{Masters Thesis Application} \\
     \vspace{2cm}
-    \LARGE{Version 0.2 \\}
+    \LARGE{Version alpha 0.3 \\}
     \vspace{2cm}
     Written by Nelson Vieira \\
     \vspace{2cm}
     \today
-    % 16 de Janeiro de 2022
+    % 22 February 2023
     \vfill
     \rule{16cm}{5pt}
 \end{flushright}
@@ -178,7 +178,7 @@ User: \\
 
 - Information update \newline
 \newline
-Application Manager: \\
+Application Administrator: \\
 \newline
 → Receive:
 
@@ -203,7 +203,7 @@ in the system and their relationships.
 The user can browse the application map, which will be created with an API,
 and see the locations of the IoT devices, the user can also look up information
 about the devices by clicking on a device on the map or by searching for
-the device in the application. The manager of the application is responsible for
+the device in the application. The administrator of the application is responsible for
 its maintenance (adding new data, correcting or deleting incorrect data)
 and security and for the veracity of the information.
 
@@ -221,7 +221,7 @@ lane being assigned to people/groups and application.
 This swimlane diagram represents a high level view of a possible user interaction
 from the application's map, in this map the user can view the location of
 IoT devices and can see more information about a particular device by selecting
-it on the map. The application manager, as mentioned above, can modify the
+it on the map. The application administrator, as mentioned above, can modify the
 devices' data.
 
 \section{Requirements table}
@@ -258,7 +258,7 @@ them. \\
         \hline
         \textbf{6} & Add a device & User & \textbf{User}: The system should allow the user to add a new device with name, category, data collected, location, etc. & Text \\
         \hline
-        \textbf{7} & Delete a device & App Manager & \textbf{App Manager}: The system should allow the manager to delete a device & Text \\
+        \textbf{7} & Delete a device & App Administrator & \textbf{App Administrator}: The system should allow the administrator to delete a device & Text \\
         \hline
         \textbf{8} & Edit a device & User & \textbf{User}: The system should allow the user to change some data of a device & Text \\
         \hline
@@ -300,9 +300,9 @@ following groups:
 \newline
 \textbf{RU1.8} - The system shall allow a user to create an account.
 
-\subsection{Manager Requirements}
+\subsection{Administrator Requirements}
 
-\textbf{RM.2.1} - The system shall allow the manager to delete an entity;
+\textbf{RM.2.1} - The system shall allow the administrator to delete an entity;
 
 \subsection{System requirements}
 
@@ -443,9 +443,163 @@ Language) notation.
     \label{use case 2}
 \end{table}
 
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.15\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-03 Add a device \\
+            \hline
+            Created By: & Nelson Vieira 22/02/2023 \\
+            \hline
+            Primary Actor: & User \\
+            \hline
+            Description: & Addition of a new IoT device in the application \\
+            \hline
+            Trigger: & The user wants to add a new IoT device \\
+            \hline
+            Pre-conditions: & N/A \\
+            \hline
+            Post-conditions: & POST-1. A new IoT device is added to the application \\
+            \hline
+            Normal Flow: & \textbf{3.0 Add a device}
+            \begin{enumerate}
+                \item The user enters the following data of a new IoT device:
+                \begin{enumerate}
+                    \item Name
+                    \item Type of data collected
+                    \item Category
+                    \item Photos
+                \end{enumerate}
+                \item The user clicks submit
+                \item The user adds the location of the IoT device on the map
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & N/A \\
+            \hline
+            Exceptions: & \textbf{3.0.E1  The device is already in the database}
+            \begin{enumerate}
+                \item The system displays an error message
+            \end{enumerate} \\
+            \hline
+            Priority: & High \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & N/A \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 3 - add a device}
+    \label{use case 3}
+\end{table}
 
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.1\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-04 Edit a device's data \\
+            \hline
+            Created By: & Nelson Vieira 22/02/2023 \\
+            \hline
+            Primary Actor: & User \\
+            \hline
+            Description: & Editing the data of an IoT device in the application \\
+            \hline
+            Trigger: & The user wants to edit an IoT device's data \\
+            \hline
+            Pre-conditions: & N/A \\
+            \hline
+            Post-conditions: & POST-1. The data that has been changed appears in the application \\
+            \hline
+            Normal Flow: & \textbf{4.0 Edit a device's data}
+            \begin{enumerate}
+                \item The user can change any of the following device data:
+                \begin{enumerate}
+                    \item Name
+                    \item Type of data collected
+                    \item Category
+                    \item Photos
+                \end{enumerate}
+                \item The user clicks on submit
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & N/A \\
+            \hline
+            Exceptions: &
+            % Exceptions: & \textbf{4.0.E1  Unique data already registered}
+            % \begin{enumerate}
+            %     \item The system displays an error message
+            %     \item The system asks the user to enter different data
+            % \end{enumerate}
+            \textbf{4.0.E1  The device to be edited has been deleted in the meantime}
+            \begin{enumerate}
+                \item The system displays an error message
+                \item The system prohibits editing
+            \end{enumerate} \\
+            \hline
+            Priority: & High \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & N/A \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 4 - edit a device's data}
+    \label{use case 4}
+\end{table}
 
-
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-05 Delete a device \\
+            \hline
+            Created By: & Nelson Vieira 22/02/2023 \\
+            \hline
+            Primary Actor: & App Administrator \\
+            \hline
+            Description: & Deleting a device in the application \\
+            \hline
+            Trigger: & The administrator wants to delete a device \\
+            \hline
+            Pre-conditions: & PRE-1. The device to be deleted must be in the application's database \\
+            \hline
+            Post-conditions: & POST-1. The device is deleted from the application \\
+            \hline
+            Normal Flow: & \textbf{5.0 Delete a device}
+            \begin{enumerate}
+                \item The administrator deletes a device, through:
+                \begin{enumerate}
+                    \item ID of device
+                    \item Name of device
+                \end{enumerate}
+                \item The administrator confirms the deletion
+                \item The system deletes the device
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & N/A \\
+            \hline
+            Exceptions: & \textbf{5.0.E1  The device to be deleted no longer exists in the database}
+            \begin{enumerate}
+                \item The system displays an error message
+                \item The system prohibits deletion
+            \end{enumerate} \\
+            \hline
+            Priority: & High \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & It is assumed that the administrator has database access \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 5 - delete a device}
+    \label{use case 5}
+\end{table}
 
 
 \section{O âmbito e visão do projeto}
