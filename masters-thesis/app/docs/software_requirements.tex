@@ -40,7 +40,7 @@
     urlcolor=purple,        % color of external links
     linktoc=page            % only page is linked
 }%
-\def\myversion{1.0 }
+\def\myversion{alpha 0.3}
 \date{}
 \usepackage{hyperref}
 
@@ -55,12 +55,12 @@
     \vspace{1cm}
     \textbf{Masters Thesis Application} \\
     \vspace{2cm}
-    \LARGE{Version 0.1 \\}
+    \LARGE{Version alpha 0.3 \\}
     \vspace{2cm}
     Written by Nelson Vieira \\
     \vspace{2cm}
     \today
-    % 16 de Janeiro de 2022
+    % 22 February 2023
     \vfill
     \rule{16cm}{5pt}
 \end{flushright}
@@ -69,290 +69,331 @@
 
 \chapter{Introduction}
 
-Text
+This report aims to define the details and principles of the privacy assisting
+IoT application with the ultimate goal of assisting in the development
+of the application. Defining the scope of the project helps to understand
+the main cases that will be entered. Stakeholders tell us who communicates
+with the system directly and indirectly. Business requirements will have
+to be defined to know in detail the possibilities of value for both sides.
+The swimlane gives a general understanding of the main case and what cause
+has each action, the contextual diagram helps to give an understanding
+of all actions between the system and the active parties. The data flow
+diagram, lets you know in detail what results from the particular activities.
+Finally, the technology requirements allow to know how the system will
+look like and to define the budget of the work.
 
-\section{Purpose}
+\section{The scope and vision of the project}
 
-Text
-
-\section{Project Scope and Product Features}
-
-Text
-
-\chapter{Overall Description}
-
-Text
-
-\section{Product Perspective}
-
-Text
-
-\section{User Classes and Characteristics}
-
-Text
-
-\chapter{Introduction}
-
-Text
-
-\section{O âmbito e visão do projeto}
-
-Text
+This project is carried out in the context of the Master's thesis in Informatics
+Engineering, which aims to create a mobile application that would provide
+information about IoT devices in their surroundings like the type of information
+these devices collect and what privacy options are available. The main objective
+of this application is to give users another option in order to protect
+their private data. The application will show the geolocation of the IoT
+devices, what type of device it is, what type of data is being collect by
+the device. The application will not detect the devices by itself, this will
+be done by the users themselves. As for competition there are other similar
+online systems with the same scope as this project. The application offers
+an easier search for information about the IoT devices that are around users'
+location.
 
 \section{Stakeholders}
 
-Text
-% \cite{fulton2017chapter}
+A stakeholder can be a person, group, or organisation that is involved in
+the project, is affected by its process and outcome or can influence its
+process and outcome. Stakeholders can be internal or external to the project
+team and the organisation. \cite{fulton2017chapter}
 \newline
-Text
+It is important to identify the stakeholders to make sure you get all the
+right requirements for the project and to develop a system that can match
+the proposed problem well.
 \newline
-Text
+The following stakeholders are identified in this project:
 \begin{itemize}
-    \item Text
+    \item \textbf{Programmers/designers of the application}: The programmers are the ones who will create the application and even if they do not use it they are directly related to it.
+    \item \textbf{IoT Device Owners}: These device owners will be priority stakeholders being that the application in good part will be directed to them, device owners have an indirect influence.
+    \item \textbf{Application Users}: The users will be the main focus of this project, they are the ones that provide the information that will be inserted in the application, since they can change the course of the project they have a direct influence.
+    \item \textbf{Legislation}: The legislation in relation to the privacy of the collected data allows to impose rules on the use of the data. It has an indirect influence.
 \end{itemize}
 
-\chapter{Requisitos de software}
+\chapter{Software requirements}
 
-\section{Requisitos de negócio}
+\section{Business requirements}
 
-Text
+Business requirements describe in business terms what must be delivered
+or achieved to deliver value. It is what defines the way of doing business,
+reflecting the internal policy, the defined process and/or the basic rules
+of conduct.  In other words, it is a set of instructions that users already
+follow and that the system to be developed must contemplate. Restrictions,
+validations, conditions and process exceptions are classic examples of business
+rules. A business rule will not necessarily be reflected in the system as
+a functionality, but it will certainly determine the behaviour of one or
+more functionalities of the system.
 \newline
-Text
+No business requirements have been identified for this project.
 
-\section{Requisitos de tecnologia}
+\section{Technology requirements}
 
-Text
+Technology requirements describe what both hardware and software must be
+used in order for a system to be realisable. In terms of hardware, it describes
+what kind of physical components are needed for the software to work. The
+software to be chosen must take into account the hardware that has been
+chosen and what is intended by the stakeholders. This has implications for
+how the system is implemented. For example, it is decided that the system
+to be implemented should run on iOS smartphones, this implies that the active
+stakeholder has to have an iOS smartphone to be able to use the system.
 \newline
-Os requisitos de tecnologia que foram identificados são os seguintes:
+The technology requirements that have been identified are as follows:
 \begin{itemize}
-    \item Servidor HTTP
-    \item Servidor MariaDB ou semelhante de base de dados relacional
-    \item Linguagens de programação: PHP, HTML, CSS (ou SCSS ou semelhante), Javascript (ou Typescript ou semelhante)
-    \item Acessível em qualquer hardware (através do browser)
+    \item Firestore or similar database server
+    \item Programming languages: Dart
+    \item Accessible on any smartphone
 \end{itemize}
-Text
+These requirements have been chosen so that the system is available to as
+many users as possible regardless of the hardware they use. The database
+will allow to store the information that the users provide about the IoT
+devices. The application will be developed with Flutter since it uses ahead
+of time and just in time compilation with Dart as its programming language.
+Flutter has better performance and as such it is the chosen framework for
+this application.
 
-\section{Diagrama contextual}
+\chapter{Contextual diagram}
 
-Text
+The contextual diagram aims to establish links between the system under
+development and the other actors that interact with the application.
 \newline
-Text
-\begin{figure}[H]
-    \centering
-    % \includegraphics[width=17cm]{assets/diagrama_contextual.png}
-    \caption{Diagrama contextual}
-    \label{fig:diagrama contextual}
-\end{figure}
-Text \\
+Identifies the identities external to the application that interact with
+the system with data and control between the external entities and the application.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=17cm]{assets/contextual_diagram.png}
+%     \caption{IoT Privacy Contextual Diagram}
+%     \label{fig:contextual diagram}
+% \end{figure}
+The contextual diagram is based on showing the actions performed with the
+application. \\
 \newline
-Utilizador: \\
+User: \\
 \newline
-→ Recebe:
+→ Receives:
 
-- Text
+- Profiles/Information of the IoT devices
 
-- Text
+- Georeference map of the IoT devices
 \newline
-→ Envia:
+→ Sends:
 
-- Atualização de Informações \\
+- Information update \newline
 \newline
-Gestor: \\
+Application Administrator: \\
 \newline
-→ Recebe:
+→ Receive:
 
-- Text
+- Information from IoT devices
 \newline
-→ Envia:
+→ Sends:
 
-- Text
+- Information management
 
-- Text
+- Geo-referenced map management
 
-\section{Diagramas de fluxo de dados}
+\section{Data flow diagrams}
 
-Text
-\begin{figure}[H]
-    \centering
-    % \includegraphics[width=12cm]{assets/diagrama_fluxo_de_dados.png}
-    \caption{Diagrama de fluxo de dados}
-    \label{fig:diagrama de fluxo de dados}
-\end{figure}
-Text
+A data flow diagram shows how information flows between the various entities
+in the system and their relationships.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=12cm]{assets/data_flow_diagram.png}
+%     \caption{Data flow diagram}
+%     \label{fig:dataflow_diagram}
+% \end{figure}
+The user can browse the application map, which will be created with an API,
+and see the locations of the IoT devices, the user can also look up information
+about the devices by clicking on a device on the map or by searching for
+the device in the application. The administrator of the application is responsible for
+its maintenance (adding new data, correcting or deleting incorrect data)
+and security and for the veracity of the information.
 
-\section{Diagrama swimlane (de alto nível)}
+\section{Swimlane diagram (high level)}
 
-Text
-\begin{figure}[H]
-    \centering
-    % \includegraphics[width=15cm]{assets/diagrama_swimlane.png}
-    \caption{Diagrama swimlane}
-    \label{fig:diagrama swimlane}
-\end{figure}
-Text
+A swimlane diagram is a type of flowchart in which processes and decisions
+are grouped into lanes. Parallel lines divide the diagram into lanes, each
+lane being assigned to people/groups and application.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=15cm]{assets/swimlane_diagram.png}
+%     \caption{Swimlane diagram}
+%     \label{fig:diagram_swimlane}
+% \end{figure}
+This swimlane diagram represents a high level view of a possible user interaction
+from the application's map, in this map the user can view the location of
+IoT devices and can see more information about a particular device by selecting
+it on the map. The application administrator, as mentioned above, can modify the
+devices' data.
 
-\section{Tabela de rastreio}
+\section{Requirements table}
 
-Text
+The requirements table identifies each feature and links each feature to an origin.
 \newline
-Text
+This is important to make it easier to manage requirements in the future.
+Knowing the origin of the creation of the requirements makes it easier to
+refer back to the source to clarify any questions.
 \newline
-Text
+A table was created with all the features found. For each feature it was identified
+the users to which it is applied and the source.
 \newline
-Text \\
-
+For the features found were described the most appropriate requirements for
+them. \\
 \begin{table}[H]
-\centering
-\begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
-% \rowcolors{5}{gray!10}{gray!40}
-\begin{tabular}{|>{\columncolor{yellow!30}}l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|p{0.15\textwidth}|}
-    \hline
-    \rowcolor{green!20}
-    \textbf{R\#} & \textbf{Feature} & \textbf{Intervenientes Aplicáveis} & \textbf{Descrição} & \textbf{Fonte} \\
-    \hline
-    \textbf{1} & Text & Text & Text & Email \cite{} \\
-    \hline
-    \textbf{2} & Text & Text & Text & Email \cite{} \\
-    \hline
-    \textbf{3} & Text & Text & Text & Email \cite{} \\
-    \hline
-    \textbf{4} & Text & Text & Text & Email \cite{} \\
-    \hline
-    \textbf{5} & Text & Text & Text & Email \cite{} \\
-    \hline
-    \textbf{6} & Text & Text & Text & Email \cite{} \\
-    \hline
-    \textbf{7} & Text & Text & Text & Email \cite{} \\
-    \hline
-    \textbf{8} & Text & Text & Text & Email \cite{} \\
-    \hline
-    \textbf{9} & Text & Text & Text & Discussão 18/04/2022 \\
-    \hline
-\end{tabular}
-\end{adjustbox}
-\caption{Tabela de rastreio}
-\label{table:table1}
+    \centering
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+    % \rowcolors{5}{gray!10}{gray!40}
+    \begin{tabular}{|l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|p{0.15\textwidth}|}
+        \hline
+        \rowcolor{green!20}
+        \textbf{R\#} & \textbf{Feature} & \textbf{Applicable stakeholders} & \textbf{Description} & \textbf{Source} \\
+        \hline
+        \textbf{1} & Navigate the map & User & \textbf{User}: The system should allow the user to scroll through the map of devices & Text \\
+        \hline
+        \textbf{2} & Select device on the map & User & \textbf{User}: The system should allow the user to select a device on the map to view more information & Text \\
+        \hline
+        \textbf{3} & Search devices & User & \textbf{User}: The system should allow the user to search for devices by name & Text \\
+        \hline
+        \textbf{4} & Query devices through parameters & User & \textbf{User}: The system should allow the user to consult devices of only a certain type, data collected, general location & Text \\
+        \hline
+        \textbf{5} & Query statistics of the devices & User & \textbf{User}: The system should allow consulting statistics of devices & Text \\
+        \hline
+        \textbf{6} & Add a device & User & \textbf{User}: The system should allow the user to add a new device with name, category, data collected, location, etc. & Text \\
+        \hline
+        \textbf{7} & Delete a device & App Administrator & \textbf{App Administrator}: The system should allow the administrator to delete a device & Text \\
+        \hline
+        \textbf{8} & Edit a device & User & \textbf{User}: The system should allow the user to change some data of a device & Text \\
+        \hline
+        \textbf{9} & Create account & User & \textbf{User}: The system shall allow a user to create an account. & Text \\
+        \hline
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Requirements table}
+    \label{table:table1}
 \end{table}
 
-\section{Requisitos funcionais}
+\section{Functional requirements}
 
-Text
-% \cite{fulton2017chapter}
-Text
-% \cite{wiegers2013software}
-Text
+Functional requirements define the functions of a system or its components,
+where functions are specifications or behaviours between system outputs and
+inputs. \cite{fulton2017chapter} These describe what developers have to implement
+so that users can complete tasks (user requirements), which in turn satisfy
+business requirements. \cite{wiegers2013software} Functional requirements are
+essential to the success of a project.
+After building the tracing table the functional requirements that were needed
+were extracted for each feature and grouped appropriately according to the
+following groups:
 
-\subsection{Requisitos de Utilizador}
+\subsection{User Requirements}
 
-\textbf{RU1.1} - O sistema deverá permitir que o utilizador possa usar o botão esquerdo do rato para percorrer o mapa de entidades;
+\textbf{RU1.1} - The system should allow the user to scroll through the devices map;
 \newline
-\textbf{RU1.2} - O sistema deverá permitir que o utilizador possa selecionar uma entidade no mapa para visualizar mais informações;
+\textbf{RU1.2} - The system shall allow the user to select a device on the map to view more information;
 \newline
-\textbf{RU1.3} - O sistema deverá permitir que o cliente pesquise uma entidade pelo nome;
+\textbf{RU1.3} - The system shall allow the user to search for a device by name;
 \newline
-\textbf{RU1.4} - O sistema deverá permitir ao utilizador consultar entidades de apenas uma determinada área de atuação, de um estatuto legal, de um concelho;
+\textbf{RU1.4} - The system should allow the user to consult devices of only a certain category, data collected, etc.;
 \newline
-\textbf{RU1.5} - O sistema deverá permitir consultar estatísticas das entidades, como percentagem de entidades por área de atuação, concelho e por estatuto legal;
+\textbf{RU1.5} - The system must allow consulting statistics of the devices;
 \newline
-\textbf{RU1.6} - O sistema deverá permitir que o cliente pesquise uma entidade pelo nome;
+\textbf{RU1.6} - The system should allow the user to add a new device with name, category, data collected, location, etc.;
 \newline
-\textbf{RU1.7} - O sistema deverá permitir que um cliente avalie um profissional após a conclusão de um serviço;
-
-\subsection{Requisitos de Gestor}
-
-\textbf{RG2.1} - Na criação de uma nova entidade o sistema deverá obrigar o gestor a preencher os seguintes dados obrigatórios:
-
-\textbf{RG2.1.1} - Nome comum da entidade.
-
-\textbf{RG2.1.2} - Nome legal da entidade.
-
-\textbf{RG2.1.3} - Uma área de atuação.
-
-\textbf{RG2.1.4} - Morada da entidade.
-
-\textbf{RG2.1.5} - Estatuto legal.
+\textbf{RU1.7} - The system should allow the user to change some data of a device;
 \newline
-\textbf{RP.2.2} - O sistema deverá permitir ao gestor apagar uma entidade;
-\newline
-\textbf{RP.2.3} - O sistema deverá permitir ao gestor alterar algum dado de uma entidade;
+\textbf{RU1.8} - The system shall allow a user to create an account.
 
-\subsection{Requisitos de Sistema}
+\subsection{Administrator Requirements}
 
-\textbf{RS.4.1} - O sistema deverá mostrar estatísticas relativas às entidades;
+\textbf{RM.2.1} - The system shall allow the administrator to delete an entity;
+
+\subsection{System requirements}
+
+\textbf{RS.4.1} - The system must show statistics related to the devices;
 
 \chapter{Use cases}
 
-\section{Diagrama de use cases}
+\section{Use cases diagram}
 
-O diagrama de use cases fornece uma visualização de alto nível dos requisitos de utilizador. A caixa representa a fronteira do sistema. Uma seta de um ator para um use case indica que ele é o ator primário para o mesmo.
+The use cases diagram provides a high level visualisation of the user
+requirements. The box represents the system boundary. An actor's arrow
+for a use case indicates that he is the primary actor for it.
 \newline
-O ator primário inicia o use case e deriva o valor principal dele. Uma seta vai de um use case para um ator secundário, onde participa de alguma forma no sucesso da conclusão do use case.
-% \cite{wiegers2013software}
-\begin{figure}[H]
-    \centering
-    % \includegraphics[width=12cm]{assets/diagrama_use_cases.png}
-    \caption{Diagrama de use cases}
-    \label{fig:diagrama use cases}
-\end{figure}
+The primary actor initiates the use case and derives the primary value
+from it. An arrow goes from a use case to a secondary actor, where it
+participates in some way in the successful completion of the use case. \cite{wiegers2013software}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=12cm]{assets/diagram_use_cases.png}
+%     \caption{Use cases diagram}
+%     \label{fig:use cases diagram}
+% \end{figure}
 
 \section{Use cases}
 
-Na Engenharia de Software, um use case é um tipo de classificador representando uma unidade funcional coerente provida pelo sistema, subsistema, ou classe manifestada por sequências de mensagens intercambiáveis entre os sistemas e um ou mais atores.
-% \cite{UseUsability}
+In Software Engineering, a use case is a type of classifier representing a
+coherent functional unit provided by the system, subsystem, or class manifested
+by sequences of interchangeable messages between systems and one or more
+actors. \cite{UseUsability}
 \newline
-Usando esta técnica descreve-se as tarefas que os utilizadores necessitam executar com o sistema ou a interação utilizador-sistema que pode ser importante para alguns stakeholders. Também ajudam nos testes ao verificar se a funcionalidade foi implementada corretamente. O use case usa a notação UML (Unified Modeling Language).
+Using this technique describes the tasks that users need to perform with
+the system or the user-system interaction that may be important to some
+stakeholders. They also help in testing by checking that the functionality
+has been implemented correctly. The use case uses UML (Unified Modeling
+Language) notation.
 
 \begin{table}[H]
     \centering
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-01 Consulta de informação de uma entidade \\
+            ID and Name: & UC-01 Device information query \\
             \hline
-            Created By: & Nelson Vieira 11/04/2022 \\
+            Created By: & Nelson Vieira 20/02/2023 \\
             \hline
-            Primary Actor: & Utilizador \\
+            Primary Actor: & User \\
             \hline
-            Description: & O utilizador faz uma consulta de informação de uma entidade \\
+            Description: & The user makes a device information query \\
             \hline
-            Trigger: & O utilizador quer procurar informações de uma entidade \\
+            Trigger: & The user wants to search device information \\
             \hline
-            Preconditions: & N/A \\
+            Pre-conditions: & N/A \\
             \hline
-            Postconditions: & POST-1. O utilizador encontra informações da entidade \\
+            Post-conditions: & POST-1. The user finds device information \\
             \hline
-            Normal Flow: & \textbf{1.0 Consulta de informação de uma entidade no mapa}
+            Normal Flow: & \textbf{1.0 Query information of a device on the map}
             \begin{enumerate}
-                \item O utilizador navega no mapa
-                \item O utilizador clica no ícone para mostrar alguma informação da entidade
-                \item O utilizador clica no pop-up da entidade
+                \item The user browses the map
+                \item The user clicks on the icon to show some information about the device
+                \item The user clicks on the device pop-up
             \end{enumerate} \\
             \hline
-            Alternative Flow: & \textbf{1.1 Pesquisa de informação de uma entidade}
+            Alternative Flow: & \textbf{1.1 Device information search}
             \begin{enumerate}
-                \item O utilizador insere o nome na entidade na barra de pesquisa
-                \item O utilizador escolhe a entidade que pretende de uma lista gerada a partir da pesquisa realizada
+                \item User enters device name
+                \item The user chooses the device he wants from a list generated from the search performed
             \end{enumerate} \\
             \hline
-            Alternative Flow: & \textbf{1.2 Pesquisa alternativa de informação de uma entidade}
+            Alternative Flow: & \textbf{1.2 Alternative search for information from a device}
             \begin{enumerate}
-                \item O utilizador seleciona um dos parâmetros:
+                \item The user selects one of the parameters:
                 \begin{enumerate}
-                    \item Àrea de atuação
-                    \item Contribuinte
-                    \item Concelho
-                    \item Grupo de famílias
-                    \item Estatuto legal
+                    \item Category
+                    \item Data collected
                 \end{enumerate}
-                \item O utilizador escolhe a entidade que pretende de uma lista gerada a partir da pesquisa realizada
+                \item The user chooses the device he wants from a list generated from the search carried out
             \end{enumerate} \\
             \hline
-            Exceptions: & \textbf{1.0.E1  O API não está funcionando corretamente}
+            Exceptions: & \textbf{1.0.E1  The API is not working}
             \begin{enumerate}
-                \item O sistema apresenta uma mensagem de alerta: ``Estamos a ter problemas de ligação, por favor aguarde um pouco''
+                \item The system displays an alert message: ``We are having connection problems, please wait for a while''
             \end{enumerate} \\
             \hline
-            Priority: & Alta \\
+            Priority: & High \\
             \hline
             Business Requirements: & N/A \\
             \hline
@@ -360,7 +401,7 @@ Usando esta técnica descreve-se as tarefas que os utilizadores necessitam execu
             \hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Use case 1 - consulta de informação de uma entidade}
+    \caption{Use case 1 - entity information query}
     \label{use case 1}
 \end{table}
 
@@ -369,29 +410,27 @@ Usando esta técnica descreve-se as tarefas que os utilizadores necessitam execu
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-02 Consulta de estatísticas das entidades \\
+            ID and Name: & UC-02 Device statistics query \\
             \hline
-            Created By: & Nelson Vieira 13/04/2022 \\
+            Created By: & Nelson Vieira 20/02/2023 \\
             \hline
-            Primary Actor: & Utilizador \\
+            Primary Actor: & User \\
             \hline
-            Description: & O utilizador faz uma consulta de estatísticas das entidades \\
+            Description: & The user queries the statistics of the devices \\
             \hline
-            Trigger: & O utilizador pretende encontrar estatísticas das entidades \\
+            Trigger: & The user wants to find statistics of devices \\
             \hline
-            Preconditions: & N/A \\
+            Pre-conditions: & N/A \\
             \hline
-            Postconditions: & POST-1. O utilizador encontra estatísticas das entidades \\
+            Post-conditions: & POST-1. The user finds statistics of devices \\
             \hline
-            Normal Flow: & \textbf{2.0 Consulta de estatísticas das entidades}
+            Normal Flow: & \textbf{2.0 Device statistics query}
             \begin{enumerate}
-                \item O utilizador seleciona o separador de estatísticas
-                \item O utilizador pode selecionar apenas certos parâmetros, tais como:
+                \item User selects statistics tab
+                \item The user can only select certain parameters, such as:
                 \begin{enumerate}
-                    \item Àrea de atuação
-                    \item Concelho
-                    \item Grupo de famílias
-                    \item Estatuto legal
+                    \item Category
+                    \item Location
                 \end{enumerate}
             \end{enumerate} \\
             \hline
@@ -399,7 +438,7 @@ Usando esta técnica descreve-se as tarefas que os utilizadores necessitam execu
             \hline
             Exceptions: & N/A \\
             \hline
-            Priority: & Alta \\
+            Priority: & High \\
             \hline
             Business Requirements: & N/A \\
             \hline
@@ -407,7 +446,7 @@ Usando esta técnica descreve-se as tarefas que os utilizadores necessitam execu
             \hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Use case 2 - consulta de estatísticas das entidades}
+    \caption{Use case 2 - statistics query}
     \label{use case 2}
 \end{table}
 
@@ -416,63 +455,49 @@ Usando esta técnica descreve-se as tarefas que os utilizadores necessitam execu
     \begin{adjustbox}{width=1.15\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-03 Adicionar uma entidade \\
+            ID and Name: & UC-03 Add a device \\
             \hline
-            Created By: & Nelson Vieira 13/04/2022 \\
+            Created By: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & Gestor do Portal \\
+            Primary Actor: & User \\
             \hline
-            Description: & Adição de uma nova entidade no portal \\
+            Description: & Addition of a new IoT device in the application \\
             \hline
-            Trigger: & O gestor pretende adicionar uma nova entidade \\
+            Trigger: & The user wants to add a new IoT device \\
             \hline
-            Preconditions: & N/A \\
+            Pre-conditions: & N/A \\
             \hline
-            Postconditions: & POST-1. Uma nova entidade é adicionada ao portal \\
+            Post-conditions: & POST-1. A new IoT device is added to the application \\
             \hline
-            Normal Flow: & \textbf{3.0 Adicionar uma entidade}
+            Normal Flow: & \textbf{3.0 Add a device}
             \begin{enumerate}
-                \item O gestor insere os seguintes dados de uma nova entidade:
+                \item The user enters the following data of a new IoT device:
                 \begin{enumerate}
-                    \item Nome da entidade
-                    \item Nº de Contribuinte
-                    \item Morada da entidade
-                    \item Concelho da entidade
-                    \item Contacto da entidade:
-                    \begin{enumerate}
-                        \item Telefone
-                        \item Email
-                        \item Website
-                        \item Página de Rede Social
-                    \end{enumerate}
-                    \item Área de atuação
-                    \item Natureza jurídica
-                    \item Estatuto jurídico
-                    \item Estatuto especial
-                    \item Abrangência geográfica
+                    \item Name
+                    \item Type of data collected
+                    \item Category
+                    \item Photos
                 \end{enumerate}
-                \item O gestor clica em submeter
-                \item O gestor cria a página associada da entidade
-                \item O gestor adiciona  a localização da entidade no mapa de entidades
+                \item The user clicks submit
+                \item The user adds the location of the IoT device on the map
             \end{enumerate} \\
             \hline
             Alternative Flow: & N/A \\
             \hline
-            Exceptions: & \textbf{3.0.E1  Nº de contribuinte já registado}
+            Exceptions: & \textbf{3.0.E1  The device is already in the database}
             \begin{enumerate}
-                \item O sistema apresenta uma mensagem de erro
-                \item O sistema pede para inserir outro nº de contribuinte
+                \item The system displays an error message
             \end{enumerate} \\
             \hline
-            Priority: & Alta \\
+            Priority: & High \\
             \hline
             Business Requirements: & N/A \\
             \hline
-            Assumptions: & É assumido que o gestor tem acesso direto à base de dados \\
+            Assumptions: & N/A \\
             \hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Use case 3 - adicionar uma entidade}
+    \caption{Use case 3 - add a device}
     \label{use case 3}
 \end{table}
 
@@ -481,65 +506,55 @@ Usando esta técnica descreve-se as tarefas que os utilizadores necessitam execu
     \begin{adjustbox}{width=1.1\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-04 Editar dados de uma entidade \\
+            ID and Name: & UC-04 Edit a device's data \\
             \hline
-            Created By: & Nelson Vieira 13/04/2022 \\
+            Created By: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & Gestor do Portal \\
+            Primary Actor: & User \\
             \hline
-            Description: & Edição dos dados de uma entidade no portal \\
+            Description: & Editing the data of an IoT device in the application \\
             \hline
-            Trigger: & O gestor pretende editar dados de uma entidade \\
+            Trigger: & The user wants to edit an IoT device's data \\
             \hline
-            Preconditions: & N/A \\
+            Pre-conditions: & N/A \\
             \hline
-            Postconditions: & POST-1. Os dados que foram alterados aparecem no portal \\
+            Post-conditions: & POST-1. The data that has been changed appears in the application \\
             \hline
-            Normal Flow: & \textbf{4.0 Editar dados de uma entidade}
+            Normal Flow: & \textbf{4.0 Edit a device's data}
             \begin{enumerate}
-                \item O gestor pode alterar quaisquer dos seguintes dados de uma entidade:
+                \item The user can change any of the following device data:
                 \begin{enumerate}
-                    \item Nome da entidade
-                    \item Nº de Contribuinte
-                    \item Morada da entidade
-                    \item Concelho da entidade
-                    \item Contacto da entidade:
-                    \begin{enumerate}
-                        \item Telefone
-                        \item Email
-                        \item Website
-                        \item Página de Rede Social
-                    \end{enumerate}
-                    \item Área de atuação
-                    \item Estatuto legal / Grupo de famílias
-                    \item Estatuto especial
-                    \item Abrangência geográfica
+                    \item Name
+                    \item Type of data collected
+                    \item Category
+                    \item Photos
                 \end{enumerate}
-                \item O gestor clica em submeter
+                \item The user clicks on submit
             \end{enumerate} \\
             \hline
             Alternative Flow: & N/A \\
             \hline
-            Exceptions: & \textbf{4.0.E1  Nº de contribuinte já registado}
+            Exceptions: &
+            % Exceptions: & \textbf{4.0.E1  Unique data already registered}
+            % \begin{enumerate}
+            %     \item The system displays an error message
+            %     \item The system asks the user to enter different data
+            % \end{enumerate}
+            \textbf{4.0.E1  The device to be edited has been deleted in the meantime}
             \begin{enumerate}
-                \item O sistema apresenta uma mensagem de erro
-                \item O sistema pede para inserir outro nº de contribuinte
-            \end{enumerate}
-            \textbf{4.0.E1  A entidade a ser editada foi eliminada entretanto}
-            \begin{enumerate}
-                \item O sistema apresenta uma mensagem de erro
-                \item O sistema proíbe a edição
+                \item The system displays an error message
+                \item The system prohibits editing
             \end{enumerate} \\
             \hline
-            Priority: & Alta \\
+            Priority: & High \\
             \hline
             Business Requirements: & N/A \\
             \hline
-            Assumptions: & É assumido que o gestor tem acesso direto à base de dados \\
+            Assumptions: & N/A \\
             \hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Use case 4 - editar dados de uma entidade}
+    \caption{Use case 4 - edit a device's data}
     \label{use case 4}
 \end{table}
 
@@ -548,125 +563,59 @@ Usando esta técnica descreve-se as tarefas que os utilizadores necessitam execu
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-05 Eliminar uma entidade \\
+            ID and Name: & UC-05 Delete a device \\
             \hline
-            Created By: & Nelson Vieira 13/04/2022 \\
+            Created By: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & Gestor do Portal \\
+            Primary Actor: & App Administrator \\
             \hline
-            Description: & Eliminação de uma entidade no portal \\
+            Description: & Deleting a device in the application \\
             \hline
-            Trigger: & O gestor pretende eliminar uma entidade \\
+            Trigger: & The administrator wants to delete a device \\
             \hline
-            Preconditions: & PRE-1. A entidade a ser eliminada tem de estar na base de dados do Portal \\
+            Pre-conditions: & PRE-1. The device to be deleted must be in the application's database \\
             \hline
-            Postconditions: & POST-1. É eliminada a entidade do portal \\
+            Post-conditions: & POST-1. The device is deleted from the application \\
             \hline
-            Normal Flow: & \textbf{5.0 Eliminar uma entidade}
+            Normal Flow: & \textbf{5.0 Delete a device}
             \begin{enumerate}
-                \item O gestor elimina a entidade pretendida, através de:
+                \item The administrator deletes a device, through:
                 \begin{enumerate}
-                    \item ID da entidade
-                    \item Nº de contribuinte
+                    \item ID of device
+                    \item Name of device
                 \end{enumerate}
-                \item O gestor confirma que quer eliminar a entidade
-                \item O gestor apaga a página da entidade
-                \item O gestor elimina a localização da entidade do mapa de entidades
+                \item The administrator confirms the deletion
+                \item The system deletes the device
             \end{enumerate} \\
             \hline
             Alternative Flow: & N/A \\
             \hline
-            Exceptions: & \textbf{5.0.E1  A entidade a ser eliminada já não existe na base de dados}
+            Exceptions: & \textbf{5.0.E1  The device to be deleted no longer exists in the database}
             \begin{enumerate}
-                \item O sistema apresenta uma mensagem de erro
-                \item O sistema proíbe a eliminação
+                \item The system displays an error message
+                \item The system prohibits deletion
             \end{enumerate} \\
             \hline
-            Priority: & Alta \\
+            Priority: & High \\
             \hline
             Business Requirements: & N/A \\
             \hline
-            Assumptions: & É assumido que o gestor tem acesso direto à base de dados \\
+            Assumptions: & It is assumed that the administrator has database access \\
             \hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Use case 5 - eliminar uma entidade}
+    \caption{Use case 5 - delete a device}
     \label{use case 5}
 \end{table}
 
-% \begin{filecontents}{long.tex}
-%     \begin{longtable}[c]{|p{0.26\textwidth}|*{1}{X|}}
-%         \hline
-%         ID and Name: & UC-06 Criar conta - Entidade \\
-%         \hline
-%         Created By: & Nelson Vieira 13/04/2022 \\
-%         \hline
-%         Primary Actor: & Entidade da Economia Social \\
-%         \hline
-%         Description: & Para modificar dados da sua Entidade, a Entidade tem que criar uma conta. \\
-%         \hline
-%         Trigger: & A Entidade quer criar uma conta \\
-%         \hline
-%         Preconditions: & A Entidade quer modificar os seus dados \\
-%         \hline
-%         Postconditions: & A Entidade pode usufruir da aplicação \\
-%         \hline
-%         Normal Flow: & \textbf{6.0 Processo de criação de conta de Entidade}
-%         \begin{enumerate}
-%             \item A Entidade insere os seguintes dados:
-%             \begin{enumerate}
-%                 \item Insere a morada
-%                 \item Insere o NIF
-%                 \item Insere o número de telefone
-%                 \item Insere o nome completo
-%                 \item Insere o email
-%             \end{enumerate}
-%             \item Insere a Entidade na base de dados
-%             \item É enviado um email de confirmação à Entidade
-%             \item A Entidade confirma a conta
-%         \end{enumerate} \\
-%         \hline
-%         Alternative Flow: & \textbf{6.1 Processo alternativo de criação de conta de Entidade}
-%         \begin{enumerate}
-%             \item A Entidade envia um email para o Gestor do Portal a pedir para que crie uma conta da Entidade
-%             \item O Gestor do Portal insere os seguintes dados:
-%             \begin{enumerate}
-%                 \item Insere a morada
-%                 \item Insere o NIF
-%                 \item Insere o número de telefone
-%                 \item Insere o nome completo
-%                 \item Insere o email
-%             \end{enumerate}
-%             \item Insere a Entidade na base de dados
-%             \item É enviado um email de confirmação à Entidade
-%             \item A Entidade confirma a conta
-%         \end{enumerate} \\
-%         \hline
-%         Exceptions: & \textbf{6.[0-1].E1  Email já registado}
-%         \begin{enumerate}
-%             \item O sistema apresenta uma mensagem de alerta. ``O email que inseriu já está registado''
-%             \item O sistema permite recuperar a conta
-%         \end{enumerate}
-%         \textbf{6.[0-1].E2 NIF já registado}
-%         \begin{enumerate}
-%             \item O sistema apresenta uma mensagem de alerta. ``O NIF que inseriu já está registado''
-%             \item O sistema permite recuperar a conta
-%         \end{enumerate}
-%         \textbf{6.[0-1].E3 Email não corresponde a um email associado a uma entidade}
-%         \begin{enumerate}
-%             \item O sistema apresenta uma mensagem de alerta. ``O email que inseriu não se encontra no portal''
-%         \end{enumerate} \\
-%         \hline
-%         Priority: & Média \\
-%         \hline
-%         Business Requirements: & N/A \\
-%         \hline
-%         Assumptions: & N/A \\
-%         \hline
-%         \caption[Caption]{Use case 6 - criar uma conta}\label{use case 6}
-%     \end{longtable}
-% \end{filecontents}
-% \LTXtable{1.0\linewidth}{long.tex}
+
+\section{O âmbito e visão do projeto}
+
+Text
+
+\section{Stakeholders}
+
+\chapter{Requisitos de software}
 
 \chapter{Priorização de requisitos}
 
