@@ -1,3 +1,12 @@
+<!---
+SPDX-License-Identifier: CC-BY-SA-4.0
+
+Copyright (c) 2023 Nelson Vieira
+
+@author Nelson Vieira <nelson0.vieira@gmail.com>
+@license CC-BY-SA-4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt>
+--->
+
 # Most relevant papers
 
 This is some text

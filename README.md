@@ -1,9 +1,20 @@
-# Privacy protection in internet of things systems
+<!---
+SPDX-License-Identifier: CC-BY-SA-4.0
+
+Copyright (c) 2023 Nelson Vieira
+
+@author Nelson Vieira <nelson0.vieira@gmail.com>
+@license CC-BY-SA-4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt>
+--->
+
+# Master Thesis on *Privacy Protection in Internet of Things Systems*
 
 This repository contains the preparation work of the thesis, the thesis itself and the associated software.
 
-<!--- 
-The papers, including source and compiled formats, are distributed under CC BY SA 4.0. The software is distributed under GNU v3.0
---->
+## License
 
-&copy; Nelson Vieira
+The application in the masters-thesis/app folder is licensed under a [AGPL-3.0 license](LICENSE-APP).
+
+All other code in this repository is licensed under the [CC-BY-SA-4.0 license](LICENSE).
+
+Copyright &copy; 2023 Nelson Vieira
