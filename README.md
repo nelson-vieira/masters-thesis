@@ -9,7 +9,7 @@ Copyright (c) 2023 Nelson Vieira
 
 # Master Thesis on *Privacy Protection in Internet of Things Systems*
 
-This repository contains the preparation work of the thesis, the thesis itself and the associated software.
+This repository is a monorepo of the Master Thesis and contains the preparation work of the thesis, the thesis itself and the associated software along with any documentation.
 
 ## License
 
