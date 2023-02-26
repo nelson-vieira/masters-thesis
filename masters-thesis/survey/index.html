@@ -917,6 +917,181 @@
     </br>
     </br>
 
+    <section id="sectionSix" class="sectionSix">
+        <div class="card">
+            <h5 class="card-header" style="font-weight: bold">Profile identification</h5>
+            <div class="card-body">
+                <p class="card-text">This section brings together more specific questions about using profiles to make it easier to create personalized experiences.</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <br>
+                    <div>
+                        <p>1. Do you know the concept of profiling? Explain.</p>
+                        <crowd-text-area name="6_1conceptProfiling" rows="5" required></crowd-text-area>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>2. If a law enforcement officer asks for your personal data, are you willing to share it?</p>
+                        <crowd-radio-group required>
+                            <crowd-radio-button name="6_2lawEnforcementOfficerAsksDataShare" value="dontKnow">I don't know</crowd-radio-button>
+                            <crowd-radio-button name="6_2lawEnforcementOfficerAsksDataShare" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="6_2lawEnforcementOfficerAsksDataShare" value="yes">Yes</crowd-radio-button>
+                        </crowd-radio-group>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>3. In what situations are you willing to provide personal data when data collection is disclosed?</p>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="renewCitizenCard">Renew your citizen card</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="medicalConsultationFace">Medical consultation (face to face)</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="healthInsurance">Take out health insurance</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="newBankAccount">Create new bank account</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="contactTracing">For contact tracing</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="confinedHospital">Confined in the hospital</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="newInternetPlan">Make a new Internet/Mobile plan</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="onlineShopping">Online shopping</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="applyBankLoan">Apply for a bank loan or credit card</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="onlineMedicalConsultation">Online medical consultation</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="discountCard">Request loyalty/discount cards</crowd-checkbox><br>
+                        <crowd-checkbox name="6_3willingToProvideDataDisclosed" value="none">None</crowd-checkbox>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>4. In what situations are you willing to provide personal data when data collection is <strong>not</strong> disclosed?</p>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="renewCitizenCard">Renew your citizen card</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="medicalConsultationFace">Medical consultation (face to face)</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="healthInsurance">Take out health insurance</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="newBankAccount">Create new bank account</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="contactTracing">For contact tracing</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="confinedHospital">Confined in the hospital</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="newInternetPlan">Make a new Internet/Mobile plan</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="onlineShopping">Online shopping</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="applyBankLoan">Apply for a bank loan or credit card</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="onlineMedicalConsultation">Online medical consultation</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="discountCard">Request loyalty/discount cards</crowd-checkbox><br>
+                        <crowd-checkbox name="6_4willingToProvideDataNotDisclosed" value="none">None</crowd-checkbox>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>5. Do you usually answer online questionnaires when they are requested?</p>
+                        <crowd-slider name="6_5answerOnlineQuestionnaires" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>6. When answering questionnaires, do you enter any false/incorrect information?</p>
+                        <crowd-slider name="6_5answerOnlineQuestionnairesFalseInfo" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>7. When creating an account on an online platform, have you ever entered false personal data?</p>
+                        <crowd-radio-group required>
+                            <crowd-radio-button name="6_7creatingAccountFalseData" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="6_7creatingAccountFalseData" value="yes">Yes</crowd-radio-button>
+                        </crowd-radio-group>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>7.1. If yes, why did you enter this false data?</p>
+                        <crowd-checkbox name="6_7_1accountFalseDataYesWhy" value="temporaryAccount">I'm creating a temporary account</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_1accountFalseDataYesWhy" value="maximumPrivacy">I do not want to disclose any kind of personal data, I want maximum privacy</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_1accountFalseDataYesWhy" value="notRelevant">I do not find this type of data(s) relevant</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_1accountFalseDataYesWhy" value="accessSoonAsPossible">I want to access the content of the platform as soon as possible</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_1accountFalseDataYesWhy" value="enteredByMistake">I entered the data by mistake</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_1accountFalseDataYesWhy" value="noSpecificReason">I don't have a specific reason</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_1accountFalseDataYesWhy" value="numberDataTooLarge">The number of data to be inserted is too large</crowd-checkbox><br>
+                        <crowd-input name="6_7_1accountFalseDataYesWhy" placeholder="Another option"></crowd-input>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>7.2. When you have to enter false data, what types of false data do you enter?</p>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="age">Age</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="completeName">Complete name</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="dateOfBirth">Date of birth</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="genre">Genre</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="religion">Religion</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="nameParents">Complete name of parents</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="maritalStatus">Marital status</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="homeAddress">Home address</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="workAddress">Work address</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="nationality">Nationality</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="qualifications">Qualifications</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="professionalExperience">Professional experience</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="height">Height</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="weight">Weight</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="phoneNumber">Phone/mobile number</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="regionBirth">Region of birth</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="ethnicGroup">Ethnic group</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="signature">Signature</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="spousesName">Spouse's name</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="email">E-mail</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="healthCondition">Health condition</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="facePhoto">Face photo</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="fullBodyPhotography">Full body photography</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="username">Username</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="copyCitizenCard">Copy of citizen card</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="fingerprint">Fingerprint</crowd-checkbox><br>
+                        <crowd-checkbox name="6_7_2accountFalseDataType" value="licenses">Licenses</crowd-checkbox>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>8. In your opinion, does the data you disclose on one platform influence the use of another? Justify.</p>
+                        <crowd-text-area name="6_8dataYouDiscloseOnePlatformInfluenceAnother" rows="5" required></crowd-text-area>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>9. Do you think companies sell your personal data? Justify.</p>
+                        <crowd-text-area name="6_9companiesSellYourData" rows="5" required></crowd-text-area>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>10. Can the data I disclose serve to create a profile of my online habits?</p>
+                        <crowd-slider name="6_10dataIDiscloseCreateProfile" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>11. "The information I disclose on the internet can serve to identify me". Do you agree with this statement?</p>
+                        <crowd-radio-group required>
+                            <crowd-radio-button name="6_11informationIDiscloseIdentifyMe" value="dontKnow">I don't know</crowd-radio-button>
+                            <crowd-radio-button name="6_11informationIDiscloseIdentifyMe" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="6_11informationIDiscloseIdentifyMe" value="yes">Yes</crowd-radio-button>
+                        </crowd-radio-group>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>12. Are you aware of data brokers?</p>
+                        <crowd-radio-group required>
+                            <crowd-radio-button name="6_12awareDataBrokers" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="6_12awareDataBrokers" value="yes">Yes</crowd-radio-button>
+                        </crowd-radio-group>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>13. If so, explain what data brokers are and what they do.</p>
+                        <crowd-text-area name="6_13explainDataBrokers" rows="5" required></crowd-text-area>
+                    </div>
+                    </br>
+                </div>
+            </div>
+        </div>
+    </section>
+    </br>
+    </br>
+    </br>
+
 </crowd-form>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
