@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <!-- For the full list of available Crowd HTML Elements and their input/output documentation,
-      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+    please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
 
 <!-- You must include crowd-form so that your task submits answers to MTurk -->
 <crowd-form answer-format="flatten-objects">
@@ -28,20 +28,20 @@
 
             <negative-example>
                 <p>No enter unsecure site, check protocol, no share social media.</p>
-                <p>This type of answer is too short and does not privide any context</p>
+                <p>This type of answer is too short and does not provide any context</p>
             </negative-example>
         </crowd-instructions>
     </section>
     </br>
 
-    <section id="sectionOneTerms" class="sectionOneTerms">
+    <section id="sectionOne" class="sectionOne">
         <div class="card">
             <h5 class="card-header" style="font-weight: bold">Terms and conditions</h5>
             <div class="card-body">
                 <h6 class="card-title">I am aware of the terms described in <span style="font-weight: bold">detailed instructions</span>.</h6>
                 <crowd-radio-group required>
-                    <crowd-radio-button name="agree" value="agree">Yes, I agree that my data will be processed as described</crowd-radio-button></br>
-                    <crowd-radio-button name="disagree" value="disagree">Yes, I want to participate in this survey</crowd-radio-button>
+                    <crowd-radio-button name="1_0termsAgree" value="agree">Yes, I agree that my data will be processed as described</crowd-radio-button></br>
+                    <crowd-radio-button name="1_0termsNoReadAgree" value="didntRead">Yes, I want to participate in this survey</crowd-radio-button>
                 </crowd-radio-group>
             </div>
         </div>
@@ -61,72 +61,69 @@
                     <br>
                     <div>
                         <p>1. "Privacy is important to me". Do you agree with this statement?</p>
-                        <crowd-slider name="privacyIsImportant" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_1privacyIsImportant" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-            
+
                     <div>
                         <p>2. "I know techniques to guarantee privacy and the protection of my data when I use the Internet". Do you agree with this statement?</p>
-                        <crowd-slider name="knowTechniquesGuaranteePrivacy" min="1" max="7" step="1" pin="true" required></crowd-slider>
-                        <!-- <crowd-checkbox name="likeBirds" checked="true" required></crowd-checkbox> -->
+                        <crowd-slider name="2_2knowTechniquesGuaranteePrivacy" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>3. Could you give examples of techniques or strategies you use to guarantee the privacy and protection of your data?</p>
-                        <crowd-input name="strategiesGuaranteePrivacy" placeholder="" required></crowd-input>
-                        <!-- <crowd-slider name="howMuch" min="1" max="10" step="1" pin="true" required></crowd-slider> -->
+                        <crowd-input name="2_3strategiesGuaranteePrivacy" placeholder="" required></crowd-input>
                     </div>
                     </br>
-                
+
                     <div>
                         <p>4. Do you think your data privacy is important?</p>
-                        <crowd-slider name="dataPrivacyImportant" min="1" max="7" step="1" pin="true" required></crowd-slider>
-                        <!-- <crowd-text-area name="essay" rows="4" placeholder="Lorem ipsum..." required></crowd-text-area> -->
+                        <crowd-slider name="2_4dataPrivacyImportant" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                
+
                     <div>
                         <p>5. How do you define data (or digital) privacy?</p>
-                        <crowd-input name="defineDataPrivacy" placeholder="" required></crowd-input>
+                        <crowd-input name="2_5defineDataPrivacy" placeholder="" required></crowd-input>
                     </div>
                     </br>
-                
+
                     <div>
                         <p>6. Do you think your data privacy is relevant nowadays?</p>
-                        <crowd-slider name="dataPrivacyRelevant" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_6dataPrivacyRelevant" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>7. "Data privacy is a human right". Do you agree with this statement?</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="7dataPrivacyHumanRight" value="agree">I agree</crowd-radio-button>
-                            <crowd-radio-button name="7dataPrivacyHumanRight" value="disagree">I disagree</crowd-radio-button>
-                            <crowd-radio-button name="7dataPrivacyHumanRight" value="dontknow">I don't know</crowd-radio-button>
+                            <crowd-radio-button name="2_7dataPrivacyHumanRight" value="agree">I agree</crowd-radio-button>
+                            <crowd-radio-button name="2_7dataPrivacyHumanRight" value="disagree">I disagree</crowd-radio-button>
+                            <crowd-radio-button name="2_7dataPrivacyHumanRight" value="dontknow">I don't know</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-            
+
                     <div>
                         <p>8. "Data privacy is a consumer right". Do you agree with this statement?</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="8dataPrivacyConsumerRight" value="agree">I agree</crowd-radio-button>
-                            <crowd-radio-button name="8dataPrivacyConsumerRight" value="disagree">I disagree</crowd-radio-button>
-                            <crowd-radio-button name="8dataPrivacyConsumerRight" value="dontknow">I don't know</crowd-radio-button>
+                            <crowd-radio-button name="2_8dataPrivacyConsumerRight" value="agree">I agree</crowd-radio-button>
+                            <crowd-radio-button name="2_8dataPrivacyConsumerRight" value="disagree">I disagree</crowd-radio-button>
+                            <crowd-radio-button name="2_8dataPrivacyConsumerRight" value="dontknow">I don't know</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-                
+
                     <div>
                         <p>9. In your opinion, are security and privacy synonymous?</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="9securityEqualsPrivacy" value="yes">Yes</crowd-radio-button>
-                            <crowd-radio-button name="9securityEqualsPrivacy" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="2_9securityEqualsPrivacy" value="yes">Yes</crowd-radio-button>
+                            <crowd-radio-button name="2_9securityEqualsPrivacy" value="no">No</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>10. How familiar are you with the following terms?</p>
                         <table class="table">
@@ -142,281 +139,341 @@
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Cookie</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="cookie" value="cookieNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="cookie" value="cookieMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="cookie" value="cookieYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10cookie" value="cookieNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10cookie" value="cookieMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10cookie" value="cookieYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Wireless networks</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="wirelessNetworks" value="winetNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="wirelessNetworks" value="winetMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="wirelessNetworks" value="winetYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10wirelessNetworks" value="winetNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10wirelessNetworks" value="winetMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10wirelessNetworks" value="winetYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Wi-Fi</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="wiFi" value="wifiNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="wiFi" value="wifiMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="wiFi" value="wifiYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10wiFi" value="wifiNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10wiFi" value="wifiMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10wiFi" value="wifiYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Internet of Things</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="internetOfThings" value="iotNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="internetOfThings" value="iotMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="internetOfThings" value="iotYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10internetOfThings" value="iotNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10internetOfThings" value="iotMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10internetOfThings" value="iotYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Data protection</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="dataProtection" value="dataProtectionNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="dataProtection" value="dataProtectionMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="dataProtection" value="dataProtectionYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10dataProtection" value="dataProtectionNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10dataProtection" value="dataProtectionMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10dataProtection" value="dataProtectionYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Ad hoc network (wireless)</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="adHocNetwork" value="adHocNetworkNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="adHocNetwork" value="adHocNetworkMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="adHocNetwork" value="adHocNetworkYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10adHocNetwork" value="adHocNetworkNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10adHocNetwork" value="adHocNetworkMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10adHocNetwork" value="adHocNetworkYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Ubiquitous computing</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="ubiquitousComputing" value="ubiquitousComputingNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="ubiquitousComputing" value="ubiquitousComputingMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="ubiquitousComputing" value="ubiquitousComputingYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10ubiquitousComputing" value="ubiquitousComputingNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10ubiquitousComputing" value="ubiquitousComputingMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10ubiquitousComputing" value="ubiquitousComputingYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Privacy assistant</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="privacyAssistant" value="privacyAssistantNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="privacyAssistant" value="privacyAssistantMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="privacyAssistant" value="privacyAssistantYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10privacyAssistant" value="privacyAssistantNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10privacyAssistant" value="privacyAssistantMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10privacyAssistant" value="privacyAssistantYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Blockchain</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="blockchain" value="blockchainNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="blockchain" value="blockchainMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="blockchain" value="blockchainYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10blockchain" value="blockchainNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10blockchain" value="blockchainMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10blockchain" value="blockchainYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                                 <tr>
                                     <th scope="row" style="font-weight: normal">Differential privacy</th>
                                     <crowd-radio-group required>
-                                        <td><crowd-radio-button name="differentialPrivacy" value="differentialPrivacyNoKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="differentialPrivacy" value="differentialPrivacyMaybeKnow"></crowd-radio-button></td>
-                                        <td><crowd-radio-button name="differentialPrivacy" value="differentialPrivacyYesKnow"></crowd-radio-button></td>
+                                        <td>
+                                            <crowd-radio-button name="2_10differentialPrivacy" value="differentialPrivacyNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10differentialPrivacy" value="differentialPrivacyMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="2_10differentialPrivacy" value="differentialPrivacyYesKnow"></crowd-radio-button>
+                                        </td>
                                     </crowd-radio-group>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>11. Do you think your data is saved when you use the internet?</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="11dataSavedInternet" value="no">No</crowd-radio-button>
-                            <crowd-radio-button name="11dataSavedInternet" value="dontKnow">I don't know, I never thought of it that way</crowd-radio-button>
-                            <crowd-radio-button name="11dataSavedInternet" value="yes">Yes</crowd-radio-button>
+                            <crowd-radio-button name="2_11dataSavedInternet" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="2_11dataSavedInternet" value="dontKnow">I don't know, I never thought of it that way</crowd-radio-button>
+                            <crowd-radio-button name="2_11dataSavedInternet" value="yes">Yes</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>12. What means do you think are used to collect your data?</p>
-                        <crowd-checkbox name="12meansCollectData" value="sound">Sound (microphones, recorders, etc.)</crowd-checkbox>
-                        <crowd-checkbox name="12meansCollectData" value="image">Image (webcams, scanners, etc.)</crowd-checkbox>
-                        <crowd-checkbox name="12meansCollectData" value="survey">Online Surveys / Questionnaires</crowd-checkbox>
-                        <crowd-checkbox name="12meansCollectData" value="hacker">Hackers (illegal means)</crowd-checkbox>
-                        <crowd-checkbox name="12meansCollectData" value="cookies">Cookies</crowd-checkbox>
-                        <crowd-input name="12meansCollectData" placeholder=""></crowd-input>
+                        <crowd-checkbox name="2_12meansCollectData" value="sound">Sound (microphones, recorders, etc.)</crowd-checkbox>
+                        <crowd-checkbox name="2_12meansCollectData" value="image">Image (webcams, scanners, etc.)</crowd-checkbox>
+                        <crowd-checkbox name="2_12meansCollectData" value="survey">Online Surveys / Questionnaires</crowd-checkbox>
+                        <crowd-checkbox name="2_12meansCollectData" value="hacker">Hackers (illegal means)</crowd-checkbox>
+                        <crowd-checkbox name="2_12meansCollectData" value="cookies">Cookies</crowd-checkbox>
+                        <crowd-input name="2_12meansCollectData" placeholder=""></crowd-input>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>13. What kind of information can be collected using the collected data?</p>
-                        <crowd-checkbox name="13informationCollectedData" value="visitedWebsiteInformation">Visited website information</crowd-checkbox>
-                        <crowd-checkbox name="13informationCollectedData" value="workProductivity">Work productivity</crowd-checkbox>
-                        <crowd-checkbox name="13informationCollectedData" value="georeferencingData">Georeferencing data</crowd-checkbox>
-                        <crowd-checkbox name="13informationCollectedData" value="onlineHabits">Online habits</crowd-checkbox>
-                        <crowd-checkbox name="13informationCollectedData" value="onlineShopping">Online shopping</crowd-checkbox>
-                        <crowd-input name="13informationCollectedData" placeholder=""></crowd-input>
+                        <crowd-checkbox name="2_13informationCollectedData" value="visitedWebsiteInformation">Visited website information</crowd-checkbox>
+                        <crowd-checkbox name="2_13informationCollectedData" value="workProductivity">Work productivity</crowd-checkbox>
+                        <crowd-checkbox name="2_13informationCollectedData" value="georeferencingData">Georeferencing data</crowd-checkbox>
+                        <crowd-checkbox name="2_13informationCollectedData" value="onlineHabits">Online habits</crowd-checkbox>
+                        <crowd-checkbox name="2_13informationCollectedData" value="onlineShopping">Online shopping</crowd-checkbox>
+                        <crowd-input name="2_13informationCollectedData" placeholder=""></crowd-input>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>14. For what purposes can organizations use your data?</p>
-                        <crowd-checkbox name="14purposesOrganizationsUseData" value="improveInternetUsage">Improve internet usage</crowd-checkbox>
-                        <crowd-checkbox name="14purposesOrganizationsUseData" value="customerProfile">Customer profile</crowd-checkbox>
-                        <crowd-checkbox name="14purposesOrganizationsUseData" value="targetedAdvertising">Targeted advertising</crowd-checkbox>
-                        <crowd-checkbox name="14purposesOrganizationsUseData" value="advertisingAdaptedToTheNearestLocations">Advertising adapted to the nearest locations</crowd-checkbox>
-                        <crowd-checkbox name="14purposesOrganizationsUseData" value="sellingDataToThirdParties">Selling data to third parties</crowd-checkbox>
-                        <crowd-input name="14purposesOrganizationsUseData" placeholder=""></crowd-input>
+                        <crowd-checkbox name="2_14purposesOrganizationsUseData" value="improveInternetUsage">Improve internet usage</crowd-checkbox>
+                        <crowd-checkbox name="2_14purposesOrganizationsUseData" value="customerProfile">Customer profile</crowd-checkbox>
+                        <crowd-checkbox name="2_14purposesOrganizationsUseData" value="targetedAdvertising">Targeted advertising</crowd-checkbox>
+                        <crowd-checkbox name="2_14purposesOrganizationsUseData" value="advertisingAdaptedToTheNearestLocations">Advertising adapted to the nearest locations</crowd-checkbox>
+                        <crowd-checkbox name="2_14purposesOrganizationsUseData" value="sellingDataToThirdParties">Selling data to third parties</crowd-checkbox>
+                        <crowd-input name="2_14purposesOrganizationsUseData" placeholder=""></crowd-input>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>15. Which organizations do you consider to have the best privacy behavior? (select at least 4 options)</p>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="amazon">Amazon</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="apple">Apple</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="google">Google</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="meta">Meta (Facebook, WhatsApp, Instagram)</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="microsoft">Microsoft</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="samsung">Samsung</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="ibm">IBM</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="sciencesoft">ScienceSoft</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="ptc">PTC</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="cisco">Cisco</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="huawei">Huawei</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="gEDigital">GE Digital</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="bosch">Bosch</crowd-checkbox>
-                        <crowd-checkbox name="15organizationsBestPrivacyBehavior" value="siemens">Siemens</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="amazon">Amazon</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="apple">Apple</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="google">Google</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="meta">Meta (Facebook, WhatsApp, Instagram)</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="microsoft">Microsoft</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="samsung">Samsung</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="ibm">IBM</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="sciencesoft">ScienceSoft</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="ptc">PTC</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="cisco">Cisco</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="huawei">Huawei</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="gEDigital">GE Digital</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="bosch">Bosch</crowd-checkbox>
+                        <crowd-checkbox name="2_15organizationsBestPrivacyBehavior" value="siemens">Siemens</crowd-checkbox>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>16. Which organizations do you consider to have the worst privacy behavior? (select at least 4 options)</p>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="amazon">Amazon</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="apple">Apple</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="google">Google</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="meta">Meta (Facebook, WhatsApp, Instagram)</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="microsoft">Microsoft</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="samsung">Samsung</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="ibm">IBM</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="sciencesoft">ScienceSoft</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="ptc">PTC</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="cisco">Cisco</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="huawei">Huawei</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="gEDigital">GE Digital</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="bosch">Bosch</crowd-checkbox>
-                        <crowd-checkbox name="16organizationsWorstPrivacyBehavior" value="siemens">Siemens</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="amazon">Amazon</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="apple">Apple</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="google">Google</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="meta">Meta (Facebook, WhatsApp, Instagram)</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="microsoft">Microsoft</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="samsung">Samsung</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="ibm">IBM</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="sciencesoft">ScienceSoft</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="ptc">PTC</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="cisco">Cisco</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="huawei">Huawei</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="gEDigital">GE Digital</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="bosch">Bosch</crowd-checkbox>
+                        <crowd-checkbox name="2_16organizationsWorstPrivacyBehavior" value="siemens">Siemens</crowd-checkbox>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>17. During your day-to-day life, how often do you use your phone to access the internet?</p>
-                        <crowd-slider name="17howOftenPhoneInternet" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_17howOftenPhoneInternet" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>18. "I am concerned about my privacy when using my mobile phone when accessing the internet". Do you agree with this statement?</p>
-                        <crowd-slider name="18concernedPrivacyPhone" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_18concernedPrivacyPhone" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>19. "I consider that accessing the internet through my phone is safer than through a computer". Do you agree with this statement?</p>
-                        <crowd-slider name="19considerPhoneSaferComputer" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_19considerPhoneSaferComputer" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>20. "I try to block the collection of data from applications installed on my phone". Do you agree with this statement?</p>
-                        <crowd-slider name="20blockCollectionDataPhone" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_20blockCollectionDataPhone" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>21. When using a website, do you usually read the Privacy Policy?</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="21readPrivacyPolicy" value="no">No, because I'm not interested</crowd-radio-button>
-                            <crowd-radio-button name="21readPrivacyPolicy" value="noBut">No, but I know what it means or what happens</crowd-radio-button>
-                            <crowd-radio-button name="21readPrivacyPolicy" value="almostYes">Yes, almost always</crowd-radio-button>
-                            <crowd-radio-button name="21readPrivacyPolicy" value="yes">Yes, always</crowd-radio-button>
+                            <crowd-radio-button name="2_21readPrivacyPolicy" value="no">No, because I'm not interested</crowd-radio-button>
+                            <crowd-radio-button name="2_21readPrivacyPolicy" value="noBut">No, but I know what it means or what happens</crowd-radio-button>
+                            <crowd-radio-button name="2_21readPrivacyPolicy" value="almostYes">Yes, almost always</crowd-radio-button>
+                            <crowd-radio-button name="2_21readPrivacyPolicy" value="yes">Yes, always</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>22. How often do you allow the use of cookies?</p>
-                        <crowd-slider name="22allowCookies" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_22allowCookies" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>23. When you accept / become aware of the cookies policy, why do you take this decision?</p>
                         <crowd-radio-group>
-                            <crowd-radio-button name="21readPrivacyPolicy" value="dontUnderstand">I don't understand what this is about but it doesn't seem relevant to me</crowd-radio-button>
-                            <crowd-radio-button name="21readPrivacyPolicy" value="understand">I understand what it is about and I agree with the policy presented</crowd-radio-button>
-                            <crowd-radio-button name="21readPrivacyPolicy" value="onlyWay">It is the only way to access the website</crowd-radio-button>
+                            <crowd-radio-button name="2_23whyAcceptPrivacyPolicy" value="dontUnderstand">I don't understand what this is about but it doesn't seem relevant to me</crowd-radio-button>
+                            <crowd-radio-button name="2_23whyAcceptPrivacyPolicy" value="understand">I understand what it is about and I agree with the policy presented</crowd-radio-button>
+                            <crowd-radio-button name="2_23whyAcceptPrivacyPolicy" value="onlyWay">It is the only way to access the website</crowd-radio-button>
                         </crowd-radio-group>
                         <crowd-input name="defineDataPrivacy" placeholder="Another option"></crowd-input>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>24. Are you aware of the concept of "profiling" or "automated processing of personal information"?</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="24awareProfiling" value="no">No</crowd-radio-button>
-                            <crowd-radio-button name="24awareProfiling" value="yes">Yes</crowd-radio-button>
+                            <crowd-radio-button name="2_24awareProfiling" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="2_24awareProfiling" value="yes">Yes</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>25. Do you consider that your internet activity contributes to the development of profiling?</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="25internetContributesProfiling" value="dontKnow">I don't know</crowd-radio-button>
-                            <crowd-radio-button name="25internetContributesProfiling" value="no">No</crowd-radio-button>
-                            <crowd-radio-button name="25internetContributesProfiling" value="yes">Yes</crowd-radio-button>
+                            <crowd-radio-button name="2_25internetContributesProfiling" value="dontKnow">I don't know</crowd-radio-button>
+                            <crowd-radio-button name="2_25internetContributesProfiling" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="2_25internetContributesProfiling" value="yes">Yes</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>26. Are you aware of regulations such as the General Data Protection Regulation or the California Consumer Privacy Act?</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="26awareRegulations" value="no">No</crowd-radio-button>
-                            <crowd-radio-button name="26awareRegulations" value="yesBut">Yes, but it's not absolutely clear to me what it represents</crowd-radio-button>
-                            <crowd-radio-button name="26awareRegulations" value="yes">Yes, I fully understand the Regulation</crowd-radio-button>
+                            <crowd-radio-button name="2_26awareRegulations" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="2_26awareRegulations" value="yesBut">Yes, but it's not absolutely clear to me what it represents</crowd-radio-button>
+                            <crowd-radio-button name="2_26awareRegulations" value="yes">Yes, I fully understand the Regulation</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>27. Are you interested in finding out more about regulations or legislation related to digital privacy?</p>
-                        <crowd-slider name="27interestedRegulationsPrivacy" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_27interestedRegulationsPrivacy" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>28. How did you learn about the 'General Data Protection Regulation' or the 'California Consumer Privacy Act'?</p>
-                        <crowd-checkbox name="28howLearnAboutRegulations" value="internet">Internet</crowd-checkbox>
-                        <crowd-checkbox name="28howLearnAboutRegulations" value="television">Television</crowd-checkbox>
-                        <crowd-checkbox name="28howLearnAboutRegulations" value="newspapers">Newspapers</crowd-checkbox>
-                        <crowd-checkbox name="28howLearnAboutRegulations" value="friends">Friends</crowd-checkbox>
-                        <crowd-checkbox name="28howLearnAboutRegulations" value="work">Work</crowd-checkbox>
-                        <crowd-input name="defineDataPrivacy" placeholder="Another option"></crowd-input>
+                        <crowd-checkbox name="2_28howLearnAboutRegulations" value="internet">Internet</crowd-checkbox>
+                        <crowd-checkbox name="2_28howLearnAboutRegulations" value="television">Television</crowd-checkbox>
+                        <crowd-checkbox name="2_28howLearnAboutRegulations" value="newspapers">Newspapers</crowd-checkbox>
+                        <crowd-checkbox name="2_28howLearnAboutRegulations" value="friends">Friends</crowd-checkbox>
+                        <crowd-checkbox name="2_28howLearnAboutRegulations" value="work">Work</crowd-checkbox>
+                        <crowd-input name="2_28howLearnAboutRegulations" placeholder="Another option"></crowd-input>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>29. According to the General Data Protection Regulation, personal data is:</p>
                         <crowd-radio-group required>
-                            <crowd-radio-button name="29whatIsGdpr" value="justNameEmail">Just name, email, date of birth and tax identification number</crowd-radio-button>
-                            <crowd-radio-button name="29whatIsGdpr" value="AbovePlusBankInfo">All of the above and bank details</crowd-radio-button>
-                            <crowd-radio-button name="29whatIsGdpr" value="AbovePlusMedicalInfo">All of the above, medical information and pictures of my face (biometric data)</crowd-radio-button>
-                            <crowd-radio-button name="29whatIsGdpr" value="everythingPersonal">Everything I consider personal</crowd-radio-button>
+                            <crowd-radio-button name="2_29whatIsGdpr" value="justNameEmail">Just name, email, date of birth and tax identification number</crowd-radio-button>
+                            <crowd-radio-button name="2_29whatIsGdpr" value="AbovePlusBankInfo">All of the above and bank details</crowd-radio-button>
+                            <crowd-radio-button name="2_29whatIsGdpr" value="AbovePlusMedicalInfo">All of the above, medical information and pictures of my face (biometric data)</crowd-radio-button>
+                            <crowd-radio-button name="2_29whatIsGdpr" value="everythingPersonal">Everything I consider personal</crowd-radio-button>
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>30. "My data was more protected after the implementation of regulations such as the General Data Protection Regulation". Do you agree with this statement?</p>
-                        <crowd-slider name="30moreProtectedAfterRegulations" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="2_30moreProtectedAfterRegulations" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
                 </div>
@@ -426,7 +483,7 @@
     </br>
     </br>
     </br>
-    
+
     <section id="sectionThree" class="sectionThree">
         <div class="card">
             <h5 class="card-header" style="font-weight: bold"> Disposition for sharing personal information </h5>
@@ -467,7 +524,7 @@
                         <crowd-checkbox name="3_1informationWillingToShare" value="licenses">Licenses</crowd-checkbox>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>2. In what situations are you willing to provide more personal information?</p>
                         <crowd-checkbox name="3_2willingToProvideMoreInformation" value="renewCitizenCard">Renew your citizen card</crowd-checkbox>
@@ -484,7 +541,7 @@
                         <crowd-checkbox name="3_2willingToProvideMoreInformation" value="none">None</crowd-checkbox>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>3. Do you agree to share health data that can identify you with health professionals?</p>
                         <crowd-radio-group required>
@@ -495,7 +552,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>4. Do you agree to share health data that cannot identify you with health professionals?</p>
                         <crowd-radio-group required>
@@ -506,7 +563,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>5. Do you agree to share health data that can identify you with health administrators?</p>
                         <crowd-radio-group required>
@@ -517,7 +574,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>6. Do you agree to share health data that cannot identify you with health administrators?</p>
                         <crowd-radio-group required>
@@ -528,7 +585,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>7. Do you agree to share health data that can identify you with other groups (such as researchers or insurers)?</p>
                         <crowd-radio-group required>
@@ -539,7 +596,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>8. Do you agree to share health data that cannot identify you with other groups (such as researchers or insurers)?</p>
                         <crowd-radio-group required>
@@ -550,7 +607,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>9. What kind of applications do you have installed on your smartphone?</p>
                         <crowd-checkbox name="3_9applicationsInstalledPhone" value="socialMedia">Social media</crowd-checkbox>
@@ -567,7 +624,7 @@
                         <crowd-input name="3_9applicationsInstalledPhone" placeholder="Another option"></crowd-input>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>10. Before sharing your data, do you consult any of the following information?</p>
                         <crowd-checkbox name="3_10beforeSharingConsultInformation" value="privacyPolicy">Privacy Policy</crowd-checkbox>
@@ -579,7 +636,7 @@
                         <crowd-checkbox name="3_10beforeSharingConsultInformation" value="no">I do not consult any information</crowd-checkbox>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>11. How often do you find privacy policies?</p>
                         <crowd-radio-group required>
@@ -591,7 +648,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>12. Are you aware of the duties of a Data Protection Officer (DPO)?</p>
                         <crowd-radio-group required>
@@ -600,7 +657,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>13. "I am interested in knowing where and how my personal information is used." Do you agree with this statement?</p>
                         <crowd-radio-group required>
@@ -610,7 +667,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>14. "I am not familiar with the purpose of data collection but would like to know more". Do you agree with this statement?</p>
                         <crowd-radio-group required>
@@ -620,7 +677,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>15. "The length (or number of words) of the privacy notice affects my willingness to read it." Do you agree with this statement?</p>
                         <crowd-radio-group required>
@@ -630,7 +687,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>16. "The font size of the privacy notice affects my willingness to read it." Do you agree with this statement?</p>
                         <crowd-radio-group required>
@@ -640,7 +697,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>17. "Usually, I'm afraid I won't be able to use a product or service if I don't agree with the privacy notice." Do you agree with this statement?</p>
                         <crowd-radio-group required>
@@ -650,7 +707,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>18. "I don't need to read the privacy notice if I trust the institution". Do you agree with this statement?</p>
                         <crowd-radio-group required>
@@ -667,7 +724,7 @@
     </br>
     </br>
     </br>
-    
+
     <section id="sectionFour" class="sectionFour">
         <div class="card">
             <h5 class="card-header" style="font-weight: bold">Privacy concerns</h5>
@@ -682,64 +739,64 @@
                         <crowd-slider name="4_1howConcernedAboutOrganizationsCollecting" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>2. How concerned are you about organizations sharing your data with third parties?</p>
                         <crowd-slider name="4_2howConcernedAboutOrganizationsSharing" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>3. How concerned are you about organizations tracking your online behavior and thus obtaining your personal data?</p>
                         <crowd-slider name="4_3howConcernedAboutOrganizationsTracking" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>4. How concerned are you about public institutions or intelligence services analyzing your online movements?</p>
                         <crowd-slider name="4_4howConcernedAboutPublicOrganizationsAnalyzing" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>5. How concerned are you that other people obtain your personal data without your consent?</p>
                         <crowd-slider name="4_5howConcernedAboutOtherPeopleObtain" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>6. How concerned are you that other people find information about you online?</p>
                         <crowd-slider name="4_6howConcernedAboutOtherPeopleFind" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>7. How concerned are you that other people are disclosing information about you without your knowledge?</p>
                         <crowd-slider name="4_7howConcernedAboutOtherPeopleDisclosingNoConsent" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>8. How concerned are you about other people sharing your personal data (photos, address, mobile phone number, etc.) with others without your consent?</p>
                         <crowd-slider name="4_8howConcernedAboutOtherPeopleSharing" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>9. How concerned are you that other people publish your personal data (photos, address, mobile phone number, etc.) on the internet without your consent?</p>
                         <crowd-slider name="4_9howConcernedAboutOtherPeoplePublish" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>10. How concerned are you about an unknown person claiming to be you on the internet?</p>
                         <crowd-slider name="4_10howConcernedAboutUnknownClaimingYou" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>11. How concerned are you about the possibility that someone may misuse your identity on the internet?</p>
-                        <crowd-slider name="4_9howConcernedAboutSomeoneMisuseYou" min="1" max="7" step="1" pin="true" required></crowd-slider>
+                        <crowd-slider name="4_11howConcernedAboutSomeoneMisuseYou" min="1" max="7" step="1" pin="true" required></crowd-slider>
                     </div>
                     </br>
                 </div>
@@ -749,7 +806,7 @@
     </br>
     </br>
     </br>
-    
+
     <section id="sectionFour" class="sectionFour">
         <div class="card">
             <h5 class="card-header" style="font-weight: bold">Current online habits and practices</h5>
@@ -766,7 +823,7 @@
                         <crowd-checkbox name="5_1internetAccessHome" value="mobileNetwork">By mobile network (eg. 4G or 5G)</crowd-checkbox>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>2. How often do you use the internet?</p>
                         <crowd-radio-group required>
@@ -778,7 +835,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>3. How much time do you spend per day surfing the internet?</p>
                         <crowd-radio-group required>
@@ -790,7 +847,7 @@
                         </crowd-radio-group>
                     </div>
                     </br>
-                    
+
                     <div>
                         <p>4. What device(s) do you use to access the internet?</p>
                         <crowd-checkbox name="5_4deviceAccessInternet" value="computer">Computer</crowd-checkbox>
