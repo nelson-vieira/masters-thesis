@@ -1092,6 +1092,233 @@
     </br>
     </br>
 
+    <section id="sectionSeven" class="sectionSeven">
+        <div class="card">
+            <h5 class="card-header" style="font-weight: bold">Knowledge and habits regarding the Internet of Things</h5>
+            <div class="card-body">
+                <p class="card-text"></p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <br>
+                    <div>
+                        <p>1. What do you understand by Internet of Things?</p>
+                        <crowd-text-area name="7_1whatInternetOfThings" rows="5" required></crowd-text-area>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>2. Have you ever used an Internet of Things device (smartwatch, contactless cards, air or sea traffic applications)?</p>
+                        <crowd-radio-group required>
+                            <crowd-radio-button name="7_2usedInternetOfThingsDevice" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="7_2usedInternetOfThingsDevice" value="yes">Yes</crowd-radio-button>
+                        </crowd-radio-group>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>3. Do you have an Internet of Things device in your home (assistants like Alexa, smart lock, video surveillance, etc.)?</p>
+                        <crowd-radio-group required>
+                            <crowd-radio-button name="7_3haveInternetOfThingsDeviceHome" value="no">No</crowd-radio-button>
+                            <crowd-radio-button name="7_3haveInternetOfThingsDeviceHome" value="yes">Yes</crowd-radio-button>
+                        </crowd-radio-group>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>3.1. If so, how often do you interact with that device(s)?</p>
+                        <crowd-radio-group required>
+                            <crowd-radio-button name="7_3_1howOftenInteractInternetOfThingsDevice" value="fewDaysYear">A few days a year</crowd-radio-button>
+                            <crowd-radio-button name="7_3_1howOftenInteractInternetOfThingsDevice" value="fewDaysMonth">A few days a month</crowd-radio-button>
+                            <crowd-radio-button name="7_3_1howOftenInteractInternetOfThingsDevice" value="oneTwoDaysWeek">1 or 2 days a week</crowd-radio-button>
+                            <crowd-radio-button name="7_3_1howOftenInteractInternetOfThingsDevice" value="twoFiveDaysWeek">2-5 days a week</crowd-radio-button>
+                            <crowd-radio-button name="7_3_1howOftenInteractInternetOfThingsDevice" value="everyday">Everyday</crowd-radio-button>
+                        </crowd-radio-group>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>3.2. And for what purposes do you use the device(s)?</p>
+                        <crowd-text-area name="7_3_2purposesInternetOfThingsDevice" rows="5" required></crowd-text-area>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>3.3. Why did you feel the need to have an Internet of Things device?</p>
+                        <crowd-text-area name="7_3_3whyHaveInternetOfThingsDevice" rows="5" required></crowd-text-area>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>4. How familiar are you with the following terms?</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col" style="font-weight: normal">I don't know</th>
+                                    <th scope="col" style="font-weight: normal">I have some knowledge</th>
+                                    <th scope="col" style="font-weight: normal">I know well</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Zigbee</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4zigbee" value="zigbeeNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4zigbee" value="zigbeeMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4zigbee" value="zigbeeYesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Z-Wave</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4zwave" value="zwaveNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4zwave" value="zwaveMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4zwave" value="zwaveYesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Bluetooth Low Energy</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4bluetoothLowEnergy" value="bluetoothLowEnergyNoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4bluetoothLowEnergy" value="bluetoothLowEnergyMaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4bluetoothLowEnergy" value="bluetoothLowEnergyYesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Smart Home</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartHome" value="NoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartHome" value="MaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartHome" value="YesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Smart Vehicle</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartVehicle" value="NoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartVehicle" value="MaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartVehicle" value="YesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Fully autonomous car</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4fullyAutonomousCar" value="NoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4fullyAutonomousCar" value="MaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4fullyAutonomousCar" value="YesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Long-Term Evolution (LTE)</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4longTermEvolution" value="NoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4longTermEvolution" value="MaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4longTermEvolution" value="YesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Smart City</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartCity" value="NoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartCity" value="MaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4smartCity" value="YesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">Wearable</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4wearable" value="NoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4wearable" value="MaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4wearable" value="YesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="font-weight: normal">LORA</th>
+                                    <crowd-radio-group required>
+                                        <td>
+                                            <crowd-radio-button name="7_4lora" value="NoKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4lora" value="MaybeKnow"></crowd-radio-button>
+                                        </td>
+                                        <td>
+                                            <crowd-radio-button name="7_4lora" value="YesKnow"></crowd-radio-button>
+                                        </td>
+                                    </crowd-radio-group>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </br>
+
+                    <div>
+                        <p>5. In your opinion, how many Internet of Things devices are there today?</p>
+                        <crowd-input name="7_5howManyInternetOfThingsDevices" placeholder=""></crowd-input>
+                    </div>
+                    </br>
+                </div>
+            </div>
+        </div>
+    </section>
+    </br>
+    </br>
+    </br>
+
 </crowd-form>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
