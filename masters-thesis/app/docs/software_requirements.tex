@@ -4,7 +4,6 @@
 %
 % @author Nelson Vieira <nelson0.vieira@gmail.com>
 % @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
-
 \documentclass{scrreprt}
 \usepackage{cite}
 \usepackage{listings}
@@ -40,7 +39,7 @@
     urlcolor=purple,        % color of external links
     linktoc=page            % only page is linked
 }%
-\def\myversion{alpha 0.3}
+\def\myversion{alpha 0.6}
 \date{}
 \usepackage{hyperref}
 
@@ -55,7 +54,7 @@
     \vspace{1cm}
     \textbf{Masters Thesis Application} \\
     \vspace{2cm}
-    \LARGE{Version alpha 0.3 \\}
+    \LARGE{Version alpha 0.6 \\}
     \vspace{2cm}
     Written by Nelson Vieira \\
     \vspace{2cm}
@@ -116,7 +115,7 @@ The following stakeholders are identified in this project:
     \item \textbf{Legislation}: The legislation in relation to the privacy of the collected data allows to impose rules on the use of the data. It has an indirect influence.
 \end{itemize}
 
-\chapter{Software requirements}
+\chapter{System Features and Requirements}
 
 \section{Business requirements}
 
@@ -157,7 +156,7 @@ of time and just in time compilation with Dart as its programming language.
 Flutter has better performance and as such it is the chosen framework for
 this application.
 
-\chapter{Contextual diagram}
+\section{Contextual diagram}
 
 The contextual diagram aims to establish links between the system under
 development and the other actors that interact with the application.
@@ -214,7 +213,7 @@ the device in the application. The administrator of the application is responsib
 its maintenance (adding new data, correcting or deleting incorrect data)
 and security and for the veracity of the information.
 
-\section{Swimlane diagram (high level)}
+\section{Swimlane diagram}
 
 A swimlane diagram is a type of flowchart in which processes and decisions
 are grouped into lanes. Parallel lines divide the diagram into lanes, each
@@ -309,7 +308,7 @@ following groups:
 
 \subsection{Administrator Requirements}
 
-\textbf{RM.2.1} - The system shall allow the administrator to delete an entity;
+\textbf{RM.2.1} - The system shall allow the administrator to delete a device;
 
 \subsection{System requirements}
 
@@ -401,7 +400,7 @@ Language) notation.
             \hline
         \end{tabular}
     \end{adjustbox}
-    \caption{Use case 1 - entity information query}
+    \caption{Use case 1 - device information query}
     \label{use case 1}
 \end{table}
 
@@ -611,9 +610,9 @@ Language) notation.
 \chapter{Requirement prioritisation}
 
 Regarding the prioritization of requirements, the Quality Function Deployment technique
-proposed by Cohen in 1995 is used to estimate the priority of a group of requirements.
+proposed by Cohen in 1995 \cite{cohen1995quality} is used to estimate the priority of a group of requirements.
 This is based on the benefit of including a feature/requirement, the penalty of not including
-it, and also the cost and risks associated with implementation. With the MoSCoW method, the
+it, and also the cost and risks associated with implementation. With the MoSCoW method \cite{clegg1994case}, the
 initial features are reduced to facilitate the use of the Quality Function Deployment table.
 \newline
 In this approach the values 0 and 1 are used. In case of 1 it means that the column requirement/feature
@@ -725,10 +724,85 @@ Using this method we get the requirements sorted by priority:
     \label{table:requisitos ordenados}
 \end{table}
 
+\section{Acceptance Criteria}
 
+To make it easier to test whether the highest priority features that were chosen
+previously were well implemented, these acceptance criteria were created for each
+of them. These criteria help us understand the minimum conditions for this
+application to be considered an MVP, i.e., for this project to have the minimum
+possible requirements in order for it to be considered production ready.
+\newline
+For these acceptance criteria the following was considered:
 
+\begin{itemize}
+    \item High-level functionality that must be present for the system to be usable
+    \item Non-functional criteria and quality metrics that have to be satisfied
+    \item Possibility of open problems or defects (we can guarantee that no defects or TBD is present for the system to be accepted)
+    \item Legal or contractual restrictions (that have to be met for the system to be accepted)
+\end{itemize}
 
-\section{Protótipo}
+\subsection{Features}
+
+\subsubsection{Delete a device}
+
+\begin{itemize}
+    \item The system must allow the deletion of a device
+\end{itemize}
+
+\subsubsection{Add a device}
+
+\begin{itemize}
+    \item The system allows the user to add a device
+\end{itemize}
+
+\subsubsection{Navigate the map}
+
+\begin{itemize}
+    \item The system can represent the devices on the map
+\end{itemize}
+
+\subsubsection{Search devices}
+
+\begin{itemize}
+    \item The system allows you to search for devices by name
+\end{itemize}
+
+\subsubsection{Query devices through parameters}
+
+\begin{itemize}
+    \item The system allows searching devices by the following parameters: type, data collected, category
+\end{itemize}
+
+\subsubsection{Select device on map}
+
+\begin{itemize}
+    \item The system allows you to select a device on the map
+\end{itemize}
+
+\subsubsection{Edit a device}
+
+\begin{itemize}
+    \item The system allows the editing of a device
+    \item The system saves in the database the changes that have been made
+\end{itemize}
+
+\subsubsection{Consult devices' statistics}
+
+\begin{itemize}
+    \item The system allows the user to consult statistics concerning the devices
+\end{itemize}
+
+\subsubsection{Create account}
+
+\begin{itemize}
+    \item The system allows the creation of an account
+    \item The user has to enter its username, email and a password
+    \item The system can detect whether the email is already in use
+    \item The system can send a profile creation confirmation email
+    \item User can confirm profile creation
+\end{itemize}
+
+\section{Prototype}
 
 For the prototype several drafts are first made with design tools, such as Figma or . Then,
 with the tools previously mentioned in \textbf{Technology Requirements}, an application is created.
