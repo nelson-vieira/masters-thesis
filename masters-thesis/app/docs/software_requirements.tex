@@ -608,20 +608,16 @@ Language) notation.
     \label{use case 5}
 \end{table}
 
+\chapter{Requirement prioritisation}
 
-\section{O âmbito e visão do projeto}
-
-Text
-
-\section{Stakeholders}
-
-\chapter{Requisitos de software}
-
-\chapter{Priorização de requisitos}
-
-Em relação à priorização de requisitos, é usada a técnica Quality Function Deployment proposta por Cohen em 1995, que serve para estimar a prioridade de um grupo de requisitos. Baseado no benefício da inclusão de uma feature/requisito, da penalização da mesma não ser incluída e ainda o custo e riscos associados à implementação. Com o método MoSCoW, a partir dos features iniciais é feita ainda uma redução para facilitar o uso da tabela de Quality Function Deployment.
+Regarding the prioritization of requirements, the Quality Function Deployment technique
+proposed by Cohen in 1995 is used to estimate the priority of a group of requirements.
+This is based on the benefit of including a feature/requirement, the penalty of not including
+it, and also the cost and risks associated with implementation. With the MoSCoW method, the
+initial features are reduced to facilitate the use of the Quality Function Deployment table.
 \newline
-Nesta abordagem são usados os valores 0 e 1. No caso de 1 significa que o requisito/feature da coluna é mais prioritário que o da linha e se for 0 o contrário verifica-se.
+In this approach the values 0 and 1 are used. In case of 1 it means that the column requirement/feature
+is a higher priority than the row one and if it is 0 the opposite is true.
 
 \begin{table}[H]
     \centering
@@ -629,7 +625,7 @@ Nesta abordagem são usados os valores 0 e 1. No caso de 1 significa que o requi
     \begin{tabular}{|>{\columncolor{blue!30!white}}r|r|r|r|r|r|r|r|r|r|}
         \hline
         \rowcolor{blue!30!white}
-        \cellcolor{white}Tabela MoSCoW & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+        \cellcolor{white}MoSCoW Table & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
         \hline
         1 && 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
         \hline
@@ -653,11 +649,13 @@ Nesta abordagem são usados os valores 0 e 1. No caso de 1 significa que o requi
         Total & 6 & 3 & 5 & 4 & 0 & 7 & 8 & 2 & 1 \\
         \hline
     \end{tabular}
-    \caption{Tabela de priorização usando a técnica MoSCoW}
+    \caption{Prioritisation table using the MoSCoW technique}
     \label{table:tabela moscow}
 \end{table}
 
-Após esta seleção inicial é criada uma tabela de priorização onde é pedido , numa escala de 1-9, para classificar o benefício e penalização de cada requisito. É também estimado o custo e risco de implementação associado a cada feature.
+After this initial selection, a prioritisation table is created where it is asked , on a scale of
+1-9, to rank the benefit and penalty of each requirement. The cost and implementation risk
+associated to each feature is also estimated.
 
 \begin{table}[H]
     \centering
@@ -667,34 +665,34 @@ Após esta seleção inicial é criada uma tabela de priorização onde é pedid
         \rowcolor{blue!20}
         \multicolumn{2}{|c|}{\textbf{Feature}} & \textbf{Benefício relativo} & \textbf{Penalização relativa} & \textbf{Valor Total} & \textbf{Valor \%} & \textbf{Custo relativo} & \textbf{Custo \%} & \textbf{Risco relativo} & \textbf{Risco \%} & \textbf{Prioridade} \\
         \hline
-        Eliminar uma entidade & 7 & 7 & 6 & 20 & 10,10 & 1 & 2,56 & 1 & 2,70 & 1,92 \\
+        Delete a device & 7 & 7 & 6 & 20 & 10,10 & 1 & 2,56 & 1 & 2,70 & 1,92 \\
         \hline
-        Adicionar uma entidade & 6 & 8 & 8 & 22 & 11,11 & 1 & 2,56 & 1 & 2,70 & 2,11 \\
+        Add a device & 6 & 8 & 8 & 22 & 11,11 & 1 & 2,56 & 1 & 2,70 & 2,11 \\
         \hline
-        Navegar no mapa & 1 & 9 & 9 & 27 & 13,64 & 8 & 20,51 & 1 & 2,70 & 0,59 \\
+        Navigate the map & 1 & 9 & 9 & 27 & 13,64 & 8 & 20,51 & 1 & 2,70 & 0,59 \\
         \hline
-        Pesquisar entidades & 3 & 8 & 8 & 26 & 13,13 & 6 & 15,38 & 9 & 24,32 & 0,33 \\
+        Search devices & 3 & 8 & 8 & 26 & 13,13 & 6 & 15,38 & 9 & 24,32 & 0,33 \\
         \hline
-        Consultar entidades através de parâmetros & 4 & 9 & 7 & 25 & 12,63 & 4 & 10,26 & 2 & 5,41 & 0,81 \\
+        Query devices through parameters & 4 & 9 & 7 & 25 & 12,63 & 4 & 10,26 & 2 & 5,41 & 0,81 \\
         \hline
-        Selecionar entidade no mapa & 2 & 7 & 7 & 25 & 12,63 & 5 & 12,82 & 1 & 2,70 & 0,81 \\
+        Select device on map & 2 & 7 & 7 & 25 & 12,63 & 5 & 12,82 & 1 & 2,70 & 0,81 \\
         \hline
-        Editar uma entidade & 8 & 6 & 6 & 18 & 9,09 & 1 & 2,56 & 9 & 24,32 & 0,34 \\
+        Edit a device & 8 & 6 & 6 & 18 & 9,09 & 1 & 2,56 & 9 & 24,32 & 0,34 \\
         \hline
-        Consultar estatísticas das entidades & 5 & 7 & 6 & 18 & 9,09 & 5 & 12,82 & 4 & 10,81 & 0,38 \\
+        Consult devices' statistics & 5 & 7 & 6 & 18 & 9,09 & 5 & 12,82 & 4 & 10,81 & 0,38 \\
         \hline
-        Criar conta (associada à entidade) & 9 & 6 & 5 & 17 & 8,59 & 8 & 20,51 & 9 & 24,32 & 0,19 \\
+        Create account & 9 & 6 & 5 & 17 & 8,59 & 8 & 20,51 & 9 & 24,32 & 0,19 \\
         \hline
         \rowcolor{gray!20}
         \multicolumn{2}{|c|}{\textbf{Total}} & 67 & 62 & \textbf{198} & 100,00 & \textbf{39} & 100,00 & \textbf{37} & 100,00 & \\
         \hline
     \end{tabular}
     \end{adjustbox}
-    \caption{Tabela de priorização das features}
+    \caption{Features prioritisation table}
     \label{table:tabela de priorizacao}
 \end{table}
 
-Utilizando este método obtemos os requisitos ordenados por prioridade:
+Using this method we get the requirements sorted by priority:
 
 \begin{table}[H]
     \centering
@@ -704,110 +702,36 @@ Utilizando este método obtemos os requisitos ordenados por prioridade:
         \rowcolor{blue!20!white}
         \textbf{Rank} & \textbf{Feature} & \textbf{\# Feature} & \textbf{Prioridade} \\
         \hline
-        1 & Adicionar uma entidade & 6 & 2,11 \\
+        1 & Add a device & 6 & 2,11 \\
         \hline
-        2 & Eliminar uma entidade & 7 & 1,92 \\
+        2 & Delete a device & 7 & 1,92 \\
         \hline
-        3 & Consultar entidades através de parâmetros & 4 & 0,81 \\
+        3 & Query devices through parameters & 4 & 0,81 \\
         \hline
-        4 & Selecionar entidade no mapa & 2 & 0,81 \\
+        4 & Select device on map & 2 & 0,81 \\
         \hline
-        5 & Navegar no mapa & 1 & 0,59 \\
+        5 & Navigate the map & 1 & 0,59 \\
         \hline
-        6 & Consultar estatísticas das entidades & 5 & 0,38 \\
+        6 & Consult devices' statistics & 5 & 0,38 \\
         \hline
-        7 & Editar uma entidade & 8 & 0,34 \\
+        7 & Edit a device & 8 & 0,34 \\
         \hline
-        8 & Pesquisar entidades & 3 & 0,33 \\
+        8 & Search devices & 3 & 0,33 \\
         \hline
-        9 & Criar conta (associada à entidade) & 9 & 0,19 \\
+        9 & Create account & 9 & 0,19 \\
         \hline
     \end{tabular}
-    \caption{Requisitos mais prioritários ordenados}
+    \caption{Highest priority requirements ordered}
     \label{table:requisitos ordenados}
 \end{table}
 
-\section{Critérios de aceitação}
 
-Para mais facilmente conseguir-se testar se as features mais prioritárias que foram escolhidas anteriormente foram bem implementadas foram criados estes critérios de aceitação para cada uma delas. Estes critérios ajudam-nos a perceber as condições mínimas para que esta aplicação possa ser considerada um MVP, “minimum viable product”, ou seja, para que este projeto tenha os requisitos mínimos possíveis de forma a que este seja considerado production ready.
-\newline
-Para estes critérios de aceitação foi considerado o seguinte:
 
-\begin{itemize}
-    \item Funcionalidade de alto nível que tem de estar presente para que o sistema seja usável
-    \item Critérios não funcionais e métricas de qualidade que têm de ser satisfeitas
-    \item Possibilidade de problemas em aberto ou defeitos (podemos garantir que nenhum defeito ou TBD esteja presente para o sistema ser aceite)
-    \item Restrições legais ou contratuais (que têm de ser satisfeitas para o sistema ser aceite)
-\end{itemize}
-
-\subsection{Features}
-
-\subsubsection{Eliminar uma entidade}
-
-\begin{itemize}
-    \item O sistema deverá permitir a eliminação de uma entidade
-\end{itemize}
-
-\subsubsection{Adicionar uma entidade}
-
-\begin{itemize}
-    \item O sistema permite ao Gestor do Portal adicionar uma entidade com os seguintes parâmetros: nome, NIF, morada, contactos (site, email, telefone, redes sociais), natureza jurídica, estatuto jurídico, data de criação, âmbito geográfico, área de intervenção
-\end{itemize}
-
-\subsubsection{Navegar no mapa}
-
-\begin{itemize}
-    \item O sistema consegue representar as entidades da região no mapa
-\end{itemize}
-
-\subsubsection{Pesquisar entidades}
-
-\begin{itemize}
-    \item O sistema permite pesquisar entidades pelo nome
-\end{itemize}
-
-\subsubsection{Consultar entidades através de parâmetros}
-
-\begin{itemize}
-    \item O sistema permite pesquisar entidades pelos seguintes parâmetros: NIF, morada, natureza jurídica, estatuto jurídico, data de criação, âmbito geográfico, área de intervenção
-\end{itemize}
-
-\subsubsection{Selecionar entidade no mapa}
-
-\begin{itemize}
-    \item O sistema permite a selecionar uma entidade no mapa
-\end{itemize}
-
-\subsubsection{Editar uma entidade}
-
-\begin{itemize}
-    \item O sistema permite a edição de uma entidade
-    \item O sistema guarda na base de dados as modificações que foram realizadas
-\end{itemize}
-
-\subsubsection{Consultar estatísticas das entidades}
-
-\begin{itemize}
-    \item O sistema permite que o utilizador possa consultar estatísticas relativas às entidades
-\end{itemize}
-
-\subsubsection{Criar conta (associada à entidade)}
-
-\begin{itemize}
-    \item O sistema consegue criar um novo perfil do tipo Entidade
-    \item A Entidade tem que inserir o seu nome, NIF, morada, nº de telefone, email e uma password
-    \item O sistema consegue detectar se o email já está em uso
-    \item O sistema consegue detectar se o NIF da entidade já está em uso
-    \item O sistema consegue enviar email de confirmação de criação de perfil
-    \item O utilizador consegue confirmar criação de perfil
-\end{itemize}
 
 \section{Protótipo}
 
-Para o protótipo é realizado primeiramente vários drafts com
-ferramentas de design, como Figma ou . Depois, com as ferramentas
-referidas anteriormente em \textbf{Requisitos de Tecnologia} (PHP,
-HTML, CSS e Javascript), é criado um website.
+For the prototype several drafts are first made with design tools, such as Figma or . Then,
+with the tools previously mentioned in \textbf{Technology Requirements}, an application is created.
 
 \bibliographystyle{IEEEtran}
 \bibliography{assets/references}
