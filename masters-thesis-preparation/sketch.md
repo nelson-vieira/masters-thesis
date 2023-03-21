@@ -6,7 +6,6 @@ Copyright (c) 2023 Nelson Vieira
 @author Nelson Vieira <nelson0.vieira@gmail.com>
 @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
 --->
-
 # Most relevant papers
 
 This is some text
