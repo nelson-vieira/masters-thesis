@@ -17,7 +17,7 @@ To keep in mind: INVEST set of criteria by Bill Wake:
 
 ## List of User Stories
 
-As an end user, I want several IoT devices to be displayed so that I can see how many are nearby.
+As an end user, I want several IoT devices to be displayed so that I can see how many IoT devices are nearby.
 
 As an end user, I want to be able to select a specific IoT device so that I can see more detailed information.
 
@@ -51,4 +51,8 @@ As an end user, I want to see detailed information about IoT devices so that I c
 
 As an end user, I want to see photos of the IoT devices so that I can see how them in the environment.
 
-As a [type of user], I want [an action] so that [a benefit/a value]
+As an end user, I want to know the category of the IoT devices that are displayed so that I choose to see only those type of devices.
+
+As an end user, I want to see IoT devices statistics so that I can be better informed about the Internet of Things.
+
+As an end user, I want to search a specific IoT device so that I can see more information about it.
