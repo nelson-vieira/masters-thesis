@@ -261,9 +261,9 @@ them. \\
         \hline
         \textbf{5} & Add a device & User & \textbf{User}: The system should allow the user to add a new device with name, category, data collected, location, etc. & \cite{nelson2023preparation} \\
         \hline
-        \textbf{6} & Delete a device & App Administrator & \textbf{App Administrator}: The system should allow the administrator to delete a device & \cite{nelson2023preparation} \\
+        \textbf{6} & Edit a device & User & \textbf{User}: The system should allow the user to change some data of a device & \cite{nelson2023preparation} \\
         \hline
-        \textbf{7} & Edit a device & User & \textbf{User}: The system should allow the user to change some data of a device & \cite{nelson2023preparation} \\
+        \textbf{7} & Delete a device & App Administrator & \textbf{App Administrator}: The system should allow the administrator to delete a device & \cite{nelson2023preparation} \\
         \hline
         \textbf{8} & Create account & User & \textbf{User}: The system shall allow a user to create an account. & \cite{nelson2023preparation} \\
         \hline
@@ -291,29 +291,35 @@ following groups:
 
 \subsection{User Requirements}
 
-\textbf{RU1.1} - The system should allow the user to scroll through the devices map;
+\textbf{UR1} - The system shall allow the user to navigate through the devices georeferences;
 \newline
-\textbf{RU1.2} - The system shall allow the user to select a device on the map to view more information;
+\textbf{UR2} - The system shall allow the user to select a device on the map to view more information;
 \newline
-\textbf{RU1.3} - The system shall allow the user to search for a device by name;
+\textbf{UR4} - The system shall allow the user to consult devices of only a certain category, data collected, etc.;
 \newline
-\textbf{RU1.4} - The system should allow the user to consult devices of only a certain category, data collected, etc.;
+\textbf{UR5} - The system shall allow consulting statistics of the devices;
 \newline
-\textbf{RU1.5} - The system must allow consulting statistics of the devices;
+\textbf{UR6} - The system shall allow the user to create an account;
 \newline
-\textbf{RU1.6} - The system should allow the user to add a new device with name, category, data collected, location, etc.;
+\textbf{UR7} - The system shall allow a logged in user to add a new device with name, category, data collected, location, etc.;
 \newline
-\textbf{RU1.7} - The system should allow the user to change some data of a device;
-\newline
-\textbf{RU1.8} - The system shall allow a user to create an account.
+\textbf{UR8} - The system shall allow a logged in user to change associated data of a device;
 
 \subsection{Administrator Requirements}
 
-\textbf{RM.2.1} - The system shall allow the administrator to delete a device;
+\textbf{AR1} - The system shall allow a logged in administrator to add a new device with name, category, data collected, location, etc.;
+\newline
+\textbf{AR2} - The system shall allow a logged in administrator to change associated data of a device;
+\newline
+\textbf{AR3} - The system shall allow a logged in administrator to delete a device;
 
 \subsection{System requirements}
 
-\textbf{RS.4.1} - The system must show statistics related to the devices;
+\textbf{SR1} - The system shall generate statistics related to the IoT devices that reside in the database;
+
+\section{Non-functional requirements}
+
+\textbf{NFR1} - The system shall behave the same in different platforms (Android and iOS);
 
 \chapter{Use cases}
 
@@ -322,10 +328,8 @@ following groups:
 The use cases diagram provides a high level visualisation of the user
 requirements. The box represents the system boundary. An actor's arrow
 for a use case indicates that he is the primary actor for it.
-\newline
 The primary actor initiates the use case and derives the primary value
-from it. An arrow goes from a use case to a secondary actor, where it
-participates in some way in the successful completion of the use case. \cite{wiegers2013software}
+from it. \cite{wiegers2013software}
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm]{assets/images/use_cases_diagram.png}
@@ -335,16 +339,16 @@ participates in some way in the successful completion of the use case. \cite{wie
 
 \section{Use cases}
 
-In Software Engineering, a use case is a type of classifier representing a
+A use case is a type of classifier representing a
 coherent functional unit provided by the system, subsystem, or class manifested
 by sequences of interchangeable messages between systems and one or more
 actors. \cite{UseUsability}
 \newline
-Using this technique describes the tasks that users need to perform with
+This technique describes the tasks that users need to perform with
 the system or the user-system interaction that may be important to some
 stakeholders. They also help in testing by checking that the functionality
-has been implemented correctly. The use case uses UML (Unified Modeling
-Language) notation.
+has been implemented correctly. The use cases uses an Unified Modeling
+Language (UML) notation.
 
 \begin{table}[H]
     \centering
@@ -422,7 +426,7 @@ Language) notation.
             \hline
             Pre-conditions: & N/A \\
             \hline
-            Post-conditions: & POST-1. The user finds statistics of devices \\
+            Post-conditions: & POST-1. The system displays the statistics of the devices \\
             \hline
             Normal Flow: & \textbf{2.0 Device statistics query}
             \begin{enumerate}
@@ -436,9 +440,12 @@ Language) notation.
             \hline
             Alternative Flow: & N/A \\
             \hline
-            Exceptions: & N/A \\
+            Exceptions: & \textbf{2.0.E1  The API is not working}
+            \begin{enumerate}
+                \item The system displays an alert message: ``We are having connection problems, please wait for a while''
+            \end{enumerate} \\
             \hline
-            Priority: & High \\
+            Priority: & Medium \\
             \hline
             Business Requirements: & N/A \\
             \hline
@@ -622,31 +629,33 @@ is a higher priority than the row one and if it is 0 the opposite is true.
 \begin{table}[H]
     \centering
     % \rowcolors{5}{gray!10}{gray!40}
-    \begin{tabular}{|>{\columncolor{blue!30!white}}r|r|r|r|r|r|r|r|r|r|}
+    \begin{tabular}{|>{\columncolor{gray!10!white}}r|r|r|r|r|r|r|r|r|r|r|}
         \hline
-        \rowcolor{blue!30!white}
-        \cellcolor{white}MoSCoW Table & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+        \rowcolor{gray!10!white}
+        & R\#1 & R\#2 & R\#3 & R\#4 & R\#5 & R\#6 & R\#7 & R\#8 & R\#9 & R\#10 \\
         \hline
-        1 && 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+        R\#1 && 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
         \hline
-        2 & 1 && 1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+        R\#2 & 1 && 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
         \hline
-        3 & 1 & 0 && 0 & 0 & 1 & 1 & 0 & 0 \\
+        R\#3 & 1 & 1 && 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
         \hline
-        4 & 1 & 0 & 1 && 0 & 1 & 1 & 0 & 0 \\
+        R\#4 & 1 & 1 & 1 && 1 & 0 & 0 & 0 & 1 & 1 \\
         \hline
-        5 & 1 & 1 & 1 & 1 && 1 & 1 & 1 & 1 \\
+        R\#5 & 0 & 0 & 0 & 0 && 0 & 0 & 1 & 1 & 1 \\
         \hline
-        6 & 0 & 0 & 0 & 0 & 0 && 1 & 0 & 0 \\
+        R\#6 & 1 & 1 & 1 & 1 & 1 && 0 & 0 & 1 & 1 \\
         \hline
-        7 & 0 & 0 & 0 & 0 & 0 & 0 && 0 & 0 \\
+        R\#7 & 1 & 1 & 1 & 1 & 1 & 1 && 1 & 1 & 1 \\
         \hline
-        8 & 1 & 1 & 1 & 1 & 0 & 1 & 1 && 0 \\
+        R\#8 & 1 & 1 & 1 & 1 & 0 & 1 & 0 && 1 & 1 \\
         \hline
-        9 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & \\
+        R\#9 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 && 1 \\
         \hline
-        \rowcolor{green!10}
-        Total & 6 & 3 & 5 & 4 & 0 & 7 & 8 & 2 & 1 \\
+        R\#10 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & \\
+        \hline
+        \rowcolor{gray!50}
+        Total & 8 & 7 & 6 & 3 & 6 & 2 & 0 & 2 & 5 & 6 \\
         \hline
     \end{tabular}
     \caption{Prioritisation table using the MoSCoW technique}
@@ -660,30 +669,32 @@ associated to each feature is also estimated.
 \begin{table}[H]
     \centering
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
-    \begin{tabular}{|>{\columncolor{green!10!white}}r|r|r|r|r|r|r|r|r|r|r|}
+    \begin{tabular}{|>{\columncolor{gray!10!white}}r|r|r|r|r|r|r|r|r|r|r|}
         \hline
-        \rowcolor{blue!20}
-        \multicolumn{2}{|c|}{\textbf{Feature}} & \textbf{Benefício relativo} & \textbf{Penalização relativa} & \textbf{Valor Total} & \textbf{Valor \%} & \textbf{Custo relativo} & \textbf{Custo \%} & \textbf{Risco relativo} & \textbf{Risco \%} & \textbf{Prioridade} \\
+        \rowcolor{gray!10!white}
+        \multicolumn{2}{|c|}{\textbf{Feature}} & \textbf{Relative benefit} & \textbf{Relative penalty} & \textbf{Total value} & \textbf{Value \%} & \textbf{Relative cost} & \textbf{Cost \%} & \textbf{Relative risk} & \textbf{Risk \%} & \textbf{Priority} \\
         \hline
-        Delete a device & 7 & 7 & 6 & 20 & 10,10 & 1 & 2,56 & 1 & 2,70 & 1,92 \\
+        Navigate the map & 1 & x & x & 20 & 10,10 & 1 & 2,56 & 1 & 2,70 & 1,92 \\
         \hline
-        Add a device & 6 & 8 & 8 & 22 & 11,11 & 1 & 2,56 & 1 & 2,70 & 2,11 \\
+        Select device on the map & 2 & x & x & 22 & 11,11 & 1 & 2,56 & 1 & 2,70 & 2,11 \\
         \hline
-        Navigate the map & 1 & 9 & 9 & 27 & 13,64 & 8 & 20,51 & 1 & 2,70 & 0,59 \\
+        Add a device & 5 & x & x & 27 & 13,64 & 8 & 20,51 & 1 & 2,70 & 0,59 \\
         \hline
-        Search devices & 3 & 8 & 8 & 26 & 13,13 & 6 & 15,38 & 9 & 24,32 & 0,33 \\
+        See more information about privacy in IoT & 10 & x & x & 26 & 13,13 & 6 & 15,38 & 9 & 24,32 & 0,33 \\
         \hline
-        Query devices through parameters & 4 & 9 & 7 & 25 & 12,63 & 4 & 10,26 & 2 & 5,41 & 0,81 \\
+        Query devices through parameters & 3 & x & x & 25 & 12,63 & 4 & 10,26 & 2 & 5,41 & 0,81 \\
         \hline
-        Select device on map & 2 & 7 & 7 & 25 & 12,63 & 5 & 12,82 & 1 & 2,70 & 0,81 \\
+        Select privacy choices & 9 & x & x & 25 & 12,63 & 5 & 12,82 & 1 & 2,70 & 0,81 \\
         \hline
-        Edit a device & 8 & 6 & 6 & 18 & 9,09 & 1 & 2,56 & 9 & 24,32 & 0,34 \\
+        Query statistics of the devices & 4 & x & x & 18 & 9,09 & 1 & 2,56 & 9 & 24,32 & 0,34 \\
         \hline
-        Consult devices' statistics & 5 & 7 & 6 & 18 & 9,09 & 5 & 12,82 & 4 & 10,81 & 0,38 \\
+        Create account & 8 & x & x & 18 & 9,09 & 5 & 12,82 & 4 & 10,81 & 0,38 \\
         \hline
-        Create account & 9 & 6 & 5 & 17 & 8,59 & 8 & 20,51 & 9 & 24,32 & 0,19 \\
+        Edit a device & 6 & x & x & 17 & 8,59 & 8 & 20,51 & 9 & 24,32 & 0,19 \\
         \hline
-        \rowcolor{gray!20}
+        Delete a device & 7 & x & x & 17 & 8,59 & 8 & 20,51 & 9 & 24,32 & 0,19 \\
+        \hline
+        \rowcolor{gray!50}
         \multicolumn{2}{|c|}{\textbf{Total}} & 67 & 62 & \textbf{198} & 100,00 & \textbf{39} & 100,00 & \textbf{37} & 100,00 & \\
         \hline
     \end{tabular}
@@ -699,7 +710,7 @@ Using this method we get the requirements sorted by priority:
     % \rowcolors{5}{gray!10}{gray!40}
     \begin{tabular}{|c|c|c|c|}
         \hline
-        \rowcolor{blue!20!white}
+        \rowcolor{gray!50}
         \textbf{Rank} & \textbf{Feature} & \textbf{\# Feature} & \textbf{Prioridade} \\
         \hline
         1 & Add a device & 6 & 2,11 \\
