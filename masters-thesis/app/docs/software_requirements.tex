@@ -39,7 +39,7 @@
     urlcolor=purple,        % color of external links
     linktoc=page            % only page is linked
 }%
-\def\myversion{alpha 0.8}
+\def\myversion{Beta 0.9}
 \date{}
 \usepackage{hyperref}
 
@@ -54,7 +54,7 @@
     \vspace{1cm}
     \textbf{Masters Thesis Application} \\
     \vspace{2cm}
-    \LARGE{Version alpha 0.8 \\}
+    \LARGE{Version Beta 0.9 \\}
     \vspace{2cm}
     Written by Nelson Vieira \\
     \vspace{2cm}
@@ -757,47 +757,56 @@ For these acceptance criteria the following was considered:
 
 \subsection{Features}
 
-\subsubsection{Delete a device}
-
-\begin{itemize}
-    \item The system must allow the deletion of a device
-\end{itemize}
-
 \subsubsection{Add a device}
 
 \begin{itemize}
-    \item The system allows the user to add a device
+    \item The system allows the user to add a new device that is not yet present in the database
+\end{itemize}
+
+\subsubsection{Edit a device}
+
+\begin{itemize}
+    \item The system allows the editing of an existing device
+    \item The system saves in the database the changes that have been made
+\end{itemize}
+
+\subsubsection{Delete a device}
+
+\begin{itemize}
+    \item The system allows the deletion of an existing device
+    \item The system deletes the device from its database
 \end{itemize}
 
 \subsubsection{Navigate the map}
 
 \begin{itemize}
     \item The system can represent the devices on the map
-\end{itemize}
-
-\subsubsection{Search devices}
-
-\begin{itemize}
-    \item The system allows you to search for devices by name
+    \item The system allows the user to navigate throughout the map and view the devices
 \end{itemize}
 
 \subsubsection{Query devices through parameters}
 
 \begin{itemize}
-    \item The system allows searching devices by the following parameters: type, data collected, category
+    \item The system allows searching devices by the certain parameters like the category, the type of data collected
 \end{itemize}
 
 \subsubsection{Select device on map}
 
 \begin{itemize}
-    \item The system allows you to select a device on the map
+    \item The system allows the user to select a device on the map
 \end{itemize}
 
-\subsubsection{Edit a device}
+\subsubsection{See more information about privacy in IoT}
 
 \begin{itemize}
-    \item The system allows the editing of a device
-    \item The system saves in the database the changes that have been made
+    \item The system allows the user to see more information about privacy in IoT
+\end{itemize}
+
+\subsubsection{Select privacy choices}
+
+\begin{itemize}
+    \item The system allows the user to select a device and view its details
+    \item The system allows the user to select privacy choices for that device (if that option is available)
 \end{itemize}
 
 \subsubsection{Consult devices' statistics}
@@ -813,7 +822,8 @@ For these acceptance criteria the following was considered:
     \item The user has to enter its username, email and a password
     \item The system can detect whether the email is already in use
     \item The system can send a profile creation confirmation email
-    \item User can confirm profile creation
+    \item The user can confirm the profile creation
+    \item The system allows the user to sign in
 \end{itemize}
 
 \section{Prototype}
