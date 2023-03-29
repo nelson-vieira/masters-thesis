@@ -39,7 +39,7 @@
     urlcolor=purple,        % color of external links
     linktoc=page            % only page is linked
 }%
-\def\myversion{Beta 0.9}
+\def\myversion{RC1.0}
 \date{}
 \usepackage{hyperref}
 
@@ -54,7 +54,7 @@
     \vspace{1cm}
     \textbf{Masters Thesis Application} \\
     \vspace{2cm}
-    \LARGE{Version Beta 0.9 \\}
+    \LARGE{Version RC1.0 \\}
     \vspace{2cm}
     Written by Nelson Vieira \\
     \vspace{2cm}
@@ -355,11 +355,11 @@ Language (UML) notation.
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-01 Device information query \\
+            ID and Name: & UC-01 Query devices through certain parameters \\
             \hline
             Created By: & Nelson Vieira 20/02/2023 \\
             \hline
-            Primary Actor: & User \\
+            Primary Actor: & End User \\
             \hline
             Description: & The user makes a device information query \\
             \hline
@@ -387,7 +387,7 @@ Language (UML) notation.
                 \item The user selects one of the parameters:
                 \begin{enumerate}
                     \item Category
-                    \item Data collected
+                    \item Name
                 \end{enumerate}
                 \item The user chooses the device he wants from a list generated from the search carried out
             \end{enumerate} \\
@@ -418,7 +418,7 @@ Language (UML) notation.
             \hline
             Created By: & Nelson Vieira 20/02/2023 \\
             \hline
-            Primary Actor: & User \\
+            Primary Actor: & End User \\
             \hline
             Description: & The user queries the statistics of the devices \\
             \hline
@@ -466,7 +466,7 @@ Language (UML) notation.
             \hline
             Created By: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & User \\
+            Primary Actor: & End User \\
             \hline
             Description: & Addition of a new IoT device in the application \\
             \hline
@@ -517,7 +517,7 @@ Language (UML) notation.
             \hline
             Created By: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & User \\
+            Primary Actor: & End User \\
             \hline
             Description: & Editing the data of an IoT device in the application \\
             \hline
@@ -532,7 +532,6 @@ Language (UML) notation.
                 \item The user can change any of the following device data:
                 \begin{enumerate}
                     \item Name
-                    \item Type of data collected
                     \item Category
                     \item Photos
                 \end{enumerate}
@@ -613,6 +612,63 @@ Language (UML) notation.
     \end{adjustbox}
     \caption{Use case 5 - delete a device}
     \label{use case 5}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+        \begin{tabular}{|m{4cm}|m{12cm}|}
+            \hline
+            ID and Name: & UC-06 Create an account \\
+            \hline
+            Created By: & Nelson Vieira 22/02/2023 \\
+            \hline
+            Primary Actor: & End User \\
+            \hline
+            Description: & Create a new end user account \\
+            \hline
+            Trigger: & The user wants to create an account \\
+            \hline
+            Pre-conditions: & PRE-1. The user wants to add a new device \\
+            \hline
+            Post-conditions: & POST-1. The account is created in the application \\
+            \hline
+            Normal Flow: & \textbf{6.0 Account creation process}
+            \begin{enumerate}
+                \item The user enter the following data in the register screen:
+                \begin{enumerate}
+                    \item Username
+                    \item Email
+                    \item Password
+                \end{enumerate}
+                \item The system adds the account data to the database
+                \item An account confirmation email is sent to the email provided by the user
+                \item The user confirms the account
+            \end{enumerate} \\
+            \hline
+            Alternative Flow: & N/A \\
+            \hline
+            Exceptions: & \textbf{6.0.E1  The username already exists in the database}
+            \begin{enumerate}
+                \item The system displays an error message
+                \item The system allows the user to recover the account
+            \end{enumerate}
+            \textbf{6.0.E2 The email already exists in the database}
+            \begin{enumerate}
+                \item The system displays an error message
+                \item The system allows the user to recover the account
+            \end{enumerate} \\
+            \hline
+            Priority: & High \\
+            \hline
+            Business Requirements: & N/A \\
+            \hline
+            Assumptions: & N/A \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+    \caption{Use case 6 - create an account}
+    \label{use case 6}
 \end{table}
 
 \chapter{Requirement prioritisation}
