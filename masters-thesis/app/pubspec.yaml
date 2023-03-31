@@ -38,6 +38,7 @@ dependencies:
   url_launcher: ^6.1.10
   google_fonts: ^4.0.3
   image_picker: ^0.8.7+1
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
