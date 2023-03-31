@@ -1,3 +1,21 @@
 {
-    "cSpell.language": "en-GB,pt"
+    "cSpell.language": "en-GB,pt",
+    "dart.showTodos": true,
+    "[dart]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        "editor.tabSize": 4,
+        "editor.renderWhitespace": "all",
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.trimAutoWhitespace": false,
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "editor.trimAutoWhitespace": false,
 }
