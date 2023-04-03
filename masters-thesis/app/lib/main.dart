@@ -17,7 +17,7 @@ class App extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
         return MaterialApp(
-            home: const IotPrivacy(title: "Flutter Demo Home Page"),
+            home: const IotPrivacy(title: "IoT Privacy App"),
         );
     }
 }
@@ -51,6 +51,11 @@ class _IotPrivacyState extends State<IotPrivacy> {
         // than having to individually change instances of widgets.
         return Scaffold(
             // Map here
+            children: [
+                FlutterMap(
+                    options: MapOptions(),
+                ),
+            ],
         );
     }
 }
