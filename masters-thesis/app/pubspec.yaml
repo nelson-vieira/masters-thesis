@@ -57,6 +57,7 @@ dependencies:
   latlong2: ^0.8.1
   positioned_tap_detector_2: ^1.0.4
   transparent_image: ^2.0.1
+  async: ^2.10.0
 
 dev_dependencies:
   flutter_test:
