@@ -338,10 +338,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_map_marker_popup
-      sha256: b83e11dd8611f27d02050de3f262fac8eeb888abb5e562113b3be578573914f2
+      sha256: "6ccec27667bba1e1cae9bb3a4100627ba3c341c088b38a484b46cde75e38789e"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.1"
+    version: "4.0.2"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
