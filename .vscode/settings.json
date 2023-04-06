@@ -18,4 +18,5 @@
     "editor.suggestSelection": "first",
     "editor.tabSize": 4,
     "editor.trimAutoWhitespace": false,
+    "files.eol": "\n",
 }
