@@ -4,29 +4,19 @@
 //
 // @author Nelson Vieira <nelson0.vieira@gmail.com>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
-import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:latlong2/latlong.dart';
+import 'dart:async';
+import "package:flutter/material.dart";
+import "package:flutter_map/flutter_map.dart";
+import "package:geocoding/geocoding.dart";
+import "package:latlong2/latlong.dart";
+import "package:location/location.dart";
 
 void main() {
-    runApp(const App());
-}
-
-class App extends StatelessWidget {
-    const App({super.key});
-
-    // This widget is the root of your application.
-    @override
-    Widget build(BuildContext context) {
-        return MaterialApp(
-            home: const IotPrivacy(title: "IoT Privacy App"),
-        );
-    }
+    runApp(const IotPrivacy());
 }
 
 class IotPrivacy extends StatefulWidget {
-    const IotPrivacy({super.key, required this.title});
+    const IotPrivacy({Key? key}) : super(key: key);
 
     // This widget is the home page of your application. It is stateful, meaning
     // that it has a State object (defined below) that contains fields that affect
@@ -37,57 +27,46 @@ class IotPrivacy extends StatefulWidget {
     // used by the build method of the State. Fields in a Widget subclass are
     // always marked "final".
 
-    final String title;
+    //final String title;
 
     @override
-    State<IotPrivacy> createState() => _IotPrivacyState();
+    _IotPrivacyState createState() => _IotPrivacyState();
+
+    // @override
+    // State<IotPrivacy> createState() => _IotPrivacyState();
 }
 
-class _IotPrivacyState extends State<IotPrivacy> {
-    double long = 49.5;
-    double lat = -0.09;
-    LatLng point = LatLng(49.5, -0.09);
-    var location = [];
+// Invoke "debug painting" (press "p" in the console, choose the
+// "Toggle Debug Paint" action from the Flutter Inspector in Android
+// Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+// to see the wireframe for each widget.
 
+class _IotPrivacyState extends State<IotPrivacy> {
+    //const App({super.key});
+    @override
+    void initState() {
+        super.initState();
+    }
+
+
+    // This widget is the root of your application.
     @override
     Widget build(BuildContext context) {
-        // This method is rerun every time setState is called, for instance as done
-        // by the _incrementCounter method above.
-        //
-        // The Flutter framework has been optimized to make rerunning build methods
-        // fast, so that you can just rebuild anything that needs updating rather
-        // than having to individually change instances of widgets.
-        return Scaffold(
-            // Map here
-            appBar: AppBar(
-                // Here we take the value from the MyHomePage object that was created by
-                // the App.build method, and use it to set our appbar title.
-                title: Text(widget.title),
-            ),
-            body: Center(
-                // Center is a layout widget. It takes a single child and positions it
-                // in the middle of the parent.
-                child: Column(
-                    // Column is also a layout widget. It takes a list of children and
-                    // arranges them vertically. By default, it sizes itself to fit its
-                    // children horizontally, and tries to be as tall as its parent.
-                    //
-                    // Invoke "debug painting" (press "p" in the console, choose the
-                    // "Toggle Debug Paint" action from the Flutter Inspector in Android
-                    // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-                    // to see the wireframe for each widget.
-                    //
-                    // Column has various properties to control how it sizes itself and
-                    // how it positions its children. Here we use mainAxisAlignment to
-                    // center the children vertically; the main axis here is the vertical
-                    // axis because Columns are vertical (the cross axis would be
-                    // horizontal).
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                        FlutterMap(
+        return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Scaffold(
+                appBar: AppBar(
+                    // Here we take the value from the MyHomePage object that was created by
+                    // the App.build method, and use it to set our appbar title.
+                    title: Text("IoT"),
+                ),
+                // Map here
+                body: Center(
+                    child: SizedBox(
+                        child: FlutterMap(
                             options: MapOptions(
-                                center: LatLng(49.5,-0.09),
-                                zoom: 10.0,
+                                center: LatLng(32.778295173354356, -16.737781931587615),
+                                zoom: 9,
                             ),
                             nonRotatedChildren: [
                                 AttributionWidget.defaultWidget(
@@ -97,14 +76,87 @@ class _IotPrivacyState extends State<IotPrivacy> {
                             ],
                             children: [
                                 TileLayer(
-                                    urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                                    userAgentPackageName: 'com.example.app',
+                                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                                userAgentPackageName: 'me.nelsonvieira.iot_privacy_app',
                                 ),
                             ],
                         ),
-                    ],
+                    ),
                 ),
             ),
         );
     }
 }
+
+// class _IotPrivacyState extends State<IotPrivacy> {
+//     //double long = 49.5;
+//     //double lat = -0.09;
+//     //LatLng point = LatLng(49.5, -0.09);
+//     //var location = [];
+
+    // @override
+    // Widget build(BuildContext context) {
+    //     return MaterialApp(
+    //     home: Scaffold(
+    //         body: Center(
+    //         child: SizedBox(
+    //             child: FlutterMap(
+    //                 options: MapOptions(
+    //                     center: LatLng(32.778295173354356, -16.737781931587615),
+    //                     zoom: 10,
+    //                 ),
+    //                 nonRotatedChildren: [
+    //                                 AttributionWidget.defaultWidget(
+    //                                     source: 'OpenStreetMap contributors',
+    //                                     onSourceTapped: null,
+    //                                 ),
+    //                             ],
+    //                 children: [
+    //                     TileLayer(
+    //                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    //                     userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+    //                     ),
+    //                 ],
+    //             ),
+    //         ),
+    //         ),
+    //     ),
+    //     );
+    // }
+
+//     @override
+//     Widget build(BuildContext context) {
+//         return Scaffold(
+//             // Map here
+//             body: Center(
+//                 child: Column(
+//                     // Invoke "debug painting" (press "p" in the console, choose the
+//                     // "Toggle Debug Paint" action from the Flutter Inspector in Android
+//                     // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+//                     // to see the wireframe for each widget.
+//                     mainAxisAlignment: MainAxisAlignment.center,
+//                     children: [
+//                         FlutterMap(
+//                             options: MapOptions(
+//                                 center: LatLng(32.778295173354356, -16.737781931587615),
+//                                 zoom: 11,
+//                             ),
+//                             nonRotatedChildren: [
+//                                 AttributionWidget.defaultWidget(
+//                                     source: 'OpenStreetMap contributors',
+//                                     onSourceTapped: null,
+//                                 ),
+//                             ],
+//                             children: [
+//                                 TileLayer(
+//                                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+//                                     userAgentPackageName: 'com.example.app',
+//                                 ),
+//                             ],
+//                         ),
+//                     ],
+//                 ),
+//             ),
+//         );
+//     }
+// }
