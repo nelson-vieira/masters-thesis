@@ -7,14 +7,13 @@
 import "dart:async";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
-import "package:geocoding/geocoding.dart";
 import "package:latlong2/latlong.dart";
 import "package:location/location.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 
 void main() {
-    runApp(const IotPrivacy());
+  runApp(const IotPrivacy());
 }
 
 class IotPrivacy extends StatelessWidget {
@@ -25,7 +24,8 @@ class IotPrivacy extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "IoT Privacy",
+      title: "IoT Privacy App",
+      theme: ThemeData(canvasColor: Color(0xFF091220)),
       home: const HomePage(),
       routes: <String, WidgetBuilder>{
         About.route: (context) => const About(),

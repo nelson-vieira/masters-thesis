@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:app/widgets/drawer.dart";
+import "package:app/widgets/app_bar.dart";
 
 class HomePage extends StatelessWidget {
   static const String route = "/";
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: buildAppBar("IoT Privacy App"),
       drawer: buildDrawer(context, route),
       body: Padding(
         padding: const EdgeInsets.all(8),
@@ -19,7 +20,12 @@ class HomePage extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.only(top: 8, bottom: 8),
-              child: Text('This is a map that is showing (32.778295173354356, -16.737781931587615).'),
+              child: Text(
+                'This is a map that is showing (32.778295173354356, -16.737781931587615).',
+                style: const TextStyle(
+                  color: Color(0xFFFFFFFF),
+                ),
+              ),
             ),
             Flexible(
               child: FlutterMap(
@@ -29,15 +35,15 @@ class HomePage extends StatelessWidget {
                 ),
                 nonRotatedChildren: [
                   AttributionWidget.defaultWidget(
-                    source: 'OpenStreetMap contributors',
-                    onSourceTapped: () {},
+                    source: "OpenStreetMap",
+                    onSourceTapped: null,
                   ),
                 ],
                 children: [
                   TileLayer(
                     urlTemplate:
-                        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    userAgentPackageName: 'me.nelsonvieira.iot_privacy_app',
+                        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
                   ),
                 ],
               ),
