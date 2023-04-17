@@ -8,10 +8,13 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:app/widgets/drawer.dart";
+import "package:app/widgets/app_bar.dart";
+import "package:app/pages/about.dart";
 
-Padding paddingAbout() {
+Padding paddingHome() {
   return Padding(
-    padding: const EdgeInsets.all(8),
+    padding:
+        const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
     child: Column(
       children: [
         Flexible(
@@ -22,14 +25,14 @@ Padding paddingAbout() {
             ),
             nonRotatedChildren: [
               AttributionWidget.defaultWidget(
-                source: 'OpenStreetMap contributors',
-                onSourceTapped: () {},
+                source: "OpenStreetMap",
+                onSourceTapped: null,
               ),
             ],
             children: [
               TileLayer(
-                urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                userAgentPackageName: 'me.nelsonvieira.iot_privacy_app',
+                urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
               ),
             ],
           ),

@@ -26,10 +26,10 @@ class IotPrivacy extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "IoT Privacy App",
       theme: ThemeData(canvasColor: Color(0xFF091220)),
-      home: const HomePage(),
-      routes: <String, WidgetBuilder>{
-        About.route: (context) => const About(),
-      },
+      home: HomePage(),
+      //   routes: <String, WidgetBuilder>{
+      //     About.route: (context) => const About(),
+      //   },
     );
   }
 }

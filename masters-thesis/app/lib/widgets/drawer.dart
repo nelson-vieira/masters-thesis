@@ -40,12 +40,12 @@ Drawer buildDrawer(BuildContext context, String currentRoute) {
           HomePage.route,
           currentRoute,
         ),
-        _buildMenuItem(
-          context,
-          const Text("About"),
-          About.route,
-          currentRoute,
-        ),
+        // _buildMenuItem(
+        //   context,
+        //   const Text("About"),
+        //   About.route,
+        //   currentRoute,
+        // ),
       ],
     ),
   );

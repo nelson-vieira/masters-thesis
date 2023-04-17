@@ -59,7 +59,7 @@ AppBar buildAppBar(String title) {
       //   ),
       title: Text(
         title,
-        style: TextStyle(fontSize: 30),
+        style: const TextStyle(fontSize: 30),
       ),
-      backgroundColor: Color(0xFFFF9000));
+      backgroundColor: const Color(0xFFFF9000));
 }
