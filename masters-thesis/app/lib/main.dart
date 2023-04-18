@@ -9,7 +9,8 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:location/location.dart";
-import "package:app/pages/home.dart";
+import "package:app/widgets/app_bar.dart";
+import 'package:app/pages/home.dart';
 import "package:app/pages/about.dart";
 
 void main() {
@@ -26,7 +27,7 @@ class IotPrivacy extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "IoT Privacy App",
       theme: ThemeData(canvasColor: Color(0xFF091220)),
-      home: HomePage(),
+      home: const Index(),
       //   routes: <String, WidgetBuilder>{
       //     About.route: (context) => const About(),
       //   },
@@ -34,147 +35,89 @@ class IotPrivacy extends StatelessWidget {
   }
 }
 
-// class IotPrivacy extends StatefulWidget {
-//     const IotPrivacy({Key? key}) : super(key: key);
+class Index extends StatefulWidget {
+  const Index({super.key});
 
-//     // This widget is the home page of your application. It is stateful, meaning
-//     // that it has a State object (defined below) that contains fields that affect
-//     // how it looks.
+  @override
+  State<Index> createState() => _IndexState();
+}
 
-//     // This class is the configuration for the state. It holds the values (in this
-//     // case the title) provided by the parent (in this case the App widget) and
-//     // used by the build method of the State. Fields in a Widget subclass are
-//     // always marked "final".
+class _IndexState extends State<Index> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
-//     //final String title;
+  int _currentIndex = 0;
 
-//     @override
-//     _IotPrivacyState createState() => _IotPrivacyState();
+  final bodies = [
+    home(),
+    about(),
+    Center(
+      child: Text("FAQ"),
+    ),
+    Center(
+      child: Text("Account"),
+    ),
+  ];
 
-//     // @override
-//     // State<IotPrivacy> createState() => _IotPrivacyState();
-// }
+  final appbars = [
+    AppBar(
+        title: Text(
+          "IoT Privacy App",
+          style: const TextStyle(fontSize: 30),
+        ),
+        backgroundColor: const Color(0xFFFF9000)),
+    buildAppBar("IoT Privacy App 2"),
+    buildAppBar("IoT Privacy App 3"),
+    buildAppBar("IoT Privacy App 4"),
+  ];
 
-// // Invoke "debug painting" (press "p" in the console, choose the
-// // "Toggle Debug Paint" action from the Flutter Inspector in Android
-// // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-// // to see the wireframe for each widget.
-
-// class _IotPrivacyState extends State<IotPrivacy> {
-//     //const App({super.key});
-//     @override
-//     void initState() {
-//         super.initState();
-//     }
-
-//     // This widget is the root of your application.
-//     @override
-//     Widget build(BuildContext context) {
-//         return MaterialApp(
-//             debugShowCheckedModeBanner: false,
-//             home: Scaffold(
-//                 appBar: AppBar(
-//                     // Here we take the value from the MyHomePage object that was created by
-//                     // the App.build method, and use it to set our appbar title.
-//                     title: Text("IoT Privacy"),
-//                 ),
-//                 // Map here
-//                 body: Center(
-//                     child: SizedBox(
-//                         child: FlutterMap(
-//                             options: MapOptions(
-//                                 center: LatLng(32.778295173354356, -16.737781931587615),
-//                                 zoom: 9,
-//                             ),
-//                             nonRotatedChildren: [
-//                                 AttributionWidget.defaultWidget(
-//                                     source: 'OpenStreetMap contributors',
-//                                     onSourceTapped: null,
-//                                 ),
-//                             ],
-//                             children: [
-//                                 TileLayer(
-//                                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-//                                 userAgentPackageName: 'me.nelsonvieira.iot_privacy_app',
-//                                 ),
-//                             ],
-//                         ),
-//                     ),
-//                 ),
-//             ),
-//         );
-//     }
-// }
-
-// class _IotPrivacyState extends State<IotPrivacy> {
-//     //double long = 49.5;
-//     //double lat = -0.09;
-//     //LatLng point = LatLng(49.5, -0.09);
-//     //var location = [];
-
-    // @override
-    // Widget build(BuildContext context) {
-    //     return MaterialApp(
-    //     home: Scaffold(
-    //         body: Center(
-    //         child: SizedBox(
-    //             child: FlutterMap(
-    //                 options: MapOptions(
-    //                     center: LatLng(32.778295173354356, -16.737781931587615),
-    //                     zoom: 10,
-    //                 ),
-    //                 nonRotatedChildren: [
-    //                                 AttributionWidget.defaultWidget(
-    //                                     source: 'OpenStreetMap contributors',
-    //                                     onSourceTapped: null,
-    //                                 ),
-    //                             ],
-    //                 children: [
-    //                     TileLayer(
-    //                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-    //                     userAgentPackageName: 'dev.fleaflet.flutter_map.example',
-    //                     ),
-    //                 ],
-    //             ),
-    //         ),
-    //         ),
-    //     ),
-    //     );
-    // }
-
-//     @override
-//     Widget build(BuildContext context) {
-//         return Scaffold(
-//             // Map here
-//             body: Center(
-//                 child: Column(
-//                     // Invoke "debug painting" (press "p" in the console, choose the
-//                     // "Toggle Debug Paint" action from the Flutter Inspector in Android
-//                     // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-//                     // to see the wireframe for each widget.
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: [
-//                         FlutterMap(
-//                             options: MapOptions(
-//                                 center: LatLng(32.778295173354356, -16.737781931587615),
-//                                 zoom: 11,
-//                             ),
-//                             nonRotatedChildren: [
-//                                 AttributionWidget.defaultWidget(
-//                                     source: 'OpenStreetMap contributors',
-//                                     onSourceTapped: null,
-//                                 ),
-//                             ],
-//                             children: [
-//                                 TileLayer(
-//                                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-//                                     userAgentPackageName: 'com.example.app',
-//                                 ),
-//                             ],
-//                         ),
-//                     ],
-//                 ),
-//             ),
-//         );
-//     }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appbars[_currentIndex],
+      //   drawer: buildDrawer(context, route),
+      body: bodies[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xFF10111A),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Color(0xFF7EADDA),
+            ),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.textsms_rounded,
+              color: Color(0xFF7EADDA),
+            ),
+            label: "About",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.question_answer_outlined,
+              color: Color(0xFF7EADDA),
+            ),
+            label: "FAQ",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.account_circle,
+              color: Color(0xFF7EADDA),
+            ),
+            label: "Account",
+          ),
+        ],
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        selectedItemColor: Color.fromARGB(255, 212, 135, 19),
+      ),
+    );
+  }
+}
