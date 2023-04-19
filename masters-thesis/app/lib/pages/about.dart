@@ -10,6 +10,8 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import 'package:app/pages/home.dart';
+import 'package:app/pages/encyclopedia.dart';
+import 'package:app/pages/account.dart';
 
 class About extends StatelessWidget {
   static const String route = "/about";
@@ -118,10 +120,10 @@ class About extends StatelessWidget {
               Navigator.pushReplacementNamed(context, About.route);
               break;
             case 2:
-              Navigator.pushReplacementNamed(context, Home.route);
+              Navigator.pushReplacementNamed(context, Encyclopedia.route);
               break;
             case 3:
-              Navigator.pushReplacementNamed(context, Home.route);
+              Navigator.pushReplacementNamed(context, Account.route);
               break;
           }
         },

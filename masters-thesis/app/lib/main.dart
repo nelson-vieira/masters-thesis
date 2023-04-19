@@ -13,6 +13,8 @@ import "package:app/widgets/app_bar.dart";
 import "package:app/widgets/bottom_navigation_bar.dart";
 import 'package:app/pages/home.dart';
 import "package:app/pages/about.dart";
+import 'package:app/pages/encyclopedia.dart';
+import 'package:app/pages/account.dart';
 
 void main() {
   runApp(const IotPrivacy());
@@ -31,6 +33,8 @@ class IotPrivacy extends StatelessWidget {
       home: const Home(),
       routes: <String, WidgetBuilder>{
         About.route: (context) => const About(),
+        Encyclopedia.route: (context) => const Encyclopedia(),
+        Account.route: (context) => const Account(),
       },
     );
   }
