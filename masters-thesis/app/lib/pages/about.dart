@@ -9,6 +9,7 @@ import "dart:io";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
+import "package:ipsum/ipsum.dart";
 import 'package:app/pages/home.dart';
 import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
@@ -20,6 +21,8 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Ipsum lip = Ipsum();
+    String paragraphs = lip.paragraphs(1);
     return Scaffold(
       appBar: AppBar(
           leading: IconButton(
@@ -38,39 +41,35 @@ class About extends StatelessWidget {
             const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
         child: Container(
           padding: EdgeInsets.all(35.0),
+          color: Color.fromARGB(255, 18, 180, 132),
           child: Column(
             children: [
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(top: 30.0, bottom: 20.0),
-                  child: const Text(
-                    "About",
-                    locale: Locale("en", "UK"),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 245, 245, 245),
-                        fontSize: 22.0),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Center(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 30.0, bottom: 50.0),
+                          child: Image.asset("assets/icon.png", width: 120.0),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          paragraphs,
+                          locale: Locale("en", "UK"),
+                          textAlign: TextAlign.left,
+                          overflow: TextOverflow.visible,
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 245, 245, 245),
+                              fontSize: 16.0),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 50.0),
-                  child: Image.asset("assets/icon.png", width: 120.0),
-                ),
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "About",
-                  locale: Locale("en", "UK"),
-                  textAlign: TextAlign.left,
-                  overflow: TextOverflow.visible,
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 245, 245, 245),
-                      fontSize: 16.0),
-                ),
-              )
             ],
           ),
         ),
