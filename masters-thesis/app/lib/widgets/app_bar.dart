@@ -56,6 +56,7 @@ AppBar buildAppBar(String title) {
       //       ],
       //     ),
       //   ),
+      leading: BackButton(color: Colors.black),
       title: Text(
         title,
         style: const TextStyle(fontSize: 30),
