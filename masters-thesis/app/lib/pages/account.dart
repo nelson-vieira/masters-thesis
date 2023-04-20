@@ -107,10 +107,6 @@ class Account extends StatelessWidget {
             label: "Account",
           ),
         ],
-        // onTap: (index) {
-        //   setState(() {
-        //     _currentIndex = index;
-        //   });
         onTap: (index) {
           switch (index) {
             case 0:
