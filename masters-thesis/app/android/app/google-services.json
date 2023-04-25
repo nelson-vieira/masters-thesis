@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "4284592801",
+    "project_id": "iot-privacy-f39f0",
+    "storage_bucket": "iot-privacy-f39f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4284592801:android:b94f5eacf95523f75436e0",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4284592801-38k0urua2t34nvjusirnuqdt428f9e7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRFCfbEl85xPa9X2c2v75mSh1Nmclhj1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4284592801-38k0urua2t34nvjusirnuqdt428f9e7c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "4284592801-r3ge0rfugekqdko1fs00ldr3uejfn3pf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
