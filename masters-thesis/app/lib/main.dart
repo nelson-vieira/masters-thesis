@@ -9,6 +9,8 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:location/location.dart";
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import "package:app/widgets/app_bar.dart";
 import "package:app/widgets/bottom_navigation_bar.dart";
 import 'package:app/pages/home.dart';
@@ -16,7 +18,13 @@ import "package:app/pages/about.dart";
 import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const IotPrivacy());
 }
 
