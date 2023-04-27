@@ -2,11 +2,14 @@
 //
 // Copyright (c) 2023 Nelson Vieira
 //
-// @author Nelson Vieira <nelson0.vieira@gmail.com>
+// @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import "package:app/main.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import 'package:app/pages/encyclopedia.dart';
@@ -24,7 +27,22 @@ class Create extends StatefulWidget {
 }
 
 class _CreateState extends State<Create> {
-  final controller = TextEditingController();
+  final controllerName = TextEditingController();
+  final controllerCategory = TextEditingController();
+  final controllerCreatedAt = TextEditingController();
+
+  InputDecoration decoration(String label) => InputDecoration(
+        labelText: label,
+        border: OutlineInputBorder(),
+    );
+
+    Future createDevice(Device device) async {
+        final docDevice = FirebaseFirestore.instance.collection('devices').doc();
+        device.id = docDevice.id;
+
+        final json = device.toJson();
+        await docDevice.set(json);
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -36,40 +54,40 @@ class _CreateState extends State<Create> {
           onPressed: () => Navigator.pushReplacementNamed(context, Home.route),
         ),
         title: Text(
-          "Create",
+          "Add Device",
           style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFFFF9000),
       ),
-      body: Padding(
-        padding:
-            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
-        child: Column(
-          children: [
-            Flexible(
-              child: FlutterMap(
-                options: MapOptions(
-                  center: LatLng(32.778295173354356, -16.737781931587615),
-                  zoom: 9,
-                ),
-                nonRotatedChildren: [
-                  AttributionWidget.defaultWidget(
-                    source: "OpenStreetMap",
-                    onSourceTapped: null,
-                  ),
-                ],
-                children: [
-                  TileLayer(
-                    urlTemplate:
-                        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                    userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
-                  ),
-                ],
-              ),
-            ),
-          ],
+      body: ListView(padding: EdgeInsets.all(16),
+      children: <Widget>[
+        TextField(controller: controllerName, decoration: decoration('Name'),),
+        const SizedBox(height: 24),
+        TextField(controller: controllerCategory, decoration: decoration('Category'),
+        keyboardType: TextInputType.number,),
+        const SizedBox(height: 24,),
+        DateTimeField(
+            controller: controllerCreatedAt,
+            decoration: decoration('Created At'),
+            format: DateFormat('yyyy-MM-dd'),
+            onShowPicker: (context, currentValue) => (
+            context: context,
+            firstDate: DateTime(1900),
+            lastDate: DateTime(2100),
+            initialValue: currentValue ?? DateTime.now(),
         ),
-      ),
+        const SizedBox(height: 32,),
+        ElevatedButton(
+            child: Text('Create'),
+            onPressed: () {
+            final device = Device(
+                name: controllerName.text,
+                category: controllerCategory.text,
+                createdAt: DateTime.parse(controllerCreatedAt.text),
+            );
+            createDevice(device);
+            Navigator.pop(context);},),
+      ],),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFF10111A),
         items: const [
@@ -101,6 +119,27 @@ class _CreateState extends State<Create> {
             ),
             label: "Account",
           ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.add_circle,
+              color: Color(0xFF7EADDA),
+            ),
+            label: "Create",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.abc,
+              color: Color(0xFF7EADDA),
+            ),
+            label: "Update",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.accessibility,
+              color: Color(0xFF7EADDA),
+            ),
+            label: "View",
+          ),
         ],
         onTap: (index) {
           switch (index) {
@@ -115,6 +154,15 @@ class _CreateState extends State<Create> {
               break;
             case 3:
               Navigator.pushReplacementNamed(context, Account.route);
+              break;
+            case 4:
+              Navigator.pushReplacementNamed(context, Create.route);
+              break;
+            case 5:
+              Navigator.pushReplacementNamed(context, Update.route);
+              break;
+            case 6:
+              Navigator.pushReplacementNamed(context, View.route);
               break;
           }
         },
