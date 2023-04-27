@@ -7,27 +7,40 @@
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
+import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
-import 'package:app/pages/create.dart';
 import 'package:app/pages/update.dart';
 import 'package:app/pages/view.dart';
 
-class Home extends StatelessWidget {
-  static const String route = "/";
+class Create extends StatefulWidget {
+  static const String route = "/create";
 
-  const Home({Key? key}) : super(key: key);
+  const Create({super.key});
+
+  @override
+  State<Create> createState() => _CreateState();
+}
+
+class _CreateState extends State<Create> {
+  final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-            "IoT Privacy App",
-            style: const TextStyle(fontSize: 30),
-          ),
-          backgroundColor: const Color(0xFFFF9000)),
+        leading: IconButton(
+          icon:
+              Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
+          onPressed: () => Navigator.pushReplacementNamed(context, Home.route),
+        ),
+        title: Text(
+          "Create",
+          style: const TextStyle(fontSize: 30),
+        ),
+        backgroundColor: const Color(0xFFFF9000),
+      ),
       body: Padding(
         padding:
             const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
@@ -88,27 +101,6 @@ class Home extends StatelessWidget {
             ),
             label: "Account",
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.add_circle,
-              color: Color(0xFF7EADDA),
-            ),
-            label: "Create",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.abc,
-              color: Color(0xFF7EADDA),
-            ),
-            label: "Update",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.accessibility,
-              color: Color(0xFF7EADDA),
-            ),
-            label: "View",
-          ),
         ],
         onTap: (index) {
           switch (index) {
@@ -124,15 +116,6 @@ class Home extends StatelessWidget {
             case 3:
               Navigator.pushReplacementNamed(context, Account.route);
               break;
-            case 4:
-              Navigator.pushReplacementNamed(context, Create.route);
-              break;
-            case 5:
-              Navigator.pushReplacementNamed(context, Update.route);
-              break;
-            case 6:
-              Navigator.pushReplacementNamed(context, View.route);
-              break;
           }
         },
         selectedItemColor: Color.fromARGB(255, 212, 135, 19),
@@ -140,34 +123,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-// Padding home() {
-//   return Padding(
-//     padding:
-//         const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
-//     child: Column(
-//       children: [
-//         Flexible(
-//           child: FlutterMap(
-//             options: MapOptions(
-//               center: LatLng(32.778295173354356, -16.737781931587615),
-//               zoom: 9,
-//             ),
-//             nonRotatedChildren: [
-//               AttributionWidget.defaultWidget(
-//                 source: "OpenStreetMap",
-//                 onSourceTapped: null,
-//               ),
-//             ],
-//             children: [
-//               TileLayer(
-//                 urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-//                 userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
-//               ),
-//             ],
-//           ),
-//         ),
-//       ],
-//     ),
-//   );
-// }

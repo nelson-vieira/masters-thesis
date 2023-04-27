@@ -17,6 +17,9 @@ import 'package:app/pages/home.dart';
 import "package:app/pages/about.dart";
 import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
+import 'package:app/pages/create.dart';
+import 'package:app/pages/update.dart';
+import 'package:app/pages/view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +46,9 @@ class IotPrivacy extends StatelessWidget {
         About.route: (context) => const About(),
         Encyclopedia.route: (context) => const Encyclopedia(),
         Account.route: (context) => const Account(),
+        Create.route: (context) => const Create(),
+        Update.route: (context) => const Update(),
+        View.route: (context) => const View(),
       },
     );
   }
