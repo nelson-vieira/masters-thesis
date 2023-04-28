@@ -9,6 +9,8 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:intl/intl.dart';
 import "package:app/main.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
@@ -34,15 +36,15 @@ class _CreateState extends State<Create> {
   InputDecoration decoration(String label) => InputDecoration(
         labelText: label,
         border: OutlineInputBorder(),
-    );
+      );
 
-    Future createDevice(Device device) async {
-        final docDevice = FirebaseFirestore.instance.collection('devices').doc();
-        device.id = docDevice.id;
+  Future createDevice(Device device) async {
+    final docDevice = FirebaseFirestore.instance.collection('devices').doc();
+    device.id = docDevice.id;
 
-        final json = device.toJson();
-        await docDevice.set(json);
-    }
+    final json = device.toJson();
+    await docDevice.set(json);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,35 +61,52 @@ class _CreateState extends State<Create> {
         ),
         backgroundColor: const Color(0xFFFF9000),
       ),
-      body: ListView(padding: EdgeInsets.all(16),
-      children: <Widget>[
-        TextField(controller: controllerName, decoration: decoration('Name'),),
-        const SizedBox(height: 24),
-        TextField(controller: controllerCategory, decoration: decoration('Category'),
-        keyboardType: TextInputType.number,),
-        const SizedBox(height: 24,),
-        DateTimeField(
+      body: ListView(
+        padding: EdgeInsets.all(16),
+        children: <Widget>[
+          TextField(
+            controller: controllerName,
+            decoration: decoration('Name'),
+          ),
+          const SizedBox(height: 24),
+          TextField(
+            controller: controllerCategory,
+            decoration: decoration('Category'),
+            keyboardType: TextInputType.number,
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          DateTimeField(
             controller: controllerCreatedAt,
             decoration: decoration('Created At'),
             format: DateFormat('yyyy-MM-dd'),
-            onShowPicker: (context, currentValue) => (
-            context: context,
-            firstDate: DateTime(1900),
-            lastDate: DateTime(2100),
-            initialValue: currentValue ?? DateTime.now(),
-        ),
-        const SizedBox(height: 32,),
-        ElevatedButton(
+            onShowPicker: (context, currentValue) async {
+              final time = await showTimePicker(
+                context: context,
+                initialTime:
+                    TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+              );
+              return DateTimeField.convert(time);
+            },
+          ),
+          const SizedBox(
+            height: 32,
+          ),
+          ElevatedButton(
             child: Text('Create'),
             onPressed: () {
-            final device = Device(
+              final device = Device(
                 name: controllerName.text,
                 category: controllerCategory.text,
                 createdAt: DateTime.parse(controllerCreatedAt.text),
-            );
-            createDevice(device);
-            Navigator.pop(context);},),
-      ],),
+              );
+              createDevice(device);
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFF10111A),
         items: const [
