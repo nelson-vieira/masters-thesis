@@ -35,7 +35,14 @@ class _CreateState extends State<Create> {
 
   InputDecoration decoration(String label) => InputDecoration(
         labelText: label,
+        enabledBorder: const OutlineInputBorder(
+          borderSide: const BorderSide(
+              color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
+        ),
         border: OutlineInputBorder(),
+        labelStyle: TextStyle(
+          color: Colors.grey.shade600,
+        ),
       );
 
   Future createDevice(Device device) async {
@@ -67,12 +74,18 @@ class _CreateState extends State<Create> {
           TextField(
             controller: controllerName,
             decoration: decoration('Name'),
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
           ),
           const SizedBox(height: 24),
           TextField(
             controller: controllerCategory,
             decoration: decoration('Category'),
             keyboardType: TextInputType.number,
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
           ),
           const SizedBox(
             height: 24,
@@ -80,6 +93,9 @@ class _CreateState extends State<Create> {
           DateTimeField(
             controller: controllerCreatedAt,
             decoration: decoration('Created At'),
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
             format: DateFormat('yyyy-MM-dd'),
             onShowPicker: (context, currentValue) async {
               final time = await showTimePicker(
@@ -102,7 +118,7 @@ class _CreateState extends State<Create> {
                 createdAt: DateTime.parse(controllerCreatedAt.text),
               );
               createDevice(device);
-              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, Home.route);
             },
           ),
         ],
