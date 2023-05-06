@@ -97,13 +97,6 @@ class Home extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.abc,
-              color: Color(0xFF7EADDA),
-            ),
-            label: "Update",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.accessibility,
               color: Color(0xFF7EADDA),
             ),
@@ -128,9 +121,6 @@ class Home extends StatelessWidget {
               Navigator.pushReplacementNamed(context, Create.route);
               break;
             case 5:
-              Navigator.pushReplacementNamed(context, Update.route);
-              break;
-            case 6:
               Navigator.pushReplacementNamed(context, Devices.route);
               break;
           }

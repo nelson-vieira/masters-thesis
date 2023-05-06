@@ -43,10 +43,20 @@ class _ShowDeviceState extends State<ShowDevice> {
     }
   }
 
-  Widget buildDevice(Device device) => ListTile(
-        leading: CircleAvatar(child: Text('${device.category}')),
-        title: Text(device.name),
-        subtitle: Text(device.createdAt.toIso8601String()),
+  Widget buildDevice(Device device) => Column(
+        children: [
+          ListTile(
+            leading: CircleAvatar(child: Text('${device.category}')),
+            title: Text(device.name),
+            subtitle: Text(device.createdAt.toIso8601String()),
+          ),
+          FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Update(device: device)));
+              }),
+        ],
       );
 
   @override
@@ -81,12 +91,6 @@ class _ShowDeviceState extends State<ShowDevice> {
                 child: CircularProgressIndicator(),
               );
             }
-          }),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => Update()));
           }),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFF10111A),
@@ -128,13 +132,6 @@ class _ShowDeviceState extends State<ShowDevice> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.abc,
-              color: Color(0xFF7EADDA),
-            ),
-            label: "Update",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.accessibility,
               color: Color(0xFF7EADDA),
             ),
@@ -159,9 +156,6 @@ class _ShowDeviceState extends State<ShowDevice> {
               Navigator.pushReplacementNamed(context, Create.route);
               break;
             case 5:
-              Navigator.pushReplacementNamed(context, Update.route);
-              break;
-            case 6:
               Navigator.pushReplacementNamed(context, Devices.route);
               break;
           }
