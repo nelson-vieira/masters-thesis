@@ -12,7 +12,7 @@ import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
 import 'package:app/pages/create.dart';
 import 'package:app/pages/update.dart';
-import 'package:app/pages/view.dart';
+import 'package:app/pages/devices.dart';
 
 class Home extends StatelessWidget {
   static const String route = "/";
@@ -107,7 +107,7 @@ class Home extends StatelessWidget {
               Icons.accessibility,
               color: Color(0xFF7EADDA),
             ),
-            label: "View",
+            label: "Devices",
           ),
         ],
         onTap: (index) {
@@ -131,7 +131,7 @@ class Home extends StatelessWidget {
               Navigator.pushReplacementNamed(context, Update.route);
               break;
             case 6:
-              Navigator.pushReplacementNamed(context, View.route);
+              Navigator.pushReplacementNamed(context, Devices.route);
               break;
           }
         },

@@ -2,56 +2,50 @@
 //
 // Copyright (c) 2023 Nelson Vieira
 //
-// @author Nelson Vieira <2080511@student.uma.pt>
+// @author Nelson Vieira <nelson0.vieira@gmail.com>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
+import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:intl/intl.dart';
 import "package:app/main.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
+import 'package:app/pages/create.dart';
 import 'package:app/pages/update.dart';
-import 'package:app/pages/devices.dart';
+import 'package:app/pages/showdevice.dart';
 
-class Create extends StatefulWidget {
-  static const String route = "/create";
+class Devices extends StatefulWidget {
+  static const String route = "/devices";
 
-  const Create({super.key});
+  const Devices({super.key});
 
   @override
-  State<Create> createState() => _CreateState();
+  State<Devices> createState() => _DevicesState();
 }
 
-class _CreateState extends State<Create> {
-  final controllerName = TextEditingController();
-  final controllerCategory = TextEditingController();
-  final controllerCreatedAt = TextEditingController();
+class _DevicesState extends State<Devices> {
+  Stream<List<Device>> readDevices() => FirebaseFirestore.instance
+      .collection('devices')
+      .snapshots()
+      .map((snapshot) =>
+          snapshot.docs.map((doc) => Device.fromJson(doc.data())).toList());
 
-  InputDecoration decoration(String label) => InputDecoration(
-        labelText: label,
-        enabledBorder: const OutlineInputBorder(
-          borderSide: const BorderSide(
-              color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
-        ),
-        border: OutlineInputBorder(),
-        labelStyle: TextStyle(
-          color: Colors.grey.shade600,
-        ),
+  Widget buildDevice(Device device) => ListTile(
+        textColor: Color.fromARGB(255, 255, 255, 255),
+        leading: CircleAvatar(child: Text('${device.category}')),
+        title: Text(device.name),
+        subtitle: Text(device.createdAt.toIso8601String()),
+        onTap: () {
+          var docId = device.id;
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => ShowDevice(docId)));
+        },
       );
-
-  Future createDevice(Device device) async {
-    final docDevice = FirebaseFirestore.instance.collection('devices').doc();
-    device.id = docDevice.id;
-
-    final json = device.toJson();
-    await docDevice.set(json);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,66 +57,34 @@ class _CreateState extends State<Create> {
           onPressed: () => Navigator.pushReplacementNamed(context, Home.route),
         ),
         title: Text(
-          "Add Device",
+          "Devices",
           style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFFFF9000),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(16),
-        children: <Widget>[
-          TextField(
-            controller: controllerName,
-            decoration: decoration('Name'),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(height: 24),
-          TextField(
-            controller: controllerCategory,
-            decoration: decoration('Category'),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          DateTimeField(
-            controller: controllerCreatedAt,
-            decoration: decoration('Created At'),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-            format: DateFormat('yyyy-MM-dd'),
-            onShowPicker: (context, currentValue) async {
-              final time = await showTimePicker(
-                context: context,
-                initialTime:
-                    TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+      body: FutureBuilder(
+          future: readDevices().first,
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Text('Something went wrong! ${snapshot.error}');
+            } else if (snapshot.hasData) {
+              final devices = snapshot.data!;
+
+              return ListView(
+                children: devices.map(buildDevice).toList(),
               );
-              return DateTimeField.convert(time);
-            },
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          ElevatedButton(
-            child: Text('Create'),
-            onPressed: () {
-              final device = Device(
-                name: controllerName.text,
-                category: controllerCategory.text,
-                createdAt: DateTime.parse(controllerCreatedAt.text),
+            } else {
+              return Center(
+                child: CircularProgressIndicator(),
               );
-              createDevice(device);
-              Navigator.pushReplacementNamed(context, Home.route);
-            },
-          ),
-        ],
-      ),
+            }
+          }),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => Create()));
+          }),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFF10111A),
         items: const [

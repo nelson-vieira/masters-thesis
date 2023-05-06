@@ -5,11 +5,13 @@
 // @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "dart:async";
+import 'package:flutter/foundation.dart';
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:location/location.dart";
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
 import "package:app/widgets/app_bar.dart";
 import "package:app/widgets/bottom_navigation_bar.dart";
@@ -19,7 +21,7 @@ import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
 import 'package:app/pages/create.dart';
 import 'package:app/pages/update.dart';
-import 'package:app/pages/view.dart';
+import 'package:app/pages/devices.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,7 +50,7 @@ class IotPrivacy extends StatelessWidget {
         Account.route: (context) => const Account(),
         Create.route: (context) => const Create(),
         Update.route: (context) => const Update(),
-        View.route: (context) => const View(),
+        Devices.route: (context) => const Devices(),
       },
     );
   }
@@ -73,4 +75,11 @@ class Device {
         "category": category,
         "createdAt": createdAt,
       };
+
+  static Device fromJson(Map<String, dynamic> json) => Device(
+        id: json['id'],
+        name: json['name'],
+        category: json['category'],
+        createdAt: (json['createdAt'] as Timestamp).toDate(),
+      );
 }
