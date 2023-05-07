@@ -82,7 +82,7 @@ class _DevicesState extends State<Devices> {
             }
           }),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFF10111A),
+        backgroundColor: const Color(0xFF334150),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(
@@ -139,7 +139,7 @@ class _DevicesState extends State<Devices> {
               break;
           }
         },
-        selectedItemColor: Color.fromARGB(255, 212, 135, 19),
+        selectedItemColor: const Color(0xFF7EADDA),
       ),
     );
   }
