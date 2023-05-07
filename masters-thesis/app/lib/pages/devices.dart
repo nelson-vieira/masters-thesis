@@ -35,15 +35,14 @@ class _DevicesState extends State<Devices> {
       .map((snapshot) =>
           snapshot.docs.map((doc) => Device.fromJson(doc.data())).toList());
 
-  Widget buildDevice(Device device) => ListTile(
+  Widget buildDevices(Device device) => ListTile(
         textColor: Color.fromARGB(255, 255, 255, 255),
         leading: CircleAvatar(child: Text('${device.category}')),
         title: Text(device.name),
         subtitle: Text(device.createdAt.toIso8601String()),
         onTap: () {
-          var docId = device.id;
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => ShowDevice(docId)));
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => ShowDevice(device: device)));
         },
       );
 
@@ -71,7 +70,7 @@ class _DevicesState extends State<Devices> {
               final devices = snapshot.data!;
 
               return ListView(
-                children: devices.map(buildDevice).toList(),
+                children: devices.map(buildDevices).toList(),
               );
             } else {
               return Center(

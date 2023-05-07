@@ -22,20 +22,17 @@ import 'package:app/pages/devices.dart';
 class ShowDevice extends StatefulWidget {
   static const String route = "/showdevice";
 
-  final docId;
-  const ShowDevice(this.docId);
+  final Device device;
+  const ShowDevice({super.key, required this.device});
 
   @override
-  State<ShowDevice> createState() => _ShowDeviceState(docId);
+  State<ShowDevice> createState() => _ShowDeviceState();
 }
 
 class _ShowDeviceState extends State<ShowDevice> {
-  final docId;
-  _ShowDeviceState(this.docId);
-
   Future<Device?> readDevice() async {
     final docDevice =
-        FirebaseFirestore.instance.collection('devices').doc(docId);
+        FirebaseFirestore.instance.collection('devices').doc(widget.device.id);
     final snapshot = await docDevice.get();
 
     if (snapshot.exists) {
@@ -46,6 +43,7 @@ class _ShowDeviceState extends State<ShowDevice> {
   Widget buildDevice(Device device) => Column(
         children: [
           ListTile(
+            textColor: Color.fromARGB(255, 255, 255, 255),
             leading: CircleAvatar(child: Text('${device.category}')),
             title: Text(device.name),
             subtitle: Text(device.createdAt.toIso8601String()),
@@ -70,7 +68,7 @@ class _ShowDeviceState extends State<ShowDevice> {
               Navigator.pushReplacementNamed(context, Devices.route),
         ),
         title: Text(
-          "Devices",
+          widget.device.name,
           style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFFFF9000),
