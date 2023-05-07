@@ -64,65 +64,79 @@ class Home extends StatelessWidget {
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => Create()));
           }),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xFF334150),
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Color(0xFF7EADDA),
-            ),
-            label: "Home",
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+            canvasColor: const Color(0xFF334150),
+            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+            primaryColorDark: const Color(0xFF334150),
+            textTheme: Theme.of(context).textTheme.copyWith(
+                labelSmall: const TextStyle(
+                    color: Color.fromARGB(255, 223, 141,
+                        18)))), // sets the inactive color of the `BottomNavigationBar`
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: 0,
+          selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
+          unselectedItemColor: Color.fromARGB(255, 149, 196, 236),
+          selectedIconTheme: const IconThemeData(
+            color: Color.fromARGB(255, 250, 250, 250),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.textsms_rounded,
-              color: Color(0xFF7EADDA),
-            ),
-            label: "About",
+          unselectedIconTheme: const IconThemeData(
+            color: Color.fromARGB(255, 149, 196, 236),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.question_answer_outlined,
-              color: Color(0xFF7EADDA),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: "Home",
             ),
-            label: "FAQ",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle,
-              color: Color(0xFF7EADDA),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.format_quote,
+              ),
+              label: "About",
             ),
-            label: "Account",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.accessibility,
-              color: Color(0xFF7EADDA),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.question_mark,
+              ),
+              label: "FAQ",
             ),
-            label: "Devices",
-          ),
-        ],
-        onTap: (index) {
-          switch (index) {
-            case 0:
-              Navigator.pushReplacementNamed(context, Home.route);
-              break;
-            case 1:
-              Navigator.pushReplacementNamed(context, About.route);
-              break;
-            case 2:
-              Navigator.pushReplacementNamed(context, Encyclopedia.route);
-              break;
-            case 3:
-              Navigator.pushReplacementNamed(context, Account.route);
-              break;
-            case 4:
-              Navigator.pushReplacementNamed(context, Devices.route);
-              break;
-          }
-        },
-        selectedItemColor: const Color(0xFF7EADDA),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_circle,
+              ),
+              label: "Account",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_tree_outlined,
+              ),
+              label: "Devices",
+            ),
+          ],
+          onTap: (index) {
+            switch (index) {
+              case 0:
+                Navigator.pushReplacementNamed(context, Home.route);
+                break;
+              case 1:
+                Navigator.pushReplacementNamed(context, About.route);
+                break;
+              case 2:
+                Navigator.pushReplacementNamed(context, Encyclopedia.route);
+                break;
+              case 3:
+                Navigator.pushReplacementNamed(context, Account.route);
+                break;
+              case 4:
+                Navigator.pushReplacementNamed(context, Devices.route);
+                break;
+            }
+          },
+        ),
       ),
     );
   }
