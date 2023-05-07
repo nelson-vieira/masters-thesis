@@ -65,8 +65,8 @@ class _UpdateState extends State<Update> {
           icon:
               Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const IotPrivacy()));
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ShowDevice(device: widget.device)));
           },
         ),
         title: Text(
