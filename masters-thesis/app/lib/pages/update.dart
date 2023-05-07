@@ -63,7 +63,10 @@ class _UpdateState extends State<Update> {
         leading: IconButton(
           icon:
               Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
-          onPressed: () => Navigator.pushReplacementNamed(context, Home.route),
+          onPressed: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const IotPrivacy()));
+          },
         ),
         title: Text(
           "Update",

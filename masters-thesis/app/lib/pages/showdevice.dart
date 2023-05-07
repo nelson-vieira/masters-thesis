@@ -64,8 +64,10 @@ class _ShowDeviceState extends State<ShowDevice> {
         leading: IconButton(
           icon:
               Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
-          onPressed: () =>
-              Navigator.pushReplacementNamed(context, Devices.route),
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => const Devices()));
+          },
         ),
         title: Text(
           widget.device.name,
