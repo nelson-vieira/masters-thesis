@@ -22,17 +22,17 @@ class Account extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back,
-                color: Color.fromARGB(255, 255, 255, 255)),
-            onPressed: () =>
-                Navigator.pushReplacementNamed(context, Home.route),
-          ),
-          title: Text(
-            "Account",
-            style: const TextStyle(fontSize: 30),
-          ),
-          backgroundColor: const Color(0xFFFF9000)),
+        leading: IconButton(
+          icon:
+              Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
+          onPressed: () => Navigator.pushReplacementNamed(context, Home.route),
+        ),
+        title: Text(
+          "Account",
+          style: const TextStyle(fontSize: 30),
+        ),
+        backgroundColor: const Color(0xFF334150),
+      ),
       body: Padding(
         padding:
             const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),

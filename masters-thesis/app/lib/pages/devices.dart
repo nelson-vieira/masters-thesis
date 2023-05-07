@@ -62,7 +62,7 @@ class _DevicesState extends State<Devices> {
           "Devices",
           style: const TextStyle(fontSize: 30),
         ),
-        backgroundColor: const Color(0xFFFF9000),
+        backgroundColor: const Color(0xFF334150),
       ),
       body: FutureBuilder(
           future: readDevices().first,

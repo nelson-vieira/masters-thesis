@@ -23,11 +23,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-            "IoT Privacy App",
-            style: const TextStyle(fontSize: 30),
-          ),
-          backgroundColor: const Color(0xFFFF9000)),
+        title: Text(
+          "IoT Privacy App",
+          style: const TextStyle(fontSize: 30),
+        ),
+        backgroundColor: const Color(0xFF334150),
+      ),
       body: Padding(
         padding:
             const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),

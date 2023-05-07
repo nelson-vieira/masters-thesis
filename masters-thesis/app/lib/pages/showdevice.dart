@@ -73,7 +73,7 @@ class _ShowDeviceState extends State<ShowDevice> {
           widget.device.name,
           style: const TextStyle(fontSize: 30),
         ),
-        backgroundColor: const Color(0xFFFF9000),
+        backgroundColor: const Color(0xFF334150),
       ),
       body: FutureBuilder<Device?>(
           future: readDevice(),

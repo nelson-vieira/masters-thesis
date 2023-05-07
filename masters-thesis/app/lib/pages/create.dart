@@ -69,7 +69,7 @@ class _CreateState extends State<Create> {
           "Add Device",
           style: const TextStyle(fontSize: 30),
         ),
-        backgroundColor: const Color(0xFFFF9000),
+        backgroundColor: const Color(0xFF334150),
       ),
       body: ListView(
         padding: EdgeInsets.all(16),
