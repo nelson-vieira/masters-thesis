@@ -48,7 +48,6 @@ class IotPrivacy extends StatelessWidget {
         About.route: (context) => const About(),
         Encyclopedia.route: (context) => const Encyclopedia(),
         Account.route: (context) => const Account(),
-        Create.route: (context) => const Create(),
         Devices.route: (context) => const Devices(),
       },
     );

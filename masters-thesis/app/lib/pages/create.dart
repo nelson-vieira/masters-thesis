@@ -156,13 +156,6 @@ class _CreateState extends State<Create> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.add_circle,
-              color: Color(0xFF7EADDA),
-            ),
-            label: "Create",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.accessibility,
               color: Color(0xFF7EADDA),
             ),
@@ -184,9 +177,6 @@ class _CreateState extends State<Create> {
               Navigator.pushReplacementNamed(context, Account.route);
               break;
             case 4:
-              Navigator.pushReplacementNamed(context, Create.route);
-              break;
-            case 5:
               Navigator.pushReplacementNamed(context, Devices.route);
               break;
           }
