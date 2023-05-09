@@ -4,10 +4,12 @@
 //
 // @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
+import 'package:email_validator/email_validator.dart';
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
@@ -37,6 +39,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final formKey = GlobalKey<FormState>();
   final controllerEmail = TextEditingController();
   final controllerPassword = TextEditingController();
 
@@ -60,7 +63,21 @@ class _RegisterState extends State<Register> {
         ),
       );
 
+  showSnackBar(String? text) {
+    if (text == null) return;
+
+    final snackBar = SnackBar(
+      content: Text(text),
+      duration: const Duration(
+        seconds: 5,
+      ),
+    );
+  }
+
   Future createUser() async {
+    final isValid = formKey.currentState!.validate();
+    if (!isValid) return;
+
     showDialog(
       context: context,
       builder: (context) => const Center(
@@ -73,13 +90,22 @@ class _RegisterState extends State<Register> {
         password: controllerPassword.text.trim(),
       );
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
-      }
-    } catch (e) {
+      //   if (e.code == 'weak-password') {
+      //     print('The password provided is too weak.');
+      //   } else if (e.code == 'email-already-in-use') {
+      //     print('The account already exists for that email.');
+      //   }
+      // } catch (e) {
       print(e);
+
+      messengerKey.currentState!
+        ..removeCurrentSnackBar()
+        ..showSnackBar(SnackBar(
+          content: Text(e.message.toString()),
+          duration: const Duration(
+            seconds: 5,
+          ),
+        ));
     }
 
     Navigator.pushReplacementNamed(context, Home.route);
@@ -103,54 +129,66 @@ class _RegisterState extends State<Register> {
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: <Widget>[
-          TextField(
-            controller: controllerEmail,
-            decoration: decoration('Email'),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
+      body: Form(
+        key: formKey,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: <Widget>[
+            TextFormField(
+              controller: controllerEmail,
+              decoration: decoration('Email'),
+              style: const TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (email) =>
+                  email != null && !EmailValidator.validate(email)
+                      ? "Please enter a valid email address"
+                      : null,
             ),
-          ),
-          const SizedBox(height: 24),
-          TextField(
-            controller: controllerPassword,
-            decoration: decoration('Password'),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
+            const SizedBox(height: 24),
+            TextFormField(
+              controller: controllerPassword,
+              decoration: decoration('Password'),
+              style: const TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (password) => password != null && password.length < 8
+                  ? "Password must contain least 8 characters"
+                  : null,
             ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          ElevatedButton(
-            onPressed: createUser,
-            child: const Text('Create account'),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          Center(
-            child: RichText(
-              text: TextSpan(
-                text: "Already have an account? ",
-                style: const TextStyle(color: Colors.white),
-                children: [
-                  TextSpan(
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = widget.onClickLogIn,
-                    text: "Log In",
-                    style: const TextStyle(
-                      decoration: TextDecoration.underline,
-                      color: Color.fromARGB(255, 75, 191, 206),
+            const SizedBox(
+              height: 32,
+            ),
+            ElevatedButton(
+              onPressed: createUser,
+              child: const Text('Create account'),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            Center(
+              child: RichText(
+                text: TextSpan(
+                  text: "Already have an account? ",
+                  style: const TextStyle(color: Colors.white),
+                  children: [
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = widget.onClickLogIn,
+                      text: "Log In",
+                      style: const TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Color.fromARGB(255, 75, 191, 206),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
@@ -164,7 +202,7 @@ class _RegisterState extends State<Register> {
                         18)))), // sets the inactive color of the `BottomNavigationBar`
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          currentIndex: 4,
+          currentIndex: 3,
           selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
           unselectedItemColor: const Color.fromARGB(255, 149, 196, 236),
           selectedIconTheme: const IconThemeData(
