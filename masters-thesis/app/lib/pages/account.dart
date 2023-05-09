@@ -9,72 +9,141 @@ import "dart:io";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
-import 'package:app/pages/home.dart';
-import 'package:app/pages/about.dart';
-import 'package:app/pages/encyclopedia.dart';
-import 'package:app/pages/devices.dart';
+import "package:firebase_core/firebase_core.dart";
+import "package:cloud_firestore/cloud_firestore.dart";
+import "package:firebase_auth/firebase_auth.dart";
+import "package:app/main.dart";
+import "package:app/pages/home.dart";
+import "package:app/pages/about.dart";
+import "package:app/pages/encyclopedia.dart";
+import "package:app/pages/devices.dart";
 
-class Account extends StatelessWidget {
+class Account extends StatefulWidget {
   static const String route = "/account";
+//   final VoidCallback onClickRegister;
 
-  const Account({Key? key}) : super(key: key);
+  const Account({
+    Key? key,
+    // required this.onClickRegister,
+  }) : super(key: key);
+
+  @override
+  State<Account> createState() => _AccountState();
+}
+
+class _AccountState extends State<Account> {
+  final controllerEmail = TextEditingController();
+  final controllerPassword = TextEditingController();
+
+  @override
+  void dispose() {
+    controllerEmail.dispose();
+    controllerPassword.dispose();
+
+    super.dispose();
+  }
+
+  InputDecoration decoration(String label) => InputDecoration(
+        labelText: label,
+        enabledBorder: const OutlineInputBorder(
+          borderSide:
+              BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
+        ),
+        border: const OutlineInputBorder(),
+        labelStyle: TextStyle(
+          color: Colors.grey.shade600,
+        ),
+      );
+
+  Future signIn() async {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: controllerEmail.text.trim(),
+        password: controllerPassword.text.trim(),
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print("No user found for that email.");
+      } else if (e.code == "wrong-password") {
+        print("Wrong password provided for that user.");
+      }
+    } catch (e) {
+      print(e);
+    }
+
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon:
-              Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
+          icon: const Icon(Icons.arrow_back,
+              color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () => Navigator.pushReplacementNamed(context, Home.route),
         ),
-        title: Text(
+        title: const Text(
           "Account",
-          style: const TextStyle(fontSize: 30),
+          style: TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: Padding(
-        padding:
-            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
-        child: Container(
-          padding: EdgeInsets.all(35.0),
-          child: Column(
-            children: [
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(top: 30.0, bottom: 20.0),
-                  child: const Text(
-                    "About",
-                    locale: Locale("en", "UK"),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 245, 245, 245),
-                        fontSize: 22.0),
-                  ),
-                ),
-              ),
-              Center(
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 50.0),
-                  child: Image.asset("assets/icon.png", width: 120.0),
-                ),
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "About",
-                  locale: Locale("en", "UK"),
-                  textAlign: TextAlign.left,
-                  overflow: TextOverflow.visible,
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 245, 245, 245),
-                      fontSize: 16.0),
-                ),
-              )
-            ],
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: <Widget>[
+          TextField(
+            controller: controllerEmail,
+            decoration: decoration("Email"),
+            textInputAction: TextInputAction.next,
+            style: const TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
           ),
-        ),
+          const SizedBox(height: 24),
+          TextField(
+            controller: controllerPassword,
+            decoration: decoration("Password"),
+            textInputAction: TextInputAction.done,
+            style: const TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          const SizedBox(
+            height: 32,
+          ),
+          ElevatedButton(
+            onPressed: signIn,
+            child: const Text("Log in"),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          Center(
+            child: RichText(
+              text: const TextSpan(
+                text: "No account? ",
+                style: TextStyle(color: Colors.white),
+                children: [
+                  TextSpan(
+                    text: "Register",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: Color.fromARGB(255, 75, 191, 206),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
       ),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
@@ -90,7 +159,7 @@ class Account extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           currentIndex: 3,
           selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
-          unselectedItemColor: Color.fromARGB(255, 149, 196, 236),
+          unselectedItemColor: const Color.fromARGB(255, 149, 196, 236),
           selectedIconTheme: const IconThemeData(
             color: Color.fromARGB(255, 250, 250, 250),
           ),
@@ -126,7 +195,7 @@ class Account extends StatelessWidget {
               icon: Icon(
                 Icons.account_tree_outlined,
               ),
-              label: "Devices",
+              label: "IoT Devices",
             ),
           ],
           onTap: (index) {

@@ -33,6 +33,8 @@ void main() async {
   runApp(const IotPrivacy());
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class IotPrivacy extends StatelessWidget {
   const IotPrivacy({Key? key}) : super(key: key);
 
@@ -40,9 +42,25 @@ class IotPrivacy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: "IoT Privacy App",
-      theme: ThemeData(canvasColor: Color(0xFF091220)),
+      theme: ThemeData(
+        canvasColor: const Color(0xFF091220),
+        // colorScheme: const ColorScheme(
+        //   brightness: Brightness.dark,
+        //   primary: Color.fromARGB(255, 212, 10, 10),
+        //   onPrimary: Color.fromARGB(255, 212, 10, 10),
+        //   secondary: Color.fromARGB(255, 212, 10, 10),
+        //   onSecondary: Color.fromARGB(255, 212, 10, 10),
+        //   error: Color.fromARGB(255, 212, 10, 10),
+        //   onError: Color.fromARGB(255, 212, 10, 10),
+        //   background: Color.fromARGB(255, 212, 10, 10),
+        //   onBackground: Color.fromARGB(255, 212, 10, 10),
+        //   surface: Color.fromARGB(255, 212, 10, 10),
+        //   onSurface: Color.fromARGB(255, 212, 10, 10),
+        // ),
+      ),
       home: const Home(),
       routes: <String, WidgetBuilder>{
         About.route: (context) => const About(),
