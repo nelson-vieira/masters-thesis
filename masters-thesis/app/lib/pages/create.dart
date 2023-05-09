@@ -18,6 +18,7 @@ import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
 import 'package:app/pages/update.dart';
 import 'package:app/pages/devices.dart';
+import 'package:app/pages/auth.dart';
 
 class Create extends StatefulWidget {
   static const String route = "/create";
@@ -191,7 +192,7 @@ class _CreateState extends State<Create> {
                 Navigator.pushReplacementNamed(context, Encyclopedia.route);
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, Account.route);
+                Navigator.pushReplacementNamed(context, Auth.route);
                 break;
               case 4:
                 Navigator.pushReplacementNamed(context, Devices.route);

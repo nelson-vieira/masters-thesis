@@ -18,6 +18,7 @@ import 'package:app/pages/account.dart';
 import 'package:app/pages/create.dart';
 import 'package:app/pages/update.dart';
 import 'package:app/pages/devices.dart';
+import 'package:app/pages/auth.dart';
 
 class ShowDevice extends StatefulWidget {
   static const String route = "/showdevice";
@@ -157,7 +158,7 @@ class _ShowDeviceState extends State<ShowDevice> {
                 Navigator.pushReplacementNamed(context, Encyclopedia.route);
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, Account.route);
+                Navigator.pushReplacementNamed(context, Auth.route);
                 break;
               case 4:
                 Navigator.pushReplacementNamed(context, Devices.route);

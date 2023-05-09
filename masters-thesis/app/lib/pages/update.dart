@@ -20,6 +20,7 @@ import 'package:app/pages/account.dart';
 import 'package:app/pages/create.dart';
 import 'package:app/pages/devices.dart';
 import 'package:app/pages/showdevice.dart';
+import 'package:app/pages/auth.dart';
 
 class Update extends StatefulWidget {
   static const String route = "/update";
@@ -206,7 +207,7 @@ class _UpdateState extends State<Update> {
                 Navigator.pushReplacementNamed(context, Encyclopedia.route);
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, Account.route);
+                Navigator.pushReplacementNamed(context, Auth.route);
                 break;
               case 4:
                 Navigator.pushReplacementNamed(context, Devices.route);

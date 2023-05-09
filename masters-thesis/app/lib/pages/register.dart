@@ -12,6 +12,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:intl/intl.dart';
+import "package:flutter/gestures.dart";
 import "package:app/main.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
@@ -20,11 +21,16 @@ import 'package:app/pages/account.dart';
 import 'package:app/pages/create.dart';
 import 'package:app/pages/update.dart';
 import 'package:app/pages/devices.dart';
+import 'package:app/pages/auth.dart';
 
 class Register extends StatefulWidget {
   static const String route = "/register";
+  final VoidCallback onClickLogIn;
 
-  const Register({Key? key}) : super(key: key);
+  const Register({
+    Key? key,
+    required this.onClickLogIn,
+  }) : super(key: key);
 
   @override
   State<Register> createState() => _RegisterState();
@@ -122,6 +128,28 @@ class _RegisterState extends State<Register> {
             onPressed: createUser,
             child: const Text('Create account'),
           ),
+          const SizedBox(
+            height: 24,
+          ),
+          Center(
+            child: RichText(
+              text: TextSpan(
+                text: "Already have an account? ",
+                style: const TextStyle(color: Colors.white),
+                children: [
+                  TextSpan(
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = widget.onClickLogIn,
+                    text: "Log In",
+                    style: const TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: Color.fromARGB(255, 75, 191, 206),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: Theme(
@@ -189,7 +217,7 @@ class _RegisterState extends State<Register> {
                 Navigator.pushReplacementNamed(context, Encyclopedia.route);
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, Account.route);
+                Navigator.pushReplacementNamed(context, Auth.route);
                 break;
               case 4:
                 Navigator.pushReplacementNamed(context, Devices.route);

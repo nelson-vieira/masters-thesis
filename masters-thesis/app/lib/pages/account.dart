@@ -12,19 +12,21 @@ import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
+import "package:flutter/gestures.dart";
 import "package:app/main.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";
 import "package:app/pages/devices.dart";
+import 'package:app/pages/auth.dart';
 
 class Account extends StatefulWidget {
   static const String route = "/account";
-//   final VoidCallback onClickRegister;
+  final VoidCallback onClickRegister;
 
   const Account({
     Key? key,
-    // required this.onClickRegister,
+    required this.onClickRegister,
   }) : super(key: key);
 
   @override
@@ -128,13 +130,15 @@ class _AccountState extends State<Account> {
           ),
           Center(
             child: RichText(
-              text: const TextSpan(
+              text: TextSpan(
                 text: "No account? ",
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 children: [
                   TextSpan(
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = widget.onClickRegister,
                     text: "Register",
-                    style: TextStyle(
+                    style: const TextStyle(
                       decoration: TextDecoration.underline,
                       color: Color.fromARGB(255, 75, 191, 206),
                     ),
@@ -142,7 +146,7 @@ class _AccountState extends State<Account> {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
       bottomNavigationBar: Theme(
@@ -210,7 +214,7 @@ class _AccountState extends State<Account> {
                 Navigator.pushReplacementNamed(context, Encyclopedia.route);
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, Account.route);
+                Navigator.pushReplacementNamed(context, Auth.route);
                 break;
               case 4:
                 Navigator.pushReplacementNamed(context, Devices.route);

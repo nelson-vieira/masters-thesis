@@ -14,6 +14,7 @@ import 'package:app/pages/home.dart';
 import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
 import 'package:app/pages/devices.dart';
+import 'package:app/pages/auth.dart';
 
 class About extends StatelessWidget {
   static const String route = "/about";
@@ -140,7 +141,7 @@ class About extends StatelessWidget {
                 Navigator.pushReplacementNamed(context, Encyclopedia.route);
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, Account.route);
+                Navigator.pushReplacementNamed(context, Auth.route);
                 break;
               case 4:
                 Navigator.pushReplacementNamed(context, Devices.route);

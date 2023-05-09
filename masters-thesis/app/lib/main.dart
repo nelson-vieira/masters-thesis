@@ -19,6 +19,7 @@ import 'package:app/pages/home.dart';
 import "package:app/pages/about.dart";
 import 'package:app/pages/encyclopedia.dart';
 import 'package:app/pages/account.dart';
+import 'package:app/pages/auth.dart';
 import 'package:app/pages/create.dart';
 import 'package:app/pages/update.dart';
 import 'package:app/pages/devices.dart';
@@ -65,7 +66,7 @@ class IotPrivacy extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         About.route: (context) => const About(),
         Encyclopedia.route: (context) => const Encyclopedia(),
-        Account.route: (context) => const Account(),
+        Auth.route: (context) => const Auth(),
         Devices.route: (context) => const Devices(),
       },
     );
