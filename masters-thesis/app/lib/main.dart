@@ -35,7 +35,6 @@ void main() async {
 }
 
 final navigatorKey = GlobalKey<NavigatorState>();
-final messengerKey = GlobalKey<ScaffoldMessengerState>();
 
 class IotPrivacy extends StatelessWidget {
   const IotPrivacy({Key? key}) : super(key: key);
@@ -44,7 +43,6 @@ class IotPrivacy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      scaffoldMessengerKey: messengerKey,
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: "IoT Privacy App",

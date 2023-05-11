@@ -19,6 +19,7 @@ import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";
 import "package:app/pages/devices.dart";
 import 'package:app/pages/auth.dart';
+import 'package:app/pages/helper.dart';
 
 class Account extends StatefulWidget {
   static const String route = "/account";
@@ -71,13 +72,15 @@ class _AccountState extends State<Account> {
         password: controllerPassword.text.trim(),
       );
     } on FirebaseAuthException catch (e) {
-      if (e.code == "user-not-found") {
-        print("No user found for that email.");
-      } else if (e.code == "wrong-password") {
-        print("Wrong password provided for that user.");
-      }
-    } catch (e) {
+      //   if (e.code == "user-not-found") {
+      //     print("No user found for that email.");
+      //   } else if (e.code == "wrong-password") {
+      //     print("Wrong password provided for that user.");
+      //   }
+      // } catch (e) {
       print(e);
+
+      Helper.showSnackBar(e.message);
     }
 
     navigatorKey.currentState!.popUntil((route) => route.isFirst);

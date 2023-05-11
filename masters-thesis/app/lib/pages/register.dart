@@ -24,6 +24,7 @@ import 'package:app/pages/create.dart';
 import 'package:app/pages/update.dart';
 import 'package:app/pages/devices.dart';
 import 'package:app/pages/auth.dart';
+import 'package:app/pages/helper.dart';
 
 class Register extends StatefulWidget {
   static const String route = "/register";
@@ -98,14 +99,7 @@ class _RegisterState extends State<Register> {
       // } catch (e) {
       print(e);
 
-      messengerKey.currentState!
-        ..removeCurrentSnackBar()
-        ..showSnackBar(SnackBar(
-          content: Text(e.message.toString()),
-          duration: const Duration(
-            seconds: 5,
-          ),
-        ));
+      Helper.showSnackBar(e.message);
     }
 
     Navigator.pushReplacementNamed(context, Home.route);
