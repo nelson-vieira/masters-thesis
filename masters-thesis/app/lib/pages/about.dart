@@ -39,7 +39,7 @@ class About extends StatelessWidget {
             const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
         child: Container(
           padding: EdgeInsets.all(35.0),
-          color: Color.fromARGB(255, 18, 180, 132),
+          color: const Color.fromARGB(255, 16, 44, 53),
           child: Column(
             children: [
               Expanded(

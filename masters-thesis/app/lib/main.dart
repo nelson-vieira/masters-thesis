@@ -141,7 +141,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
               icon: Icon(
                 Icons.question_mark,
               ),
-              label: "FAQ",
+              label: "Encyclopedia",
             ),
             BottomNavigationBarItem(
               icon: Icon(
