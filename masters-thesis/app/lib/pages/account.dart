@@ -132,16 +132,18 @@ class _AccountState extends State<Account> {
           const SizedBox(
             height: 24,
           ),
-          GestureDetector(
-            child: Text(
-              "Forgot Password?",
-              style: TextStyle(
-                decoration: TextDecoration.underline,
-                color: Color.fromARGB(255, 75, 191, 206),
+          Center(
+            child: GestureDetector(
+              child: Text(
+                "Forgot Password?",
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  color: Color.fromARGB(255, 75, 191, 206),
+                ),
               ),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ForgotPassword())),
             ),
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const ForgotPassword())),
           ),
           const SizedBox(
             height: 24,
