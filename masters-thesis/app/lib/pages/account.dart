@@ -20,6 +20,7 @@ import "package:app/pages/encyclopedia.dart";
 import "package:app/pages/devices.dart";
 import 'package:app/pages/auth.dart';
 import 'package:app/pages/helper.dart';
+import 'package:app/pages/forgot_password.dart';
 
 class Account extends StatefulWidget {
   static const String route = "/account";
@@ -127,6 +128,20 @@ class _AccountState extends State<Account> {
           ElevatedButton(
             onPressed: signIn,
             child: const Text("Log in"),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          GestureDetector(
+            child: Text(
+              "Forgot Password?",
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                color: Color.fromARGB(255, 75, 191, 206),
+              ),
+            ),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ForgotPassword())),
           ),
           const SizedBox(
             height: 24,
