@@ -51,17 +51,9 @@ class _DevicesState extends State<Devices> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon:
-              Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
-          onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const IotPrivacy()));
-          },
-        ),
-        title: Text(
+        title: const Text(
           "Devices",
-          style: const TextStyle(fontSize: 30),
+          style: TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
