@@ -149,19 +149,24 @@ class _ShowDeviceState extends State<ShowDevice> {
           onTap: (index) {
             switch (index) {
               case 0:
-                Navigator.pushReplacementNamed(context, Home.route);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const IotPrivacy()));
                 break;
               case 1:
-                Navigator.pushReplacementNamed(context, About.route);
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const About()));
                 break;
               case 2:
-                Navigator.pushReplacementNamed(context, Encyclopedia.route);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Encyclopedia()));
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, Auth.route);
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Auth()));
                 break;
               case 4:
-                Navigator.pushReplacementNamed(context, Devices.route);
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Devices()));
                 break;
             }
           },

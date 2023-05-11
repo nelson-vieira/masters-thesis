@@ -10,6 +10,7 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:ipsum/ipsum.dart";
+import "package:app/main.dart";
 import 'package:app/pages/home.dart';
 import 'package:app/pages/about.dart';
 import 'package:app/pages/account.dart';
@@ -306,19 +307,24 @@ class Encyclopedia extends StatelessWidget {
           onTap: (index) {
             switch (index) {
               case 0:
-                Navigator.pushReplacementNamed(context, Home.route);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const IotPrivacy()));
                 break;
               case 1:
-                Navigator.pushReplacementNamed(context, About.route);
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const About()));
                 break;
               case 2:
-                Navigator.pushReplacementNamed(context, Encyclopedia.route);
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Encyclopedia()));
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, Auth.route);
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Auth()));
                 break;
               case 4:
-                Navigator.pushReplacementNamed(context, Devices.route);
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Devices()));
                 break;
             }
           },
