@@ -52,8 +52,8 @@ class _ShowDeviceState extends State<ShowDevice> {
           FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Update(device: device)));
+                Navigator.of(context)
+                    .pushNamed(Update.route, arguments: device);
               }),
         ],
       );
@@ -66,8 +66,7 @@ class _ShowDeviceState extends State<ShowDevice> {
           icon:
               Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => const Devices()));
+            Navigator.of(context).pushNamed(Devices.route);
           },
         ),
         title: Text(

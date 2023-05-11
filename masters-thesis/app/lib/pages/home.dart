@@ -63,8 +63,7 @@ class Home extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => Create()));
+            Navigator.of(context).pushNamed(Create.route);
           }),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(

@@ -102,7 +102,7 @@ class _RegisterState extends State<Register> {
       Helper.showSnackBar(e.message);
     }
 
-    Navigator.pushReplacementNamed(context, Home.route);
+    Navigator.of(context).pushNamed(Home.route);
   }
 
   @override
@@ -113,8 +113,7 @@ class _RegisterState extends State<Register> {
           icon: const Icon(Icons.arrow_back,
               color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const IotPrivacy()));
+            Navigator.of(context).pushNamed(Home.route);
           },
         ),
         title: const Text(

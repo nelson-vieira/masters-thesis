@@ -62,8 +62,7 @@ class _CreateState extends State<Create> {
           icon:
               Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const IotPrivacy()));
+            Navigator.of(context).pushNamed(Home.route);
           },
         ),
         title: Text(
@@ -122,7 +121,7 @@ class _CreateState extends State<Create> {
                 createdAt: DateTime.parse(controllerCreatedAt.text),
               );
               createDevice(device);
-              Navigator.pushReplacementNamed(context, Home.route);
+              Navigator.of(context).pushNamed(Devices.route);
             },
           ),
         ],

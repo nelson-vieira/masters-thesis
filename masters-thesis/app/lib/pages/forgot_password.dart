@@ -77,8 +77,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back,
               color: Color.fromARGB(255, 255, 255, 255)),
-          onPressed: () => Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => const Auth())),
+          onPressed: () => Navigator.of(context).pushNamed(Auth.route),
         ),
         title: const Text(
           "Reset Password",

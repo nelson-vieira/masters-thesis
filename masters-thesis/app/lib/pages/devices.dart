@@ -42,8 +42,7 @@ class _DevicesState extends State<Devices> {
         title: Text(device.name),
         subtitle: Text(device.createdAt.toIso8601String()),
         onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => ShowDevice(device: device)));
+          Navigator.of(context).pushNamed(ShowDevice.route, arguments: device);
         },
       );
 
