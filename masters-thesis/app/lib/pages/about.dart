@@ -28,11 +28,6 @@ class About extends StatelessWidget {
     String paragraphs = lip.paragraphs(1);
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon:
-              Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
-          onPressed: () => Navigator.pushReplacementNamed(context, Home.route),
-        ),
         title: Text(
           "About",
           style: const TextStyle(fontSize: 30),
@@ -133,24 +128,19 @@ class About extends StatelessWidget {
           onTap: (index) {
             switch (index) {
               case 0:
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const IotPrivacy()));
+                Navigator.of(context).pushNamed(Home.route);
                 break;
               case 1:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const About()));
+                Navigator.of(context).pushNamed(About.route);
                 break;
               case 2:
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const Encyclopedia()));
+                Navigator.of(context).pushNamed(Encyclopedia.route);
                 break;
               case 3:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Auth()));
+                Navigator.of(context).pushNamed(Auth.route);
                 break;
               case 4:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Devices()));
+                Navigator.of(context).pushNamed(Devices.route);
                 break;
             }
           },

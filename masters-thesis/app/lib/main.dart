@@ -5,6 +5,7 @@
 // @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "dart:async";
+import 'package:app/routes.dart';
 import 'package:flutter/foundation.dart';
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
@@ -62,13 +63,8 @@ class IotPrivacy extends StatelessWidget {
         //   onSurface: Color.fromARGB(255, 212, 10, 10),
         // ),
       ),
-      home: const Home(),
-      routes: <String, WidgetBuilder>{
-        About.route: (context) => const About(),
-        Encyclopedia.route: (context) => const Encyclopedia(),
-        Auth.route: (context) => const Auth(),
-        Devices.route: (context) => const Devices(),
-      },
+      initialRoute: Home.route,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
