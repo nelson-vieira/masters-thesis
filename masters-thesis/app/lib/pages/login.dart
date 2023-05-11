@@ -22,20 +22,20 @@ import 'package:app/pages/auth.dart';
 import 'package:app/pages/helper.dart';
 import 'package:app/pages/forgot_password.dart';
 
-class Account extends StatefulWidget {
-  static const String route = "/account";
+class Login extends StatefulWidget {
+  static const String route = "/login";
   final VoidCallback onClickRegister;
 
-  const Account({
+  const Login({
     Key? key,
     required this.onClickRegister,
   }) : super(key: key);
 
   @override
-  State<Account> createState() => _AccountState();
+  State<Login> createState() => _LoginState();
 }
 
-class _AccountState extends State<Account> {
+class _LoginState extends State<Login> {
   final controllerEmail = TextEditingController();
   final controllerPassword = TextEditingController();
 
@@ -91,13 +91,8 @@ class _AccountState extends State<Account> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back,
-              color: Color.fromARGB(255, 255, 255, 255)),
-          onPressed: () => Navigator.pushReplacementNamed(context, Home.route),
-        ),
         title: const Text(
-          "Account",
+          "Log In",
           style: TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
@@ -141,8 +136,8 @@ class _AccountState extends State<Account> {
                   color: Color.fromARGB(255, 75, 191, 206),
                 ),
               ),
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const ForgotPassword())),
+              onTap: () =>
+                  Navigator.of(context).pushNamed(ForgotPassword.route),
             ),
           ),
           const SizedBox(
@@ -168,85 +163,6 @@ class _AccountState extends State<Account> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-            // sets the background color of the `BottomNavigationBar`
-            canvasColor: const Color(0xFF334150),
-            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-            primaryColorDark: const Color(0xFF334150),
-            textTheme: Theme.of(context).textTheme.copyWith(
-                labelSmall: const TextStyle(
-                    color: Color.fromARGB(255, 223, 141,
-                        18)))), // sets the inactive color of the `BottomNavigationBar`
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: 3,
-          selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
-          unselectedItemColor: const Color.fromARGB(255, 149, 196, 236),
-          selectedIconTheme: const IconThemeData(
-            color: Color.fromARGB(255, 250, 250, 250),
-          ),
-          unselectedIconTheme: const IconThemeData(
-            color: Color.fromARGB(255, 149, 196, 236),
-          ),
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.format_quote,
-              ),
-              label: "About",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.question_mark,
-              ),
-              label: "FAQ",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle,
-              ),
-              label: "Account",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_tree_outlined,
-              ),
-              label: "IoT Devices",
-            ),
-          ],
-          onTap: (index) {
-            switch (index) {
-              case 0:
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const IotPrivacy()));
-                break;
-              case 1:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const About()));
-                break;
-              case 2:
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const Encyclopedia()));
-                break;
-              case 3:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Auth()));
-                break;
-              case 4:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Devices()));
-                break;
-            }
-          },
-        ),
       ),
     );
   }

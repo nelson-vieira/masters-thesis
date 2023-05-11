@@ -13,6 +13,9 @@ import "package:app/pages/auth.dart";
 import "package:app/pages/devices.dart";
 import 'package:app/pages/showdevice.dart';
 import 'package:app/pages/update.dart';
+import 'package:app/pages/create.dart';
+import 'package:app/pages/account.dart';
+import 'package:app/pages/forgot_password.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -29,6 +32,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const Auth());
       case Devices.route:
         return MaterialPageRoute(builder: (_) => const Devices());
+      case Create.route:
+        return MaterialPageRoute(builder: (_) => const Create());
+      case Account.route:
+        return MaterialPageRoute(builder: (_) => const Account());
+      case ForgotPassword.route:
+        return MaterialPageRoute(builder: (_) => const ForgotPassword());
       case ShowDevice.route:
         if (args is Device) {
           return MaterialPageRoute(

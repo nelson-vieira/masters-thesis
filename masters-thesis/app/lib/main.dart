@@ -13,6 +13,7 @@ import "package:latlong2/latlong.dart";
 import "package:location/location.dart";
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import "package:firebase_auth/firebase_auth.dart";
 import 'firebase_options.dart';
 import "package:app/widgets/app_bar.dart";
 import "package:app/widgets/bottom_navigation_bar.dart";
@@ -32,13 +33,13 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(const IotPrivacy());
+  runApp(const Main());
 }
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
-class IotPrivacy extends StatelessWidget {
-  const IotPrivacy({Key? key}) : super(key: key);
+class Main extends StatelessWidget {
+  const Main({Key? key}) : super(key: key);
 
   // This widget is the root of the application.
   @override
@@ -64,7 +65,100 @@ class IotPrivacy extends StatelessWidget {
         // ),
       ),
       initialRoute: Home.route,
+      home: const IotPrivacy(),
       onGenerateRoute: RouteGenerator.generateRoute,
+    );
+  }
+}
+
+class IotPrivacy extends StatefulWidget {
+  const IotPrivacy({super.key});
+
+  @override
+  State<IotPrivacy> createState() => _IotPrivacyState();
+}
+
+class _IotPrivacyState extends State<IotPrivacy> {
+  int index = 0;
+  bool isLogged = true;
+  final pages = [
+    const Home(),
+    const About(),
+    const Encyclopedia(),
+    StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return const Account();
+        } else {
+          return const Auth();
+        }
+      },
+    ),
+    const Devices(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: pages[index],
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+            canvasColor: const Color(0xFF334150),
+            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+            primaryColorDark: const Color(0xFF334150),
+            textTheme: Theme.of(context).textTheme.copyWith(
+                labelSmall: const TextStyle(
+                    color: Color.fromARGB(255, 223, 141,
+                        18)))), // sets the inactive color of the `BottomNavigationBar`
+        child: BottomNavigationBar(
+          currentIndex: index,
+          showSelectedLabels: true,
+          showUnselectedLabels: false,
+          selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
+          unselectedItemColor: Color.fromARGB(255, 149, 196, 236),
+          selectedIconTheme: const IconThemeData(
+            color: Color.fromARGB(255, 250, 250, 250),
+          ),
+          unselectedIconTheme: const IconThemeData(
+            color: Color.fromARGB(255, 149, 196, 236),
+          ),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.format_quote,
+              ),
+              label: "About",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.question_mark,
+              ),
+              label: "FAQ",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_circle,
+              ),
+              label: "Account",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_tree_outlined,
+              ),
+              label: "IoT Devices",
+            ),
+          ],
+          onTap: (index) => setState(() => this.index = index),
+        ),
+      ),
     );
   }
 }

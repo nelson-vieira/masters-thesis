@@ -21,6 +21,8 @@ import "package:app/pages/devices.dart";
 import 'package:app/pages/auth.dart';
 import 'package:app/pages/helper.dart';
 import 'package:app/pages/forgot_password.dart';
+import 'package:app/pages/login.dart';
+import 'package:app/pages/register.dart';
 
 class Account extends StatefulWidget {
   static const String route = "/account";
@@ -64,80 +66,6 @@ class _AccountState extends State<Account> {
               child: const Text("Log out"),
             ),
           ],
-        ),
-      ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-            // sets the background color of the `BottomNavigationBar`
-            canvasColor: const Color(0xFF334150),
-            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-            primaryColorDark: const Color(0xFF334150),
-            textTheme: Theme.of(context).textTheme.copyWith(
-                labelSmall: const TextStyle(
-                    color: Color.fromARGB(255, 223, 141,
-                        18)))), // sets the inactive color of the `BottomNavigationBar`
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: 3,
-          selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
-          unselectedItemColor: const Color.fromARGB(255, 149, 196, 236),
-          selectedIconTheme: const IconThemeData(
-            color: Color.fromARGB(255, 250, 250, 250),
-          ),
-          unselectedIconTheme: const IconThemeData(
-            color: Color.fromARGB(255, 149, 196, 236),
-          ),
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.format_quote,
-              ),
-              label: "About",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.question_mark,
-              ),
-              label: "FAQ",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle,
-              ),
-              label: "Account",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_tree_outlined,
-              ),
-              label: "IoT Devices",
-            ),
-          ],
-          onTap: (index) {
-            switch (index) {
-              case 0:
-                Navigator.of(context).pushNamed(Home.route);
-                break;
-              case 1:
-                Navigator.of(context).pushNamed(About.route);
-                break;
-              case 2:
-                Navigator.of(context).pushNamed(Encyclopedia.route);
-                break;
-              case 3:
-                Navigator.of(context).pushNamed(Auth.route);
-                break;
-              case 4:
-                Navigator.of(context).pushNamed(Devices.route);
-                break;
-            }
-          },
         ),
       ),
     );

@@ -12,6 +12,8 @@ import 'package:app/pages/auth.dart';
 import 'package:app/pages/helper.dart';
 
 class ForgotPassword extends StatefulWidget {
+  static const String route = "/forgot_password";
+
   const ForgotPassword({super.key});
 
   @override
@@ -77,7 +79,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back,
               color: Color.fromARGB(255, 255, 255, 255)),
-          onPressed: () => Navigator.of(context).pushNamed(Auth.route),
+          onPressed: () => Navigator.of(context).pop(),
         ),
         title: const Text(
           "Reset Password",

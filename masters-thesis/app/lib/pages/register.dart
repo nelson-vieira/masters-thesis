@@ -109,13 +109,6 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back,
-              color: Color.fromARGB(255, 255, 255, 255)),
-          onPressed: () {
-            Navigator.of(context).pushNamed(Home.route);
-          },
-        ),
         title: const Text(
           "Create Account",
           style: TextStyle(fontSize: 30),
@@ -181,85 +174,6 @@ class _RegisterState extends State<Register> {
               ),
             ),
           ],
-        ),
-      ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-            // sets the background color of the `BottomNavigationBar`
-            canvasColor: const Color(0xFF334150),
-            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-            primaryColorDark: const Color(0xFF334150),
-            textTheme: Theme.of(context).textTheme.copyWith(
-                labelSmall: const TextStyle(
-                    color: Color.fromARGB(255, 223, 141,
-                        18)))), // sets the inactive color of the `BottomNavigationBar`
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: 3,
-          selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
-          unselectedItemColor: const Color.fromARGB(255, 149, 196, 236),
-          selectedIconTheme: const IconThemeData(
-            color: Color.fromARGB(255, 250, 250, 250),
-          ),
-          unselectedIconTheme: const IconThemeData(
-            color: Color.fromARGB(255, 149, 196, 236),
-          ),
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.format_quote,
-              ),
-              label: "About",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.question_mark,
-              ),
-              label: "FAQ",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle,
-              ),
-              label: "Account",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_tree_outlined,
-              ),
-              label: "Devices",
-            ),
-          ],
-          onTap: (index) {
-            switch (index) {
-              case 0:
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const IotPrivacy()));
-                break;
-              case 1:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const About()));
-                break;
-              case 2:
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const Encyclopedia()));
-                break;
-              case 3:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Auth()));
-                break;
-              case 4:
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Devices()));
-                break;
-            }
-          },
         ),
       ),
     );
