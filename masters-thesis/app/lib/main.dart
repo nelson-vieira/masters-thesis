@@ -167,26 +167,62 @@ class Device {
   String id;
   final String name;
   final String category;
+  final String purpose;
+  final String whoHasAccess;
+  final String timeStored;
+  final bool identifiable;
+  final String whatsDone;
+  final String privacyOptions;
+  final String latitude;
+  final String longitude;
   final DateTime createdAt;
+  final DateTime updatedAt;
 
   Device({
     this.id = "",
     required this.name,
     required this.category,
+    required this.purpose,
+    required this.whoHasAccess,
+    required this.timeStored,
+    required this.identifiable,
+    required this.whatsDone,
+    required this.privacyOptions,
+    required this.latitude,
+    required this.longitude,
     required this.createdAt,
+    required this.updatedAt,
   });
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
         "category": category,
+        "purpose": purpose,
+        "whoHasAccess": whoHasAccess,
+        "timeStored": timeStored,
+        "identifiable": identifiable,
+        "whatsDone": whatsDone,
+        "privacyOptions": privacyOptions,
+        "latitude": latitude,
+        "longitude": longitude,
         "createdAt": createdAt,
+        "updatedAt": updatedAt,
       };
 
   static Device fromJson(Map<String, dynamic> json) => Device(
         id: json['id'],
         name: json['name'],
         category: json['category'],
+        purpose: json['purpose'],
+        whoHasAccess: json['whoHasAccess'],
+        timeStored: json['timeStored'],
+        identifiable: json['identifiable'],
+        whatsDone: json['whatsDone'],
+        privacyOptions: json['privacyOptions'],
+        latitude: json['latitude'],
+        longitude: json['longitude'],
         createdAt: (json['createdAt'] as Timestamp).toDate(),
+        updatedAt: (json['updatedAt'] as Timestamp).toDate(),
       );
 }
