@@ -165,16 +165,26 @@ class _IotPrivacyState extends State<IotPrivacy> {
 
 class Device {
   String id;
+  // Name of the device
   final String name;
+  // Category of the device, can be of the types: d
   final String category;
+  // What is the purpose of the data being collected
   final String purpose;
+  // Who has access to the data that is being collected
   final String whoHasAccess;
+  // For how long is the data bring stored, doesn't matter if it is on the cloud or on premises or other
   final String timeStored;
+  // Can the data identify any individual?
   final bool identifiable;
+  // What is being done with the data at the present moment
   final String whatsDone;
+  // Is there any privacy options that the user can control? And what are they.
   final String privacyOptions;
+  // Coordinates of the device so that it can be shown on the map
   final String latitude;
   final String longitude;
+  // Metadata about this device on the database
   final DateTime createdAt;
   final DateTime updatedAt;
 
@@ -182,18 +192,19 @@ class Device {
     this.id = "",
     required this.name,
     required this.category,
-    required this.purpose,
-    required this.whoHasAccess,
-    required this.timeStored,
-    required this.identifiable,
-    required this.whatsDone,
-    required this.privacyOptions,
+    this.purpose = "",
+    this.whoHasAccess = "",
+    this.timeStored = "",
+    this.identifiable = false,
+    this.whatsDone = "",
+    this.privacyOptions = "",
     required this.latitude,
     required this.longitude,
     required this.createdAt,
     required this.updatedAt,
   });
 
+  // This function serves to send the data about this device to Firebase
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
@@ -210,19 +221,20 @@ class Device {
         "updatedAt": updatedAt,
       };
 
+  // This function serves to import the data on Firebase to be shown on the app
   static Device fromJson(Map<String, dynamic> json) => Device(
-        id: json['id'],
-        name: json['name'],
-        category: json['category'],
-        purpose: json['purpose'],
-        whoHasAccess: json['whoHasAccess'],
-        timeStored: json['timeStored'],
-        identifiable: json['identifiable'],
-        whatsDone: json['whatsDone'],
-        privacyOptions: json['privacyOptions'],
-        latitude: json['latitude'],
-        longitude: json['longitude'],
-        createdAt: (json['createdAt'] as Timestamp).toDate(),
-        updatedAt: (json['updatedAt'] as Timestamp).toDate(),
+        id: json["id"],
+        name: json["name"],
+        category: json["category"],
+        purpose: json["purpose"],
+        whoHasAccess: json["whoHasAccess"],
+        timeStored: json["timeStored"],
+        identifiable: json["identifiable"],
+        whatsDone: json["whatsDone"],
+        privacyOptions: json["privacyOptions"],
+        latitude: json["latitude"],
+        longitude: json["longitude"],
+        createdAt: (json["createdAt"] as Timestamp).toDate(),
+        updatedAt: (json["updatedAt"] as Timestamp).toDate(),
       );
 }
