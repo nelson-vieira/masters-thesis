@@ -31,16 +31,16 @@ class Devices extends StatefulWidget {
 
 class _DevicesState extends State<Devices> {
   Stream<List<Device>> readDevices() => FirebaseFirestore.instance
-      .collection('devices')
+      .collection("devices")
       .snapshots()
       .map((snapshot) =>
           snapshot.docs.map((doc) => Device.fromJson(doc.data())).toList());
 
   Widget buildDevices(Device device) => ListTile(
-        textColor: Color.fromARGB(255, 255, 255, 255),
-        leading: CircleAvatar(child: Text('${device.category}')),
-        title: Text(device.name),
-        subtitle: Text(device.createdAt.toIso8601String()),
+        textColor: const Color.fromARGB(255, 255, 255, 255),
+        leading: CircleAvatar(child: Text(device.category)),
+        // title: Text(device.name),
+        // subtitle: Text(device.id),
         onTap: () {
           Navigator.of(context).pushNamed(ShowDevice.route, arguments: device);
         },
@@ -56,23 +56,34 @@ class _DevicesState extends State<Devices> {
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: FutureBuilder(
-          future: readDevices().first,
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
-              return Text('Something went wrong! ${snapshot.error}');
-            } else if (snapshot.hasData) {
-              final devices = snapshot.data!;
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: FutureBuilder(
+            future: readDevices().first,
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Center(
+                    child: Text(
+                  "Something went wrong! ${snapshot.error}",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 17.0,
+                  ),
+                  textAlign: TextAlign.center,
+                ));
+              } else if (snapshot.hasData) {
+                final devices = snapshot.data!;
 
-              return ListView(
-                children: devices.map(buildDevices).toList(),
-              );
-            } else {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          }),
+                return ListView(
+                  children: devices.map(buildDevices).toList(),
+                );
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            }),
+      ),
     );
   }
 }
