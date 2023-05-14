@@ -88,7 +88,17 @@ class _IotPrivacyState extends State<IotPrivacy> {
     StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
-        if (snapshot.hasData) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (snapshot.hasError) {
+          return Center(
+            child: Text("Something went wrong!",
+                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center),
+          );
+        } else if (snapshot.hasData) {
           return const Account();
         } else {
           return const Auth();

@@ -102,7 +102,7 @@ class _RegisterState extends State<Register> {
       Helper.showSnackBar(e.message);
     }
 
-    Navigator.of(context).pushNamed(Home.route);
+    navigatorKey.currentState!.pushNamed(Account.route);
   }
 
   @override

@@ -19,6 +19,7 @@ import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";
 import "package:app/pages/devices.dart";
 import 'package:app/pages/auth.dart';
+import 'package:app/pages/account.dart';
 import 'package:app/pages/helper.dart';
 import 'package:app/pages/forgot_password.dart';
 
@@ -84,7 +85,7 @@ class _LoginState extends State<Login> {
       Helper.showSnackBar(e.message);
     }
 
-    navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    navigatorKey.currentState!.pushNamed(Account.route);
   }
 
   @override
