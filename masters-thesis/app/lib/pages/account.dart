@@ -49,23 +49,33 @@ class _AccountState extends State<Account> {
         backgroundColor: const Color(0xFF334150),
       ),
       body: Padding(
-        padding: EdgeInsets.all(32),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Signed in as"),
-            SizedBox(
-              height: 8,
-            ),
-            Text(account.email!),
-            SizedBox(
-              height: 40,
-            ),
-            ElevatedButton(
-              onPressed: () => FirebaseAuth.instance.signOut(),
-              child: const Text("Log out"),
-            ),
-          ],
+        padding: EdgeInsets.all(16),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Signed in as",
+                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                account.email!,
+                style: TextStyle(color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              ElevatedButton(
+                onPressed: () => FirebaseAuth.instance.signOut(),
+                child: const Text("Log out"),
+              ),
+            ],
+          ),
         ),
       ),
     );
