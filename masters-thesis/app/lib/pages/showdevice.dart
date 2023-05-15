@@ -8,17 +8,17 @@ import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import "package:firebase_core/firebase_core.dart";
+import "package:cloud_firestore/cloud_firestore.dart";
 import "package:app/main.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
-import 'package:app/pages/encyclopedia.dart';
-import 'package:app/pages/account.dart';
-import 'package:app/pages/create.dart';
-import 'package:app/pages/update.dart';
-import 'package:app/pages/devices.dart';
-import 'package:app/pages/auth.dart';
+import "package:app/pages/encyclopedia.dart";
+import "package:app/pages/account.dart";
+import "package:app/pages/create.dart";
+import "package:app/pages/update.dart";
+import "package:app/pages/devices.dart";
+import "package:app/pages/auth.dart";
 
 class ShowDevice extends StatefulWidget {
   static const String route = "/showdevice";
@@ -33,7 +33,7 @@ class ShowDevice extends StatefulWidget {
 class _ShowDeviceState extends State<ShowDevice> {
   Future<Device?> readDevice() async {
     final docDevice =
-        FirebaseFirestore.instance.collection('devices').doc(widget.device.id);
+        FirebaseFirestore.instance.collection("devices").doc(widget.device.id);
     final snapshot = await docDevice.get();
 
     if (snapshot.exists) {
@@ -79,12 +79,12 @@ class _ShowDeviceState extends State<ShowDevice> {
           future: readDevice(),
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return Text('Something went wrong! ${snapshot.error}');
+              return Text("Something went wrong! ${snapshot.error}");
             } else if (snapshot.hasData) {
               final device = snapshot.data!;
 
               return device == null
-                  ? Center(child: Text('No Device'))
+                  ? Center(child: Text("No Device"))
                   : buildDevice(device);
             } else {
               return Center(

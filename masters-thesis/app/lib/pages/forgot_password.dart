@@ -6,10 +6,10 @@
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:flutter/material.dart";
 import "package:firebase_auth/firebase_auth.dart";
-import 'package:email_validator/email_validator.dart';
+import "package:email_validator/email_validator.dart";
 import "package:app/main.dart";
-import 'package:app/pages/auth.dart';
-import 'package:app/pages/helper.dart';
+import "package:app/pages/auth.dart";
+import "package:app/pages/helper.dart";
 
 class ForgotPassword extends StatefulWidget {
   static const String route = "/forgot_password";

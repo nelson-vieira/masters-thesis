@@ -8,19 +8,19 @@ import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:intl/intl.dart';
+import "package:firebase_core/firebase_core.dart";
+import "package:cloud_firestore/cloud_firestore.dart";
+import "package:datetime_picker_formfield/datetime_picker_formfield.dart";
+import "package:intl/intl.dart";
 import "package:app/main.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
-import 'package:app/pages/encyclopedia.dart';
-import 'package:app/pages/account.dart';
-import 'package:app/pages/create.dart';
-import 'package:app/pages/devices.dart';
-import 'package:app/pages/showdevice.dart';
-import 'package:app/pages/auth.dart';
+import "package:app/pages/encyclopedia.dart";
+import "package:app/pages/account.dart";
+import "package:app/pages/create.dart";
+import "package:app/pages/devices.dart";
+import "package:app/pages/showdevice.dart";
+import "package:app/pages/auth.dart";
 
 class Update extends StatefulWidget {
   static const String route = "/update";
@@ -89,7 +89,7 @@ class _UpdateState extends State<Update> {
         children: <Widget>[
           TextField(
             controller: controllerName,
-            decoration: decoration('Name'),
+            decoration: decoration("Name"),
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -97,7 +97,7 @@ class _UpdateState extends State<Update> {
           const SizedBox(height: 24),
           TextField(
             controller: controllerCategory,
-            decoration: decoration('Category'),
+            decoration: decoration("Category"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -108,7 +108,7 @@ class _UpdateState extends State<Update> {
           ),
           TextField(
             controller: controllerPurpose,
-            decoration: decoration('What is the purpose'),
+            decoration: decoration("What is the purpose"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -119,7 +119,7 @@ class _UpdateState extends State<Update> {
           ),
           TextField(
             controller: controllerWhoHasAccess,
-            decoration: decoration('Who has access to this information'),
+            decoration: decoration("Who has access to this information"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -130,7 +130,7 @@ class _UpdateState extends State<Update> {
           ),
           TextField(
             controller: controllerTimeStored,
-            decoration: decoration('For how long is the data stored'),
+            decoration: decoration("For how long is the data stored"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -141,7 +141,7 @@ class _UpdateState extends State<Update> {
           ),
           TextField(
             controller: controllerIdentifiable,
-            decoration: decoration('Can the data identify anyone?'),
+            decoration: decoration("Can the data identify anyone?"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -152,7 +152,7 @@ class _UpdateState extends State<Update> {
           ),
           TextField(
             controller: controllerWhatsDone,
-            decoration: decoration('What is being done with the data?'),
+            decoration: decoration("What is being done with the data?"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -163,7 +163,7 @@ class _UpdateState extends State<Update> {
           ),
           TextField(
             controller: controllerPrivacyOptions,
-            decoration: decoration('URL for privacy options of the device'),
+            decoration: decoration("URL for privacy options of the device"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -174,7 +174,7 @@ class _UpdateState extends State<Update> {
           ),
           TextField(
             controller: controllerLatitude,
-            decoration: decoration('Latitude of the device'),
+            decoration: decoration("Latitude of the device"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -185,7 +185,7 @@ class _UpdateState extends State<Update> {
           ),
           TextField(
             controller: controllerLongitude,
-            decoration: decoration('Longitude of the device'),
+            decoration: decoration("Longitude of the device"),
             keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
@@ -196,11 +196,11 @@ class _UpdateState extends State<Update> {
           ),
           DateTimeField(
             controller: controllerUpdatedAt,
-            decoration: decoration('Updated At'),
+            decoration: decoration("Updated At"),
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
-            format: DateFormat('yyyy-MM-dd'),
+            format: DateFormat("yyyy-MM-dd"),
             onShowPicker: (context, currentValue) async {
               final time = await showTimePicker(
                 context: context,
@@ -215,11 +215,11 @@ class _UpdateState extends State<Update> {
           ),
           DateTimeField(
             controller: controllerCreatedAt,
-            decoration: decoration('Created At'),
+            decoration: decoration("Created At"),
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
-            format: DateFormat('yyyy-MM-dd'),
+            format: DateFormat("yyyy-MM-dd"),
             onShowPicker: (context, currentValue) async {
               final time = await showTimePicker(
                 context: context,
@@ -233,14 +233,14 @@ class _UpdateState extends State<Update> {
             height: 32,
           ),
           ElevatedButton(
-              child: Text('Update'),
+              child: Text("Update"),
               onPressed: () {
                 final docDevice = FirebaseFirestore.instance
-                    .collection('devices')
+                    .collection("devices")
                     .doc(widget.device.id);
                 docDevice.update({
-                  'name': controllerName.text,
-                  'category': controllerCategory.text,
+                  "name": controllerName.text,
+                  "category": controllerCategory.text,
                   "purpose": controllerPurpose.text,
                   "whoHasAccess": controllerWhoHasAccess.text,
                   "timeStored": controllerTimeStored.text,
@@ -249,18 +249,18 @@ class _UpdateState extends State<Update> {
                   "privacyOptions": controllerPrivacyOptions.text,
                   "latitude": controllerLatitude.text,
                   "longitude": controllerLongitude.text,
-                  'createdAt': DateTime.parse(controllerCreatedAt.text),
-                  'updatedAt': DateTime.parse(controllerUpdatedAt.text),
+                  "createdAt": DateTime.parse(controllerCreatedAt.text),
+                  "updatedAt": DateTime.parse(controllerUpdatedAt.text),
                 });
               }),
           const SizedBox(
             height: 32,
           ),
           ElevatedButton(
-              child: Text('Delete'),
+              child: Text("Delete"),
               onPressed: () {
                 final docDevice = FirebaseFirestore.instance
-                    .collection('devices')
+                    .collection("devices")
                     .doc(widget.device.id);
                 docDevice.delete();
               }),

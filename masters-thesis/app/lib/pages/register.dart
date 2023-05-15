@@ -4,27 +4,27 @@
 //
 // @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
-import 'package:email_validator/email_validator.dart';
+import "package:email_validator/email_validator.dart";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:intl/intl.dart';
+import "package:firebase_core/firebase_core.dart";
+import "package:firebase_core_platform_interface/firebase_core_platform_interface.dart";
+import "package:cloud_firestore/cloud_firestore.dart";
+import "package:firebase_auth/firebase_auth.dart";
+import "package:datetime_picker_formfield/datetime_picker_formfield.dart";
+import "package:intl/intl.dart";
 import "package:flutter/gestures.dart";
 import "package:app/main.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
-import 'package:app/pages/encyclopedia.dart';
-import 'package:app/pages/account.dart';
-import 'package:app/pages/create.dart';
-import 'package:app/pages/update.dart';
-import 'package:app/pages/devices.dart';
-import 'package:app/pages/auth.dart';
-import 'package:app/pages/helper.dart';
+import "package:app/pages/encyclopedia.dart";
+import "package:app/pages/account.dart";
+import "package:app/pages/create.dart";
+import "package:app/pages/update.dart";
+import "package:app/pages/devices.dart";
+import "package:app/pages/auth.dart";
+import "package:app/pages/helper.dart";
 
 class Register extends StatefulWidget {
   static const String route = "/register";
@@ -122,7 +122,7 @@ class _RegisterState extends State<Register> {
           children: <Widget>[
             TextFormField(
               controller: controllerEmail,
-              decoration: decoration('Email'),
+              decoration: decoration("Email"),
               style: const TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
               ),
@@ -135,7 +135,7 @@ class _RegisterState extends State<Register> {
             const SizedBox(height: 24),
             TextFormField(
               controller: controllerPassword,
-              decoration: decoration('Password'),
+              decoration: decoration("Password"),
               style: const TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
               ),
@@ -149,7 +149,7 @@ class _RegisterState extends State<Register> {
             ),
             ElevatedButton(
               onPressed: createUser,
-              child: const Text('Create account'),
+              child: const Text("Create account"),
             ),
             const SizedBox(
               height: 24,

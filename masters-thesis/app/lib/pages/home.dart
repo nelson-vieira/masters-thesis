@@ -10,12 +10,12 @@ import "package:latlong2/latlong.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import "package:app/main.dart";
 import "package:app/pages/about.dart";
-import 'package:app/pages/encyclopedia.dart';
-import 'package:app/pages/account.dart';
-import 'package:app/pages/create.dart';
-import 'package:app/pages/update.dart';
-import 'package:app/pages/devices.dart';
-import 'package:app/pages/auth.dart';
+import "package:app/pages/encyclopedia.dart";
+import "package:app/pages/account.dart";
+import "package:app/pages/create.dart";
+import "package:app/pages/update.dart";
+import "package:app/pages/devices.dart";
+import "package:app/pages/auth.dart";
 
 class Home extends StatelessWidget {
   static const String route = "/";
