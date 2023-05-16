@@ -61,11 +61,13 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.of(context).pushNamed(Create.route);
-          }),
+      floatingActionButton: FirebaseAuth.instance.currentUser != null
+          ? FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () {
+                Navigator.of(context).pushNamed(Create.route);
+              })
+          : Container(),
     );
   }
 }

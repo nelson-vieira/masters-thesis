@@ -85,7 +85,8 @@ class _LoginState extends State<Login> {
       Helper.showSnackBar(e.message);
     }
 
-    navigatorKey.currentState!.pushNamed(Account.route);
+    Navigator.of(context).pushNamed(Account.route);
+    // navigatorKey.currentState!.pushNamed(Account.route);
   }
 
   @override

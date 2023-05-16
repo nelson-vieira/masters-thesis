@@ -56,7 +56,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         email: controllerEmail.text.trim(),
       );
       Helper.showSnackBar("Password reset email sent!");
-      navigatorKey.currentState!.popUntil((route) => route.isFirst);
+      //   navigatorKey.currentState!.popUntil((route) => route.isFirst);
     } on FirebaseAuthException catch (e) {
       //   if (e.code == "user-not-found") {
       //     print("No user found for that email.");
@@ -68,7 +68,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
       Helper.showSnackBar(e.message);
 
-      navigatorKey.currentState!.pop();
+      //   navigatorKey.currentState!.pop();
     }
   }
 

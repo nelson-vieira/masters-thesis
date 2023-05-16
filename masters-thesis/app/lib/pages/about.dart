@@ -33,6 +33,7 @@ class About extends StatelessWidget {
           style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding:

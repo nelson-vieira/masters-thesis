@@ -36,8 +36,6 @@ void main() async {
   runApp(const Main());
 }
 
-final navigatorKey = GlobalKey<NavigatorState>();
-
 class Main extends StatelessWidget {
   const Main({Key? key}) : super(key: key);
 
@@ -45,7 +43,6 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: "IoT Privacy App",
       theme: ThemeData(
@@ -81,30 +78,59 @@ class IotPrivacy extends StatefulWidget {
 class _IotPrivacyState extends State<IotPrivacy> {
   int index = 0;
   bool isLogged = true;
+
   final pages = [
     const Home(),
     const About(),
     const Encyclopedia(),
+
     StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        } else if (snapshot.hasError) {
-          return Center(
-            child: Text("Something went wrong!",
-                style: TextStyle(color: Colors.white),
-                textAlign: TextAlign.center),
-          );
-        } else if (snapshot.hasData) {
-          return const Account();
+        if (snapshot.connectionState == ConnectionState.active) {
+          //   User user = snapshot.data;
+          if (snapshot.data == null) {
+            return Auth();
+          }
+          return Account();
         } else {
-          return const Auth();
+          return Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
         }
       },
     ),
+
+    // StreamBuilder<User?>(
+    //   stream: FirebaseAuth.instance.authStateChanges(),
+    //   builder: (context, snapshot) {
+    //     // if (snapshot.connectionState == ConnectionState.waiting) {
+    //     //   return Center(
+    //     //     child: CircularProgressIndicator(),
+    //     //   );
+    //     // } else if (snapshot.hasError) {
+    //     //   return Center(
+    //     //     child: Text("Something went wrong!",
+    //     //         style: TextStyle(color: Colors.white),
+    //     //         textAlign: TextAlign.center),
+    //     //   );
+    //     // } else if (snapshot.hasData) {
+    //     //   return const Account();
+    //     // } else {
+    //     //   return const Auth();
+    //     // }
+    //     if (!snapshot.hasData) {
+    //       return Auth();
+    //     }
+
+    //     return const Account();
+    //   },
+    // ),
+    // (FirebaseAuth.instance.currentUser ?? false) != null
+    //     ? const Account()
+    //     : const Auth(),
     const Devices(),
   ];
 
@@ -173,6 +199,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
   }
 }
 
+@immutable
 class Device {
   String id;
   // Name of the device
@@ -194,6 +221,8 @@ class Device {
   // Coordinates of the device so that it can be shown on the map
   final String latitude;
   final String longitude;
+  // The device owner, can be an individual or an organization
+  final String owner;
   // Metadata about this device on the database
   final DateTime createdAt;
   final DateTime updatedAt;
