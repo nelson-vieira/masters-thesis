@@ -43,6 +43,7 @@ class _UpdateState extends State<Update> {
   final controllerPrivacyOptions = TextEditingController();
   final controllerLatitude = TextEditingController();
   final controllerLongitude = TextEditingController();
+  final controllerOwner = TextEditingController();
   final controllerCreatedAt = TextEditingController();
   final controllerUpdatedAt = TextEditingController();
 
@@ -194,6 +195,16 @@ class _UpdateState extends State<Update> {
           const SizedBox(
             height: 24,
           ),
+          TextField(
+            controller: controllerOwner,
+            decoration: decoration("Longitude of the device"),
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
           DateTimeField(
             controller: controllerUpdatedAt,
             decoration: decoration("Updated At"),
@@ -249,6 +260,7 @@ class _UpdateState extends State<Update> {
                   "privacyOptions": controllerPrivacyOptions.text,
                   "latitude": controllerLatitude.text,
                   "longitude": controllerLongitude.text,
+                  "owner": controllerOwner.text,
                   "createdAt": DateTime.parse(controllerCreatedAt.text),
                   "updatedAt": DateTime.parse(controllerUpdatedAt.text),
                 });

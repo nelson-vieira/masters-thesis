@@ -199,7 +199,6 @@ class _IotPrivacyState extends State<IotPrivacy> {
   }
 }
 
-@immutable
 class Device {
   String id;
   // Name of the device
@@ -239,6 +238,7 @@ class Device {
     this.privacyOptions = "",
     required this.latitude,
     required this.longitude,
+    this.owner = "",
     required this.createdAt,
     required this.updatedAt,
   });
@@ -256,24 +256,26 @@ class Device {
         "privacyOptions": privacyOptions,
         "latitude": latitude,
         "longitude": longitude,
+        "owner": owner,
         "createdAt": createdAt,
         "updatedAt": updatedAt,
       };
 
   // This function serves to import the data on Firebase to be shown on the app
   static Device fromJson(Map<String, dynamic> json) => Device(
-        id: json["id"],
-        name: json["name"],
-        category: json["category"],
-        purpose: json["purpose"],
-        whoHasAccess: json["whoHasAccess"],
-        timeStored: json["timeStored"],
-        identifiable: json["identifiable"],
-        whatsDone: json["whatsDone"],
-        privacyOptions: json["privacyOptions"],
-        latitude: json["latitude"],
-        longitude: json["longitude"],
-        createdAt: (json["createdAt"] as Timestamp).toDate(),
-        updatedAt: (json["updatedAt"] as Timestamp).toDate(),
+        id: json["id"]! as String,
+        name: json["name"]! as String,
+        category: json["category"]! as String,
+        purpose: json["purpose"]! as String,
+        whoHasAccess: json["whoHasAccess"]! as String,
+        timeStored: json["timeStored"]! as String,
+        identifiable: json["identifiable"]! as bool,
+        whatsDone: json["whatsDone"]! as String,
+        privacyOptions: json["privacyOptions"]! as String,
+        latitude: json["latitude"]! as String,
+        longitude: json["longitude"]! as String,
+        owner: json["owner"]! as String,
+        createdAt: (json["createdAt"]! as Timestamp).toDate(),
+        updatedAt: (json["updatedAt"]! as Timestamp).toDate(),
       );
 }

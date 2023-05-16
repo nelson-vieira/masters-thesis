@@ -40,6 +40,7 @@ class _CreateState extends State<Create> {
   final controllerPrivacyOptions = TextEditingController();
   final controllerLatitude = TextEditingController();
   final controllerLongitude = TextEditingController();
+  final controllerOwner = TextEditingController();
   final controllerCreatedAt = TextEditingController();
   final controllerUpdatedAt = TextEditingController();
 
@@ -192,6 +193,16 @@ class _CreateState extends State<Create> {
           const SizedBox(
             height: 24,
           ),
+          TextField(
+            controller: controllerOwner,
+            decoration: decoration("Device owner"),
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
           DateTimeField(
             controller: controllerCreatedAt,
             decoration: decoration("Created At"),
@@ -244,6 +255,7 @@ class _CreateState extends State<Create> {
                 privacyOptions: controllerPrivacyOptions.text,
                 latitude: controllerLatitude.text,
                 longitude: controllerLongitude.text,
+                owner: controllerOwner.text,
                 createdAt: DateTime.parse(controllerCreatedAt.text),
                 updatedAt: DateTime.parse(controllerUpdatedAt.text),
               );
