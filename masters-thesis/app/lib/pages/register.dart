@@ -25,7 +25,7 @@ import "package:app/pages/create.dart";
 import "package:app/pages/update.dart";
 import "package:app/pages/devices.dart";
 import "package:app/pages/auth.dart";
-import "package:app/pages/helper.dart";
+import 'package:app/helpers/helper.dart';
 
 class Register extends StatefulWidget {
   static const String route = "/register";

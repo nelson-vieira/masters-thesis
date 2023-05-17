@@ -19,7 +19,7 @@ import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";
 import "package:app/pages/devices.dart";
 import "package:app/pages/auth.dart";
-import "package:app/pages/helper.dart";
+import 'package:app/helpers/helper.dart';
 import "package:app/pages/forgot_password.dart";
 import "package:app/pages/login.dart";
 import "package:app/pages/register.dart";
