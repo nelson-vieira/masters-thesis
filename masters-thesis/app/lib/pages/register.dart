@@ -16,6 +16,7 @@ import "package:datetime_picker_formfield/datetime_picker_formfield.dart";
 import "package:intl/intl.dart";
 import "package:flutter/gestures.dart";
 import "package:app/main.dart";
+import "package:app/models/user.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";
@@ -86,10 +87,16 @@ class _RegisterState extends State<Register> {
       ),
     );
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      UserCredential result =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: controllerEmail.text.trim(),
         password: controllerPassword.text.trim(),
       );
+      User user = result.user!;
+      //   await FirebaseFirestore.instance
+      //       .collection('users')
+      //       .doc(user.uid)
+      //       .set({'firstName': _firstName});
     } on FirebaseAuthException catch (e) {
       //   if (e.code == 'weak-password') {
       //     print('The password provided is too weak.');
@@ -102,7 +109,7 @@ class _RegisterState extends State<Register> {
       Helper.showSnackBar(e.message);
     }
 
-    navigatorKey.currentState!.pushNamed(Account.route);
+    // navigatorKey.currentState!.pushNamed(Account.route);
   }
 
   @override
