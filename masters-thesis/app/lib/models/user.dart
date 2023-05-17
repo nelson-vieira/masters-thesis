@@ -7,7 +7,7 @@
 import "package:app/pages/helper.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 
-class User {
+class UserDocument {
   String id;
   // Email of the user
   final String email;
@@ -15,7 +15,7 @@ class User {
   final DateTime createdAt;
   final DateTime lastLogin;
 
-  User({
+  UserDocument({
     this.id = "",
     required this.email,
     required this.createdAt,
@@ -31,7 +31,7 @@ class User {
       };
 
   // This function serves to import the data on Firebase to be shown on the app
-  static User fromJson(Map<String, dynamic> json) => User(
+  static UserDocument fromJson(Map<String, dynamic> json) => UserDocument(
         id: Helper.transformString(json["id"]),
         email: Helper.transformString(json["name"]),
         createdAt: (json["createdAt"] as Timestamp).toDate(),
