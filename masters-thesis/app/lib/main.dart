@@ -20,7 +20,7 @@ import "package:app/widgets/bottom_navigation_bar.dart";
 import 'package:app/pages/public/home.dart';
 import 'package:app/pages/public/about.dart';
 import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/pages/public/account.dart';
+import 'package:app/pages/auth/account.dart';
 import 'package:app/pages/auth/auth.dart';
 import 'package:app/pages/devices/create.dart';
 import 'package:app/pages/devices/update.dart';
@@ -36,47 +36,8 @@ void main() async {
   runApp(const Main());
 }
 
-class Main extends StatefulWidget {
+class Main extends StatelessWidget {
   const Main({Key? key}) : super(key: key);
-
-  @override
-  State<Main> createState() => _MainState();
-}
-
-String? _currentJwtToken = "";
-
-class _MainState extends State<Main> {
-//   Stream<User> userStream;
-//   User initialUser;
-
-//   final authenticatedUserStream = FirebaseAuth.instance
-//       .authStateChanges()
-//       .map<String>((user) {
-//         // Store jwt token on user update.
-//         () async {
-//           _currentJwtToken = await user?.getIdToken();
-//         }();
-//         return user?.uid ?? '';
-//       })
-//       .map((users) =>
-//           FirebaseFirestore.instance.collection("users").snapshots() = users.isNotEmpty ? users.first : null)
-//       .asBroadcastStream();
-
-//   final authUserSub = authenticatedUserStream.listen((_) {});
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     userStream = artStoreFirebaseUserStream()
-//       ..listen((user) => initialUser ?? setState(() => initialUser = user));
-//   }
-
-//   @override
-//   void dispose() {
-//     authUserSub.cancel();
-
-//     super.dispose();
-//   }
 
   @override
   Widget build(BuildContext context) {
@@ -121,55 +82,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
     const Home(),
     const About(),
     const Encyclopedia(),
-
-    StreamBuilder<User?>(
-      stream: FirebaseAuth.instance.authStateChanges(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          //   User user = snapshot.data;
-          return const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
-        } else {
-          if (snapshot.data == null) {
-            return const Auth();
-          } else {
-            return const Account();
-          }
-        }
-      },
-    ),
-
-    // StreamBuilder<User?>(
-    //   stream: FirebaseAuth.instance.authStateChanges(),
-    //   builder: (context, snapshot) {
-    //     // if (snapshot.connectionState == ConnectionState.waiting) {
-    //     //   return Center(
-    //     //     child: CircularProgressIndicator(),
-    //     //   );
-    //     // } else if (snapshot.hasError) {
-    //     //   return Center(
-    //     //     child: Text("Something went wrong!",
-    //     //         style: TextStyle(color: Colors.white),
-    //     //         textAlign: TextAlign.center),
-    //     //   );
-    //     // } else if (snapshot.hasData) {
-    //     //   return const Account();
-    //     // } else {
-    //     //   return const Auth();
-    //     // }
-    //     if (!snapshot.hasData) {
-    //       return Auth();
-    //     }
-
-    //     return const Account();
-    //   },
-    // ),
-    // (FirebaseAuth.instance.currentUser ?? false) != null
-    //     ? const Account()
-    //     : const Auth(),
+    const Account(),
     const Devices(),
   ];
 

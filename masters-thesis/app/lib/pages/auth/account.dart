@@ -19,7 +19,8 @@ import 'package:app/pages/public/about.dart';
 import 'package:app/pages/public/encyclopedia.dart';
 import 'package:app/pages/devices/devices.dart';
 import 'package:app/pages/auth/auth.dart';
-import 'package:app/helpers/helper.dart';
+import 'package:app/helpers/app.dart';
+import 'package:app/pages/auth/profile.dart';
 import 'package:app/pages/auth/forgot_password.dart';
 import 'package:app/pages/auth/login.dart';
 import 'package:app/pages/auth/register.dart';
@@ -36,48 +37,25 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
-  final account = FirebaseAuth.instance.currentUser!;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Account",
-          style: TextStyle(fontSize: 30),
-        ),
-        backgroundColor: const Color(0xFF334150),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Signed in as",
-                style: TextStyle(color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                account.email!,
-                style: TextStyle(color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              ElevatedButton(
-                onPressed: () => FirebaseAuth.instance.signOut(),
-                child: const Text("Log out"),
-              ),
-            ],
-          ),
-        ),
-      ),
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (BuildContext context, snapshot) {
+        if (snapshot.hasData) {
+          //   if (snapshot.data!.providerData.length == 1) {
+          //     // logged in using email and password
+          //     return snapshot.data.isEmailVerified
+          //         ? MainPage()
+          //         : VerifyEmailPage(user: snapshot.data);
+          //   } else {
+          // logged in using other providers
+          return Profile();
+          //   }
+        } else {
+          return Auth();
+        }
+      },
     );
   }
 }
