@@ -21,4 +21,36 @@ class Helper {
       ..removeCurrentSnackBar()
       ..showSnackBar(snackBar);
   }
+
+  static String transformString(var val) {
+    try {
+      if (val == null) {
+        return "";
+      }
+      if (val is String) {
+        return val;
+      } else {
+        return val.toString();
+      }
+    } catch (error) {
+      print('Error');
+      return "";
+    }
+  }
+
+//   static bool toBool(var val) {
+//     try {
+//       if (val == null) {
+//         return false;
+//       }
+//       if (val is bool) {
+//         return val;
+//       } else {
+//         return false;
+//       }
+//     } catch (error) {
+//       print('Error');
+//       return false;
+//     }
+//   }
 }
