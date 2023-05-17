@@ -72,6 +72,7 @@ dependencies:
   datetime_picker_formfield: ^2.0.1
   intl: ^0.18.1
   gestures: ^1.0.0
+  stream_transform: ^2.1.0
 
 dev_dependencies:
   flutter_test:
