@@ -14,12 +14,12 @@ import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/gestures.dart";
 import "package:app/main.dart";
-import "package:app/pages/home.dart";
-import "package:app/pages/about.dart";
-import "package:app/pages/encyclopedia.dart";
+import 'package:app/pages/public/home.dart';
+import 'package:app/pages/public/about.dart';
+import 'package:app/pages/public/encyclopedia.dart';
 import 'package:app/pages/devices/devices.dart';
 import "package:app/pages/auth.dart";
-import "package:app/pages/account.dart";
+import 'package:app/pages/public/account.dart';
 import 'package:app/helpers/helper.dart';
 import "package:app/pages/forgot_password.dart";
 
