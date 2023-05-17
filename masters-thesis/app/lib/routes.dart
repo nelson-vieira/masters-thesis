@@ -11,10 +11,10 @@ import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";
 import "package:app/pages/auth.dart";
-import "package:app/pages/devices.dart";
-import "package:app/pages/showdevice.dart";
-import "package:app/pages/update.dart";
-import "package:app/pages/create.dart";
+import 'package:app/pages/devices/devices.dart';
+import 'package:app/pages/devices/show.dart';
+import 'package:app/pages/devices/update.dart';
+import 'package:app/pages/devices/create.dart';
 import "package:app/pages/account.dart";
 import "package:app/pages/forgot_password.dart";
 
