@@ -17,8 +17,8 @@ import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";
 import "package:app/pages/account.dart";
-import "package:app/pages/update.dart";
-import "package:app/pages/devices.dart";
+import 'package:app/pages/devices/update.dart';
+import 'package:app/pages/devices/devices.dart';
 import "package:app/pages/auth.dart";
 
 class Create extends StatefulWidget {

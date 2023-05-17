@@ -5,7 +5,7 @@
 // @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "dart:async";
-import "package:app/routes.dart";
+import 'package:app/config/routes.dart';
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
@@ -14,7 +14,7 @@ import "package:location/location.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
-import "firebase_options.dart";
+import 'config/firebase_options.dart';
 import "package:app/widgets/app_bar.dart";
 import "package:app/widgets/bottom_navigation_bar.dart";
 import "package:app/pages/home.dart";
