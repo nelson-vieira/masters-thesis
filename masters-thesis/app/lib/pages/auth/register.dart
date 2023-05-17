@@ -24,7 +24,7 @@ import 'package:app/pages/public/account.dart';
 import 'package:app/pages/devices/create.dart';
 import 'package:app/pages/devices/update.dart';
 import 'package:app/pages/devices/devices.dart';
-import "package:app/pages/auth.dart";
+import 'package:app/pages/auth/auth.dart';
 import 'package:app/helpers/helper.dart';
 
 class Register extends StatefulWidget {

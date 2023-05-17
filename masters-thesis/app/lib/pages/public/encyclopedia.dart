@@ -15,7 +15,7 @@ import 'package:app/pages/public/home.dart';
 import 'package:app/pages/public/about.dart';
 import 'package:app/pages/public/account.dart';
 import 'package:app/pages/devices/devices.dart';
-import "package:app/pages/auth.dart";
+import 'package:app/pages/auth/auth.dart';
 
 class Encyclopedia extends StatelessWidget {
   static const String route = "/encyclopedia";

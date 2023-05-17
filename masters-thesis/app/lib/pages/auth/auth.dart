@@ -5,8 +5,8 @@
 // @author Nelson Vieira <nelson0.vieira@gmail.com>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:flutter/material.dart";
-import "package:app/pages/login.dart";
-import "package:app/pages/register.dart";
+import 'package:app/pages/auth/login.dart';
+import 'package:app/pages/auth/register.dart';
 
 class Auth extends StatefulWidget {
   static const String route = "/auth";

@@ -18,11 +18,11 @@ import 'package:app/pages/public/home.dart';
 import 'package:app/pages/public/about.dart';
 import 'package:app/pages/public/encyclopedia.dart';
 import 'package:app/pages/devices/devices.dart';
-import "package:app/pages/auth.dart";
+import 'package:app/pages/auth/auth.dart';
 import 'package:app/helpers/helper.dart';
-import "package:app/pages/forgot_password.dart";
-import "package:app/pages/login.dart";
-import "package:app/pages/register.dart";
+import 'package:app/pages/auth/forgot_password.dart';
+import 'package:app/pages/auth/login.dart';
+import 'package:app/pages/auth/register.dart';
 
 class Account extends StatefulWidget {
   static const String route = "/account";
