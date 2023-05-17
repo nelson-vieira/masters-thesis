@@ -13,7 +13,7 @@ import "package:ipsum/ipsum.dart";
 import "package:app/main.dart";
 import 'package:app/pages/public/home.dart';
 import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/pages/public/account.dart';
+import 'package:app/pages/auth/account.dart';
 import 'package:app/pages/devices/devices.dart';
 import 'package:app/pages/auth/auth.dart';
 

@@ -15,7 +15,7 @@ import 'package:app/pages/devices/devices.dart';
 import 'package:app/pages/devices/show.dart';
 import 'package:app/pages/devices/update.dart';
 import 'package:app/pages/devices/create.dart';
-import 'package:app/pages/public/account.dart';
+import 'package:app/pages/auth/account.dart';
 import 'package:app/pages/auth/forgot_password.dart';
 
 class RouteGenerator {

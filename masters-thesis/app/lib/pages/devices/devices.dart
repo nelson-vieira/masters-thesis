@@ -15,7 +15,7 @@ import "package:app/models/device.dart";
 import 'package:app/pages/public/home.dart';
 import 'package:app/pages/public/about.dart';
 import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/pages/public/account.dart';
+import 'package:app/pages/auth/account.dart';
 import 'package:app/pages/devices/create.dart';
 import 'package:app/pages/devices/update.dart';
 import 'package:app/pages/devices/show.dart';

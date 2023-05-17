@@ -19,7 +19,7 @@ import 'package:app/pages/public/about.dart';
 import 'package:app/pages/public/encyclopedia.dart';
 import 'package:app/pages/devices/devices.dart';
 import 'package:app/pages/auth/auth.dart';
-import 'package:app/pages/public/account.dart';
+import 'package:app/pages/auth/account.dart';
 import 'package:app/helpers/helper.dart';
 import 'package:app/pages/auth/forgot_password.dart';
 
@@ -85,7 +85,7 @@ class _LoginState extends State<Login> {
       Helper.showSnackBar(e.message);
     }
 
-    Navigator.of(context).pushNamed(Account.route);
+    Navigator.of(context).pushReplacementNamed(Home.route);
     // navigatorKey.currentState!.pushNamed(Account.route);
   }
 
