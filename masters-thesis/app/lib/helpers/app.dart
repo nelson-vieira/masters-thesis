@@ -7,10 +7,9 @@
 import "package:flutter/material.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 
-final messengerKey = GlobalKey<ScaffoldMessengerState>();
-
 class Helper {
   static showSnackBar(String? text) {
+    final messengerKey = GlobalKey<ScaffoldMessengerState>();
     if (text == null) return;
 
     final snackBar = SnackBar(

@@ -9,7 +9,7 @@ import "package:firebase_auth/firebase_auth.dart";
 import "package:email_validator/email_validator.dart";
 import "package:app/main.dart";
 import 'package:app/pages/auth/auth.dart';
-import 'package:app/helpers/helper.dart';
+import 'package:app/helpers/app.dart';
 
 class ForgotPassword extends StatefulWidget {
   static const String route = "/forgot_password";

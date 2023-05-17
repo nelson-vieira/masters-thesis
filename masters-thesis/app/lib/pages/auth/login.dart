@@ -20,7 +20,7 @@ import 'package:app/pages/public/encyclopedia.dart';
 import 'package:app/pages/devices/devices.dart';
 import 'package:app/pages/auth/auth.dart';
 import 'package:app/pages/auth/account.dart';
-import 'package:app/helpers/helper.dart';
+import 'package:app/helpers/app.dart';
 import 'package:app/pages/auth/forgot_password.dart';
 
 class Login extends StatefulWidget {

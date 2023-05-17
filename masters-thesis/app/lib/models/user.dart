@@ -4,7 +4,7 @@
 //
 // @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
-import 'package:app/helpers/helper.dart';
+import 'package:app/helpers/app.dart';
 import "package:cloud_firestore/cloud_firestore.dart";
 
 class UserDocument {
