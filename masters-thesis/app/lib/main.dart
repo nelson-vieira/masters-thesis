@@ -36,10 +36,48 @@ void main() async {
   runApp(const Main());
 }
 
-class Main extends StatelessWidget {
+class Main extends StatefulWidget {
   const Main({Key? key}) : super(key: key);
 
-  // This widget is the root of the application.
+  @override
+  State<Main> createState() => _MainState();
+}
+
+String? _currentJwtToken = "";
+
+class _MainState extends State<Main> {
+//   Stream<User> userStream;
+//   User initialUser;
+
+//   final authenticatedUserStream = FirebaseAuth.instance
+//       .authStateChanges()
+//       .map<String>((user) {
+//         // Store jwt token on user update.
+//         () async {
+//           _currentJwtToken = await user?.getIdToken();
+//         }();
+//         return user?.uid ?? '';
+//       })
+//       .map((users) =>
+//           FirebaseFirestore.instance.collection("users").snapshots() = users.isNotEmpty ? users.first : null)
+//       .asBroadcastStream();
+
+//   final authUserSub = authenticatedUserStream.listen((_) {});
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     userStream = artStoreFirebaseUserStream()
+//       ..listen((user) => initialUser ?? setState(() => initialUser = user));
+//   }
+
+//   @override
+//   void dispose() {
+//     authUserSub.cancel();
+
+//     super.dispose();
+//   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
