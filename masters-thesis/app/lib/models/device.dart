@@ -77,13 +77,13 @@ class Device {
         purpose: Helper.transformString(json["purpose"]),
         whoHasAccess: Helper.transformString(json["whoHasAccess"]),
         timeStored: Helper.transformString(json["timeStored"]),
-        identifiable: json["identifiable"],
+        identifiable: Helper.toBool(json["identifiable"]),
         whatsDone: Helper.transformString(json["whatsDone"]),
         privacyOptions: Helper.transformString(json["privacyOptions"]),
         latitude: Helper.transformString(json["latitude"]),
         longitude: Helper.transformString(json["longitude"]),
         owner: Helper.transformString(json["owner"]),
-        createdAt: (json["createdAt"] as Timestamp).toDate(),
-        updatedAt: (json["updatedAt"] as Timestamp).toDate(),
+        createdAt: Helper.toTimestamp(json["createdAt"]).toDate(),
+        updatedAt: Helper.toTimestamp(json["updatedAt"]).toDate(),
       );
 }

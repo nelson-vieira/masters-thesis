@@ -5,6 +5,7 @@
 // @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:flutter/material.dart";
+import "package:cloud_firestore/cloud_firestore.dart";
 
 final messengerKey = GlobalKey<ScaffoldMessengerState>();
 
@@ -38,19 +39,35 @@ class Helper {
     }
   }
 
-//   static bool toBool(var val) {
-//     try {
-//       if (val == null) {
-//         return false;
-//       }
-//       if (val is bool) {
-//         return val;
-//       } else {
-//         return false;
-//       }
-//     } catch (error) {
-//       print('Error');
-//       return false;
-//     }
-//   }
+  static bool toBool(var val) {
+    try {
+      if (val == null) {
+        return false;
+      }
+      if (val is bool) {
+        return val;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      print('Error');
+      return false;
+    }
+  }
+
+  static Timestamp toTimestamp(var val) {
+    try {
+      if (val == null) {
+        return Timestamp.now();
+      }
+      if (val is Timestamp) {
+        return val;
+      } else {
+        return Timestamp.now();
+      }
+    } catch (error) {
+      print('Error');
+      return Timestamp.now();
+    }
+  }
 }
