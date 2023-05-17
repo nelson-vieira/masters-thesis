@@ -11,6 +11,7 @@ import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:app/main.dart";
+import "package:app/models/device.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";

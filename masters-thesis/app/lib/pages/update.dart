@@ -13,6 +13,7 @@ import "package:cloud_firestore/cloud_firestore.dart";
 import "package:datetime_picker_formfield/datetime_picker_formfield.dart";
 import "package:intl/intl.dart";
 import "package:app/main.dart";
+import "package:app/models/device.dart";
 import "package:app/pages/home.dart";
 import "package:app/pages/about.dart";
 import "package:app/pages/encyclopedia.dart";
