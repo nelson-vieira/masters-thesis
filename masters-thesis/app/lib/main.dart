@@ -75,8 +75,7 @@ class IotPrivacy extends StatefulWidget {
 }
 
 class _IotPrivacyState extends State<IotPrivacy> {
-  int index = 0;
-  bool isLogged = true;
+  int _currentIndex = 0;
 
   final pages = [
     const Home(),
@@ -89,7 +88,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[index],
+      body: pages[_currentIndex],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
             // sets the background color of the `BottomNavigationBar`
@@ -101,7 +100,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
                     color: Color.fromARGB(255, 223, 141,
                         18)))), // sets the inactive color of the `BottomNavigationBar`
         child: BottomNavigationBar(
-          currentIndex: index,
+          currentIndex: _currentIndex,
           showSelectedLabels: true,
           showUnselectedLabels: false,
           selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
@@ -144,7 +143,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
               label: "IoT Devices",
             ),
           ],
-          onTap: (index) => setState(() => this.index = index),
+          onTap: (index) => setState(() => _currentIndex = index),
         ),
       ),
     );
