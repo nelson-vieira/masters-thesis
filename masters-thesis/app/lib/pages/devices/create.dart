@@ -36,7 +36,7 @@ class _CreateState extends State<Create> {
   final controllerPurpose = TextEditingController();
   final controllerWhoHasAccess = TextEditingController();
   final controllerTimeStored = TextEditingController();
-  final controllerIdentifiable = TextEditingController();
+  bool controllerIdentifiable = false;
   final controllerWhatsDone = TextEditingController();
   final controllerPrivacyOptions = TextEditingController();
   final controllerLatitude = TextEditingController();
@@ -67,8 +67,6 @@ class _CreateState extends State<Create> {
 
   @override
   Widget build(BuildContext context) {
-    bool controllerIdentifiableBool =
-        controllerIdentifiable.text.toLowerCase() == "true";
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -109,7 +107,6 @@ class _CreateState extends State<Create> {
           TextField(
             controller: controllerPurpose,
             decoration: decoration("What is the purpose"),
-            keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -120,7 +117,6 @@ class _CreateState extends State<Create> {
           TextField(
             controller: controllerWhoHasAccess,
             decoration: decoration("Who has access to this information"),
-            keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -131,7 +127,6 @@ class _CreateState extends State<Create> {
           TextField(
             controller: controllerTimeStored,
             decoration: decoration("For how long is the data stored"),
-            keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -139,12 +134,27 @@ class _CreateState extends State<Create> {
           const SizedBox(
             height: 24,
           ),
-          TextField(
-            controller: controllerIdentifiable,
-            decoration: decoration("Can the data identify anyone?"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
+          Theme(
+            data: ThemeData(unselectedWidgetColor: Colors.white),
+            child: CheckboxListTile(
+              checkboxShape: const RoundedRectangleBorder(
+                side: BorderSide(color: Color(0xFFFFFFFF), width: 2.0),
+              ),
+              activeColor: Color(0xFF6CBBE0),
+              checkColor: const Color(0xAAFFFFFF),
+              enableFeedback: true,
+              title: const Text(
+                "Can the data identify anyone?",
+                style: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                ),
+              ),
+              value: controllerIdentifiable,
+              onChanged: (bool? value) {
+                setState(() {
+                  controllerIdentifiable = value!;
+                });
+              },
             ),
           ),
           const SizedBox(
@@ -153,7 +163,6 @@ class _CreateState extends State<Create> {
           TextField(
             controller: controllerWhatsDone,
             decoration: decoration("What is being done with the data?"),
-            keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -164,7 +173,6 @@ class _CreateState extends State<Create> {
           TextField(
             controller: controllerPrivacyOptions,
             decoration: decoration("URL for privacy options of the device"),
-            keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -175,7 +183,6 @@ class _CreateState extends State<Create> {
           TextField(
             controller: controllerLatitude,
             decoration: decoration("Latitude of the device"),
-            keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -186,7 +193,6 @@ class _CreateState extends State<Create> {
           TextField(
             controller: controllerLongitude,
             decoration: decoration("Longitude of the device"),
-            keyboardType: TextInputType.number,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
@@ -202,48 +208,10 @@ class _CreateState extends State<Create> {
             ),
           ),
           const SizedBox(
-            height: 24,
-          ),
-          DateTimeField(
-            controller: controllerCreatedAt,
-            decoration: decoration("Created At"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-            format: DateFormat("yyyy-MM-dd"),
-            onShowPicker: (context, currentValue) async {
-              final time = await showTimePicker(
-                context: context,
-                initialTime:
-                    TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
-              );
-              return DateTimeField.convert(time);
-            },
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          DateTimeField(
-            controller: controllerUpdatedAt,
-            decoration: decoration("Updated At"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-            format: DateFormat("yyyy-MM-dd"),
-            onShowPicker: (context, currentValue) async {
-              final time = await showTimePicker(
-                context: context,
-                initialTime:
-                    TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
-              );
-              return DateTimeField.convert(time);
-            },
-          ),
-          const SizedBox(
             height: 32,
           ),
           ElevatedButton(
-            child: Text("Create"),
+            child: const Text("Create Device"),
             onPressed: () {
               final device = Device(
                 name: controllerName.text,
@@ -251,17 +219,17 @@ class _CreateState extends State<Create> {
                 purpose: controllerPurpose.text,
                 whoHasAccess: controllerWhoHasAccess.text,
                 timeStored: controllerTimeStored.text,
-                identifiable: controllerIdentifiableBool,
+                identifiable: controllerIdentifiable,
                 whatsDone: controllerWhatsDone.text,
                 privacyOptions: controllerPrivacyOptions.text,
                 latitude: controllerLatitude.text,
                 longitude: controllerLongitude.text,
                 owner: controllerOwner.text,
-                createdAt: DateTime.parse(controllerCreatedAt.text),
-                updatedAt: DateTime.parse(controllerUpdatedAt.text),
+                createdAt: DateTime.now(),
+                updatedAt: DateTime.now(),
               );
               createDevice(device);
-              Navigator.of(context).pushNamed(Devices.route);
+              Navigator.pop(context);
             },
           ),
         ],
