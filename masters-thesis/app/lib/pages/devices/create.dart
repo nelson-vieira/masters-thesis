@@ -65,6 +65,29 @@ class _CreateState extends State<Create> {
     await docDevice.set(json);
   }
 
+  Dialog deviceCoordinates() => Dialog(
+        child: Container(
+          height: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FlutterLogo(
+                size: 150,
+              ),
+              Text(
+                "This is a Custom Dialog",
+                style: TextStyle(fontSize: 20),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("Close"))
+            ],
+          ),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -180,26 +203,47 @@ class _CreateState extends State<Create> {
           const SizedBox(
             height: 24,
           ),
-          TextField(
-            controller: controllerLatitude,
-            decoration: decoration("Latitude of the device"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
+          ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+                (states) => Color(0xFF091220),
+              ),
+              //   shape: MaterialStateProperty.resolveWith<OutlinedBorder?>(
+              //       (states) => OutlinedBorder(),),
             ),
+            child: const Text("Coordinates of the device"),
+            onPressed: () {
+              showDialog(
+                  context: context, builder: (context) => deviceCoordinates());
+            },
           ),
           const SizedBox(
             height: 24,
           ),
-          TextField(
-            controller: controllerLongitude,
-            decoration: decoration("Longitude of the device"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
+          //   TextField(
+          //       controller: controllerLatitude,
+          //       decoration: decoration("Latitude of the device"),
+          //       style: TextStyle(
+          //         color: Color.fromARGB(255, 255, 255, 255),
+          //       ),
+          //       onTap: () {
+          //         showDialog(
+          //             context: context,
+          //             builder: (context) => deviceCoordinates());
+          //       }),
+          //   const SizedBox(
+          //     height: 24,
+          //   ),
+          //   TextField(
+          //     controller: controllerLongitude,
+          //     decoration: decoration("Longitude of the device"),
+          //     style: TextStyle(
+          //       color: Color.fromARGB(255, 255, 255, 255),
+          //     ),
+          //   ),
+          //   const SizedBox(
+          //     height: 24,
+          //   ),
           TextField(
             controller: controllerOwner,
             decoration: decoration("Device owner"),
