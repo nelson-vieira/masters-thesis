@@ -10,6 +10,7 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
+import "package:firebase_auth/firebase_auth.dart";
 import "package:app/main.dart";
 import "package:app/models/device.dart";
 import 'package:app/pages/public/home.dart';
@@ -50,12 +51,13 @@ class _ShowDeviceState extends State<ShowDevice> {
             title: Text(device.name),
             subtitle: Text(device.createdAt.toIso8601String()),
           ),
-          FloatingActionButton(
-              child: Icon(Icons.add),
-              onPressed: () {
-                Navigator.of(context)
-                    .pushNamed(Update.route, arguments: device);
-              }),
+          FirebaseAuth.instance.currentUser != null
+              ? FloatingActionButton(
+                  child: Icon(Icons.add),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Create.route);
+                  })
+              : Container(),
         ],
       );
 
