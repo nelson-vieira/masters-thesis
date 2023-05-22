@@ -30,72 +30,55 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Marker> _markers = [];
+  List<Marker> _markers = <Marker>[];
 
-//   Future<List<Marker>> getMarkers() async {
-//     _markers.clear();
-//     FirebaseFirestore.instance.collection("devices").snapshots().map(
-//       (snapshot) {
-//         snapshot.docs.map(
-//           (doc) => doc.data().forEach(
-//             (key, value) {
-//               _markers;
-//             },
-//           ),
-//         );
-//       },
-//     );
-//     return _markers;
-//   }
+  // Function to create a Marker and add to list
+  void createMarker(Device device) async {
+    final Marker marker = Marker(
+      width: 30,
+      height: 30,
+      point:
+          LatLng(double.parse(device.latitude), double.parse(device.longitude)),
+      builder: (context) => GestureDetector(
+        onTap: () {
+          Navigator.of(context).pushNamed(ShowDevice.route, arguments: device);
+        },
+        child: const FlutterLogo(),
+      ),
+    );
+    // Only adds to the marker list with setState method
+    setState(() {
+      _markers.add(marker);
+    });
+  }
 
-//   void initMarker(device) async {
-//     final Marker marker = Marker(
-//       width: 80,
-//       height: 80,
-//       point: LatLng(
-//           double.parse(device["latitude"]), double.parse(device["longitude"])),
-//       builder: (context) => GestureDetector(
-//         onTap: () {
-//           Navigator.of(context).pushNamed(ShowDevice.route, arguments: device);
-//         },
-//         child: const FlutterLogo(),
-//       ),
-//     );
-//     // setState(() {
-//     //   _markers = _markers.add(marker);
-//     // });
-//   }
+  // This function gets all devices from database and for each one, createMarker
+  // is called which creates the Marker and adds to the markers list
+  getMarkersData() async {
+    await FirebaseFirestore.instance.collection("devices").get().then((data) {
+      if (data.docs.isNotEmpty) {
+        for (int i = 0; i < data.docs.length; i++) {
+          createMarker(Device.fromJson(data.docs[i].data()));
+        }
+      }
+    });
+  }
 
-//   getMarkers() async {
-//     FirebaseFirestore.instance.collection("devices").get().then((data) {
-//       if (data.docs.isNotEmpty) {
-//         for (int i = 0; i < data.docs.length; i++) {
-//           initMarker(data.docs[i].data());
-//         }
-//       }
-//     });
-
-  // Marker buildMarkers(Device device) => Marker(
-  //       width: 80,
-  //       height: 80,
-  //       point: LatLng(
-  //           double.parse(device.latitude), double.parse(device.longitude)),
-  //       builder: (context) => GestureDetector(
-  //         onTap: () {
-  //           Navigator.of(context)
-  //               .pushNamed(ShowDevice.route, arguments: device);
-  //         },
-  //         child: const FlutterLogo(),
-  //       ),
-  //     );
+  @override
+  initState() {
+    // This function runs whenever this page is loaded, very important so that
+    // the data can be ready to show on the page
+    getMarkersData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "IoT Privacy App",
-          style: const TextStyle(fontSize: 30),
+          style: TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
@@ -108,6 +91,8 @@ class _HomeState extends State<Home> {
               child: FlutterMap(
                 options: MapOptions(
                   center: LatLng(32.778295173354356, -16.737781931587615),
+                  interactiveFlags:
+                      InteractiveFlag.all & ~InteractiveFlag.rotate,
                   zoom: 9,
                 ),
                 nonRotatedChildren: [
@@ -123,35 +108,6 @@ class _HomeState extends State<Home> {
                     userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
                   ),
                   MarkerLayer(markers: _markers),
-                  //   FutureBuilder(
-                  //     future: getMarkers(),
-                  //     builder: (context, snapshot) {
-                  //       if (snapshot.hasError) {
-                  //         return Center(
-                  //             child: Text(
-                  //           "Something went wrong! ${snapshot.error}",
-                  //           style: const TextStyle(
-                  //             color: Colors.white,
-                  //             fontSize: 17.0,
-                  //           ),
-                  //           textAlign: TextAlign.center,
-                  //         ));
-                  //       } else if (snapshot.hasData) {
-                  //         final devices = snapshot.data!;
-
-                  //         return MarkerLayer(markers: _markers);
-                  //       } else {
-                  //         return const Center(
-                  //           child: CircularProgressIndicator(),
-                  //         );
-                  //       }
-
-                  //       //   if (snapshot.hasData) {
-                  //       //     return MarkerLayer(markers: _markers.add(buildMarkers));
-                  //       //   }
-                  //       //   return Container();
-                  //     },
-                  //   ),
                 ],
               ),
             ),
@@ -160,7 +116,12 @@ class _HomeState extends State<Home> {
       ),
       floatingActionButton: FirebaseAuth.instance.currentUser != null
           ? FloatingActionButton(
-              child: Icon(Icons.add),
+              child: const Row(
+                children: [
+                  Icon(Icons.add),
+                  Icon(Icons.account_tree_outlined),
+                ],
+              ),
               onPressed: () {
                 Navigator.of(context).pushNamed(Create.route);
               })
