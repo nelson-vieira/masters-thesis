@@ -30,7 +30,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Marker> _markers = <Marker>[];
+  final List<Marker> _markers = <Marker>[];
 
   // Function to create a Marker and add to list
   void createMarker(Device device) async {
@@ -114,8 +114,10 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       floatingActionButton: FirebaseAuth.instance.currentUser != null
           ? FloatingActionButton(
+              tooltip: "Add a new device",
               child: const Row(
                 children: [
                   Icon(Icons.add),
