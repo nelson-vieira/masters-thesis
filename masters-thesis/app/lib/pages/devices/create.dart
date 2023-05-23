@@ -39,8 +39,8 @@ class _CreateState extends State<Create> {
   bool controllerIdentifiable = false;
   final controllerWhatsDone = TextEditingController();
   final controllerPrivacyOptions = TextEditingController();
-  final controllerLatitude = TextEditingController();
-  final controllerLongitude = TextEditingController();
+  var controllerLatitude;
+  var controllerLongitude;
   final controllerOwner = TextEditingController();
   final controllerCreatedAt = TextEditingController();
   final controllerUpdatedAt = TextEditingController();
@@ -66,24 +66,43 @@ class _CreateState extends State<Create> {
   }
 
   Dialog deviceCoordinates() => Dialog(
-        child: Container(
-          height: 300,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              FlutterLogo(
-                size: 150,
-              ),
-              Text(
-                "This is a Custom Dialog",
-                style: TextStyle(fontSize: 20),
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text("Close"))
-            ],
+        child: SizedBox.expand(
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Column(
+              children: [
+                Flexible(
+                  child: FlutterMap(
+                    options: MapOptions(
+                      center: LatLng(32.778295173354356, -16.737781931587615),
+                      interactiveFlags:
+                          InteractiveFlag.all & ~InteractiveFlag.rotate,
+                      zoom: 9,
+                      onLongPress: (tapPosition, point) {
+                        setState(() {
+                          controllerLatitude = point.latitude;
+                          controllerLongitude = point.longitude;
+                        });
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    nonRotatedChildren: [
+                      AttributionWidget.defaultWidget(
+                        source: "OpenStreetMap",
+                        onSourceTapped: null,
+                      ),
+                    ],
+                    children: [
+                      TileLayer(
+                        urlTemplate:
+                            "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
@@ -204,14 +223,19 @@ class _CreateState extends State<Create> {
             height: 24,
           ),
           ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.resolveWith<Color?>(
-                (states) => Color(0xFF091220),
-              ),
-              //   shape: MaterialStateProperty.resolveWith<OutlinedBorder?>(
-              //       (states) => OutlinedBorder(),),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF091220),
+              padding: const EdgeInsets.only(
+                  left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+              side: const BorderSide(
+                  width: 1, // the thickness
+                  color: Colors.white // the color of the border
+                  ),
             ),
-            child: const Text("Coordinates of the device"),
+            child: const Text(
+              "Coordinates of the device",
+              style: TextStyle(fontSize: 16.0, color: Colors.white),
+            ),
             onPressed: () {
               showDialog(
                   context: context, builder: (context) => deviceCoordinates());
@@ -220,30 +244,6 @@ class _CreateState extends State<Create> {
           const SizedBox(
             height: 24,
           ),
-          //   TextField(
-          //       controller: controllerLatitude,
-          //       decoration: decoration("Latitude of the device"),
-          //       style: TextStyle(
-          //         color: Color.fromARGB(255, 255, 255, 255),
-          //       ),
-          //       onTap: () {
-          //         showDialog(
-          //             context: context,
-          //             builder: (context) => deviceCoordinates());
-          //       }),
-          //   const SizedBox(
-          //     height: 24,
-          //   ),
-          //   TextField(
-          //     controller: controllerLongitude,
-          //     decoration: decoration("Longitude of the device"),
-          //     style: TextStyle(
-          //       color: Color.fromARGB(255, 255, 255, 255),
-          //     ),
-          //   ),
-          //   const SizedBox(
-          //     height: 24,
-          //   ),
           TextField(
             controller: controllerOwner,
             decoration: decoration("Device owner"),
@@ -266,8 +266,8 @@ class _CreateState extends State<Create> {
                 identifiable: controllerIdentifiable,
                 whatsDone: controllerWhatsDone.text,
                 privacyOptions: controllerPrivacyOptions.text,
-                latitude: controllerLatitude.text,
-                longitude: controllerLongitude.text,
+                latitude: controllerLatitude.toString(),
+                longitude: controllerLongitude.toString(),
                 owner: controllerOwner.text,
                 createdAt: DateTime.now(),
                 updatedAt: DateTime.now(),
