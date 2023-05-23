@@ -55,7 +55,8 @@ class _ShowDeviceState extends State<ShowDevice> {
               ? FloatingActionButton(
                   child: Icon(Icons.add),
                   onPressed: () {
-                    Navigator.of(context).pushNamed(Create.route);
+                    Navigator.of(context)
+                        .pushNamed(Update.route, arguments: device);
                   })
               : Container(),
         ],

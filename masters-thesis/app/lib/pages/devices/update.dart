@@ -39,22 +39,20 @@ class _UpdateState extends State<Update> {
   final controllerPurpose = TextEditingController();
   final controllerWhoHasAccess = TextEditingController();
   final controllerTimeStored = TextEditingController();
-  final controllerIdentifiable = TextEditingController();
+  var controllerIdentifiable;
   final controllerWhatsDone = TextEditingController();
   final controllerPrivacyOptions = TextEditingController();
-  final controllerLatitude = TextEditingController();
-  final controllerLongitude = TextEditingController();
+  var controllerLatitude;
+  var controllerLongitude;
   final controllerOwner = TextEditingController();
-  final controllerCreatedAt = TextEditingController();
-  final controllerUpdatedAt = TextEditingController();
 
   InputDecoration decoration(String label) => InputDecoration(
         labelText: label,
         enabledBorder: const OutlineInputBorder(
-          borderSide: const BorderSide(
-              color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
+          borderSide:
+              BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
         ),
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         labelStyle: TextStyle(
           color: Colors.grey.shade600,
         ),
@@ -65,34 +63,108 @@ class _UpdateState extends State<Update> {
     // https://github.com/flutter/flutter/issues/9969
     controllerName.text = widget.device.name;
     controllerCategory.text = widget.device.category;
-    controllerCreatedAt.text = widget.device.createdAt.toIso8601String();
+    controllerPurpose.text = widget.device.purpose;
+    controllerWhoHasAccess.text = widget.device.whoHasAccess;
+    controllerTimeStored.text = widget.device.timeStored;
+    controllerIdentifiable = widget.device.identifiable;
+    controllerWhatsDone.text = widget.device.whatsDone;
+    controllerPrivacyOptions.text = widget.device.privacyOptions;
+    controllerLatitude = widget.device.latitude;
+    controllerLongitude = widget.device.longitude;
+    controllerOwner.text = widget.device.owner;
     super.initState();
   }
+
+  AlertDialog confirmDelete() => AlertDialog(
+        title: const Text("Confirmation"),
+        titleTextStyle: const TextStyle(
+            fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+        actionsOverflowButtonSpacing: 20,
+        actions: [
+          ElevatedButton(
+              onPressed: () {
+                final docDevice = FirebaseFirestore.instance
+                    .collection("devices")
+                    .doc(widget.device.id);
+                docDevice.delete();
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              },
+              child: const Text("Yes")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("No")),
+        ],
+        content: const Text("Are you sure you want to delete this device?"),
+      );
+
+  Dialog controllerCoordinates() => Dialog(
+        child: SizedBox.expand(
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Column(
+              children: [
+                Flexible(
+                  child: FlutterMap(
+                    options: MapOptions(
+                      center: LatLng(32.778295173354356, -16.737781931587615),
+                      interactiveFlags:
+                          InteractiveFlag.all & ~InteractiveFlag.rotate,
+                      zoom: 9,
+                      onLongPress: (tapPosition, point) {
+                        setState(() {
+                          controllerLatitude = point.latitude;
+                          controllerLongitude = point.longitude;
+                        });
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    nonRotatedChildren: [
+                      AttributionWidget.defaultWidget(
+                        source: "OpenStreetMap",
+                        onSourceTapped: null,
+                      ),
+                    ],
+                    children: [
+                      TileLayer(
+                        urlTemplate:
+                            "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon:
-              Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
+          icon: const Icon(Icons.arrow_back,
+              color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Text(
+        title: const Text(
           "Update",
-          style: const TextStyle(fontSize: 30),
+          style: TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         children: <Widget>[
           TextField(
             controller: controllerName,
             decoration: decoration("Name"),
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
@@ -100,8 +172,7 @@ class _UpdateState extends State<Update> {
           TextField(
             controller: controllerCategory,
             decoration: decoration("Category"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
@@ -111,8 +182,7 @@ class _UpdateState extends State<Update> {
           TextField(
             controller: controllerPurpose,
             decoration: decoration("What is the purpose"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
@@ -122,8 +192,7 @@ class _UpdateState extends State<Update> {
           TextField(
             controller: controllerWhoHasAccess,
             decoration: decoration("Who has access to this information"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
@@ -133,20 +202,34 @@ class _UpdateState extends State<Update> {
           TextField(
             controller: controllerTimeStored,
             decoration: decoration("For how long is the data stored"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
           const SizedBox(
             height: 24,
           ),
-          TextField(
-            controller: controllerIdentifiable,
-            decoration: decoration("Can the data identify anyone?"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
+          Theme(
+            data: ThemeData(unselectedWidgetColor: Colors.white),
+            child: CheckboxListTile(
+              checkboxShape: const RoundedRectangleBorder(
+                side: BorderSide(color: Color(0xFFFFFFFF), width: 2.0),
+              ),
+              activeColor: Color(0xFF6CBBE0),
+              checkColor: const Color(0xAAFFFFFF),
+              enableFeedback: true,
+              title: const Text(
+                "Can the data identify anyone?",
+                style: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                ),
+              ),
+              value: controllerIdentifiable,
+              onChanged: (bool? value) {
+                setState(() {
+                  controllerIdentifiable = value!;
+                });
+              },
             ),
           ),
           const SizedBox(
@@ -155,8 +238,7 @@ class _UpdateState extends State<Update> {
           TextField(
             controller: controllerWhatsDone,
             decoration: decoration("What is being done with the data?"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
@@ -166,86 +248,56 @@ class _UpdateState extends State<Update> {
           TextField(
             controller: controllerPrivacyOptions,
             decoration: decoration("URL for privacy options of the device"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
           const SizedBox(
-            height: 24,
+            height: 18,
           ),
-          TextField(
-            controller: controllerLatitude,
-            decoration: decoration("Latitude of the device"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerLongitude,
-            decoration: decoration("Longitude of the device"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
+          Text(
+            "Lat: " +
+                controllerLatitude.toString() +
+                ", Long: " +
+                controllerLongitude.toString(),
+            style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
           ),
           const SizedBox(
-            height: 24,
+            height: 8,
           ),
-          TextField(
-            controller: controllerOwner,
-            decoration: decoration("Longitude of the device"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF091220),
+              padding: const EdgeInsets.only(
+                  left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+              side: const BorderSide(
+                  width: 1, // the thickness
+                  color: Colors.white // the color of the border
+                  ),
             ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          DateTimeField(
-            controller: controllerUpdatedAt,
-            decoration: decoration("Updated At"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
+            child: const Text(
+              "Coordinates of the device",
+              style: TextStyle(fontSize: 16.0, color: Colors.white),
             ),
-            format: DateFormat("yyyy-MM-dd"),
-            onShowPicker: (context, currentValue) async {
-              final time = await showTimePicker(
-                context: context,
-                initialTime:
-                    TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
-              );
-              return DateTimeField.convert(time);
-            },
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          DateTimeField(
-            controller: controllerCreatedAt,
-            decoration: decoration("Created At"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-            format: DateFormat("yyyy-MM-dd"),
-            onShowPicker: (context, currentValue) async {
-              final time = await showTimePicker(
-                context: context,
-                initialTime:
-                    TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
-              );
-              return DateTimeField.convert(time);
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) => controllerCoordinates());
             },
           ),
           const SizedBox(
             height: 32,
           ),
           ElevatedButton(
-              child: Text("Update"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 15, 81, 179),
+                padding: const EdgeInsets.only(
+                    left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+              ),
+              child: const Text(
+                "Update",
+                style: TextStyle(fontSize: 16.0, color: Colors.white),
+              ),
               onPressed: () {
                 final docDevice = FirebaseFirestore.instance
                     .collection("devices")
@@ -256,26 +308,32 @@ class _UpdateState extends State<Update> {
                   "purpose": controllerPurpose.text,
                   "whoHasAccess": controllerWhoHasAccess.text,
                   "timeStored": controllerTimeStored.text,
-                  "identifiable": controllerIdentifiable.text,
+                  "identifiable": controllerIdentifiable,
                   "whatsDone": controllerWhatsDone.text,
                   "privacyOptions": controllerPrivacyOptions.text,
-                  "latitude": controllerLatitude.text,
-                  "longitude": controllerLongitude.text,
+                  "latitude": controllerLatitude.toString(),
+                  "longitude": controllerLongitude.toString(),
                   "owner": controllerOwner.text,
-                  "createdAt": DateTime.parse(controllerCreatedAt.text),
-                  "updatedAt": DateTime.parse(controllerUpdatedAt.text),
+                  "updatedAt": DateTime.now(),
                 });
+                Navigator.of(context).popUntil((route) => route.isFirst);
               }),
           const SizedBox(
-            height: 32,
+            height: 60,
           ),
           ElevatedButton(
-              child: Text("Delete"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 207, 30, 30),
+                padding: const EdgeInsets.only(
+                    left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+              ),
+              child: const Text(
+                "Delete",
+                style: TextStyle(fontSize: 16.0, color: Colors.white),
+              ),
               onPressed: () {
-                final docDevice = FirebaseFirestore.instance
-                    .collection("devices")
-                    .doc(widget.device.id);
-                docDevice.delete();
+                showDialog(
+                    context: context, builder: (context) => confirmDelete());
               }),
         ],
       ),
