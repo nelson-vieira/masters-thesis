@@ -65,7 +65,7 @@ class _CreateState extends State<Create> {
     await docDevice.set(json);
   }
 
-  Dialog deviceCoordinates() => Dialog(
+  Dialog controllerCoordinates() => Dialog(
         child: SizedBox.expand(
           child: Padding(
             padding: const EdgeInsets.all(4.0),
@@ -220,7 +220,14 @@ class _CreateState extends State<Create> {
             ),
           ),
           const SizedBox(
-            height: 24,
+            height: 18,
+          ),
+          Text(
+            "Lat: ${controllerLatitude == null ? "?" : controllerLatitude.toString()}, Long: ${controllerLongitude == null ? "?" : controllerLongitude.toString()}",
+            style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
+          ),
+          const SizedBox(
+            height: 8,
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -238,7 +245,8 @@ class _CreateState extends State<Create> {
             ),
             onPressed: () {
               showDialog(
-                  context: context, builder: (context) => deviceCoordinates());
+                  context: context,
+                  builder: (context) => controllerCoordinates());
             },
           ),
           const SizedBox(
@@ -273,7 +281,7 @@ class _CreateState extends State<Create> {
                 updatedAt: DateTime.now(),
               );
               createDevice(device);
-              Navigator.pop(context);
+              Navigator.of(context).popUntil((route) => route.isFirst);
             },
           ),
         ],
