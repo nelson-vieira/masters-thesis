@@ -42,18 +42,24 @@ class _AccountState extends State<Account> {
     return StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (BuildContext context, snapshot) {
-        if (snapshot.hasData) {
-          //   if (snapshot.data!.providerData.length == 1) {
-          //     // logged in using email and password
-          //     return snapshot.data.isEmailVerified
-          //         ? MainPage()
-          //         : VerifyEmailPage(user: snapshot.data);
-          //   } else {
-          // logged in using other providers
-          return Profile();
-          //   }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (snapshot.hasError) {
+          return const Center(
+            child: Text(
+              "An error occured!",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 17.0,
+              ),
+            ),
+          );
+        } else if (snapshot.hasData) {
+          return const Profile();
         } else {
-          return Auth();
+          return const Auth();
         }
       },
     );
