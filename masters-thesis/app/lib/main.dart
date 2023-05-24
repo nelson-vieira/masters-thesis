@@ -36,12 +36,15 @@ void main() async {
   runApp(const Main());
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class Main extends StatelessWidget {
   const Main({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: "IoT Privacy App",
       theme: ThemeData(
