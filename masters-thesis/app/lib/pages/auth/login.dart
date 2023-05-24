@@ -74,19 +74,12 @@ class _LoginState extends State<Login> {
         password: controllerPassword.text.trim(),
       );
     } on FirebaseAuthException catch (e) {
-      //   if (e.code == "user-not-found") {
-      //     print("No user found for that email.");
-      //   } else if (e.code == "wrong-password") {
-      //     print("Wrong password provided for that user.");
-      //   }
-      // } catch (e) {
       print(e);
 
       Helper.showSnackBar(e.message);
     }
 
-    Navigator.of(context).pushReplacementNamed(Home.route);
-    // navigatorKey.currentState!.pushNamed(Account.route);
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 
   @override
@@ -94,77 +87,92 @@ class _LoginState extends State<Login> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Log In",
+          "Sign in",
           style: TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: <Widget>[
-          TextField(
-            controller: controllerEmail,
-            decoration: decoration("Email"),
-            textInputAction: TextInputAction.next,
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(height: 24),
-          TextField(
-            controller: controllerPassword,
-            decoration: decoration("Password"),
-            textInputAction: TextInputAction.done,
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          ElevatedButton(
-            onPressed: signIn,
-            child: const Text("Log in"),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          Center(
-            child: GestureDetector(
-              child: Text(
-                "Forgot Password?",
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  color: Color.fromARGB(255, 75, 191, 206),
+      body: Padding(
+        padding:
+            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
+        child: Container(
+          color: const Color.fromARGB(255, 16, 44, 53),
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            children: <Widget>[
+              TextField(
+                controller: controllerEmail,
+                decoration: decoration("Email"),
+                textInputAction: TextInputAction.next,
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
-              onTap: () =>
-                  Navigator.of(context).pushNamed(ForgotPassword.route),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          Center(
-            child: RichText(
-              text: TextSpan(
-                text: "No account? ",
-                style: const TextStyle(color: Colors.white),
-                children: [
-                  TextSpan(
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = widget.onClickRegister,
-                    text: "Register",
-                    style: const TextStyle(
+              const SizedBox(height: 24),
+              TextField(
+                controller: controllerPassword,
+                decoration: decoration("Password"),
+                textInputAction: TextInputAction.done,
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF0A8A4E),
+                  padding: const EdgeInsets.only(
+                      left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+                ),
+                onPressed: signIn,
+                child: const Text(
+                  "Sign in",
+                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Center(
+                child: GestureDetector(
+                  child: const Text(
+                    "Forgot Password?",
+                    style: TextStyle(
                       decoration: TextDecoration.underline,
                       color: Color.fromARGB(255, 75, 191, 206),
                     ),
                   ),
-                ],
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(ForgotPassword.route),
+                ),
               ),
-            ),
+              const SizedBox(
+                height: 24,
+              ),
+              Center(
+                child: RichText(
+                  text: TextSpan(
+                    text: "No account? ",
+                    style: const TextStyle(color: Colors.white),
+                    children: [
+                      TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = widget.onClickRegister,
+                        text: "Register",
+                        style: const TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Color.fromARGB(255, 75, 191, 206),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
