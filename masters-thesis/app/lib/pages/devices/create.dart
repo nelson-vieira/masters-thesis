@@ -124,167 +124,189 @@ class _CreateState extends State<Create> {
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(16),
-        children: <Widget>[
-          TextField(
-            controller: controllerName,
-            decoration: decoration("Name"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(height: 24),
-          TextField(
-            controller: controllerCategory,
-            decoration: decoration("Category"),
-            keyboardType: TextInputType.number,
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerPurpose,
-            decoration: decoration("What is the purpose"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerWhoHasAccess,
-            decoration: decoration("Who has access to this information"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerTimeStored,
-            decoration: decoration("For how long is the data stored"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          Theme(
-            data: ThemeData(unselectedWidgetColor: Colors.white),
-            child: CheckboxListTile(
-              checkboxShape: const RoundedRectangleBorder(
-                side: BorderSide(color: Color(0xFFFFFFFF), width: 2.0),
-              ),
-              activeColor: Color(0xFF6CBBE0),
-              checkColor: const Color(0xAAFFFFFF),
-              enableFeedback: true,
-              title: const Text(
-                "Can the data identify anyone?",
+      body: Padding(
+        padding:
+            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
+        child: Container(
+          color: const Color.fromARGB(255, 16, 44, 53),
+          child: ListView(
+            padding: EdgeInsets.all(16),
+            children: <Widget>[
+              TextField(
+                controller: controllerName,
+                decoration: decoration("Name"),
                 style: TextStyle(
-                  color: Color(0xFFFFFFFF),
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
-              value: controllerIdentifiable,
-              onChanged: (bool? value) {
-                setState(() {
-                  controllerIdentifiable = value!;
-                });
-              },
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerWhatsDone,
-            decoration: decoration("What is being done with the data?"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerPrivacyOptions,
-            decoration: decoration("URL for privacy options of the device"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          Text(
-            "Lat: ${controllerLatitude == null ? "?" : controllerLatitude.toString()}, Long: ${controllerLongitude == null ? "?" : controllerLongitude.toString()}",
-            style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF091220),
-              padding: const EdgeInsets.only(
-                  left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
-              side: const BorderSide(
-                  width: 1, // the thickness
-                  color: Colors.white // the color of the border
+              const SizedBox(height: 24),
+              TextField(
+                controller: controllerCategory,
+                decoration: decoration("Category"),
+                keyboardType: TextInputType.number,
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerPurpose,
+                decoration: decoration("What is the purpose"),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerWhoHasAccess,
+                decoration: decoration("Who has access to this information"),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerTimeStored,
+                decoration: decoration("For how long is the data stored"),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Theme(
+                data: ThemeData(unselectedWidgetColor: Colors.white),
+                child: CheckboxListTile(
+                  checkboxShape: const RoundedRectangleBorder(
+                    side: BorderSide(color: Color(0xFFFFFFFF), width: 2.0),
                   ),
-            ),
-            child: const Text(
-              "Coordinates of the device",
-              style: TextStyle(fontSize: 16.0, color: Colors.white),
-            ),
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (context) => controllerCoordinates());
-            },
+                  activeColor: Color(0xFF6CBBE0),
+                  checkColor: const Color(0xAAFFFFFF),
+                  enableFeedback: true,
+                  title: const Text(
+                    "Can the data identify anyone?",
+                    style: TextStyle(
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ),
+                  value: controllerIdentifiable,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      controllerIdentifiable = value!;
+                    });
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerWhatsDone,
+                decoration: decoration("What is being done with the data?"),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerPrivacyOptions,
+                decoration: decoration("URL for privacy options of the device"),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 18,
+              ),
+              Text(
+                "Lat: ${controllerLatitude == null ? "?" : controllerLatitude.toString()}, Long: ${controllerLongitude == null ? "?" : controllerLongitude.toString()}",
+                style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 16, 44, 53),
+                  padding: const EdgeInsets.only(
+                      left: 10.0, top: 18.0, right: 0.0, bottom: 18.0),
+                  side: const BorderSide(
+                      width: 1, // the thickness
+                      color: Colors.white // the color of the border
+                      ),
+                ),
+                child: const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Coordinates of the device",
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) => controllerCoordinates());
+                },
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerOwner,
+                decoration: decoration("Device owner"),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF0A8A4E),
+                  padding: const EdgeInsets.only(
+                      left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+                ),
+                onPressed: () {
+                  final device = Device(
+                    name: controllerName.text.trim(),
+                    category: controllerCategory.text.trim(),
+                    purpose: controllerPurpose.text.trim(),
+                    whoHasAccess: controllerWhoHasAccess.text.trim(),
+                    timeStored: controllerTimeStored.text.trim(),
+                    identifiable: controllerIdentifiable,
+                    whatsDone: controllerWhatsDone.text.trim(),
+                    privacyOptions: controllerPrivacyOptions.text.trim(),
+                    latitude: controllerLatitude.toString(),
+                    longitude: controllerLongitude.toString(),
+                    owner: controllerOwner.text.trim(),
+                    createdAt: DateTime.now(),
+                    updatedAt: DateTime.now(),
+                  );
+                  createDevice(device);
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                },
+                child: const Text(
+                  "Create device",
+                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                ),
+              ),
+            ],
           ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerOwner,
-            decoration: decoration("Device owner"),
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          ElevatedButton(
-            child: const Text("Create Device"),
-            onPressed: () {
-              final device = Device(
-                name: controllerName.text.trim(),
-                category: controllerCategory.text.trim(),
-                purpose: controllerPurpose.text.trim(),
-                whoHasAccess: controllerWhoHasAccess.text.trim(),
-                timeStored: controllerTimeStored.text.trim(),
-                identifiable: controllerIdentifiable,
-                whatsDone: controllerWhatsDone.text.trim(),
-                privacyOptions: controllerPrivacyOptions.text.trim(),
-                latitude: controllerLatitude.toString(),
-                longitude: controllerLongitude.toString(),
-                owner: controllerOwner.text.trim(),
-                createdAt: DateTime.now(),
-                updatedAt: DateTime.now(),
-              );
-              createDevice(device);
-              Navigator.of(context).popUntil((route) => route.isFirst);
-            },
-          ),
-        ],
+        ),
       ),
     );
   }
