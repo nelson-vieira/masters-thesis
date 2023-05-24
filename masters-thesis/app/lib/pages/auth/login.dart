@@ -113,6 +113,7 @@ class _LoginState extends State<Login> {
                 controller: controllerPassword,
                 decoration: decoration("Password"),
                 textInputAction: TextInputAction.done,
+                obscureText: true,
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),

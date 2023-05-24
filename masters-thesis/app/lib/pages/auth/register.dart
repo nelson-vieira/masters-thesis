@@ -128,6 +128,7 @@ class _RegisterState extends State<Register> {
               children: <Widget>[
                 TextFormField(
                   controller: controllerEmail,
+                  textInputAction: TextInputAction.next,
                   decoration: decoration("Email"),
                   style: const TextStyle(
                     color: Color.fromARGB(255, 255, 255, 255),
@@ -141,7 +142,9 @@ class _RegisterState extends State<Register> {
                 const SizedBox(height: 24),
                 TextFormField(
                   controller: controllerPassword,
+                  textInputAction: TextInputAction.next,
                   decoration: decoration("Password"),
+                  obscureText: true,
                   style: const TextStyle(
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),
