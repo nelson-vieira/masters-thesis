@@ -80,7 +80,18 @@ class _ProfileState extends State<Profile> {
                     padding: const EdgeInsets.only(
                         left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
                   ),
-                  onPressed: () => FirebaseAuth.instance.signOut(),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      barrierDismissible: false,
+                      builder: (context) => const Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    );
+                    FirebaseAuth.instance.signOut();
+                    navigatorKey.currentState!
+                        .popUntil((route) => route.isFirst);
+                  },
                   child: const Text(
                     "Sign out",
                     style: TextStyle(fontSize: 16.0, color: Colors.white),
