@@ -49,32 +49,45 @@ class _ProfileState extends State<Profile> {
         backgroundColor: const Color(0xFF334150),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Signed in as",
-                style: TextStyle(color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                account.email!,
-                style: TextStyle(color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              ElevatedButton(
-                onPressed: () => FirebaseAuth.instance.signOut(),
-                child: const Text("Log out"),
-              ),
-            ],
+        padding:
+            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
+        child: Container(
+          color: const Color.fromARGB(255, 16, 44, 53),
+          child: Center(
+            child: ListView(
+              shrinkWrap: true,
+              padding: const EdgeInsets.all(16),
+              children: <Widget>[
+                const Text(
+                  "Signed in as",
+                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  account.email!,
+                  style: const TextStyle(fontSize: 16.0, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 10, 118, 138),
+                    padding: const EdgeInsets.only(
+                        left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+                  ),
+                  onPressed: () => FirebaseAuth.instance.signOut(),
+                  child: const Text(
+                    "Sign out",
+                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
