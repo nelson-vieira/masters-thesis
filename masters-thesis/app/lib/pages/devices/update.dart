@@ -158,184 +158,196 @@ class _UpdateState extends State<Update> {
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: <Widget>[
-          TextField(
-            controller: controllerName,
-            decoration: decoration("Name"),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(height: 24),
-          TextField(
-            controller: controllerCategory,
-            decoration: decoration("Category"),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerPurpose,
-            decoration: decoration("What is the purpose"),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerWhoHasAccess,
-            decoration: decoration("Who has access to this information"),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerTimeStored,
-            decoration: decoration("For how long is the data stored"),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          Theme(
-            data: ThemeData(unselectedWidgetColor: Colors.white),
-            child: CheckboxListTile(
-              checkboxShape: const RoundedRectangleBorder(
-                side: BorderSide(color: Color(0xFFFFFFFF), width: 2.0),
-              ),
-              activeColor: Color(0xFF6CBBE0),
-              checkColor: const Color(0xAAFFFFFF),
-              enableFeedback: true,
-              title: const Text(
-                "Can the data identify anyone?",
-                style: TextStyle(
-                  color: Color(0xFFFFFFFF),
+      body: Padding(
+        padding:
+            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
+        child: Container(
+          color: const Color.fromARGB(255, 16, 44, 53),
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            children: <Widget>[
+              TextField(
+                controller: controllerName,
+                decoration: decoration("Name"),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
-              value: controllerIdentifiable,
-              onChanged: (bool? value) {
-                setState(() {
-                  controllerIdentifiable = value!;
-                });
-              },
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerWhatsDone,
-            decoration: decoration("What is being done with the data?"),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          TextField(
-            controller: controllerPrivacyOptions,
-            decoration: decoration("URL for privacy options of the device"),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          Text(
-            "Lat: " +
-                controllerLatitude.toString() +
-                ", Long: " +
-                controllerLongitude.toString(),
-            style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF091220),
-              padding: const EdgeInsets.only(
-                  left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
-              side: const BorderSide(
-                  width: 1, // the thickness
-                  color: Colors.white // the color of the border
+              const SizedBox(height: 24),
+              TextField(
+                controller: controllerCategory,
+                decoration: decoration("Category"),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerPurpose,
+                decoration: decoration("What is the purpose"),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerWhoHasAccess,
+                decoration: decoration("Who has access to this information"),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerTimeStored,
+                decoration: decoration("For how long is the data stored"),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Theme(
+                data: ThemeData(unselectedWidgetColor: Colors.white),
+                child: CheckboxListTile(
+                  checkboxShape: const RoundedRectangleBorder(
+                    side: BorderSide(color: Color(0xFFFFFFFF), width: 2.0),
                   ),
-            ),
-            child: const Text(
-              "Coordinates of the device",
-              style: TextStyle(fontSize: 16.0, color: Colors.white),
-            ),
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (context) => controllerCoordinates());
-            },
+                  activeColor: Color(0xFF6CBBE0),
+                  checkColor: const Color(0xAAFFFFFF),
+                  enableFeedback: true,
+                  title: const Text(
+                    "Can the data identify anyone?",
+                    style: TextStyle(
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ),
+                  value: controllerIdentifiable,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      controllerIdentifiable = value!;
+                    });
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerWhatsDone,
+                decoration: decoration("What is being done with the data?"),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerPrivacyOptions,
+                decoration: decoration("URL for privacy options of the device"),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
+                height: 18,
+              ),
+              Text(
+                "Lat: " +
+                    controllerLatitude.toString() +
+                    ", Long: " +
+                    controllerLongitude.toString(),
+                style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 16, 44, 53),
+                  padding: const EdgeInsets.only(
+                      left: 10.0, top: 18.0, right: 0.0, bottom: 18.0),
+                  side: const BorderSide(
+                      width: 1, // the thickness
+                      color: Colors.white // the color of the border
+                      ),
+                ),
+                child: const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Coordinates of the device",
+                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) => controllerCoordinates());
+                },
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 15, 81, 179),
+                    padding: const EdgeInsets.only(
+                        left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+                  ),
+                  child: const Text(
+                    "Update",
+                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  ),
+                  onPressed: () {
+                    final docDevice = FirebaseFirestore.instance
+                        .collection("devices")
+                        .doc(widget.device.id);
+                    docDevice.update({
+                      "name": controllerName.text,
+                      "category": controllerCategory.text,
+                      "purpose": controllerPurpose.text,
+                      "whoHasAccess": controllerWhoHasAccess.text,
+                      "timeStored": controllerTimeStored.text,
+                      "identifiable": controllerIdentifiable,
+                      "whatsDone": controllerWhatsDone.text,
+                      "privacyOptions": controllerPrivacyOptions.text,
+                      "latitude": controllerLatitude.toString(),
+                      "longitude": controllerLongitude.toString(),
+                      "owner": controllerOwner.text,
+                      "updatedAt": DateTime.now(),
+                    });
+                    Navigator.of(context).popUntil((route) => route.isFirst);
+                  }),
+              const SizedBox(
+                height: 60,
+              ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 207, 30, 30),
+                    padding: const EdgeInsets.only(
+                        left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+                  ),
+                  child: const Text(
+                    "Delete",
+                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => confirmDelete());
+                  }),
+            ],
           ),
-          const SizedBox(
-            height: 32,
-          ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 15, 81, 179),
-                padding: const EdgeInsets.only(
-                    left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
-              ),
-              child: const Text(
-                "Update",
-                style: TextStyle(fontSize: 16.0, color: Colors.white),
-              ),
-              onPressed: () {
-                final docDevice = FirebaseFirestore.instance
-                    .collection("devices")
-                    .doc(widget.device.id);
-                docDevice.update({
-                  "name": controllerName.text,
-                  "category": controllerCategory.text,
-                  "purpose": controllerPurpose.text,
-                  "whoHasAccess": controllerWhoHasAccess.text,
-                  "timeStored": controllerTimeStored.text,
-                  "identifiable": controllerIdentifiable,
-                  "whatsDone": controllerWhatsDone.text,
-                  "privacyOptions": controllerPrivacyOptions.text,
-                  "latitude": controllerLatitude.toString(),
-                  "longitude": controllerLongitude.toString(),
-                  "owner": controllerOwner.text,
-                  "updatedAt": DateTime.now(),
-                });
-                Navigator.of(context).popUntil((route) => route.isFirst);
-              }),
-          const SizedBox(
-            height: 60,
-          ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 207, 30, 30),
-                padding: const EdgeInsets.only(
-                    left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
-              ),
-              child: const Text(
-                "Delete",
-                style: TextStyle(fontSize: 16.0, color: Colors.white),
-              ),
-              onPressed: () {
-                showDialog(
-                    context: context, builder: (context) => confirmDelete());
-              }),
-        ],
+        ),
       ),
     );
   }
