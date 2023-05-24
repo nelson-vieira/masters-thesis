@@ -57,33 +57,40 @@ class _DevicesState extends State<Devices> {
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: Container(
-        padding: const EdgeInsets.all(16),
-        child: FutureBuilder(
-            future: readDevices().first,
-            builder: (context, snapshot) {
-              if (snapshot.hasError) {
-                return Center(
-                    child: Text(
-                  "Something went wrong! ${snapshot.error}",
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 17.0,
-                  ),
-                  textAlign: TextAlign.center,
-                ));
-              } else if (snapshot.hasData) {
-                final devices = snapshot.data!;
+      body: Padding(
+        padding:
+            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
+        child: Container(
+          color: const Color.fromARGB(255, 16, 44, 53),
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            child: FutureBuilder(
+                future: readDevices().first,
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(
+                        child: Text(
+                      "Something went wrong! ${snapshot.error}",
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 17.0,
+                      ),
+                      textAlign: TextAlign.center,
+                    ));
+                  } else if (snapshot.hasData) {
+                    final devices = snapshot.data!;
 
-                return ListView(
-                  children: devices.map(buildDevices).toList(),
-                );
-              } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            }),
+                    return ListView(
+                      children: devices.map(buildDevices).toList(),
+                    );
+                  } else {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                }),
+          ),
+        ),
       ),
     );
   }
