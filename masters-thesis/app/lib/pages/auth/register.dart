@@ -44,11 +44,13 @@ class _RegisterState extends State<Register> {
   final formKey = GlobalKey<FormState>();
   final controllerEmail = TextEditingController();
   final controllerPassword = TextEditingController();
+  final controllerPasswordConfirm = TextEditingController();
 
   @override
   void dispose() {
     controllerEmail.dispose();
     controllerPassword.dispose();
+    controllerPasswordConfirm.dispose();
 
     super.dispose();
   }
@@ -152,6 +154,21 @@ class _RegisterState extends State<Register> {
                   validator: (password) =>
                       password != null && password.length < 8
                           ? "Password must contain least 8 characters"
+                          : null,
+                ),
+                const SizedBox(height: 24),
+                TextFormField(
+                  controller: controllerPasswordConfirm,
+                  textInputAction: TextInputAction.done,
+                  decoration: decoration("Password Confirmation"),
+                  obscureText: true,
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (password) =>
+                      password != null && password == controllerPassword.text
+                          ? "Password confirmation must be equal to password"
                           : null,
                 ),
                 const SizedBox(
