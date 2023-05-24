@@ -98,18 +98,12 @@ class _RegisterState extends State<Register> {
       //       .doc(user.uid)
       //       .set({'firstName': _firstName});
     } on FirebaseAuthException catch (e) {
-      //   if (e.code == 'weak-password') {
-      //     print('The password provided is too weak.');
-      //   } else if (e.code == 'email-already-in-use') {
-      //     print('The account already exists for that email.');
-      //   }
-      // } catch (e) {
       print(e);
 
       Helper.showSnackBar(e.message);
     }
 
-    // navigatorKey.currentState!.pushNamed(Account.route);
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 
   @override
@@ -122,65 +116,81 @@ class _RegisterState extends State<Register> {
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: Form(
-        key: formKey,
-        child: ListView(
-          padding: const EdgeInsets.all(16),
-          children: <Widget>[
-            TextFormField(
-              controller: controllerEmail,
-              decoration: decoration("Email"),
-              style: const TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              validator: (email) =>
-                  email != null && !EmailValidator.validate(email)
-                      ? "Please enter a valid email address"
-                      : null,
-            ),
-            const SizedBox(height: 24),
-            TextFormField(
-              controller: controllerPassword,
-              decoration: decoration("Password"),
-              style: const TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              validator: (password) => password != null && password.length < 8
-                  ? "Password must contain least 8 characters"
-                  : null,
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            ElevatedButton(
-              onPressed: createUser,
-              child: const Text("Create account"),
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            Center(
-              child: RichText(
-                text: TextSpan(
-                  text: "Already have an account? ",
-                  style: const TextStyle(color: Colors.white),
-                  children: [
-                    TextSpan(
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = widget.onClickLogIn,
-                      text: "Log In",
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Color.fromARGB(255, 75, 191, 206),
-                      ),
-                    ),
-                  ],
+      body: Padding(
+        padding:
+            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
+        child: Container(
+          color: const Color.fromARGB(255, 16, 44, 53),
+          child: Form(
+            key: formKey,
+            child: ListView(
+              padding: const EdgeInsets.all(16),
+              children: <Widget>[
+                TextFormField(
+                  controller: controllerEmail,
+                  decoration: decoration("Email"),
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (email) =>
+                      email != null && !EmailValidator.validate(email)
+                          ? "Please enter a valid email address"
+                          : null,
                 ),
-              ),
+                const SizedBox(height: 24),
+                TextFormField(
+                  controller: controllerPassword,
+                  decoration: decoration("Password"),
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (password) =>
+                      password != null && password.length < 8
+                          ? "Password must contain least 8 characters"
+                          : null,
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 10, 118, 138),
+                    padding: const EdgeInsets.only(
+                        left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+                  ),
+                  onPressed: createUser,
+                  child: const Text(
+                    "Sign up",
+                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  ),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Center(
+                  child: RichText(
+                    text: TextSpan(
+                      text: "Already have an account? ",
+                      style: const TextStyle(color: Colors.white),
+                      children: [
+                        TextSpan(
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = widget.onClickLogIn,
+                          text: "Log In",
+                          style: const TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Color.fromARGB(255, 75, 191, 206),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
