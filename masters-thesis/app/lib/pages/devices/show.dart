@@ -79,23 +79,30 @@ class _ShowDeviceState extends State<ShowDevice> {
         ),
         backgroundColor: const Color(0xFF334150),
       ),
-      body: FutureBuilder<Device?>(
-          future: readDevice(),
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
-              return Text("Something went wrong! ${snapshot.error}");
-            } else if (snapshot.hasData) {
-              final device = snapshot.data!;
+      body: Padding(
+        padding:
+            const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
+        child: Container(
+          color: const Color.fromARGB(255, 16, 44, 53),
+          child: FutureBuilder<Device?>(
+              future: readDevice(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return Text("Something went wrong! ${snapshot.error}");
+                } else if (snapshot.hasData) {
+                  final device = snapshot.data!;
 
-              return device == null
-                  ? Center(child: Text("No Device"))
-                  : buildDevice(device);
-            } else {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          }),
+                  return device == null
+                      ? Center(child: Text("No Device"))
+                      : buildDevice(device);
+                } else {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              }),
+        ),
+      ),
     );
   }
 }
