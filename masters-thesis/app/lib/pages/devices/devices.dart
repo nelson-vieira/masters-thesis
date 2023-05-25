@@ -10,6 +10,7 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
+import 'dart:math' as math;
 import "package:app/main.dart";
 import "package:app/models/device.dart";
 import 'package:app/pages/public/home.dart';
@@ -37,21 +38,30 @@ class _DevicesState extends State<Devices> {
       .map((snapshot) =>
           snapshot.docs.map((doc) => Device.fromJson(doc.data())).toList());
 
-  Widget buildDevices(Device device) => ListTile(
-        textColor: const Color.fromARGB(255, 255, 255, 255),
-        titleTextStyle:
-            const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-        subtitleTextStyle: const TextStyle(fontSize: 14.0),
-        leading: CircleAvatar(child: Text(device.category)),
-        title: Text(
-          device.name,
+  Widget buildDevices(Device device) => Container(
+        decoration: BoxDecoration(
+          color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+              .withOpacity(0.2),
+          borderRadius: BorderRadius.circular(20),
         ),
-        subtitle: Text(
-          device.purpose,
+        margin: const EdgeInsets.only(bottom: 10),
+        child: ListTile(
+          textColor: const Color.fromARGB(255, 255, 255, 255),
+          titleTextStyle:
+              const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+          subtitleTextStyle: const TextStyle(fontSize: 16.0),
+          leading: CircleAvatar(child: Text(device.whoHasAccess)),
+          title: Text(
+            device.name,
+          ),
+          subtitle: Text(
+            device.purpose,
+          ),
+          onTap: () {
+            Navigator.of(context)
+                .pushNamed(ShowDevice.route, arguments: device);
+          },
         ),
-        onTap: () {
-          Navigator.of(context).pushNamed(ShowDevice.route, arguments: device);
-        },
       );
 
   @override
