@@ -11,6 +11,7 @@ import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
+import 'package:url_launcher/url_launcher.dart';
 import "package:app/main.dart";
 import "package:app/models/device.dart";
 import 'package:app/pages/public/home.dart';
@@ -33,6 +34,8 @@ class ShowDevice extends StatefulWidget {
 }
 
 class _ShowDeviceState extends State<ShowDevice> {
+  var _url;
+
   Future<Device?> readDevice() async {
     final docDevice =
         FirebaseFirestore.instance.collection("devices").doc(widget.device.id);
@@ -43,23 +46,307 @@ class _ShowDeviceState extends State<ShowDevice> {
     }
   }
 
-  Widget buildDevice(Device device) => Column(
-        children: [
-          ListTile(
-            textColor: Color.fromARGB(255, 255, 255, 255),
-            leading: CircleAvatar(child: Text('${device.category}')),
-            title: Text(device.name),
-            subtitle: Text(device.createdAt.toIso8601String()),
-          ),
-          FirebaseAuth.instance.currentUser != null
-              ? FloatingActionButton(
-                  child: Icon(Icons.add),
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushNamed(Update.route, arguments: device);
-                  })
-              : Container(),
-        ],
+  Widget buildDevice(Device device) => Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 40.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset("assets/icon.png", width: 60.0),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            device.category,
+                            style: const TextStyle(
+                                fontSize: 16.0, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Table(
+                      columnWidths: const {
+                        0: FlexColumnWidth(50),
+                        1: FlexColumnWidth(50),
+                      },
+                      children: <TableRow>[
+                        TableRow(
+                          children: <Widget>[
+                            const Text(
+                              "Who has access to the data?",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              device.whoHasAccess,
+                              style: const TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        const TableRow(children: [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          )
+                        ]),
+                        TableRow(
+                          children: <Widget>[
+                            const Text(
+                              "What is the purpose for collection?",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              device.purpose,
+                              style: const TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        const TableRow(children: [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          )
+                        ]),
+                        TableRow(
+                          children: <Widget>[
+                            const Text(
+                              "Can the data identify someone?",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              device.identifiable == true ? "Yes" : "No",
+                              style: const TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        const TableRow(children: [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          )
+                        ]),
+                        TableRow(
+                          children: <Widget>[
+                            const Text(
+                              "What is being done with the data?",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              device.whatsDone,
+                              style: const TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        const TableRow(children: [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          )
+                        ]),
+                        TableRow(
+                          children: <Widget>[
+                            const Text(
+                              "For how long is the data stored?",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              device.purpose,
+                              style: const TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        const TableRow(children: [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          )
+                        ]),
+                        TableRow(
+                          children: <Widget>[
+                            const Text(
+                              "Device owner: ",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              device.owner.isEmpty ? "N/A" : device.owner,
+                              style: const TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        device.privacyOptions.isEmpty
+                            ? const TableRow(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 0.0,
+                                  ),
+                                  SizedBox(
+                                    height: 0.0,
+                                  ),
+                                ],
+                              )
+                            : const TableRow(children: [
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                )
+                              ]),
+                        device.privacyOptions.isEmpty
+                            ? const TableRow(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: 0.0,
+                                  ),
+                                  SizedBox(
+                                    height: 0.0,
+                                  ),
+                                ],
+                              )
+                            : TableRow(
+                                children: <Widget>[
+                                  const Text(
+                                    "Privacy options: ",
+                                    style: TextStyle(
+                                        fontSize: 16.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const Text(
+                                    "See options",
+                                    style: TextStyle(
+                                        fontSize: 16.0, color: Colors.white),
+                                    textAlign: TextAlign.start,
+                                  ),
+                                ],
+                              ),
+                        const TableRow(children: [
+                          SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          )
+                        ]),
+                        TableRow(
+                          children: <Widget>[
+                            const Text(
+                              "Coordinates of the device:",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Lat: ${device.latitude}, Long: ${device.longitude}",
+                              style: const TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        const TableRow(children: [
+                          SizedBox(
+                            height: 50,
+                          ),
+                          SizedBox(
+                            height: 50,
+                          )
+                        ]),
+                        TableRow(
+                          children: <Widget>[
+                            const Text(
+                              "Last updated:",
+                              style: TextStyle(
+                                  fontSize: 14.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              device.updatedAt.toString(),
+                              style: const TextStyle(
+                                  fontSize: 14.0, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 70,
+                    ),
+                    FirebaseAuth.instance.currentUser != null
+                        ? ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size.fromHeight(50),
+                              backgroundColor: Color(0xFF0F51B3),
+                              padding: const EdgeInsets.only(
+                                  left: 0.0,
+                                  top: 16.0,
+                                  right: 0.0,
+                                  bottom: 16.0),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushNamed(Update.route, arguments: device);
+                            },
+                            child: const Text(
+                              "Edit device",
+                              style: TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
+                            ),
+                            //    FloatingActionButton(
+                            //       child: Icon(Icons.add),
+                            //       onPressed: () {
+                            //         Navigator.of(context)
+                            //             .pushNamed(Update.route, arguments: device);
+                            //       }),
+                          )
+                        : Container(),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       );
 
   @override
@@ -67,8 +354,8 @@ class _ShowDeviceState extends State<ShowDevice> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon:
-              Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
+          icon: const Icon(Icons.arrow_back,
+              color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () {
             Navigator.of(context).pop();
           },
