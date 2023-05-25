@@ -11,13 +11,15 @@ class Device {
   String id;
   // Name of the device
   final String name;
-  // Category of the device, can be of the types: d
+  // Category of the device, can be of the types: health, visual, audio, presence,
+  // location, biometrics, environment or unique identification
   final String category;
   // What is the purpose of the data being collected
   final String purpose;
   // Who has access to the data that is being collected
   final String whoHasAccess;
-  // For how long is the data bring stored, doesn't matter if it is on the cloud or on premises or other
+  // For how long is the data bring stored, doesn't matter if it is on the cloud
+  // or on premises or other
   final String timeStored;
   // Can the data identify any individual?
   final bool identifiable;
