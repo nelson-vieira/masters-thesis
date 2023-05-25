@@ -39,9 +39,16 @@ class _DevicesState extends State<Devices> {
 
   Widget buildDevices(Device device) => ListTile(
         textColor: const Color.fromARGB(255, 255, 255, 255),
+        titleTextStyle:
+            const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+        subtitleTextStyle: const TextStyle(fontSize: 14.0),
         leading: CircleAvatar(child: Text(device.category)),
-        title: Text(device.name),
-        subtitle: Text(device.id),
+        title: Text(
+          device.name,
+        ),
+        subtitle: Text(
+          device.purpose,
+        ),
         onTap: () {
           Navigator.of(context).pushNamed(ShowDevice.route, arguments: device);
         },
