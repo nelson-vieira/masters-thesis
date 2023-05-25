@@ -252,11 +252,24 @@ class _ShowDeviceState extends State<ShowDevice> {
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  const Text(
-                                    "See options",
-                                    style: TextStyle(
-                                        fontSize: 16.0, color: Colors.white),
-                                    textAlign: TextAlign.start,
+                                  InkWell(
+                                    onTap: () async {
+                                      if (!await launchUrl(
+                                          Uri.parse(device.privacyOptions))) {
+                                        throw Exception(
+                                            "Could not launch ${device.privacyOptions}");
+                                      }
+                                    },
+                                    child: const Text(
+                                      "Options",
+                                      style: TextStyle(
+                                        fontSize: 16.0,
+                                        color:
+                                            Color.fromARGB(255, 75, 191, 206),
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                      textAlign: TextAlign.start,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -286,10 +299,10 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ),
                         const TableRow(children: [
                           SizedBox(
-                            height: 50,
+                            height: 70,
                           ),
                           SizedBox(
-                            height: 50,
+                            height: 70,
                           )
                         ]),
                         TableRow(
@@ -311,7 +324,7 @@ class _ShowDeviceState extends State<ShowDevice> {
                       ],
                     ),
                     const SizedBox(
-                      height: 70,
+                      height: 20,
                     ),
                     FirebaseAuth.instance.currentUser != null
                         ? ElevatedButton(
