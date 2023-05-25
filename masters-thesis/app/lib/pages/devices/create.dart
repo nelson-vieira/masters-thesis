@@ -44,6 +44,7 @@ class _CreateState extends State<Create> {
   final controllerOwner = TextEditingController();
   final controllerCreatedAt = TextEditingController();
   final controllerUpdatedAt = TextEditingController();
+  String? selectedValue = null;
 
   InputDecoration decoration(String label) => InputDecoration(
         labelText: label,
@@ -107,6 +108,76 @@ class _CreateState extends State<Create> {
         ),
       );
 
+  List<DropdownMenuItem<String>> get dropdownItems {
+    List<DropdownMenuItem<String>> menuItems = [
+      DropdownMenuItem(
+          child: Text(
+            "Health",
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          value: "Health"),
+      DropdownMenuItem(
+          child: Text(
+            "Visual",
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          value: "Visual"),
+      DropdownMenuItem(
+          child: Text(
+            "Audio",
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          value: "Audio"),
+      DropdownMenuItem(
+          child: Text(
+            "Presence",
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          value: "Presence"),
+      DropdownMenuItem(
+          child: Text(
+            "Location",
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          value: "Location"),
+      DropdownMenuItem(
+          child: Text(
+            "Biometrics",
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          value: "Biometrics"),
+      DropdownMenuItem(
+          child: Text(
+            "Environment",
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          value: "Environment"),
+      DropdownMenuItem(
+          child: Text(
+            "Unique identification",
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+          value: "Unique identification"),
+    ];
+    return menuItems;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,14 +211,33 @@ class _CreateState extends State<Create> {
                 ),
               ),
               const SizedBox(height: 24),
-              TextField(
-                controller: controllerCategory,
-                decoration: decoration("Category"),
-                keyboardType: TextInputType.number,
-                style: TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                ),
-              ),
+              DropdownButtonFormField(
+                  hint: const Text(
+                    "Select a category",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
+                  decoration: const InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    filled: true,
+                    fillColor: Color.fromARGB(255, 16, 44, 53),
+                  ),
+                  validator: (value) =>
+                      value == null ? "Select a category" : null,
+                  dropdownColor: const Color.fromARGB(255, 16, 44, 53),
+                  value: selectedValue,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedValue = newValue!;
+                    });
+                  },
+                  items: dropdownItems),
               const SizedBox(
                 height: 24,
               ),
