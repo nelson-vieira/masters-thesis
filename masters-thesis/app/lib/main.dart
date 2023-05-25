@@ -49,6 +49,7 @@ class Main extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "IoT Privacy App",
       theme: ThemeData(
+        fontFamily: "Jost",
         canvasColor: const Color(0xFF091220),
         // colorScheme: const ColorScheme(
         //   brightness: Brightness.dark,
