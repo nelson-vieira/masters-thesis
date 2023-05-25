@@ -13,6 +13,7 @@ import "package:datetime_picker_formfield/datetime_picker_formfield.dart";
 import "package:intl/intl.dart";
 import "package:app/main.dart";
 import "package:app/models/device.dart";
+import "package:app/models/category.dart";
 import 'package:app/pages/public/home.dart';
 import 'package:app/pages/public/about.dart';
 import 'package:app/pages/public/encyclopedia.dart';
@@ -32,7 +33,7 @@ class Create extends StatefulWidget {
 
 class _CreateState extends State<Create> {
   final controllerName = TextEditingController();
-  final controllerCategory = TextEditingController();
+  String? controllerCategory;
   final controllerPurpose = TextEditingController();
   final controllerWhoHasAccess = TextEditingController();
   final controllerTimeStored = TextEditingController();
@@ -44,15 +45,14 @@ class _CreateState extends State<Create> {
   final controllerOwner = TextEditingController();
   final controllerCreatedAt = TextEditingController();
   final controllerUpdatedAt = TextEditingController();
-  String? selectedValue = null;
 
   InputDecoration decoration(String label) => InputDecoration(
         labelText: label,
         enabledBorder: const OutlineInputBorder(
-          borderSide: const BorderSide(
-              color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
+          borderSide:
+              BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
         ),
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         labelStyle: TextStyle(
           color: Colors.grey.shade600,
         ),
@@ -108,90 +108,36 @@ class _CreateState extends State<Create> {
         ),
       );
 
-  List<DropdownMenuItem<String>> get dropdownItems {
-    List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(
-          child: Text(
-            "Health",
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
+  Stream<List<Category>> readCategories() => FirebaseFirestore.instance
+      .collection("categories")
+      .snapshots()
+      .map((snapshot) =>
+          snapshot.docs.map((doc) => Category.fromJson(doc.data())).toList());
+
+  DropdownMenuItem<String> buildCategories(Category cat) => DropdownMenuItem(
+        value: cat.id,
+        child: Text(
+          cat.name,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255),
           ),
-          value: "Health"),
-      DropdownMenuItem(
-          child: Text(
-            "Visual",
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          value: "Visual"),
-      DropdownMenuItem(
-          child: Text(
-            "Audio",
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          value: "Audio"),
-      DropdownMenuItem(
-          child: Text(
-            "Presence",
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          value: "Presence"),
-      DropdownMenuItem(
-          child: Text(
-            "Location",
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          value: "Location"),
-      DropdownMenuItem(
-          child: Text(
-            "Biometrics",
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          value: "Biometrics"),
-      DropdownMenuItem(
-          child: Text(
-            "Environment",
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          value: "Environment"),
-      DropdownMenuItem(
-          child: Text(
-            "Unique identification",
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          value: "Unique identification"),
-    ];
-    return menuItems;
-  }
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon:
-              Icon(Icons.arrow_back, color: Color.fromARGB(255, 255, 255, 255)),
+          icon: const Icon(Icons.arrow_back,
+              color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Text(
+        title: const Text(
           "Add Device",
-          style: const TextStyle(fontSize: 30),
+          style: TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
@@ -201,50 +147,77 @@ class _CreateState extends State<Create> {
         child: Container(
           color: const Color.fromARGB(255, 16, 44, 53),
           child: ListView(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             children: <Widget>[
               TextField(
                 controller: controllerName,
                 decoration: decoration("Name"),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
               const SizedBox(height: 24),
-              DropdownButtonFormField(
-                  hint: const Text(
-                    "Select a category",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                  ),
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    filled: true,
-                    fillColor: Color.fromARGB(255, 16, 44, 53),
-                  ),
-                  validator: (value) =>
-                      value == null ? "Select a category" : null,
-                  dropdownColor: const Color.fromARGB(255, 16, 44, 53),
-                  value: selectedValue,
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      selectedValue = newValue!;
-                    });
-                  },
-                  items: dropdownItems),
+              FutureBuilder(
+                  future: readCategories().first,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Center(
+                          child: Text(
+                        "Something went wrong! ${snapshot.error}",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                        ),
+                        textAlign: TextAlign.center,
+                      ));
+                    } else if (snapshot.hasData) {
+                      final devices = snapshot.data!;
+
+                      return DropdownButtonFormField(
+                          hint: const Text(
+                            "Select a category",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                          decoration: const InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            filled: true,
+                            fillColor: Color.fromARGB(255, 16, 44, 53),
+                          ),
+                          validator: (value) =>
+                              value == null ? "Select a category" : null,
+                          dropdownColor: const Color.fromARGB(255, 16, 44, 53),
+                          value: controllerCategory,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              controllerCategory = newValue!;
+                            });
+                          },
+                          items: devices
+                              .map<DropdownMenuItem<String>>(buildCategories)
+                              .toList());
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  }),
               const SizedBox(
                 height: 24,
               ),
               TextField(
                 controller: controllerPurpose,
                 decoration: decoration("What is the purpose"),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
@@ -254,7 +227,7 @@ class _CreateState extends State<Create> {
               TextField(
                 controller: controllerWhoHasAccess,
                 decoration: decoration("Who has access to this information"),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
@@ -264,7 +237,7 @@ class _CreateState extends State<Create> {
               TextField(
                 controller: controllerTimeStored,
                 decoration: decoration("For how long is the data stored"),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
@@ -300,7 +273,7 @@ class _CreateState extends State<Create> {
               TextField(
                 controller: controllerWhatsDone,
                 decoration: decoration("What is being done with the data?"),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
@@ -310,7 +283,7 @@ class _CreateState extends State<Create> {
               TextField(
                 controller: controllerPrivacyOptions,
                 decoration: decoration("URL for privacy options of the device"),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
@@ -357,7 +330,7 @@ class _CreateState extends State<Create> {
               TextField(
                 controller: controllerOwner,
                 decoration: decoration("Device owner"),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
@@ -366,14 +339,14 @@ class _CreateState extends State<Create> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF0A8A4E),
+                  backgroundColor: const Color(0xFF0A8A4E),
                   padding: const EdgeInsets.only(
                       left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
                 ),
                 onPressed: () {
                   final device = Device(
                     name: controllerName.text.trim(),
-                    category: controllerCategory.text.trim(),
+                    category: controllerCategory.toString(),
                     purpose: controllerPurpose.text.trim(),
                     whoHasAccess: controllerWhoHasAccess.text.trim(),
                     timeStored: controllerTimeStored.text.trim(),
