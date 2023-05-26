@@ -54,8 +54,8 @@ class _UpdateState extends State<Update> {
               BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
         ),
         border: const OutlineInputBorder(),
-        labelStyle: TextStyle(
-          color: Colors.grey.shade600,
+        labelStyle: const TextStyle(
+          color: Color(0xFFAAAAAA),
         ),
       );
 
@@ -95,7 +95,7 @@ class _UpdateState extends State<Update> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("No")),
+              child: const Text("No")),
         ],
         content: const Text("Are you sure you want to delete this device?"),
       );
@@ -211,7 +211,7 @@ class _UpdateState extends State<Update> {
                           hint: const Text(
                             "Select a category",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
+                              color: Color(0xFFAAAAAA),
                             ),
                           ),
                           decoration: const InputDecoration(
@@ -287,10 +287,12 @@ class _UpdateState extends State<Update> {
                   activeColor: Color(0xFF6CBBE0),
                   checkColor: const Color(0xAAFFFFFF),
                   enableFeedback: true,
-                  title: const Text(
+                  title: Text(
                     "Can the data identify anyone?",
                     style: TextStyle(
-                      color: Color(0xFFFFFFFF),
+                      color: controllerIdentifiable
+                          ? const Color(0xFFFFFFFF)
+                          : const Color(0xFFAAAAAA),
                     ),
                   ),
                   value: controllerIdentifiable,
@@ -348,7 +350,9 @@ class _UpdateState extends State<Update> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Coordinates of the device",
-                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        color: Color.fromARGB(255, 170, 170, 170)),
                     textAlign: TextAlign.start,
                   ),
                 ),
