@@ -53,8 +53,8 @@ class _CreateState extends State<Create> {
               BorderSide(color: Color.fromARGB(255, 255, 255, 255), width: 0.0),
         ),
         border: const OutlineInputBorder(),
-        labelStyle: TextStyle(
-          color: Colors.grey.shade600,
+        labelStyle: const TextStyle(
+          color: Color(0xFFAAAAAA),
         ),
       );
 
@@ -177,7 +177,7 @@ class _CreateState extends State<Create> {
                           hint: const Text(
                             "Select a category",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
+                              color: Color.fromARGB(255, 170, 170, 170),
                             ),
                           ),
                           decoration: const InputDecoration(
@@ -250,13 +250,15 @@ class _CreateState extends State<Create> {
                   checkboxShape: const RoundedRectangleBorder(
                     side: BorderSide(color: Color(0xFFFFFFFF), width: 2.0),
                   ),
-                  activeColor: Color(0xFF6CBBE0),
+                  activeColor: const Color(0xFF6CBBE0),
                   checkColor: const Color(0xAAFFFFFF),
                   enableFeedback: true,
-                  title: const Text(
+                  title: Text(
                     "Can the data identify anyone?",
                     style: TextStyle(
-                      color: Color(0xFFFFFFFF),
+                      color: controllerIdentifiable
+                          ? const Color(0xFFFFFFFF)
+                          : const Color(0xFFAAAAAA),
                     ),
                   ),
                   value: controllerIdentifiable,
@@ -292,7 +294,11 @@ class _CreateState extends State<Create> {
               ),
               Text(
                 "Lat: ${controllerLatitude == null ? "?" : controllerLatitude.toString()}, Long: ${controllerLongitude == null ? "?" : controllerLongitude.toString()}",
-                style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
+                style: TextStyle(
+                    fontSize: 14.0,
+                    color: controllerLatitude == null
+                        ? Colors.grey.shade400
+                        : Colors.white),
               ),
               const SizedBox(
                 height: 8,
@@ -313,7 +319,7 @@ class _CreateState extends State<Create> {
                     "Coordinates of the device",
                     style: TextStyle(
                       fontSize: 16.0,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 170, 170, 170),
                     ),
                     textAlign: TextAlign.start,
                   ),
