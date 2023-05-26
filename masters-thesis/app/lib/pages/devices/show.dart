@@ -104,12 +104,19 @@ class _ShowDeviceState extends State<ShowDevice> {
                       children: <TableRow>[
                         TableRow(
                           children: <Widget>[
-                            const Text(
-                              "Who has access to the data?",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 0.0,
+                                  right: 20.0,
+                                  bottom: 0.0,
+                                  left: 0.0),
+                              child: Text(
+                                "Who has access to the data?",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Text(
                               device.whoHasAccess,
@@ -128,12 +135,19 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Text(
-                              "What is the purpose for collection?",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 0.0,
+                                  right: 20.0,
+                                  bottom: 0.0,
+                                  left: 0.0),
+                              child: Text(
+                                "What is the purpose for collection?",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Text(
                               device.purpose,
@@ -152,12 +166,19 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Text(
-                              "Can the data identify someone?",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 0.0,
+                                  right: 20.0,
+                                  bottom: 0.0,
+                                  left: 0.0),
+                              child: Text(
+                                "Can the data identify someone?",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Text(
                               device.identifiable == true ? "Yes" : "No",
@@ -176,12 +197,19 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Text(
-                              "What is being done with the data?",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 0.0,
+                                  right: 20.0,
+                                  bottom: 0.0,
+                                  left: 0.0),
+                              child: Text(
+                                "What is being done with the data?",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Text(
                               device.whatsDone,
@@ -200,12 +228,19 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Text(
-                              "For how long is the data stored?",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 0.0,
+                                  right: 20.0,
+                                  bottom: 0.0,
+                                  left: 0.0),
+                              child: Text(
+                                "For how long is the data stored?",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Text(
                               device.purpose,
@@ -224,12 +259,19 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Text(
-                              "Device owner: ",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 0.0,
+                                  right: 20.0,
+                                  bottom: 0.0,
+                                  left: 0.0),
+                              child: Text(
+                                "Device owner: ",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Text(
                               device.owner.isEmpty ? "N/A" : device.owner,
@@ -270,12 +312,19 @@ class _ShowDeviceState extends State<ShowDevice> {
                               )
                             : TableRow(
                                 children: <Widget>[
-                                  const Text(
-                                    "Privacy options: ",
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
+                                  const Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 0.0,
+                                        right: 20.0,
+                                        bottom: 0.0,
+                                        left: 0.0),
+                                    child: Text(
+                                      "Privacy options: ",
+                                      style: TextStyle(
+                                          fontSize: 16.0,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                   InkWell(
                                     onTap: () async {
@@ -308,12 +357,19 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Text(
-                              "Coordinates of the device:",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                            const Padding(
+                              padding: EdgeInsets.only(
+                                  top: 0.0,
+                                  right: 20.0,
+                                  bottom: 0.0,
+                                  left: 0.0),
+                              child: Text(
+                                "Coordinates of the device:",
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             Text(
                               "Lat: ${device.latitude}, Long: ${device.longitude}",
