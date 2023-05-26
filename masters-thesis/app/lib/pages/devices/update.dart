@@ -22,6 +22,7 @@ import 'package:app/pages/devices/create.dart';
 import 'package:app/pages/devices/devices.dart';
 import 'package:app/pages/devices/show.dart';
 import 'package:app/pages/auth/auth.dart';
+import 'package:app/models/category.dart';
 
 class Update extends StatefulWidget {
   static const String route = "/update";
@@ -35,7 +36,7 @@ class Update extends StatefulWidget {
 
 class _UpdateState extends State<Update> {
   final controllerName = TextEditingController();
-  final controllerCategory = TextEditingController();
+  String? controllerCategory;
   final controllerPurpose = TextEditingController();
   final controllerWhoHasAccess = TextEditingController();
   final controllerTimeStored = TextEditingController();
@@ -62,7 +63,7 @@ class _UpdateState extends State<Update> {
   initState() {
     // https://github.com/flutter/flutter/issues/9969
     controllerName.text = widget.device.name;
-    controllerCategory.text = widget.device.category;
+    controllerCategory = widget.device.category;
     controllerPurpose.text = widget.device.purpose;
     controllerWhoHasAccess.text = widget.device.whoHasAccess;
     controllerTimeStored.text = widget.device.timeStored;
@@ -141,6 +142,22 @@ class _UpdateState extends State<Update> {
         ),
       );
 
+  Stream<List<Category>> readCategories() => FirebaseFirestore.instance
+      .collection("categories")
+      .snapshots()
+      .map((snapshot) =>
+          snapshot.docs.map((doc) => Category.fromJson(doc.data())).toList());
+
+  DropdownMenuItem<String> buildCategories(Category cat) => DropdownMenuItem(
+        value: cat.id,
+        child: Text(
+          cat.name,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255),
+          ),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -174,13 +191,60 @@ class _UpdateState extends State<Update> {
                 ),
               ),
               const SizedBox(height: 24),
-              TextField(
-                controller: controllerCategory,
-                decoration: decoration("Category"),
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                ),
-              ),
+              FutureBuilder(
+                  future: readCategories().first,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Center(
+                          child: Text(
+                        "Something went wrong! ${snapshot.error}",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                        ),
+                        textAlign: TextAlign.center,
+                      ));
+                    } else if (snapshot.hasData) {
+                      final devices = snapshot.data!;
+
+                      return DropdownButtonFormField(
+                          hint: const Text(
+                            "Select a category",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                          decoration: const InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            filled: true,
+                            fillColor: Color.fromARGB(255, 16, 44, 53),
+                          ),
+                          validator: (value) =>
+                              value == null ? "Select a category" : null,
+                          dropdownColor: const Color.fromARGB(255, 16, 44, 53),
+                          value: controllerCategory,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              controllerCategory = newValue!;
+                            });
+                          },
+                          items: devices
+                              .map<DropdownMenuItem<String>>(buildCategories)
+                              .toList());
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  }),
               const SizedBox(
                 height: 24,
               ),
@@ -313,7 +377,7 @@ class _UpdateState extends State<Update> {
                         .doc(widget.device.id);
                     docDevice.update({
                       "name": controllerName.text,
-                      "category": controllerCategory.text,
+                      "category": controllerCategory.toString(),
                       "purpose": controllerPurpose.text,
                       "whoHasAccess": controllerWhoHasAccess.text,
                       "timeStored": controllerTimeStored.text,
