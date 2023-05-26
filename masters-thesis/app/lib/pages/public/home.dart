@@ -116,17 +116,20 @@ class _HomeState extends State<Home> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       floatingActionButton: FirebaseAuth.instance.currentUser != null
-          ? FloatingActionButton(
-              tooltip: "Add a new device",
-              child: const Row(
-                children: [
-                  Icon(Icons.add),
-                  Icon(Icons.account_tree_outlined),
-                ],
+          ? FloatingActionButton.extended(
+              label: const Text(
+                "Add Device",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+              tooltip: "Add a new device",
+              icon: const Icon(Icons.account_tree_outlined),
               onPressed: () {
                 Navigator.of(context).pushNamed(Create.route);
-              })
+              },
+            )
           : Container(),
     );
   }
