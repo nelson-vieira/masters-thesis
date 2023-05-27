@@ -11,14 +11,19 @@ class UserDocument {
   String id;
   // Email of the user
   final String email;
+  // Role of the user
+  final String role;
   // User metadata
   final DateTime createdAt;
+  final DateTime updatedAt;
   final DateTime lastLogin;
 
   UserDocument({
     this.id = "",
     required this.email,
+    required this.role,
     required this.createdAt,
+    required this.updatedAt,
     required this.lastLogin,
   });
 
@@ -26,7 +31,9 @@ class UserDocument {
   Map<String, dynamic> toJson() => {
         "id": id,
         "email": email,
+        "role": role,
         "createdAt": createdAt,
+        "updatedAt": updatedAt,
         "lastLogin": lastLogin,
       };
 
@@ -34,7 +41,9 @@ class UserDocument {
   static UserDocument fromJson(Map<String, dynamic> json) => UserDocument(
         id: Helper.transformString(json["id"]),
         email: Helper.transformString(json["name"]),
+        role: Helper.transformString(json["role"]),
         createdAt: (json["createdAt"] as Timestamp).toDate(),
+        updatedAt: (json["updatedAt"] as Timestamp).toDate(),
         lastLogin: (json["updatedAt"] as Timestamp).toDate(),
       );
 }
