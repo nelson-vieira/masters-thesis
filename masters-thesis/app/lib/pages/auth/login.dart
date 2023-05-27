@@ -73,6 +73,14 @@ class _LoginState extends State<Login> {
         email: controllerEmail.text.trim(),
         password: controllerPassword.text.trim(),
       );
+
+      final docUser = FirebaseFirestore.instance
+          .collection("users")
+          .where("email", isEqualTo: controllerEmail.text.trim())
+          .get()
+          .then((value) => value.docs.first
+              .data()
+              .update("lastLogin", (value) => DateTime.now));
     } on FirebaseAuthException catch (e) {
       print(e);
 
