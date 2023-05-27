@@ -78,7 +78,7 @@ class _RegisterState extends State<Register> {
     );
   }
 
-  Future createUser() async {
+  Future createUser(UserDocument user) async {
     final isValid = formKey.currentState!.validate();
     if (!isValid) return;
 
@@ -94,11 +94,12 @@ class _RegisterState extends State<Register> {
         email: controllerEmail.text.trim(),
         password: controllerPassword.text.trim(),
       );
-      User user = result.user!;
-      //   await FirebaseFirestore.instance
-      //       .collection('users')
-      //       .doc(user.uid)
-      //       .set({'firstName': _firstName});
+      final docUser =
+          await FirebaseFirestore.instance.collection("users").doc();
+      user.id = docUser.id;
+
+      final json = user.toJson();
+      await docUser.set(json);
     } on FirebaseAuthException catch (e) {
       print(e);
 
@@ -180,7 +181,16 @@ class _RegisterState extends State<Register> {
                     padding: const EdgeInsets.only(
                         left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
                   ),
-                  onPressed: createUser,
+                  onPressed: () {
+                    final user = UserDocument(
+                      email: controllerEmail.text.trim(),
+                      role: "user",
+                      createdAt: DateTime.now(),
+                      updatedAt: DateTime.now(),
+                      lastLogin: DateTime.now(),
+                    );
+                    createUser(user);
+                  },
                   child: const Text(
                     "Sign up",
                     style: TextStyle(fontSize: 16.0, color: Colors.white),
