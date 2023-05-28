@@ -4,12 +4,14 @@
 //
 // @author Nelson Vieira <nelson0.vieira@gmail.com>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
+import "package:app/models/user.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
+import "package:firebase_auth/firebase_auth.dart";
 import "package:datetime_picker_formfield/datetime_picker_formfield.dart";
 import "package:intl/intl.dart";
 import "package:app/main.dart";
@@ -46,6 +48,7 @@ class _UpdateState extends State<Update> {
   var controllerLatitude;
   var controllerLongitude;
   final controllerOwner = TextEditingController();
+  String _userEmail = "Random";
 
   InputDecoration decoration(String label) => InputDecoration(
         labelText: label,
@@ -157,6 +160,31 @@ class _UpdateState extends State<Update> {
           ),
         ),
       );
+
+  Stream<List<UserDocument>> readUserDocuments() => FirebaseFirestore.instance
+      .collection("users")
+      .snapshots()
+      .map((snapshot) => snapshot.docs
+          .map((doc) => UserDocument.fromJson(doc.data()))
+          .toList());
+
+  Widget buildDelete(UserDocument user) => (FirebaseAuth.instance.currentUser !=
+              null &&
+          user.role.toString() == "admin")
+      ? ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromARGB(255, 207, 30, 30),
+            padding: const EdgeInsets.only(
+                left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+          ),
+          child: const Text(
+            "Delete",
+            style: TextStyle(fontSize: 16.0, color: Colors.white),
+          ),
+          onPressed: () {
+            showDialog(context: context, builder: (context) => confirmDelete());
+          })
+      : Container();
 
   @override
   Widget build(BuildContext context) {
@@ -398,20 +426,28 @@ class _UpdateState extends State<Update> {
               const SizedBox(
                 height: 60,
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 207, 30, 30),
-                    padding: const EdgeInsets.only(
-                        left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
-                  ),
-                  child: const Text(
-                    "Delete",
-                    style: TextStyle(fontSize: 16.0, color: Colors.white),
-                  ),
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) => confirmDelete());
+              FutureBuilder(
+                  future: readUserDocuments().first,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Center(
+                          child: Text(
+                        "Something went wrong! ${snapshot.error}",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                        ),
+                        textAlign: TextAlign.center,
+                      ));
+                    } else if (snapshot.hasData) {
+                      final users = snapshot.data!;
+
+                      return users.map(buildDelete).first;
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
                   }),
             ],
           ),
