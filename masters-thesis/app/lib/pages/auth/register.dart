@@ -94,8 +94,7 @@ class _RegisterState extends State<Register> {
         email: controllerEmail.text.trim(),
         password: controllerPassword.text.trim(),
       );
-      final docUser =
-          await FirebaseFirestore.instance.collection("users").doc();
+      final docUser = FirebaseFirestore.instance.collection("users").doc();
       user.id = docUser.id;
 
       final json = user.toJson();
@@ -167,10 +166,13 @@ class _RegisterState extends State<Register> {
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (password) =>
-                      password != null && password == controllerPassword.text
-                          ? "Password confirmation must be equal to password"
-                          : null,
+                  validator: (password) {
+                    if (password!.isEmpty ||
+                        password != controllerPassword.text) {
+                      return "Please enter a valid password";
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(
                   height: 32,
