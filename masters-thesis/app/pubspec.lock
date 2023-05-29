@@ -197,10 +197,10 @@ packages:
     dependency: transitive
     description:
       name: extended_image_library
-      sha256: "550743b43ab093aed35ef234500fcc7a304cbac1eca47b0cc991e07e88750758"
+      sha256: f2eba5c8500c5a7ce1f0db703b787756cb3bc65cd3818636d5fe9a9ace011ee3
       url: "https://pub.dev"
     source: hosted
-    version: "3.4.2"
+    version: "3.5.1"
   fake_async:
     dependency: transitive
     description:
