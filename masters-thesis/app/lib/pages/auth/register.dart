@@ -95,7 +95,7 @@ class _RegisterState extends State<Register> {
         password: controllerPassword.text.trim(),
       );
       final docUser = FirebaseFirestore.instance.collection("users").doc();
-      user.id = docUser.id;
+      user.id = result.user!.uid;
 
       final json = user.toJson();
       await docUser.set(json);
