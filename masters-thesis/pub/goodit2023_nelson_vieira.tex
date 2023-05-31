@@ -5,7 +5,7 @@
 % @author Nelson Vieira <nelson0.vieira@gmail.com>
 % @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
 % \documentclass[sigconf,natbib=false]{acmart}
-\documentclass[manuscript,natbib=false]{acmart}
+\documentclass[manuscript,screen,review,natbib=false]{acmart}
 
 % \usepackage{amsmath,amssymb,amsfonts}
 % \usepackage{algorithmic}
@@ -40,13 +40,8 @@
 
 \begin{document}
 
-%% The "title" command has an optional parameter,
-%% allowing the author to define a "short title" to be used in page headers.
-\title{Empowering Users' Privacy Rights in the Internet of Things}
+\title[Privacy rights and digital literacy challenges in the Internet of Things]{An analysis of privacy rights issues and digital literacy challenges regarding the Internet of Things}
 
-%% Of note is the shared affiliation of the first two authors, and the
-%% "authornote" and "authornotemark" commands
-%% used to denote shared contribution to the research.
 \author{Nelson Vieira}
 \authornote{Work done as part of master's thesis.}
 \email{2080511@student.uma.pt}
@@ -132,11 +127,10 @@
 
 \section{Introduction}
 
-Privacy as we know it is a somewhat recent concept \cite{vincent2016privacy, moore2017privacy},
-before the digital age there was barely any notion of privacy for most
-people. Long seen as a luxury, privacy
-is still usually regarded as a good to have rather than an essential
-requirement, even though it is acknowledged as a human right, as present
+Privacy as we know it is a relatively new concept \cite{vincent2016privacy, moore2017privacy},
+prior to the digital age, most individuals had little sense of privacy.
+Privacy is still frequently perceived as a nice to have rather than an essential
+need, Even though it is accepted as a human right, as present
 in article 12 of the Universal Declaration of Human Rights \cite{RooseveltUniversal}:
 ``No one shall be subjected to arbitrary interference with his privacy,
 family, home or correspondence, nor to attacks upon his honour and reputation.
@@ -148,15 +142,14 @@ businesses must be upfront and honest about the types of data they intend to
 collect, why they need it, and where and with whom they intend to share it.
 Users ought to be able to manage how their information is shared.
 
-This definition can cause some confusion with the idea of security \cite{HIVDifference}
-and although privacy and security are interconnected, security involves
-measures taken to safeguard data from risk, threat or danger, it frequently
-alludes to safety. It is the practice of keeping users' personal information
-and data safe and preventing unauthorized access to it. The primary contrast
-between privacy and security is that the former deals with personal information
-to individuals and how they want their data used and maintained, whilst
-the latter deals with its protection from possible threats. Security can
-exist without privacy, but the opposite is not true.
+Although privacy and security are intertwined \cite{HIVDifference}, security entails procedures
+used to secure data from risk, harm, or danger, and it broadly relates to
+safety. It is the process of safeguarding and preventing unwanted access to
+users' personal information and data. The key distinction between privacy and
+security is that the former deals with individuals' personal information and how
+they want their data used and preserved, whilst the latter deals with its protection
+from potential dangers. Security can exist without privacy, but the reverse is
+not true.
 
 The previous few years have seen an increase in concerns about online privacy \cite{emami2019exploring, park2022personal, zhang2022peer},
 particularly in the wake of the cyberattacks by the decentralized hacker
@@ -186,17 +179,6 @@ services linked to smart cameras and indoor location monitoring systems),
 or IoT apps that track and use information about us. The term "Internet of
 Things" refers to scenarios in which a variety of objects, gadgets, sensors,
 and everyday items are linked to the internet and have computational capabilities.
-
-% Although the term \textit{Internet of Things} is relatively new, the concept
-% of utilizing computers and networks to manage and monitor objects is not.
-% The first commonplace object to be connected to the internet was a Coke
-% machine at Carnegie Mellon University's Computer Science Department \cite{EverhartInteresting}. The
-% 1982 system broadcast the status of each row of the vending machine on
-% the network so that it could be accessed using a terminal and the Name/Finger protocol.
-% Remotely observing the out of stock lights on the pushing buttons of
-% the vending machine. At the Interop Internet Networking exhibition in
-% 1990, John Romkey's toaster \cite{RomkeyToast} that could be switched on and off through
-% the internet was displayed.
 
 The Internet of Things can be defined as: ``An open and comprehensive network
 of intelligent objects that have the capacity to auto-organize, share information,
@@ -630,22 +612,14 @@ application that is being developed should be able to provide more visibility,
 allowing users to learn about the data being collected and how they can
 modify their behavior or respond more effectively to protect their privacy rights.
 
-%%
 %% Acknowledgments section
-%%
 % \begin{acks}
 % To my mother, for always supporting me in everything I do.
 % I would also like to acknowledge the support of my friends and colleagues, both from work and from master's course.
 % \end{acks}
 
-%%
-%% Print the bibliography
-%%
 \printbibliography
 
-%%
-%% If this work has an appendix, this is the place to put it.
-%%
 % \appendix
 
 \end{document}
