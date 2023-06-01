@@ -32,6 +32,28 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final List<Marker> _markers = <Marker>[];
 
+  Image markerImage(Device device) {
+    switch (device.category) {
+      case "08gNFyCLyxSxiYIcdFx0":
+        return Image.asset("assets/images/unique_identification.png",
+            width: 120.0);
+      case "1qyoLqyrgmLTpLklqgFX":
+        return Image.asset("assets/images/environment.png", width: 120.0);
+      case "6yYW2K9Fv9AogHPfut5l":
+        return Image.asset("assets/images/biometrics.png", width: 120.0);
+      case "WnvAzxPaI5Z8hFzUE228":
+        return Image.asset("assets/images/location.png", width: 120.0);
+      case "bvf9p6MYF1DwxgDab2Mp":
+        return Image.asset("assets/images/presence.png", width: 120.0);
+      case "rhSmoONpwDl8B1mrXBZL":
+        return Image.asset("assets/images/audio.png", width: 120.0);
+      case "vfWA43iLPsUj6ZW3D5Rg":
+        return Image.asset("assets/images/visual.png", width: 120.0);
+      default:
+        return Image.asset("assets/images/icon.png", width: 120.0);
+    }
+  }
+
   // Function to create a Marker and add to list
   void createMarker(Device device) async {
     final Marker marker = Marker(
@@ -43,7 +65,7 @@ class _HomeState extends State<Home> {
         onTap: () {
           Navigator.of(context).pushNamed(ShowDevice.route, arguments: device);
         },
-        child: const FlutterLogo(),
+        child: markerImage(device),
       ),
     );
     // Only adds to the marker list with setState method
