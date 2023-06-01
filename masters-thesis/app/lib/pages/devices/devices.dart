@@ -39,6 +39,27 @@ class _DevicesState extends State<Devices> {
       .map((snapshot) =>
           snapshot.docs.map((doc) => Device.fromJson(doc.data())).toList());
 
+  AssetImage markerImage(Device device) {
+    switch (device.category) {
+      case "08gNFyCLyxSxiYIcdFx0":
+        return AssetImage("assets/images/unique_identification.png");
+      case "1qyoLqyrgmLTpLklqgFX":
+        return AssetImage("assets/images/environment.png");
+      case "6yYW2K9Fv9AogHPfut5l":
+        return AssetImage("assets/images/biometrics.png");
+      case "WnvAzxPaI5Z8hFzUE228":
+        return AssetImage("assets/images/location.png");
+      case "bvf9p6MYF1DwxgDab2Mp":
+        return AssetImage("assets/images/presence.png");
+      case "rhSmoONpwDl8B1mrXBZL":
+        return AssetImage("assets/images/audio.png");
+      case "vfWA43iLPsUj6ZW3D5Rg":
+        return AssetImage("assets/images/visual.png");
+      default:
+        return AssetImage("assets/images/icon.png");
+    }
+  }
+
   Widget buildDevices(Device device) => Container(
         decoration: BoxDecoration(
           color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
@@ -51,7 +72,6 @@ class _DevicesState extends State<Devices> {
           titleTextStyle:
               const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
           subtitleTextStyle: const TextStyle(fontSize: 16.0),
-          leading: CircleAvatar(child: Text(device.whoHasAccess)),
           title: Text(
             device.name,
           ),
@@ -62,6 +82,9 @@ class _DevicesState extends State<Devices> {
             Navigator.of(context)
                 .pushNamed(ShowDevice.route, arguments: device);
           },
+          leading: CircleAvatar(
+            foregroundImage: markerImage(device),
+          ),
         ),
       );
 
