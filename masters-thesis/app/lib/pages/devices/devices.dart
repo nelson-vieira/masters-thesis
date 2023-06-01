@@ -42,7 +42,7 @@ class _DevicesState extends State<Devices> {
   Widget buildDevices(Device device) => Container(
         decoration: BoxDecoration(
           color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
-              .withOpacity(0.2),
+              .withOpacity(0.05),
           borderRadius: BorderRadius.circular(20),
         ),
         margin: const EdgeInsets.only(bottom: 10),
