@@ -1,0 +1,192 @@
+% SPDX-License-Identifier: CC-BY-4.0
+%
+% Copyright (c) 2023 Nelson Vieira
+%
+% @author Nelson Vieira <nelson0.vieira@gmail.com>
+% @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
+%
+% Commands and layout from https://github.com/MIMBCD-UI/sus
+% by Francisco Maria Calisto, MIT License
+%
+\documentclass[12pt,a4paper]{article}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{array,tabularx}
+
+\setlist[enumerate,1]{labelindent=0pt, leftmargin=0pt}
+\pagestyle{empty}
+
+\newcolumntype{P}{>{\centering\arraybackslash}p{0.50cm}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}m{0.25\textwidth}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}m{0.25\textwidth}}
+
+\newcommand{\usetbl}{%
+    \begin{tabular}{@{}|*7{P|}@{}}
+        \hline
+        1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+        \hline
+    \end{tabular}
+}
+
+\newcommand\prop[1]{%
+    \item
+    \parbox[t]{0.5\textwidth}{#1}%
+    \qquad
+    \parbox[t]{0.5\textwidth}{\usetbl}%
+}
+
+\graphicspath{{assets/images/}}
+
+\hypersetup{
+    pdftitle={Usability Tests},
+    pdfauthor={Nelson Vieira},
+    pdfsubject={Usability Tests},
+    pdfkeywords={privacy application, internet of things, user empowerment, privacy assistant, usability test},
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=black,
+}
+\def\myversion{0.9}
+\date{}
+
+\begin{document}
+
+\noindent
+\hfill \includegraphics[width=4.5cm]{assets/images/uma_logo.png} \\
+\normalsize
+\textbf{Teste de Usabilidade do Sistema} \hfill \textbf{Universidade da Madeira} \\
+\footnotesize
+\hyperlink{project_link}{Aplicação para dissertação de mestrado} \hfill Faculdade de Ciências Exatas e da Engenharia \\
+
+\section*{Informação}
+
+Este teste de usabilidade é realizado no âmbito da tese de Mestrado em Engenharia
+Informática da Universidade da Madeira, da autoria de Nelson Vieira, tem como
+objectivo recolher informação sobre a usabilidade da aplicação, design, bugs ou
+outras qualidades indesejáveis, de forma a torná-la mais robusta e fácil de utilizar.
+
+\vspace{1cm}
+
+\begin{tabular}{|m{10cm}|m{1cm}|}
+    \hline
+    Aceito participar neste teste & \\
+    \hline
+\end{tabular}
+
+\vspace{1cm}
+
+\textbf{Versão da App}
+
+\clearpage
+
+\section*{Tarefas}
+
+\begin{enumerate}
+    \item Ir para a página de dispositivos IoT \\
+    \hspace*{0.59\textwidth}%
+    \begin{tabularx}{0.1\textwidth}{@{}LR@{}}
+        \textbf{\small Muito difícil} & \textbf{\small Muito fácil}
+    \end{tabularx}
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+    \item Procurar mais informações sobre um dispositivo
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+    \item Na página inicial, procurar mais informações sobre um dispositivo
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+    \item Procurar mais informações sobre esta aplicação
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+    \item Criar uma conta
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+    \item Procurar mais informações sobre privacidade e Internet das Coisas na aplicação
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+    \item Procurar um tutorial sobre como adicionar um dispositivo
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+    \item Adicionar um dispositivo à aplicação
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+    \item Actualizar um dispositivo na aplicação
+    \begin{enumerate}
+        \prop{No geral, esta tarefa foi?}
+    \end{enumerate}
+\end{enumerate}
+
+\clearpage
+
+\section*{Aferição da Usabilidade}
+
+\hspace*{0.525\textwidth}%
+\begin{tabularx}{0.5\textwidth}{@{}LR@{}}
+    \textbf{Discordo} & \textbf{Concordo} \\
+    \textbf{totalmente} & \textbf{totalmente} \\
+\end{tabularx}
+
+\begin{enumerate}
+    \prop{Penso que gostaria de utilizar este sistema com frequência}
+
+    \prop{Achei o sistema desnecessariamente complexo}
+
+    \prop{Achei que o sistema era fácil de utilizar}
+
+    \prop{Penso que necessitaria do apoio de uma pessoa técnica para poder utilizar este sistema}
+
+    \prop{Considero que as várias funções deste sistema estão bem integradas}
+
+    \prop{Achei que havia demasiada incoerência neste sistema}
+
+    \prop{Imagino que a maioria das pessoas aprenderia a utilizar este sistema muito rapidamente}
+
+    \prop{Achei o sistema muito complicado de utilizar}
+
+    \prop{Senti-me muito confiante ao utilizar o sistema}
+
+    \prop{Precisava de aprender muitas coisas antes de poder avançar com este sistema}
+\end{enumerate}
+
+% \clearpage
+
+% \section*{Final Remarks}
+
+% \vspace{1cm}
+
+% \par After using the app, do you think it sparked your curiosity to learn more about privacy in Internet of Things systems? \\
+
+% \vspace{3cm}
+
+% \par After using the app, do you think it sparked your curiosity to learn more about digital privacy in general? \\
+
+% \vspace{3cm}
+
+% \par Can you easily identify which device collects what data just by seeing them in the map or on the devices page? \\
+
+% \vspace{3cm}
+
+% \par What would you change on the app to make it easier to use? \\
+
+% \vspace{3cm}
+
+% \par Do you have any other suggestion? \\
+
+% \bibliographystyle{IEEEtran}
+% \bibliography{assets/references}
+
+\end{document}
