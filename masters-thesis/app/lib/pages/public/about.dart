@@ -50,7 +50,8 @@ class About extends StatelessWidget {
                       Center(
                         child: Container(
                           margin: EdgeInsets.only(top: 30.0, bottom: 50.0),
-                          child: Image.asset("assets/icon.png", width: 120.0),
+                          child: Image.asset("assets/images/icon.png",
+                              width: 120.0),
                         ),
                       ),
                       Align(
