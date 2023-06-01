@@ -10,6 +10,7 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
+import "package:firebase_auth/firebase_auth.dart";
 import 'dart:math' as math;
 import "package:app/main.dart";
 import "package:app/models/device.dart";
@@ -78,35 +79,77 @@ class _DevicesState extends State<Devices> {
         padding:
             const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
         child: Container(
+          padding: const EdgeInsets.all(16),
           color: const Color.fromARGB(255, 16, 44, 53),
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            child: FutureBuilder(
-                future: readDevices().first,
-                builder: (context, snapshot) {
-                  if (snapshot.hasError) {
-                    return Center(
-                        child: Text(
-                      "Something went wrong! ${snapshot.error}",
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 17.0,
-                      ),
-                      textAlign: TextAlign.center,
-                    ));
-                  } else if (snapshot.hasData) {
-                    final devices = snapshot.data!;
+          child: FutureBuilder(
+              future: readDevices().first,
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return Center(
+                      child: Text(
+                    "Something went wrong! ${snapshot.error}",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 17.0,
+                    ),
+                    textAlign: TextAlign.center,
+                  ));
+                } else if (snapshot.hasData) {
+                  final devices = snapshot.data!;
 
-                    return ListView(
-                      children: devices.map(buildDevices).toList(),
-                    );
-                  } else {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                }),
-          ),
+                  return FirebaseAuth.instance.currentUser != null
+                      ? Column(
+                          children: <Widget>[
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                minimumSize: const Size.fromHeight(50),
+                                backgroundColor: Color(0xFF0A8A4E),
+                                padding: const EdgeInsets.only(
+                                    left: 0.0,
+                                    top: 18.0,
+                                    right: 0.0,
+                                    bottom: 18.0),
+                              ),
+                              onPressed: () {
+                                Navigator.of(context).pushNamed(Create.route);
+                              },
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.account_tree_outlined),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text(
+                                    "Add Device",
+                                    style: TextStyle(
+                                        fontSize: 16.0, color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            ListView(
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              children: devices.map(buildDevices).toList(),
+                            )
+                          ],
+                        )
+                      : ListView(
+                          children: devices.map(buildDevices).toList(),
+                        );
+                  // ListView(
+                  //   children: devices.map(buildDevices).toList(),
+                  // );
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              }),
         ),
       ),
     );
