@@ -109,6 +109,13 @@ flutter:
     - assets/images/unique_identification.png
     - assets/images/presence.png
     - assets/images/environment.png
+    - assets/images/visual_marker.png
+    - assets/images/audio_marker.png
+    - assets/images/location_marker.png
+    - assets/images/biometrics_marker.png
+    - assets/images/unique_identification_marker.png
+    - assets/images/presence_marker.png
+    - assets/images/environment_marker.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
