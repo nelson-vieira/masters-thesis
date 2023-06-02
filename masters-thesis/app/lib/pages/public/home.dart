@@ -140,6 +140,7 @@ class _HomeState extends State<Home> {
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       floatingActionButton: FirebaseAuth.instance.currentUser != null
           ? FloatingActionButton.extended(
+              backgroundColor: Color(0xFF0A8A4E),
               label: const Text(
                 "Add Device",
                 style: TextStyle(

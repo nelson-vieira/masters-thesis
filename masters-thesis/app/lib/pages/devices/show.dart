@@ -433,7 +433,7 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ? ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               minimumSize: const Size.fromHeight(50),
-                              backgroundColor: Color(0xFF0F51B3),
+                              backgroundColor: const Color(0xFFAFAD15),
                               padding: const EdgeInsets.only(
                                   left: 0.0,
                                   top: 16.0,
