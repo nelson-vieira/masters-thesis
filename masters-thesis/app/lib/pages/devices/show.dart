@@ -46,6 +46,28 @@ class _ShowDeviceState extends State<ShowDevice> {
     }
   }
 
+  Image categoryIcon(Device device) {
+    switch (device.category) {
+      case "08gNFyCLyxSxiYIcdFx0":
+        return Image.asset("assets/images/unique_identification.png",
+            width: 110.0);
+      case "1qyoLqyrgmLTpLklqgFX":
+        return Image.asset("assets/images/environment.png", width: 110.0);
+      case "6yYW2K9Fv9AogHPfut5l":
+        return Image.asset("assets/images/biometrics.png", width: 110.0);
+      case "WnvAzxPaI5Z8hFzUE228":
+        return Image.asset("assets/images/location.png", width: 110.0);
+      case "bvf9p6MYF1DwxgDab2Mp":
+        return Image.asset("assets/images/presence.png", width: 110.0);
+      case "rhSmoONpwDl8B1mrXBZL":
+        return Image.asset("assets/images/audio.png", width: 110.0);
+      case "vfWA43iLPsUj6ZW3D5Rg":
+        return Image.asset("assets/images/visual.png", width: 110.0);
+      default:
+        return Image.asset("assets/images/icon.png", width: 120.0);
+    }
+  }
+
   Widget buildDevice(Device device) => Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -59,7 +81,7 @@ class _ShowDeviceState extends State<ShowDevice> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Image.asset("assets/icon.png", width: 60.0),
+                          categoryIcon(device),
                           const SizedBox(
                             height: 20,
                           ),
