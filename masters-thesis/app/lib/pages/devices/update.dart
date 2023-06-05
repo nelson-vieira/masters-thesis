@@ -168,23 +168,19 @@ class _UpdateState extends State<Update> {
           .map((doc) => UserDocument.fromJson(doc.data()))
           .toList());
 
-  Widget buildDelete(UserDocument user) => (FirebaseAuth.instance.currentUser !=
-              null &&
-          user.role.toString() == "admin")
-      ? ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromARGB(255, 207, 30, 30),
-            padding: const EdgeInsets.only(
-                left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
-          ),
-          child: const Text(
-            "Delete",
-            style: TextStyle(fontSize: 16.0, color: Colors.white),
-          ),
-          onPressed: () {
-            showDialog(context: context, builder: (context) => confirmDelete());
-          })
-      : Container();
+  Widget buildDelete(UserDocument user) => ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color.fromARGB(255, 207, 30, 30),
+        padding: const EdgeInsets.only(
+            left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+      ),
+      child: const Text(
+        "Delete",
+        style: TextStyle(fontSize: 16.0, color: Colors.white),
+      ),
+      onPressed: () {
+        showDialog(context: context, builder: (context) => confirmDelete());
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -312,7 +308,7 @@ class _UpdateState extends State<Update> {
                   checkboxShape: const RoundedRectangleBorder(
                     side: BorderSide(color: Color(0xFFFFFFFF), width: 2.0),
                   ),
-                  activeColor: Color(0xFF6CBBE0),
+                  activeColor: const Color(0xFF6CBBE0),
                   checkColor: const Color(0xAAFFFFFF),
                   enableFeedback: true,
                   title: Text(
@@ -440,9 +436,14 @@ class _UpdateState extends State<Update> {
                         textAlign: TextAlign.center,
                       ));
                     } else if (snapshot.hasData) {
-                      final users = snapshot.data!;
+                      final devices = snapshot.data!;
 
-                      return users.map(buildDelete).first;
+                      return FirebaseAuth.instance.currentUser != null &&
+                              FirebaseAuth.instance.currentUser!.uid ==
+                                  devices.first.id &&
+                              devices.first.role == "admin"
+                          ? buildDelete(devices.first)
+                          : Container();
                     } else {
                       return const Center(
                         child: CircularProgressIndicator(),
