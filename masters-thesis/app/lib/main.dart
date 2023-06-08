@@ -125,15 +125,15 @@ class _IotPrivacyState extends State<IotPrivacy> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.format_quote,
+                Icons.info_outline_rounded,
               ),
               label: "About",
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.question_mark,
+                Icons.menu_book_rounded,
               ),
-              label: "Encyclopedia",
+              label: "Information",
             ),
             BottomNavigationBarItem(
               icon: Icon(
