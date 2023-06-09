@@ -8,6 +8,7 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:ipsum/ipsum.dart";
+import 'package:url_launcher/url_launcher.dart';
 import "package:app/main.dart";
 import 'package:app/pages/public/home.dart';
 import 'package:app/pages/public/encyclopedia.dart';
@@ -48,7 +49,7 @@ class About extends StatelessWidget {
                           margin:
                               const EdgeInsets.only(top: 30.0, bottom: 50.0),
                           child: Image.asset("assets/images/icon.png",
-                              width: 120.0),
+                              width: 135.0),
                         ),
                       ),
                       const Align(
@@ -61,6 +62,38 @@ class About extends StatelessWidget {
                           style: TextStyle(
                               color: Color.fromARGB(255, 245, 245, 245),
                               fontSize: 16.0),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "You can access the source code of this application on the following link:",
+                          locale: Locale("en", "UK"),
+                          textAlign: TextAlign.left,
+                          overflow: TextOverflow.visible,
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 245, 245, 245),
+                              fontSize: 16.0),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () async {
+                          if (!await launchUrl(Uri.parse(
+                              "https://github.com/nelson-vieira/masters-thesis/tree/master/masters-thesis/app"))) {
+                            throw Exception("Could not launch repository url");
+                          }
+                        },
+                        child: const Text(
+                          "https://github.com/nelson-vieira/masters-thesis/tree/master/masters-thesis/app",
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            color: Color.fromARGB(255, 75, 191, 206),
+                            decoration: TextDecoration.underline,
+                          ),
+                          textAlign: TextAlign.start,
                         ),
                       ),
                     ],
