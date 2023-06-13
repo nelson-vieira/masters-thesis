@@ -89,7 +89,7 @@ class _CreateState extends State<Create> {
                       TileLayer(
                         urlTemplate:
                             "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                        userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
+                        userAgentPackageName: "me.nelsonvieira.iotprivacy",
                       ),
                     ],
                   ),

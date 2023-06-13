@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
                   TileLayer(
                     urlTemplate:
                         "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                    userAgentPackageName: "me.nelsonvieira.iot_privacy_app",
+                    userAgentPackageName: "me.nelsonvieira.iotprivacy",
                   ),
                   MarkerLayer(markers: _markers),
                 ],
