@@ -11,17 +11,9 @@ import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
-import 'package:url_launcher/url_launcher.dart';
-import "package:app/main.dart";
-import "package:app/models/device.dart";
-import 'package:app/pages/public/home.dart';
-import 'package:app/pages/public/about.dart';
-import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/pages/auth/account.dart';
-import 'package:app/pages/devices/create.dart';
-import 'package:app/pages/devices/update.dart';
-import 'package:app/pages/devices/devices.dart';
-import 'package:app/pages/auth/auth.dart';
+import "package:url_launcher/url_launcher.dart";
+import "package:iotprivacy/models/device.dart";
+import "package:iotprivacy/pages/devices/update.dart";
 
 class ShowDevice extends StatefulWidget {
   static const String route = "/showdevice";

@@ -4,7 +4,6 @@
 //
 // @author Nelson Vieira <nelson0.vieira@gmail.com>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
-import "package:app/models/user.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
@@ -12,19 +11,9 @@ import "package:latlong2/latlong.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
-import "package:datetime_picker_formfield/datetime_picker_formfield.dart";
-import "package:intl/intl.dart";
-import "package:app/main.dart";
-import "package:app/models/device.dart";
-import 'package:app/pages/public/home.dart';
-import 'package:app/pages/public/about.dart';
-import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/pages/auth/account.dart';
-import 'package:app/pages/devices/create.dart';
-import 'package:app/pages/devices/devices.dart';
-import 'package:app/pages/devices/show.dart';
-import 'package:app/pages/auth/auth.dart';
-import 'package:app/models/category.dart';
+import "package:iotprivacy/models/user.dart";
+import "package:iotprivacy/models/device.dart";
+import "package:iotprivacy/models/category.dart";
 
 class Update extends StatefulWidget {
   static const String route = "/update";

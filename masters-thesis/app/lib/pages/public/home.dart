@@ -9,16 +9,9 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
-import "package:app/main.dart";
-import 'package:app/pages/public/about.dart';
-import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/models/device.dart';
-import 'package:app/pages/devices/show.dart';
-import 'package:app/pages/auth/account.dart';
-import 'package:app/pages/devices/create.dart';
-import 'package:app/pages/devices/update.dart';
-import 'package:app/pages/devices/devices.dart';
-import 'package:app/pages/auth/auth.dart';
+import "package:iotprivacy/models/device.dart";
+import "package:iotprivacy/pages/devices/show.dart";
+import "package:iotprivacy/pages/devices/create.dart";
 
 class Home extends StatefulWidget {
   static const String route = "/";

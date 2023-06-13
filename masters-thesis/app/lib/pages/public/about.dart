@@ -8,13 +8,7 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:ipsum/ipsum.dart";
-import 'package:url_launcher/url_launcher.dart';
-import "package:app/main.dart";
-import 'package:app/pages/public/home.dart';
-import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/pages/auth/account.dart';
-import 'package:app/pages/devices/devices.dart';
-import 'package:app/pages/auth/auth.dart';
+import "package:url_launcher/url_launcher.dart";
 
 class About extends StatelessWidget {
   static const String route = "/about";

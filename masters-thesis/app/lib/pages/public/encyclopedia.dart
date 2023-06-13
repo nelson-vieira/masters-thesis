@@ -9,12 +9,6 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:ipsum/ipsum.dart";
 import "package:firebase_auth/firebase_auth.dart";
-import "package:app/main.dart";
-import 'package:app/pages/public/home.dart';
-import 'package:app/pages/public/about.dart';
-import 'package:app/pages/auth/account.dart';
-import 'package:app/pages/devices/devices.dart';
-import 'package:app/pages/auth/auth.dart';
 
 class Encyclopedia extends StatelessWidget {
   static const String route = "/encyclopedia";

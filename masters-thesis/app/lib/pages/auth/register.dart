@@ -15,17 +15,9 @@ import "package:firebase_auth/firebase_auth.dart";
 import "package:datetime_picker_formfield/datetime_picker_formfield.dart";
 import "package:intl/intl.dart";
 import "package:flutter/gestures.dart";
-import "package:app/main.dart";
-import "package:app/models/user.dart";
-import 'package:app/pages/public/home.dart';
-import 'package:app/pages/public/about.dart';
-import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/pages/auth/account.dart';
-import 'package:app/pages/devices/create.dart';
-import 'package:app/pages/devices/update.dart';
-import 'package:app/pages/devices/devices.dart';
-import 'package:app/pages/auth/auth.dart';
-import 'package:app/helpers/app.dart';
+import "package:iotprivacy/main.dart";
+import "package:iotprivacy/models/user.dart";
+import "package:iotprivacy/helpers/app.dart";
 
 class Register extends StatefulWidget {
   static const String route = "/register";

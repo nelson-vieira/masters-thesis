@@ -13,15 +13,9 @@ import "package:firebase_core/firebase_core.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/gestures.dart";
-import "package:app/main.dart";
-import 'package:app/pages/public/home.dart';
-import 'package:app/pages/public/about.dart';
-import 'package:app/pages/public/encyclopedia.dart';
-import 'package:app/pages/devices/devices.dart';
-import 'package:app/pages/auth/auth.dart';
-import 'package:app/pages/auth/account.dart';
-import 'package:app/helpers/app.dart';
-import 'package:app/pages/auth/forgot_password.dart';
+import "package:iotprivacy/main.dart";
+import "package:iotprivacy/helpers/app.dart";
+import "package:iotprivacy/pages/auth/forgot_password.dart";
 
 class Login extends StatefulWidget {
   static const String route = "/login";
