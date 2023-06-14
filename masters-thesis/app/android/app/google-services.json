@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:4284592801:android:b94f5eacf95523f75436e0",
         "android_client_info": {
-          "package_name": "com.example.app"
+          "package_name": "me.nelsonvieira.iotprivacy"
         }
       },
       "oauth_client": [
