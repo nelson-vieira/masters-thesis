@@ -68,9 +68,35 @@ class _DevicesState extends State<Devices> {
           title: Text(
             device.name,
           ),
-          subtitle: Text(
-            device.purpose,
-          ),
+          subtitle: FutureBuilder(
+              future: FirebaseFirestore.instance
+                  .collection("categories")
+                  .doc(device.category)
+                  .get(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return Center(
+                      child: Text(
+                    "Something went wrong! ${snapshot.error}",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 17.0,
+                    ),
+                    textAlign: TextAlign.center,
+                  ));
+                } else if (snapshot.hasData) {
+                  final category = snapshot.data!;
+
+                  return Text(
+                    category.get("name"),
+                    style: const TextStyle(fontSize: 16.0, color: Colors.white),
+                  );
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              }),
           onTap: () {
             Navigator.of(context)
                 .pushNamed(ShowDevice.route, arguments: device);
