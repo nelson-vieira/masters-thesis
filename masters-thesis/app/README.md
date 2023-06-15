@@ -1,16 +1,30 @@
-# app
+<!---
+SPDX-License-Identifier: AGPL-3.0-or-later
 
-A new Flutter project.
+Copyright (c) 2023 Nelson Vieira
 
-## Getting Started
+@author Nelson Vieira <2080511@student.uma.pt>
+@license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
+--->
+<div align="center">
+    <img src="assets/images/icon.png" width="200" height="200">
+</div>
+<br>
 
-This project is a starting point for a Flutter application.
+# IoT Privacy
 
-A few resources to get you started if this is your first Flutter project:
+This application displays information about IoT devices like the type of information these devices collect and what privacy options are available.
+Users can add and edit IoT devices.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Download
+
+This application is still in beta.  
+***Android only**, iOS coming soon*
+
+[v0.31.1](https://github.com/nelson-vieira/masters-thesis/releases/tag/app%40v0.31.1)
+
+## License
+
+This application is licensed under a [AGPL-3.0 license](LICENSE-APP), except in `docs` directory which is licensed under the [CC-BY-4.0 license](LICENSE).

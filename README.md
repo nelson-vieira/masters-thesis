@@ -12,7 +12,7 @@ This repository is a monorepo of the Master Thesis and contains the preparation 
 
 ## License
 
-The application in the masters-thesis/app folder is licensed under a [AGPL-3.0 license](LICENSE-APP), except in masters-thesis/app/docs folder.
+The application in the `masters-thesis/app` directory is licensed under a [AGPL-3.0 license](LICENSE-APP), except in `masters-thesis/app/docs` directory.
 
 All other code in this repository is licensed under the [CC-BY-4.0 license](LICENSE).
 
