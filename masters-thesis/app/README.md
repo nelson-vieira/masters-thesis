@@ -27,4 +27,4 @@ This application is still in beta.
 
 ## License
 
-This application is licensed under a [AGPL-3.0 license](LICENSE-APP), except in `docs` directory which is licensed under the [CC-BY-4.0 license](LICENSE).
+This application is licensed under a [AGPL-3.0 license](../../LICENSE-APP), except in `docs` directory which is licensed under the [CC-BY-4.0 license](../../LICENSE).
