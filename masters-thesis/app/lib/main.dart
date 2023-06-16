@@ -96,18 +96,19 @@ class _IotPrivacyState extends State<IotPrivacy> {
       body: pages[_currentIndex],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-            // sets the background color of the `BottomNavigationBar`
-            canvasColor: const Color(0xFF334150),
-            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-            primaryColorDark: const Color(0xFF334150),
-            textTheme: Theme.of(context).textTheme.copyWith(
-                labelSmall: const TextStyle(
-                    color: Color.fromARGB(255, 223, 141,
-                        18)))), // sets the inactive color of the `BottomNavigationBar`
+          // Sets the background color of the bottom navigation bar
+          canvasColor: const Color(0xFF334150),
+        ),
         child: BottomNavigationBar(
           currentIndex: _currentIndex,
           showSelectedLabels: true,
           showUnselectedLabels: false,
+          selectedLabelStyle: const TextStyle(
+            color: Color.fromARGB(255, 250, 250, 250),
+          ),
+          unselectedLabelStyle: const TextStyle(
+            color: Color.fromARGB(255, 149, 196, 236),
+          ),
           selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
           unselectedItemColor: Color.fromARGB(255, 149, 196, 236),
           selectedIconTheme: const IconThemeData(
