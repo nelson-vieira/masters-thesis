@@ -194,40 +194,6 @@ class Encyclopedia extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            // Padding(
-                            //   padding: EdgeInsets.only(bottom: 20.0),
-                            //   child: Column(
-                            //     children: [
-                            //       Padding(
-                            //         padding: EdgeInsets.only(bottom: 8.0),
-                            //         child: Align(
-                            //           alignment: Alignment.center,
-                            //           child: Text(
-                            //             "Item 5",
-                            //             locale: Locale("en", "UK"),
-                            //             overflow: TextOverflow.visible,
-                            //             style: TextStyle(
-                            //               color: Color.fromARGB(
-                            //                   255, 245, 245, 245),
-                            //               fontSize: 18.0,
-                            //               fontWeight: FontWeight.bold,
-                            //             ),
-                            //           ),
-                            //         ),
-                            //       ),
-                            //       Text(
-                            //         "Something...",
-                            //         locale: Locale("en", "UK"),
-                            //         textAlign: TextAlign.left,
-                            //         overflow: TextOverflow.visible,
-                            //         style: TextStyle(
-                            //           color: Color.fromARGB(255, 245, 245, 245),
-                            //           fontSize: 16.0,
-                            //         ),
-                            //       ),
-                            //     ],
-                            //   ),
-                            // ),
                           ],
                         ),
                       ),
