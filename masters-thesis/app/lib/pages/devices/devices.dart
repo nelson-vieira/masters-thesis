@@ -6,10 +6,6 @@
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
-import "package:flutter_map/flutter_map.dart";
-import "package:latlong2/latlong.dart";
-import "package:firebase_core/firebase_core.dart";
-import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import "dart:math" as math;
 import "package:iotprivacy/models/device.dart";
