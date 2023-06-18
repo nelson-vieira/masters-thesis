@@ -51,7 +51,6 @@ dependencies:
   email_validator: ^2.1.17
   flutter_map: ^3.1.0
   flutter_map_marker_cluster: ^1.1.0
-  geocoding: ^2.1.0
   tuple: ^2.0.1
   latlong2: ^0.8.1
   positioned_tap_detector_2: ^1.0.4
