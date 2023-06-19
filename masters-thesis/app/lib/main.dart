@@ -71,7 +71,7 @@ class IotPrivacy extends StatefulWidget {
 class _IotPrivacyState extends State<IotPrivacy> {
   int _currentIndex = 0;
 
-  final pages = [
+  final pages = <Widget>[
     const Home(),
     const About(),
     const Encyclopedia(),
@@ -91,13 +91,15 @@ class _IotPrivacyState extends State<IotPrivacy> {
         child: BottomNavigationBar(
           currentIndex: _currentIndex,
           showSelectedLabels: true,
-          showUnselectedLabels: false,
+          showUnselectedLabels: true,
           selectedLabelStyle: const TextStyle(
             color: Color.fromARGB(255, 250, 250, 250),
           ),
           unselectedLabelStyle: const TextStyle(
             color: Color.fromARGB(255, 149, 196, 236),
           ),
+          selectedFontSize: 12.0,
+          unselectedFontSize: 12.0,
           selectedItemColor: const Color.fromARGB(255, 250, 250, 250),
           unselectedItemColor: Color.fromARGB(255, 149, 196, 236),
           selectedIconTheme: const IconThemeData(
@@ -106,35 +108,55 @@ class _IotPrivacyState extends State<IotPrivacy> {
           unselectedIconTheme: const IconThemeData(
             color: Color.fromARGB(255, 149, 196, 236),
           ),
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
+              icon: _currentIndex == 0
+                  ? const Icon(
+                      Icons.home,
+                    )
+                  : const Icon(
+                      Icons.home_filled,
+                    ),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.info_outline_rounded,
-              ),
+              icon: _currentIndex == 1
+                  ? const Icon(
+                      Icons.info,
+                    )
+                  : const Icon(
+                      Icons.info_outline_rounded,
+                    ),
               label: "About",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.menu_book_rounded,
-              ),
+              icon: _currentIndex == 2
+                  ? const Icon(
+                      Icons.menu_book_rounded,
+                    )
+                  : const Icon(
+                      Icons.book_outlined,
+                    ),
               label: "Information",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle,
-              ),
+              icon: _currentIndex == 3
+                  ? const Icon(
+                      Icons.account_circle,
+                    )
+                  : const Icon(
+                      Icons.account_circle_outlined,
+                    ),
               label: "Account",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_tree_outlined,
-              ),
+              icon: _currentIndex == 4
+                  ? const Icon(
+                      Icons.account_tree,
+                    )
+                  : const Icon(
+                      Icons.account_tree_outlined,
+                    ),
               label: "IoT Devices",
             ),
           ],
