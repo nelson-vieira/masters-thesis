@@ -63,7 +63,7 @@ class _LoginState extends State<Login> {
         password: controllerPassword.text.trim(),
       );
 
-      final docUser = FirebaseFirestore.instance
+      FirebaseFirestore.instance
           .collection("users")
           .where("email", isEqualTo: controllerEmail.text.trim())
           .get()

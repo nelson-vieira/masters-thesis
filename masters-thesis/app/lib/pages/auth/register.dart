@@ -56,7 +56,7 @@ class _RegisterState extends State<Register> {
   showSnackBar(String? text) {
     if (text == null) return;
 
-    final snackBar = SnackBar(
+    SnackBar(
       content: Text(text),
       duration: const Duration(
         seconds: 5,

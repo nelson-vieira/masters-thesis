@@ -22,8 +22,6 @@ class ShowDevice extends StatefulWidget {
 }
 
 class _ShowDeviceState extends State<ShowDevice> {
-  var _url;
-
   Future<Device?> readDevice() async {
     final docDevice =
         FirebaseFirestore.instance.collection("devices").doc(widget.device.id);
@@ -484,10 +482,10 @@ class _ShowDeviceState extends State<ShowDevice> {
                   final device = snapshot.data!;
 
                   return device == null
-                      ? Center(child: Text("No Device"))
+                      ? const Center(child: Text("No Device"))
                       : buildDevice(device);
                 } else {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 }

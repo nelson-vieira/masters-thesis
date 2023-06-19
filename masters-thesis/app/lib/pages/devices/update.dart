@@ -29,13 +29,12 @@ class _UpdateState extends State<Update> {
   final controllerPurpose = TextEditingController();
   final controllerWhoHasAccess = TextEditingController();
   final controllerTimeStored = TextEditingController();
-  var controllerIdentifiable;
+  var controllerIdentifiable = false;
   final controllerWhatsDone = TextEditingController();
   final controllerPrivacyOptions = TextEditingController();
   var controllerLatitude;
   var controllerLongitude;
   final controllerOwner = TextEditingController();
-  String _userEmail = "Random";
 
   InputDecoration decoration(String label) => InputDecoration(
         labelText: label,
@@ -338,10 +337,7 @@ class _UpdateState extends State<Update> {
                 height: 18,
               ),
               Text(
-                "Lat: " +
-                    controllerLatitude.toString() +
-                    ", Long: " +
-                    controllerLongitude.toString(),
+                "Lat: $controllerLatitude, Long: $controllerLongitude",
                 style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
               ),
               const SizedBox(
@@ -353,9 +349,9 @@ class _UpdateState extends State<Update> {
                   padding: const EdgeInsets.only(
                       left: 10.0, top: 18.0, right: 0.0, bottom: 18.0),
                   side: const BorderSide(
-                      width: 1, // the thickness
-                      color: Colors.white // the color of the border
-                      ),
+                    width: 1,
+                    color: Colors.white,
+                  ),
                 ),
                 child: const Align(
                   alignment: Alignment.centerLeft,

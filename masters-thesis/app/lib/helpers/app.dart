@@ -71,4 +71,20 @@ class Helper {
       return Timestamp.now();
     }
   }
+
+  static int toInt(var val) {
+    try {
+      if (val == null) {
+        return 0;
+      }
+      if (val is int) {
+        return val;
+      } else {
+        return 0;
+      }
+    } catch (error) {
+      print('Error');
+      return 0;
+    }
+  }
 }
