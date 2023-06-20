@@ -7,6 +7,7 @@
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:firebase_auth/firebase_auth.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "dart:math" as math;
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/devices/create.dart";
@@ -107,9 +108,9 @@ class _DevicesState extends State<Devices> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Devices",
-          style: TextStyle(fontSize: 30),
+        title: Text(
+          AppLocalizations.of(context)!.iotDevices,
+          style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
@@ -151,16 +152,16 @@ class _DevicesState extends State<Devices> {
                               onPressed: () {
                                 Navigator.of(context).pushNamed(Create.route);
                               },
-                              child: const Row(
+                              child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.account_tree_outlined),
-                                  SizedBox(
+                                  const Icon(Icons.account_tree_outlined),
+                                  const SizedBox(
                                     width: 15,
                                   ),
                                   Text(
-                                    "Add Device",
-                                    style: TextStyle(
+                                    AppLocalizations.of(context)!.addDevice,
+                                    style: const TextStyle(
                                         fontSize: 16.0, color: Colors.white),
                                   ),
                                 ],

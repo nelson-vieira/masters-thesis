@@ -6,6 +6,7 @@
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:flutter/material.dart";
 import "package:url_launcher/url_launcher.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class About extends StatelessWidget {
   static const String route = "/about";
@@ -16,9 +17,9 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "About",
-          style: TextStyle(fontSize: 30),
+        title: Text(
+          AppLocalizations.of(context)!.about,
+          style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
         automaticallyImplyLeading: false,

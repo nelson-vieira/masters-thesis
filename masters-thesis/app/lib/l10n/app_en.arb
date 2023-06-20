@@ -1,12 +1,42 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
-#
-# Copyright (c) 2023 Nelson Vieira
-#
-# @author Nelson Vieira <2080511@student.uma.pt>
-# @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 {
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-        "description": "The conventional newborn programmer greeting"
+    "appTitle": "IoT Privacy",
+    "@appTitle": {
+        "description": "Title of the application"
+    },
+    "home": "Home",
+    "@home": {
+        "description": "Homepage of the application"
+    },
+    "about": "About",
+    "@about": {
+        "description": "About the application"
+    },
+    "info": "Information",
+    "@info": {
+        "description": "More information related to the application and privacy in general"
+    },
+    "moreInfo": "More Information",
+    "@moreInfo": {
+        "description": "More information related to the application and privacy in general"
+    },
+    "account": "Account",
+    "@account": {
+        "description": "User account"
+    },
+    "devices": "IoT Devices",
+    "@devices": {
+        "description": "IoT Devices"
+    },
+    "iotDevices": "IoT Devices",
+    "@iotDevices": {
+        "description": "List of the IoT Devices"
+    },
+    "addDevice": "Add Device",
+    "@addDevice": {
+        "description": "Add a new IoT device to the app"
+    },
+    "addDeviceTooltip": "Add a new device",
+    "@addDevice": {
+        "description": "Add device button tooltip"
     }
 }

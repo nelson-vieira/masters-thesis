@@ -129,7 +129,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
                   : const Icon(
                       Icons.home_filled,
                     ),
-              label: "Home",
+              label: AppLocalizations.of(context)!.home,
             ),
             BottomNavigationBarItem(
               icon: _currentIndex == 1
@@ -139,7 +139,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
                   : const Icon(
                       Icons.info_outline_rounded,
                     ),
-              label: "About",
+              label: AppLocalizations.of(context)!.about,
             ),
             BottomNavigationBarItem(
               icon: _currentIndex == 2
@@ -149,7 +149,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
                   : const Icon(
                       Icons.book_outlined,
                     ),
-              label: "Information",
+              label: AppLocalizations.of(context)!.info,
             ),
             BottomNavigationBarItem(
               icon: _currentIndex == 3
@@ -159,7 +159,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
                   : const Icon(
                       Icons.account_circle_outlined,
                     ),
-              label: "Account",
+              label: AppLocalizations.of(context)!.account,
             ),
             BottomNavigationBarItem(
               icon: _currentIndex == 4
@@ -169,7 +169,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
                   : const Icon(
                       Icons.account_tree_outlined,
                     ),
-              label: "IoT Devices",
+              label: AppLocalizations.of(context)!.devices,
             ),
           ],
           onTap: (index) => setState(() => _currentIndex = index),

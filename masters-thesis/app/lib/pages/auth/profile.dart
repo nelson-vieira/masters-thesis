@@ -6,6 +6,7 @@
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:flutter/material.dart";
 import "package:firebase_auth/firebase_auth.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/main.dart";
 
 class Profile extends StatefulWidget {
@@ -26,9 +27,9 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Account",
-          style: TextStyle(fontSize: 30),
+        title: Text(
+          AppLocalizations.of(context)!.account,
+          style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),

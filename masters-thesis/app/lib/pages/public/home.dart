@@ -9,6 +9,7 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/devices/show.dart";
 import "package:iotprivacy/pages/devices/create.dart";
@@ -134,14 +135,14 @@ class _HomeState extends State<Home> {
       floatingActionButton: FirebaseAuth.instance.currentUser != null
           ? FloatingActionButton.extended(
               backgroundColor: Color(0xFF0A8A4E),
-              label: const Text(
-                "Add Device",
-                style: TextStyle(
+              label: Text(
+                AppLocalizations.of(context)!.addDevice,
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              tooltip: "Add a new device",
+              tooltip: AppLocalizations.of(context)!.addDeviceTooltip,
               icon: const Icon(Icons.account_tree_outlined),
               onPressed: () {
                 Navigator.of(context).pushNamed(Create.route);

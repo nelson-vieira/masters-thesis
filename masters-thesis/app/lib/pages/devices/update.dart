@@ -9,6 +9,7 @@ import "package:flutter/material.dart";
 import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:firebase_auth/firebase_auth.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/models/user.dart";
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/models/category.dart";
