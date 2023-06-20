@@ -9,6 +9,8 @@ import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:firebase_core/firebase_core.dart";
 import "config/firebase_options.dart";
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/pages/public/home.dart";
 import "package:iotprivacy/pages/public/about.dart";
 import "package:iotprivacy/pages/public/encyclopedia.dart";
@@ -37,6 +39,16 @@ class Main extends StatelessWidget {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: "IoT Privacy App",
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale("en", "UK"),
+        Locale("pt", "PT"),
+      ],
       theme: ThemeData(
         fontFamily: "Jost",
         canvasColor: const Color(0xFF091220),
