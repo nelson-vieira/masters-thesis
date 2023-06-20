@@ -91,13 +91,13 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "IoT Privacy App",
-          style: TextStyle(fontSize: 30),
-        ),
-        backgroundColor: const Color(0xFF334150),
-      ),
+      //   appBar: AppBar(
+      //     title: Text(
+      //       AppLocalizations.of(context)!.appTitle,
+      //       style: TextStyle(fontSize: 30),
+      //     ),
+      //     backgroundColor: const Color(0xFF334150),
+      //   ),
       body: Padding(
         padding:
             const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
