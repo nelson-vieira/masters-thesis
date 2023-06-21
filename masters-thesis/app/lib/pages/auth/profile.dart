@@ -43,9 +43,9 @@ class _ProfileState extends State<Profile> {
               shrinkWrap: true,
               padding: const EdgeInsets.all(16),
               children: <Widget>[
-                const Text(
-                  "Signed in as",
-                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                Text(
+                  AppLocalizations.of(context)!.signedInAs,
+                  style: const TextStyle(fontSize: 16.0, color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(
@@ -77,9 +77,9 @@ class _ProfileState extends State<Profile> {
                     navigatorKey.currentState!
                         .popUntil((route) => route.isFirst);
                   },
-                  child: const Text(
-                    "Sign out",
-                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  child: Text(
+                    AppLocalizations.of(context)!.signOut,
+                    style: const TextStyle(fontSize: 16.0, color: Colors.white),
                   ),
                 ),
               ],

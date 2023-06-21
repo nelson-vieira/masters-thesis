@@ -82,5 +82,13 @@
     "whatTypeOfDataA": "Internet of Things devices can collect visual, audio, presence, location, biometrics, environment and unique identification data.",
     "@whatTypeOfDataA": {
         "description": "Text explaining what types of data the devices collect"
+    },
+    "signedInAs": "Signed in as",
+    "@signedInAs": {
+        "description": "Signed in as"
+    },
+    "signOut": "Sign out",
+    "@signOut": {
+        "description": "Sign out button"
     }
 }

@@ -19,5 +19,7 @@
     "whatInternetOfThingsQ": "O que é a Internet of Things?",
     "whatInternetOfThingsA": "Uma rede aberta e abrangente de objectos inteligentes que têm a capacidade de se auto-organizar, partilhar informações, dados e recursos, reagindo e actuando face a situações e mudanças no ambiente.",
     "whatTypeOfDataQ": "Que tipo de dados podem os dispositivos IoT recolher?",
-    "whatTypeOfDataA": "Os dispositivos da Internet das Coisas podem recolher dados visuais, sonoros, de presença, de localização, biométricos, ambientais e de identificação única."
+    "whatTypeOfDataA": "Os dispositivos da Internet das Coisas podem recolher dados visuais, sonoros, de presença, de localização, biométricos, ambientais e de identificação única.",
+    "signedInAs": "Registado como",
+    "signOut": "Terminar sessão"
 }
