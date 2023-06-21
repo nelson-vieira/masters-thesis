@@ -35,15 +35,15 @@ class MoreInfo extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      const Center(
+                      Center(
                         child: Padding(
-                          padding: EdgeInsets.only(bottom: 20.0),
+                          padding: const EdgeInsets.only(bottom: 20.0),
                           child: Text(
-                            "Want to learn more about privacy in the Internet of Things? You have come to the right place, below you can learn how you to better protect your privacy and also learn new terms.",
-                            locale: Locale("en", "UK"),
+                            AppLocalizations.of(context)!.infoIntro,
+                            locale: const Locale("en", "UK"),
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.visible,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 245, 245, 245),
                               fontSize: 16.0,
                             ),
@@ -51,19 +51,21 @@ class MoreInfo extends StatelessWidget {
                         ),
                       ),
                       FirebaseAuth.instance.currentUser != null
-                          ? const Padding(
-                              padding: EdgeInsets.only(bottom: 20.0),
+                          ? Padding(
+                              padding: const EdgeInsets.only(bottom: 20.0),
                               child: Column(
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.only(bottom: 8.0),
+                                    padding: const EdgeInsets.only(bottom: 8.0),
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        "How to add a device?",
-                                        locale: Locale("en", "UK"),
+                                        AppLocalizations.of(context)!
+                                            .howToAddDeviceQ,
+                                        locale: const Locale("en", "UK"),
                                         overflow: TextOverflow.visible,
-                                        style: TextStyle(
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
                                           color: Color.fromARGB(
                                               255, 245, 245, 245),
                                           fontSize: 18.0,
@@ -73,11 +75,12 @@ class MoreInfo extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    "You can insert a device by insert the device data: the name of the device, category of the device, what is the purpose of data collection, who has access to the data, for how long is the data stored, can the data identify an individual, what is currently being done with the data collected, privacy options of the device, device coordinates, and who is the device owner (in the case of an organization).",
-                                    locale: Locale("en", "UK"),
+                                    AppLocalizations.of(context)!
+                                        .howToAddDeviceA,
+                                    locale: const Locale("en", "UK"),
                                     textAlign: TextAlign.left,
                                     overflow: TextOverflow.visible,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Color.fromARGB(255, 245, 245, 245),
                                       fontSize: 16.0,
                                     ),
@@ -86,23 +89,25 @@ class MoreInfo extends StatelessWidget {
                               ),
                             )
                           : Container(),
-                      const Align(
+                      Align(
                         alignment: Alignment.topLeft,
                         child: Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(bottom: 20.0),
+                              padding: const EdgeInsets.only(bottom: 20.0),
                               child: Column(
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.only(bottom: 8.0),
+                                    padding: const EdgeInsets.only(bottom: 8.0),
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        "What is Digital Privacy?",
-                                        locale: Locale("en", "UK"),
+                                        AppLocalizations.of(context)!
+                                            .whatDigitalPrivacyQ,
+                                        locale: const Locale("en", "UK"),
                                         overflow: TextOverflow.visible,
-                                        style: TextStyle(
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
                                           color: Color.fromARGB(
                                               255, 245, 245, 245),
                                           fontSize: 18.0,
@@ -112,11 +117,12 @@ class MoreInfo extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    "Digital privacy is the right of the individual to govern how personal information is collected, stored, and used, it frequently involves handling sensitive information with care, and as such, organizations must be open and honest about the kind of data they plan to gather, why they need it, and where and with whom they plan to share it. Users should have the right to control their shared information.",
-                                    locale: Locale("en", "UK"),
+                                    AppLocalizations.of(context)!
+                                        .whatDigitalPrivacyA,
+                                    locale: const Locale("en", "UK"),
                                     textAlign: TextAlign.left,
                                     overflow: TextOverflow.visible,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Color.fromARGB(255, 245, 245, 245),
                                       fontSize: 16.0,
                                     ),
@@ -125,18 +131,20 @@ class MoreInfo extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(bottom: 20.0),
+                              padding: const EdgeInsets.only(bottom: 20.0),
                               child: Column(
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.only(bottom: 8.0),
+                                    padding: const EdgeInsets.only(bottom: 8.0),
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        "What is Internet of Things?",
-                                        locale: Locale("en", "UK"),
+                                        AppLocalizations.of(context)!
+                                            .whatInternetOfThingsQ,
+                                        locale: const Locale("en", "UK"),
                                         overflow: TextOverflow.visible,
-                                        style: TextStyle(
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
                                           color: Color.fromARGB(
                                               255, 245, 245, 245),
                                           fontSize: 18.0,
@@ -146,11 +154,12 @@ class MoreInfo extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    "An open and comprehensive network of intelligent objects that have the capacity to auto-organize, share information, data and resources, reacting and acting in face of situations and changes in the environment.",
-                                    locale: Locale("en", "UK"),
+                                    AppLocalizations.of(context)!
+                                        .whatInternetOfThingsA,
+                                    locale: const Locale("en", "UK"),
                                     textAlign: TextAlign.left,
                                     overflow: TextOverflow.visible,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Color.fromARGB(255, 245, 245, 245),
                                       fontSize: 16.0,
                                     ),
@@ -159,18 +168,20 @@ class MoreInfo extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(bottom: 20.0),
+                              padding: const EdgeInsets.only(bottom: 20.0),
                               child: Column(
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.only(bottom: 8.0),
+                                    padding: const EdgeInsets.only(bottom: 8.0),
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Text(
-                                        "What type of data can IoT devices collect?",
-                                        locale: Locale("en", "UK"),
+                                        AppLocalizations.of(context)!
+                                            .whatTypeOfDataQ,
+                                        locale: const Locale("en", "UK"),
                                         overflow: TextOverflow.visible,
-                                        style: TextStyle(
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
                                           color: Color.fromARGB(
                                               255, 245, 245, 245),
                                           fontSize: 18.0,
@@ -180,11 +191,12 @@ class MoreInfo extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    "Internet of Things devices can collect visual, audio, presence, location, biometrics, environment and unique identification data.",
-                                    locale: Locale("en", "UK"),
+                                    AppLocalizations.of(context)!
+                                        .whatTypeOfDataA,
+                                    locale: const Locale("en", "UK"),
                                     textAlign: TextAlign.left,
                                     overflow: TextOverflow.visible,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Color.fromARGB(255, 245, 245, 245),
                                       fontSize: 16.0,
                                     ),

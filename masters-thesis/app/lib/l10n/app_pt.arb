@@ -10,5 +10,14 @@
     "addDevice": "Adicionar Dispositivo",
     "addDeviceTooltip": "Adicionar um novo dispositivo",
     "aboutContent": "Esta aplicação fornece aos utilizadores informações sobre os dispositivos IoT ao seu redor, como o tipo de informações que estes dispositivos recolhem e quais as opções de privacidade disponíveis. Mostra a geolocalização dos dispositivos IoT, o tipo de dispositivo e o tipo de dados que o dispositivo está a recolher. A aplicação não detecta os dispositivos por si só, os dispositivos são mostrados aqui pelo contributo dos utilizadores.",
-    "aboutRepo": "Pode aceder ao código fonte desta aplicação na seguinte ligação:"
+    "aboutRepo": "Pode aceder ao código fonte desta aplicação na seguinte ligação:",
+    "infoIntro": "Quer saber mais sobre a privacidade na Internet das Coisas? Veio ao sítio certo, abaixo pode aprender como proteger melhor a sua privacidade e também aprender novos termos.",
+    "howToAddDeviceQ": "Como adicionar um dispositivo?",
+    "howToAddDeviceA": "Pode inserir um dispositivo inserindo os dados do dispositivo: o nome do dispositivo, a categoria do dispositivo, qual a finalidade da recolha de dados, quem tem acesso aos dados, durante quanto tempo os dados são armazenados, os dados podem identificar um indivíduo, o que está atualmente a ser feito com os dados recolhidos, as opções de privacidade do dispositivo, as coordenadas do dispositivo e quem é o proprietário do dispositivo (no caso de uma organização).",
+    "whatDigitalPrivacyQ": "O que é a privacidade digital?",
+    "whatDigitalPrivacyA": "A privacidade digital é o direito do indivíduo de controlar a forma como as informações pessoais são recolhidas, armazenadas e utilizadas. Envolve frequentemente o tratamento cuidadoso de informações sensíveis e, como tal, as organizações devem ser abertas e honestas quanto ao tipo de dados que tencionam recolher, porque precisam deles e onde e com quem tencionam partilhá-los. Os utilizadores devem ter o direito de controlar a sua informação partilhada.",
+    "whatInternetOfThingsQ": "O que é a Internet of Things?",
+    "whatInternetOfThingsA": "Uma rede aberta e abrangente de objectos inteligentes que têm a capacidade de se auto-organizar, partilhar informações, dados e recursos, reagindo e actuando face a situações e mudanças no ambiente.",
+    "whatTypeOfDataQ": "Que tipo de dados podem os dispositivos IoT recolher?",
+    "whatTypeOfDataA": "Os dispositivos da Internet das Coisas podem recolher dados visuais, sonoros, de presença, de localização, biométricos, ambientais e de identificação única."
 }
