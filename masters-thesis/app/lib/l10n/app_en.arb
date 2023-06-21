@@ -106,5 +106,17 @@
     "register": "Register",
     "@register": {
         "description": "Make an account on the application"
+    },
+    "resetPassword": "Reset Password",
+    "@resetPassword": {
+        "description": "Reset account password"
+    },
+    "emailValidation": "Please enter a valid email address",
+    "@emailValidation": {
+        "description": "Email validation message"
+    },
+    "passwordEmailSent": "Password reset email sent!",
+    "@passwordEmailSent": {
+        "description": "Password reset email sent"
     }
 }

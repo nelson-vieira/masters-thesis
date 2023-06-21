@@ -55,7 +55,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       await FirebaseAuth.instance.sendPasswordResetEmail(
         email: controllerEmail.text.trim(),
       );
-      Helper.showSnackBar("Password reset email sent!");
+      Helper.showSnackBar(AppLocalizations.of(context)!.resetPassword);
       //   navigatorKey.currentState!.popUntil((route) => route.isFirst);
     } on FirebaseAuthException catch (e) {
       print(e);
@@ -75,9 +75,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               color: Color.fromARGB(255, 255, 255, 255)),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text(
-          "Reset Password",
-          style: TextStyle(fontSize: 30),
+        title: Text(
+          AppLocalizations.of(context)!.resetPassword,
+          style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
@@ -101,7 +101,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (email) =>
                       email != null && !EmailValidator.validate(email)
-                          ? "Please enter a valid email address"
+                          ? AppLocalizations.of(context)!.emailValidation
                           : null,
                 ),
                 const SizedBox(
@@ -114,9 +114,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
                   ),
                   onPressed: resetPassword,
-                  child: const Text(
-                    "Reset password",
-                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  child: Text(
+                    AppLocalizations.of(context)!.resetPassword,
+                    style: const TextStyle(fontSize: 16.0, color: Colors.white),
                   ),
                 ),
               ],
