@@ -29,5 +29,10 @@
     "resetPassword": "Redefinir palavra-passe",
     "emailValidation": "Introduza um endereço de correio eletrónico válido",
     "passwordEmailSent": "Password reset email sent!",
-    "errorOccured": "Ocorreu um erro!"
+    "errorOccured": "Ocorreu um erro!",
+    "createAccount": "Registo",
+    "passwordValidation": "A palavra-passe deve conter pelo menos 8 caracteres",
+    "passwordValidation2": "Introduza uma palavra-passe válida",
+    "signUp": "Registar",
+    "goToLogin": "Já tem uma conta? "
 }

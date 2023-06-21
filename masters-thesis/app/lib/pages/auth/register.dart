@@ -99,9 +99,9 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Create Account",
-          style: TextStyle(fontSize: 30),
+        title: Text(
+          AppLocalizations.of(context)!.createAccount,
+          style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
@@ -125,7 +125,7 @@ class _RegisterState extends State<Register> {
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (email) =>
                       email != null && !EmailValidator.validate(email)
-                          ? "Please enter a valid email address"
+                          ? AppLocalizations.of(context)!.emailValidation
                           : null,
                 ),
                 const SizedBox(height: 24),
@@ -140,7 +140,7 @@ class _RegisterState extends State<Register> {
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (password) =>
                       password != null && password.length < 8
-                          ? "Password must contain least 8 characters"
+                          ? AppLocalizations.of(context)!.passwordValidation
                           : null,
                 ),
                 const SizedBox(height: 24),
@@ -156,7 +156,7 @@ class _RegisterState extends State<Register> {
                   validator: (password) {
                     if (password!.isEmpty ||
                         password != controllerPassword.text) {
-                      return "Please enter a valid password";
+                      return AppLocalizations.of(context)!.passwordValidation2;
                     }
                     return null;
                   },
@@ -180,9 +180,9 @@ class _RegisterState extends State<Register> {
                     );
                     createUser(user);
                   },
-                  child: const Text(
-                    "Sign up",
-                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  child: Text(
+                    AppLocalizations.of(context)!.signUp,
+                    style: const TextStyle(fontSize: 16.0, color: Colors.white),
                   ),
                 ),
                 const SizedBox(
@@ -191,13 +191,13 @@ class _RegisterState extends State<Register> {
                 Center(
                   child: RichText(
                     text: TextSpan(
-                      text: "Already have an account? ",
+                      text: AppLocalizations.of(context)!.goToLogin,
                       style: const TextStyle(color: Colors.white),
                       children: [
                         TextSpan(
                           recognizer: TapGestureRecognizer()
                             ..onTap = widget.onClickLogIn,
-                          text: "Log In",
+                          text: AppLocalizations.of(context)!.signIn,
                           style: const TextStyle(
                             decoration: TextDecoration.underline,
                             color: Color.fromARGB(255, 75, 191, 206),

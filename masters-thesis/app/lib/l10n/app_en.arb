@@ -122,5 +122,25 @@
     "errorOccured": "An error occured!",
     "@errorOccured": {
         "description": "An error occured"
+    },
+    "createAccount": "Create Account",
+    "@createAccount": {
+        "description": "Create an account"
+    },
+    "passwordValidation": "Password must contain least 8 characters",
+    "@passwordValidation": {
+        "description": "Password validation message"
+    },
+    "passwordValidation2": "Please enter a valid password",
+    "@passwordValidation2": {
+        "description": "Another password validation message"
+    },
+    "signUp": "Sign up",
+    "@signUp": {
+        "description": "Create a new account"
+    },
+    "goToLogin": "Already have an account? ",
+    "@goToLogin": {
+        "description": "Already have an account, go to login"
     }
 }
