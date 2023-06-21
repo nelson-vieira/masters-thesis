@@ -125,9 +125,9 @@ class _CreateState extends State<Create> {
             Navigator.of(context).pop();
           },
         ),
-        title: const Text(
-          "Add Device",
-          style: TextStyle(fontSize: 30),
+        title: Text(
+          AppLocalizations.of(context)!.addDevice,
+          style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
@@ -141,7 +141,8 @@ class _CreateState extends State<Create> {
             children: <Widget>[
               TextField(
                 controller: controllerName,
-                decoration: decoration("Name"),
+                decoration:
+                    decoration(AppLocalizations.of(context)!.nameAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -165,9 +166,9 @@ class _CreateState extends State<Create> {
                       final devices = snapshot.data!;
 
                       return DropdownButtonFormField(
-                          hint: const Text(
-                            "Select a category",
-                            style: TextStyle(
+                          hint: Text(
+                            AppLocalizations.of(context)!.categoryAttribute,
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 170, 170, 170),
                             ),
                           ),
@@ -184,8 +185,9 @@ class _CreateState extends State<Create> {
                             filled: true,
                             fillColor: Color.fromARGB(255, 16, 44, 53),
                           ),
-                          validator: (value) =>
-                              value == null ? "Select a category" : null,
+                          validator: (value) => value == null
+                              ? AppLocalizations.of(context)!.categoryAttribute
+                              : null,
                           dropdownColor: const Color.fromARGB(255, 16, 44, 53),
                           value: controllerCategory,
                           onChanged: (String? newValue) {
@@ -207,7 +209,8 @@ class _CreateState extends State<Create> {
               ),
               TextField(
                 controller: controllerPurpose,
-                decoration: decoration("What is the purpose"),
+                decoration:
+                    decoration(AppLocalizations.of(context)!.purposeAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -217,7 +220,8 @@ class _CreateState extends State<Create> {
               ),
               TextField(
                 controller: controllerWhoHasAccess,
-                decoration: decoration("Who has access to this information"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.whoHasAccessAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -227,7 +231,8 @@ class _CreateState extends State<Create> {
               ),
               TextField(
                 controller: controllerTimeStored,
-                decoration: decoration("For how long is the data stored"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.timeStoredAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -245,7 +250,7 @@ class _CreateState extends State<Create> {
                   checkColor: const Color(0xAAFFFFFF),
                   enableFeedback: true,
                   title: Text(
-                    "Can the data identify anyone?",
+                    AppLocalizations.of(context)!.identifiableAttribute,
                     style: TextStyle(
                       color: controllerIdentifiable
                           ? const Color(0xFFFFFFFF)
@@ -265,7 +270,8 @@ class _CreateState extends State<Create> {
               ),
               TextField(
                 controller: controllerWhatsDone,
-                decoration: decoration("What is being done with the data?"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.whatsDoneAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -275,7 +281,8 @@ class _CreateState extends State<Create> {
               ),
               TextField(
                 controller: controllerPrivacyOptions,
-                decoration: decoration("URL for privacy options of the device"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.privacyOptionsAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -304,11 +311,11 @@ class _CreateState extends State<Create> {
                       color: Colors.white // the color of the border
                       ),
                 ),
-                child: const Align(
+                child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Coordinates of the device",
-                    style: TextStyle(
+                    AppLocalizations.of(context)!.coordinatesAttribute,
+                    style: const TextStyle(
                       fontSize: 16.0,
                       color: Color.fromARGB(255, 170, 170, 170),
                     ),
@@ -326,7 +333,8 @@ class _CreateState extends State<Create> {
               ),
               TextField(
                 controller: controllerOwner,
-                decoration: decoration("Device owner"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.deviceOwnerAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -359,9 +367,9 @@ class _CreateState extends State<Create> {
                   createDevice(device);
                   Navigator.of(context).popUntil((route) => route.isFirst);
                 },
-                child: const Text(
-                  "Create device",
-                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                child: Text(
+                  AppLocalizations.of(context)!.createDevice,
+                  style: const TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               ),
             ],

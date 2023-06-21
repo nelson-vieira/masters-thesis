@@ -151,5 +151,49 @@
                 "type": "String"
             }
         }
+    },
+    "createDevice": "Create device",
+    "@createDevice": {
+        "description": "Create a new device button"
+    },
+    "deviceOwnerAttribute": "Device owner",
+    "@deviceOwnerAttribute": {
+        "description": "Device owner attribute of device"
+    },
+    "coordinatesAttribute": "Coordinates of the device",
+    "@coordinatesAttribute": {
+        "description": "Coordinates attribute of device"
+    },
+    "privacyOptionsAttribute": "URL for privacy options of the device",
+    "@privacyOptionsAttribute": {
+        "description": "Privacy options attribute of device"
+    },
+    "whatsDoneAttribute": "What is being done with the data?",
+    "@whatsDoneAttribute": {
+        "description": "Whats done attribute of device"
+    },
+    "identifiableAttribute": "Can the data identify anyone?",
+    "@identifiableAttribute": {
+        "description": "Identifiable attribute of device"
+    },
+    "timeStoredAttribute": "For how long is the data stored",
+    "@timeStoredAttribute": {
+        "description": "Time stored attribute of device"
+    },
+    "whoHasAccessAttribute": "Who has access to this information",
+    "@whoHasAccessAttribute": {
+        "description": "Who has access attribute of device"
+    },
+    "purposeAttribute": "What is the purpose",
+    "@purposeAttribute": {
+        "description": "Purpose attribute of device"
+    },
+    "categoryAttribute": "Select a category",
+    "@categoryAttribute": {
+        "description": "Category attribute of device"
+    },
+    "nameAttribute": "Name",
+    "@nameAttribute": {
+        "description": "Name attribute of device"
     }
 }

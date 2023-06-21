@@ -35,5 +35,16 @@
     "passwordValidation2": "Introduza uma palavra-passe válida",
     "signUp": "Registar",
     "goToLogin": "Já tem uma conta? ",
-    "firebaseError": "Alguma coisa correu mal! {error}"
+    "firebaseError": "Alguma coisa correu mal! {error}",
+    "createDevice": "Criar dispositivo",
+    "deviceOwnerAttribute": "Proprietário do dispositivo",
+    "coordinatesAttribute": "Coordenadas do dispositivo",
+    "privacyOptionsAttribute": "URL de opções de privacidade do dispositivo",
+    "whatsDoneAttribute": "O que está a ser feito com os dados?",
+    "identifiableAttribute": "Os dados podem identificar alguém?",
+    "timeStoredAttribute": "Durante quanto tempo são armazenados os dados",
+    "whoHasAccessAttribute": "Quem tem acesso aos dados",
+    "purposeAttribute": "Qual é o objetivo",
+    "categoryAttribute": "Seleccione uma categoria",
+    "nameAttribute": "Nome"
 }
