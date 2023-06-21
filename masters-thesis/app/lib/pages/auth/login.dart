@@ -84,9 +84,9 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Sign in",
-          style: TextStyle(fontSize: 30),
+        title: Text(
+          AppLocalizations.of(context)!.signIn,
+          style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
@@ -126,9 +126,9 @@ class _LoginState extends State<Login> {
                       left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
                 ),
                 onPressed: signIn,
-                child: const Text(
-                  "Sign in",
-                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+                child: Text(
+                  AppLocalizations.of(context)!.signIn,
+                  style: const TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               ),
               const SizedBox(
@@ -136,9 +136,9 @@ class _LoginState extends State<Login> {
               ),
               Center(
                 child: GestureDetector(
-                  child: const Text(
-                    "Forgot Password?",
-                    style: TextStyle(
+                  child: Text(
+                    AppLocalizations.of(context)!.forgotPassword,
+                    style: const TextStyle(
                       decoration: TextDecoration.underline,
                       color: Color.fromARGB(255, 75, 191, 206),
                     ),
@@ -153,13 +153,13 @@ class _LoginState extends State<Login> {
               Center(
                 child: RichText(
                   text: TextSpan(
-                    text: "No account? ",
+                    text: AppLocalizations.of(context)!.noAccount,
                     style: const TextStyle(color: Colors.white),
                     children: [
                       TextSpan(
                         recognizer: TapGestureRecognizer()
                           ..onTap = widget.onClickRegister,
-                        text: "Register",
+                        text: AppLocalizations.of(context)!.register,
                         style: const TextStyle(
                           decoration: TextDecoration.underline,
                           color: Color.fromARGB(255, 75, 191, 206),

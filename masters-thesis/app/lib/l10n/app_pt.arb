@@ -21,5 +21,9 @@
     "whatTypeOfDataQ": "Que tipo de dados podem os dispositivos IoT recolher?",
     "whatTypeOfDataA": "Os dispositivos da Internet das Coisas podem recolher dados visuais, sonoros, de presença, de localização, biométricos, ambientais e de identificação única.",
     "signedInAs": "Registado como",
-    "signOut": "Terminar sessão"
+    "signOut": "Terminar sessão",
+    "signIn": "Iniciar sessão",
+    "forgotPassword": "Esqueceu-se da palavra-passe?",
+    "noAccount": "Não tem conta? ",
+    "register": "Registar-se"
 }

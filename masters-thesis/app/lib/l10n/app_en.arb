@@ -90,5 +90,21 @@
     "signOut": "Sign out",
     "@signOut": {
         "description": "Sign out button"
+    },
+    "signIn": "Sign in",
+    "@signIn": {
+        "description": "Sign in to the application"
+    },
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {
+        "description": "Forgot password"
+    },
+    "noAccount": "No account? ",
+    "@noAccount": {
+        "description": "Don't have an account yet?"
+    },
+    "register": "Register",
+    "@register": {
+        "description": "Make an account on the application"
     }
 }
