@@ -8,5 +8,7 @@
     "devices": "Dispositivos",
     "iotDevices": "Dispositivos IoT",
     "addDevice": "Adicionar Dispositivo",
-    "addDeviceTooltip": "Adicionar um novo dispositivo"
+    "addDeviceTooltip": "Adicionar um novo dispositivo",
+    "aboutContent": "Esta aplicação fornece aos utilizadores informações sobre os dispositivos IoT ao seu redor, como o tipo de informações que estes dispositivos recolhem e quais as opções de privacidade disponíveis. Mostra a geolocalização dos dispositivos IoT, o tipo de dispositivo e o tipo de dados que o dispositivo está a recolher. A aplicação não detecta os dispositivos por si só, os dispositivos são mostrados aqui pelo contributo dos utilizadores.",
+    "aboutRepo": "Pode aceder ao código fonte desta aplicação na seguinte ligação:"
 }

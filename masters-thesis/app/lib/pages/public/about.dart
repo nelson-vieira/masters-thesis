@@ -44,14 +44,14 @@ class About extends StatelessWidget {
                               width: 135.0),
                         ),
                       ),
-                      const Align(
+                      Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "This application gives users information about IoT devices in their surroundings like the type of information these devices collect and what privacy options are available. It will show the geolocation of the IoT devices, what type of device it is, what type of data is being collect by the device. The application will not detect the devices by itself, this will be done by the users.",
-                          locale: Locale("en", "UK"),
+                          AppLocalizations.of(context)!.aboutContent,
+                          locale: const Locale("en", "UK"),
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.visible,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color.fromARGB(255, 245, 245, 245),
                               fontSize: 16.0),
                         ),
@@ -59,14 +59,14 @@ class About extends StatelessWidget {
                       const SizedBox(
                         height: 24,
                       ),
-                      const Align(
+                      Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "You can access the source code of this application on the following link:",
-                          locale: Locale("en", "UK"),
+                          AppLocalizations.of(context)!.aboutRepo,
+                          locale: const Locale("en", "UK"),
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.visible,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color.fromARGB(255, 245, 245, 245),
                               fontSize: 16.0),
                         ),

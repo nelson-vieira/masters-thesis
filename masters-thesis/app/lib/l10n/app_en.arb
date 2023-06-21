@@ -38,5 +38,13 @@
     "addDeviceTooltip": "Add a new device",
     "@addDevice": {
         "description": "Add device button tooltip"
+    },
+    "aboutContent": "This application gives users information about IoT devices in their surroundings like the type of information these devices collect and what privacy options are available. It will show the geolocation of the IoT devices, what type of device it is, what type of data is being collect by the device. The application will not detect the devices by itself, this will be done by the users.",
+    "@aboutContent": {
+        "description": "Text about the application"
+    },
+    "aboutRepo": "You can access the source code of this application on the following link:",
+    "@aboutContent": {
+        "description": "Text about the application"
     }
 }
