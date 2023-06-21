@@ -208,7 +208,8 @@ class _UpdateState extends State<Update> {
                     if (snapshot.hasError) {
                       return Center(
                           child: Text(
-                        "Something went wrong! ${snapshot.error}",
+                        AppLocalizations.of(context)!
+                            .firebaseError("${snapshot.error}"),
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 17.0,
@@ -412,7 +413,8 @@ class _UpdateState extends State<Update> {
                     if (snapshot.hasError) {
                       return Center(
                           child: Text(
-                        "Something went wrong! ${snapshot.error}",
+                        AppLocalizations.of(context)!
+                            .firebaseError("${snapshot.error}"),
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 17.0,

@@ -153,7 +153,8 @@ class _CreateState extends State<Create> {
                     if (snapshot.hasError) {
                       return Center(
                           child: Text(
-                        "Something went wrong! ${snapshot.error}",
+                        AppLocalizations.of(context)!
+                            .firebaseError("${snapshot.error}"),
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 17.0,

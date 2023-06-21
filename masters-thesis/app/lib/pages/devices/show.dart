@@ -478,7 +478,8 @@ class _ShowDeviceState extends State<ShowDevice> {
               future: readDevice(),
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
-                  return Text("Something went wrong! ${snapshot.error}");
+                  return Text(AppLocalizations.of(context)!
+                      .firebaseError("${snapshot.error}"));
                 } else if (snapshot.hasData) {
                   final device = snapshot.data!;
 

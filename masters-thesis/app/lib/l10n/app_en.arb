@@ -142,5 +142,14 @@
     "goToLogin": "Already have an account? ",
     "@goToLogin": {
         "description": "Already have an account, go to login"
+    },
+    "firebaseError": "Something went wrong! {error}",
+    "@firebaseError": {
+        "description": "An error occured when connecting to firestore database",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
     }
 }

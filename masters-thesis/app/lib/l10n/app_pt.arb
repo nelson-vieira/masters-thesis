@@ -34,5 +34,6 @@
     "passwordValidation": "A palavra-passe deve conter pelo menos 8 caracteres",
     "passwordValidation2": "Introduza uma palavra-passe válida",
     "signUp": "Registar",
-    "goToLogin": "Já tem uma conta? "
+    "goToLogin": "Já tem uma conta? ",
+    "firebaseError": "Alguma coisa correu mal! {error}"
 }
