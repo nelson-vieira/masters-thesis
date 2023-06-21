@@ -8,7 +8,7 @@ import "package:flutter/material.dart";
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/public/home.dart";
 import "package:iotprivacy/pages/public/about.dart";
-import "package:iotprivacy/pages/public/encyclopedia.dart";
+import 'package:iotprivacy/pages/public/more_info.dart';
 import "package:iotprivacy/pages/auth/auth.dart";
 import "package:iotprivacy/pages/devices/devices.dart";
 import "package:iotprivacy/pages/devices/show.dart";
@@ -26,8 +26,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const Home());
       case About.route:
         return MaterialPageRoute(builder: (_) => const About());
-      case Encyclopedia.route:
-        return MaterialPageRoute(builder: (_) => const Encyclopedia());
+      case MoreInfo.route:
+        return MaterialPageRoute(builder: (_) => const MoreInfo());
       case Auth.route:
         return MaterialPageRoute(builder: (_) => const Auth());
       case Devices.route:

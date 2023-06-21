@@ -8,10 +8,10 @@ import "package:flutter/material.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class Encyclopedia extends StatelessWidget {
-  static const String route = "/encyclopedia";
+class MoreInfo extends StatelessWidget {
+  static const String route = "/more_info";
 
-  const Encyclopedia({Key? key}) : super(key: key);
+  const MoreInfo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

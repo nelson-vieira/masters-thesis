@@ -13,7 +13,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/pages/public/home.dart";
 import "package:iotprivacy/pages/public/about.dart";
-import "package:iotprivacy/pages/public/encyclopedia.dart";
+import 'package:iotprivacy/pages/public/more_info.dart';
 import "package:iotprivacy/pages/auth/account.dart";
 import "package:iotprivacy/pages/devices/devices.dart";
 
@@ -86,7 +86,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
   final pages = <Widget>[
     const Home(),
     const About(),
-    const Encyclopedia(),
+    const MoreInfo(),
     const Account(),
     const Devices(),
   ];
