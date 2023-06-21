@@ -161,9 +161,9 @@ class _UpdateState extends State<Update> {
         padding: const EdgeInsets.only(
             left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
       ),
-      child: const Text(
-        "Delete",
-        style: TextStyle(fontSize: 16.0, color: Colors.white),
+      child: Text(
+        AppLocalizations.of(context)!.delete,
+        style: const TextStyle(fontSize: 16.0, color: Colors.white),
       ),
       onPressed: () {
         showDialog(context: context, builder: (context) => confirmDelete());
@@ -180,9 +180,9 @@ class _UpdateState extends State<Update> {
             Navigator.of(context).pop();
           },
         ),
-        title: const Text(
-          "Update",
-          style: TextStyle(fontSize: 30),
+        title: Text(
+          AppLocalizations.of(context)!.update,
+          style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
       ),
@@ -196,7 +196,8 @@ class _UpdateState extends State<Update> {
             children: <Widget>[
               TextField(
                 controller: controllerName,
-                decoration: decoration("Name"),
+                decoration:
+                    decoration(AppLocalizations.of(context)!.nameAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -220,9 +221,9 @@ class _UpdateState extends State<Update> {
                       final devices = snapshot.data!;
 
                       return DropdownButtonFormField(
-                          hint: const Text(
-                            "Select a category",
-                            style: TextStyle(
+                          hint: Text(
+                            AppLocalizations.of(context)!.categoryAttribute,
+                            style: const TextStyle(
                               color: Color(0xFFAAAAAA),
                             ),
                           ),
@@ -239,8 +240,9 @@ class _UpdateState extends State<Update> {
                             filled: true,
                             fillColor: Color.fromARGB(255, 16, 44, 53),
                           ),
-                          validator: (value) =>
-                              value == null ? "Select a category" : null,
+                          validator: (value) => value == null
+                              ? AppLocalizations.of(context)!.categoryAttribute
+                              : null,
                           dropdownColor: const Color.fromARGB(255, 16, 44, 53),
                           value: controllerCategory,
                           onChanged: (String? newValue) {
@@ -262,7 +264,8 @@ class _UpdateState extends State<Update> {
               ),
               TextField(
                 controller: controllerPurpose,
-                decoration: decoration("What is the purpose"),
+                decoration:
+                    decoration(AppLocalizations.of(context)!.purposeAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -272,7 +275,8 @@ class _UpdateState extends State<Update> {
               ),
               TextField(
                 controller: controllerWhoHasAccess,
-                decoration: decoration("Who has access to this information"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.whoHasAccessAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -282,7 +286,8 @@ class _UpdateState extends State<Update> {
               ),
               TextField(
                 controller: controllerTimeStored,
-                decoration: decoration("For how long is the data stored"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.timeStoredAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -300,7 +305,7 @@ class _UpdateState extends State<Update> {
                   checkColor: const Color(0xAAFFFFFF),
                   enableFeedback: true,
                   title: Text(
-                    "Can the data identify anyone?",
+                    AppLocalizations.of(context)!.identifiableAttribute,
                     style: TextStyle(
                       color: controllerIdentifiable
                           ? const Color(0xFFFFFFFF)
@@ -320,7 +325,8 @@ class _UpdateState extends State<Update> {
               ),
               TextField(
                 controller: controllerWhatsDone,
-                decoration: decoration("What is being done with the data?"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.whatsDoneAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -330,7 +336,8 @@ class _UpdateState extends State<Update> {
               ),
               TextField(
                 controller: controllerPrivacyOptions,
-                decoration: decoration("URL for privacy options of the device"),
+                decoration: decoration(
+                    AppLocalizations.of(context)!.privacyOptionsAttribute),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
@@ -355,11 +362,11 @@ class _UpdateState extends State<Update> {
                     color: Colors.white,
                   ),
                 ),
-                child: const Align(
+                child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Coordinates of the device",
-                    style: TextStyle(
+                    AppLocalizations.of(context)!.coordinatesAttribute,
+                    style: const TextStyle(
                         fontSize: 16.0,
                         color: Color.fromARGB(255, 170, 170, 170)),
                     textAlign: TextAlign.start,
@@ -380,9 +387,9 @@ class _UpdateState extends State<Update> {
                     padding: const EdgeInsets.only(
                         left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
                   ),
-                  child: const Text(
-                    "Update",
-                    style: TextStyle(fontSize: 16.0, color: Colors.white),
+                  child: Text(
+                    AppLocalizations.of(context)!.update,
+                    style: const TextStyle(fontSize: 16.0, color: Colors.white),
                   ),
                   onPressed: () {
                     final docDevice = FirebaseFirestore.instance

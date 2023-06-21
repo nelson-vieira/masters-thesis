@@ -195,5 +195,29 @@
     "nameAttribute": "Name",
     "@nameAttribute": {
         "description": "Name attribute of device"
+    },
+    "update": "Update",
+    "@update": {
+        "description": "Update device"
+    },
+    "delete": "Delete",
+    "@delete": {
+        "description": "Delete device"
+    },
+    "deleteConfirmation": "Are you sure you want to delete this device?",
+    "@deleteConfirmation": {
+        "description": "Delete device confirmation"
+    },
+    "confirmation": "Confirmation",
+    "@confirmation": {
+        "description": "Confirmation"
+    },
+    "yes": "Yes",
+    "@yes": {
+        "description": "Yes"
+    },
+    "no": "No",
+    "@no": {
+        "description": "No"
     }
 }
