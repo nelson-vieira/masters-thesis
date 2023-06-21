@@ -28,5 +28,6 @@
     "register": "Registar-se",
     "resetPassword": "Redefinir palavra-passe",
     "emailValidation": "Introduza um endereço de correio eletrónico válido",
-    "passwordEmailSent": "Password reset email sent!"
+    "passwordEmailSent": "Password reset email sent!",
+    "errorOccured": "Ocorreu um erro!"
 }

@@ -118,5 +118,9 @@
     "passwordEmailSent": "Password reset email sent!",
     "@passwordEmailSent": {
         "description": "Password reset email sent"
+    },
+    "errorOccured": "An error occured!",
+    "@errorOccured": {
+        "description": "An error occured"
     }
 }

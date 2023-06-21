@@ -32,10 +32,10 @@ class _AccountState extends State<Account> {
             child: CircularProgressIndicator(),
           );
         } else if (snapshot.hasError) {
-          return const Center(
+          return Center(
             child: Text(
-              "An error occured!",
-              style: TextStyle(
+              AppLocalizations.of(context)!.errorOccured,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 17.0,
               ),
