@@ -52,5 +52,18 @@
     "deleteConfirmation": "Tem a certeza de que pretende eliminar este dispositivo?",
     "confirmation": "Confirmação",
     "yes": "Sim",
-    "no": "Não"
+    "no": "Não",
+    "whoHasAccessDevice": "Quem tem acesso aos dados?",
+    "purposeDevice": "Qual é o objetivo da recolha?",
+    "identifyDevice": "Os dados podem identificar alguém?",
+    "whatsDoneDevice": "O que está a ser feito com os dados?",
+    "timeStoredDevice": "Durante quanto tempo são armazenados os dados?",
+    "ownerDevice": "Proprietário do dispositivo: ",
+    "privacyOptionsDevice": "Opções de privacidade: ",
+    "options": "Opções",
+    "coordinatesDevice": "Coordenadas do dispositivo:",
+    "lastUpdated": "Última atualização:",
+    "editDevice": "Editar dispositivo",
+    "noDevice": "Nenhum dispositivo",
+    "errorLaunchingLink": "Não foi possível iniciar ${link}"
 }

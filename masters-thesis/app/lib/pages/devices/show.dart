@@ -81,7 +81,8 @@ class _ShowDeviceState extends State<ShowDevice> {
                                 if (snapshot.hasError) {
                                   return Center(
                                       child: Text(
-                                    "Something went wrong! ${snapshot.error}",
+                                    AppLocalizations.of(context)!
+                                        .firebaseError("${snapshot.error}"),
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 17.0,
@@ -113,15 +114,16 @@ class _ShowDeviceState extends State<ShowDevice> {
                       children: <TableRow>[
                         TableRow(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.only(
+                            Padding(
+                              padding: const EdgeInsets.only(
                                   top: 0.0,
                                   right: 20.0,
                                   bottom: 0.0,
                                   left: 0.0),
                               child: Text(
-                                "Who has access to the data?",
-                                style: TextStyle(
+                                AppLocalizations.of(context)!
+                                    .whoHasAccessDevice,
+                                style: const TextStyle(
                                     fontSize: 16.0,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -144,15 +146,15 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.only(
+                            Padding(
+                              padding: const EdgeInsets.only(
                                   top: 0.0,
                                   right: 20.0,
                                   bottom: 0.0,
                                   left: 0.0),
                               child: Text(
-                                "What is the purpose for collection?",
-                                style: TextStyle(
+                                AppLocalizations.of(context)!.purposeDevice,
+                                style: const TextStyle(
                                     fontSize: 16.0,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -175,22 +177,24 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.only(
+                            Padding(
+                              padding: const EdgeInsets.only(
                                   top: 0.0,
                                   right: 20.0,
                                   bottom: 0.0,
                                   left: 0.0),
                               child: Text(
-                                "Can the data identify someone?",
-                                style: TextStyle(
+                                AppLocalizations.of(context)!.identifyDevice,
+                                style: const TextStyle(
                                     fontSize: 16.0,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
                             Text(
-                              device.identifiable == true ? "Yes" : "No",
+                              device.identifiable == true
+                                  ? AppLocalizations.of(context)!.yes
+                                  : AppLocalizations.of(context)!.no,
                               style: const TextStyle(
                                   fontSize: 16.0, color: Colors.white),
                             ),
@@ -206,15 +210,15 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.only(
+                            Padding(
+                              padding: const EdgeInsets.only(
                                   top: 0.0,
                                   right: 20.0,
                                   bottom: 0.0,
                                   left: 0.0),
                               child: Text(
-                                "What is being done with the data?",
-                                style: TextStyle(
+                                AppLocalizations.of(context)!.whatsDoneDevice,
+                                style: const TextStyle(
                                     fontSize: 16.0,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -237,22 +241,22 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.only(
+                            Padding(
+                              padding: const EdgeInsets.only(
                                   top: 0.0,
                                   right: 20.0,
                                   bottom: 0.0,
                                   left: 0.0),
                               child: Text(
-                                "For how long is the data stored?",
-                                style: TextStyle(
+                                AppLocalizations.of(context)!.timeStoredDevice,
+                                style: const TextStyle(
                                     fontSize: 16.0,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
                             Text(
-                              device.purpose,
+                              device.timeStored,
                               style: const TextStyle(
                                   fontSize: 16.0, color: Colors.white),
                             ),
@@ -268,15 +272,15 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.only(
+                            Padding(
+                              padding: const EdgeInsets.only(
                                   top: 0.0,
                                   right: 20.0,
                                   bottom: 0.0,
                                   left: 0.0),
                               child: Text(
-                                "Device owner: ",
-                                style: TextStyle(
+                                AppLocalizations.of(context)!.ownerDevice,
+                                style: const TextStyle(
                                     fontSize: 16.0,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -321,15 +325,16 @@ class _ShowDeviceState extends State<ShowDevice> {
                               )
                             : TableRow(
                                 children: <Widget>[
-                                  const Padding(
-                                    padding: EdgeInsets.only(
+                                  Padding(
+                                    padding: const EdgeInsets.only(
                                         top: 0.0,
                                         right: 20.0,
                                         bottom: 0.0,
                                         left: 0.0),
                                     child: Text(
-                                      "Privacy options: ",
-                                      style: TextStyle(
+                                      AppLocalizations.of(context)!
+                                          .privacyOptionsDevice,
+                                      style: const TextStyle(
                                           fontSize: 16.0,
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
@@ -340,12 +345,13 @@ class _ShowDeviceState extends State<ShowDevice> {
                                       if (!await launchUrl(
                                           Uri.parse(device.privacyOptions))) {
                                         throw Exception(
-                                            "Could not launch ${device.privacyOptions}");
+                                            AppLocalizations.of(context)!
+                                                .errorLaunchingLink);
                                       }
                                     },
-                                    child: const Text(
-                                      "Options",
-                                      style: TextStyle(
+                                    child: Text(
+                                      AppLocalizations.of(context)!.options,
+                                      style: const TextStyle(
                                         fontSize: 16.0,
                                         color:
                                             Color.fromARGB(255, 75, 191, 206),
@@ -366,15 +372,15 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.only(
+                            Padding(
+                              padding: const EdgeInsets.only(
                                   top: 0.0,
                                   right: 20.0,
                                   bottom: 0.0,
                                   left: 0.0),
                               child: Text(
-                                "Coordinates of the device:",
-                                style: TextStyle(
+                                AppLocalizations.of(context)!.coordinatesDevice,
+                                style: const TextStyle(
                                     fontSize: 16.0,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -397,9 +403,9 @@ class _ShowDeviceState extends State<ShowDevice> {
                         ]),
                         TableRow(
                           children: <Widget>[
-                            const Text(
-                              "Last updated:",
-                              style: TextStyle(
+                            Text(
+                              AppLocalizations.of(context)!.lastUpdated,
+                              style: const TextStyle(
                                   fontSize: 14.0,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),
@@ -431,9 +437,9 @@ class _ShowDeviceState extends State<ShowDevice> {
                               Navigator.of(context)
                                   .pushNamed(Update.route, arguments: device);
                             },
-                            child: const Text(
-                              "Edit device",
-                              style: TextStyle(
+                            child: Text(
+                              AppLocalizations.of(context)!.editDevice,
+                              style: const TextStyle(
                                   fontSize: 16.0, color: Colors.white),
                             ),
                             //    FloatingActionButton(
@@ -484,7 +490,8 @@ class _ShowDeviceState extends State<ShowDevice> {
                   final device = snapshot.data!;
 
                   return device == null
-                      ? const Center(child: Text("No Device"))
+                      ? Center(
+                          child: Text(AppLocalizations.of(context)!.noDevice))
                       : buildDevice(device);
                 } else {
                   return const Center(

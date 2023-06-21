@@ -219,5 +219,62 @@
     "no": "No",
     "@no": {
         "description": "No"
+    },
+    "whoHasAccessDevice": "Who has access to the data?",
+    "@whoHasAccessDevice": {
+        "description": "Who has access"
+    },
+    "purposeDevice": "What is the purpose for collection?",
+    "@purposeDevice": {
+        "description": "Purpose"
+    },
+    "identifyDevice": "Can the data identify someone?",
+    "@identifyDevice": {
+        "description": "Identify"
+    },
+    "whatsDoneDevice": "What is being done with the data?",
+    "@whatsDoneDevice": {
+        "description": "What is being done"
+    },
+    "timeStoredDevice": "For how long is the data stored?",
+    "@timeStoredDevice": {
+        "description": "Time stored"
+    },
+    "ownerDevice": "Device owner: ",
+    "@ownerDevice": {
+        "description": "Owner"
+    },
+    "privacyOptionsDevice": "Privacy options: ",
+    "@privacyOptionsDevice": {
+        "description": "Privacy options"
+    },
+    "coordinatesDevice": "Coordinates of the device:",
+    "@coordinatesDevice": {
+        "description": "Coordinates"
+    },
+    "options": "Options",
+    "@options": {
+        "description": "Options"
+    },
+    "lastUpdated": "Last updated:",
+    "@options": {
+        "description": "Last updated"
+    },
+    "editDevice": "Edit device",
+    "@editDevice": {
+        "description": "Edit device"
+    },
+    "noDevice": "No Device",
+    "@noDevice": {
+        "description": "No Device"
+    },
+    "errorLaunchingLink": "Could not launch ${link}",
+    "@errorLaunchingLink": {
+        "description": "An error occured when connecting to firestore database",
+        "placeholders": {
+            "link": {
+                "type": "String"
+            }
+        }
     }
 }
