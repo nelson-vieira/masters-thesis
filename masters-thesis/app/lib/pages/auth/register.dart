@@ -118,7 +118,7 @@ class _RegisterState extends State<Register> {
                 TextFormField(
                   controller: controllerEmail,
                   textInputAction: TextInputAction.next,
-                  decoration: decoration("Email"),
+                  decoration: decoration(AppLocalizations.of(context)!.email),
                   style: const TextStyle(
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),
@@ -132,7 +132,8 @@ class _RegisterState extends State<Register> {
                 TextFormField(
                   controller: controllerPassword,
                   textInputAction: TextInputAction.next,
-                  decoration: decoration("Password"),
+                  decoration:
+                      decoration(AppLocalizations.of(context)!.password),
                   obscureText: true,
                   style: const TextStyle(
                     color: Color.fromARGB(255, 255, 255, 255),
@@ -147,7 +148,8 @@ class _RegisterState extends State<Register> {
                 TextFormField(
                   controller: controllerPasswordConfirm,
                   textInputAction: TextInputAction.done,
-                  decoration: decoration("Password Confirmation"),
+                  decoration: decoration(
+                      AppLocalizations.of(context)!.passwordConfirmation),
                   obscureText: true,
                   style: const TextStyle(
                     color: Color.fromARGB(255, 255, 255, 255),

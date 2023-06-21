@@ -276,5 +276,17 @@
                 "type": "String"
             }
         }
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Email"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "Password"
+    },
+    "passwordConfirmation": "Password Confirmation",
+    "@passwordConfirmation": {
+        "description": "Password Confirmation"
     }
 }

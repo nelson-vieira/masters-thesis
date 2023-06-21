@@ -100,7 +100,7 @@ class _LoginState extends State<Login> {
             children: <Widget>[
               TextField(
                 controller: controllerEmail,
-                decoration: decoration("Email"),
+                decoration: decoration(AppLocalizations.of(context)!.email),
                 textInputAction: TextInputAction.next,
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
@@ -109,7 +109,7 @@ class _LoginState extends State<Login> {
               const SizedBox(height: 24),
               TextField(
                 controller: controllerPassword,
-                decoration: decoration("Password"),
+                decoration: decoration(AppLocalizations.of(context)!.password),
                 textInputAction: TextInputAction.done,
                 obscureText: true,
                 style: const TextStyle(

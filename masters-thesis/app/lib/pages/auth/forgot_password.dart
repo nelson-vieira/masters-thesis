@@ -93,7 +93,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               children: <Widget>[
                 TextFormField(
                   controller: controllerEmail,
-                  decoration: decoration('Email'),
+                  decoration: decoration(AppLocalizations.of(context)!.email),
                   style: const TextStyle(
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),

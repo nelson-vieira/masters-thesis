@@ -25,7 +25,7 @@
     "signIn": "Iniciar sessão",
     "forgotPassword": "Esqueceu-se da palavra-passe?",
     "noAccount": "Não tem conta? ",
-    "register": "Registar-se",
+    "register": "Fazer registo",
     "resetPassword": "Redefinir palavra-passe",
     "emailValidation": "Introduza um endereço de correio eletrónico válido",
     "passwordEmailSent": "Password reset email sent!",
@@ -65,5 +65,8 @@
     "lastUpdated": "Última atualização:",
     "editDevice": "Editar dispositivo",
     "noDevice": "Nenhum dispositivo",
-    "errorLaunchingLink": "Não foi possível iniciar ${link}"
+    "errorLaunchingLink": "Não foi possível iniciar ${link}",
+    "email": "Email",
+    "password": "Senha",
+    "passwordConfirmation": "Confirmar Senha"
 }
