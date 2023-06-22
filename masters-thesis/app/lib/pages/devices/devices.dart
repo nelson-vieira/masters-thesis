@@ -12,6 +12,7 @@ import "dart:math" as math;
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/devices/create.dart";
 import "package:iotprivacy/pages/devices/show.dart";
+import "package:iotprivacy/helpers/category.dart";
 
 class Devices extends StatefulWidget {
   static const String route = "/devices";
@@ -86,7 +87,7 @@ class _DevicesState extends State<Devices> {
                   final category = snapshot.data!;
 
                   return Text(
-                    category.get("name"),
+                    CategoryHelper.categoryName(context, category.get("name")),
                     style: const TextStyle(fontSize: 16.0, color: Colors.white),
                   );
                 } else {

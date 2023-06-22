@@ -11,6 +11,7 @@ import "package:url_launcher/url_launcher.dart";
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/devices/update.dart";
+import "package:iotprivacy/helpers/category.dart";
 
 class ShowDevice extends StatefulWidget {
   static const String route = "/showdevice";
@@ -93,7 +94,8 @@ class _ShowDeviceState extends State<ShowDevice> {
                                   final category = snapshot.data!;
 
                                   return Text(
-                                    category.get("name"),
+                                    CategoryHelper.categoryName(
+                                        context, category.get("name")),
                                     style: const TextStyle(
                                         fontSize: 16.0, color: Colors.white),
                                   );

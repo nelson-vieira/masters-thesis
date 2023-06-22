@@ -13,6 +13,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/models/user.dart";
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/models/category.dart";
+import "package:iotprivacy/helpers/category.dart";
 
 class Update extends StatefulWidget {
   static const String route = "/update";
@@ -141,7 +142,7 @@ class _UpdateState extends State<Update> {
   DropdownMenuItem<String> buildCategories(Category cat) => DropdownMenuItem(
         value: cat.id,
         child: Text(
-          cat.name,
+          CategoryHelper.categoryName(context, cat.name),
           style: const TextStyle(
             color: Color.fromARGB(255, 255, 255, 255),
           ),

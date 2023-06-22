@@ -11,6 +11,7 @@ import "package:cloud_firestore/cloud_firestore.dart";
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/models/category.dart";
+import "package:iotprivacy/helpers/category.dart";
 
 class Create extends StatefulWidget {
   static const String route = "/create";
@@ -107,7 +108,7 @@ class _CreateState extends State<Create> {
   DropdownMenuItem<String> buildCategories(Category cat) => DropdownMenuItem(
         value: cat.id,
         child: Text(
-          cat.name,
+          CategoryHelper.categoryName(context, cat.name),
           style: const TextStyle(
             color: Color.fromARGB(255, 255, 255, 255),
           ),

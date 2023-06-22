@@ -68,5 +68,13 @@
     "errorLaunchingLink": "Não foi possível iniciar ${link}",
     "email": "Email",
     "password": "Senha",
-    "passwordConfirmation": "Confirmar Senha"
+    "passwordConfirmation": "Confirmar Senha",
+    "categoryUniqueIdentification": "Identificação única",
+    "categoryEnvironment": "Ambiente",
+    "categoryBiometrics": "Biometria",
+    "categoryLocation": "Localização",
+    "categoryPresence": "Presença",
+    "categoryAudio": "Áudio",
+    "categoryVisual": "Visual",
+    "categoryNone": "Sem categoria"
 }

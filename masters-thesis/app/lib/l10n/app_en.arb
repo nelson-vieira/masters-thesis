@@ -288,5 +288,37 @@
     "passwordConfirmation": "Password Confirmation",
     "@passwordConfirmation": {
         "description": "Password Confirmation"
+    },
+    "categoryUniqueIdentification": "Unique identification",
+    "@categoryUniqueIdentification": {
+        "description": "Unique identification category attribute"
+    },
+    "categoryEnvironment": "Environment",
+    "@categoryEnvironment": {
+        "description": "Environment category attribute"
+    },
+    "categoryBiometrics": "Biometrics",
+    "@categoryBiometrics": {
+        "description": "Biometrics category attribute"
+    },
+    "categoryLocation": "Location",
+    "@categoryLocation": {
+        "description": "Location category attribute"
+    },
+    "categoryPresence": "Presence",
+    "@categoryPresence": {
+        "description": "Presence category attribute"
+    },
+    "categoryAudio": "Audio",
+    "@categoryAudio": {
+        "description": "Audio category attribute"
+    },
+    "categoryVisual": "Visual",
+    "@categoryVisual": {
+        "description": "Visual category attribute"
+    },
+    "categoryNone": "No Category",
+    "@categoryNone": {
+        "description": "No category attribute"
     }
 }
