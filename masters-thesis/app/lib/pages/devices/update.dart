@@ -380,6 +380,17 @@ class _UpdateState extends State<Update> {
                 },
               ),
               const SizedBox(
+                height: 24,
+              ),
+              TextField(
+                controller: controllerOwner,
+                decoration: decoration(
+                    AppLocalizations.of(context)!.deviceOwnerAttribute),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+              const SizedBox(
                 height: 32,
               ),
               ElevatedButton(
