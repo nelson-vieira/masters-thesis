@@ -23,7 +23,7 @@ Users can add and edit IoT devices.
 This application is still in beta.  
 ***Android only**, iOS coming soon*
 
-[v0.31.1](https://github.com/nelson-vieira/masters-thesis/releases/tag/app%40v0.31.1)
+[v0.32.0](https://github.com/nelson-vieira/masters-thesis/releases/tag/app%400.32.0)
 
 ## License
 
