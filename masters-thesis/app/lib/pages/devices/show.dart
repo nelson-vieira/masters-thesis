@@ -32,6 +32,7 @@ class _ShowDeviceState extends State<ShowDevice> {
     if (snapshot.exists) {
       return Device.fromJson(snapshot.data()!);
     }
+    return null;
   }
 
   Image categoryIcon(Device device) {
@@ -491,6 +492,7 @@ class _ShowDeviceState extends State<ShowDevice> {
                 } else if (snapshot.hasData) {
                   final device = snapshot.data!;
 
+                  // ignore: unnecessary_null_comparison
                   return device == null
                       ? Center(
                           child: Text(AppLocalizations.of(context)!.noDevice))

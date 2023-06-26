@@ -22,7 +22,6 @@ class VerifyEmail extends StatefulWidget {
 class _VerifyEmailState extends State<VerifyEmail> {
   bool isEmailVerified = false;
 
-  @override
   void iniState() {
     super.initState();
 
@@ -40,9 +39,9 @@ class _VerifyEmailState extends State<VerifyEmail> {
 
   @override
   Widget build(BuildContext context) => isEmailVerified
-      ? Account()
+      ? const Account()
       : Scaffold(
           appBar: AppBar(
-          title: Text("Verify Email"),
+          title: const Text("Verify Email"),
         ));
 }
