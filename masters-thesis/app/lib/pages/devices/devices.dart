@@ -122,76 +122,69 @@ class _DevicesState extends State<Devices> {
         child: Container(
           padding: const EdgeInsets.all(16),
           color: const Color.fromARGB(255, 16, 44, 53),
-          child: FutureBuilder(
-              future: readDevices().first,
-              builder: (context, snapshot) {
-                if (snapshot.hasError) {
-                  return Center(
-                      child: Text(
-                    AppLocalizations.of(context)!
-                        .firebaseError("${snapshot.error}"),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 17.0,
-                    ),
-                    textAlign: TextAlign.center,
-                  ));
-                } else if (snapshot.hasData) {
-                  final devices = snapshot.data!;
+          child: Column(
+            children: [
+              FirebaseAuth.instance.currentUser != null
+                  ? ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size.fromHeight(50),
+                        backgroundColor: const Color(0xFF0A8A4E),
+                        padding: const EdgeInsets.only(
+                            left: 0.0, top: 18.0, right: 0.0, bottom: 18.0),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(Create.route);
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.account_tree_outlined),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            AppLocalizations.of(context)!.addDevice,
+                            style: const TextStyle(
+                                fontSize: 16.0, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    )
+                  : Container(),
+              FutureBuilder(
+                  future: readDevices().first,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Center(
+                          child: Text(
+                        AppLocalizations.of(context)!
+                            .firebaseError("${snapshot.error}"),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                        ),
+                        textAlign: TextAlign.center,
+                      ));
+                    } else if (snapshot.hasData) {
+                      final devices = snapshot.data!;
 
-                  return FirebaseAuth.instance.currentUser != null
-                      ? Column(
-                          children: <Widget>[
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                minimumSize: const Size.fromHeight(50),
-                                backgroundColor: Color(0xFF0A8A4E),
-                                padding: const EdgeInsets.only(
-                                    left: 0.0,
-                                    top: 18.0,
-                                    right: 0.0,
-                                    bottom: 18.0),
-                              ),
-                              onPressed: () {
-                                Navigator.of(context).pushNamed(Create.route);
-                              },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(Icons.account_tree_outlined),
-                                  const SizedBox(
-                                    width: 15,
-                                  ),
-                                  Text(
-                                    AppLocalizations.of(context)!.addDevice,
-                                    style: const TextStyle(
-                                        fontSize: 16.0, color: Colors.white),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 25,
-                            ),
-                            ListView(
-                              scrollDirection: Axis.vertical,
-                              shrinkWrap: true,
-                              children: devices.map(buildDevices).toList(),
-                            )
-                          ],
-                        )
-                      : ListView(
-                          children: devices.map(buildDevices).toList(),
-                        );
-                  // ListView(
-                  //   children: devices.map(buildDevices).toList(),
-                  // );
-                } else {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-              }),
+                      return Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 24.0, right: 0.0, left: 0.0, bottom: 0.0),
+                          child: ListView(
+                            children: devices.map(buildDevices).toList(),
+                          ),
+                        ),
+                      );
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  }),
+            ],
+          ),
         ),
       ),
     );
