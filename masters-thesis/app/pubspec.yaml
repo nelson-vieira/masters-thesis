@@ -79,6 +79,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  graphic: ^2.2.0
 
 dev_dependencies:
   flutter_test:
