@@ -101,6 +101,7 @@ class _IotPrivacyState extends State<IotPrivacy> {
           canvasColor: const Color(0xFF334150),
         ),
         child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
           showSelectedLabels: true,
           showUnselectedLabels: true,
@@ -122,54 +123,49 @@ class _IotPrivacyState extends State<IotPrivacy> {
           ),
           items: [
             BottomNavigationBarItem(
-              icon: _currentIndex == 0
-                  ? const Icon(
-                      Icons.home,
-                    )
-                  : const Icon(
-                      Icons.home_filled,
-                    ),
+              icon: const Icon(
+                Icons.house_outlined,
+              ),
               label: AppLocalizations.of(context)!.home,
+              activeIcon: const Icon(
+                Icons.house,
+              ),
             ),
             BottomNavigationBarItem(
-              icon: _currentIndex == 1
-                  ? const Icon(
-                      Icons.info,
-                    )
-                  : const Icon(
-                      Icons.info_outline_rounded,
-                    ),
+              icon: const Icon(
+                Icons.info_outline_rounded,
+              ),
               label: AppLocalizations.of(context)!.about,
+              activeIcon: const Icon(
+                Icons.info,
+              ),
             ),
             BottomNavigationBarItem(
-              icon: _currentIndex == 2
-                  ? const Icon(
-                      Icons.menu_book_rounded,
-                    )
-                  : const Icon(
-                      Icons.book_outlined,
-                    ),
+              icon: const Icon(
+                Icons.book_outlined,
+              ),
               label: AppLocalizations.of(context)!.info,
+              activeIcon: const Icon(
+                Icons.menu_book_rounded,
+              ),
             ),
             BottomNavigationBarItem(
-              icon: _currentIndex == 3
-                  ? const Icon(
-                      Icons.account_circle,
-                    )
-                  : const Icon(
-                      Icons.account_circle_outlined,
-                    ),
+              icon: const Icon(
+                Icons.account_circle_outlined,
+              ),
               label: AppLocalizations.of(context)!.account,
+              activeIcon: const Icon(
+                Icons.account_circle,
+              ),
             ),
             BottomNavigationBarItem(
-              icon: _currentIndex == 4
-                  ? const Icon(
-                      Icons.account_tree,
-                    )
-                  : const Icon(
-                      Icons.account_tree_outlined,
-                    ),
+              icon: const Icon(
+                Icons.account_tree_outlined,
+              ),
               label: AppLocalizations.of(context)!.devices,
+              activeIcon: const Icon(
+                Icons.account_tree,
+              ),
             ),
           ],
           onTap: (index) => setState(() => _currentIndex = index),
