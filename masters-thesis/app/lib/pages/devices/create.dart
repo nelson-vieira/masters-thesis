@@ -149,8 +149,8 @@ class _CreateState extends State<Create> {
                 ),
               ),
               const SizedBox(height: 24),
-              FutureBuilder(
-                  future: readCategories().first,
+              StreamBuilder(
+                  stream: readCategories().first.asStream(),
                   builder: (context, snapshot) {
                     if (snapshot.hasError) {
                       return Center(

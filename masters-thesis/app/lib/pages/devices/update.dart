@@ -204,8 +204,8 @@ class _UpdateState extends State<Update> {
                 ),
               ),
               const SizedBox(height: 24),
-              FutureBuilder(
-                  future: readCategories().first,
+              StreamBuilder(
+                  stream: readCategories().first.asStream(),
                   builder: (context, snapshot) {
                     if (snapshot.hasError) {
                       return Center(
