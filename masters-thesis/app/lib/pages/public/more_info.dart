@@ -7,6 +7,7 @@
 import "package:flutter/material.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:iotprivacy/pages/public/statistics.dart";
 
 class MoreInfo extends StatelessWidget {
   static const String route = "/more_info";
@@ -214,6 +215,21 @@ class MoreInfo extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Color(0xFF0A8A4E),
+        label: Text(
+          "Estatísticas",
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        tooltip: AppLocalizations.of(context)!.addDeviceTooltip,
+        icon: const Icon(Icons.graphic_eq_outlined),
+        onPressed: () {
+          Navigator.of(context).pushNamed(Statistics.route);
+        },
       ),
     );
   }

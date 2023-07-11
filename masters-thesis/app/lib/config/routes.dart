@@ -16,6 +16,7 @@ import "package:iotprivacy/pages/devices/update.dart";
 import "package:iotprivacy/pages/devices/create.dart";
 import "package:iotprivacy/pages/auth/account.dart";
 import "package:iotprivacy/pages/auth/forgot_password.dart";
+import "package:iotprivacy/pages/public/statistics.dart";
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -38,6 +39,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const Account());
       case ForgotPassword.route:
         return MaterialPageRoute(builder: (_) => const ForgotPassword());
+      case Statistics.route:
+        return MaterialPageRoute(builder: (_) => const Statistics());
       case ShowDevice.route:
         if (args is Device) {
           return MaterialPageRoute(
