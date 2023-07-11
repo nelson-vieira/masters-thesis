@@ -33,21 +33,21 @@ class _DevicesState extends State<Devices> {
   AssetImage markerImage(Device device) {
     switch (device.category) {
       case "08gNFyCLyxSxiYIcdFx0":
-        return AssetImage("assets/images/unique_identification.png");
+        return const AssetImage("assets/images/unique_identification.png");
       case "1qyoLqyrgmLTpLklqgFX":
-        return AssetImage("assets/images/environment.png");
+        return const AssetImage("assets/images/environment.png");
       case "6yYW2K9Fv9AogHPfut5l":
-        return AssetImage("assets/images/biometrics.png");
+        return const AssetImage("assets/images/biometrics.png");
       case "WnvAzxPaI5Z8hFzUE228":
-        return AssetImage("assets/images/location.png");
+        return const AssetImage("assets/images/location.png");
       case "bvf9p6MYF1DwxgDab2Mp":
-        return AssetImage("assets/images/presence.png");
+        return const AssetImage("assets/images/presence.png");
       case "rhSmoONpwDl8B1mrXBZL":
-        return AssetImage("assets/images/audio.png");
+        return const AssetImage("assets/images/audio.png");
       case "vfWA43iLPsUj6ZW3D5Rg":
-        return AssetImage("assets/images/visual.png");
+        return const AssetImage("assets/images/visual.png");
       default:
-        return AssetImage("assets/images/icon.png");
+        return const AssetImage("assets/images/icon.png");
     }
   }
 
@@ -66,11 +66,12 @@ class _DevicesState extends State<Devices> {
           title: Text(
             device.name,
           ),
-          subtitle: FutureBuilder(
-              future: FirebaseFirestore.instance
+          subtitle: StreamBuilder(
+              stream: FirebaseFirestore.instance
                   .collection("categories")
                   .doc(device.category)
-                  .get(),
+                  .get()
+                  .asStream(),
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
                   return Center(
@@ -151,8 +152,8 @@ class _DevicesState extends State<Devices> {
                       ),
                     )
                   : Container(),
-              FutureBuilder(
-                  future: readDevices().first,
+              StreamBuilder(
+                  stream: readDevices().first.asStream(),
                   builder: (context, snapshot) {
                     if (snapshot.hasError) {
                       return Center(
