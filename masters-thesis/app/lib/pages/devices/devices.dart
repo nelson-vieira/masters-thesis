@@ -66,12 +66,11 @@ class _DevicesState extends State<Devices> {
           title: Text(
             device.name,
           ),
-          subtitle: StreamBuilder(
-              stream: FirebaseFirestore.instance
+          subtitle: FutureBuilder(
+              future: FirebaseFirestore.instance
                   .collection("categories")
                   .doc(device.category)
-                  .get()
-                  .asStream(),
+                  .get(),
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
                   return Center(
@@ -152,8 +151,8 @@ class _DevicesState extends State<Devices> {
                       ),
                     )
                   : Container(),
-              StreamBuilder(
-                  stream: readDevices().first.asStream(),
+              FutureBuilder(
+                  future: readDevices().first,
                   builder: (context, snapshot) {
                     if (snapshot.hasError) {
                       return Center(

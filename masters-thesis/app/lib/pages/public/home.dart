@@ -71,14 +71,14 @@ class _HomeState extends State<Home> {
 
   // This function gets all devices from database and for each one, createMarker
   // is called which creates the Marker
-  getMarkersData() {
-    FirebaseFirestore.instance.collection("devices").get().then((data) {
+  getMarkersData() async {
+    await FirebaseFirestore.instance.collection("devices").get().then((data) {
       if (data.docs.isNotEmpty) {
         for (int i = 0; i < data.docs.length; i++) {
           createMarker(Device.fromJson(data.docs[i].data()));
         }
       }
-    }).asStream();
+    });
   }
 
   @override
