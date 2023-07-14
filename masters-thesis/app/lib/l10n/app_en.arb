@@ -320,5 +320,57 @@
     "categoryNone": "No Category",
     "@categoryNone": {
         "description": "No category attribute"
+    },
+    "statistics": "Statistics",
+    "@statistics": {
+        "description": "IoT devices statistics page"
+    },
+    "perCategory": "Per category",
+    "@perCategory": {
+        "description": "IoT devices per category"
+    },
+    "categoryColumn": "category",
+    "@categoryColumn": {
+        "description": "Category Column"
+    },
+    "numberColumn": "number",
+    "@numberColumn": {
+        "description": "Number Column"
+    },
+    "perIdentifiability": "Per identifiability",
+    "@perIdentifiability": {
+        "description": "IoT devices per identifiability"
+    },
+    "identifiableColumn": "identifiable",
+    "@identifiableColumn": {
+        "description": "Identifiable Column"
+    },
+    "boolColumn": "bool",
+    "@boolColumn": {
+        "description": "Identifiable boolean"
+    },
+    "privacyOptionsColumn": "privacy_options",
+    "@privacyOptionsColumn": {
+        "description": "privacyOptions Column"
+    },
+    "perPrivacyOptions": "Per privacy options",
+    "@perPrivacyOptions": {
+        "description": "privacyOptions Column"
+    },
+    "yesPrivacyOptions": "Has privacy options",
+    "@yesPrivacyOptions": {
+        "description": "Has privacy options"
+    },
+    "noPrivacyOptions": "No privacy options",
+    "@noPrivacyOptions": {
+        "description": "No privacy options"
+    },
+    "yesIdentifiable": "Identifiable",
+    "@yesIdentifiable": {
+        "description": "Data is identifiable"
+    },
+    "noIdentifiable": "Not identifiable",
+    "@noIdentifiable": {
+        "description": "Data is not identifiable"
     }
 }

@@ -7,7 +7,7 @@
 import "package:flutter/material.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:graphic/graphic.dart";
-import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import "package:iotprivacy/models/device.dart";
 
 class Statistics extends StatefulWidget {
@@ -32,7 +32,7 @@ class _StatisticsState extends State<Statistics> {
           },
         ),
         title: Text(
-          "Estatísticas",
+          AppLocalizations.of(context)!.statistics,
           style: const TextStyle(fontSize: 30),
         ),
         backgroundColor: const Color(0xFF334150),
@@ -48,7 +48,7 @@ class _StatisticsState extends State<Statistics> {
               child: Column(
                 children: [
                   Text(
-                    "Per category",
+                    AppLocalizations.of(context)!.perCategory,
                     locale: const Locale("en", "UK"),
                     overflow: TextOverflow.visible,
                     textAlign: TextAlign.center,
@@ -85,88 +85,120 @@ class _StatisticsState extends State<Statistics> {
                             return Chart(
                               data: [
                                 {
-                                  "category": "Environment",
-                                  "number": devices.docs
-                                      .where((element) =>
-                                          element.get("category") ==
-                                          "1qyoLqyrgmLTpLklqgFX")
-                                      .length
+                                  AppLocalizations.of(context)!.categoryColumn:
+                                      AppLocalizations.of(context)!
+                                          .categoryEnvironment,
+                                  AppLocalizations.of(context)!.numberColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("category") ==
+                                              "1qyoLqyrgmLTpLklqgFX")
+                                          .length
                                 },
                                 {
-                                  "category": "Visual",
-                                  "number": devices.docs
-                                      .where((element) =>
-                                          element.get("category") ==
-                                          "vfWA43iLPsUj6ZW3D5Rg")
-                                      .length
+                                  AppLocalizations.of(context)!.categoryColumn:
+                                      AppLocalizations.of(context)!
+                                          .categoryVisual,
+                                  AppLocalizations.of(context)!.numberColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("category") ==
+                                              "vfWA43iLPsUj6ZW3D5Rg")
+                                          .length
                                 },
                                 {
-                                  "category": "Audio",
-                                  "number": devices.docs
-                                      .where((element) =>
-                                          element.get("category") ==
-                                          "rhSmoONpwDl8B1mrXBZL")
-                                      .length
+                                  AppLocalizations.of(context)!.categoryColumn:
+                                      AppLocalizations.of(context)!
+                                          .categoryAudio,
+                                  AppLocalizations.of(context)!.numberColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("category") ==
+                                              "rhSmoONpwDl8B1mrXBZL")
+                                          .length
                                 },
                                 {
-                                  "category": "Biometrics",
-                                  "number": devices.docs
-                                      .where((element) =>
-                                          element.get("category") ==
-                                          "6yYW2K9Fv9AogHPfut5l")
-                                      .length
+                                  AppLocalizations.of(context)!.categoryColumn:
+                                      AppLocalizations.of(context)!
+                                          .categoryBiometrics,
+                                  AppLocalizations.of(context)!.numberColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("category") ==
+                                              "6yYW2K9Fv9AogHPfut5l")
+                                          .length
                                 },
                                 {
-                                  "category": "Location",
-                                  "number": devices.docs
-                                      .where((element) =>
-                                          element.get("category") ==
-                                          "WnvAzxPaI5Z8hFzUE228")
-                                      .length
+                                  AppLocalizations.of(context)!.categoryColumn:
+                                      AppLocalizations.of(context)!
+                                          .categoryLocation,
+                                  AppLocalizations.of(context)!.numberColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("category") ==
+                                              "WnvAzxPaI5Z8hFzUE228")
+                                          .length
                                 },
                                 {
-                                  "category": "Presence",
-                                  "number": devices.docs
-                                      .where((element) =>
-                                          element.get("category") ==
-                                          "bvf9p6MYF1DwxgDab2Mp")
-                                      .length
+                                  AppLocalizations.of(context)!.categoryColumn:
+                                      AppLocalizations.of(context)!
+                                          .categoryPresence,
+                                  AppLocalizations.of(context)!.numberColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("category") ==
+                                              "bvf9p6MYF1DwxgDab2Mp")
+                                          .length
                                 },
                                 {
-                                  "category": "Unique Identification",
-                                  "number": devices.docs
-                                      .where((element) =>
-                                          element.get("category") ==
-                                          "08gNFyCLyxSxiYIcdFx0")
-                                      .length
+                                  AppLocalizations.of(context)!.categoryColumn:
+                                      AppLocalizations.of(context)!
+                                          .categoryUniqueIdentification,
+                                  AppLocalizations.of(context)!.numberColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("category") ==
+                                              "08gNFyCLyxSxiYIcdFx0")
+                                          .length
                                 },
                               ],
                               variables: {
-                                "category": Variable(
-                                  accessor: (Map map) =>
-                                      map["category"] as String,
+                                AppLocalizations.of(context)!.categoryColumn:
+                                    Variable(
+                                  accessor: (Map map) => map[
+                                      AppLocalizations.of(context)!
+                                          .categoryColumn] as String,
                                 ),
-                                "number": Variable(
-                                  accessor: (Map map) => map["number"] as num,
+                                AppLocalizations.of(context)!.numberColumn:
+                                    Variable(
+                                  accessor: (Map map) => map[
+                                      AppLocalizations.of(context)!
+                                          .numberColumn] as num,
                                 ),
                               },
                               transforms: [
                                 Sort(
                                     compare: (tuple1, tuple2) =>
-                                        tuple1["number"] - tuple2["number"])
+                                        tuple1[AppLocalizations.of(context)!
+                                            .numberColumn] -
+                                        tuple2[AppLocalizations.of(context)!
+                                            .numberColumn])
                               ],
                               marks: [
                                 IntervalMark(
                                   label: LabelEncode(
-                                      encoder: (tuple) =>
-                                          Label(tuple["category"].toString())),
+                                      encoder: (tuple) => Label(tuple[
+                                              AppLocalizations.of(context)!
+                                                  .categoryColumn]
+                                          .toString())),
                                   shape: ShapeEncode(
                                       value: RectShape(
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(10)),
                                   )),
                                   color: ColorEncode(
-                                      variable: "category",
+                                      variable: AppLocalizations.of(context)!
+                                          .categoryColumn,
                                       values: Defaults.colors10),
                                   elevation: ElevationEncode(value: 5),
                                   transition: Transition(
@@ -193,7 +225,10 @@ class _StatisticsState extends State<Statistics> {
                                 backgroundColor: Colors.black,
                                 elevation: 5,
                                 textStyle: Defaults.textStyle,
-                                variables: ["category", "number"],
+                                variables: [
+                                  AppLocalizations.of(context)!.categoryColumn,
+                                  AppLocalizations.of(context)!.numberColumn
+                                ],
                               ),
                               crosshair: CrosshairGuide(),
                             );
@@ -208,7 +243,7 @@ class _StatisticsState extends State<Statistics> {
                     height: 35,
                   ),
                   Text(
-                    "Per identifiability",
+                    AppLocalizations.of(context)!.perIdentifiability,
                     locale: const Locale("en", "UK"),
                     overflow: TextOverflow.visible,
                     textAlign: TextAlign.center,
@@ -246,48 +281,70 @@ class _StatisticsState extends State<Statistics> {
                             return Chart(
                               data: [
                                 {
-                                  "identifiable": "Identifiable",
-                                  "bool": devices.docs
-                                      .where((element) =>
-                                          element.get("identifiable") == true)
-                                      .length
+                                  AppLocalizations.of(context)!
+                                          .identifiableColumn:
+                                      AppLocalizations.of(context)!
+                                          .yesIdentifiable,
+                                  AppLocalizations.of(context)!.boolColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("identifiable") ==
+                                              true)
+                                          .length
                                 },
                                 {
-                                  "identifiable": "Not identifiable",
-                                  "bool": devices.docs
-                                      .where((element) =>
-                                          element.get("identifiable") == false)
-                                      .length
+                                  AppLocalizations.of(context)!
+                                          .identifiableColumn:
+                                      AppLocalizations.of(context)!
+                                          .noIdentifiable,
+                                  AppLocalizations.of(context)!.boolColumn:
+                                      devices.docs
+                                          .where(
+                                              (element) =>
+                                                  element.get("identifiable") ==
+                                                  false)
+                                          .length
                                 },
                               ],
                               variables: {
-                                "identifiable": Variable(
-                                  accessor: (Map map) =>
-                                      map["identifiable"] as String,
+                                AppLocalizations.of(context)!
+                                    .identifiableColumn: Variable(
+                                  accessor: (Map map) => map[
+                                      AppLocalizations.of(context)!
+                                          .identifiableColumn] as String,
                                 ),
-                                "bool": Variable(
-                                  accessor: (Map map) => map["bool"] as num,
+                                AppLocalizations.of(context)!.boolColumn:
+                                    Variable(
+                                  accessor: (Map map) => map[
+                                      AppLocalizations.of(context)!
+                                          .boolColumn] as num,
                                   scale: LinearScale(min: -8, max: 8),
                                 ),
                               },
                               transforms: [
                                 Sort(
-                                  compare: (a, b) =>
-                                      ((b["bool"] as num) - (a["bool"] as num))
-                                          .toInt(),
+                                  compare: (a, b) => ((b[
+                                              AppLocalizations.of(context)!
+                                                  .boolColumn] as num) -
+                                          (a[AppLocalizations.of(context)!
+                                              .boolColumn] as num))
+                                      .toInt(),
                                 )
                               ],
                               marks: [
                                 IntervalMark(
                                   label: LabelEncode(
                                       encoder: (tuple) => Label(
-                                            tuple["bool"].toString(),
+                                            tuple[AppLocalizations.of(context)!
+                                                    .boolColumn]
+                                                .toString(),
                                             LabelStyle(
                                                 textStyle: Defaults.runeStyle),
                                           )),
                                   shape: ShapeEncode(value: FunnelShape()),
                                   color: ColorEncode(
-                                      variable: "identifiable",
+                                      variable: AppLocalizations.of(context)!
+                                          .identifiableColumn,
                                       values: Defaults.colors10),
                                   modifiers: [SymmetricModifier()],
                                 )
@@ -306,7 +363,7 @@ class _StatisticsState extends State<Statistics> {
                     height: 35,
                   ),
                   Text(
-                    "Per privacy options",
+                    AppLocalizations.of(context)!.perPrivacyOptions,
                     locale: const Locale("en", "UK"),
                     overflow: TextOverflow.visible,
                     textAlign: TextAlign.center,
@@ -344,27 +401,42 @@ class _StatisticsState extends State<Statistics> {
                             return Chart(
                               data: [
                                 {
-                                  "privacyOptions": "Has privacy options",
-                                  "bool": devices.docs
-                                      .where((element) =>
-                                          element.get("privacyOptions") != "")
-                                      .length
+                                  AppLocalizations.of(context)!
+                                          .privacyOptionsColumn:
+                                      AppLocalizations.of(context)!
+                                          .yesPrivacyOptions,
+                                  AppLocalizations.of(context)!.boolColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("privacyOptions") !=
+                                              "")
+                                          .length
                                 },
                                 {
-                                  "privacyOptions": "No privacy options",
-                                  "bool": devices.docs
-                                      .where((element) =>
-                                          element.get("privacyOptions") == "")
-                                      .length
+                                  AppLocalizations.of(context)!
+                                          .privacyOptionsColumn:
+                                      AppLocalizations.of(context)!
+                                          .noPrivacyOptions,
+                                  AppLocalizations.of(context)!.boolColumn:
+                                      devices.docs
+                                          .where((element) =>
+                                              element.get("privacyOptions") ==
+                                              "")
+                                          .length
                                 },
                               ],
                               variables: {
-                                "privacyOptions": Variable(
-                                  accessor: (Map map) =>
-                                      map["privacyOptions"] as String,
+                                AppLocalizations.of(context)!
+                                    .privacyOptionsColumn: Variable(
+                                  accessor: (Map map) => map[
+                                      AppLocalizations.of(context)!
+                                          .privacyOptionsColumn] as String,
                                 ),
-                                "bool": Variable(
-                                  accessor: (Map map) => map["bool"] as num,
+                                AppLocalizations.of(context)!.boolColumn:
+                                    Variable(
+                                  accessor: (Map map) => map[
+                                      AppLocalizations.of(context)!
+                                          .boolColumn] as num,
                                 ),
                               },
                               marks: [
@@ -372,11 +444,14 @@ class _StatisticsState extends State<Statistics> {
                                   shape: ShapeEncode(
                                       value: RectShape(labelPosition: 0.5)),
                                   color: ColorEncode(
-                                      variable: 'bool',
+                                      variable: AppLocalizations.of(context)!
+                                          .boolColumn,
                                       values: Defaults.colors10),
                                   label: LabelEncode(
                                       encoder: (tuple) => Label(
-                                            tuple['bool'].toString(),
+                                            tuple[AppLocalizations.of(context)!
+                                                    .boolColumn]
+                                                .toString(),
                                             LabelStyle(
                                                 textStyle: const TextStyle(
                                                     fontSize: 6)),
@@ -393,8 +468,9 @@ class _StatisticsState extends State<Statistics> {
                                 Defaults.verticalAxis,
                               ],
                               selections: {
-                                'tap': PointSelection(
-                                  variable: 'privacyOptions',
+                                "tap": PointSelection(
+                                  variable: AppLocalizations.of(context)!
+                                      .privacyOptionsColumn,
                                 )
                               },
                               tooltip: TooltipGuide(multiTuples: true),

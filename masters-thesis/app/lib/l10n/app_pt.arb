@@ -76,5 +76,18 @@
     "categoryPresence": "Presença",
     "categoryAudio": "Áudio",
     "categoryVisual": "Visual",
-    "categoryNone": "Sem categoria"
+    "categoryNone": "Sem categoria",
+    "statistics": "Estatísticas",
+    "perCategory": "Por categoria",
+    "categoryColumn": "categoria",
+    "numberColumn": "número",
+    "perIdentifiability": "Por identificabilidade",
+    "identifiableColumn": "identificável",
+    "boolColumn": "booleano",
+    "privacyOptionsColumn": "opções_de_privacidade",
+    "perPrivacyOptions": "Por opções de privacidade",
+    "yesPrivacyOptions": "Tem opções de privacidade",
+    "noPrivacyOptions": "Sem opções de privacidade",
+    "yesIdentifiable": "Identificável",
+    "noIdentifiable": "Não identificável"
 }
