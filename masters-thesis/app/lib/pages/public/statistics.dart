@@ -41,7 +41,8 @@ class _StatisticsState extends State<Statistics> {
         padding:
             const EdgeInsets.only(top: 2.0, right: 4.0, left: 4.0, bottom: 4.0),
         child: Container(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.only(
+              top: 35.0, right: 16.0, left: 16.0, bottom: 16.0),
           color: const Color.fromARGB(255, 16, 44, 53),
           child: SingleChildScrollView(
             child: Center(
@@ -318,21 +319,14 @@ class _StatisticsState extends State<Statistics> {
                                   accessor: (Map map) => map[
                                       AppLocalizations.of(context)!
                                           .boolColumn] as num,
-                                  scale: LinearScale(min: -8, max: 8),
                                 ),
                               },
-                              transforms: [
-                                Sort(
-                                  compare: (a, b) => ((b[
-                                              AppLocalizations.of(context)!
-                                                  .boolColumn] as num) -
-                                          (a[AppLocalizations.of(context)!
-                                              .boolColumn] as num))
-                                      .toInt(),
-                                )
-                              ],
                               marks: [
                                 IntervalMark(
+                                  position: Varset(AppLocalizations.of(context)!
+                                          .boolColumn) /
+                                      Varset(AppLocalizations.of(context)!
+                                          .identifiableColumn),
                                   label: LabelEncode(
                                       encoder: (tuple) => Label(
                                             tuple[AppLocalizations.of(context)!
@@ -341,16 +335,17 @@ class _StatisticsState extends State<Statistics> {
                                             LabelStyle(
                                                 textStyle: Defaults.runeStyle),
                                           )),
-                                  shape: ShapeEncode(value: FunnelShape()),
                                   color: ColorEncode(
                                       variable: AppLocalizations.of(context)!
                                           .identifiableColumn,
                                       values: Defaults.colors10),
-                                  modifiers: [SymmetricModifier()],
+                                  modifiers: [StackModifier()],
+                                  transition: Transition(
+                                      duration: const Duration(seconds: 2)),
+                                  entrance: {MarkEntrance.y},
                                 )
                               ],
-                              coord: RectCoord(
-                                  transposed: true, verticalRange: [1, 0]),
+                              coord: PolarCoord(transposed: true, dimCount: 1),
                             );
                           } else {
                             return const Center(
@@ -442,7 +437,11 @@ class _StatisticsState extends State<Statistics> {
                               marks: [
                                 IntervalMark(
                                   shape: ShapeEncode(
-                                      value: RectShape(labelPosition: 0.5)),
+                                      value: RectShape(
+                                    histogram: true,
+                                  )),
+                                  transition: Transition(
+                                      duration: const Duration(seconds: 3)),
                                   color: ColorEncode(
                                       variable: AppLocalizations.of(context)!
                                           .boolColumn,
@@ -454,7 +453,8 @@ class _StatisticsState extends State<Statistics> {
                                                 .toString(),
                                             LabelStyle(
                                                 textStyle: const TextStyle(
-                                                    fontSize: 6)),
+                                              fontSize: 6,
+                                            )),
                                           )),
                                   modifiers: [StackModifier()],
                                 )
