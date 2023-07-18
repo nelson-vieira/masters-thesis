@@ -201,66 +201,85 @@ for this application.
 
 The first step before creating any prototypes or starting the development was
 creating a software requirements specification, as can be read on appendix \ref{appendix:a},
-delineating the scope and vision for the application, the involved stakeholders,
-contextual, data-flow and swimlane diagrams, software requirements, including
-business, technology, functional and non-functional requirements, use cases
+delineating the scope and vision for the application; the involved stakeholders;
+containing contextual, data-flow and swimlane diagrams; software requirements, including
+business, technology, functional and non-functional requirements; use cases
 and requirements prioritisation.
 
-The users can add devices to the application with the following information:
+Users can, when they start the application for the first time, freely use it to see
+which devices are in their vicinity,
+information about the devices, information about the application itself, and
+information about privacy in general and more specifically privacy in IoT systems
+which they can use to improve their digital literacy. What they cannot do is
+add a new device to the application or edit a device's information. The user has
+to create an account first to do these operations. The decision to add an
+account creation before the user can add or edit a device is to prevent
+bad actors to add bogus data to the application making unusable for the majority
+of people, this solution doesn't completely solve this issue (because bad actors
+can still create an account and add bogus data anyway) but it helps to slow
+down the insertion of bad data.
+
+Upon account creation the only data entry that can be considered sensitive that
+the user has to input is an email address.
+After the user has created an account and logs in, the user can add devices to the application with the following information:
+
 \begin{itemize}
-    \item
-    The name of the device
-    \item
-    The category of the device. Types of data
-    \subitem
-    Visual
-    \subitem
-    Audio
-    \subitem
-    Presence
-    \subitem
-    Location
-    \subitem
-    Biometrics
-    \subitem
-    Environment
-    \subitem
-    Unique identification
-    \item
-    The purpose for the data collection
-    \item
-    Who has access to the collected data
-    \item
-    For how long is the data stored
-    \item
-    Can the data identify anyone
-    \item
-    What is being done with the data
-    \item
-    Privacy options
-    \item
-    Coordinates of the device
-    \item
-    Who owns the device
+    \item[$\bullet$]
+    The \textbf{name of the device}: This serves to differenciate between the various devices on the application and as such should be unique to each device, it is used on various routes and is one of the first fields that users see about a device. A single device doen't have an \textit{official} name, what is more probable is that the device has a model name or is part of a system with it's own name. The user creates the name, this could be abused by bad actors but it is extremelly discouraged. It is used for asthethic reasons.
+    \item[$\bullet$]
+    The \textbf{category of the device}: This is used to categorize each devices main type of information that the device is collecting. These can be of the following:
+    \begin{itemize}
+        \item[$\circ$] \textbf{Visual}: The device mainly collects visual information with maybe a video camera.
+        \item[$\circ$] \textbf{Audio}: The device mainly collects audio information with a microphone.
+        \item[$\circ$] \textbf{Presence}: The device can detect the presence of nearby objects or persons. This is not the same as the location category because the device does not know the location of an individual, it merely knows that the individual is nearby. These type of devices can be used, for example, to collect information about how many people frequent a specific store.
+        \item[$\circ$] \textbf{Location}: The device can detect the exact or approximate location of an individual, it can use GPS to get this kind of information.
+        \item[$\circ$] \textbf{Biometrics}: The devices collects biometric data, this can be the number of steps an individual (or animal) takes, or health related data like the heart beat.
+        \item[$\circ$] \textbf{Environment}: These type of devices collect environmental data, they can be used for aggriculture or weather forecasting by collecting, for example, temperature, humidity or wind speed/direction data.
+        \item[$\circ$] \textbf{Unique identification}: This category is for a device that can uniquely identify an individual, the device itself most likely is not capable of doing it but with other information that the device has access to, it can be used to cross reference of information and as such uniquely identify a person. An example of this would be a device a device that can collect visual data and with facial recognition used against other data in a database it can uniquely identify an individual.
+    \end{itemize}
+    \item[$\bullet$]
+    The \textbf{purpose for the data collection}: Defines what is the purpose for the collection of the data, if a device collects temperature and humidity data and is used by a weather based company or government agency then the purpose for the data collection is for weather forecasting.
+    \item[$\bullet$]
+    \textbf{Who has access to the collected data}: Disclose an individual or group of individuals that have access to the data of the device, if the device is part of a closed system it can be that only an individual as access to the data but most likely various groups of people have access to the data, some with more data than others depending on the permissions they have. If the device publicizes its data then everyone has access to it.
+    \item[$\bullet$]
+    \textbf{For how long is the data stored}: Pinpoint the duration of the stored data in the device or system, due to legislation passed in various countries this duration has a limit, in some cases the data cannot be stored for more than one year.
+    \item[$\bullet$]
+    \textbf{Can the data identify anyone}: Used to quickly identify if a partitular device can identify an idividual or not. If the device belongs to the "Unique identification" category then this should be active.
+    \item[$\bullet$]
+    \textbf{What is being done with the data}: This could be assumed to be similar to the \textbf{purpose} field mentioned above but it should be used to diagnose what is being done now with the data collected, in certain situations it might coincide with the purpose for the data collection.
+    \item[$\bullet$]
+    \textbf{Privacy options}: The user can insert an url for the device's privacy options, in some cases the device, or company, has a website with information on privacy options, or privacy policy. If the device uses a mobile application then a link to the this application can be inserted here.
+    \item[$\bullet$]
+    \textbf{Coordinates of the device}: Used to express the lagitude and longitude of the device so that it can be shown on the map, on the homepage of the application.
+    \item[$\bullet$]
+    \textbf{Who owns the device}: Who is the device owner, if it belongs to an organization then the name of the organization should appear here otherwise if the device belongs to a person then the person's name should \textbf{not} appear, it should say private or something similar.
 \end{itemize}
 
+The user is not forced to provide all the information on this list, the
+information that is required to add a device to the application is only
+the name, the category and the coordinates of the device, all other
+information is optional but should be provided guaranting a good
+experience to other users of the application. The information provided
+should be verified beforehand so that bogus data does not clutter
+the application.
 
-Types of data:
-Health
-Visual
-Audio
-Presence (if user is nearby)
-Location (precise location of user)
-Biometrics
-Environment
-Unique identification (with the help of other means)
 
-Infomation to be added to the app:
-What is the purpose of the data collection
-Who can access the data
-For how long is it stored
-Can the data identify anyone
-What is done with this data
+% Types of data:
+% Health
+% Visual
+% Audio
+% Presence (if user is nearby)
+% Location (precise location of user)
+% Biometrics
+% Environment
+% Unique identification (with the help of other means)
+
+% Infomation to be added to the app:
+% What is the purpose of the data collection
+% Who can access the data
+% For how long is it stored
+% Can the data identify anyone
+% What is done with this data
 
 % \section{Current Stage of the Work}
 
@@ -339,36 +358,92 @@ What is done with this data
 % work the application might suffer alterations to the design, specially in
 % the testing stage, and also depending on the results of the study.
 
-\section{Prototype}
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \includegraphics[width=130pt]{../assets/images/low_homepage.png}
+        \caption{}
+        \label{fig:home}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \includegraphics[width=130pt]{../assets/images/low_about.png}
+        \caption{}
+        \label{fig:about}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\textwidth}
+        \centering
+        \includegraphics[width=130pt]{../assets/images/low_more_info.png}
+        \caption{}
+        \label{fig:faq}
+    \end{subfigure}%
+    \caption{Low level prototype of (a) homepage, (b) about and (c) FAQ pages.}
+    \label{fig:lowlevelprototype}
+\end{figure}
+
+After creating the software requirements specification, the prototypes were
+created. For the creation of the prototypes the following tools were used: Figma
+and GIMP.
+
+At first a low level prototype was made in order to understand the
+general design and user interaction of the application. Figure \ref{fig:lowlevelprototype}
+shows tree pages of the low level prototype, these are the homepage, about
+and faq pages, this prototype has a navigation menu on the bottom where the
+other pages of the application can be selected along with some information
+above the page icons, this information is supposed to be the categories of
+the devices, the logic would be that the user could tap one of these categories
+and only devices of the category should be displayed on the map. It can
+be seen that between the three pages the map stays in the background and
+the various pages work like an overlay on the homepage, this would be
+changed in subsequent prototype versions.
 
 \begin{figure}
-    \begin{center}
+    \centering
+    \begin{subfigure}{0.33\textwidth}
+        \centering
         \includegraphics[width=130pt]{../assets/images/low_homepage.png}
+        \caption{}
+        \label{fig:home}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\textwidth}
+        \centering
         \includegraphics[width=130pt]{../assets/images/low_about.png}
+        \caption{}
+        \label{fig:about}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\textwidth}
+        \centering
         \includegraphics[width=130pt]{../assets/images/low_more_info.png}
-        \caption{Low level prototype of homepage, about and FAQ pages.}
-        \label{fig:lowlevelprototype}
-    \end{center}
+        \caption{}
+        \label{fig:faq}
+    \end{subfigure}%
+    \caption{Medium level prototype of (a) homepage, (b) about and (c) FAQ pages.}
+    \label{fig:mediumlevelprototype}
 \end{figure}
 
 \begin{figure}
-    \begin{center}
+    \centering
+    \begin{subfigure}{0.33\textwidth}
+        \centering
         \includegraphics[width=130pt]{../assets/images/low_homepage.png}
+        \caption{}
+        \label{fig:home}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\textwidth}
+        \centering
         \includegraphics[width=130pt]{../assets/images/low_about.png}
+        \caption{}
+        \label{fig:about}
+    \end{subfigure}%
+    \begin{subfigure}{0.33\textwidth}
+        \centering
         \includegraphics[width=130pt]{../assets/images/low_more_info.png}
-        \caption{Medium level prototype of homepage, about and FAQ pages.}
-        \label{fig:mediumlevelprototype}
-    \end{center}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-        \includegraphics[width=130pt]{../assets/images/low_homepage.png}
-        \includegraphics[width=130pt]{../assets/images/low_about.png}
-        \includegraphics[width=130pt]{../assets/images/low_more_info.png}
-        \caption{High level prototype of homepage, about and FAQ pages.}
-        \label{fig:highlevelprototype}
-    \end{center}
+        \caption{}
+        \label{fig:faq}
+    \end{subfigure}%
+    \caption{High level prototype of (a) homepage, (b) about and (c) FAQ pages.}
+    \label{fig:highlevelprototype}
 \end{figure}
 
 \section{Challenges}
