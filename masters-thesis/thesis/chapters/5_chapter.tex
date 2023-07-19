@@ -255,14 +255,22 @@ After the user has created an account and logs in, the user can add devices to t
     \textbf{Who owns the device}: Who is the device owner, if it belongs to an organization then the name of the organization should appear here otherwise if the device belongs to a person then the person's name should \textbf{not} appear, it should say private or something similar.
 \end{itemize}
 
-The user is not forced to provide all the information on this list, the
-information that is required to add a device to the application is only
-the name, the category and the coordinates of the device, all other
-information is optional but should be provided guaranting a good
+The user is not required to provide information to satisfy all items on this list, the
+only information that is required in order to add a device to the application is
+the name, category and coordinates of the device, all other
+information is optional but should be provided for the sake of guaranting a good
 experience to other users of the application. The information provided
-should be verified beforehand so that bogus data does not clutter
-the application.
+should be verified by the user beforehand so that bogus data does not clutter
+the application, in this case there are no absolute ways of guaranting this
+but the maintainer of the application edit wrong information or in some
+cases remove it, other users can also edit any device data. This is an
+open platform so it is expected that users act in good faith.
 
+One problem this application faces, and other applications where there is
+some kind of user interaction also face, is the fact that some bad
+actors will abuse the system by creating many fake accounts, by
+data scrapping, by adding bogus data or by replacing existing information
+with bogus data.
 
 % Types of data:
 % Health
@@ -445,6 +453,18 @@ changed in subsequent prototype versions.
     \caption{High level prototype of (a) homepage, (b) about and (c) FAQ pages.}
     \label{fig:highlevelprototype}
 \end{figure}
+
+Usability tests were conducted in person with X participants of different
+ages, professional fields and qualifications. Before doing the tests,
+some questions were made to gather the general level of digital literacy
+related to IoT and privacy, then the participants were asked to fill in the
+survey, if they had not yet done, as this gives some insight into what the
+application is about. The usability tests consists of single ease questions
+and system usability scale, as can be seen on appendix \ref{appendix:usability_tests}.
+The single ease question was used after the participant performed eached task, the
+participant would answer how diffucult they though the task was in a
+scale of 1 to 7. The system usability scale was used after the participants
+performed all tasks, using this system a score of X was achieved.
 
 \section{Challenges}
 
