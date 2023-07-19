@@ -10,7 +10,7 @@ Copyright (c) 2023 Nelson Vieira
 
 This repository is a monorepo of the master's thesis, it contains the preparation work of the thesis, the thesis itself and the associated software along with any documentation.
 
-In part inspired by extreme openness, which I first came across on [Thang Luong's thesis](https://github.com/lmthang/thesis), and by the love of free and open source software I starting pushing this work here since I first started working on it. I hope this will be useful to someone, or at least this repository provides transparency to the whole process, as you can see every commit made.
+Partly inspired by extreme openness, which I first came across on [Thang Luong's thesis](https://github.com/lmthang/thesis), and by the free and open source software (FOSS) principles, I started hosting this work here since I first started working on it. Hopefully this will be useful to someone. This repository at least provides transparency to the whole process, as anyone can see every commit made.
 
 Feel free to submit comments or feedback in the [`Issues` tab](https://github.com/nelson-vieira/masters-thesis/issues).
 
