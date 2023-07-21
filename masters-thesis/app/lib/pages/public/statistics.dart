@@ -329,11 +329,11 @@ class _StatisticsState extends State<Statistics> {
                                           .identifiableColumn),
                                   label: LabelEncode(
                                       encoder: (tuple) => Label(
-                                            tuple[AppLocalizations.of(context)!
-                                                    .boolColumn]
-                                                .toString(),
+                                            "${tuple[AppLocalizations.of(context)!.identifiableColumn].toString()} - ${tuple[AppLocalizations.of(context)!.boolColumn].toString()}",
                                             LabelStyle(
-                                                textStyle: Defaults.runeStyle),
+                                                textStyle: const TextStyle(
+                                              fontSize: 10,
+                                            )),
                                           )),
                                   color: ColorEncode(
                                       variable: AppLocalizations.of(context)!
