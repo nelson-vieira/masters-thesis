@@ -24,6 +24,28 @@ and this application adheres to [Semantic Versioning](https://semver.org/spec/v2
 
 - Recalibrate dark mode colors.
 
+## [0.33.0] - 2023-07-21
+
+### Added
+
+- Add device `Statistics` page
+- Add [graphic]() package
+
+### Fixed
+
+- Fix Dart linter warnings
+- Fix RenderBox bug on devices page
+
+### Changed
+
+- Using StreamBuilder to get categories in real time from Firestore used on device's form
+- Upgrade dependencies: [url_launcher_android](https://github.com/flutter/packages/tree/main/packages/url_launcher/url_launcher_android), [file_selector_windows](https://github.com/flutter/packages/tree/main/packages/file_selector/file_selector_windows), [file_selector_macos](https://github.com/flutter/packages/tree/main/packages/file_selector/file_selector_macos), [file_selector_linux](https://github.com/flutter/packages/tree/main/packages/file_selector/file_selector_linux), [cloud_firestore_web](https://github.com/firebase/flutterfire/tree/master/packages/cloud_firestore/cloud_firestore_web), [cloud_firestore_platform_interface](https://github.com/firebase/flutterfire/tree/master/packages/cloud_firestore/cloud_firestore_platform_interface), [cloud_firestore](https://github.com/firebase/flutterfire/tree/master/packages/cloud_firestore/cloud_firestore), [win32](https://github.com/dart-windows/win32), [font_awesome_flutter](https://github.com/fluttercommunity/font_awesome_flutter), [flutter_lints](https://github.com/flutter/packages/tree/main/packages/flutter_lints), [permission_handler_windows](https://github.com/Baseflow/flutter-permission-handler/tree/main/permission_handler_windows), [permission_handler_platform_interface](https://github.com/Baseflow/flutter-permission-handler/tree/main/permission_handler_platform_interface), [permission_handler_apple](https://github.com/Baseflow/flutter-permission-handler/tree/main/permission_handler_apple), [permission_handler_android](https://github.com/Baseflow/flutter-permission-handler/tree/main/permission_handler_android), [permission_handler](https://github.com/Baseflow/flutter-permission-handler/tree/main/permission_handler), [camera_android](https://github.com/flutter/packages/tree/main/packages/camera/camera_android), [flutter_cache_manager](https://github.com/Baseflow/flutter_cache_manager/tree/develop/flutter_cache_manager), [geolocator_android](https://github.com/Baseflow/flutter-geolocator/tree/main/geolocator_android), [url_launcher_web](https://github.com/flutter/packages/tree/main/packages/url_launcher/url_launcher_web), [url_launcher_windows](https://github.com/flutter/packages/tree/main/packages/url_launcher/url_launcher_windows), [url_launcher](https://github.com/flutter/packages/tree/main/packages/url_launcher/url_launcher), [xdg_directories](https://github.com/flutter/packages/tree/main/packages/xdg_directories), [url_launcher_macos](https://github.com/flutter/packages/tree/main/packages/url_launcher/url_launcher_macos), [path_provider_foundation](https://github.com/flutter/packages/tree/main/packages/path_provider/path_provider_foundation), [firebase_performance_web](https://github.com/firebase/flutterfire/tree/master/packages/firebase_performance/firebase_performance_web), [firebase_performance_platform_interface](https://github.com/firebase/flutterfire/tree/master/packages/firebase_performance/firebase_performance_platform_interface), [firebase_core](https://github.com/firebase/flutterfire/tree/master/packages/firebase_core), [firebase_auth_web](https://github.com/firebase/flutterfire/tree/master/packages/firebase_auth/firebase_auth_web), [firebase_auth_platform_interface](https://github.com/firebase/flutterfire/tree/master/packages/firebase_auth/firebase_auth_platform_interface), [firebase_auth](https://github.com/firebase/flutterfire/tree/master/packages/firebase_auth/firebase_auth), [firebase_analytics_web](https://github.com/firebase/flutterfire/tree/master/packages/firebase_analytics/firebase_analytics_web), [firebase_analytics_platform_interface](https://github.com/firebase/flutterfire/tree/master/packages/firebase_analytics/firebase_analytics_platform_interface), [firebase_analytics](https://github.com/firebase/flutterfire/tree/master/packages/firebase_analytics/firebase_analytics), [file_selector_macos](https://github.com/flutter/packages/tree/main/packages/file_selector/file_selector_macos), [file](https://github.com/google/file.dart/tree/master/packages/file), [image_picker_android](https://pub.dev/packages/image_picker_android)
+- Upgrade [Flutter SDK](https://docs.flutter.dev/tools/sdk)
+
+### Removed
+
+- Removed unused code
+
 ## [0.32.0] - 2023-06-22
 
 ### Added
