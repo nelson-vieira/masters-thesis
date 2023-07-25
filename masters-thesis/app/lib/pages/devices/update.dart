@@ -344,29 +344,24 @@ class _UpdateState extends State<Update> {
                 ),
               ),
               const SizedBox(
-                height: 18,
-              ),
-              Text(
-                "Lat: $controllerLatitude, Long: $controllerLongitude",
-                style: TextStyle(fontSize: 14.0, color: Colors.grey.shade400),
-              ),
-              const SizedBox(
-                height: 8,
+                height: 24,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 16, 44, 53),
                   padding: const EdgeInsets.only(
-                      left: 10.0, top: 18.0, right: 0.0, bottom: 18.0),
+                      left: 10.0, top: 20.0, right: 0.0, bottom: 20.0),
                   side: const BorderSide(
-                    width: 1,
+                    width: 0.5,
                     color: Colors.white,
                   ),
                 ),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    AppLocalizations.of(context)!.coordinatesAttribute,
+                    controllerLatitude == null
+                        ? AppLocalizations.of(context)!.coordinatesAttribute
+                        : "Lat: ${controllerLatitude.toString()}, Long: ${controllerLongitude.toString()}",
                     style: const TextStyle(
                         fontSize: 16.0,
                         color: Color.fromARGB(255, 170, 170, 170)),

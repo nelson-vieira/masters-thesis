@@ -289,33 +289,24 @@ class _CreateState extends State<Create> {
                 ),
               ),
               const SizedBox(
-                height: 18,
-              ),
-              Text(
-                "Lat: ${controllerLatitude == null ? "?" : controllerLatitude.toString()}, Long: ${controllerLongitude == null ? "?" : controllerLongitude.toString()}",
-                style: TextStyle(
-                    fontSize: 14.0,
-                    color: controllerLatitude == null
-                        ? Colors.grey.shade400
-                        : Colors.white),
-              ),
-              const SizedBox(
-                height: 8,
+                height: 24,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 16, 44, 53),
                   padding: const EdgeInsets.only(
-                      left: 10.0, top: 18.0, right: 0.0, bottom: 18.0),
+                      left: 10.0, top: 20.0, right: 0.0, bottom: 20.0),
                   side: const BorderSide(
-                      width: 1, // the thickness
+                      width: 0.5, // the thickness
                       color: Colors.white // the color of the border
                       ),
                 ),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    AppLocalizations.of(context)!.coordinatesAttribute,
+                    controllerLatitude == null
+                        ? AppLocalizations.of(context)!.coordinatesAttribute
+                        : "Lat: ${controllerLatitude.toString()}, Long: ${controllerLongitude.toString()}",
                     style: const TextStyle(
                       fontSize: 16.0,
                       color: Color.fromARGB(255, 170, 170, 170),
