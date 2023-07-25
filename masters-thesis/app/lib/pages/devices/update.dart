@@ -10,9 +10,9 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 import "package:iotprivacy/models/user.dart";
 import "package:iotprivacy/models/device.dart";
-import "package:iotprivacy/models/category.dart";
 import "package:iotprivacy/helpers/category.dart";
 
 class Update extends StatefulWidget {
@@ -27,7 +27,7 @@ class Update extends StatefulWidget {
 
 class _UpdateState extends State<Update> {
   final controllerName = TextEditingController();
-  String? controllerCategory;
+  String? selectedCategory;
   final controllerPurpose = TextEditingController();
   final controllerWhoHasAccess = TextEditingController();
   final controllerTimeStored = TextEditingController();
@@ -54,7 +54,7 @@ class _UpdateState extends State<Update> {
   initState() {
     // https://github.com/flutter/flutter/issues/9969
     controllerName.text = widget.device.name;
-    controllerCategory = widget.device.category;
+    selectedCategory = widget.device.category;
     controllerPurpose.text = widget.device.purpose;
     controllerWhoHasAccess.text = widget.device.whoHasAccess;
     controllerTimeStored.text = widget.device.timeStored;
@@ -133,22 +133,6 @@ class _UpdateState extends State<Update> {
         ),
       );
 
-  Stream<List<Category>> readCategories() => FirebaseFirestore.instance
-      .collection("categories")
-      .snapshots()
-      .map((snapshot) =>
-          snapshot.docs.map((doc) => Category.fromJson(doc.data())).toList());
-
-  DropdownMenuItem<String> buildCategories(Category cat) => DropdownMenuItem(
-        value: cat.id,
-        child: Text(
-          CategoryHelper.categoryName(context, cat.name),
-          style: const TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
-          ),
-        ),
-      );
-
   Stream<List<UserDocument>> readUserDocuments() => FirebaseFirestore.instance
       .collection("users")
       .snapshots()
@@ -205,8 +189,11 @@ class _UpdateState extends State<Update> {
               ),
               const SizedBox(height: 24),
               StreamBuilder(
-                  stream: readCategories().first.asStream(),
+                  stream: FirebaseFirestore.instance
+                      .collection("categories")
+                      .snapshots(),
                   builder: (context, snapshot) {
+                    List<DropdownMenuItem<String>> categoryItems = [];
                     if (snapshot.hasError) {
                       return Center(
                           child: Text(
@@ -218,45 +205,69 @@ class _UpdateState extends State<Update> {
                         ),
                         textAlign: TextAlign.center,
                       ));
-                    } else if (snapshot.hasData) {
-                      final devices = snapshot.data!;
+                    } else if (!snapshot.hasData) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else {
+                      final categories = snapshot.data?.docs.reversed.toList();
 
-                      return DropdownButtonFormField(
+                      for (var category in categories!) {
+                        categoryItems.add(
+                          DropdownMenuItem<String>(
+                              value: category.id,
+                              child: Text(
+                                CategoryHelper.categoryName(
+                                    context, category["name"]),
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              )),
+                        );
+                      }
+
+                      return DropdownButtonHideUnderline(
+                        child: DropdownButton2<String>(
+                          isExpanded: true,
                           hint: Text(
                             AppLocalizations.of(context)!.categoryAttribute,
                             style: const TextStyle(
                               color: Color(0xFFAAAAAA),
                             ),
                           ),
-                          decoration: const InputDecoration(
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            filled: true,
-                            fillColor: Color.fromARGB(255, 16, 44, 53),
-                          ),
-                          validator: (value) => value == null
-                              ? AppLocalizations.of(context)!.categoryAttribute
-                              : null,
-                          dropdownColor: const Color.fromARGB(255, 16, 44, 53),
-                          value: controllerCategory,
-                          onChanged: (String? newValue) {
+                          barrierColor: const Color.fromARGB(132, 16, 44, 53),
+                          barrierLabel:
+                              AppLocalizations.of(context)!.categoryAttribute,
+                          value: selectedCategory,
+                          onChanged: (categoryValue) {
                             setState(() {
-                              controllerCategory = newValue!;
+                              selectedCategory = categoryValue;
                             });
                           },
-                          items: devices
-                              .map<DropdownMenuItem<String>>(buildCategories)
-                              .toList());
-                    } else {
-                      return const Center(
-                        child: CircularProgressIndicator(),
+                          items: categoryItems,
+                          buttonStyleData: ButtonStyleData(
+                            padding: const EdgeInsets.only(
+                                top: 7.0, right: 10.0, left: 0.0, bottom: 7.0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 0.5,
+                              ),
+                            ),
+                          ),
+                          dropdownStyleData: DropdownStyleData(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: const Color.fromARGB(255, 16, 44, 53),
+                            ),
+                            scrollbarTheme: ScrollbarThemeData(
+                              radius: const Radius.circular(10),
+                              thickness: MaterialStateProperty.all(6),
+                              thumbVisibility: MaterialStateProperty.all(true),
+                            ),
+                          ),
+                        ),
                       );
                     }
                   }),
@@ -404,7 +415,7 @@ class _UpdateState extends State<Update> {
                         .doc(widget.device.id);
                     docDevice.update({
                       "name": controllerName.text,
-                      "category": controllerCategory.toString(),
+                      "category": selectedCategory.toString(),
                       "purpose": controllerPurpose.text,
                       "whoHasAccess": controllerWhoHasAccess.text,
                       "timeStored": controllerTimeStored.text,

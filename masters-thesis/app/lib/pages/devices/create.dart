@@ -9,8 +9,8 @@ import "package:flutter_map/flutter_map.dart";
 import "package:latlong2/latlong.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 import "package:iotprivacy/models/device.dart";
-import "package:iotprivacy/models/category.dart";
 import "package:iotprivacy/helpers/category.dart";
 
 class Create extends StatefulWidget {
@@ -24,7 +24,7 @@ class Create extends StatefulWidget {
 
 class _CreateState extends State<Create> {
   final controllerName = TextEditingController();
-  String? controllerCategory;
+  String? selectedCategory;
   final controllerPurpose = TextEditingController();
   final controllerWhoHasAccess = TextEditingController();
   final controllerTimeStored = TextEditingController();
@@ -99,22 +99,6 @@ class _CreateState extends State<Create> {
         ),
       );
 
-  Stream<List<Category>> readCategories() => FirebaseFirestore.instance
-      .collection("categories")
-      .snapshots()
-      .map((snapshot) =>
-          snapshot.docs.map((doc) => Category.fromJson(doc.data())).toList());
-
-  DropdownMenuItem<String> buildCategories(Category cat) => DropdownMenuItem(
-        value: cat.id,
-        child: Text(
-          CategoryHelper.categoryName(context, cat.name),
-          style: const TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
-          ),
-        ),
-      );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,8 +134,11 @@ class _CreateState extends State<Create> {
               ),
               const SizedBox(height: 24),
               StreamBuilder(
-                  stream: readCategories().first.asStream(),
+                  stream: FirebaseFirestore.instance
+                      .collection("categories")
+                      .snapshots(),
                   builder: (context, snapshot) {
+                    List<DropdownMenuItem<String>> categoryItems = [];
                     if (snapshot.hasError) {
                       return Center(
                           child: Text(
@@ -163,45 +150,69 @@ class _CreateState extends State<Create> {
                         ),
                         textAlign: TextAlign.center,
                       ));
-                    } else if (snapshot.hasData) {
-                      final devices = snapshot.data!;
+                    } else if (!snapshot.hasData) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else {
+                      final categories = snapshot.data?.docs.reversed.toList();
 
-                      return DropdownButtonFormField(
+                      for (var category in categories!) {
+                        categoryItems.add(
+                          DropdownMenuItem<String>(
+                              value: category.id,
+                              child: Text(
+                                CategoryHelper.categoryName(
+                                    context, category["name"]),
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              )),
+                        );
+                      }
+
+                      return DropdownButtonHideUnderline(
+                        child: DropdownButton2<String>(
+                          isExpanded: true,
                           hint: Text(
                             AppLocalizations.of(context)!.categoryAttribute,
                             style: const TextStyle(
                               color: Color.fromARGB(255, 170, 170, 170),
                             ),
                           ),
-                          decoration: const InputDecoration(
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.blue),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            filled: true,
-                            fillColor: Color.fromARGB(255, 16, 44, 53),
-                          ),
-                          validator: (value) => value == null
-                              ? AppLocalizations.of(context)!.categoryAttribute
-                              : null,
-                          dropdownColor: const Color.fromARGB(255, 16, 44, 53),
-                          value: controllerCategory,
-                          onChanged: (String? newValue) {
+                          barrierColor: const Color.fromARGB(132, 16, 44, 53),
+                          barrierLabel:
+                              AppLocalizations.of(context)!.categoryAttribute,
+                          value: selectedCategory,
+                          onChanged: (categoryValue) {
                             setState(() {
-                              controllerCategory = newValue!;
+                              selectedCategory = categoryValue;
                             });
                           },
-                          items: devices
-                              .map<DropdownMenuItem<String>>(buildCategories)
-                              .toList());
-                    } else {
-                      return const Center(
-                        child: CircularProgressIndicator(),
+                          items: categoryItems,
+                          buttonStyleData: ButtonStyleData(
+                            padding: const EdgeInsets.only(
+                                top: 7.0, right: 10.0, left: 0.0, bottom: 7.0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 0.5,
+                              ),
+                            ),
+                          ),
+                          dropdownStyleData: DropdownStyleData(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: const Color.fromARGB(255, 16, 44, 53),
+                            ),
+                            scrollbarTheme: ScrollbarThemeData(
+                              radius: const Radius.circular(10),
+                              thickness: MaterialStateProperty.all(6),
+                              thumbVisibility: MaterialStateProperty.all(true),
+                            ),
+                          ),
+                        ),
                       );
                     }
                   }),
@@ -343,7 +354,7 @@ class _CreateState extends State<Create> {
                 onPressed: () {
                   final device = Device(
                     name: controllerName.text.trim(),
-                    category: controllerCategory.toString(),
+                    category: selectedCategory.toString(),
                     purpose: controllerPurpose.text.trim(),
                     whoHasAccess: controllerWhoHasAccess.text.trim(),
                     timeStored: controllerTimeStored.text.trim(),
