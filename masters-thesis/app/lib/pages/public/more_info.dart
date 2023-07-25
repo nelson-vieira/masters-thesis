@@ -217,9 +217,9 @@ class MoreInfo extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Color(0xFF0A8A4E),
+        backgroundColor: const Color(0xFF0A8A4E),
         label: Text(
-          "Estatísticas",
+          AppLocalizations.of(context)!.statistics,
           style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.bold,
