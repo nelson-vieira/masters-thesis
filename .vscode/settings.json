@@ -19,4 +19,5 @@
     "editor.tabSize": 4,
     "editor.trimAutoWhitespace": false,
     "files.eol": "\n",
+    "dart.flutterHotReloadOnSave": "all",
 }
