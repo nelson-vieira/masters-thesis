@@ -10,6 +10,7 @@ import "package:latlong2/latlong.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:geolocator/geolocator.dart';
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/devices/show.dart";
 import "package:iotprivacy/pages/devices/create.dart";
@@ -25,6 +26,26 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final List<Marker> _markers = <Marker>[];
+//   late Position position;
+  Position? _currentPosition;
+  late bool servicePermission = false;
+  late LocationPermission permission;
+  LatLng? currentLatLng;
+//   LatLng _initialLatLng = LatLng(32.778295173354356, -16.737781931587615);
+  late MapOptions options;
+
+  @override
+  void initState() {
+    // This function runs whenever this page is loaded, very important so that
+    // the data can be ready to show on the page
+    getMarkersData();
+    getLatLng();
+    super.initState();
+  }
+
+  void dispose() {
+    super.dispose();
+  }
 
   Image markerImage(Device device) {
     switch (device.category) {
@@ -81,12 +102,57 @@ class _HomeState extends State<Home> {
     });
   }
 
-  @override
-  initState() {
-    // This function runs whenever this page is loaded, very important so that
-    // the data can be ready to show on the page
-    getMarkersData();
-    super.initState();
+  Future<Position> getCurrentLocation() async {
+    servicePermission = await Geolocator.isLocationServiceEnabled();
+    if (!servicePermission) {
+      return Future.error("Location is disabled");
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.deniedForever) {
+        return Future.error("Location permission is denied");
+      }
+    }
+
+    // if (permission == LocationPermission.deniedForever) {
+    //   return Future.error("Location permanently denied");
+    // }
+
+    // currentLatLng =
+    //     LatLng(_currentPosition!.latitude, _currentPosition!.longitude);
+    return await Geolocator.getCurrentPosition();
+  }
+
+  getLatLng() {
+    getCurrentLocation().then((value) {
+      setState(() {
+        currentLatLng = LatLng(value.latitude, value.longitude);
+        options = MapOptions(
+          center: currentLatLng != null
+              ? currentLatLng
+              : LatLng(32.778295173354356, -16.737781931587615),
+          interactiveFlags: InteractiveFlag.all & ~InteractiveFlag.rotate,
+          zoom: 9,
+        );
+      });
+      streamLocation();
+    });
+  }
+
+  void streamLocation() {
+    LocationSettings locationSettings = const LocationSettings(
+      accuracy: LocationAccuracy.high,
+      distanceFilter: 100,
+    );
+
+    Geolocator.getPositionStream(locationSettings: locationSettings)
+        .listen((Position position) {
+      setState(() {
+        currentLatLng = LatLng(position.latitude, position.longitude);
+      });
+    });
   }
 
   @override
@@ -106,12 +172,7 @@ class _HomeState extends State<Home> {
           children: [
             Flexible(
               child: FlutterMap(
-                options: MapOptions(
-                  center: LatLng(32.778295173354356, -16.737781931587615),
-                  interactiveFlags:
-                      InteractiveFlag.all & ~InteractiveFlag.rotate,
-                  zoom: 9,
-                ),
+                options: options,
                 nonRotatedChildren: [
                   AttributionWidget.defaultWidget(
                     source: "OpenStreetMap",
@@ -125,16 +186,66 @@ class _HomeState extends State<Home> {
                     userAgentPackageName: "me.nelsonvieira.iotprivacy",
                   ),
                   MarkerLayer(markers: _markers),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 22.0, right: 0.0, left: 15.0, bottom: 0.0),
+                    child: FloatingActionButton(
+                      child: const Icon(Icons.location_searching),
+                      onPressed: () {
+                        getCurrentLocation().then((value) {
+                          setState(() {
+                            currentLatLng =
+                                LatLng(value.latitude, value.longitude);
+                            options = MapOptions(
+                              center: currentLatLng,
+                              interactiveFlags:
+                                  InteractiveFlag.all & ~InteractiveFlag.rotate,
+                              zoom: 9,
+                            );
+                          });
+                          streamLocation();
+                        });
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
+            Text(
+              "${currentLatLng}",
+              style: const TextStyle(
+                  color: Color.fromARGB(255, 245, 245, 245), fontSize: 16.0),
+            ),
+            // Row(
+            //   children: [
+            //     ElevatedButton.icon(
+            //         icon: markerImage(device),
+            //         label: Text(
+            //           "",
+            //           style: const TextStyle(
+            //               color: Color.fromARGB(255, 245, 245, 245),
+            //               fontSize: 16.0),
+            //         ),
+            //         onPressed: () {
+            //           _getLocation().then((value) {
+            //             lat = "${value.latitude}";
+            //             long = "${value.longitude}";
+            //             setState(() {
+            //               locationMessage = "Lat: $lat, Long: $long";
+            //             });
+            //             // _liveLocation();
+            //           });
+            //         },
+            //         child: const Text("Location")),
+            //   ],
+            // ),
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       floatingActionButton: FirebaseAuth.instance.currentUser != null
           ? FloatingActionButton.extended(
-              backgroundColor: Color(0xFF0A8A4E),
+              backgroundColor: const Color(0xFF0A8A4E),
               label: Text(
                 AppLocalizations.of(context)!.addDevice,
                 style: const TextStyle(
