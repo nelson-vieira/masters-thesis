@@ -389,6 +389,17 @@ importance on the user experience.
     \label{fig:activity_contributes_profiling}
 \end{figure}
 
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \pie[explode = 0.1]{20/I do not know,
+            4.44/No,
+            75.56/Yes}
+    \end{tikzpicture}
+    \caption{Responses to the question: "The information I disclose on the internet can serve to identify me". Do you agree with this statement?}
+    \label{fig:information_disclose_internet_identify_me}
+\end{figure}
+
 When asked about the concept of profiling, only half of the participants
 are aware of the term but more than half consider that their online
 activity contributes to its development, see Figure \ref*{fig:activity_contributes_profiling}.
@@ -397,66 +408,103 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=12cm,
                 ybar,
-                xlabel={Agreement level},
-                ylabel={Responses},
+                bar width=10pt,
+                ymin=0,
+                ymax=100,
                 ytick=\empty,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
-                enlarge x limits=0.2,
-                bar width=20pt,
-                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
             ]
                 \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Responses to the question: Are you interested in finding out more about regulations or legislation related to digital privacy?}
-        \label{fig:finding_out_more_about_regulations}
-    \end{center}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}[
-                ybar,
-                ytick=data,
-                xtick=data,
-                axis x line=bottom,
-                axis y line=left,
-                enlarge x limits=0.2,
-                bar width=20pt
-            ]
+                \addlegendentry{Are you interested in finding out more about regulations or legislation related to digital privacy?}
                 \addplot coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
+                \addlegendentry{"My data was more protected after the implementation of regulations such as the General Data Protection Regulation."}
             \end{axis}
         \end{tikzpicture}
-        \caption{Responses to the question: "My data was more protected after the implementation of regulations such as the General Data Protection Regulation". Do you agree with this statement?}
-        \label{fig:more_protected_after_regulations}
+        \caption{Responses related to phone usage.}
+        \label{fig:phone_access}
     \end{center}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{11.11/I disagree,
-            48.89/Maybe if asked first,
-            35.56/I agree}
-    \end{tikzpicture}
-    \caption{Responses to the question: Do you agree to share health data that can identify you with health professionals?}
-    \label{fig:share_health_data_can_identify}
-\end{figure}
+Regarding users' online habits, all participants have, or have access to, a smartphone
+and they use it in their daily lives, most participants concede that they spend a lot
+of their daily time using it, like shown on Figure \ref*{fig:phone_access}, and are
+somewhat worried but do not actively try to protect their data privacy, which
+comes as a bit of a contrast with their early answers. When asked if they accept
+cookies, respondents occasionally do but are unsure what they do or their
+importance on the user experience.
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{20/I disagree,
-            35.56/Maybe if asked first,
-            37.78/I agree}
-    \end{tikzpicture}
-    \caption{Responses to the question: Do you agree to share health data that cannot identify you with health professionals?}
-    \label{fig:share_health_data_cannot_identify}
-\end{figure}
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: Are you interested in finding out more about regulations or legislation related to digital privacy?}
+%         \label{fig:finding_out_more_about_regulations}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 ytick=data,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt
+%             ]
+%                 \addplot coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: "My data was more protected after the implementation of regulations such as the General Data Protection Regulation". Do you agree with this statement?}
+%         \label{fig:more_protected_after_regulations}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{11.11/I disagree,
+%             48.89/Maybe if asked first,
+%             35.56/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Do you agree to share health data that can identify you with health professionals?}
+%     \label{fig:share_health_data_can_identify}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{20/I disagree,
+%             35.56/Maybe if asked first,
+%             37.78/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Do you agree to share health data that cannot identify you with health professionals?}
+%     \label{fig:share_health_data_cannot_identify}
+% \end{figure}
 
 \begin{figure}
     \centering
@@ -480,59 +528,94 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
 \end{figure}
 
 \begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{20/I disagree,
-            26.67/I do not agree nor disagree,
-            53.33/I agree}
-    \end{tikzpicture}
-    \caption{Responses to the question: "I am not familiar with the purpose of data collection but would like to know more". Do you agree with this statement?}
-    \label{fig:not_familiar_like_know_more}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=10cm,
+                width=10cm,
+                xbar,
+                symbolic y coords={Disagree,Do not know,Agree},
+                bar width=10pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=100,
+                enlarge y limits=0.2,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(20,Disagree) (26.67,Do not know) (53.33,Agree)};
+                \addlegendentry{"I am not familiar with the purpose of data collection but would like to know more."}
+                \addplot coordinates {(4.44,Disagree) (8.89,Do not know) (86.67,Agree)};
+                \addlegendentry{"The length of the privacy notice affects my willingness to read it."}
+                \addplot coordinates {(13.33,Disagree) (8.89,Do not know) (77.78,Agree)};
+                \addlegendentry{"The font size of the privacy notice affects my willingness to read it."}
+                \addplot coordinates {(6.67,Disagree) (22.22,Do not know) (71.11,Agree)};
+                \addlegendentry{"Usually, I'm afraid I won't be able to use a product or service if I don't agree with the privacy notice."}
+                \addplot coordinates {(33.33,Disagree) (33.33,Do not know) (33.33,Agree)};
+                \addlegendentry{"I don't need to read the privacy notice if I trust the institution."}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Participant responses indicating whether they agree or disagree with these statements.}
+        \label{fig:privacy_human_right_histogram}
+    \end{center}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{4.44/I disagree,
-            8.89/I do not agree nor disagree,
-            86.67/I agree}
-    \end{tikzpicture}
-    \caption{Responses to the question: "The length (or number of words) of the privacy notice affects my willingness to read it." Do you agree with this statement?}
-    \label{fig:length_privacy_notice_affects_read}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{20/I disagree,
+%             26.67/I do not agree nor disagree,
+%             53.33/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "I am not familiar with the purpose of data collection but would like to know more". Do you agree with this statement?}
+%     \label{fig:not_familiar_like_know_more}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{13.33/I disagree,
-            8.89/I do not agree nor disagree,
-            77.78/I agree}
-    \end{tikzpicture}
-    \caption{Responses to the question: "The font size of the privacy notice affects my willingness to read it." Do you agree with this statement?}
-    \label{fig:font_size_privacy_notice_affects_read}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{4.44/I disagree,
+%             8.89/I do not agree nor disagree,
+%             86.67/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "The length (or number of words) of the privacy notice affects my willingness to read it." Do you agree with this statement?}
+%     \label{fig:length_privacy_notice_affects_read}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{6.67/I disagree,
-            22.22/I do not agree nor disagree,
-            71.11/I agree}
-    \end{tikzpicture}
-    \caption{Responses to the question: "Usually, I'm afraid I won't be able to use a product or service if I don't agree with the privacy notice." Do you agree with this statement?}
-    \label{fig:not_able_use_service_do_not_agree_privacy_notice}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{13.33/I disagree,
+%             8.89/I do not agree nor disagree,
+%             77.78/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "The font size of the privacy notice affects my willingness to read it." Do you agree with this statement?}
+%     \label{fig:font_size_privacy_notice_affects_read}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{33.33/I disagree,
-            33.33/I do not agree nor disagree,
-            33.33/I agree}
-    \end{tikzpicture}
-    \caption{Responses to the question: "I don't need to read the privacy notice if I trust the institution". Do you agree with this statement?}
-    \label{fig:not_read_privacy_notice_trust_institution}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{6.67/I disagree,
+%             22.22/I do not agree nor disagree,
+%             71.11/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "Usually, I'm afraid I won't be able to use a product or service if I don't agree with the privacy notice." Do you agree with this statement?}
+%     \label{fig:not_able_use_service_do_not_agree_privacy_notice}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{33.33/I disagree,
+%             33.33/I do not agree nor disagree,
+%             33.33/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "I don't need to read the privacy notice if I trust the institution". Do you agree with this statement?}
+%     \label{fig:not_read_privacy_notice_trust_institution}
+% \end{figure}
 
 \begin{figure}
     \begin{center}
@@ -857,51 +940,51 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
 %     \label{fig:law_officer_share}
 % \end{figure}
 
-\begin{figure}
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}[
-                ybar,
-                xlabel={Agreement level},
-                ylabel={Responses},
-                ytick=\empty,
-                xtick=data,
-                axis x line=bottom,
-                axis y line=left,
-                enlarge x limits=0.2,
-                bar width=20pt,
-                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
-            ]
-                \addplot coordinates {(1,4.44) (2,17.78) (3,13.33) (4,26.67) (5,8.89) (6,11.11) (7,17.78)};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Responses to the question: Do you usually answer online questionnaires when they are requested?}
-        \label{fig:answer_online_questionnaires}
-    \end{center}
-\end{figure}
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,4.44) (2,17.78) (3,13.33) (4,26.67) (5,8.89) (6,11.11) (7,17.78)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: Do you usually answer online questionnaires when they are requested?}
+%         \label{fig:answer_online_questionnaires}
+%     \end{center}
+% \end{figure}
 
-\begin{figure}
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}[
-                ybar,
-                xlabel={Agreement level},
-                ylabel={Responses},
-                ytick=\empty,
-                xtick=data,
-                axis x line=bottom,
-                axis y line=left,
-                enlarge x limits=0.2,
-                bar width=20pt,
-                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
-            ]
-                \addplot coordinates {(1,35.56) (2,26.67) (3,8.89) (4,13.33) (5,8.89) (6,4.44) (7,2.22)};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Responses to the question: When answering questionnaires, do you enter any false/incorrect information?}
-        \label{fig:questionnaires_incorrect_information}
-    \end{center}
-\end{figure}
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,35.56) (2,26.67) (3,8.89) (4,13.33) (5,8.89) (6,4.44) (7,2.22)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: When answering questionnaires, do you enter any false/incorrect information?}
+%         \label{fig:questionnaires_incorrect_information}
+%     \end{center}
+% \end{figure}
 
 \begin{figure}
     \begin{center}
@@ -926,39 +1009,39 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
     \end{center}
 \end{figure}
 
-\begin{figure}
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}[
-                ybar,
-                xlabel={Agreement level},
-                ylabel={Responses},
-                ytick=\empty,
-                xtick=data,
-                axis x line=bottom,
-                axis y line=left,
-                enlarge x limits=0.2,
-                bar width=20pt,
-                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
-            ]
-                \addplot coordinates {(1,0) (2,0) (3,2.22) (4,26.67) (5,17.78) (6,15.56) (7,37.78)};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Responses to the question: Can the data I disclose serve to create a profile of my online habits?}
-        \label{fig:data_disclose_create_profile}
-    \end{center}
-\end{figure}
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,0) (2,0) (3,2.22) (4,26.67) (5,17.78) (6,15.56) (7,37.78)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: Can the data I disclose serve to create a profile of my online habits?}
+%         \label{fig:data_disclose_create_profile}
+%     \end{center}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{20/I do not know,
-            4.44/No,
-            75.56/Yes}
-    \end{tikzpicture}
-    \caption{Responses to the question: "The information I disclose on the internet can serve to identify me". Do you agree with this statement?}
-    \label{fig:information_disclose_internet_identify_me}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{20/I do not know,
+%             4.44/No,
+%             75.56/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "The information I disclose on the internet can serve to identify me". Do you agree with this statement?}
+%     \label{fig:information_disclose_internet_identify_me}
+% \end{figure}
 
 \begin{figure}
     \centering
@@ -971,24 +1054,51 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
 \end{figure}
 
 \begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{33.33/No,
-            66.67/Yes}
-    \end{tikzpicture}
-    \caption{Responses to the question: Have you ever used an Internet of Things device (smartwatch, contactless cards, air or sea traffic applications)?}
-    \label{fig:ever_used_internet_of_things_device}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                xbar,
+                symbolic y coords={No,Yes},
+                bar width=12pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=100,
+                enlarge y limits=0.15,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(33.33,No) (66.67,Yes)};
+                \addlegendentry{Have you ever used an Internet of Things device?}
+                \addplot coordinates {(64.44,No) (35.56,Yes)};
+                \addlegendentry{Do you have an Internet of Things device in your home?}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Participant responses indicating whether they agree or disagree with these statements.}
+        \label{fig:internet_of_things_device_usage}
+    \end{center}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{64.44/No,
-            35.56/Yes}
-    \end{tikzpicture}
-    \caption{Responses to the question: Do you have an Internet of Things device in your home (assistants like Alexa, smart lock, video surveillance, etc.)?}
-    \label{fig:have_internet_of_things_device}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{33.33/No,
+%             66.67/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Have you ever used an Internet of Things device (smartwatch, contactless cards, air or sea traffic applications)?}
+%     \label{fig:ever_used_internet_of_things_device}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{64.44/No,
+%             35.56/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Do you have an Internet of Things device in your home (assistants like Alexa, smart lock, video surveillance, etc.)?}
+%     \label{fig:have_internet_of_things_device}
+% \end{figure}
 
 \begin{figure}
     \begin{center}
@@ -1073,16 +1183,16 @@ After the user has created an account and logs in, the user can add devices to t
 
 \begin{itemize}
     \item[$\bullet$]
-    The \textbf{name of the device}: This serves to differenciate between the various devices on the application and as such should be unique to each device, it is used on various routes and is one of the first fields that users see about a device. A single device doen't have an \textit{official} name, what is more probable is that the device has a model name or is part of a system with it's own name. The user creates the name, this could be abused by bad actors but it is extremelly discouraged. It is used for asthethic reasons.
+    The \textbf{name of the device}: This serves to differentiate between the various devices on the application and as such should be unique to each device, it is used on various routes and is one of the first fields that users see about a device. A single device does not have an \textit{official} name, what is more probable is that the device has a model name or is part of a system with it's own name. The user creates the name, this could be abused by bad actors but it is extremely discouraged. It is used for aesthetic reasons.
     \item[$\bullet$]
     The \textbf{category of the device}: This is used to categorize each devices main type of information that the device is collecting. These can be of the following:
     \begin{itemize}
         \item[$\circ$] \textbf{Visual}: The device mainly collects visual information with maybe a video camera.
-        \item[$\circ$] \textbf{Audio}: The device mainly collects audio information with a microphone.
+        \item[$\circ$] \textbf{Audio}: The device mainly collects audio information with a sound recorder.
         \item[$\circ$] \textbf{Presence}: The device can detect the presence of nearby objects or persons. This is not the same as the location category because the device does not know the location of an individual, it merely knows that the individual is nearby. These type of devices can be used, for example, to collect information about how many people frequent a specific store.
         \item[$\circ$] \textbf{Location}: The device can detect the exact or approximate location of an individual, it can use GPS to get this kind of information.
         \item[$\circ$] \textbf{Biometrics}: The devices collects biometric data, this can be the number of steps an individual (or animal) takes, or health related data like the heart beat.
-        \item[$\circ$] \textbf{Environment}: These type of devices collect environmental data, they can be used for aggriculture or weather forecasting by collecting, for example, temperature, humidity or wind speed/direction data.
+        \item[$\circ$] \textbf{Environment}: These type of devices collect environmental data, they can be used for agriculture or weather forecasting by collecting, for example, temperature, humidity or wind speed/direction data.
         \item[$\circ$] \textbf{Unique identification}: This category is for a device that can uniquely identify an individual, the device itself most likely is not capable of doing it but with other information that the device has access to, it can be used to cross reference of information and as such uniquely identify a person. An example of this would be a device a device that can collect visual data and with facial recognition used against other data in a database it can uniquely identify an individual.
     \end{itemize}
     \item[$\bullet$]
@@ -1092,13 +1202,13 @@ After the user has created an account and logs in, the user can add devices to t
     \item[$\bullet$]
     \textbf{For how long is the data stored}: Pinpoint the duration of the stored data in the device or system, due to legislation passed in various countries this duration has a limit, in some cases the data cannot be stored for more than one year.
     \item[$\bullet$]
-    \textbf{Can the data identify anyone}: Used to quickly identify if a partitular device can identify an idividual or not. If the device belongs to the "Unique identification" category then this should be active.
+    \textbf{Can the data identify anyone}: Used to quickly identify if a particular device can identify an individual or not. If the device belongs to the "Unique identification" category then this should be active.
     \item[$\bullet$]
     \textbf{What is being done with the data}: This could be assumed to be similar to the \textbf{purpose} field mentioned above but it should be used to diagnose what is being done now with the data collected, in certain situations it might coincide with the purpose for the data collection.
     \item[$\bullet$]
     \textbf{Privacy options}: The user can insert an url for the device's privacy options, in some cases the device, or company, has a website with information on privacy options, or privacy policy. If the device uses a mobile application then a link to the this application can be inserted here.
     \item[$\bullet$]
-    \textbf{Coordinates of the device}: Used to express the lagitude and longitude of the device so that it can be shown on the map, on the homepage of the application.
+    \textbf{Coordinates of the device}: Used to express the latitude and longitude of the device so that it can be shown on the map, on the homepage of the application.
     \item[$\bullet$]
     \textbf{Who owns the device}: Who is the device owner, if it belongs to an organization then the name of the organization should appear here otherwise if the device belongs to a person then the person's name should \textbf{not} appear, it should say private or something similar.
 \end{itemize}
@@ -1106,10 +1216,10 @@ After the user has created an account and logs in, the user can add devices to t
 The user is not required to provide information to satisfy all items on this list, the
 only information that is required in order to add a device to the application is
 the name, category and coordinates of the device, all other
-information is optional but should be provided for the sake of guaranting a good
+information is optional but should be provided for the sake of guaranteeing a good
 experience to other users of the application. The information provided
 should be verified by the user beforehand so that bogus data does not clutter
-the application, in this case there are no absolute ways of guaranting this
+the application, in this case there are no absolute ways of guaranteeing this
 but the maintainer of the application edit wrong information or in some
 cases remove it, other users can also edit any device data. This is an
 open platform so it is expected that users act in good faith.
@@ -1130,7 +1240,7 @@ with bogus data.
 % Environment
 % Unique identification (with the help of other means)
 
-% Infomation to be added to the app:
+% Information to be added to the app:
 % What is the purpose of the data collection
 % Who can access the data
 % For how long is it stored
@@ -1220,19 +1330,19 @@ with bogus data.
         \centering
         \includegraphics[width=130pt]{../assets/images/low_homepage.png}
         \caption{}
-        \label{fig:home}
+        \label{fig:lowhome}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
         \includegraphics[width=130pt]{../assets/images/low_about.png}
         \caption{}
-        \label{fig:about}
+        \label{fig:lowabout}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
         \includegraphics[width=130pt]{../assets/images/low_more_info.png}
         \caption{}
-        \label{fig:faq}
+        \label{fig:lowfaq}
     \end{subfigure}%
     \caption{Low level prototype of (a) homepage, (b) about and (c) FAQ pages.}
     \label{fig:lowlevelprototype}
@@ -1260,19 +1370,19 @@ changed in subsequent prototype versions.
         \centering
         \includegraphics[width=130pt]{../assets/images/low_homepage.png}
         \caption{}
-        \label{fig:home}
+        \label{fig:mediumhome}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
         \includegraphics[width=130pt]{../assets/images/low_about.png}
         \caption{}
-        \label{fig:about}
+        \label{fig:mediumabout}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
         \includegraphics[width=130pt]{../assets/images/low_more_info.png}
         \caption{}
-        \label{fig:faq}
+        \label{fig:mediumfaq}
     \end{subfigure}%
     \caption{Medium level prototype of (a) homepage, (b) about and (c) FAQ pages.}
     \label{fig:mediumlevelprototype}
@@ -1284,19 +1394,19 @@ changed in subsequent prototype versions.
         \centering
         \includegraphics[width=130pt]{../assets/images/low_homepage.png}
         \caption{}
-        \label{fig:home}
+        \label{fig:highhome}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
         \includegraphics[width=130pt]{../assets/images/low_about.png}
         \caption{}
-        \label{fig:about}
+        \label{fig:highabout}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
         \includegraphics[width=130pt]{../assets/images/low_more_info.png}
         \caption{}
-        \label{fig:faq}
+        \label{fig:highfaq}
     \end{subfigure}%
     \caption{High level prototype of (a) homepage, (b) about and (c) FAQ pages.}
     \label{fig:highlevelprototype}
@@ -1309,8 +1419,8 @@ related to IoT and privacy, then the participants were asked to fill in the
 survey, if they had not yet done, as this gives some insight into what the
 application is about. The usability tests consists of single ease questions
 and system usability scale, as can be seen on appendix \ref{appendix:usability_tests}.
-The single ease question was used after the participant performed eached task, the
-participant would answer how diffucult they though the task was in a
+The single ease question was used after the participant performed each task, the
+participant would answer how difficult they though the task was in a
 scale of 1 to 7. The system usability scale was used after the participants
 performed all tasks, using this system a score of X was achieved.
 
