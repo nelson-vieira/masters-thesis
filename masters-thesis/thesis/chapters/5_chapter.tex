@@ -167,17 +167,97 @@ people might feel obligated to respond, which could be considered to be
 unethical, and the answers might have been answered in a less than
 honest manner.
 
+From the respondents, 47\% are male and 51\% are female, while 2\% don't identify
+as neither, see Figure \ref*{fig:genre}. 40\% of the participants are younger
+than 25 years old, 31.11\% are aged between 26 and 35, 9\% are between
+36 and 45 years old, 18\% are older than 46 but younger than 65 and 2\% are
+have more than 65 years, as shown on Figure \ref*{fig:age}.
+
+\begin{figure}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar,
+                bar width=20pt,
+                ymin=0,
+                ymax=60,
+                symbolic x coords={Male,Female,Other},
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.2,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(Male,47) (Female,51) (Other,2)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Genre distribution of participants.}
+        \label{fig:genre}
+    \end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar,
+                bar width=20pt,
+                ymin=0,
+                ymax=50,
+                symbolic x coords={18-25,26-35,36-45,46-65,65+},
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.2,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(18-25,40) (26-35,31.11) (36-45,8.89) (46-65,17.78) (65+,2.22)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Age ranges of participants.}
+        \label{fig:age}
+    \end{center}
+\end{figure}
+
 \begin{figure}
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
                 height=8cm,
-                width=13cm,
+                width=15cm,
+                ybar,
+                bar width=20pt,
+                ymin=0,
+                ymax=70,
+                symbolic x coords={Basic education,High school,Bachelor's degree,Master's degree,Doctorate},
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(Basic education,2.22) (High school,17.78) (Bachelor's degree,66.67) (Master's degree,11.11) (Doctorate,2.22)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Genre distribution of participants.}
+        \label{fig:education}
+    \end{center}
+\end{figure}
+
+Most of the respondents have a bachelor's degree, 66.67\% to be exact, 17.78\% have
+only finished high school, 2.22\% only have a basic education, 11.11\%
+have a master's degree and 2.22\% have a doctorate, as pictured on Figure \ref*{fig:education}.
+
+\begin{figure}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=8cm,
+                width=15cm,
                 ybar,
                 bar width=10pt,
                 ymin=0,
                 ymax=100,
-                ytick=\empty,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -217,8 +297,7 @@ skewed.
                 ybar,
                 bar width=20pt,
                 ymin=0,
-                ymax=100,
-                ytick=\empty,
+                ymax=30,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -379,26 +458,53 @@ importance on the user experience.
 % \end{figure}
 
 \begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{33.33/I do not know,
-            8.89/No,
-            57.78/Yes}
-    \end{tikzpicture}
-    \caption{Responses to the question: Do you consider that your internet activity contributes to the development of profiling?}
-    \label{fig:activity_contributes_profiling}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                xbar,
+                symbolic y coords={Do not know,Disagree,Agree},
+                bar width=12pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=100,
+                enlarge y limits=0.15,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(33.33,Do not know) (8.89,Disagree) (57.78,Agree)};
+                \addlegendentry{Do you consider that your internet activity contributes to the development of profiling?}
+                \addplot coordinates {(20,Do not know) (4.44,Disagree) (75.56,Agree)};
+                \addlegendentry{"The information I disclose on the internet can serve to identify me."}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Participant responses indicating whether they agree or disagree with these statements.}
+        \label{fig:activity_contributes_profiling}
+    \end{center}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \pie[explode = 0.1]{20/I do not know,
-            4.44/No,
-            75.56/Yes}
-    \end{tikzpicture}
-    \caption{Responses to the question: "The information I disclose on the internet can serve to identify me". Do you agree with this statement?}
-    \label{fig:information_disclose_internet_identify_me}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{33.33/I do not know,
+%             8.89/No,
+%             57.78/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Do you consider that your internet activity contributes to the development of profiling?}
+%     \label{fig:activity_contributes_profiling}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{20/I do not know,
+%             4.44/No,
+%             75.56/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "The information I disclose on the internet can serve to identify me". Do you agree with this statement?}
+%     \label{fig:information_disclose_internet_identify_me}
+% \end{figure}
 
 When asked about the concept of profiling, only half of the participants
 are aware of the term but more than half consider that their online
@@ -428,14 +534,16 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
                 \addlegendentry{"My data was more protected after the implementation of regulations such as the General Data Protection Regulation."}
             \end{axis}
         \end{tikzpicture}
-        \caption{Responses related to phone usage.}
-        \label{fig:phone_access}
+        \caption{Responses related to privacy regulations.}
+        \label{fig:privacy_regulations}
     \end{center}
 \end{figure}
 
+Regulations
+
 Regarding users' online habits, all participants have, or have access to, a smartphone
 and they use it in their daily lives, most participants concede that they spend a lot
-of their daily time using it, like shown on Figure \ref*{fig:phone_access}, and are
+of their daily time using it, like shown on Figure \ref*{fig:privacy_regulations}, and are
 somewhat worried but do not actively try to protect their data privacy, which
 comes as a bit of a contrast with their early answers. When asked if they accept
 cookies, respondents occasionally do but are unsure what they do or their
@@ -558,7 +666,7 @@ importance on the user experience.
             \end{axis}
         \end{tikzpicture}
         \caption{Participant responses indicating whether they agree or disagree with these statements.}
-        \label{fig:privacy_human_right_histogram}
+        \label{fig:privacy_notices}
     \end{center}
 \end{figure}
 
@@ -651,6 +759,7 @@ importance on the user experience.
         \caption{Responses related to concerns of organizations and individuals handling of private data.}
         \label{fig:concerns}
     \end{center}
+    \vspace{-30pt}% Removes "Float too large for the page" warning
 \end{figure}
 
 % \begin{figure}
@@ -1105,7 +1214,7 @@ importance on the user experience.
         \begin{tikzpicture}
             \begin{axis}[
                 height=8cm,
-                width=18cm,
+                width=16cm,
                 symbolic x coords={Zigbee, Z-Wave,Bluetooth Low Energy,Smart Home,Smart Vehicle,Fully autonomous car,Long-Term Evolution,Smart City,Wearable,LORA},
                 ybar,
                 bar width=8pt,
@@ -1128,6 +1237,14 @@ importance on the user experience.
         \label{fig:familiar_terms_iot}
     \end{center}
 \end{figure}
+
+In terms of IoT literacy more than half of the participants have interacted in some way
+with a device, and from those who have used an IoT device, only close to a third
+actually have a device in their homes. Even though most participants have
+interacted with an IoT device they had trouble actually explaining what Internet of Things
+actually is.
+
+This survey makes it clear that there is a lack of digital literacy
 
 \subsection{Stage 2: From theory to practice, an Application}
 
