@@ -219,7 +219,7 @@ have more than 65 years, as shown on Figure \ref*{fig:age}.
     \end{center}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
@@ -239,7 +239,7 @@ have more than 65 years, as shown on Figure \ref*{fig:age}.
                 \addplot coordinates {(Basic education,2.22) (High school,17.78) (Bachelor's degree,66.67) (Master's degree,11.11) (Doctorate,2.22)};
             \end{axis}
         \end{tikzpicture}
-        \caption{Genre distribution of participants.}
+        \caption{Education qualifications distribution of participants.}
         \label{fig:education}
     \end{center}
 \end{figure}
@@ -247,6 +247,8 @@ have more than 65 years, as shown on Figure \ref*{fig:age}.
 Most of the respondents have a bachelor's degree, 66.67\% to be exact, 17.78\% have
 only finished high school, 2.22\% only have a basic education, 11.11\%
 have a master's degree and 2.22\% have a doctorate, as pictured on Figure \ref*{fig:education}.
+
+\subsubsection{Results Discussion}
 
 \begin{figure}
     \begin{center}
@@ -339,8 +341,9 @@ skewed.
     \end{center}
 \end{figure}
 
-Participants consider data privacy as a human and consumer right, Figure \ref*{fig:privacy_human_right_histogram},
-even if they have no knowledge of article 12 of the Universal Declaration of Human Rights.
+Participants consider data privacy as a human and consumer right,
+Figure \ref*{fig:privacy_human_right_histogram}, even if they have
+no knowledge of article 12 of the Universal Declaration of Human Rights.
 
 \begin{figure}
     \centering
@@ -357,18 +360,18 @@ how to properly define it, giving generic answers while some even gave a one wor
 some participants gave incomplete or adjacent related answers. Only approximately
 16\% of participants supplied a concrete answer that was close to the definition
 presented in section \ref{introduction}. Curiously, no one mentioned security,
-which contradicts with the responses in Figure \ref*{fig:security_equals_privacy},
+which contradicts with the responses represented in Figure \ref*{fig:security_equals_privacy},
 where 53.33\% of participants believe that privacy and security are synonymous.
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
                 height=8cm,
-                width=18cm,
+                width=17cm,
                 symbolic x coords={Cookie, Wireless networks,Wi-Fi,Internet of Things,Data protection,Ad hoc network,Ubiquitous computing,Privacy assistant,Blockchain,Differential privacy},
                 ybar,
-                bar width=8pt,
+                bar width=7pt,
                 ymin=0,
                 ymax=100,
                 xticklabel style={rotate=90},
@@ -390,9 +393,11 @@ where 53.33\% of participants believe that privacy and security are synonymous.
     \end{center}
 \end{figure}
 
-Participants have some digital literacy of IT terms, as shown on Figure \ref*{fig:familiar_terms}, most know the more popular
-terms like \textit{wi-fi}, \textit{cookie} and \textit{data protection}, but as the terms become more esoteric
-the general knowledge starts to drop. Some terms, even after getting some popularity,
+Participants have some digital literacy of IT terms, as shown on
+Figure \ref*{fig:familiar_terms}, most know the more popular
+terms like \textit{wi-fi}, \textit{cookie} and \textit{data protection},
+but as the terms become more esoteric the general knowledge starts
+to drop. Some terms, even after getting some popularity,
 are still mostly unknown to the majority of people like \textit{blockchain} or \textit{Internet of Things}.
 
 \begin{figure}
@@ -426,14 +431,6 @@ are still mostly unknown to the majority of people like \textit{blockchain} or \
     \end{center}
 \end{figure}
 
-Regarding users' online habits, all participants have, or have access to, a smartphone
-and they use it in their daily lives, most participants concede that they spend a lot
-of their daily time using it, like shown on Figure \ref*{fig:phone_access}, and are
-somewhat worried but do not actively try to protect their data privacy, which
-comes as a bit of a contrast with their early answers. When asked if they accept
-cookies, respondents occasionally do but are unsure what they do or their
-importance on the user experience.
-
 % \begin{figure}
 %     \begin{center}
 %         \begin{tikzpicture}
@@ -457,7 +454,7 @@ importance on the user experience.
 %     \end{center}
 % \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
@@ -483,6 +480,15 @@ importance on the user experience.
         \label{fig:activity_contributes_profiling}
     \end{center}
 \end{figure}
+
+Regarding users' online habits, all participants have, or have access to, a smartphone
+and they use it in their daily lives, most participants concede that they spend a lot
+of their daily time using it, like shown on Figure \ref*{fig:phone_access}, and are
+somewhat worried but do not actively try to protect their data privacy, which
+goes against their earlier responses regarding their worry of personal data privacy.
+When asked if they accept
+cookies, respondents occasionally do but are unsure what they do or their
+importance on the user experience.
 
 % \begin{figure}
 %     \centering
@@ -525,13 +531,12 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
                 axis x line=bottom,
                 axis y line=left,
                 enlarge x limits=0.1,
-                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
-                legend style={at={(0.5,-0.1)},anchor=north}
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
                 \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
-                \addlegendentry{Are you interested in finding out more about regulations or legislation related to digital privacy?}
+                % \addlegendentry{Are you interested in finding out more about regulations or legislation related to digital privacy?}
                 \addplot coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
-                \addlegendentry{"My data was more protected after the implementation of regulations such as the General Data Protection Regulation."}
+                % \addlegendentry{"My data was more protected after the implementation of regulations such as the General Data Protection Regulation."}
             \end{axis}
         \end{tikzpicture}
         \caption{Responses related to privacy regulations.}
@@ -1539,6 +1544,15 @@ and system usability scale, as can be seen on appendix \ref{appendix:usability_t
 The single ease question was used after the participant performed each task, the
 participant would answer how difficult they though the task was in a
 scale of 1 to 7. The system usability scale was used after the participants
+performed all tasks.
+
+\subsubsection{Results Discussion}
+
+da
+
+The system usability scale was used after the participants
+performed all tasks, using this system a score of X was achieved.
+The system usability scale was used after the participants
 performed all tasks, using this system a score of X was achieved.
 
 \section{Challenges}
