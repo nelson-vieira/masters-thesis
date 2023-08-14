@@ -50,6 +50,25 @@
 
 \onehalfspacing
 
+\newcolumntype{P}{>{\centering\arraybackslash}p{0.50cm}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}m{0.25\textwidth}}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}m{0.25\textwidth}}
+
+\newcommand{\usetbl}{%
+    \begin{tabular}{@{}|*7{P|}@{}}
+        \hline
+        1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+        \hline
+    \end{tabular}
+}
+
+\newcommand\prop[1]{%
+    \item
+    \parbox[t]{0.5\textwidth}{#1}%
+    \qquad
+    \parbox[t]{0.5\textwidth}{\usetbl}%
+}
+
 %% Fix for the sub sub section
 \makeatletter
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
