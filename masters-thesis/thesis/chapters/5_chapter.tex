@@ -118,37 +118,97 @@ to IoT devices.
 \subsection{Stage 1: User perceptions}
 
 This study aims to understand people's perception of IoT and their privacy
-practices online. It also serves to demystify the privacy paradox and also
-to help provide a solution to the privacy issue in IoT. The questionnaire
-consists of 92 questions divided into 7 sections to access users' knowledge,
-it follows a kind of narrative, the first section being general privacy
-questions then about the predisposition to data sharing, to concerns with
-privacy then about daily digital routines, then about profile identification,
-and then about IoT general knowledge before a section about non-identifiable
-demographic data. The scale that is used in the questionnaire is based on
-the work of Philip K. Masur \cite{masur2018situational}. Great care is taken
-when it comes to this survey's data collection, in order to not identify
-any individual or group of individuals, for instance, when it comes to differential
-privacy, any data that might identify someone will not be disclosed, even
-though the data might suffer from some inaccuracy because of this.
+practices online. It also serves to better understand and demystify the privacy
+paradox and to help provide a solution to the privacy issue in IoT, which will be
+discussed on Section \ref{subsection:stage2}.
 
+The questionnaire consists of 86 questions divided into 7 sections to
+gauge users' digital literacy, the first section being about general privacy
+questions, then about the predisposition to data sharing, to concerns with
+privacy then about daily digital routines, then about profile identification,
+subsequently about IoT general knowledge before a final part about
+non-identifiable demographic data. The questionnaire's structure is shown
+in more detail in Table \ref{table:questionnaire}, the full questionnaire
+is presented on Appendix \ref{appendix:survey}.
+
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{r *{3}{ p{6cm} }}
+            \hline
+            $\#$\hspace{0.5cm} & Section & Details \\
+            \hline
+            1\hspace{0.5cm} & General knowledge and attitudes towards privacy & This
+            section's goal is to ask generic questions regarding the participants awareness
+            of information privacy. \\
+            \hline
+            2\hspace{0.5cm} & Disposition for sharing personal information & This
+            section is designed to elicit generic inquiries about the participants
+            willingness to provide personal information. \\
+            \hline
+            3\hspace{0.5cm} & Privacy concerns & This section strives to
+            elicit questions about potential concerns about disclosing
+            personal information. \\
+            \hline
+            4\hspace{0.5cm} & Current online habits and practices & This
+            section includes general questions with regard to working with
+            the internet in everyday activities. \\
+            \hline
+            5\hspace{0.5cm} & Profile identification & This section gathers
+            more particular questions concerning employing profiles to make
+            it more straightforward to generate tailor-made interactions. \\
+            \hline
+            6\hspace{0.5cm} & Knowledge and habits regarding the Internet
+            of Things & This section contains questions about participants'
+            usage patterns for IoT devices as well as questions that aim to
+            understand their level of literacy. \\
+            \hline
+            7\hspace{0.5cm} & Demographic data & This section is for
+            gathering broad demographic information that allows
+            to characterize the participants in statistical terms. \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+    \caption{Structure of questionnaire}
+    \label{table:questionnaire}
+\end{table}
+
+Great care was taken when it comes to this survey's data collection, in
+order to not identify any individual or group of individuals, for
+instance, when it comes to differential privacy, any data that might
+identify someone will not be disclosed, even though the data might suffer
+from some inaccuracy because of this.
+
+The scale that is used in the questionnaire, which is from one to seven,
+is based on the work of Philip K. Masur \cite{masur2018situational}, it
+was chosen because it provides a more nuanced understanding
+of the participants knowledgable. This scale was developed as an
+online privacy concerns scale so it fits perfectly on this questionnaire,
+another scale, also developed by Masur with Teutsch and Trepte,
+that could be used but was ultimately not chosen is the Online Privacy
+Literacy Scale \cite{masur2017entwicklung}, although the questionnaire does
+contain some of the main aspects of this scale like knowledge of data collection and
+analysis practices by institutions and online service providers
+knowledge of data protection law, knowledge of technical aspects of data
+protection and knowledge of data protection strategies.
 This survey was partially based in a study done in the Philippines by the
 government in the context of their privacy act of 2012 \cite{Philippine2022Conduct},
 this was the second survey done on the country's population. It was also
 inspired by Alves's master's thesis \cite{alves2021}, which was about citizen's
 perception about privacy in the wake of GDPR.
 
-This survey was done through the internet, it was created in Google Forms,
-this way it is guaranteed to reach the most people possible, besides Google
-Forms itself, it will be used other online venues for distribution and even
-printing.
+This survey was constructed in Google Forms and distributed through the internet,
+the intent would be that this would reach as many individuals as possible,
+besides Google Forms itself, it was used other online venues for distribution
+like social media, forum websites, through in person discussions and
+some participants responded when also doing the application usability tests.
 
 The questionnaire was available for completion until August 30, 2023,
-and during the time that it was open \textcolor{red}{45} participants responded.
+and during the time that it was open 46 participants responded.
 Several online survey dissemination services were used to acquire participants,
 all the services used were based on the goodwill of the participants, there
 was no financial incentive for completing the survey. Most of the services
-used were software as a service (SaaS) and  these platforms are based
+used were software as a service (SaaS), these platforms are based
 on credits for filling in other questionnaires available, this makes the process
 of acquiring participants very tedious as many questionnaires need to be
 filled in to get a reasonable number of participants (at least 150 to
@@ -168,10 +228,10 @@ unethical, and the answers might have been answered in a less than
 honest manner.
 
 From the respondents, 47\% are male and 51\% are female, while 2\% don't identify
-as neither, see Figure \ref*{fig:genre}. 40\% of the participants are younger
+as neither, see Figure \ref{fig:genre}. 40\% of the participants are younger
 than 25 years old, 31.11\% are aged between 26 and 35, 9\% are between
 36 and 45 years old, 18\% are older than 46 but younger than 65 and 2\% are
-have more than 65 years, as shown on Figure \ref*{fig:age}.
+have more than 65 years, as shown on Figure \ref{fig:age}.
 
 \begin{figure}
     \begin{center}
@@ -246,7 +306,7 @@ have more than 65 years, as shown on Figure \ref*{fig:age}.
 
 Most of the respondents have a bachelor's degree, 66.67\% to be exact, 17.78\% have
 only finished high school, 2.22\% only have a basic education, 11.11\%
-have a master's degree and 2.22\% have a doctorate, as pictured on Figure \ref*{fig:education}.
+have a master's degree and 2.22\% have a doctorate, as pictured on Figure \ref{fig:education}.
 
 \subsubsection{Results Discussion}
 
@@ -282,9 +342,9 @@ have a master's degree and 2.22\% have a doctorate, as pictured on Figure \ref*{
 
 As would be expected, the majority of participants agreed that data privacy
 is important to them and as such should be protected, as can be inferred
-on Figure \ref*{fig:privacy_is_important_to_me}. Most participants
+on Figure \ref{fig:privacy_is_important_to_me}. Most participants
 also have some knowledge of behaviours or techniques to do
-in an online environment, as shown on Figure \ref*{fig:techniques_to_guarantee_privacy}, be it connected to the internet or on some
+in an online environment, as shown on Figure \ref{fig:techniques_to_guarantee_privacy}, be it connected to the internet or on some
 local network, like not sharing too much private information
 (or none at all) with strangers, revealing only the bare minimum necessary
 information to use a particular system, use of VPNs, different and strong
@@ -341,8 +401,8 @@ skewed.
     \end{center}
 \end{figure}
 
-Participants consider data privacy as a human and consumer right,
-Figure \ref*{fig:privacy_human_right_histogram}, even if they have
+Most participants consider data privacy as a human and consumer right,
+as shown on Figure \ref{fig:privacy_human_right_histogram}, even if they have
 no knowledge of article 12 of the Universal Declaration of Human Rights.
 
 \begin{figure}
@@ -359,8 +419,8 @@ When asked to define digital privacy, most participants did not know
 how to properly define it, giving generic answers while some even gave a one word answer,
 some participants gave incomplete or adjacent related answers. Only approximately
 16\% of participants supplied a concrete answer that was close to the definition
-presented in section \ref{introduction}. Curiously, no one mentioned security,
-which contradicts with the responses represented in Figure \ref*{fig:security_equals_privacy},
+presented in Section \ref{introduction}. Curiously, no one mentioned security,
+which contradicts with the responses represented in Figure \ref{fig:security_equals_privacy},
 where 53.33\% of participants believe that privacy and security are synonymous.
 
 \begin{figure}[H]
@@ -394,7 +454,7 @@ where 53.33\% of participants believe that privacy and security are synonymous.
 \end{figure}
 
 Participants have some digital literacy of IT terms, as shown on
-Figure \ref*{fig:familiar_terms}, most know the more popular
+Figure \ref{fig:familiar_terms}, most know the more popular
 terms like \textit{wi-fi}, \textit{cookie} and \textit{data protection},
 but as the terms become more esoteric the general knowledge starts
 to drop. Some terms, even after getting some popularity,
@@ -483,7 +543,7 @@ are still mostly unknown to the majority of people like \textit{blockchain} or \
 
 Regarding users' online habits, all participants have, or have access to, a smartphone
 and they use it in their daily lives, most participants concede that they spend a lot
-of their daily time using it, like shown on Figure \ref*{fig:phone_access}, and are
+of their daily time using it, like shown on Figure \ref{fig:phone_access}, and are
 somewhat worried but do not actively try to protect their data privacy, which
 goes against their earlier responses regarding their worry of personal data privacy.
 When asked if they accept
@@ -514,16 +574,16 @@ importance on the user experience.
 
 When asked about the concept of profiling, only half of the participants
 are aware of the term but more than half consider that their online
-activity contributes to its development, see Figure \ref*{fig:activity_contributes_profiling}.
+activity contributes to its development, see Figure \ref{fig:activity_contributes_profiling}.
 
 \begin{figure}
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
                 height=8cm,
-                width=12cm,
+                width=10cm,
                 ybar,
-                bar width=10pt,
+                bar width=8pt,
                 ymin=0,
                 ymax=100,
                 ytick=\empty,
@@ -534,9 +594,9 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
                 \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
-                % \addlegendentry{Are you interested in finding out more about regulations or legislation related to digital privacy?}
+                % \addlegendentry{\textcolor{red}{TOFIX} Are you interested in finding out more about regulations or legislation related to digital privacy?}
                 \addplot coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
-                % \addlegendentry{"My data was more protected after the implementation of regulations such as the General Data Protection Regulation."}
+                % \addlegendentry{\textcolor{red}{TOFIX} "My data was more protected after the implementation of regulations such as the General Data Protection Regulation."}
             \end{axis}
         \end{tikzpicture}
         \caption{Responses related to privacy regulations.}
@@ -544,15 +604,15 @@ activity contributes to its development, see Figure \ref*{fig:activity_contribut
     \end{center}
 \end{figure}
 
-Regulations
-
-Regarding users' online habits, all participants have, or have access to, a smartphone
-and they use it in their daily lives, most participants concede that they spend a lot
-of their daily time using it, like shown on Figure \ref*{fig:privacy_regulations}, and are
-somewhat worried but do not actively try to protect their data privacy, which
-comes as a bit of a contrast with their early answers. When asked if they accept
-cookies, respondents occasionally do but are unsure what they do or their
-importance on the user experience.
+Regarding participants relation with regulations, most participants are
+aware of regulations related to digital privacy, like GDPR or CCPA, but
+it's not absolutely clear to them what they represent and they do not
+show a clear interest in know more about these regulations, as shown on Figure \ref{fig:privacy_regulations}. It is not
+clear why there is a certain disinterest by most participants in regulations,
+it might be that most find it frustrating to read, or there is some
+faith that they work and as such there is no need to know more about them.
+Notably 0,47\% of the participants responded correctly to the question
+about GDPR's definition of personal data.
 
 % \begin{figure}
 %     \begin{center}
@@ -619,15 +679,27 @@ importance on the user experience.
 %     \label{fig:share_health_data_cannot_identify}
 % \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1]{73.33/No,
             26.67/Yes}
     \end{tikzpicture}
-    \caption{Responses to the question: Are you aware of the duties of a Data Protection Officer (DPO)?}
+    \caption{Responses to the question: Are you aware of the duties of a data protection officer (DPO)?}
     \label{fig:aware_dpo}
 \end{figure}
+
+Most participants, 73.33\%, do not know what a data protection officer is
+or what are their duties, as can be seen on Figure \ref{fig:aware_dpo}.
+A data protection officer is a position within a company that serves
+as an independent advocate for the proper handling and use of
+customer information. This position was created as a result of the GDPR,
+which mandates the appointment of a data protection officer by all
+companies that market products or services to customers in the
+European Union and collect data as a result. The data protection
+officer maintains up with data protection laws and procedures,
+does internal privacy assessments, and makes sure any other
+compliance-related issues involving data are current.
 
 \begin{figure}
     \centering
@@ -640,7 +712,11 @@ importance on the user experience.
     \label{fig:interested_where_how_information_used}
 \end{figure}
 
-\begin{figure}
+As expressed before, participants consider the protection of private data important
+and as such 82.22\% are interested in knowing where and how their data is used by
+the organizations, as shown on Figure \ref{fig:interested_where_how_information_used}.
+
+\begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
@@ -674,6 +750,8 @@ importance on the user experience.
         \label{fig:privacy_notices}
     \end{center}
 \end{figure}
+
+Figure \ref{fig:privacy_notices} depicts questions related to privacy notices.
 
 % \begin{figure}
 %     \centering
@@ -730,7 +808,7 @@ importance on the user experience.
 %     \label{fig:not_read_privacy_notice_trust_institution}
 % \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}[rotate=90]
             \begin{axis}[
@@ -766,6 +844,8 @@ importance on the user experience.
     \end{center}
     \vspace{-30pt}% Removes "Float too large for the page" warning
 \end{figure}
+
+Figure \ref{fig:concerns} depicts questions related to participants privacy related concerns.
 
 % \begin{figure}
 %     \begin{center}
@@ -1167,7 +1247,7 @@ importance on the user experience.
     \label{fig:aware_data_brokers}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
@@ -1252,6 +1332,7 @@ actually is.
 This survey makes it clear that there is a lack of digital literacy
 
 \subsection{Stage 2: From theory to practice, an Application}
+\label{subsection:stage2}
 
 This work proposes an application that gives users information about IoT
 devices that inhabit their surroundings, like the type of information these devices
@@ -1280,7 +1361,7 @@ or iOS. Flutter has better performance and as such it was the chosen framework
 for this application.
 
 The first step before creating any prototypes or starting the development was
-creating a software requirements specification, as can be read on appendix \ref{appendix:a},
+creating a software requirements specification, as can be read on Appendix \ref{appendix:software_requirements},
 delineating the scope and vision for the application; the involved stakeholders;
 containing contextual, data-flow and swimlane diagrams; software requirements, including
 business, technology, functional and non-functional requirements; use cases
@@ -1510,7 +1591,7 @@ changed in subsequent prototype versions.
     \label{fig:mediumlevelprototype}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \begin{subfigure}{0.33\textwidth}
         \centering
@@ -1548,8 +1629,6 @@ performed all tasks.
 
 \subsubsection{Results Discussion}
 
-da
-
 The system usability scale was used after the participants
 performed all tasks, using this system a score of X was achieved.
 The system usability scale was used after the participants
@@ -1558,14 +1637,14 @@ performed all tasks, using this system a score of X was achieved.
 \section{Challenges}
 
 One of the most difficult points to accomplish in this thesis was the
-questionnaire, not the fact of constructing the questionnaire but of
+questionnaire, not the construction of the questionnaire itself but
 getting participants. Besides being difficult in itself to get a relatively
-high number of participants of participants (a few hundred at least)
+high number of participants (a few hundred at least)
 to be able to draw conclusions with any high degree of confidence, it was
-difficult to get to get the potential participants interested in the topic
+difficult to get the potential participants interested in the topic
 at hand, because although it seems that many people value their privacy very
-highly and think they should protect it in practice they are not very
-interested. This may even be because many people do not have much knowledge
+highly and think they should protect it, in practice it seems they
+are not very interested. This may even be because many people do not have much knowledge
 about the Internet of Things, and thus feel that they cannot answer the
 questionnaire because it is out of their field of knowledge, another
 reason may be that the questionnaire seems a little long, because it
@@ -1581,27 +1660,3 @@ in the literature that has been carried out there is not a great focus
 on conducting questionnaires and the ones that have been conducted have
 not only focused on the Internet of Things and also have some monetary
 incentive for the participants.
-
-% Um dos pontos mais difíceis de realizar nesta tese foi o questionário,
-% não o facto de construir o questionário mas sim de angariar participantes.
-% Para além de ser difícil por si só conseguir ter um número de participantes
-% relativamente alto (algumas centenas, 500 a 1000) para conseguirmos tirar
-% conclusões com algum grau de confiança elevado, foi difícil de conseguir
-% com que os possíveis participantes se interessassem no tópico em questão,
-% pois apesar de parecer que muitas pessoas valorizem muito a sua privacidade
-% e achem que devem a proteger na prática não se interessam muito. Isto até
-% pode ser porque muitas pessoas não tenham muito conhecimento a nível da
-% Internet of Things, e assim acharem que não conseguem responder ao questionário
-% por ser fora do seu campo de conhecimento, outra razão pode o questionário
-% parecer um pouco longo, pois demora em média 15 a 20 minutos para responder,
-% e apesar de até ser um tópico de interesse o investimento de tempo no
-% questionário pode ser considerado muito elevado. Outro ponto a ter em consideração
-% em relação ao baixo número de participantes é a forma como o questionário
-% está escrito e como este foi divulgado, isto é, pode ter sido usado
-% uma linguagem muito formal ou técnica tanto na construção do mesmo como
-% também na sua divulgação e juntado ao facto de este ser um tópico muito niche
-% pode ter "assustando" possíveis participantes. Contudo é de notar que
-% também na literatura que tem vindo a ser realizada não há um grande foco
-% na realização de questionários e os que têm sido realizados não têm se
-% focado somente na Internet of Things e têm também algum incentivo monetário
-% para os participantes.
