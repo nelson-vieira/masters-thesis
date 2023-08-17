@@ -1383,7 +1383,7 @@ how to better implement the application using this document as its base.
 Stakeholders tell us who communicates
 with the system directly or indirectly. Business requirements will have
 to be defined to know in detail the possibilities of value for both sides.
-The swimlane gives a general understanding of the main case and what cause
+The swimlane diagram gives a general understanding of the main case and what cause
 has each action, the contextual diagram helps to give an understanding
 of all actions between the system and the active parties. The data flow
 diagram, lets you know in detail what results from the particular activities.
@@ -1438,7 +1438,7 @@ the system with data and control between the external entities and the applicati
 \begin{figure}[H]
     \centering
     \includegraphics[width=3.5cm]{../app/docs/software_requirements/assets/images/contextual_diagram.png}
-    \caption{IoT Privacy Contextual Diagram}
+    \caption{IoT privacy contextual diagram.}
     \label{fig:contextual diagram}
 \end{figure}
 The contextual diagram is based on showing the actions performed with the
@@ -1471,7 +1471,7 @@ in the system and their relationships.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm]{../app/docs/software_requirements/assets/images/data_flow_diagram.png}
-    \caption{Data flow diagram}
+    \caption{Data flow diagram.}
     \label{fig:data flow diagram}
 \end{figure}
 The user can browse the application map, which will be created with an API,
@@ -1489,7 +1489,7 @@ lane being assigned to people/groups and application.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm]{../app/docs/software_requirements/assets/images/swimlane_diagram.png}
-    \caption{Swimlane diagram}
+    \caption{Swimlane diagram.}
     \label{fig:diagram swimlane}
 \end{figure}
 This swimlane diagram represents a high level view of a possible user interaction
@@ -1527,7 +1527,7 @@ The technology requirements that have been identified for this project are as fo
 \begin{itemize}
     \item Firestore or similar database server
     \item Flutter framework with Dart being the main programming language
-    \item Accessible on any smartphone (iOS or Android) \newline \textbf{Note}: No web based version it to be available.
+    \item Accessible on any smartphone (iOS or Android) \newline \textbf{Note}: No web based version is to be available.
 \end{itemize}
 These requirements have been chosen so that the system is available to as
 many users as possible regardless of the hardware they use. The database
@@ -1552,7 +1552,7 @@ For the features found were described the most appropriate requirements for
 them. \\
 \begin{table}[H]
     \centering
-    \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
+    \begin{adjustbox}{width=1\textwidth,center=\textwidth}
     % \rowcolors{5}{gray!10}{gray!40}
     \begin{tabular}{|l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|p{0.15\textwidth}|}
         \hline
@@ -1581,6 +1581,7 @@ them. \\
         \hline
     \end{tabular}
     \end{adjustbox}
+    \vspace{1em}
     \caption{Requirements table}
     \label{table:table1}
 \end{table}
@@ -1641,7 +1642,7 @@ from it.
 \begin{figure}[H]
     \centering
     \includegraphics[width=15cm]{../app/docs/software_requirements/assets/images/use_cases_diagram.png}
-    \caption{Use cases diagram}
+    \caption{Use cases diagram.}
     \label{fig:use cases diagram}
 \end{figure}
 
@@ -1713,6 +1714,7 @@ Language (UML) notation.
             \hline
         \end{tabular}
     \end{adjustbox}
+    \vspace{1em}
     \caption{Use case 1 - device information query}
     \label{use case 1}
 \end{table}
@@ -1761,6 +1763,7 @@ Language (UML) notation.
             \hline
         \end{tabular}
     \end{adjustbox}
+    \vspace{1em}
     \caption{Use case 2 - statistics query}
     \label{use case 2}
 \end{table}
@@ -1812,6 +1815,7 @@ Language (UML) notation.
             \hline
         \end{tabular}
     \end{adjustbox}
+    \vspace{1em}
     \caption{Use case 3 - add a device}
     \label{use case 3}
 \end{table}
@@ -1868,6 +1872,7 @@ Language (UML) notation.
             \hline
         \end{tabular}
     \end{adjustbox}
+    \vspace{1em}
     \caption{Use case 4 - edit a device's data}
     \label{use case 4}
 \end{table}
@@ -1918,6 +1923,7 @@ Language (UML) notation.
             \hline
         \end{tabular}
     \end{adjustbox}
+    \vspace{1em}
     \caption{Use case 5 - delete a device}
     \label{use case 5}
 \end{table}
@@ -1975,6 +1981,7 @@ Language (UML) notation.
             \hline
         \end{tabular}
     \end{adjustbox}
+    \vspace{1em}
     \caption{Use case 6 - create an account}
     \label{use case 6}
 \end{table}
@@ -2022,6 +2029,7 @@ is a higher priority than the row one and if it is 0 the opposite is true.
         Total & 8 & 7 & 6 & 3 & 6 & 2 & 0 & 2 & 5 & 6 \\
         \hline
     \end{tabular}
+    \vspace{1em}
     \caption{Prioritisation table using the MoSCoW technique}
     \label{table:tabela moscow}
 \end{table}
@@ -2063,8 +2071,9 @@ associated to each feature is also estimated.
         \hline
     \end{tabular}
     \end{adjustbox}
+    \vspace{1em}
     \caption{Features prioritisation table}
-    \label{table:tabela de priorizacao}
+    \label{table:prioritisation table}
 \end{table}
 
 Using this method we get the requirements sorted by priority:
@@ -2098,6 +2107,7 @@ Using this method we get the requirements sorted by priority:
         10 & Query statistics of the devices & 4 & 0,22 \\
         \hline
     \end{tabular}
+    \vspace{1em}
     \caption{Highest priority requirements ordered}
     \label{table:sorted requirements}
 \end{table}
@@ -2121,65 +2131,65 @@ For these acceptance criteria the following was considered:
 
 \paragraph*{Features}
 
-\paragraph*{Add a device}
+\paragraph*{\small Add a device}
 
 \begin{itemize}
     \item The system allows the user to add a new device that is not yet present in the database
 \end{itemize}
 
-\paragraph*{Edit a device}
+\paragraph*{\small Edit a device}
 
 \begin{itemize}
     \item The system allows the editing of an existing device
     \item The system saves in the database the changes that have been made
 \end{itemize}
 
-\paragraph*{Delete a device}
+\paragraph*{\small Delete a device}
 
 \begin{itemize}
     \item The system allows the deletion of an existing device
     \item The system deletes the device from its database
 \end{itemize}
 
-\paragraph*{Navigate the map}
+\paragraph*{\small Navigate the map}
 
 \begin{itemize}
     \item The system can represent the devices on the map
     \item The system allows the user to navigate throughout the map and view the devices
 \end{itemize}
 
-\paragraph*{Query devices through parameters}
+\paragraph*{\small Query devices through parameters}
 
 \begin{itemize}
     \item The system allows searching devices by the certain parameters like the category, the type of data collected
 \end{itemize}
 
-\paragraph*{Select device on map}
+\paragraph*{\small Select device on map}
 
 \begin{itemize}
     \item The system allows the user to select a device on the map
 \end{itemize}
 
-\paragraph*{See more information about privacy in IoT}
+\paragraph*{\small See more information about privacy in IoT}
 
 \begin{itemize}
     \item The system allows the user to see more information about privacy in IoT
 \end{itemize}
 
-\paragraph*{Select privacy choices}
+\paragraph*{\small Select privacy choices}
 
 \begin{itemize}
     \item The system allows the user to select a device and view its details
     \item The system allows the user to select privacy choices for that device (if that option is available)
 \end{itemize}
 
-\paragraph*{Consult devices' statistics}
+\paragraph*{\small Consult devices' statistics}
 
 \begin{itemize}
     \item The system allows the user to consult statistics concerning the devices
 \end{itemize}
 
-\paragraph*{Create account}
+\paragraph*{\small Create account}
 
 \begin{itemize}
     \item The system allows the creation of an account
