@@ -685,7 +685,7 @@ about GDPR's definition of personal data.
         \pie[explode = 0.1]{73.33/No,
             26.67/Yes}
     \end{tikzpicture}
-    \caption{Responses to the question: Are you aware of the duties of a data protection officer (DPO)?}
+    \caption{Awareness of the duties of a data protection officer.}
     \label{fig:aware_dpo}
 \end{figure}
 
@@ -708,7 +708,7 @@ data-related concerns are current.
             15.56/I do not agree nor disagree,
             82.22/I agree}
     \end{tikzpicture}
-    \caption{Responses to the question: "I am interested in knowing where and how my personal information is used." Do you agree with this statement?}
+    \caption{Interest in knowing where and how personal information is used by organizations.}
     \label{fig:interested_where_how_information_used}
 \end{figure}
 
@@ -1330,7 +1330,8 @@ not want to provide any information that may be used to identify them.
                 xticklabel style={rotate=90},
                 axis x line=bottom,
                 axis y line=left,
-                enlarge x limits=0.1
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
                 \addplot coordinates {(Zigbee,0) (Z-Wave,2.22) (Bluetooth Low Energy,15.56) (Smart Home,28.89) (Smart Vehicle,22.22) (Fully autonomous car,17.78) (Long-Term Evolution,11.11) (Smart City,8.89) (Wearable,24.44) (LORA,0)};
                 \addlegendentry{Very knowledgable}
@@ -1345,13 +1346,34 @@ not want to provide any information that may be used to identify them.
     \end{center}
 \end{figure}
 
-In terms of IoT literacy more than half of the participants have interacted in some way
-with a device, and from those who have used an IoT device, only close to a third
-actually have a device in their homes. Even though most participants have
-interacted with an IoT device they had trouble actually explaining what Internet of Things
-actually is.
+In terms of IoT usage and literacy, about 2/3 of the participants have interacted in
+some way with a device, and from those who have used an IoT device, only close
+to a third (35.56\%) actually have a device in their homes, as depicted on
+Figure \ref{fig:internet_of_things_device_usage}. Even though most participants
+have interacted with an IoT device they had trouble actually explaining what Internet
+of Things actually is. When asked to describe it, 48\% of the participants
+wrote some kind of ``do not know'' variation, from the other 52\% that gave
+a more elaborate answer 70\% gave a generic answer that could be applied to
+a number of things, some described it like objects that are connected
+to the internet. Only two participants managed to describe IoT accurately.
+Most participants know devices that can be characterized as belonging to
+the Internet of Things like smart homes devices, including smart
+appliances like fridges, smart locks or virtual assistants that
+function with natural language commands, so even though the majority
+of respondents do not know how to define they can recognize IoT devices.
+Familiarity with devices does not extend to most IoT related terms,
+the most recognized terms are the ones who have more visibility
+in everyday day like smart home, smart vehicle or fully autonomous car.
+% Terms describing networks or protocols are do not elicit much response
+% with most of the "some" or "very knowledgable" responses being from
+% participants that have qualifications or work in IT.
 
-This survey makes it clear that there is a lack of digital literacy
+This survey makes it clear that there is a general lack of digital
+literacy, especially when it comes to IoT. This still being
+a new terminology/technology and only quickly expanding on the last decade,
+the people that have the most knowledge are the ones working
+in areas related to it. This survey also helps to demystify the
+privacy paradox.
 
 \subsection{Stage 2: From theory to practice, an Application}
 \label{subsection:stage2}
