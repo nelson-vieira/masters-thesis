@@ -230,7 +230,7 @@ is based on three important principles. The first being that ``differential
 privacy requires that adding or removing the data record of a single individual
 not change the probability of any outcome by much''. The second principle
 being that ``no outside observer can learn very much about any individual
-because of that person's specific data''. The third important principle
+because of that person's specific data''. And the third important principle
 being that ``for every individual in the dataset, and for any observer no
 matter what their initial beliefs about the world were, after observing
 the output of a differentially private computation, their posterior belief
@@ -243,8 +243,8 @@ plausible deniability to any individual who may have had their data exploited
 while still being able to calculate statistics with relatively high precision.
 Although algorithms that deal with notions of fairness, ethics, and privacy
 are hard to implement because of the subjectivity of these concepts, and
-differential privacy algorithms are no different, they can still help in
-regards to addressing technology's inherent moral quandaries.
+differential privacy algorithms are no exception, they can still help in
+regards to tackling technology's intrinsic ethical and moral issues.
 
 % Differential privacy is an important component of machine learning algorithms
 % and massive datasets, and it has the potential to significantly increase
@@ -260,8 +260,8 @@ regards to addressing technology's inherent moral quandaries.
 % Differential privacy is a crucial component of machine learning algorithms and massive datasets that has the potential to significantly boost individual privacy protection. By purposefully inserting noise into a dataset, we can give plausible deniability to any individual who may have their data exploited to harm them while still being able to calculate needed statistics with high precision. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing the inherent moral dilemmas of technology.
 % Differential privacy is a critical component of machine learning algorithms and large datasets, with the potential to greatly improve individual privacy protection. We can provide plausible deniability to any individual who may have their data misused to harm them while still being able to calculate essential statistics with high accuracy by purposely injecting noise into a dataset. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing technology's inherent moral dilemmas.
 
-There exist other algorithms that aim to preserve privacy in the same way
-as differential privacy such as Google's box blurring algorithm \cite{FromeLarge}
+Similar to differential privacy, there exists different algorithms that aim to
+preserve privacy such as Google's box blurring algorithm \cite{FromeLarge}
 that is used in the Google Map's street view, Microsoft's Visor \cite{poddar2020visor}
 which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
 \cite{ShokriPrivacy} system for collaborative deep learning, however, in
@@ -450,22 +450,38 @@ available.
 
 % The key contributions of this paper include (1) A domain-specific ontology for modeling IoT security and privacy policies, (2) a notation for representing IoT security and privacy policies and validating the policies for inconsistencies, conflicts, ambiguities, and incompleteness, (3) a set of guidelines and rules for detecting IoT policy errors, and 4) a tool for visually modeling and capturing IoT security policies and discovering problems with the policies.
 
+There exists frameworks like the NIST Cybersecurity Framework \cite{barrett2018framework},
+published by the National Institute of Standards and Technology (NIST),
+which includes a number of recommendations for reducing organizational
+cybersecurity risks. Although this framework is primarily focused on
+security, it can also be used to reduce privacy threats.
+ISO/IEC 27400:2022 \cite{iso2022cybersecurity}, developed by the International
+Organization for Standardization (ISO), is a standard that provides
+guidelines on risks, principles and safeguards for the security and
+privacy of IoT systems. In addition, ISO has produced about 208 privacy-related
+standards \cite{iso2023privacysearch}, some of which have been published
+and others of which are currently in development. This is a small number
+when compared to the roughly 1305 security-related standards \cite{iso2023securitysearch},
+but there may be some overlap between these standards. Even those ISO privacy
+based standards have a good amount of intersection with security related
+guidelines.
+
 \subsubsection{Blockchain}
 
 Blockchain is an option to guarantee privacy in IoT because of zero-knowledge
-proofs, ring signatures and mixing \cite{PrivacyblockchainWikipedia}.
+proofs, ring signatures \cite{mercer2016privacy} and mixing
+among other techniques \cite{zhang2019security}.
 
 A zero-knowledge proof is a cryptographic technique that enables one party
-(the prover) to demonstrate to another (the verifier) that a certain claim
-is true without disclosing any information other than the validity of that
-claim. Completeness, soundness, and zero-knowledge are the three requirements
-that must be satisfied by a zero-knowledge proof method. Completeness means
-that the verifier must be able to confirm that the prover is stating the truth
-if the information supplied by the prover is true. Soundness indicates that
-the verifier must be given the opportunity to contradict the prover's claims
-of speaking the truth if the information provided by the prover is untrue.
-Zero-knowledge refers to the need that the method only reveal to the verifier
-whether the prover is speaking the truth or not.
+to demonstrate to another that a certain statement is true without disclosing
+any information other than the validity of that statement. Completeness, soundness,
+and zero-knowledge are the three requirements that must be satisfied by a
+zero-knowledge proof method. Completeness states that if a
+statement is genuine, an honest party will be convinced of it by another honest
+party. Soundness indicates that a nefarious party should only have a small chance
+of convincing an honest party that a statement is true. Zero-knowledge states
+that the method must only tell one party whether or not the other party is
+disclosing the truth.
 
 Ring signatures create a single, recognizable signature that is used to sign
 a transaction by combining a number of partial digital signatures from diverse
@@ -487,12 +503,23 @@ provide a public record of every transaction, mixers have been developed
 to improve cryptocurrency privacy. Because of their emphasis on secrecy,
 mixers have been used to launder money using cryptocurrency.
 
-Yu et al. \cite{yu2018blockchain} shows various implementations of blockchain
+Zhang et al. \cite{zhang2019security} outline some disadvantages concerning
+these techniques. For example, the authors assert that zero-knowledge proofs
+are less efficient than other techniques, that ring signatures cannot reveal
+the identity of the signer in the event of a dispute, and that centralized
+services run an increased risk of leaking users' personal information when
+it comes to mixing.
+
+Yu et al. \cite{yu2018blockchain} discuss various implementations of blockchain
 that provide privacy through security, based on different categories like
-data integrity, data sharing and authentication and access control. The
-authors use privacy as a proxy for security, they also do not discuss the
-weak and strong points of each implementation or make any comparison, they
-also do not provide further research questions.
+data integrity, data sharing and authentication and access control, most
+implementations proposed use a peer-to-peer network based on the Ethereum
+platform, with the exception being using any consortium or private blockchain,
+consortium meaning a blockchain where consensus is managed by a pre-selected set
+of nodes and private meaning access permission and read/write authority are
+tightly controlled. The authors use privacy as a proxy for security, they also
+do not discuss the weak and strong points of each implementation or make any
+comparison, they also do not provide further research questions.
 
 % Ali et al. \cite{AliIoT} propose a software stack of blockchain smart contracts
 % and peer-to-peer file storage, to give IoT users authority over
@@ -674,6 +701,53 @@ signals in order to precisely pinpoint mobile users.
 
 \subsubsection{Main Takeaways}
 
+% \begin{table}[H]
+%     \begin{center}
+%         \begin{tabular}{r *{4}{ p{5cm} }}
+%             \hline
+%             Ref $\#$ & Type of approach & Pros & Cons \\
+%             \hline
+%             1\hspace{0.5cm} & General knowledge and attitudes towards privacy & This
+%             section's goal is to ask generic questions regarding the participants awareness
+%             of information privacy. \\
+%             \hline
+%             2\hspace{0.5cm} & Disposition for sharing personal information & This
+%             section is designed to elicit generic inquiries about the participants
+%             willingness to provide personal information. \\
+%             \hline
+%             3\hspace{0.5cm} & Privacy concerns & This section strives to
+%             elicit questions about potential concerns about disclosing
+%             personal information. \\
+%             \hline
+%             4\hspace{0.5cm} & Current online habits and practices & This
+%             section includes general questions with regard to working with
+%             the internet in everyday activities. \\
+%             \hline
+%             5\hspace{0.5cm} & Profile identification & This section gathers
+%             more particular questions concerning employing profiles to make
+%             it more straightforward to generate tailor-made interactions. \\
+%             \hline
+%             6\hspace{0.5cm} & Knowledge and habits regarding the Internet
+%             of Things & This section contains questions about participants'
+%             usage patterns for IoT devices as well as questions that aim to
+%             understand their level of literacy. \\
+%             \hline
+%             7\hspace{0.5cm} & Demographic data & This section is for
+%             gathering broad demographic information that allows
+%             to characterize the participants in statistical terms. \\
+%             \hline
+%             8\hspace{0.5cm} & Demographic data & This section is for
+%             gathering broad demographic information that allows
+%             to characterize the participants in statistical terms. \\
+%             \hline
+%         \end{tabular}
+%     \end{center}
+%     \vspace{1em}
+%     \caption{Summary of literature}
+%     \label{table:literature}
+% \end{table}
+
+% A summary of the literature with the pros and cons can be seen on Table \ref{table:literature}.
 There are two main ways to provide privacy in IoT systems, through security
 or using privacy notices, other ways like through legislation or with the
 creation/usage of a framework that provides privacy fall into these two
