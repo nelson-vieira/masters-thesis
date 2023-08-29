@@ -249,7 +249,7 @@ are hard to implement because of the subjectivity of these concepts, and
 DP algorithms are no exception, they can still help in
 regards to tackling technology's intrinsic ethical and moral issues.
 
-Zhao et al. \cite{ZhaoSurvey} conduct a SLR on DP for
+Zhao and Chen \cite{ZhaoSurvey} conduct a SLR on DP for
 unstructured data. The authors present DP methods for
 sensitive content in image, audio, video, and text data. They compare the
 various methods and perform utility analyses for each method, highlighting
@@ -259,6 +259,17 @@ to the conclusion that DP as well as its variations give
 stringent privacy protections for unstructured data against attackers with
 unpredictable background knowledge. They also suggest potential future study
 subjects that have yet to be investigated.
+
+Integrating federated learning and local differential privacy is proposed
+by Zhao et al. \cite{zhao2020local} to facilitate crowdsourcing applications to
+achieve the machine learning model while avoiding privacy threats and reducing
+communication costs. The authors provide four mechanisms depending on the
+privacy budget that is wanted. Based on experimental results of real-world
+datasets, the suggested mechanisms provide stronger privacy protection when
+compared to other comparable mechanisms; nevertheless, further testing is
+required to establish the validity of these mechanisms on production systems.
+No future research subjects are provided, only the intention of applying
+these mechanisms to deep neural networks.
 
 Similar to differential privacy, there exists different algorithms that aim to
 preserve privacy such as Google's box blurring algorithm \cite{FromeLarge}
@@ -345,6 +356,10 @@ Although the framework that is presented is theoretically promising it has
 not been tested in a real environment so the effectiveness can't yet be
 measured. The authors also do not compare their proposal with others already
 available.
+
+A privacy-by-design framework is proposed by Perera et al. \cite{perera2020designing}
+to help software engineers to integrate data privacy considerations into the
+design of IoT applications.
 
 There exists frameworks like the NIST Cybersecurity Framework \cite{barrett2018framework},
 published by the National Institute of Standards and Technology (NIST),
@@ -551,7 +566,7 @@ in the presence of foggy filters. Their paper included proof-of-concept
 prototypes such as a Raspberry Pi system and a mobile app, as well as an
 evaluation study of the machine learning model and the effects of crowdsourcing.
 
-\subsection{Main Takeaways}
+\subsection{Findings Analysis}
 
 % \begin{table}[H]
 %     \begin{center}
@@ -602,13 +617,16 @@ evaluation study of the machine learning model and the effects of crowdsourcing.
 \begin{footnotesize}
     \begin{longtable}{p{1.2cm} p{1cm} p{1.5cm} p{3.2cm} p{5cm} p{3cm}}
         \hline
-        \textbf{Ref $\#$} & \textbf{Year} & \textbf{Country} & \textbf{Publication Type} & \textbf{Publisher} & \textbf{Domain} \\
+        \textbf{Ref $\#$} & \textbf{Year} & \textbf{Country} & \textbf{Publication Type} & \textbf{Publisher} & \textbf{Domain(s)} \\
         \hline
         \endfirsthead
-        \multicolumn{6}{@{}l}{continued\dots}\\\hline
-        \textbf{Ref $\#$} & \textbf{Year} & \textbf{Country} & \textbf{Publication Type} & \textbf{Publisher} & \textbf{Domain} \\
+        \multicolumn{6}{@{}l}{\dots continued}\\\hline
+        \textbf{Ref $\#$} & \textbf{Year} & \textbf{Country} & \textbf{Publication Type} & \textbf{Publisher} & \textbf{Domain(s)} \\
         \hline
         \endhead
+        \multicolumn{6}{r@{}}{continues \ldots}\\
+        \endfoot
+        \endlastfoot
         % \cite{DarrenState} & 2015 & USA & Tech Report & \textbf{Norton} NortonLifeLock & Statistical analisys \\
         % \hline
         % \cite{solove2021myth} & 2021 & USA & Journal & \textbf{George Washington University} George Washington Law Review & Privacy paradox \\
@@ -621,20 +639,20 @@ evaluation study of the machine learning model and the effects of crowdsourcing.
         % \hline
         % \cite{gerber2018explaining} & 2018 & USA & Journal & \textbf{Elsevier} Computers \& security & Privacy paradox \\
         % \hline
-        \cite{wilson2012unpacking} & 2012 & USA & Conference & \textbf{AIS} 33rd International Conference on Information Systems & Privacy paradox \\
-        \hline
-        \cite{warshaw2015can} & 2015 & USA & Conference & \textbf{ACM} Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems & Privacy paradox \\
-        \hline
-        \cite{lee2015privacy} & 2015 & South Korea & Journal & \textbf{Elsevier} Expert Systems with Applications & Privacy paradox and healthcare \\
-        \hline
+        % \cite{wilson2012unpacking} & 2012 & USA & Conference & \textbf{AIS} 33rd International Conference on Information Systems & Privacy paradox \\
+        % \hline
+        % \cite{warshaw2015can} & 2015 & USA & Conference & \textbf{ACM} Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems & Privacy paradox \\
+        % \hline
+        % \cite{lee2015privacy} & 2015 & South Korea & Journal & \textbf{Elsevier} Expert Systems with Applications & Privacy paradox and healthcare \\
+        % \hline
         % \cite{zak2008moral} & 2008 & USA & Book & \textbf{Princeton University Press} & Morality in economy \\
         % \hline
-        \cite{acquisti2007can} & 2007 & USA & Book & \textbf{Auerbach Publications} & Digital Privacy \\
-        \hline
-        \cite{knijnenburg2013dimensionality} & 2013 & USA & Journal & \textbf{Elsevier} International Journal of Human-Computer Studies & Privacy paradox \\
-        \hline
-        \cite{wakefield2013influence} & 2013 & USA & Journal & \textbf{Elsevier} The Journal of Strategic Information Systems & Privacy paradox \\
-        \hline
+        % \cite{acquisti2007can} & 2007 & USA & Book & \textbf{Auerbach Publications} & Digital Privacy \\
+        % \hline
+        % \cite{knijnenburg2013dimensionality} & 2013 & USA & Journal & \textbf{Elsevier} International Journal of Human-Computer Studies & Privacy paradox \\
+        % \hline
+        % \cite{wakefield2013influence} & 2013 & USA & Journal & \textbf{Elsevier} The Journal of Strategic Information Systems & Privacy paradox \\
+        % \hline
         % \cite{flender2012type} & 2012 & Germany & Conference & \textbf{Springer} International Symposium on Quantum Interaction & Privacy paradox \\
         % \hline
         \cite{dienlin2015privacy} & 2015 & Germany & Journal & \textbf{Wiley} European Journal of Social Psychology & Privacy paradox \\
@@ -651,21 +669,25 @@ evaluation study of the machine learning model and the effects of crowdsourcing.
         \hline
         \cite{xie2019consumers} & 2019 & USA & Journal & \textbf{Taylor \& Francis} Journal of Interactive Advertising & Privacy paradox \\
         \hline
-        \cite{SCHWAIG20131} & 2013 & USA & Journal & \textbf{Elsevier} Information \& Management & Individual's privacy behaviour \\
+        \cite{SCHWAIG20131} & 2013 & USA & Journal & \textbf{Elsevier} Information \& Management & Individual's online behaviour \\
         \hline
         \cite{sannon2018privacy} & 2018 & USA & Conference & \textbf{ACM} Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems & Privacy paradox \\
         \hline
-        \cite{Gupta2022Privacy} & 2022 & USA & Journal & \textbf{IEEE} Internet of Things Journal & Systematic Literature Review - IoT Privacy \\
+        \cite{Gupta2022Privacy} & 2022 & USA & Journal & \textbf{IEEE} Internet of Things Journal & Systematic Literature Review \\
         \hline
-        \cite{Kuhtreiber2022survey} & 2022 & Germany & Journal & \textbf{Elsevier} Pervasive and Mobile Computing & Systematic Literature Review - IoT Privacy for Developers \\
+        \cite{Kuhtreiber2022survey} & 2022 & Germany & Journal & \textbf{Elsevier} Pervasive and Mobile Computing & Systematic Literature Review \\
         \hline
         \cite{sicari2015security} & 2015 & Italy & Journal & \textbf{Elsevier} Computer Networks & Systematic Literature Review \\
         \hline
         \cite{LinSurvey} & 2017 & China & Journal & \textbf{IEEE} Internet of Things Journal & Systematic Literature Review \\
         \hline
-        \cite{porras2018security} & 2018 & Finland & Conference & \textbf{AIS} Proceedings of the 51st Hawaii International Conference on System Sciences & Systematic Mapping Review \\
+        % \cite{porras2018security} & 2018 & Finland & Conference & \textbf{AIS} Proceedings of the 51st Hawaii International Conference on System Sciences & Systematic Mapping Review \\
+        % \hline
+        % \cite{ahmed2019aspects} & 2019 & Czech Republic & Journal & \textbf{IEEE} Access & Systematic Mapping Review \\
+        % \hline
+        \cite{yang2022overview} & 2022 & Norway & Journal & \textbf{Frontiers} Frontiers in Artificial Intelligence & Systematic Literature Review \\
         \hline
-        \cite{ahmed2019aspects} & 2019 & Czech Republic & Journal & \textbf{IEEE} Access & Systematic Mapping Review \\
+        \cite{zubaydi2023leveraging} & 2022 & Hungary & Journal & \textbf{MDPI} Sensors & Systematic Literature Review \\
         \hline
         \cite{ziegeldorf2014privacy} & 2014 & Germany & Journal & \textbf{Wiley} Security and Communication Networks & Systematic Literature Review \\
         \hline
@@ -678,6 +700,8 @@ evaluation study of the machine learning model and the effects of crowdsourcing.
         % \cite{ShokriPrivacy} & 2015 & USA & Conference & \textbf{ACM} Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security & Machine learning \\
         % \hline
         \cite{ZhaoSurvey} & 2022 & Australia & Journal & \textbf{ACM} Computing Surveys & Differential Privacy \\
+        \hline
+        \cite{zhao2020local} & 2020 & Singapore & Journal & \textbf{IEEE} Internet of Things Journal & Differential Privacy, Federated Learning \\
         \hline
         \cite{SkirpanPrivacy} & 2022 & USA & Magazine & \textbf{ACM} Communications of the ACM & New ways for user awareness \\
         \hline
@@ -693,6 +717,8 @@ evaluation study of the machine learning model and the effects of crowdsourcing.
         % \hline
         \cite{opara2022framework} & 2022 & USA & Conference & \textbf{ACM} Proceedings of the 37th ACM/SIGAPP Symposium on Applied Computing & Framework \\
         \hline
+        \cite{perera2020designing} & 2019 & UK & Journal & \textbf{Elsevier} Information Sciences & Framework \\
+        \hline
         \cite{barrett2018framework} & 2018 & USA & Tech Report & \textbf{NIST} Cybersecurity Framework & Framework \\
         \hline
         \cite{iso2022cybersecurity} & 2022 & USA & Tech Report & \textbf{ISO} IT Security & IT Standards \\
@@ -705,8 +731,6 @@ evaluation study of the machine learning model and the effects of crowdsourcing.
         \hline
         \cite{AliIoT} & 2017 & Italy & Conference & \textbf{ACM} Proceedings of the Seventh International Conference on the Internet of Things & Blockchain \\
         \hline
-        \cite{ZhuIntegrating} & 2022 & Australia & Journal & \textbf{ACM} Transactions on Internet of Things & Smart City \\
-        \hline
         \cite{ColnagoInforming} & 2020 & USA & Conference & \textbf{ACM} Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems & Privacy Assistant \\
         \hline
         \cite{FengDesign} & 2021 & USA & Conference & \textbf{ACM} Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems & Privacy Assistant \\
@@ -715,60 +739,91 @@ evaluation study of the machine learning model and the effects of crowdsourcing.
         \hline
         \cite{KumarLTE} & 2014 & USA & Conference & \textbf{ACM} Proceedings of the 2014 ACM Conference on SIGCOMM & Sniffer \\
         \hline
-        \cite{yang2022overview} & 2022 & Norway & Journal & \textbf{Frontiers} Frontiers in Artificial Intelligence & Systematic Literature Review \\
-        \hline
-        \cite{zubaydi2023leveraging} & 2022 & Hungary & Journal & \textbf{MDPI} Sensors & Systematic Literature Review \\
+        \cite{ZhuIntegrating} & 2022 & Australia & Journal & \textbf{ACM} Transactions on Internet of Things & Smart City \\
         \hline
         \caption{Information of papers}
         \label{table:literature_overview}
     \end{longtable}
 \end{footnotesize}
 
-% \begin{table}[H]
-%     \begin{center}
-%         \begin{tabular}{r *{4}{ p{5cm} }}
-%             \hline
-%             \textbf{Ref $\#$} & \textbf{Type of Approach} & \textbf{Pros} & \textbf{Cons} \\
-%             \hline
-%             1\hspace{0.5cm} & General knowledge and attitudes towards privacy & This
-%             section's goal is to ask generic questions regarding the participants awareness
-%             of information privacy. \\
-%             \hline
-%             2\hspace{0.5cm} & Disposition for sharing personal information & This
-%             section is designed to elicit generic inquiries about the participants
-%             willingness to provide personal information. \\
-%             \hline
-%             3\hspace{0.5cm} & Privacy concerns & This section strives to
-%             elicit questions about potential concerns about disclosing
-%             personal information. \\
-%             \hline
-%             4\hspace{0.5cm} & Current online habits and practices & This
-%             section includes general questions with regard to working with
-%             the internet in everyday activities. \\
-%             \hline
-%             5\hspace{0.5cm} & Profile identification & This section gathers
-%             more particular questions concerning employing profiles to make
-%             it more straightforward to generate tailor-made interactions. \\
-%             \hline
-%             6\hspace{0.5cm} & Knowledge and habits regarding the Internet
-%             of Things & This section contains questions about participants'
-%             usage patterns for IoT devices as well as questions that aim to
-%             understand their level of literacy. \\
-%             \hline
-%             7\hspace{0.5cm} & Demographic data & This section is for
-%             gathering broad demographic information that allows
-%             to characterize the participants in statistical terms. \\
-%             \hline
-%             8\hspace{0.5cm} & Demographic data & This section is for
-%             gathering broad demographic information that allows
-%             to characterize the participants in statistical terms. \\
-%             \hline
-%         \end{tabular}
-%     \end{center}
-%     \vspace{1em}
-%     \caption{Summary of literature}
-%     \label{table:literature}
-% \end{table}
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{p{1.2cm} p{4cm} p{5cm} p{5cm}}
+            \hline
+            \textbf{Ref $\#$} & \textbf{Type of Approach} & \textbf{Pros} & \textbf{Cons} \\
+            \hline
+            \cite{dienlin2015privacy} & Privacy paradox & Pros & Cons \\
+            \hline
+            \cite{baek2014solving} & Privacy paradox & Pros & Cons \\
+            \hline
+            \cite{taddicken2014privacy} & Privacy paradox & Pros & Cons \\
+            \hline
+            \cite{norberg2007privacy} & Privacy paradox & Pros & Cons \\
+            \hline
+            \cite{kokolakis2017privacy} & Privacy paradox & Pros & Cons \\
+            \hline
+            \cite{brandimarte2013misplaced} & Privacy paradox & Pros & Cons \\
+            \hline
+            \cite{xie2019consumers} & Privacy paradox & Pros & Cons \\
+            \hline
+            \cite{SCHWAIG20131} & Individual's online behaviour & Pros & Cons \\
+            \hline
+            \cite{sannon2018privacy} & Privacy paradox & Pros & Cons \\
+            \hline
+            \cite{Gupta2022Privacy} & Systematic Literature Review & Pros & Cons \\
+            \hline
+            \cite{Kuhtreiber2022survey} & Systematic Literature Review & Pros & Cons \\
+            \hline
+            \cite{sicari2015security} & Systematic Literature Review & Pros & Cons \\
+            \hline
+            \cite{LinSurvey} & Systematic Literature Review & Pros & Cons \\
+            \hline
+            \cite{yang2022overview} & Systematic Literature Review & Pros & Cons \\
+            \hline
+            \cite{zubaydi2023leveraging} & Systematic Literature Review & Pros & Cons \\
+            \hline
+            \cite{ziegeldorf2014privacy} & Systematic Literature Review & Pros & Cons \\
+            \hline
+            \cite{ZhaoSurvey} & Differential Privacy & Pros & Cons \\
+            \hline
+            \cite{zhao2020local} & Differential Privacy, Federated Learning & Pros & Cons \\
+            \hline
+            \cite{SkirpanPrivacy} & New ways for user awareness & Pros & Cons \\
+            \hline
+            \cite{WEBER2015618} & Legislation & Pros & Cons \\
+            \hline
+            \cite{FabianoInternet} & Legislation & Pros & Cons \\
+            \hline
+            \cite{SunSecure} & Peer to peer network & Pros & Cons \\
+            \hline
+            \cite{AntunesFederated} & Healthcare & Pros & Cons \\
+            \hline
+            \cite{opara2022framework} & Framework & Pros & Cons \\
+            \hline
+            \cite{perera2020designing} & Framework & Pros & Cons \\
+            \hline
+            \cite{zhang2019security} & Blockchain & Pros & Cons \\
+            \hline
+            \cite{yu2018blockchain} & Blockchain & Pros & Cons \\
+            \hline
+            \cite{AliIoT} & Blockchain & Pros & Cons \\
+            \hline
+            \cite{ColnagoInforming} & Privacy Assistant & Pros & Cons \\
+            \hline
+            \cite{FengDesign} & Privacy Assistant & Pros & Cons \\
+            \hline
+            \cite{DasPersonalized} & Privacy Assistant & Pros & Cons \\
+            \hline
+            \cite{KumarLTE} & Sniffer & Pros & Cons \\
+            \hline
+            \cite{ZhuIntegrating} & Smart City & Pros & Cons \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+    \caption{Summary of literature}
+    \label{table:literature}
+\end{table}
 
 % A summary of the literature with the pros and cons can be seen on Table \ref{table:literature}.
 There are two main ways to provide privacy in IoT systems, through security
@@ -805,6 +860,35 @@ Every VM's CPU status, memory contents, network information provided by the
 hypervisor, and any malicious software that may be present on the VM are
 all collected and analysed. The privacy of individuals is jeopardized if
 an IoT device loses integrity due to a hostile assault.
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 xbar,
+%                 symbolic y coords={Privacy internet of things,Privacy paradox internet of things,Differential privacy internet of things},
+%                 bar width=8pt,
+%                 ytick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge y limits=0.2,
+%                 nodes near coords={\pgfmathprintnumber[fixed]\pgfplotspointmeta},
+%                 legend style={at={(0.5,-0.1)},anchor=north}
+%             ]
+%                 \addplot coordinates {(518000,Privacy internet of things) (38200,Privacy paradox internet of things) (56200,Differential privacy internet of things)};
+%                 \addlegendentry{Google Scholar}
+%                 \addplot coordinates {(13247,Privacy internet of things) (62,Privacy paradox internet of things) (458,Differential privacy internet of things)};
+%                 \addlegendentry{BASE}
+%                 \addplot coordinates {(14300000,Privacy internet of things) (292000,Privacy paradox internet of things) (528000,Differential privacy internet of things)};
+%                 \addlegendentry{RefSeek}
+%                 \addplot coordinates {(226715,Privacy internet of things) (41760,Privacy paradox internet of things) (46891,Differential privacy internet of things)};
+%                 \addlegendentry{CORE}
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Distribution of papers on privacy in IoT, since 2020, by keywords searches on Google Scholar, BASE, RefSeek and CORE databases.}
+%         \label{fig:privacy_papers}
+%     \end{center}
+% \end{figure}
 
 \subsection{Privacy Challenges}
 
