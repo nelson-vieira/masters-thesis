@@ -34,8 +34,9 @@ apply the theoretical concept of the \textit{homo economicus} \cite{zak2008moral
 which is the representation of people as beings who constantly act in a
 way that is logical and self-interested, not worrying about morality or
 ethics, and who do so to the best of their ability, to the context of privacy.
-Different cognitive biases and heuristics can influence how consumers make
-decisions, according to several studies on consumer choice behaviour \cite{acquisti2007can, knijnenburg2013dimensionality, wakefield2013influence, flender2012type}.
+Individuals' decision-making processes can be greatly influenced by a variety
+of cognitive biases and heuristics, and these decisions can vary greatly from
+individual to individual, according to several studies on individual choice behaviour \cite{acquisti2007can, knijnenburg2013dimensionality, wakefield2013influence, flender2012type}.
 According to several articles \cite{dienlin2015privacy, baek2014solving},
 this paradox might be explained by the fact that some people have genuinely
 experienced online privacy assaults and that most privacy views are therefore
@@ -44,7 +45,9 @@ argues that peer pressure is the reason people have this contradictory behaviour
 Norberg et al. \cite{norberg2007privacy} explains this paradox by suggesting
 that while perceived risk affects reported attitudes and behavioural intentions,
 trust has a direct impact on privacy behaviour, while others \cite{flender2012type, kokolakis2017privacy}
-rely on quantum theory. Brandimarte et al. \cite{brandimarte2013misplaced}
+rely on quantum theory, meaning there is indeterminacy in the decision making,
+in other words, it means that an individual's decision's result can be determined
+at the time of the decision and not before. Brandimarte et al. \cite{brandimarte2013misplaced}
 have explored the idea that when it comes to their data privacy, users have
 an \textit{illusion of control}.
 
@@ -72,7 +75,7 @@ are overlooked; existing studies ignored the sensitivity of the obtained
 information; most useful studies did not include a diverse range of users
 when assessing privacy problems; no work has been done to discover compliance
 difficulties between an IoT application and different privacy rules; and
-current research does not place a premium on providing consumers with real-time
+current research does not place a premium on providing individuals with real-time
 privacy notices. However, this SLR has the following limitations: the authors
 only chose articles and not thesis or books and from the selected papers,
 only the ones written in english were considered.
@@ -128,25 +131,12 @@ start by describing the requirements for IoT privacy and security, such
 as access control, confidentiality, and authentication. The authors then
 conduct a literature study in connection to these three needs. The authors
 came to the conclusion that IoT privacy issues have only been partially
-examined and that further attention is required. The study, however, has
-flaws: the prior research analysis focuses primarily on security needs while
-ignoring privacy considerations; the authors do not conduct a thorough gap
-analysis on the publications examined; and they do not provide a comprehensive
-summary of future research topics in the field of IoT privacy that require
-more attention.
-
-% Lin et al. \cite{LinSurvey} undertake a literature review to find security and
-% privacy concerns in the network layer, perception layer, and application layer,
-% the three IoT architectural layers. Confidentiality, integrity, availability,
-% identity and authentication, privacy, and trust are the first six essential security
-% properties that the authors list for these levels. Then, for each of the three
-% tiers, they examine a number of security attacks. They conclude by providing a
-% brief overview of a number of privacy-preserving data procedures, including data
-% gathering, data aggregations, and data analysis stages. They do, however, primarily
-% focus on the security elements of the IoT and see privacy as one of the most important
-% security characteristics, as was already established. Additionally, a thorough gap
-% analysis to determine the shortcomings of the previous works is not done in the
-% research.
+examined and that further attention is required. The study does, however, have
+some shortcomings: the prior research analysis focuses primarily on security
+requirements while ignoring privacy considerations; the authors do not conduct
+a thorough gap analysis on the publications examined; and they do not provide
+a comprehensive summary of future research topics in the area of IoT privacy
+that require more attention.
 
 Lin et al. \cite{LinSurvey} undertake a literature review to identify security
 and privacy vulnerabilities in the three IoT architecture layers: network,
@@ -157,22 +147,35 @@ look at a variety of security threats for each of the three stages. The
 authors wrap up by giving a succinct summary of many privacy-preserving
 data techniques, including the stages of data collection, data aggregation,
 and data analysis. The authors do, however, largely focus on the IoT's security
-components and, as was already said, consider privacy to be one of the most
-crucial security aspects, rather than viewing privacy as a distinct concern.
-Furthermore, the research does not conduct a thorough gap analysis to discover
-the weaknesses of prior efforts.
+components and consider privacy to be one of the most crucial security aspects,
+rather than viewing privacy as a distinct concern. Despite this, the authors
+devote a portion of the paper to privacy and the majority of what they address
+concerns security.
 
-% Lin et al. \cite{LinSurvey} conduct a literature research to identify security and
-% privacy issues in IoT architecture's three levels: network, perception, and
-% application. The authors describe the first six fundamental security features
-% for these tiers as confidentiality, integrity, availability, identification and
-% authentication, privacy, and trust. They next investigate a variety of security
-% concerns for each of the three processes. The authors end by offering a succinct
-% review of a number of privacy-preserving data methodologies, including data
-% collecting, aggregation, and analysis. They do, however, focus mostly on IoT
-% security features, and, as previously said, they see privacy as one of the most
-% essential security issues. Furthermore, the study did not undertake a detailed gap
-% analysis to identify the shortcomings of previous studies.
+Yang's study \cite{yang2022overview} examines the literature from the perspective
+of IoT phases, such as data collection, transmission, and storage, or in other
+words, perception, network and application layers. In these phases the author explores
+security protocols at the physical layer, network solutions, and data storage and
+sharing approaches. There is a balance of security approaches or solutions and
+non-security related approaches discussed, besides the mentioned security protocols,
+the author proposes a software-defined network, for the network layer, that enables
+a global view of the network which helps to identify malicious traffic patterns. The
+author also suggest the use of differential privacy, privacy-preserving data mining,
+blockchain or holochain for the application layer. The author presents a high-level
+overview of privacy issues and as a result does not offer a comprehensive analysis of
+the various approaches or make many suggestions for future study directions.
+
+In Zubaydi et al. \cite{zubaydi2023leveraging}, different works that address the
+integration of blockchain technology that aim to tackle various aspects of privacy
+are analysed. This SLR has an overview of the IoT architecture, the various blockchain
+types and algorithms and IoT challenges. The authors provide an overview of the
+chosen papers and present a detailed comparison between them before analysing
+the papers using several categories which include generic approaches, healthcare,
+smart environments, IoT device gateway, IoT information systems, management systems
+and other approaches. The authors also present a considerable number of open issues
+that future works should focus on. Because this SLR is about blockchain technology,
+the focus is on privacy through security. Overall this is a very in-depth SLR on the
+use of blockchain technology to address privacy issues.
 
 Based on Ziegeldorf's \cite{ziegeldorf2014privacy} analysis of the literature,
 the following are the most prominent privacy concerns in IoT:
@@ -219,7 +222,7 @@ the following are the most prominent privacy concerns in IoT:
     of unauthorized access and data leakage.
 \end{enumerate}
 
-Another concept worth analysing is differential privacy which relates more
+Another concept worth analysing is differential privacy (DP) which relates more
 closely to the survey that will be conducted but also to the general
 collection and analysis of user data by applications and systems.
 
@@ -237,28 +240,25 @@ the output of a differentially private computation, their posterior belief
 about anything is close to what it would have been had they observed the
 output of the same computation run without the individual's data''.
 
-Differential privacy has the potential to significantly increase individual
+DP has the potential to significantly increase individual
 privacy protection, by purposefully adding noise into a dataset, it gives
 plausible deniability to any individual who may have had their data exploited
 while still being able to calculate statistics with relatively high precision.
 Although algorithms that deal with notions of fairness, ethics, and privacy
 are hard to implement because of the subjectivity of these concepts, and
-differential privacy algorithms are no exception, they can still help in
+DP algorithms are no exception, they can still help in
 regards to tackling technology's intrinsic ethical and moral issues.
 
-% Differential privacy is an important component of machine learning algorithms
-% and massive datasets, and it has the potential to significantly increase
-% individual privacy protection. By purposefully adding noise into a dataset,
-% we may give plausible deniability to any individual who may have had their
-% data exploited to damage them while still being able to calculate critical
-% statistics with high precision. While differential privacy has obvious drawbacks,
-% as do many algorithms used to address societal issues, the use of automation and
-% machine learning to address subjective notions of fairness, ethics, and privacy
-% is a tremendously groundbreaking discovery in the world of computation, and is
-% moving us as a society closer to addressing technology's inherent moral quandaries.
-% Differential privacy is a fundamental aspect of machine learning algorithms and huge datasets that may substantially increase individual privacy protection. We can provide plausible deniability to every individual who may have their data used to harm them by purposely injecting noise into a dataset, while yet being able to calculate required statistics with high accuracy. While differential privacy, like many algorithms used to address societal issues, has obvious drawbacks, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing the inherent moral dilemmas of technology.
-% Differential privacy is a crucial component of machine learning algorithms and massive datasets that has the potential to significantly boost individual privacy protection. By purposefully inserting noise into a dataset, we can give plausible deniability to any individual who may have their data exploited to harm them while still being able to calculate needed statistics with high precision. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing the inherent moral dilemmas of technology.
-% Differential privacy is a critical component of machine learning algorithms and large datasets, with the potential to greatly improve individual privacy protection. We can provide plausible deniability to any individual who may have their data misused to harm them while still being able to calculate essential statistics with high accuracy by purposely injecting noise into a dataset. While differential privacy has obvious drawbacks, as do many algorithms used to address societal issues, the use of automation and machine learning to address subjective notions of fairness, ethics, and privacy is an incredibly groundbreaking discovery in the world of computation, and is moving us as a society closer to addressing technology's inherent moral dilemmas.
+Zhao et al. \cite{ZhaoSurvey} conduct a SLR on DP for
+unstructured data. The authors present DP methods for
+sensitive content in image, audio, video, and text data. They compare the
+various methods and perform utility analyses for each method, highlighting
+the benefits and drawbacks of each, the utility loss is measured in experimental
+evaluations between the actual data and its obfuscated variant. They come
+to the conclusion that DP as well as its variations give
+stringent privacy protections for unstructured data against attackers with
+unpredictable background knowledge. They also suggest potential future study
+subjects that have yet to be investigated.
 
 Similar to differential privacy, there exists different algorithms that aim to
 preserve privacy such as Google's box blurring algorithm \cite{FromeLarge}
@@ -268,57 +268,13 @@ which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
 general, these algorithms struggle with high computational cost, internal
 attacks, or non-provable privacy.
 
-% Zhao et al. \cite{ZhaoSurvey} conduct a SLR on differential privacy
-% for unstructured data. The authors present differential privacy methods
-% for sensitive content in image, audio, video and text data, they compare
-% the various methods and do an utility analysis for each method showing
-% the pros and cons of each, the utility loss is measured between the real
-% data and its obfuscated version in the experimental evaluations. They
-% conclude that differential privacy and its variants have provided
-% rigorous privacy guarantees for unstructured data against adversaries
-% with arbitrary background information. They also provide possible future
-% research topics that have yet to be explored.
-
-Zhao et al. \cite{ZhaoSurvey} conduct a SLR on differential privacy for
-unstructured data. The authors present differential privacy methods for
-sensitive content in image, audio, video, and text data. They compare the
-various methods and perform utility analyses for each method, highlighting
-the benefits and drawbacks of each, the utility loss is measured in experimental
-evaluations between the actual data and its obfuscated variant. They come
-to the conclusion that differential privacy as well as its variations give
-stringent privacy protections for unstructured data against attackers with
-unpredictable background knowledge. They also suggest potential future study
-subjects that have yet to be investigated.
-
-% Privacy concerns arise with the millions of real-world unstructured data including
-% images, audio, videos, and texts. Differential privacy has emerged as a de facto
-% standard to protect a wide range of data types.
-% This article has presented
-% differential privacy methods for sensitive content in these unstructured
-% data. We have identified that unstructured data are obfuscated based on
-% appropriate vector representations, specific privacy models, and vector
-% reconstructions. We have discussed possible challenges faced with these
-% privacy methods. We have provided an overview of privacy guarantees and
-% utility losses in these methods and possible approaches to improve data utility.
-
-% DP and its variants have provided rigorous privacy guarantees for
-% unstructured data against adversaries with arbitrary background information.
-% While privacy loss has been quantified with the ε value, the utility
-% loss is measured between the real data and its obfuscated version in
-% the experimental evaluations. Different utility loss metrics are
-% adopted to quantify utility losses in different data types. Besides,
-% it has been shown that other privacy-protecting methods for unstructured
-% data are commonly vulnerable to machine-learning-model-based attacks.
-% It is crucial to identify whether DP methods can do away with these
-% AI attacks.
-
-\subsection{Proposed solutions}
+\subsection{Proposed Solutions}
 
 \par This section list eight solutions that emerged from the structured
 literature review to improve the gap between privacy and security concepts
 among systems and users.
 
-\subsubsection{Creating new ways for user awareness}
+\subsubsection{User Awareness}
 
 There has been some work done to determine the users awareness of their
 actions online regarding their privacy. Skirpan et al. \cite{SkirpanPrivacy}
@@ -337,35 +293,6 @@ participated in this data collection, they also noted that after contacting
 people months after the interviews that they did not really changed their
 behaviour regarding their privacy rights.
 
-% Skirpan et al. \cite{SkirpanPrivacy} built
-% an interactive theatre experience, this was proposed in order to expose privacy
-% violations in companies, particularly in the capitalistic world where profit
-% is prioritized above all else. In this experiment, the public is able to interact
-% with the actors and influence the story of the play; there are various endings
-% depending on the public's choices throughout the play; in some endings, the
-% company would bury the corruption that was going on; in another ending, a
-% team of hackers is abducted. Following the performance, the experiment's crew
-% would speak with public members about their experiences and explain
-% what it was all about, as well as the members' everyday practices with their data.
-
-% An interactive theatre experience \cite{SkirpanPrivacy}
-% was proposed in order to expose privacy malpractices in companies,
-% specially in the capitalistic world where profit is prioritize
-% above all else, in this experiment the public is able to interact with
-% the actors and influence the story of the play, there are various endings depending
-% on the public's choices throughout the play, some endings the company would
-% bury the corruption that was going on, in another ending a team of hackers
-% is able to expose the company's practices to the world. After the play
-% the team responsible for the experiment would talk with public members about
-% what they experienced and discussed what was it about and the members
-% practices with their data on their daily life. After some months
-% the team would talk again with the members that were present in the play and
-% talk about any changes they have done in the meantime, most said they did
-% not change their behaviour, one member said that it took more care of The
-% information that made available online because it had a bad experience before
-% where some private data was exposed that should have not been exposed. All in
-% all the experiment did not prove to be a success in changing people's behaviour.
-
 \subsubsection{Legislation}
 
 Some papers seek to improve legislation \cite{WEBER2015618, FabianoInternet}
@@ -378,7 +305,7 @@ individual. But better protection laws for the user would also create opposition
 from most companies that want to extract as much private data from their
 users without (m)any restrictions in order to increase their profit margins.
 
-\subsubsection{Privacy through security}
+\subsubsection{Privacy through Security}
 
 Sun et al. \cite{SunSecure} design a lightweight communication strategy
 for a remote-control system, employing two types of Virtual-Spaces to achieve
@@ -387,13 +314,13 @@ system of the scheme and tested it on the Freenet, demonstrating that the
 method can effectively resist the influence of flow analysis on communication
 anonymity while preserving communication data security.
 
-\subsubsection{Architecture / Framework Proposals}
+\subsubsection{Architecture / Frameworks}
 
 Antunes et al. \cite{AntunesFederated} do a SLR on federated learning in
-the area of healthcare and make an architecture proposal. The technique
+the area of healthcare and make an architecture proposal. The procedure
 known as federated learning allows for the distributed training of machine
-learning models using remotely hosted datasets without the requirement for
-data amplification. The fundamental goal of the proposed architecture is
+learning models using remotely hosted datasets without the requirement to
+gather and hence jeopardize data. The fundamental goal of the proposed architecture is
 to allow healthcare institutions that have access to sensitive medical information
 to use it in distributed data analysis and machine learning research while
 ensuring patient confidentiality. Because information transmitted among
@@ -407,18 +334,6 @@ that previous literature implies that homomorphic encryption and differential
 privacy are effective approaches for preventing data breaches without incurring
 prohibitively high computing costs.
 
-% The proposed architecture's main goal is to enable healthcare institutions with access
-% to private medical datasets to employ them in distributed data analysis and machine
-% learning studies without compromising patient confidentiality, as the information that
-% is shared among institutions requires confidentiality guarantees for learning model
-% parameters and analyses results, the architecture can implement different methodologies
-% based on a zero-trust security model [67]. The institutions also implement a learning
-% algorithm verification, which can store and provide manifestos and participate in
-% distributed analysis mechanisms requiring consensus among all participants. This study
-% also finds that Current literature shows that homomorphic encryption and differential
-% privacy are techniques with substantial results to avoid data leaks without prohibitive
-% computational costs [98].
-
 Opara et al. \cite{opara2022framework} present a system for spotting possible
 problems with privacy or security regulations in the early stages of development,
 this approach is intended at developers. The paper proposes a domain-specific
@@ -430,25 +345,6 @@ Although the framework that is presented is theoretically promising it has
 not been tested in a real environment so the effectiveness can't yet be
 measured. The authors also do not compare their proposal with others already
 available.
-
-% Opara et al. \cite{opara2022framework} propose a framework for detecting potential
-% problems with privacy or security policies from the early pre-production stage,
-% this framework is aimed at developers. This paper proposes a domain-specific
-% ontology for modelling IoT security and privacy policies, a notation for
-% representing IoT security and privacy policies and validating the policies
-% for inconsistencies, conflicts, ambiguities, and incompleteness, a set of
-% guidelines and rules for detecting IoT policy errors, and a tool for
-% visually modelling and capturing IoT security policies and discovering
-% policy problems.
-
-% This paper's main contributions are: a domain-specific ontology for modelling
-% IoT security and privacy policies, a notation for representing IoT security
-% and privacy policies and validating the policies for inconsistencies, conflicts,
-% ambiguities, and incompleteness, a set of guidelines and rules for
-% detecting IoT policy errors, and a tool for visually modelling and capturing
-% IoT security policies and discovering problems with the policies.
-
-% The key contributions of this paper include (1) A domain-specific ontology for modelling IoT security and privacy policies, (2) a notation for representing IoT security and privacy policies and validating the policies for inconsistencies, conflicts, ambiguities, and incompleteness, (3) a set of guidelines and rules for detecting IoT policy errors, and 4) a tool for visually modelling and capturing IoT security policies and discovering problems with the policies.
 
 There exists frameworks like the NIST Cybersecurity Framework \cite{barrett2018framework},
 published by the National Institute of Standards and Technology (NIST),
@@ -521,49 +417,12 @@ tightly controlled. The authors use privacy as a proxy for security, they also
 do not discuss the weak and strong points of each implementation or make any
 comparison, they also do not provide further research questions.
 
-% Ali et al. \cite{AliIoT} propose a software stack of blockchain smart contracts
-% and peer-to-peer file storage, to give IoT users authority over
-% their data in order to eliminate the need for centralized IoT data
-% management. In the proposed `modular consortium' architecture, blockchain
-% smart contracts perform access control, while providing
-% accountability for both the data owners and the third parties
-% whom the users allow access to.
-
 Ali et al. \cite{AliIoT} suggest a software stack that combines peer-to-peer
 file sharing with blockchain smart contracts to offer IoT users control
 over their data and do away with the necessity for centralized IoT data
 management. Blockchain smart contracts are used in the proposed `modular
 consortium' architecture to regulate access while establishing responsibility
 for both data owners and other parties that users grant access to.
-
-\subsubsection{Other proposals}
-
-% Zhu et al. \cite{ZhuIntegrating} explores an integrated paradigm called ``hybrid sensing''
-% where users interact with a crowdsensing server via a privacy-preserving protocol
-% to preserve their anonymity.
-
-Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
-privacy while also monitoring parking availability. The authors merged IoT
-sensing with crowdsensing and enhanced it with privacy-preserving methods.
-The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
-and a cryptographic technique based on cryptographic commitments, zero-knowledge
-proofs, and anonymous credentials in crowdsensing. In addition, they used
-crowdsourcing to create a machine learning model for parking recognition
-in the presence of foggy filters. Their paper included proof-of-concept
-prototypes such as a Raspberry Pi system and a mobile app, as well as an
-evaluation study of the machine learning model and the effects of crowdsourcing.
-
-% Zhu et al. describe a privacy-preserving hybrid sensor system with a smart parking availability monitoring application. We combined IoT sensing with crowdsensing and augmented it using privacy-protecting approaches. In particular, in IoT sensing, we concealed IoT sensors using physical hazy filters, and in crowdsensing, we used a cryptographic approach based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials. We also used crowdsourcing to build a machine learning model for parking detection under hazy filters. The paper showed proof-of-concept prototypes, including a Raspberry Pi system and a mobile app, as well as an assessment study of the machine learning model and the impacts of crowdsourcing.
-
-% This study offers a hybrid sensor system that protects privacy while also monitoring parking availability.
-% We merged IoT sensing with crowdsensing and enhanced it using privacy-preserving techniques.
-% We employed physical hazy filters to disguise IoT sensors in IoT sensing, and a cryptographic technique based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials in crowdsensing.
-% We also used crowdsourcing to create a machine learning model for parking recognition in the presence of hazy filters.
-% The report included proof-of-concept prototypes such as a Raspberry Pi system and a mobile app, as well as an evaluation study of the machine learning model and the effects of crowdsourcing.
-
-% Zhu et al. propose a hybrid sensor system that both protects privacy and monitors parking availability. We combined IoT sensing with crowdsensing and improved it with privacy-preserving approaches. In IoT sensing, we used physical hazy filters to hide IoT sensors, and in crowdsensing, we used a cryptographic approach based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials. Crowdsourcing was also utilized to develop a machine learning model for parking detection in the presence of foggy filters. Proof-of-concept prototypes such as a Raspberry Pi system and a mobile app were included in the paper, as well as an assessment study of the machine learning model and the impacts of crowdsourcing.
-
-% Zhu et al. offer a hybrid sensor system that safeguards privacy while also monitoring parking availability. The researchers merged IoT sensing with crowdsensing and enhanced it with privacy-preserving methods. They employed physical hazy filters to mask IoT sensors in IoT sensing, and a cryptographic technique based on cryptographic commitments, zero-knowledge proofs, and anonymous credentials in crowdsensing. In addition, crowdsourcing was used to create a machine learning model for parking recognition in the presence of foggy filters. The report included proof-of-concept prototypes such as a Raspberry Pi system and a mobile app, as well as an evaluation study of the machine learning model and the effects of crowdsourcing.
 
 \subsubsection{Privacy Assistants}
 
@@ -597,9 +456,9 @@ and Auto implementations of an IoT PPA were the three that the authors and
 attendees discussed. Notification PPAs can determine which adjacent devices
 are requesting data and alert users to those devices' presence and requests
 so that users can approve or reject each request. Building on notification
-PPAs, recommendation PPAs offer consumers advice on how to share their data
+PPAs, recommendation PPAs offer advice to individuals on how to share their data
 based on their preferences. The user's data sharing decisions would be made
-by auto PPAs. This would lessen the cognitive load on consumers but also
+by auto PPAs. This would lessen the cognitive load on individuals but also
 take away their ability to influence the process. They found that the participants'
 attitudes regarding the various implementations were generally favourable,
 although they also voiced worries, which varied depending on the degree
@@ -631,7 +490,7 @@ Assistant offers four privacy settings, giving end users a variety of alternativ
 to better suit their varied privacy preferences and as a result, privacy
 options are more effective in the IoT environment. The IoT Assistant acts
 as a centralized privacy choice platform by implementing various privacy
-options, allowing consumers to more effectively govern their data privacy
+options, allowing individuals to more effectively govern their data privacy
 in IoT. The three IoT system discovery modes that the IoT Assistant supports
 are QR codes, push notifications, and location-based map interfaces. These
 discovery tools are probably going to make users more aware of the installed
@@ -640,7 +499,7 @@ viewpoint of the integrated notification and option in the the IoT Assistant
 gives succinct yet thorough information regarding IoT data practices to
 help users better understand the implications of their privacy choices.
 Additionally, the authors work to implement the integrated notice and option
-in the IoT Assistant without bias or framing, attempting to offer consumers
+in the IoT Assistant without bias or framing, attempting to offer individuals
 a neutral space to execute their privacy choices. Although the authors view
 the IoT Assistant as a significant step towards ``meaningful privacy options''
 in IoT, this assistant still has many problems, such as the fact that it
@@ -679,25 +538,18 @@ to private user data or provider assistance. Despite the presence of multipath,
 LTEye uses a revolutionary extension of synthetic aperture radar to communication
 signals in order to precisely pinpoint mobile users.
 
-% \subsection{User Awareness}\label{AA}
-% There has been some work done to determine the users awareness of
-% their actions online in regard to privacy. An interactive theatre experience \cite{ColnagoInforming}
-% was proposed in order to expose privacy malpractices in companies,
-% specially in the capitalistic world where profit is prioritize
-% above all else, in this experiment the public is able to interact with
-% the actors and influence the story of the play, there are various endings depending
-% on the public's choices throughout the play, some endings the company would
-% bury the corruption that was going on, in another ending a team of hackers
-% is able to expose the company's practices to the world. After the play
-% the team responsible for the experiment would talk with public members about
-% what they experienced and discussed what was it about and the members
-% practices with their data on their daily life. After some months
-% the team would talk again with the members that were present in the play and
-% talk about any changes they have done in the meantime, most said they did
-% not change their behaviour, one member said that it took more care of The
-% information that made available online because it had a bad experience before
-% where some private data was exposed that should have not been exposed. All in
-% all the experiment did not prove to be a success in changing people's behaviour.
+\subsubsection{Other Proposals}
+
+Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
+privacy while also monitoring parking availability. The authors merged IoT
+sensing with crowdsensing and enhanced it with privacy-preserving methods.
+The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
+and a cryptographic technique based on cryptographic commitments, zero-knowledge
+proofs, and anonymous credentials in crowdsensing. In addition, they used
+crowdsourcing to create a machine learning model for parking recognition
+in the presence of foggy filters. Their paper included proof-of-concept
+prototypes such as a Raspberry Pi system and a mobile app, as well as an
+evaluation study of the machine learning model and the effects of crowdsourcing.
 
 \subsection{Main Takeaways}
 
@@ -757,34 +609,34 @@ signals in order to precisely pinpoint mobile users.
         \textbf{Ref $\#$} & \textbf{Year} & \textbf{Country} & \textbf{Publication Type} & \textbf{Publisher} & \textbf{Domain} \\
         \hline
         \endhead
-        \cite{DarrenState} & 2015 & USA & Tech Report & \textbf{Norton} NortonLifeLock & Statistical analisys \\
-        \hline
-        \cite{solove2021myth} & 2021 & USA & Journal & \textbf{George Washington University} George Washington Law Review & Privacy paradox \\
-        \hline
-        \cite{WilliamsPrivacy} & 2017 & UK & Conference & \textbf{IEEE} 15th Annual Conference on Privacy, Security and Trust (PST) & Privacy paradox \\
-        \hline
-        \cite{lee2021investigating} & 2021 & South Korea & Journal & \textbf{MDPI} Sustainability & Privacy paradox \\
-        \hline
-        \cite{goad2021privacy} & 2021 & Australia & Journal & \textbf{Elsevier} Information \& Management & Privacy paradox \\
-        \hline
-        \cite{gerber2018explaining} & 2018 & USA & Journal & \textbf{Elsevier} Computers \& security & Privacy paradox \\
-        \hline
+        % \cite{DarrenState} & 2015 & USA & Tech Report & \textbf{Norton} NortonLifeLock & Statistical analisys \\
+        % \hline
+        % \cite{solove2021myth} & 2021 & USA & Journal & \textbf{George Washington University} George Washington Law Review & Privacy paradox \\
+        % \hline
+        % \cite{WilliamsPrivacy} & 2017 & UK & Conference & \textbf{IEEE} 15th Annual Conference on Privacy, Security and Trust (PST) & Privacy paradox \\
+        % \hline
+        % \cite{lee2021investigating} & 2021 & South Korea & Journal & \textbf{MDPI} Sustainability & Privacy paradox \\
+        % \hline
+        % \cite{goad2021privacy} & 2021 & Australia & Journal & \textbf{Elsevier} Information \& Management & Privacy paradox \\
+        % \hline
+        % \cite{gerber2018explaining} & 2018 & USA & Journal & \textbf{Elsevier} Computers \& security & Privacy paradox \\
+        % \hline
         \cite{wilson2012unpacking} & 2012 & USA & Conference & \textbf{AIS} 33rd International Conference on Information Systems & Privacy paradox \\
         \hline
         \cite{warshaw2015can} & 2015 & USA & Conference & \textbf{ACM} Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems & Privacy paradox \\
         \hline
         \cite{lee2015privacy} & 2015 & South Korea & Journal & \textbf{Elsevier} Expert Systems with Applications & Privacy paradox and healthcare \\
         \hline
-        \cite{zak2008moral} & 2008 & USA & Book & \textbf{Princeton University Press} & Morality in economy \\
-        \hline
+        % \cite{zak2008moral} & 2008 & USA & Book & \textbf{Princeton University Press} & Morality in economy \\
+        % \hline
         \cite{acquisti2007can} & 2007 & USA & Book & \textbf{Auerbach Publications} & Digital Privacy \\
         \hline
         \cite{knijnenburg2013dimensionality} & 2013 & USA & Journal & \textbf{Elsevier} International Journal of Human-Computer Studies & Privacy paradox \\
         \hline
         \cite{wakefield2013influence} & 2013 & USA & Journal & \textbf{Elsevier} The Journal of Strategic Information Systems & Privacy paradox \\
         \hline
-        \cite{flender2012type} & 2012 & Germany & Conference & \textbf{Springer} International Symposium on Quantum Interaction & Privacy paradox \\
-        \hline
+        % \cite{flender2012type} & 2012 & Germany & Conference & \textbf{Springer} International Symposium on Quantum Interaction & Privacy paradox \\
+        % \hline
         \cite{dienlin2015privacy} & 2015 & Germany & Journal & \textbf{Wiley} European Journal of Social Psychology & Privacy paradox \\
         \hline
         \cite{baek2014solving} & 2014 & South Korea & Journal & \textbf{Elsevier} Computers in Human Behavior & Privacy paradox \\
@@ -817,14 +669,14 @@ signals in order to precisely pinpoint mobile users.
         \hline
         \cite{ziegeldorf2014privacy} & 2014 & Germany & Journal & \textbf{Wiley} Security and Communication Networks & Systematic Literature Review \\
         \hline
-        \cite{kearns2019ethical} & 2019 & UK & Book & \textbf{Oxford University Press} & Privacy algorithms \\
-        \hline
-        \cite{FromeLarge} & 2009 & USA & Conference & \textbf{IEEE} International Conference on Computer Vision & Image Protection \\
-        \hline
-        \cite{poddar2020visor} & 2020 & USA & Conference & \textbf{USENIX} Proceedings of the 29th USENIX Security Symposium & Video Analytics \\
-        \hline
-        \cite{ShokriPrivacy} & 2015 & USA & Conference & \textbf{ACM} Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security & Machine learning \\
-        \hline
+        % \cite{kearns2019ethical} & 2019 & UK & Book & \textbf{Oxford University Press} & Privacy algorithms \\
+        % \hline
+        % \cite{FromeLarge} & 2009 & USA & Conference & \textbf{IEEE} International Conference on Computer Vision & Image Protection \\
+        % \hline
+        % \cite{poddar2020visor} & 2020 & USA & Conference & \textbf{USENIX} Proceedings of the 29th USENIX Security Symposium & Video Analytics \\
+        % \hline
+        % \cite{ShokriPrivacy} & 2015 & USA & Conference & \textbf{ACM} Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security & Machine learning \\
+        % \hline
         \cite{ZhaoSurvey} & 2022 & Australia & Journal & \textbf{ACM} Computing Surveys & Differential Privacy \\
         \hline
         \cite{SkirpanPrivacy} & 2022 & USA & Magazine & \textbf{ACM} Communications of the ACM & New ways for user awareness \\
@@ -837,16 +689,16 @@ signals in order to precisely pinpoint mobile users.
         \hline
         \cite{AntunesFederated} & 2022 & Brazil & Journal & \textbf{ACM} Transactions on Intelligent Systems and Technology & Healthcare \\
         \hline
-        \cite{ChenSecurity} & 2021 & China & Journal & \textbf{IEEE} Internet of Things Journal & Healthcare \\
-        \hline
+        % \cite{ChenSecurity} & 2021 & China & Journal & \textbf{IEEE} Internet of Things Journal & Healthcare \\
+        % \hline
         \cite{opara2022framework} & 2022 & USA & Conference & \textbf{ACM} Proceedings of the 37th ACM/SIGAPP Symposium on Applied Computing & Framework \\
         \hline
         \cite{barrett2018framework} & 2018 & USA & Tech Report & \textbf{NIST} Cybersecurity Framework & Framework \\
         \hline
         \cite{iso2022cybersecurity} & 2022 & USA & Tech Report & \textbf{ISO} IT Security & IT Standards \\
         \hline
-        \cite{mercer2016privacy} & 2016 & UK & Master's Report & \textbf{University College London} & Blockchain \\
-        \hline
+        % \cite{mercer2016privacy} & 2016 & UK & Master's Report & \textbf{University College London} & Blockchain \\
+        % \hline
         \cite{zhang2019security} & 2019 & China & Journal & \textbf{ACM} Computing Surveys & Blockchain \\
         \hline
         \cite{yu2018blockchain} & 2018 & China & Journal & \textbf{IEEE} Wireless Communications & Blockchain \\
@@ -951,7 +803,7 @@ location. The introspection \cite{kang2015protection} method examines Virtual
 Machine (VM) actions to adequately safeguard users' private information.
 Every VM's CPU status, memory contents, network information provided by the
 hypervisor, and any malicious software that may be present on the VM are
-all collected and analysed. The privacy of consumers is jeopardized if
+all collected and analysed. The privacy of individuals is jeopardized if
 an IoT device loses integrity due to a hostile assault.
 
 \subsection{Privacy Challenges}
