@@ -287,9 +287,19 @@ among systems and users.
 
 \subsubsection{User Awareness}
 
-There has been some work done to determine the users awareness of their
-actions online regarding their privacy. Skirpan et al. \cite{SkirpanPrivacy}
-built an interactive theatre experience, this was created to try to prove
+Although individuals have a certain expectation of privacy when using IoT
+devices, privacy preferences are complex, as noted by \cite{naeini2017privacy},
+some individuals value some aspects more than others. There are studies
+on privacy in IoT but not many focus on user privacy awareness or
+privacy literacy.
+
+Koohang et al. \cite{koohang2022internet} propose a research model with five constructs, these being:
+IoT awareness, users' IoT privacy knowledge, users' IoT security knowledge,
+users' IoT Trust, and continued intention to use IoT.
+
+An interactive theater experience was developed by Skirpan et al. \cite{SkirpanPrivacy}
+as a case study of an innovative approach to gather user awareness about their
+online behavior with regard to privacy. This was created to try to prove
 that a simulated experience with a credible privacy problem may encourage
 people to take action before actually encountering a catastrophe. The plot
 of the play consist in a fledgling tech company that unveiled its revolutionary
@@ -393,7 +403,7 @@ guidelines.
 \subsubsection{Blockchain}
 
 Blockchain is an option to guarantee privacy in IoT because of zero-knowledge
-proofs, ring signatures \cite{mercer2016privacy} and mixing
+proofs\cite{sun2021survey}, ring signatures \cite{mercer2016privacy} and mixing \cite{stone2021trustless}
 among other techniques \cite{zhang2019security}.
 
 A zero-knowledge proof is a cryptographic technique that enables one party
@@ -874,34 +884,34 @@ hypervisor, and any malicious software that may be present on the VM are
 all collected and analysed. The privacy of individuals is jeopardized if
 an IoT device loses integrity due to a hostile assault.
 
-% \begin{figure}
-%     \begin{center}
-%         \begin{tikzpicture}
-%             \begin{axis}[
-%                 xbar,
-%                 symbolic y coords={Privacy internet of things,Privacy paradox internet of things,Differential privacy internet of things},
-%                 bar width=8pt,
-%                 ytick=data,
-%                 axis x line=bottom,
-%                 axis y line=left,
-%                 enlarge y limits=0.2,
-%                 nodes near coords={\pgfmathprintnumber[fixed]\pgfplotspointmeta},
-%                 legend style={at={(0.5,-0.1)},anchor=north}
-%             ]
-%                 \addplot coordinates {(518000,Privacy internet of things) (38200,Privacy paradox internet of things) (56200,Differential privacy internet of things)};
-%                 \addlegendentry{Google Scholar}
-%                 \addplot coordinates {(13247,Privacy internet of things) (62,Privacy paradox internet of things) (458,Differential privacy internet of things)};
-%                 \addlegendentry{BASE}
-%                 \addplot coordinates {(14300000,Privacy internet of things) (292000,Privacy paradox internet of things) (528000,Differential privacy internet of things)};
-%                 \addlegendentry{RefSeek}
-%                 \addplot coordinates {(226715,Privacy internet of things) (41760,Privacy paradox internet of things) (46891,Differential privacy internet of things)};
-%                 \addlegendentry{CORE}
-%             \end{axis}
-%         \end{tikzpicture}
-%         \caption{Distribution of papers on privacy in IoT, since 2020, by keywords searches on Google Scholar, BASE, RefSeek and CORE databases.}
-%         \label{fig:privacy_papers}
-%     \end{center}
-% \end{figure}
+\begin{figure}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                xbar,
+                symbolic y coords={Privacy internet of things,Privacy paradox internet of things,Differential privacy internet of things},
+                bar width=8pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge y limits=0.2,
+                nodes near coords={\pgfmathprintnumber[fixed]\pgfplotspointmeta},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(518000,Privacy internet of things) (38200,Privacy paradox internet of things) (56200,Differential privacy internet of things)};
+                \addlegendentry{Google Scholar}
+                \addplot coordinates {(13247,Privacy internet of things) (62,Privacy paradox internet of things) (458,Differential privacy internet of things)};
+                \addlegendentry{BASE}
+                \addplot coordinates {(14300000,Privacy internet of things) (292000,Privacy paradox internet of things) (528000,Differential privacy internet of things)};
+                \addlegendentry{RefSeek}
+                \addplot coordinates {(226715,Privacy internet of things) (41760,Privacy paradox internet of things) (46891,Differential privacy internet of things)};
+                \addlegendentry{CORE}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Distribution of papers on privacy in IoT, since 2020, by keywords searches on Google Scholar, BASE, RefSeek and CORE databases.}
+        \label{fig:privacy_papers}
+    \end{center}
+\end{figure}
 
 \subsection{Privacy Challenges}
 
@@ -1007,3 +1017,7 @@ can exploit structural information to launch multiple concurrent attacks.
 % Nevertheless, lightweight privacy protection cannot satisfy all the requirements.
 % In addition, adversaries can utilize the structural information to launch various
 % and continuous attacks.
+
+Ranjan et al. \cite{perera2015big} talk about user consent acquisition and stakeholder
+responsibility when discussing big data privacy.
+% ! To expand
