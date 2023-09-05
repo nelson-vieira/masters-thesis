@@ -140,6 +140,9 @@ that future works should focus on. Because this SLR is about blockchain technolo
 the focus is on privacy through security. Overall this is a very in-depth SLR on the
 use of blockchain technology to address privacy issues.
 
+Khanna and Kaur \cite{khanna2020internet} make a literature overview...
+% ! to expand
+
 Based on Ziegeldorf's \cite{ziegeldorf2014privacy} analysis of the literature,
 the following are the most prominent privacy concerns in IoT:
 
@@ -252,7 +255,7 @@ between privacy ideas across systems and users.
 
 Although individuals have a certain expectation of privacy when using IoT
 devices, privacy preferences are complex, as noted by \cite{naeini2017privacy},
-some individuals value some aspects more than others. There are studies
+some individuals value some aspects more than others. There are multiple studies
 on privacy in IoT but not many focus on user privacy awareness or
 privacy literacy.
 
@@ -276,7 +279,7 @@ online behaviour with regard to privacy. This was created to try to prove
 that a simulated experience with a credible privacy problem may encourage
 people to take action before actually encountering a catastrophe. The plot
 of the play consist in a fledgling tech company that unveiled its revolutionary
-AI technology while dealing with a company whistleblower and an untimely
+artificial intelligence (AI) technology while dealing with a company whistleblower and an untimely
 zero-day hack on their system. The public is able to interact with the actors
 and influence how the story plays out. Audiences and actors were given the
 chance to try on roles, behaviors, and opinions that they would not normally
@@ -299,10 +302,30 @@ individual. But better protection laws for the user would also create opposition
 from most companies that want to extract as much private data from their
 users without (m)any restrictions in order to increase their profit margins.
 
-Hadzovic et al. \cite{hadzovic2023path} paper focuses on research of existing
-initiatives related to establishing the IoT and AI regulatory and legislative
-framework in the EU and its applicability in developing countries.
-% ! to expand
+The research conducted by Hadzovic et al. \cite{hadzovic2023path} focuses on
+present initiatives aimed at establishing an IoT and AI regulatory and legislative
+framework in the European Union (EU), as well as its pertinence in developing nations, the authors
+choice to focus on EU is due to EU's claim for becoming a global leader \cite{european2021europe}. The authors
+identify three steps toward the development of an IoT and AI regulatory and
+legislative framework. The first step is to develop a national AI strategy, which
+is an important blueprint for increasing AI adoption and should be developed
+in accordance with a country's strategic priorities. To that end, a proactive
+information and communications technology (ICT) regulator could initiate and encourage
+national AI strategy development. The second step in developing a regulatory
+framework for IoT and AI involves the consideration of various aspects of IoT
+and AI and navigating through many overlapping policy areas to determine the rules.
+The legislation must be designed to be future-proof and not restrict technological
+development. The ICT regulator, which plays a central role in improving innovation
+and developing the electronic communications market, could also play a central role
+in the context of IoT and AI. It could serve as a coordinating authority within
+an advisory committee before the establishment of a national supervisory authority
+for AI. The new regulatory framework should be prepared and assessed using the regulatory
+impact assessment (RIA) method to select the best option for the country. And the
+third step in the development of a regulatory framework for IoT and AI involves
+redefining the role of regulatory authorities. The state must establish a national
+supervisory authority, but it is also important to involve civil society, the private
+sector, and academia in the process to ensure success. This approach is known as
+multistakeholder governance development.
 
 \subsubsection{Privacy through Security}
 
@@ -312,6 +335,8 @@ the aim of identity announcement and data exchange. They constructed a prototype
 system of the scheme and tested it on the Freenet, demonstrating that the
 method can effectively resist the influence of flow analysis on communication
 anonymity while preserving communication data security.
+
+% ! to expand
 
 \subsubsection{Architecture / Frameworks}
 
@@ -362,6 +387,7 @@ with \cite{alkhariji2023semantics, aljeraisy2021privacy} being more recent
 examples. It is true, however, that there are relatively few IoT PbD frameworks.
 
 \cite{zhang2017privacy} proposes a model for...
+% ! to expand
 
 There exists frameworks like the NIST Cybersecurity Framework \cite{barrett2018framework},
 published by the National Institute of Standards and Technology (NIST),
@@ -544,7 +570,33 @@ gathered, retention, the recipients of the data, and more. Additionally,
 it discloses any user-configurable privacy settings that might be connected
 to a particular resource.
 
-\subsubsection{Sniffers}
+\subsubsection{Other Proposals}
+
+Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
+privacy while also monitoring parking availability. The authors merged IoT
+sensing with crowdsensing and enhanced it with privacy-preserving methods.
+The authors employed physical hazy filters to mask IoT sensors
+and a cryptographic technique based on cryptographic commitments, zero-knowledge
+proofs, and anonymous credentials in crowdsensing. In addition, they used
+crowdsourcing to create a machine learning model for parking recognition
+in the presence of foggy filters. Their paper included proof-of-concept
+prototypes such as a Raspberry Pi system and a mobile app, as well as an
+evaluation study of the machine learning model and the effects of crowdsourcing.
+
+Lola et al. \cite{electronics12122589} propose a system that manages IoT
+device network communication by having manufacturers declare their device's
+data collection intentions while simultaneously allowing IoT users control
+over their data privacy and security, and thus providing transparency to
+IoT systems. The system's design includes tools for analysing packets sent
+by IoT devices and executing network traffic control rules. The goal is
+to enable the declaration and verification of IoT device communication
+intentions, as well as to govern such communication in order to detect
+potential security and privacy violations. This system's limitations include
+the fact that it can only handle non-encrypted network traffic, only working
+in TCP/IP networks, and end-users' inability to adequately establish
+their user policies due to lack of technical knowledge. The authors
+suggest using machine learning to improve this system, homomorphic encryption
+and/or federated learning could also be used.
 
 IoT sniffers are usually used to detect problems in the networks, they rarely
 are used to provide privacy for the users.
@@ -555,20 +607,7 @@ to private user data or provider assistance. Despite the presence of multipath,
 LTEye uses a revolutionary extension of synthetic aperture radar to communication
 signals in order to precisely pinpoint mobile users.
 
-\subsubsection{Other Proposals}
-
-Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
-privacy while also monitoring parking availability. The authors merged IoT
-sensing with crowdsensing and enhanced it with privacy-preserving methods.
-The authors employed physical hazy filters to mask IoT sensors in IoT sensing,
-and a cryptographic technique based on cryptographic commitments, zero-knowledge
-proofs, and anonymous credentials in crowdsensing. In addition, they used
-crowdsourcing to create a machine learning model for parking recognition
-in the presence of foggy filters. Their paper included proof-of-concept
-prototypes such as a Raspberry Pi system and a mobile app, as well as an
-evaluation study of the machine learning model and the effects of crowdsourcing.
-
-\subsection{Findings Analysis}
+\subsection{Assessment of Findings}
 
 % \begin{table}[H]
 %     \begin{center}
@@ -892,6 +931,9 @@ an IoT device loses integrity due to a hostile assault.
     \end{center}
 \end{figure}
 
+There is a big focus on blockchain and security in recent literature, specially from
+2020 onward, these finding are in accordance with other similar studies \cite{dadkhah2020publications}.
+
 \subsection{Privacy Challenges}
 
 IoT is a composed of a complex web of architectures, applications and technologies.
@@ -955,7 +997,7 @@ freedom to control their data, full transparency of the data life cycle, anonymi
 technology, security throughout the dataflow and stakeholder responsibility.
 It's challenging to create technologies that efficiently and effectively solicit
 consent from users, given that each user has limited time and technical expertise
-to participate in the process, to resolve the authors suggest this research
+to participate in the process, to resolve this the authors suggest
 integrating the principles and methods from both human-computer interaction and
 cognitive sciences. Data owners should have complete control over their data,
 yet current solutions provide restricted user access. Users should be able to
@@ -1001,6 +1043,15 @@ although some IoT system types can also have an impact on non-users. The authors
 suggest using notifications that are similar to CCTV surveillance in public spaces,
 but because monitoring and actuation tasks are difficult, it may be required to use
 interactive and digital tools to educate non-users.
+
+The receptiveness of private organizations to embrace better privacy procedures
+can also be a challenge, due to the capitalistic nature of the majority of the
+world's companies. Many organizations in the IT area make most of their profits
+from advertising, or otherwise from user's private data, as such they are incentivized
+to keep harvesting data, and even with regulations in place and privacy frameworks
+that safeguard personal data it might make financial sense for most organizations
+to not invest in privacy or security, as paying fines for data breaches does not
+disrupt their operations. Public organizations might behave differently.
 
 Except for the papers focusing on the privacy paradox, very few papers discussed
 stakeholder responsibility. The ethical side of privacy is also not often examined.
