@@ -55,6 +55,63 @@ This paradox has been proven to be vitiated by a number of empirical studies \ci
 online privacy practices are founded on separate privacy mindsets and so
 they are not inherently paradoxical.
 
+Another concept worth analysing is differential privacy (DP) which relates more
+closely to the survey that will be conducted but also to the general
+collection and analysis of user data by applications and systems.
+
+\subsection{Differential Privacy}
+
+The notion of differential privacy, according to Michael Kearns \cite{kearns2019ethical},
+is based on three important principles. The first being that ``differential
+privacy requires that adding or removing the data record of a single individual
+not change the probability of any outcome by much''. The second principle
+being that ``no outside observer can learn very much about any individual
+because of that person's specific data''. And the third important principle
+being that ``for every individual in the dataset, and for any observer no
+matter what their initial beliefs about the world were, after observing
+the output of a differentially private computation, their posterior belief
+about anything is close to what it would have been had they observed the
+output of the same computation run without the individual's data''.
+
+DP has the potential to significantly increase individual
+privacy protection, by purposefully adding noise into a dataset, it gives
+plausible deniability to any individual who may have had their data exploited
+while still being able to calculate statistics with relatively high precision.
+Although algorithms that deal with notions of fairness, ethics, and privacy
+are hard to implement because of the subjectivity of these concepts, and
+DP algorithms are no exception, they can still help in
+regards to tackling technology's intrinsic ethical and moral issues.
+
+Zhao and Chen \cite{ZhaoSurvey} conduct a SLR on DP for
+unstructured data. The authors present DP methods for
+sensitive content in image, audio, video, and text data. They compare the
+various methods and perform utility analyses for each method, highlighting
+the benefits and drawbacks of each, the utility loss is measured in experimental
+evaluations between the actual data and its obfuscated variant. They come
+to the conclusion that DP as well as its variations give
+stringent privacy protections for unstructured data against attackers with
+unpredictable background knowledge. They also suggest potential future study
+subjects that have yet to be investigated.
+
+Integrating federated learning and local differential privacy is proposed
+by Zhao et al. \cite{zhao2020local} to facilitate crowdsourcing applications to
+achieve the machine learning model while avoiding privacy threats and reducing
+communication costs. The authors provide four mechanisms depending on the
+privacy budget that is wanted. Based on experimental results of real-world
+datasets, the suggested mechanisms provide stronger privacy protection when
+compared to other comparable mechanisms; nevertheless, further testing is
+required to establish the validity of these mechanisms on production systems.
+No future research subjects are provided, only the intention of applying
+these mechanisms to deep neural networks.
+
+Similar to differential privacy, there exists different algorithms that aim to
+preserve privacy such as Google's box blurring algorithm \cite{FromeLarge}
+that is used in the Google Map's street view, Microsoft's Visor \cite{poddar2020visor}
+which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
+\cite{ShokriPrivacy} system for collaborative deep learning, however, in
+general, these algorithms struggle with high computational cost, internal
+attacks, or non-provable privacy.
+
 \subsection{Privacy in IoT: Approaches}
 
 There have been a number of systematic literature reviews (SLRs) \cite{Gupta2022Privacy, Kuhtreiber2022survey, sicari2015security, LinSurvey, yang2022overview, zubaydi2023leveraging}
@@ -63,12 +120,9 @@ done to study privacy and security issues in IoT.
 
 In Gupta and Ghanavati's \cite{Gupta2022Privacy} SLR, the authors review
 papers with methodologies and techniques that identify privacy risks or
-notify users about these risks. They divide the literature into the following
-categories: `Ontological Modeling and Semantic-based Approaches', `Data-Driven
-Approaches', `Source Code Analysis-based Approaches', `User Studies and
-Survey-based Approaches', `Blockchain-based Approaches' and `Architectural
-and Framework-based Approaches'. They then examine current literature on
-these three prerequisites. The findings show that: most works concentrate
+notify users about these risks. They divide the literature into the semantic-based,
+data-driven, source code analysis, survey, blockchain and architectural
+and framework based approaches. The authors' findings show that: most works concentrate
 on single IoT devices when addressing privacy threats; When analysing privacy
 issues, key privacy factors such as data reduction and data aggregation
 are overlooked; existing studies ignored the sensitivity of the obtained
@@ -76,9 +130,11 @@ information; most useful studies did not include a diverse range of users
 when assessing privacy problems; no work has been done to discover compliance
 difficulties between an IoT application and different privacy rules; and
 current research does not place a premium on providing individuals with real-time
-privacy notices. However, this SLR has the following limitations: the authors
-only chose articles and not thesis or books and from the selected papers,
-only the ones written in english were considered.
+privacy notices. Overall the authors do an extensive literature review
+and provide threats to the study's validity, however, this SLR has the
+following limitations: the authors only chose papers and not dissertations,
+thesis or books and from the selected papers, only the ones written in english
+were considered.
 
 Kühtreiber et al. \cite{Kuhtreiber2022survey} evaluate the frameworks and
 tools established for developers, specifically in the case of IoT, and find
@@ -140,10 +196,34 @@ that future works should focus on. Because this SLR is about blockchain technolo
 the focus is on privacy through security. Overall this is a very in-depth SLR on the
 use of blockchain technology to address privacy issues.
 
-Khanna and Kaur \cite{khanna2020internet} make a literature overview...
-% ! to expand
+The Khanna and Kaur \cite{khanna2020internet} research paper provides a comprehensive
+literature review on the IoT. 194 publications have been examined and categorized
+by a particular domain, including independent living, smart grid, smart house,
+environment monitoring, healthcare, industrial processing, and smart agriculture.
+Following the assessment of the literature, the authors propose the following
+unresolved issues: availability, reliability, mobility, performance, data
+confidentiality, network management, scalability, interoperability, security,
+and privacy. They argue that because IoT is evolving quickly, current research
+will be unable to keep up, the data produced by various sensors is extremely
+important and needs to be managed and evaluated with extreme care, and extensive
+research in this field will make a significant advancement with the goal of
+requiring no human intervention.
 
-Based on Ziegeldorf's \cite{ziegeldorf2014privacy} analysis of the literature,
+The research conducted by Tzafestas \cite{tzafestas2018ethics} focuses on
+an overview of broad ethical questions, ideas, and theories that can be
+applied in the IoT, IoT security, privacy, and trust elements, and the role
+of governments. Before discussing the role of governments, a distinction
+between ethics and law is made. Governments play an important role in mediating
+the future of IoT, especially since many plan to develop smart cities.
+Governments should also ensure that IoT products and solutions are used
+exclusively for their specified goal. Privacy protection, security, usability,
+user experience, trust, and safety have been identified as the primary
+ethical problems in IoT. The author concludes that in order to address
+sophisticated and tricky unethical and illegal behaviour across the IoT,
+more specific IoT legislation and ethics norms for IoT need to be devised
+and constantly updated.
+
+Based on Ziegeldorf et al. \cite{ziegeldorf2014privacy} analysis of the literature,
 the following are the most prominent privacy concerns in IoT:
 
 \begin{enumerate}
@@ -187,63 +267,6 @@ the following are the most prominent privacy concerns in IoT:
     systems are connecting different data sources, there is a higher danger
     of unauthorized access and data leakage.
 \end{enumerate}
-
-Another concept worth analysing is differential privacy (DP) which relates more
-closely to the survey that will be conducted but also to the general
-collection and analysis of user data by applications and systems.
-
-\subsection{Differential Privacy}
-
-The notion of differential privacy, according to Michael Kearns \cite{kearns2019ethical},
-is based on three important principles. The first being that ``differential
-privacy requires that adding or removing the data record of a single individual
-not change the probability of any outcome by much''. The second principle
-being that ``no outside observer can learn very much about any individual
-because of that person's specific data''. And the third important principle
-being that ``for every individual in the dataset, and for any observer no
-matter what their initial beliefs about the world were, after observing
-the output of a differentially private computation, their posterior belief
-about anything is close to what it would have been had they observed the
-output of the same computation run without the individual's data''.
-
-DP has the potential to significantly increase individual
-privacy protection, by purposefully adding noise into a dataset, it gives
-plausible deniability to any individual who may have had their data exploited
-while still being able to calculate statistics with relatively high precision.
-Although algorithms that deal with notions of fairness, ethics, and privacy
-are hard to implement because of the subjectivity of these concepts, and
-DP algorithms are no exception, they can still help in
-regards to tackling technology's intrinsic ethical and moral issues.
-
-Zhao and Chen \cite{ZhaoSurvey} conduct a SLR on DP for
-unstructured data. The authors present DP methods for
-sensitive content in image, audio, video, and text data. They compare the
-various methods and perform utility analyses for each method, highlighting
-the benefits and drawbacks of each, the utility loss is measured in experimental
-evaluations between the actual data and its obfuscated variant. They come
-to the conclusion that DP as well as its variations give
-stringent privacy protections for unstructured data against attackers with
-unpredictable background knowledge. They also suggest potential future study
-subjects that have yet to be investigated.
-
-Integrating federated learning and local differential privacy is proposed
-by Zhao et al. \cite{zhao2020local} to facilitate crowdsourcing applications to
-achieve the machine learning model while avoiding privacy threats and reducing
-communication costs. The authors provide four mechanisms depending on the
-privacy budget that is wanted. Based on experimental results of real-world
-datasets, the suggested mechanisms provide stronger privacy protection when
-compared to other comparable mechanisms; nevertheless, further testing is
-required to establish the validity of these mechanisms on production systems.
-No future research subjects are provided, only the intention of applying
-these mechanisms to deep neural networks.
-
-Similar to differential privacy, there exists different algorithms that aim to
-preserve privacy such as Google's box blurring algorithm \cite{FromeLarge}
-that is used in the Google Map's street view, Microsoft's Visor \cite{poddar2020visor}
-which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
-\cite{ShokriPrivacy} system for collaborative deep learning, however, in
-general, these algorithms struggle with high computational cost, internal
-attacks, or non-provable privacy.
 
 \subsection{Proposed Solutions}
 
@@ -298,7 +321,10 @@ are not enforceable legally, they defend that without the express agreement
 of the individual concerned, private information obtained by IoT devices
 must not be retained or processed in any form, and necessary procedures
 must be taken to guarantee that the data collected is not that of an unrelated
-individual. But better protection laws for the user would also create opposition
+individual. Before regulations like the GDPR, CCPA or the Artificial Intelligence
+Act some papers, such as Weber \cite{weber2010internet} and Ziegeldorf et al. \cite{ziegeldorf2014privacy},
+urged for better regulations to protect personal privacy in IoT systems.
+But better protection legislation for individuals would also create opposition
 from most companies that want to extract as much private data from their
 users without (m)any restrictions in order to increase their profit margins.
 
@@ -336,7 +362,19 @@ system of the scheme and tested it on the Freenet, demonstrating that the
 method can effectively resist the influence of flow analysis on communication
 anonymity while preserving communication data security.
 
-% ! to expand
+Motivated by privacy concerns in IoT, Xiong et al. \cite{xiong2018defending}
+propose a locally differentially private packet obfuscation mechanism as
+a defence against packet-size side-channel assaults in IoT networks. Because
+a quantifiable measure of privacy risk was required for preserving privacy,
+the authors chose local differential privacy in order to protect individual
+IoT devices given that it could mask packet sizes prior to transmission.
+The effectiveness of hiding the packet size from various smart home IoT
+devices was empirically demonstrated, and it was also clear that this mechanism
+works really well when using high bandwidth, but many IoT devices purposefully
+use low bandwidth for a variety of reasons, so bandwidth-constrained users
+must optimally tune their privacy preferences and trade off privacy with
+bandwidth. For further research the authors suggested addressing timing side-channel
+attacks.
 
 \subsubsection{Architecture / Frameworks}
 
@@ -354,7 +392,7 @@ a zero-trust security paradigm \cite{ChenSecurity}. Furthermore, the institution
 develop a learning algorithm verification system that can store and disseminate
 manifestos, as well as engage in distributed analytic procedures that need
 unanimous agreement from all participants. This study also demonstrates
-that previous literature implies that homomorphic encryption and differential
+what previous literature implies, that homomorphic encryption and differential
 privacy are effective approaches for preventing data breaches without incurring
 prohibitively high computing costs.
 
@@ -386,8 +424,19 @@ to IoT, which is incorrect as evidenced by other works \cite{o2017privacy, cavou
 with \cite{alkhariji2023semantics, aljeraisy2021privacy} being more recent
 examples. It is true, however, that there are relatively few IoT PbD frameworks.
 
-\cite{zhang2017privacy} proposes a model for...
-% ! to expand
+Q. Zhang et al. \cite{zhang2017privacy} propose a double-projection deep
+computation model (DPDCM) and a privacy-preserving (PPDPDCM) variant for
+big data feature learning. The DPDCM extends the deep computation model
+(DCM) by replacing all hidden layers with double-projection layers.
+Because the learning algorithm is very time-consuming the authors choose
+to leverage cloud computing to increase efficiency by crowdsourcing data
+on the cloud, but in big data sets there are a large number of private data
+so to solve this problem the authors propose a PPDPDCM by using the BGV
+scheme to encrypt the private data. After testing the proposed models
+they conclude that the DPDCM is marginally better than the conventional DCM
+with a 3\% to 4\% improvement, but the PPDPDCM performs similar to DPDCM
+without a noticeable classification accuracy drop while still preserving
+individual's private data.
 
 There exists frameworks like the NIST Cybersecurity Framework \cite{barrett2018framework},
 published by the National Institute of Standards and Technology (NIST),
@@ -442,7 +491,7 @@ provide a public record of every transaction, mixers have been developed
 to improve cryptocurrency privacy. Because of their emphasis on secrecy,
 mixers have been used to launder money using cryptocurrency.
 
-Zhang et al. \cite{zhang2019security} outline some disadvantages concerning
+R. Zhang et al. \cite{zhang2019security} outline some disadvantages concerning
 these techniques. For example, the authors assert that zero-knowledge proofs
 are less efficient than other techniques, that ring signatures cannot reveal
 the identity of the signer in the event of a dispute, and that centralized
@@ -654,6 +703,13 @@ signals in order to precisely pinpoint mobile users.
 %     \caption{Summary of literature}
 %     \label{table:literature_by_topics}
 % \end{table}
+
+This chapter discussed many works that proposed various approaches to address
+privacy challenges in the IoT. Different aspects of the included papers are now
+examined, including their general information, purpose, intended application, future
+research or outstanding issues, and lastly additional remarks for consideration.
+The conclusions reached here are completely based on the findings of the studies
+mentioned.
 
 \begin{footnotesize}
     \begin{longtable}{p{1.2cm} p{1cm} p{1.5cm} p{3.2cm} p{5cm} p{3cm}}
@@ -902,37 +958,98 @@ hypervisor, and any malicious software that may be present on the VM are
 all collected and analysed. The privacy of individuals is jeopardized if
 an IoT device loses integrity due to a hostile assault.
 
+There as been a rising interest by research papers in addressing privacy
+issues or challenges in the Internet of Things, at least since 2015-2016
+where the number or papers jumped from 11600 in 2015 to 19400 in 2016
+and rising since then until reaching a peak of 74400 in 2020 and slightly
+declining since then, at least until 31 August of 2023 there have been
+around 36000 papers published, according to the data seen on Figure \ref*{fig:iotprivacy_papers}.
+
+\begin{figure}
+    \begin{center}
+        \pgfkeys{/pgf/number format/1000 sep={\,}}
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=14cm,
+                height=8cm,
+                xmin=2010,
+                xmax=2023,
+                ymin=0,
+                ymax=74400,
+                xlabel=Year,
+                ylabel=Papers,
+                axis x line=bottom,
+                axis y line=left,
+                nodes near coords={\pgfmathprintnumber[fixed]\pgfplotspointmeta}
+            ]
+            \addplot[draw=blue,samples=100,fill=blue,fill opacity=0.1] coordinates {(2010,1040) (2011,1520) (2012,2650) (2013,4150) (2014,6650) (2015,11600) (2016,19400) (2017,31100) (2018,48300) (2019,60800) (2020,74400) (2021,72300) (2022,67700) (2023,36000)}\closedcycle;
+            \addplot[blue,thick,samples=100,domain=2010:2023] coordinates {(2010,1040) (2011,1520) (2012,2650) (2013,4150) (2014,6650) (2015,11600) (2016,19400) (2017,31100) (2018,48300) (2019,60800) (2020,74400) (2021,72300) (2022,67700) (2023,36000)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Distribution of papers, per year since 2010, on privacy in the Internet of Things, searched on Google Scholar database.}
+        \label{fig:iotprivacy_papers}
+    \end{center}
+\end{figure}
+
+In Figure \ref*{fig:privacy_keywords_papers} it is represented the number of papers by topic,
+all papers still related to the main topic of privacy in the IoT, in various databases,
+namely Google Scholar, BASE and CORE. This data is from papers since 2020, the database
+with the most papers is Google Scholar followed by the distant second BASE and finally
+CORE with the smallest number of papers. Other databases were used in course of the research
+like Semantic Scholar, Baidu Scholar and RefSeek but these databases do not have good
+filters and/or have a small number of papers. Around 249000 papers exist discussing privacy
+in the IoT in Google Scholar, 20641 papers on CORE and 8014 on BASE, from these papers
+the most researched topic has been security with around 196000 papers on Google Scholar,
+17738 on CORE and 5600 on BASE.
+
+
+
+There is a big focus on blockchain and security in recent literature, specially from
+2020 onward, these finding are in accordance with other similar studies \cite{dadkhah2020publications}.
+
 \begin{figure}
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                width=10cm,
+                height=13cm,
                 xbar,
-                symbolic y coords={Privacy internet of things,Privacy paradox internet of things,Differential privacy internet of things},
-                bar width=8pt,
+                xmin=0,
+                symbolic y coords={Privacy in the IoT,Privacy paradox in the IoT,Differential privacy in the IoT,Machine learning and privacy in the IoT,Deep learning and privacy in the IoT,Blockchain and privacy in the IoT,Security and privacy in the IoT,Privacy framework/architecture in the IoT},
                 ytick=data,
+                yticklabels={
+                    Privacy\\in the IoT,
+                    Privacy paradox\\in the IoT,
+                    Differential privacy\\in the IoT,
+                    Machine learning and\\privacy in the IoT,
+                    Deep learning and\\privacy in the IoT,
+                    Blockchain and privacy\\in the IoT,
+                    Security and privacy\\in the IoT,
+                    Privacy framework/architecture\\in the IoT,
+                    Privacy literacy in the IoT,
+                },
+                yticklabel style={align=right},
+                bar width=8pt,
                 axis x line=bottom,
                 axis y line=left,
-                enlarge y limits=0.2,
+                xticklabel style={/pgf/number format/fixed},
+                enlarge y limits=0.1,
                 nodes near coords={\pgfmathprintnumber[fixed]\pgfplotspointmeta},
-                legend style={at={(0.5,-0.1)},anchor=north}
+                legend style={at={(0.5,-0.1)},anchor=north},
+                % ticklabel style={font=\tiny},
             ]
-                \addplot coordinates {(518000,Privacy internet of things) (38200,Privacy paradox internet of things) (56200,Differential privacy internet of things)};
+                \addplot coordinates {(249000,Privacy in the IoT) (1850,Privacy paradox in the IoT) (9520,Differential privacy in the IoT) (109000,Machine learning and privacy in the IoT) (75100,Deep learning and privacy in the IoT) (73300,Blockchain and privacy in the IoT) (196000,Security and privacy in the IoT) (99900,Privacy framework/architecture in the IoT)};
                 \addlegendentry{Google Scholar}
-                \addplot coordinates {(13247,Privacy internet of things) (62,Privacy paradox internet of things) (458,Differential privacy internet of things)};
+                \addplot coordinates {(8014,Privacy in the IoT) (18,Privacy paradox in the IoT) (229,Differential privacy in the IoT) (1401,Machine learning and privacy in the IoT) (554,Deep learning and privacy in the IoT) (1650,Blockchain and privacy in the IoT) (5600,Security and privacy in the IoT) (2724,Privacy framework/architecture in the IoT)};
                 \addlegendentry{BASE}
-                \addplot coordinates {(14300000,Privacy internet of things) (292000,Privacy paradox internet of things) (528000,Differential privacy internet of things)};
-                \addlegendentry{RefSeek}
-                \addplot coordinates {(226715,Privacy internet of things) (41760,Privacy paradox internet of things) (46891,Differential privacy internet of things)};
+                \addplot coordinates {(20641,Privacy in the IoT) (384,Privacy paradox in the IoT) (1020,Differential privacy in the IoT) (11255,Machine learning and privacy in the IoT) (6643,Deep learning and privacy in the IoT) (6663,Blockchain and privacy in the IoT) (17738,Security and privacy in the IoT) (16327,Privacy framework/architecture in the IoT)};
                 \addlegendentry{CORE}
             \end{axis}
         \end{tikzpicture}
         \caption{Distribution of papers on privacy in IoT, since 2020, by keywords searches on Google Scholar, BASE, RefSeek and CORE databases.}
-        \label{fig:privacy_papers}
+        \label{fig:privacy_keywords_papers}
     \end{center}
 \end{figure}
-
-There is a big focus on blockchain and security in recent literature, specially from
-2020 onward, these finding are in accordance with other similar studies \cite{dadkhah2020publications}.
 
 \subsection{Privacy Challenges}
 
