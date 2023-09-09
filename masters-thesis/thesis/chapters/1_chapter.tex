@@ -46,15 +46,17 @@ from United State's National Security Agency. These concerns can be noted
 with the increase of written literature on the subject, when searching for
 terms like ``privacy'', ``online privacy'', ``digital privacy'' in Google
 Scholar, ACM Digital Library or Science Direct it can be seen that, in the
-last 5 years, it returns about 5000000, 650000 and 80000 documents respectively,
+last 5 years, it returns about 5 000 000, 650 000 and 80 000 documents respectively,
 including articles, books, conference papers etc.
 
-Most research has focused on the web, while privacy in IoT systems has not
-been explored as much. Because IoT devices are becoming more prevalent,
-new methods of communicating, gathering, and analyzing data emerge.
-Because there is already a substantial quantity of research focusing on
-web privacy rather than IoT privacy, it is a lot more fertile ground to
-explore the issue of privacy in the context of the IoT.
+Privacy has become such an important concern in the digital age in which
+we live because most technology organizations heavily rely on
+the advertising sector \cite{duan2022pricing}, which in turn depends on customer
+data. Following the
+2000s, many organizations offered their services to the general public without
+charging the user, however, because these organizations depend on revenue to
+stay afloat, the user is ultimately treated as a commodity for their data
+because they are not required to pay to access the service.
 
 \textit{Internet of Things} is a term that first appeared in the 1990s,
 and it may be linked to Mark Weiser's paper on ubiquitous computing \cite{weiser1991computer}
@@ -79,6 +81,11 @@ track and use information about us. Internet of Things is now widely used
 to describe situations in which a range of objects, gadgets, sensors, and
 ordinary items are connected to the internet and have computational capabilities.
 
+The Internet of Things can be defined as: ``An open and comprehensive network
+of intelligent objects that have the capacity to auto-organize, share information,
+data and resources, reacting and acting in face of situations and changes
+in the environment'' \cite{madakam2015internet}.
+
 The idea of using computers and networks in order to monitor and manage
 devices is nothing new, despite the term \textit{Internet of Things} being
 relatively recent.
@@ -100,25 +107,12 @@ the Name/Finger protocol through a terminal. In 1990, a toaster that could
 be turned on and off over the internet that was created by John Romkey \cite{RomkeyToast},
 was demonstrated at the Interop Internet Networking show.
 
-The Internet of Things can be defined as: ``An open and comprehensive network
-of intelligent objects that have the capacity to auto-organize, share information,
-data and resources, reacting and acting in face of situations and changes
-in the environment'' \cite{madakam2015internet}.
-
 IoT is one of the fastest growing technologies \cite{MohammadState}, it
 is predicted that it will grow into the trillions of devices by 2030 \cite{SarawiInternet},
 and with this expansion new security vulnerabilities and data gathering
-dangers appear, the lack of security in these devices makes them ideal targets
-for privacy violations and inadequate customer disclosure of device capabilities
+threats appear, making these devices an ideal target for
+privacy violations and inadequate customer disclosure of device capabilities
 and data practices aggravates privacy and security issues.
-
-Privacy in IoT systems in not seen as a crucial factor in development \cite{alhirabi2021security}.
-Specific standards for privacy options have been imposed by data privacy
-regulations including the General Data Protection Regulation (GDPR) and
-California Consumer Privacy Act (CCPA), but even these regulations have
-been criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022deficient, green2022flaws, byun2019privacy}.
-
-% TODO: better integrate this part into the text
 
 When the earliest computers were created, privacy was not even considered
 a concern because they were utilized for basic calculations, it was only in
@@ -134,16 +128,85 @@ and increasing popularity in people's homes, sparking debate regarding digital
 privacy. With the introduction of the World Wide Web at the start of the following
 decade, privacy concerns began to increase.
 
-Privacy has become such an important concern in the information age in which
-we live because most computer/technology/web organizations heavily rely on
-the advertising sector, which in turn depends on customer data. Following the
-2000s, many organizations offered their services to the general public without
-charging a fee. However, because these organizations depend on revenue to
-stay afloat, the customer is ultimately treated as a commodity for their data
-because they are not required to pay to access the service.
+Privacy in IoT systems in not seen as a crucial factor in the design and
+development stages \cite{alhirabi2021security}, instead emphasis is placed
+on enhancing system quality, providing management controls, and maximising productivity.
+Specific standards for privacy options have been imposed by data privacy
+regulations including the General Data Protection Regulation (GDPR) and
+California Consumer Privacy Act (CCPA), but even these regulations have
+been criticized \cite{peloquin2020disruptive, gladis2022weaponizing, gentile2022deficient, green2022flaws, byun2019privacy}.
 
 Privacy is considered to be one of the most important concerns in IoT by
 individuals, according to a study conducted by Mozilla \cite{Jen2017ten}
 with nearly 190,000 participants, some papers \cite{khan2021issues, MOHAMMADZADEH2018124}
 also consider privacy a primary issue alongside security while others also highlight
 energy efficiency \cite{sisinni2018industrial}.
+
+The primary motivation for writing this dissertation was to investigate
+the dissonance between individuals high regard for their privacy
+and their behaviours and to determine whether this happens because individuals
+are lacking the knowledge needed to make better and informed decisions.
+The focus on IoT was chosen since there isn't as much research being done to
+explore privacy issues as there is for the web. As IoT devices are becoming
+more prevalent, new methods of communicating,
+gathering, and analysing data emerge.
+It is much more fruitful to investigate the issue of privacy in the setting
+of the IoT because there is already a sizeable body of research focusing on
+web or mobile privacy as opposed to IoT privacy. This dissertation will mainly
+focus on privacy concerns in IoT systems in a holistic manner in order to present
+fresh perspectives and serve as a repository for the collected understanding of
+these issues, challenges and addressed gaps.
+
+This work contributes to the overall body of research by compiling and reviewing
+other works with the perspective of privacy as a distinct subject matter rather than
+an extension of security, as many publications imply. By conducting a survey
+on the perception of individuals on privacy in IoT systems from the majority
+viewpoint of Portugal, as 60\% of participants were portuguese. Additionally,
+a mobile application was developed that is capable of doing its purpose
+on its own without having to rely on additional platforms.
+
+The approach for this dissertation is formulated in two phases, the first of
+which is a systematic literature review (SLR), and the second is a questionnaire, and
+a mobile application. These stages are discussed
+in the several chapters that make up the dissertation's structure: Chapter \ref{section:state_of_the_art}
+is composed of a systematic literature review that focuses on gathering the state
+of the art in terms of the most relevant approaches to privacy issues in IoT, as
+well challenges inherit in IoT and other relevant topics that help give an
+overview of IoT privacy. Finally, following a review of each work, the main lessons
+learned are outlined, the most significant gaps in the literature are highlighted,
+and suggestions for future research that could be undertaken to tackle IoT privacy
+are provided. This chapter aims to address these two research questions:\\
+
+% \vspace{5mm}
+% \textbf{Phase 1 (Literature review):} \\
+
+\textbf{RQ1:} What approaches are currently being considered to address privacy
+issues in IoT?
+
+\textbf{RQ2:} What issues are prevalent in IoT that make it challenging to
+protect individuals privacy? \\
+
+Chapter \ref{section:methodology} describes the methodology of this work, it is composed of a
+questionnaire and a mobile application. The questionnaire aimed to gather
+the general privacy concerns of individuals, their online habits, their
+understanding of privacy concepts and their relation with IoT devices.
+The mobile application was designed and developed based on the findings
+of the SLR and the questionnaire, it seeks to help users broaden their
+knowledge of IoT and privacy with the goal to enable them to make more
+informed decisions. Two research questions will be considered in this
+chapter:\\
+
+% \vspace{5mm}
+% \textbf{Phase 2 (Survey and application):} \\
+
+\textbf{RQ3:} What are the perceptions of individuals on online privacy?
+
+\textbf{RQ4:} How can users be empowered to protect their privacy in IoT systems?\\
+% \vspace{5mm}
+
+The results of the questionnaire and the usability tests of the application are
+covered in Chapter 4, while the discussion of these results is reserved for
+Chapter 5, which will also address the research questions posed for phase 2 of
+this work. Chapter 6 discusses the challenges confronted throughout the making
+of this work, from the SLR to the development of the application. Future work
+is discussed on Chapter 7. Finally, Chapter 8 presents the conclusion.
