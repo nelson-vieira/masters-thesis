@@ -4,29 +4,1097 @@
 %
 % @author Nelson Vieira <nelson0.vieira@gmail.com>
 % @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
-\section{Challenges}
+\section{Results}
 
-One of the most difficult points to accomplish in this thesis was the
-questionnaire, not the construction of the questionnaire itself but
-getting participants. Besides being difficult in itself to get a relatively
-high number of participants (a few hundred at least)
-to be able to draw conclusions with any high degree of confidence, it was
-difficult to get the potential participants interested in the topic
-at hand, because although it seems that many people value their privacy very
-highly and think they should protect it, in practice it seems they
-are not very interested. This may even be because many people do not have much knowledge
-about the Internet of Things, and thus feel that they cannot answer the
-questionnaire because it is out of their field of knowledge, another
-reason may be that the questionnaire seems a little long, because it
-takes on average 15 to 20 minutes to answer, and despite being a topic
-of interest the time investment in the questionnaire may be considered
-too high. Another point to take into consideration regarding the low
-number of participants is the way the questionnaire is written and how
-it was advertised, i.e., a very formal or technical language may have
-been used both in the construction of the questionnaire and in its
-dissemination, and the fact that this is a very niche topic may have
-"scared" possible participants. However, it should be noted that also
-in the literature that has been carried out there is not a great focus
-on conducting questionnaires and the ones that have been conducted have
-not only focused on the Internet of Things and also have some monetary
-incentive for the participants.
+\par
+This chapter presents the results of the questionnaire about participants'
+perceptions of privacy, IoT and theirs online behaviors, as well as usability
+tests that were conducted for the mobile application.
+
+\subsection{Stage 1: Survey}
+
+As would be expected, the majority of participants agreed that data privacy
+is important to them and as such should be protected, as can be inferred
+on Figure \ref{fig:privacy_is_important_to_me}. Most participants
+also have some knowledge of behaviours or techniques to do
+in an online environment, as shown on Figure \ref{fig:techniques_to_guarantee_privacy}, be it connected to the internet or on some
+local network, like not sharing too much private information
+(or none at all) with strangers, revealing only the bare minimum necessary
+information to use a particular system, use of VPNs, different and strong
+passwords, 2 step authentication methods between others. Because a good
+portion of participants are from engineering areas this question might be
+skewed.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=8cm,
+                width=15cm,
+                ybar,
+                bar width=10pt,
+                ymin=0,
+                ymax=100,
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(1,0) (2,0) (3,0) (4,2.22) (5,4.44) (6,20) (7,73.33)};
+                \addlegendentry{"Privacy is important to me"}
+                \addplot coordinates {(1,0) (2,0) (3,2.22) (4,2.22) (5,6.67) (6,22.22) (7,66.67)};
+                \addlegendentry{Do you think your data privacy is important?}
+                \addplot coordinates {(1,0) (2,0) (3,2.22) (4,4.44) (5,11.11) (6,8.89) (7,73.33)};
+                \addlegendentry{Do you think your data privacy is relevant nowadays?}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Perspectives of participants on the importance of personal data privacy.}
+        \label{fig:privacy_is_important_to_me}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar,
+                bar width=20pt,
+                ymin=0,
+                ymax=30,
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.2,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(1,0) (2,13.33) (3,6.67) (4,26.67) (5,20) (6,13.33) (7,20)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Participant responses indicating whether they know techniques to guarantee privacy and the protection of their data when using the internet.}
+        \label{fig:techniques_to_guarantee_privacy}
+    \end{center}
+\end{figure}
+
+Most participants consider data privacy as a human and consumer right,
+as shown on Figure \ref{fig:privacy_human_right_histogram}, even if they have
+no knowledge of article 12 of the Universal Declaration of Human Rights.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                xbar,
+                symbolic y coords={Do not know,Disagree,Agree},
+                bar width=12pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=100,
+                enlarge y limits=0.15,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(2.22,Do not know) (2.22,Disagree) (95.56,Agree)};
+                \addlegendentry{"Data privacy is a human right"}
+                \addplot coordinates {(4.44,Do not know) (0,Disagree) (95.56,Agree)};
+                \addlegendentry{"Data privacy is a consumer right"}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Participant responses indicating whether they agree or disagree with these statements.}
+        \label{fig:privacy_human_right_histogram}
+    \end{center}
+\end{figure}
+
+When asked to define digital privacy, most participants did not know
+how to properly define it, giving generic answers while some even gave a one word answer,
+some participants gave incomplete or adjacent related answers. Only approximately
+16\% of participants supplied a concrete answer that was close to the definition
+presented in Section \ref{introduction}. Curiously, no one mentioned security,
+which contradicts with the responses represented in Figure \ref{fig:security_equals_privacy},
+where 53.33\% of participants believe that privacy and security are synonymous.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \pie[explode = 0.1]{46.67/No,
+            53.33/Yes}
+    \end{tikzpicture}
+    \caption{Responses to security and privacy being synonymous.}
+    \label{fig:security_equals_privacy}
+\end{figure}
+
+Participants have some digital literacy of IT terms, as shown on
+Figure \ref{fig:familiar_terms}, most know the more popular
+terms like \textit{wi-fi}, \textit{cookie} and \textit{data protection},
+but as the terms become more esoteric the general knowledge starts
+to drop. Some terms, even after getting some popularity,
+are still mostly unknown to the majority of people like \textit{blockchain} or \textit{Internet of Things}.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=8cm,
+                width=17cm,
+                symbolic x coords={Cookie, Wireless networks,Wi-Fi,Internet of Things,Data protection,Ad hoc network,Ubiquitous computing,Privacy assistant,Blockchain,Differential privacy},
+                ybar,
+                bar width=7pt,
+                ymin=0,
+                ymax=100,
+                xticklabel style={rotate=90},
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(Cookie,44.44) (Wireless networks,55.56) (Wi-Fi,71.11) (Internet of Things,22.22) (Data protection,40) (Ad hoc network,20) (Ubiquitous computing,4.44) (Privacy assistant,13.33) (Blockchain,11.11) (Differential privacy,6.67)};
+                \addlegendentry{Very knowledgable}
+                \addplot coordinates {(Cookie,46.67) (Wireless networks,40) (Wi-Fi,26.67) (Internet of Things,37.78) (Data protection,53.33) (Ad hoc network,20) (Ubiquitous computing,28.89) (Privacy assistant,28.89) (Blockchain,44.44) (Differential privacy,28.89)};
+                \addlegendentry{Some knowledge}
+                \addplot coordinates {(Cookie,8.89) (Wireless networks,4.44) (Wi-Fi,2.22) (Internet of Things,40) (Data protection,6.67) (Ad hoc network,60) (Ubiquitous computing,66.67) (Privacy assistant,66.67) (Blockchain,44.44) (Differential privacy,57.78)};
+                \addlegendentry{No knowledge}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Familiarity with general IT terms.}
+        \label{fig:familiar_terms}
+    \end{center}
+\end{figure}
+
+Regarding users' online habits, all participants have, or have access to, a smartphone
+and they use it in their daily lives, most participants concede that they spend a lot
+of their daily time using it, like shown on Figure \ref{fig:phone_access}, and are
+somewhat worried but do not actively try to protect their data privacy, which
+goes against their earlier responses regarding their worry of personal data privacy.
+When asked if they accept
+cookies, respondents occasionally do but are unsure what they do or their
+importance on the user experience.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=8cm,
+                width=15cm,
+                ybar,
+                bar width=10pt,
+                ymin=0,
+                ymax=100,
+                ytick=\empty,
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(1,2.22) (2,4.44) (3,4.44) (4,8.89) (5,6.67) (6,13.33) (7,60)};
+                \addlegendentry{During your day-to-day life, how often do you use your phone to access the internet?}
+                \addplot coordinates {(1,6.67) (2,6.67) (3,4.44) (4,11.11) (5,17.78) (6,24.44) (7,28.89)};
+                \addlegendentry{"I am concerned about my privacy when using my mobile phone when accessing the internet"}
+                \addplot coordinates {(1,2.22) (2,6.67) (3,13.33) (4,6.67) (5,33.33) (6,17.78) (7,20)};
+                \addlegendentry{"I try to block the collection of data from applications installed on my phone"}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Responses related to phone usage.}
+        \label{fig:phone_access}
+    \end{center}
+\end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,6.67) (2,2.22) (3,13.33) (4,20) (5,24.44) (6,11.11) (7,22.22)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How often do you allow the use of cookies?}
+%         \label{fig:allow_cookies}
+%     \end{center}
+% \end{figure}
+
+When asked about the concept of profiling, only half of the participants
+are aware of the term but more than half consider that their online
+activity contributes to its development, see Figure \ref{fig:activity_contributes_profiling}.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                xbar,
+                symbolic y coords={Do not know,Disagree,Agree},
+                bar width=12pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=100,
+                enlarge y limits=0.15,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(33.33,Do not know) (8.89,Disagree) (57.78,Agree)};
+                \addlegendentry{Do you consider that your internet activity contributes to the development of profiling?}
+                \addplot coordinates {(20,Do not know) (4.44,Disagree) (75.56,Agree)};
+                \addlegendentry{"The information I disclose on the internet can serve to identify me."}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Participant responses indicating whether they agree or disagree with these statements.}
+        \label{fig:activity_contributes_profiling}
+    \end{center}
+\end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{33.33/I do not know,
+%             8.89/No,
+%             57.78/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Do you consider that your internet activity contributes to the development of profiling?}
+%     \label{fig:activity_contributes_profiling}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{20/I do not know,
+%             4.44/No,
+%             75.56/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "The information I disclose on the internet can serve to identify me". Do you agree with this statement?}
+%     \label{fig:information_disclose_internet_identify_me}
+% \end{figure}
+
+Regarding participants relation with regulations, most participants are
+aware of regulations related to digital privacy, like GDPR or CCPA, but
+it's not absolutely clear to them what they represent and they do not
+show a clear interest in know more about these regulations, as shown on Figure \ref{fig:privacy_regulations}. It is not
+clear why there is a certain disinterest by most participants in regulations,
+it might be that most find it frustrating to read, or there is some
+faith that they work and as such there is no need to know more about them.
+Notably 0,47\% of the participants responded correctly to the question
+about GDPR's definition of personal data.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=8cm,
+                width=10cm,
+                ybar,
+                bar width=8pt,
+                ymin=0,
+                ymax=100,
+                ytick=\empty,
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
+                % \addlegendentry{\textcolor{red}{TOFIX} Are you interested in finding out more about regulations or legislation related to digital privacy?}
+                \addplot coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
+                % \addlegendentry{\textcolor{red}{TOFIX} "My data was more protected after the implementation of regulations such as the General Data Protection Regulation."}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Responses related to privacy regulations.}
+        \label{fig:privacy_regulations}
+    \end{center}
+\end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: Are you interested in finding out more about regulations or legislation related to digital privacy?}
+%         \label{fig:finding_out_more_about_regulations}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 ytick=data,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt
+%             ]
+%                 \addplot coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: "My data was more protected after the implementation of regulations such as the General Data Protection Regulation". Do you agree with this statement?}
+%         \label{fig:more_protected_after_regulations}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{11.11/I disagree,
+%             48.89/Maybe if asked first,
+%             35.56/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Do you agree to share health data that can identify you with health professionals?}
+%     \label{fig:share_health_data_can_identify}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{20/I disagree,
+%             35.56/Maybe if asked first,
+%             37.78/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Do you agree to share health data that cannot identify you with health professionals?}
+%     \label{fig:share_health_data_cannot_identify}
+% \end{figure}
+
+Most participants, 73.33\%, do not know what a data protection officer is
+or what are their duties, as can be seen on Figure \ref{fig:aware_dpo}.
+An internal role known as a data protection officer acts as an independent
+spokesman for a company's policies regarding the processing and
+application of customer data. The GDPR, which requires the appointment
+of a data protection officer by all businesses that offer goods or
+services to consumers in the European Union and collect data as a
+result, led to the creation of this job. The data protection officer
+keeps up with data protection regulations and policies, conducts
+internal privacy audits, and ensures that all other compliance-related
+data-related concerns are current.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \pie[explode = 0.1]{73.33/No,
+            26.67/Yes}
+    \end{tikzpicture}
+    \caption{Awareness of the duties of a data protection officer.}
+    \label{fig:aware_dpo}
+\end{figure}
+
+As expressed before, participants consider the protection of private data important
+and as such 82.22\% are interested in knowing where and how their data is used by
+organizations, as shown on Figure \ref{fig:interested_where_how_information_used}.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \pie[explode = 0.1]{2.22/I disagree,
+            15.56/I do not agree nor disagree,
+            82.22/I agree}
+    \end{tikzpicture}
+    \caption{Interest in knowing where and how personal information is used by organizations.}
+    \label{fig:interested_where_how_information_used}
+\end{figure}
+
+Figure \ref{fig:privacy_notices} depicts questions related to privacy notices.
+Participants are interested in knowing how their data is used by organizations,
+and privacy notices are one way to convey such information, but not all privacy
+notices are created equal, specially in the IoT, yet 53.33\% are not familiar with
+the reason data is collected but are still curious. Most participants agree that
+lengthy texts and font size, 86.67\% and 77.78\% respectively, affect their
+willingness to read them, 71.11\% confess to agreeing to the notices just to use
+the service due to a fear of missing out. In regards to brand trust, participants
+are divided with 33.33\% agreeing to not reading the privacy notice if they trust
+the organization and 33.33\% disagreeing.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=10cm,
+                width=10cm,
+                xbar,
+                symbolic y coords={Disagree,Do not know,Agree},
+                bar width=10pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=100,
+                enlarge y limits=0.2,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(20,Disagree) (26.67,Do not know) (53.33,Agree)};
+                \addlegendentry{"I am not familiar with the purpose of data collection but would like to know more."}
+                \addplot coordinates {(4.44,Disagree) (8.89,Do not know) (86.67,Agree)};
+                \addlegendentry{"The length of the privacy notice affects my willingness to read it."}
+                \addplot coordinates {(13.33,Disagree) (8.89,Do not know) (77.78,Agree)};
+                \addlegendentry{"The font size of the privacy notice affects my willingness to read it."}
+                \addplot coordinates {(6.67,Disagree) (22.22,Do not know) (71.11,Agree)};
+                \addlegendentry{"Usually, I'm afraid I won't be able to use a product or service if I don't agree with the privacy notice."}
+                \addplot coordinates {(33.33,Disagree) (33.33,Do not know) (33.33,Agree)};
+                \addlegendentry{"I don't need to read the privacy notice if I trust the institution."}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Participant responses indicating whether they agree or disagree with these statements.}
+        \label{fig:privacy_notices}
+    \end{center}
+\end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{20/I disagree,
+%             26.67/I do not agree nor disagree,
+%             53.33/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "I am not familiar with the purpose of data collection but would like to know more". Do you agree with this statement?}
+%     \label{fig:not_familiar_like_know_more}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{4.44/I disagree,
+%             8.89/I do not agree nor disagree,
+%             86.67/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "The length (or number of words) of the privacy notice affects my willingness to read it." Do you agree with this statement?}
+%     \label{fig:length_privacy_notice_affects_read}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{13.33/I disagree,
+%             8.89/I do not agree nor disagree,
+%             77.78/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "The font size of the privacy notice affects my willingness to read it." Do you agree with this statement?}
+%     \label{fig:font_size_privacy_notice_affects_read}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{6.67/I disagree,
+%             22.22/I do not agree nor disagree,
+%             71.11/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "Usually, I'm afraid I won't be able to use a product or service if I don't agree with the privacy notice." Do you agree with this statement?}
+%     \label{fig:not_able_use_service_do_not_agree_privacy_notice}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{33.33/I disagree,
+%             33.33/I do not agree nor disagree,
+%             33.33/I agree}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "I don't need to read the privacy notice if I trust the institution". Do you agree with this statement?}
+%     \label{fig:not_read_privacy_notice_trust_institution}
+% \end{figure}
+
+Figure \ref{fig:concerns} depicts questions related to participants
+privacy related concerns. Participants answered almost unanimously to
+all questions with most answers being 7, the questions that deviate
+from the rule concern public institutions or intelligence services analysing
+participants' online movements and organizations collecting and using
+participants' online activity respectively where most responded between
+a 5 and 6 meaning that some participants are not as concerned when
+public institutions or organizations collect their online activities.
+Participants show more concern when organizations collect data without
+their consent or when others engage in identity theft.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[rotate=90]
+            \begin{axis}[
+                height=8cm,
+                width=25cm,
+                ybar,
+                bar width=10pt,
+                ymin=0,
+                ymax=100,
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};
+                \addlegendentry{How concerned are you about organizations collecting and using your online activity?}
+                \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,6.67) (5,13.33) (6,17.78) (7,57.78)};
+                \addlegendentry{How concerned are you about organizations sharing your data with third parties?}
+                \addplot coordinates {(1,4.44) (2,0) (3,4.44) (4,8.89) (5,24.44) (6,13.33) (7,44.44)};
+                \addlegendentry{How concerned are you about public institutions or intelligence services analyzing your online movements?}
+                \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,8.89) (5,11.11) (6,13.33) (7,62.22)};
+                \addlegendentry{How concerned are you that other people obtain your personal data without your consent?}
+                \addplot coordinates {(1,2.22) (2,0) (3,0) (4,11.11) (5,11.11) (6,2.22) (7,73.33)};
+                \addlegendentry{How concerned are you that other people publish your personal data on the internet without your consent?}
+                \addplot coordinates {(1,4.44) (2,4.44) (3,6.67) (4,8.89) (5,8.89) (6,6.67) (7,60)};
+                \addlegendentry{How concerned are you about an unknown person claiming to be you on the internet?}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Responses related to concerns of organizations and individuals handling of private data.}
+        \label{fig:concerns}
+    \end{center}
+    \vspace{-30pt}% Removes "Float too large for the page" warning
+\end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you about organizations collecting and using your online activity?}
+%         \label{fig:concerned_organizations_collecting_activity}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,6.67) (5,13.33) (6,17.78) (7,57.78)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you about organizations sharing your data with third parties?}
+%         \label{fig:concerned_organizations_sharing_data_third_parties}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,0) (3,4.44) (4,6.67) (5,15.56) (6,17.78) (7,53.33)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you about organizations tracking your online behavior and thus obtaining your personal data?}
+%         \label{fig:concerned_organizations_tracking_behavior}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,4.44) (2,0) (3,4.44) (4,8.89) (5,24.44) (6,13.33) (7,44.44)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you about public institutions or intelligence services analyzing your online movements?}
+%         \label{fig:concerned_public_institutions_analyzing_online_movements}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,8.89) (5,11.11) (6,13.33) (7,62.22)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you that other people obtain your personal data without your consent?}
+%         \label{fig:concerned_other_people_obtain_data_without_consent}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,4.44) (2,2.22) (3,2.22) (4,13.33) (5,22.22) (6,13.33) (7,42.22)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you that other people find information about you online?}
+%         \label{fig:concerned_other_people_find_information_you_online}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,0) (3,0) (4,8.89) (5,13.33) (6,15.56) (7,60)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you that other people are disclosing information about you without your knowledge?}
+%         \label{fig:concerned_other_people_disclose_information_you_without_knowledge}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,0) (3,0) (4,8.89) (5,13.33) (6,15.56) (7,60)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you about other people sharing your personal data (photos, address, mobile phone number, etc.) with others without your consent?}
+%         \label{fig:concerned_other_people_sharing_data_others_without_consent}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,0) (3,4.44) (4,8.89) (5,15.56) (6,13.33) (7,55.56)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you about other people sharing your personal data (photos, address, mobile phone number, etc.) with others without your consent?}
+%         \label{fig:concerned_other_people_sharing_data_others_without_consent}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,0) (3,0) (4,11.11) (5,11.11) (6,2.22) (7,73.33)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you that other people publish your personal data (photos, address, mobile phone number, etc.) on the internet without your consent?}
+%         \label{fig:concerned_other_people_publish_internet_without_consent}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,4.44) (2,4.44) (3,6.67) (4,8.89) (5,8.89) (6,6.67) (7,60)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you about an unknown person claiming to be you on the internet?}
+%         \label{fig:concerned_unknown_person_claiming_to_be_you}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,2.22) (2,4.44) (3,2.22) (4,8.89) (5,6.67) (6,11.11) (7,64.44)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: How concerned are you about the possibility that someone may misuse your identity on the internet?}
+%         \label{fig:concerned_someone_misuse_your_identity_internet}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{35.56/I do not know,
+%             11.11/No,
+%             53.33/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: If a law enforcement officer asks for your personal data, are you willing to share it?}
+%     \label{fig:law_officer_share}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,4.44) (2,17.78) (3,13.33) (4,26.67) (5,8.89) (6,11.11) (7,17.78)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: Do you usually answer online questionnaires when they are requested?}
+%         \label{fig:answer_online_questionnaires}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,35.56) (2,26.67) (3,8.89) (4,13.33) (5,8.89) (6,4.44) (7,2.22)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: When answering questionnaires, do you enter any false/incorrect information?}
+%         \label{fig:questionnaires_incorrect_information}
+%     \end{center}
+% \end{figure}
+
+The majority of participants admitted to inputting varying amounts of
+incorrect information, with only 15.56\% of participants said they have
+never entered fake information when setting up an account on a platform,
+and 6.67\% said they always do, as demonstrated on Figure \ref{fig:creating_account_false_data}.
+The most typical inaccurate information
+entered by participants concerns their age, phone number, complete name,
+birthday, electronic mail, username, home address and country of citizenship.
+The most common reasons participants give for entering this false
+information are when creating a temporary account or they
+find that the information is not relevant, some stated that they do
+not want to provide any information that may be used to identify them.
+
+\begin{figure}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                ybar,
+                xlabel={Agreement level},
+                ylabel={Responses},
+                ytick=\empty,
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.2,
+                bar width=20pt,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(1,15.56) (2,11.11) (3,17.78) (4,13.33) (5,20) (6,15.56) (7,6.67)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Responses regarding the input of false personal data when creating an account on an online platform.}
+        \label{fig:creating_account_false_data}
+    \end{center}
+\end{figure}
+
+% \begin{figure}
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}[
+%                 ybar,
+%                 xlabel={Agreement level},
+%                 ylabel={Responses},
+%                 ytick=\empty,
+%                 xtick=data,
+%                 axis x line=bottom,
+%                 axis y line=left,
+%                 enlarge x limits=0.2,
+%                 bar width=20pt,
+%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+%             ]
+%                 \addplot coordinates {(1,0) (2,0) (3,2.22) (4,26.67) (5,17.78) (6,15.56) (7,37.78)};
+%             \end{axis}
+%         \end{tikzpicture}
+%         \caption{Responses to the question: Can the data I disclose serve to create a profile of my online habits?}
+%         \label{fig:data_disclose_create_profile}
+%     \end{center}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{20/I do not know,
+%             4.44/No,
+%             75.56/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: "The information I disclose on the internet can serve to identify me". Do you agree with this statement?}
+%     \label{fig:information_disclose_internet_identify_me}
+% \end{figure}
+
+Most participants are unaware of how digital data flows, as 82.22\% state
+being unfamiliar with data brokers, according to Figure \ref{fig:aware_data_brokers}.
+But they are aware that organisations collect their private data and use it
+in various ways, even without knowing exactly what they do with the data
+according to previous responses. If more individuals were aware of the function
+of a data broker, which plays an important role on data flow and can be an individual
+or a company which specializes in collecting and selling private data, their decisions
+undoubtedly be affected by this knowledge.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \pie[explode = 0.1]{82.22/No,
+            17.78/Yes}
+    \end{tikzpicture}
+    \caption{Awareness of data brokers.}
+    \label{fig:aware_data_brokers}
+\end{figure}
+
+In terms of IoT usage and literacy, about 2/3 of the participants have interacted in
+some way with a device, and from those who have used an IoT device, only close
+to a third (35.56\%) actually have a device in their homes, as depicted on
+Figure \ref{fig:internet_of_things_device_usage}. Even though most participants
+have interacted with an IoT device they had trouble actually explaining what Internet
+of Things actually is. When asked to describe it, 48\% of the participants
+wrote some kind of ``do not know'' variation, from the other 52\% that gave
+a more elaborate answer 70\% gave a generic answer that could be applied to
+a number of things, some described it like objects that are connected
+to the internet. Only two participants managed to describe IoT accurately.
+Most participants know devices that can be characterized as belonging to
+the Internet of Things like smart homes devices, including smart
+appliances like fridges, smart locks or virtual assistants that
+function with natural language commands, so even though the majority
+of respondents do not know how to define they can recognize IoT devices.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                xbar,
+                symbolic y coords={No,Yes},
+                bar width=12pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=100,
+                enlarge y limits=0.15,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                legend style={at={(0.5,-0.1)},anchor=north}
+            ]
+                \addplot coordinates {(33.33,No) (66.67,Yes)};
+                \addlegendentry{Have you ever used an Internet of Things device?}
+                \addplot coordinates {(64.44,No) (35.56,Yes)};
+                \addlegendentry{Do you have an Internet of Things device in your home?}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Participant responses indicating whether they agree or disagree with these statements.}
+        \label{fig:internet_of_things_device_usage}
+    \end{center}
+\end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{33.33/No,
+%             66.67/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Have you ever used an Internet of Things device (smartwatch, contactless cards, air or sea traffic applications)?}
+%     \label{fig:ever_used_internet_of_things_device}
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \pie[explode = 0.1]{64.44/No,
+%             35.56/Yes}
+%     \end{tikzpicture}
+%     \caption{Responses to the question: Do you have an Internet of Things device in your home (assistants like Alexa, smart lock, video surveillance, etc.)?}
+%     \label{fig:have_internet_of_things_device}
+% \end{figure}
+
+Familiarity with devices does not extend to most IoT related terms,
+as illustrated in Figure \ref{fig:familiar_terms_iot},
+the most recognized terms are the ones who have more visibility
+in everyday day like smart home, smart vehicle or fully autonomous car.
+Esoteric terms like the ones describing networks or protocols are mostly
+unknown to most respondents, it is known only to those that have certain
+qualifications or who work in IT or similar areas.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=8cm,
+                width=16cm,
+                symbolic x coords={Zigbee, Z-Wave,Bluetooth Low Energy,Smart Home,Smart Vehicle,Fully autonomous car,Long-Term Evolution,Smart City,Wearable,LORA},
+                ybar,
+                bar width=8pt,
+                ymin=0,
+                ymax=100,
+                xticklabel style={rotate=90},
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(Zigbee,0) (Z-Wave,2.22) (Bluetooth Low Energy,15.56) (Smart Home,28.89) (Smart Vehicle,22.22) (Fully autonomous car,17.78) (Long-Term Evolution,11.11) (Smart City,8.89) (Wearable,24.44) (LORA,0)};
+                \addlegendentry{Very knowledgable}
+                \addplot coordinates {(Zigbee,13.33) (Z-Wave,11.11) (Bluetooth Low Energy,40) (Smart Home,55.56) (Smart Vehicle,48.89) (Fully autonomous car,48.89) (Long-Term Evolution,22.22) (Smart City,40) (Wearable,24.44) (LORA,11.11)};
+                \addlegendentry{Some knowledge}
+                \addplot coordinates {(Zigbee,86.67) (Z-Wave,86.67) (Bluetooth Low Energy,44.44) (Smart Home,15.56) (Smart Vehicle,28.89) (Fully autonomous car,33.33) (Long-Term Evolution,66.67) (Smart City,51.11) (Wearable,51.11) (LORA,88.89)};
+                \addlegendentry{No knowledge}
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Familiarity with IoT terms.}
+        \label{fig:familiar_terms_iot}
+    \end{center}
+\end{figure}
+
+\subsection{Stage 2: Application}
+
+The system usability scale was used after the participants
+performed all tasks, using this system a score of X was achieved.
+The system usability scale was used after the participants
+performed all tasks, using this system a score of X was achieved.
+An improvement to the usability tests would be to have the participation of
+an expert software developer, preferably with experience in IoT systems.
