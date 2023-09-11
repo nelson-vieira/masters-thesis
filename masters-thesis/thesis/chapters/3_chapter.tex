@@ -558,6 +558,18 @@ open platform so it is expected that users act in good faith.
 % work the application might suffer alterations to the design, specially in
 % the testing stage, and also depending on the results of the study.
 
+After creating the software requirements specification, the prototypes were
+created. For the creation of the prototypes the following tools were used: Figma
+and GIMP. Figma was the primary tool for the design while GIMP was mostly used
+for image manipulation as it is a more specialized software tool.
+
+At first a low level prototype was made in order to understand the
+general design and user interaction of the application. Figure \ref{fig:lowlevelprototype}
+shows tree pages of the low level prototype, these being the homepage, about
+and faq pages. This is a rough sketch, there are barely any details added to each page,
+this only serves to get a general idea of where icons and other items
+will be placed and how the navigation between screens will work.
+
 \begin{figure}
     \centering
     \begin{subfigure}{0.33\textwidth}
@@ -582,14 +594,11 @@ open platform so it is expected that users act in good faith.
     \label{fig:lowlevelprototype}
 \end{figure}
 
-After creating the software requirements specification, the prototypes were
-created. For the creation of the prototypes the following tools were used: Figma
-and GIMP.
-
-At first a low level prototype was made in order to understand the
-general design and user interaction of the application. Figure \ref{fig:lowlevelprototype}
-shows tree pages of the low level prototype, these are the homepage, about
-and faq pages, this prototype has a navigation menu on the bottom where the
+After doing a rough prototype, some refinements were done to each page, like
+adding colors and creating icons, which became eventually became a medium level
+prototype. Figure \ref{fig:mediumlevelprototype} shows tree pages of the medium level
+prototype, these being the homepage, about
+and faq pages. This prototype has a navigation menu on the bottom where the
 other pages of the application can be selected along with some information
 above the page icons, this information is supposed to be the categories of
 the devices, the logic would be that the user could tap one of these categories
@@ -602,19 +611,19 @@ changed in subsequent prototype versions.
     \centering
     \begin{subfigure}{0.33\textwidth}
         \centering
-        \includegraphics[width=130pt]{../assets/images/low_homepage.png}
+        \includegraphics[width=130pt]{../assets/images/medium_homepage.png}
         \caption{}
         \label{fig:mediumhome}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
-        \includegraphics[width=130pt]{../assets/images/low_about.png}
+        \includegraphics[width=130pt]{../assets/images/medium_about.png}
         \caption{}
         \label{fig:mediumabout}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
-        \includegraphics[width=130pt]{../assets/images/low_more_info.png}
+        \includegraphics[width=130pt]{../assets/images/medium_more_info.png}
         \caption{}
         \label{fig:mediumfaq}
     \end{subfigure}%
@@ -622,23 +631,35 @@ changed in subsequent prototype versions.
     \label{fig:mediumlevelprototype}
 \end{figure}
 
+Another prototype version was created, this being the final one before
+the developed version. The high level version can be seen on Figure \ref{fig:highlevelprototype}
+which shows three pages: homepage, FAQ and IoT devices. This is the version
+that more closely resembles the developed application, although some design
+elements were changed. Between the medium and high level prototypes, more icons
+were created, colours were changed and other pages were designed. More icons
+to the navigation footer were created, namely for the homepage and faq pages
+which were missing from previous versions even with those pages being designed.
+An icon for each category was also created, these show up on the map, representing
+the type of device, and also on the devices page, so that devices can be quickly
+identified.
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.33\textwidth}
         \centering
-        \includegraphics[width=130pt]{../assets/images/low_homepage.png}
+        \includegraphics[width=130pt]{../assets/images/high_homepage.png}
         \caption{}
         \label{fig:highhome}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
-        \includegraphics[width=130pt]{../assets/images/low_about.png}
+        \includegraphics[width=130pt]{../assets/images/high_more_info.png}
         \caption{}
         \label{fig:highabout}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
         \centering
-        \includegraphics[width=130pt]{../assets/images/low_more_info.png}
+        \includegraphics[width=130pt]{../assets/images/high_devices.png}
         \caption{}
         \label{fig:highfaq}
     \end{subfigure}%
@@ -646,43 +667,53 @@ changed in subsequent prototype versions.
     \label{fig:highlevelprototype}
 \end{figure}
 
+After doing the prototypes, development was started, although some overlap
+happened with the high level version prototype, as the icons for the categories
+were being created. Figure \ref{fig:live_app} represents the application pages:
+(\ref{fig:livehome}) homepage, (\ref{fig:liveabout}) about, (\ref{fig:livefaq}) more
+information, (\ref{fig:live_devices}) IoT devices, (\ref{fig:live_device_info}) device
+and (\ref{fig:live_statistics}) statistics.
+Further changes would occur between the prototypes and
+the application, such as the colour scheme, icons for pages that were created
+were not used.
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.30\textwidth}
         \centering
         \includegraphics[width=125pt]{../assets/images/live_homepage.jpg}
         \caption{}
-        \label{fig:highhome}
+        \label{fig:livehome}
     \end{subfigure}
     \begin{subfigure}{0.30\textwidth}
         \centering
         \includegraphics[width=125pt]{../assets/images/live_about.jpg}
         \caption{}
-        \label{fig:highabout}
+        \label{fig:liveabout}
     \end{subfigure}
     \begin{subfigure}{0.30\textwidth}
         \centering
         \includegraphics[width=125pt]{../assets/images/live_more_info.jpg}
         \caption{}
-        \label{fig:highfaq}
+        \label{fig:livefaq}
     \end{subfigure}
     \begin{subfigure}{0.30\textwidth}
         \centering
         \includegraphics[width=125pt]{../assets/images/live_devices.jpg}
         \caption{}
-        \label{fig:highfaq}
+        \label{fig:live_devices}
     \end{subfigure}
     \begin{subfigure}{0.30\textwidth}
         \centering
         \includegraphics[width=125pt]{../assets/images/live_device_info.jpg}
         \caption{}
-        \label{fig:highfaq}
+        \label{fig:live_device_info}
     \end{subfigure}
     \begin{subfigure}{0.30\textwidth}
         \centering
         \includegraphics[width=125pt]{../assets/images/live_statistics.jpg}
         \caption{}
-        \label{fig:highfaq}
+        \label{fig:live_statistics}
     \end{subfigure}
     \caption{Live version of the application with pages: (a) homepage, (b) about, (c) FAQ, (d) devices, (e) device information and (f) statistics pages.}
     \label{fig:live_app}
