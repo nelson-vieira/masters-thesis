@@ -4,7 +4,7 @@
 %
 % @author Nelson Vieira <nelson0.vieira@gmail.com>
 % @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
-\section{An Application of Theory into Practice}
+\section{An Application of the Theory}
 \label{section:stage2}
 
 This work proposes an application that gives users information about IoT
@@ -39,78 +39,6 @@ delineating the scope and vision for the application; the involved stakeholders;
 containing contextual, data-flow and swimlane diagrams; software requirements, including
 business, technology, functional and non-functional requirements; use cases
 and requirements prioritisation.
-
-Users can, when they start the application for the first time, freely use it to see
-which devices are in their vicinity,
-information about the devices, information about the application itself, and
-information about privacy in general and more specifically privacy in IoT systems
-which they can use to improve their digital literacy. What they cannot do is
-add a new device to the application or edit a device's information. The user has
-to create an account first to do these operations. The decision to add an
-account creation before the user can add or edit a device is to prevent
-bad actors to add bogus data to the application making unusable for the majority
-of people, this solution doesn't completely solve this issue (because bad actors
-can still create an account and add bogus data anyway) but it helps to slow
-down the insertion of bad data.
-
-Upon account creation the only data entry that can be considered sensitive that
-the user has to input is an email address.
-After the user has created an account and logs in, the user can add devices to the application with the following information:
-
-\begin{itemize}
-    \item[$\bullet$]
-    The \textbf{name of the device}: This serves to differentiate between the various devices on the application and as such should be unique to each device, it is used on various routes and is one of the first fields that users see about a device. A single device does not have an \textit{official} name, what is more probable is that the device has a model name or is part of a system with it's own name. The user creates the name, this could be abused by bad actors but it is extremely discouraged. It is used for aesthetic reasons.
-    \item[$\bullet$]
-    The \textbf{category of the device}: This is used to categorize each devices main type of information that the device is collecting. These can be of the following:
-    \begin{itemize}
-        \item[$\circ$] \textbf{Visual}: The device mainly collects visual information with maybe a video camera.
-        \item[$\circ$] \textbf{Audio}: The device mainly collects audio information with a sound recorder.
-        \item[$\circ$] \textbf{Presence}: The device can detect the presence of nearby objects or persons. This is not the same as the location category because the device does not know the location of an individual, it merely knows that the individual is nearby. These type of devices can be used, for example, to collect information about how many people frequent a specific store.
-        \item[$\circ$] \textbf{Location}: The device can detect the exact or approximate location of an individual, it can use GPS to get this kind of information.
-        \item[$\circ$] \textbf{Biometrics}: The devices collects biometric data, this can be the number of steps an individual (or animal) takes, or health related data like the heart beat.
-        \item[$\circ$] \textbf{Environment}: These type of devices collect environmental data, they can be used for agriculture or weather forecasting by collecting, for example, temperature, humidity or wind speed/direction data.
-        \item[$\circ$] \textbf{Unique identification}: This category is for a device that can uniquely identify an individual, the device itself most likely is not capable of doing it but with other information that the device has access to, it can be used to cross reference of information and as such uniquely identify a person. An example of this would be a device a device that can collect visual data and with facial recognition used against other data in a database it can uniquely identify an individual.
-    \end{itemize}
-    \item[$\bullet$]
-    The \textbf{purpose for the data collection}: Defines what is the purpose for the collection of the data, if a device collects temperature and humidity data and is used by a weather based company or government agency then the purpose for the data collection is for weather forecasting.
-    \item[$\bullet$]
-    \textbf{Who has access to the collected data}: Disclose an individual or group of individuals that have access to the data of the device, if the device is part of a closed system it can be that only an individual as access to the data but most likely various groups of people have access to the data, some with more data than others depending on the permissions they have. If the device publicizes its data then everyone has access to it.
-    \item[$\bullet$]
-    \textbf{For how long is the data stored}: Pinpoint the duration of the stored data in the device or system, due to legislation passed in various countries this duration has a limit, in some cases the data cannot be stored for more than one year.
-    \item[$\bullet$]
-    \textbf{Can the data identify anyone}: Used to quickly identify if a particular device can identify an individual or not. If the device belongs to the "Unique identification" category then this should be active.
-    \item[$\bullet$]
-    \textbf{What is being done with the data}: This could be assumed to be similar to the \textbf{purpose} field mentioned above but it should be used to diagnose what is being done now with the data collected, in certain situations it might coincide with the purpose for the data collection.
-    \item[$\bullet$]
-    \textbf{Privacy options}: The user can insert an url for the device's privacy options, in some cases the device, or company, has a website with information on privacy options, or privacy policy. If the device uses a mobile application then a link to the this application can be inserted here.
-    \item[$\bullet$]
-    \textbf{Coordinates of the device}: Used to express the latitude and longitude of the device so that it can be shown on the map, on the homepage of the application.
-    \item[$\bullet$]
-    \textbf{Who owns the device}: Who is the device owner, if it belongs to an organization then the name of the organization should appear here otherwise if the device belongs to a person then the person's name should \textbf{not} appear, it should say private or something similar.
-\end{itemize}
-
-The user is not required to provide information to satisfy all items on this list, the
-only information that is required in order to add a device to the application is
-the name, category and coordinates of the device, all other
-information is optional but should be provided for the sake of guaranteeing a good
-experience to other users of the application. The information provided
-should be verified by the user beforehand so that bogus data does not clutter
-the application, in this case there are no absolute ways of guaranteeing this
-but the maintainer of the application edit wrong information or in some
-cases remove it, other users can also edit any device data. This is an
-open platform so it is expected that users act in good faith.
-
-Usability tests were conducted in person with 7 participants of different
-ages, professional fields and qualifications. Before doing the tests,
-some questions were made to gather the general level of digital literacy
-related to IoT and privacy, then the participants were asked to fill in the
-survey, if they had not done it yet, as this gives some insight into what the
-application is about. The usability tests consists of single ease questions \cite{tedesco2006comparison}
-and system usability scale \cite{brooke1996sus}, as can be seen on appendix \ref{appendix:usability_tests}.
-The single ease question was used after the participant performed each task, the
-participant would answer how difficult they though the task was in a
-scale of 1 to 7. The system usability scale was used after the participants
-performed all tasks.
 
 % Types of data:
 % Health
@@ -276,7 +204,7 @@ application administrator and the application itself.
 \begin{figure}[H]
     \centering
     \includegraphics[width=3.5cm]{../app/docs/software_requirements/assets/images/contextual_diagram.png}
-    \caption{IoT privacy contextual diagram.}
+    \caption{Contextual diagram depicting the interaction between two stakeholders, the user and the administrator, and the application.}
     \label{fig:contextual diagram}
 \end{figure}
 
@@ -395,10 +323,9 @@ compose the backbone of the application.
 \begin{table}[H]
     \centering
     \begin{adjustbox}{width=1\textwidth,center=\textwidth}
-    % \rowcolors{5}{gray!10}{gray!40}
     \begin{tabular}{|l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|p{0.15\textwidth}|}
         \hline
-        \rowcolor{green!20}
+        \rowcolor{blue!5}
         \textbf{R\#} & \textbf{Feature} & \textbf{Applicable stakeholders} & \textbf{Description} & \textbf{Source} \\
         \hline
         \textbf{1} & Navigate the map & User & \textbf{User}: The system should allow the user to scroll through the map of devices & Dissertation preparation \\
@@ -424,7 +351,7 @@ compose the backbone of the application.
     \end{tabular}
     \end{adjustbox}
     \vspace{1em}
-    \caption{Requirements table}
+    \caption{Requirements table.}
     \label{table:table1}
 \end{table}
 
@@ -520,34 +447,34 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-01 Query devices through certain parameters \\
+            \textbf{ID and Name}: & UC-01 Query devices through certain parameters \\
             \hline
-            Created By: & Nelson Vieira 20/02/2023 \\
+            \textbf{Created By}: & Nelson Vieira 20/02/2023 \\
             \hline
-            Primary Actor: & End User \\
+            \textbf{Primary Actor}: & End User \\
             \hline
-            Description: & The user makes a device information query \\
+            \textbf{Description}: & The user makes a device information query \\
             \hline
-            Trigger: & The user wants to search device information \\
+            \textbf{Trigger}: & The user wants to search device information \\
             \hline
-            Pre-conditions: & N/A \\
+            \textbf{Pre-conditions}: & N/A \\
             \hline
-            Post-conditions: & POST-1. The user finds device information \\
+            \textbf{Post-conditions}: & POST-1. The user finds device information \\
             \hline
-            Normal Flow: & \textbf{1.0 Query information of a device on the map}
+            \textbf{Normal Flow}: & \textbf{1.0 Query information of a device on the map}
             \begin{enumerate}
                 \item The user browses the map
                 \item The user clicks on the icon to show some information about the device
                 \item The user clicks on the device pop-up
             \end{enumerate} \\
             \hline
-            Alternative Flow: & \textbf{1.1 Device information search}
+            \textbf{Alternative Flow}: & \textbf{1.1 Device information search}
             \begin{enumerate}
                 \item User enters device name
                 \item The user chooses the device he wants from a list generated from the search performed
             \end{enumerate} \\
             \hline
-            Alternative Flow: & \textbf{1.2 Alternative search for information from a device}
+            \textbf{Alternative Flow}: & \textbf{1.2 Alternative search for information from a device}
             \begin{enumerate}
                 \item The user selects one of the parameters:
                 \begin{enumerate}
@@ -557,21 +484,21 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
                 \item The user chooses the device he wants from a list generated from the search carried out
             \end{enumerate} \\
             \hline
-            Exceptions: & \textbf{1.0.E1  The API is not working}
+            \textbf{Exceptions}: & \textbf{1.0.E1  The API is not working}
             \begin{enumerate}
                 \item The system displays an alert message: ``We are having connection problems, please wait for a while''
             \end{enumerate} \\
             \hline
-            Priority: & High \\
+            \textbf{Priority}: & High \\
             \hline
-            Business Requirements: & N/A \\
+            \textbf{Business Requirements}: & N/A \\
             \hline
-            Assumptions: & N/A \\
+            \textbf{Assumptions}: & N/A \\
             \hline
         \end{tabular}
     \end{adjustbox}
     \vspace{1em}
-    \caption{Use case 1 - device information query}
+    \caption{Use case 1 - device information query.}
     \label{table:use_case1}
 \end{table}
 
@@ -580,21 +507,21 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-02 Device statistics query \\
+            \textbf{ID and Name}: & UC-02 Device statistics query \\
             \hline
-            Created By: & Nelson Vieira 20/02/2023 \\
+            \textbf{Created By}: & Nelson Vieira 20/02/2023 \\
             \hline
-            Primary Actor: & End User \\
+            \textbf{Primary Actor}: & End User \\
             \hline
-            Description: & The user queries the statistics of the devices \\
+            \textbf{Description}: & The user queries the statistics of the devices \\
             \hline
-            Trigger: & The user wants to find statistics of devices \\
+            \textbf{Trigger}: & The user wants to find statistics of devices \\
             \hline
-            Pre-conditions: & N/A \\
+            \textbf{Pre-conditions}: & N/A \\
             \hline
-            Post-conditions: & POST-1. The system displays the statistics of the devices \\
+            \textbf{Post-conditions}: & POST-1. The system displays the statistics of the devices \\
             \hline
-            Normal Flow: & \textbf{2.0 Device statistics query}
+            \textbf{Normal Flow}: & \textbf{2.0 Device statistics query}
             \begin{enumerate}
                 \item User selects statistics tab
                 \item The user can only select certain parameters, such as:
@@ -604,23 +531,23 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
                 \end{enumerate}
             \end{enumerate} \\
             \hline
-            Alternative Flow: & N/A \\
+            \textbf{Alternative Flow}: & N/A \\
             \hline
-            Exceptions: & \textbf{2.0.E1  The API is not working}
+            \textbf{Exceptions}: & \textbf{2.0.E1  The API is not working}
             \begin{enumerate}
                 \item The system displays an alert message: ``We are having connection problems, please wait for a while''
             \end{enumerate} \\
             \hline
-            Priority: & Medium \\
+            \textbf{Priority}: & Medium \\
             \hline
-            Business Requirements: & N/A \\
+            \textbf{Business Requirements}: & N/A \\
             \hline
-            Assumptions: & N/A \\
+            \textbf{Assumptions}: & N/A \\
             \hline
         \end{tabular}
     \end{adjustbox}
     \vspace{1em}
-    \caption{Use case 2 - statistics query}
+    \caption{Use case 2 - statistics query.}
     \label{table:use_case2}
 \end{table}
 
@@ -629,21 +556,21 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
     \begin{adjustbox}{width=1.15\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-03 Add a device \\
+            \textbf{ID and Name}: & UC-03 Add a device \\
             \hline
-            Created By: & Nelson Vieira 22/02/2023 \\
+            \textbf{Created By}: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & End User \\
+            \textbf{Primary Actor}: & End User \\
             \hline
-            Description: & Addition of a new IoT device in the application \\
+            \textbf{Description}: & Addition of a new IoT device in the application \\
             \hline
-            Trigger: & The user wants to add a new IoT device \\
+            \textbf{Trigger}: & The user wants to add a new IoT device \\
             \hline
-            Pre-conditions: & N/A \\
+            \textbf{Pre-conditions}: & N/A \\
             \hline
-            Post-conditions: & POST-1. A new IoT device is added to the application \\
+            \textbf{Post-conditions}: & POST-1. A new IoT device is added to the application \\
             \hline
-            Normal Flow: & \textbf{3.0 Add a device}
+            \textbf{Normal Flow}: & \textbf{3.0 Add a device}
             \begin{enumerate}
                 \item The user enters the following data of a new IoT device:
                 \begin{enumerate}
@@ -656,23 +583,23 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
                 \item The user adds the location of the IoT device on the map
             \end{enumerate} \\
             \hline
-            Alternative Flow: & N/A \\
+            \textbf{Alternative Flow}: & N/A \\
             \hline
-            Exceptions: & \textbf{3.0.E1  The device is already in the database}
+            \textbf{Exceptions}: & \textbf{3.0.E1  The device is already in the database}
             \begin{enumerate}
                 \item The system displays an error message
             \end{enumerate} \\
             \hline
-            Priority: & High \\
+            \textbf{Priority}: & High \\
             \hline
-            Business Requirements: & N/A \\
+            \textbf{Business Requirements}: & N/A \\
             \hline
-            Assumptions: & N/A \\
+            \textbf{Assumptions}: & N/A \\
             \hline
         \end{tabular}
     \end{adjustbox}
     \vspace{1em}
-    \caption{Use case 3 - add a device}
+    \caption{Use case 3 - add a device.}
     \label{table:use_case3}
 \end{table}
 
@@ -681,21 +608,21 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
     \begin{adjustbox}{width=1.1\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-04 Edit a device's data \\
+            \textbf{ID and Name}: & UC-04 Edit a device's data \\
             \hline
-            Created By: & Nelson Vieira 22/02/2023 \\
+            \textbf{Created By}: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & End User \\
+            \textbf{Primary Actor}: & End User \\
             \hline
-            Description: & Editing the data of an IoT device in the application \\
+            \textbf{Description}: & Editing the data of an IoT device in the application \\
             \hline
-            Trigger: & The user wants to edit an IoT device's data \\
+            \textbf{Trigger}: & The user wants to edit an IoT device's data \\
             \hline
-            Pre-conditions: & N/A \\
+            \textbf{Pre-conditions}: & N/A \\
             \hline
-            Post-conditions: & POST-1. The data that has been changed appears in the application \\
+            \textbf{Post-conditions}: & POST-1. The data that has been changed appears in the application \\
             \hline
-            Normal Flow: & \textbf{4.0 Edit a device's data}
+            \textbf{Normal Flow}: & \textbf{4.0 Edit a device's data}
             \begin{enumerate}
                 \item The user can change any of the following device data:
                 \begin{enumerate}
@@ -706,9 +633,9 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
                 \item The user clicks on submit
             \end{enumerate} \\
             \hline
-            Alternative Flow: & N/A \\
+            \textbf{Alternative Flow}: & N/A \\
             \hline
-            Exceptions: &
+            \textbf{Exceptions}: &
             % Exceptions: & \textbf{4.0.E1  Unique data already registered}
             % \begin{enumerate}
             %     \item The system displays an error message
@@ -720,16 +647,16 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
                 \item The system prohibits editing
             \end{enumerate} \\
             \hline
-            Priority: & High \\
+            \textbf{Priority}: & High \\
             \hline
-            Business Requirements: & N/A \\
+            \textbf{Business Requirements}: & N/A \\
             \hline
-            Assumptions: & N/A \\
+            \textbf{Assumptions}: & N/A \\
             \hline
         \end{tabular}
     \end{adjustbox}
     \vspace{1em}
-    \caption{Use case 4 - edit a device's data}
+    \caption{Use case 4 - edit a device's data.}
     \label{table:use_case4}
 \end{table}
 
@@ -738,21 +665,21 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-05 Delete a device \\
+            \textbf{ID and Name}: & UC-05 Delete a device \\
             \hline
-            Created By: & Nelson Vieira 22/02/2023 \\
+            \textbf{Created By}: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & App Administrator \\
+            \textbf{Primary Actor}: & App Administrator \\
             \hline
-            Description: & Deleting a device in the application \\
+            \textbf{Description}: & Deleting a device in the application \\
             \hline
-            Trigger: & The administrator wants to delete a device \\
+            \textbf{Trigger}: & The administrator wants to delete a device \\
             \hline
-            Pre-conditions: & PRE-1. The device to be deleted must be in the application's database \\
+            \textbf{Pre-conditions}: & PRE-1. The device to be deleted must be in the application's database \\
             \hline
-            Post-conditions: & POST-1. The device is deleted from the application \\
+            \textbf{Post-conditions}: & POST-1. The device is deleted from the application \\
             \hline
-            Normal Flow: & \textbf{5.0 Delete a device}
+            \textbf{Normal Flow}: & \textbf{5.0 Delete a device}
             \begin{enumerate}
                 \item The administrator deletes a device, through:
                 \begin{enumerate}
@@ -763,24 +690,24 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
                 \item The system deletes the device
             \end{enumerate} \\
             \hline
-            Alternative Flow: & N/A \\
+            \textbf{Alternative Flow}: & N/A \\
             \hline
-            Exceptions: & \textbf{5.0.E1  The device to be deleted no longer exists in the database}
+            \textbf{Exceptions}: & \textbf{5.0.E1  The device to be deleted no longer exists in the database}
             \begin{enumerate}
                 \item The system displays an error message
                 \item The system prohibits deletion
             \end{enumerate} \\
             \hline
-            Priority: & High \\
+            \textbf{Priority}: & High \\
             \hline
-            Business Requirements: & N/A \\
+            \textbf{Business Requirements}: & N/A \\
             \hline
-            Assumptions: & It is assumed that the administrator has database access \\
+            \textbf{Assumptions}: & It is assumed that the administrator has database access \\
             \hline
         \end{tabular}
     \end{adjustbox}
     \vspace{1em}
-    \caption{Use case 5 - delete a device}
+    \caption{Use case 5 - delete a device.}
     \label{table:use_case5}
 \end{table}
 
@@ -789,21 +716,21 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
-            ID and Name: & UC-06 Create an account \\
+            \textbf{ID and Name}: & UC-06 Create an account \\
             \hline
-            Created By: & Nelson Vieira 22/02/2023 \\
+            \textbf{Created By}: & Nelson Vieira 22/02/2023 \\
             \hline
-            Primary Actor: & End User \\
+            \textbf{Primary Actor}: & End User \\
             \hline
-            Description: & Create a new end user account \\
+            \textbf{Description}: & Create a new end user account \\
             \hline
-            Trigger: & The user wants to create an account \\
+            \textbf{Trigger}: & The user wants to create an account \\
             \hline
-            Pre-conditions: & PRE-1. The user wants to add a new device \\
+            \textbf{Pre-conditions}: & PRE-1. The user wants to add a new device \\
             \hline
-            Post-conditions: & POST-1. The account is created in the application \\
+            \textbf{Post-conditions}: & POST-1. The account is created in the application \\
             \hline
-            Normal Flow: & \textbf{6.0 Account creation process}
+            \textbf{Normal Flow}: & \textbf{6.0 Account creation process}
             \begin{enumerate}
                 \item The user enter the following data in the register screen:
                 \begin{enumerate}
@@ -816,9 +743,9 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
                 \item The user confirms the account
             \end{enumerate} \\
             \hline
-            Alternative Flow: & N/A \\
+            \textbf{Alternative Flow}: & N/A \\
             \hline
-            Exceptions: & \textbf{6.0.E1  The username already exists in the database}
+            \textbf{Exceptions}: & \textbf{6.0.E1  The username already exists in the database}
             \begin{enumerate}
                 \item The system displays an error message
                 \item The system allows the user to recover the account
@@ -829,16 +756,16 @@ and use case ``Create an account'' has been detailed on Table \ref{table:use_cas
                 \item The system allows the user to recover the account
             \end{enumerate} \\
             \hline
-            Priority: & High \\
+            \textbf{Priority}: & High \\
             \hline
-            Business Requirements: & N/A \\
+            \textbf{Business Requirements}: & N/A \\
             \hline
-            Assumptions: & N/A \\
+            \textbf{Assumptions}: & N/A \\
             \hline
         \end{tabular}
     \end{adjustbox}
     \vspace{1em}
-    \caption{Use case 6 - create an account}
+    \caption{Use case 6 - create an account.}
     \label{table:use_case6}
 \end{table}
 
@@ -855,43 +782,44 @@ is a higher priority than the row one and if it is 0 the opposite is true.
 
 \begin{table}[H]
     \centering
-    % \rowcolors{5}{gray!10}{gray!40}
-    \begin{tabular}{|>{\columncolor{gray!10!white}}r|r|r|r|r|r|r|r|r|r|r|}
-        \hline
-        \rowcolor{gray!10!white}
-        & R\#1 & R\#2 & R\#3 & R\#4 & R\#5 & R\#6 & R\#7 & R\#8 & R\#9 & R\#10 \\
-        \hline
-        R\#1 && 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-        \hline
-        R\#2 & 1 && 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-        \hline
-        R\#3 & 1 & 1 && 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-        \hline
-        R\#4 & 1 & 1 & 1 && 1 & 0 & 0 & 0 & 1 & 1 \\
-        \hline
-        R\#5 & 0 & 0 & 0 & 0 && 0 & 0 & 1 & 1 & 1 \\
-        \hline
-        R\#6 & 1 & 1 & 1 & 1 & 1 && 0 & 0 & 1 & 1 \\
-        \hline
-        R\#7 & 1 & 1 & 1 & 1 & 1 & 1 && 1 & 1 & 1 \\
-        \hline
-        R\#8 & 1 & 1 & 1 & 1 & 0 & 1 & 0 && 1 & 1 \\
-        \hline
-        R\#9 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 && 1 \\
-        \hline
-        R\#10 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & \\
-        \hline
-        \rowcolor{gray!50}
-        Total & 8 & 7 & 6 & 3 & 6 & 2 & 0 & 2 & 5 & 6 \\
-        \hline
-    \end{tabular}
+    \begin{adjustbox}{width=0.8\textwidth,center=\textwidth}
+        \begin{tabular}{|>{\columncolor{gray!5!white}}r|r|r|r|r|r|r|r|r|r|r|}
+            \hline
+            \rowcolor{gray!5!white}
+            & \textbf{R\#1} & \textbf{R\#2} & \textbf{R\#3} & \textbf{R\#4} & \textbf{R\#5} & \textbf{R\#6} & \textbf{R\#7} & \textbf{R\#8} & \textbf{R\#9} & \textbf{R\#10} \\
+            \hline
+            \textbf{R\#1} && 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \textbf{R\#2} & 1 && 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \textbf{R\#3} & 1 & 1 && 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \textbf{R\#4} & 1 & 1 & 1 && 1 & 0 & 0 & 0 & 1 & 1 \\
+            \hline
+            \textbf{R\#5} & 0 & 0 & 0 & 0 && 0 & 0 & 1 & 1 & 1 \\
+            \hline
+            \textbf{R\#6} & 1 & 1 & 1 & 1 & 1 && 0 & 0 & 1 & 1 \\
+            \hline
+            \textbf{R\#7} & 1 & 1 & 1 & 1 & 1 & 1 && 1 & 1 & 1 \\
+            \hline
+            \textbf{R\#8} & 1 & 1 & 1 & 1 & 0 & 1 & 0 && 1 & 1 \\
+            \hline
+            \textbf{R\#9} & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 && 1 \\
+            \hline
+            \textbf{R\#10} & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & \\
+            \hline
+            \rowcolor{gray!20}
+            \textbf{Total} & 8 & 7 & 6 & 3 & 6 & 2 & 0 & 2 & 5 & 6 \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
     \vspace{1em}
-    \caption{Prioritisation table using the MoSCoW technique}
+    \caption{Prioritisation table using the MoSCoW technique.}
     \label{table:tabela moscow}
 \end{table}
 
-After this initial selection, the prioritisation Table \ref{table:prioritisation table}
-is created where it is measured, on a scale of 1 to 9, to rank the benefit and penalty
+After this initial selection, the prioritisation of requirements was estimated, as shown on Table \ref{table:prioritisation table},
+where it is ranked, on a scale of 1 to 9, the benefit and penalty
 of each requirement. The cost and implementation risk associated to each feature is
 also estimated.
 
@@ -929,7 +857,7 @@ also estimated.
     \end{tabular}
     \end{adjustbox}
     \vspace{1em}
-    \caption{Features prioritisation table}
+    \caption{Features prioritisation table.}
     \label{table:prioritisation table}
 \end{table}
 
@@ -938,35 +866,36 @@ as seen on Table \ref{table:sorted requirements}.
 
 \begin{table}[H]
     \centering
-    % \rowcolors{5}{gray!10}{gray!40}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \rowcolor{gray!50}
-        \textbf{Rank} & \textbf{Feature} & \textbf{\# Feature} & \textbf{Priority} \\
-        \hline
-        1 & Add a device & 5 & 0,93 \\
-        \hline
-        2 & Edit a device & 6 & 0,76 \\
-        \hline
-        3 & See more information about privacy in IoT & 10 & 0,71 \\
-        \hline
-        4 & Navigate the map & 1 & 0,65 \\
-        \hline
-        5 & Select device on the map & 2 & 0,65 \\
-        \hline
-        6 & Delete a device & 7 & 0,41 \\
-        \hline
-        7 & Query devices through parameters & 3 & 0,37 \\
-        \hline
-        8 & Create an account & 8 & 0,36 \\
-        \hline
-        9 & Select privacy choices & 9 & 0,33 \\
-        \hline
-        10 & Query statistics of the devices & 4 & 0,22 \\
-        \hline
-    \end{tabular}
+    \begin{adjustbox}{width=0.8\textwidth,center=\textwidth}
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \rowcolor{gray!5}
+            \textbf{Rank} & \textbf{Feature} & \textbf{\# Feature} & \textbf{Priority} \\
+            \hline
+            1 & Add a device & 5 & 0,93 \\
+            \hline
+            2 & Edit a device & 6 & 0,76 \\
+            \hline
+            3 & See more information about privacy in IoT & 10 & 0,71 \\
+            \hline
+            4 & Navigate the map & 1 & 0,65 \\
+            \hline
+            5 & Select device on the map & 2 & 0,65 \\
+            \hline
+            6 & Delete a device & 7 & 0,41 \\
+            \hline
+            7 & Query devices through parameters & 3 & 0,37 \\
+            \hline
+            8 & Create an account & 8 & 0,36 \\
+            \hline
+            9 & Select privacy choices & 9 & 0,33 \\
+            \hline
+            10 & Query statistics of the devices & 4 & 0,22 \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
     \vspace{1em}
-    \caption{Highest priority requirements ordered}
+    \caption{Highest priority requirements ordered.}
     \label{table:sorted requirements}
 \end{table}
 
@@ -1212,8 +1141,113 @@ This allows for the relatively fast development of an application for
 mobile without using native tools, which would significantly lengthen the
 development time.
 
-Figure \ref{} shows the database model. As mentioned previously, the database
-used is FireStore, which has a great integration with Flutter. There are only
-three tables used, one for IoT devices, one for users and another for categories.
-A table for users is used to extend Firebase Authentication, which can only store
-the email and password of users and be used for email confirmation.
+Figure \ref{fig:dbmodel} shows an entity relationship diagram, this type of
+diagram is usually created for relational databases, but, as is the case of
+Firestore, the database used is document-oriented, or NoSQL. This differs from
+relational databases in that data is stored in an object rather than in separate
+tables with relationships between them, but it can work identically to a relational
+database if configured properly. One of the main reasons to use Firestore is that
+it has great integration with Flutter. There are only three documents used to
+store backend data, one for IoT devices, one for users and another for categories.
+A document for users is used to extend Firebase Authentication, which can only
+store the email and password of users and also be used for email confirmation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=340pt]{../assets/images/erdiagram.png}
+    \caption{Entity relationship diagram of database.}
+    \label{fig:dbmodel}
+\end{figure}
+
+The development phase of this work took the greatest amount of time,
+it started almost after carrying out the requirements assessment, while
+the prototypes were being created and continued after conducting the
+usability tests. It will still be continued to be developed even after
+the production version 1.0 is released.
+
+What makes it take so much time is due to the resolution of bugs and
+problems that appear during the normal course of development. Using
+the Firestore database proved to be somewhat difficult because
+it is not as intuitive to create queries between different objects
+as it is using the SQL language.
+
+Users can, when they start the application for the first time, freely use it to see
+which devices are in their vicinity,
+information about the devices, information about the application itself, and
+information about privacy in general and more specifically privacy in IoT systems
+which they can use to improve their digital literacy. What they cannot do is
+add a new device to the application or edit a device's information. The user has
+to create an account first to do these operations. The decision to add an
+account creation before the user can add or edit a device is to prevent
+bad actors to add bogus data to the application making unusable for the majority
+of people, this solution doesn't completely solve this issue (because bad actors
+can still create an account and add bogus data anyway) but it helps to slow
+down the insertion of bad data.
+
+Upon account creation the only data entry that can be considered sensitive that
+the user has to input is an email address.
+After the user has created an account and logs in, the user can add devices to the application with the following information:
+
+\begin{itemize}
+    \item[$\bullet$]
+    The \textbf{name of the device}: This serves to differentiate between the various devices on the application and as such should be unique to each device, it is used on various routes and is one of the first fields that users see about a device. A single device does not have an \textit{official} name, what is more probable is that the device has a model name or is part of a system with it's own name. The user creates the name, this could be abused by bad actors but it is extremely discouraged. It is used for aesthetic reasons.
+    \item[$\bullet$]
+    The \textbf{category of the device}: This is used to categorize each devices main type of information that the device is collecting. These can be of the following:
+    \begin{itemize}
+        \item[$\circ$] \textbf{Visual}: The device mainly collects visual information with maybe a video camera.
+        \item[$\circ$] \textbf{Audio}: The device mainly collects audio information with a sound recorder.
+        \item[$\circ$] \textbf{Presence}: The device can detect the presence of nearby objects or persons. This is not the same as the location category because the device does not know the location of an individual, it merely knows that the individual is nearby. These type of devices can be used, for example, to collect information about how many people frequent a specific store.
+        \item[$\circ$] \textbf{Location}: The device can detect the exact or approximate location of an individual, it can use GPS to get this kind of information.
+        \item[$\circ$] \textbf{Biometrics}: The devices collects biometric data, this can be the number of steps an individual (or animal) takes, or health related data like the heart beat.
+        \item[$\circ$] \textbf{Environment}: These type of devices collect environmental data, they can be used for agriculture or weather forecasting by collecting, for example, temperature, humidity or wind speed/direction data.
+        \item[$\circ$] \textbf{Unique identification}: This category is for a device that can uniquely identify an individual, the device itself most likely is not capable of doing it but with other information that the device has access to, it can be used to cross reference of information and as such uniquely identify a person. An example of this would be a device a device that can collect visual data and with facial recognition used against other data in a database it can uniquely identify an individual.
+    \end{itemize}
+    \item[$\bullet$]
+    The \textbf{purpose for the data collection}: Defines what is the purpose for the collection of the data, if a device collects temperature and humidity data and is used by a weather based company or government agency then the purpose for the data collection is for weather forecasting.
+    \item[$\bullet$]
+    \textbf{Who has access to the collected data}: Disclose an individual or group of individuals that have access to the data of the device, if the device is part of a closed system it can be that only an individual as access to the data but most likely various groups of people have access to the data, some with more data than others depending on the permissions they have. If the device publicizes its data then everyone has access to it.
+    \item[$\bullet$]
+    \textbf{For how long is the data stored}: Pinpoint the duration of the stored data in the device or system, due to legislation passed in various countries this duration has a limit, in some cases the data cannot be stored for more than one year.
+    \item[$\bullet$]
+    \textbf{Can the data identify anyone}: Used to quickly identify if a particular device can identify an individual or not. If the device belongs to the "Unique identification" category then this should be active.
+    \item[$\bullet$]
+    \textbf{What is being done with the data}: This could be assumed to be similar to the \textbf{purpose} field mentioned above but it should be used to diagnose what is being done now with the data collected, in certain situations it might coincide with the purpose for the data collection.
+    \item[$\bullet$]
+    \textbf{Privacy options}: The user can insert an url for the device's privacy options, in some cases the device, or company, has a website with information on privacy options, or privacy policy. If the device uses a mobile application then a link to the this application can be inserted here.
+    \item[$\bullet$]
+    \textbf{Coordinates of the device}: Used to express the latitude and longitude of the device so that it can be shown on the map, on the homepage of the application.
+    \item[$\bullet$]
+    \textbf{Who owns the device}: Who is the device owner, if it belongs to an organization then the name of the organization should appear here otherwise if the device belongs to a person then the person's name should \textbf{not} appear, it should say private or something similar.
+\end{itemize}
+
+The user is not required to provide information to satisfy all items on this list, the
+only information that is required in order to add a device to the application is
+the name, category and coordinates of the device, all other
+information is optional but should be provided for the sake of guaranteeing a good
+experience to other users of the application. The information provided
+should be verified by the user beforehand so that bogus data does not clutter
+the application, in this case there are no absolute ways of guaranteeing this
+but the maintainer of the application edit wrong information or in some
+cases remove it, other users can also edit any device data. This is an
+open platform so it is expected that users act in good faith.
+
+The usability tests were crucial to the development of the application,
+they improved significantly the user experience along with changes to the
+user interface.
+
+Usability tests were conducted in person with 7 participants of different
+ages, professional fields and qualifications. The participants ages fall
+under the 40-50 range, the professional fields include accounting,
+management, social services and agriculture, and qualifications range from
+basic education to bachelor's degree. Unlike the dissemination of the questionnaire,
+participants for these tests were recruited informally. Before doing the tests,
+some questions were made to evaluate the general level of digital literacy
+regarding IoT and privacy, then the participants were asked to fill in the
+survey, if they had not done it yet, as this gives some insight into what the
+application is about. The usability tests consisted of single ease
+questions \cite{tedesco2006comparison}
+and the system usability scale \cite{brooke1996sus}, as can be seen on \nameref{appendix:usability_tests}.
+The single ease questions were used after the participant performed each task, the
+participant would answer how difficult they though the task was in a
+scale from 1 to 7. The system usability scale was used after the participants
+performed all tasks, with the same type of scale.

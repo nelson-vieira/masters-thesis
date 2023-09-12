@@ -40,6 +40,7 @@ skewed.
                 axis y line=left,
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                every node near coord/.append style={rotate=90, anchor=west},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
                 \addplot coordinates {(1,0) (2,0) (3,0) (4,2.22) (5,4.44) (6,20) (7,73.33)};
@@ -144,11 +145,12 @@ are still mostly unknown to the majority of people like \textit{blockchain} or \
                 bar width=7pt,
                 ymin=0,
                 ymax=100,
-                xticklabel style={rotate=90},
+                xticklabel style={rotate=72},
                 axis x line=bottom,
                 axis y line=left,
                 enlarge x limits=0.1,
-                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                every node near coord/.append style={rotate=90, anchor=west},
             ]
                 \addplot coordinates {(Cookie,44.44) (Wireless networks,55.56) (Wi-Fi,71.11) (Internet of Things,22.22) (Data protection,40) (Ad hoc network,20) (Ubiquitous computing,4.44) (Privacy assistant,13.33) (Blockchain,11.11) (Differential privacy,6.67)};
                 \addlegendentry{Very knowledgable}
@@ -181,13 +183,14 @@ importance on the user experience.
                 ybar,
                 bar width=10pt,
                 ymin=0,
-                ymax=100,
-                ytick=\empty,
+                ymax=70,
+                % ytick=data,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                every node near coord/.append style={rotate=90, anchor=west},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
                 \addplot coordinates {(1,2.22) (2,4.44) (3,4.44) (4,8.89) (5,6.67) (6,13.33) (7,60)};
@@ -294,17 +297,18 @@ about GDPR's definition of personal data.
         \begin{tikzpicture}
             \begin{axis}[
                 height=8cm,
-                width=10cm,
+                width=14cm,
                 ybar,
-                bar width=8pt,
+                bar width=12pt,
                 ymin=0,
-                ymax=100,
-                ytick=\empty,
+                ymax=50,
+                % ytick=\empty,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
                 enlarge x limits=0.1,
-                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                every node near coord/.append style={rotate=90, anchor=west},
             ]
                 \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
                 % \addlegendentry{\textcolor{red}{TOFIX} Are you interested in finding out more about regulations or legislation related to digital privacy?}
@@ -434,8 +438,8 @@ the organization and 33.33\% disagreeing.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=10cm,
-                width=10cm,
+                height=11cm,
+                width=12cm,
                 xbar,
                 symbolic y coords={Disagree,Do not know,Agree},
                 bar width=10pt,
@@ -540,12 +544,13 @@ their consent or when others engage in identity theft.
                 ybar,
                 bar width=10pt,
                 ymin=0,
-                ymax=100,
+                ymax=80,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                every node near coord/.append style={rotate=270, anchor=east},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
                 \addplot coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};
@@ -917,10 +922,14 @@ not want to provide any information that may be used to identify them.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=7cm,
+                width=13cm,
                 ybar,
                 xlabel={Agreement level},
                 ylabel={Responses},
-                ytick=\empty,
+                ymin=0,
+                ymax=25,
+                % ytick=\empty,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1058,8 +1067,8 @@ as illustrated in Figure \ref{fig:familiar_terms_iot},
 the most recognized terms are the ones who have more visibility
 in everyday life like smart home, smart vehicle or fully autonomous car.
 Esoteric terms like the ones describing networks or protocols are mostly
-unknown to most respondents, it is known only to those that have certain
-qualifications or who work in IT or similar areas.
+unknown to most respondents, only to those that have certain
+qualifications or who work in IT or similar areas have knowledge of these concepts.
 
 \begin{figure}[H]
     \begin{center}
@@ -1072,11 +1081,13 @@ qualifications or who work in IT or similar areas.
                 bar width=8pt,
                 ymin=0,
                 ymax=100,
-                xticklabel style={rotate=90},
+                xticklabel style={rotate=72},
                 axis x line=bottom,
                 axis y line=left,
                 enlarge x limits=0.1,
-                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                every node near coord/.append style={rotate=90, anchor=west},
+                legend style={at={(0.85,-0.35)},anchor=north}
             ]
                 \addplot coordinates {(Zigbee,0) (Z-Wave,2.22) (Bluetooth Low Energy,15.56) (Smart Home,28.89) (Smart Vehicle,22.22) (Fully autonomous car,17.78) (Long-Term Evolution,11.11) (Smart City,8.89) (Wearable,24.44) (LORA,0)};
                 \addlegendentry{Very knowledgable}
@@ -1119,7 +1130,18 @@ completing each task, although only one of these participants had some knowledge
 of IoT.
 
 The system usability scale was used after the participants
-performed all tasks, using this system a median score of 92,33\% was achieved.
+performed all tasks, using this system an average score of 90,95 was achieved.
+On Figure \ref{fig:system_usability_scale_scores} the scores of
+each participant can be seen.
+The 90,95 score was calculated by using the following formula:
+\[
+    Score = \frac{\sum_{i=1}^{7}x_i}{7}
+\]
+where $x$, representing each participants' response, is noted as:
+\[
+    ((Q1-1)+(7-Q2)+(Q3-1)+(7-Q4)+(Q5-1)+(7-Q6)+(Q7-1)+(7-Q8)+(Q9-1)+(7-Q10))*\frac{5}{3}
+\]
+\nameref{appendix:sus} shows the scoring in more detail.
 This is a high score which would mean that the application provides
 a good user experience, even though some users experienced some
 hardships when using it when the first tests where being performed.
@@ -1128,30 +1150,30 @@ as is the example of when the application when only available in english,
 now it is possible to use it in english and in portuguese, in the future
 more language might be added.
 
-% \begin{figure}[H]
-%     \begin{center}
-%         \begin{tikzpicture}
-%             \begin{axis}[
-%                 % width=14cm,
-%                 % height=8cm,
-%                 % xmin=2010,
-%                 % xmax=2023,
-%                 ymin=0,
-%                 ymax=100,
-%                 % xlabel=Year,
-%                 % ylabel=Papers,
-%                 axis x line=bottom,
-%                 axis y line=left,
-%                 enlarge x limits=0.1,
-%                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
-%             ]
-%             \addplot[scatter, only marks] coordinates {(1,85) (2,90) (3,91.66666667) (4,96.66666667) (5,98.33333333) (6,93.33333333) (7,63.33333333)};
-%             \end{axis}
-%         \end{tikzpicture}
-%         \caption{Individual system usability scale scores.}
-%         \label{fig:system_usability_scale_scores}
-%     \end{center}
-% \end{figure}
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                % width=14cm,
+                % height=8cm,
+                % xmin=2010,
+                % xmax=2023,
+                ymin=0,
+                ymax=100,
+                % xlabel=Year,
+                % ylabel=Papers,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta}
+            ]
+            \addplot[scatter, only marks] coordinates {(1,85) (2,90) (3,91.66666667) (4,96.66666667) (5,98.33333333) (6,96.66666667) (7,78.33333333)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Individual system usability scale scores.}
+        \label{fig:system_usability_scale_scores}
+    \end{center}
+\end{figure}
 
 An improvement to the usability tests would be to have the participation of
 an expert software developer, preferably with experience in IoT systems.

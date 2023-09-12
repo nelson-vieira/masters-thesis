@@ -189,13 +189,13 @@ privacy then about daily digital routines, then about profile identification,
 subsequently about IoT general knowledge before a final part about
 non-identifiable demographic data. The questionnaire's structure is shown
 in more detail in Table \ref{table:questionnaire}, the full questionnaire
-is presented on Appendix \ref{appendix:survey}.
+is presented on \nameref{appendix:survey}.
 
 \begin{table}[H]
     \begin{center}
         \begin{tabular}{r *{3}{ p{6cm} }}
             \hline
-            $\#$\hspace{0.5cm} & Section & Details \\
+            \textbf{\#}\hspace{0.5cm} & \textbf{Section} & \textbf{Details} \\
             \hline
             1\hspace{0.5cm} & General knowledge and attitudes towards privacy & This
             section's goal is to ask generic questions regarding the participants awareness
@@ -229,7 +229,7 @@ is presented on Appendix \ref{appendix:survey}.
         \end{tabular}
     \end{center}
     \vspace{1em}
-    \caption{Structure of questionnaire}
+    \caption{Structure of the questionnaire.}
     \label{table:questionnaire}
 \end{table}
 
@@ -264,7 +264,7 @@ like social media, forum websites, through in person discussions and
 some participants responded when also doing the application usability tests.
 
 The questionnaire was available for completion until August 30, 2023,
-and during the time that it was open 46 participants responded.
+and during the time that it was open 45 participants responded.
 Several online survey dissemination services were used to acquire participants,
 all the services used were based on the goodwill of the participants, there
 was no financial incentive for completing the survey. Most of the services
@@ -365,5 +365,68 @@ have a master's degree and 2.22\% have a doctorate, as pictured on Figure \ref{f
         \end{tikzpicture}
         \caption{Education qualifications distribution of participants.}
         \label{fig:education}
+    \end{center}
+\end{figure}
+
+Most survey participants, 60\%, are from Portugal, 20\% are from the USA,
+4.44\% from the UK while 15.66\% are divided between the following countries:
+Germany, Australia, Sweden, Netherlands, China, Indonesia and Canada as shown
+on Figure \ref{fig:country}.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=7.5cm,
+                width=17cm,
+                ybar,
+                bar width=20pt,
+                ymin=0,
+                ymax=70,
+                symbolic x coords={Portugal,USA,UK,Germany,Australia,Sweden,Netherlands,China,Indonesia,Canada},
+                xtick=data,
+                xticklabel style={rotate=45},
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(Portugal,60) (USA,20) (UK,4.44) (Germany,2.22) (Australia,2.22) (Sweden,2.22) (Netherlands,2.22) (China,2.22) (Indonesia,2.22) (Canada,2.22)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Distribution of participants by country of residence.}
+        \label{fig:country}
+    \end{center}
+\end{figure}
+
+Figure \ref{fig:annual_income} depicts the annual income, by range, of participants. 35.56\%
+of participants get an annual income below 10 000\textup{\euro} while 17.78\% received
+between 10 000\textup{\euro} and 20 000\textup{\euro}, 17.78\% between 20 000\textup{\euro}
+and 50 000\textup{\euro}, 6.67\% 50 000\textup{\euro} and 100 000\textup{\euro},
+and 22.22\% of participants preferred not to disclose.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=7cm,
+                width=15cm,
+                ybar,
+                bar width=20pt,
+                ymin=0,
+                ymax=40,
+                symbolic x coords={<10 000€,10 000€ - 20 000€,20 000€ - 50 000€,50 000€ - 100 000€,Prefer not to answer},
+                xtick=data,
+                xticklabel style={rotate=45},
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+            ]
+                \addplot coordinates {(<10 000€,35.56) (10 000€ - 20 000€,17.78) (20 000€ - 50 000€,17.78) (50 000€ - 100 000€,6.67) (Prefer not to answer,22.22)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Distribution of participants per annual income.}
+        \label{fig:annual_income}
     \end{center}
 \end{figure}
