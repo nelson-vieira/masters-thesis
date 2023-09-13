@@ -3021,16 +3021,23 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=10cm,
+                height=7cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={Use your own photo showing your face as your profile picture,Use your real and full name,{Put the date of birth, age and other information},Do not post information that could identify me},
                 bar width=12pt,
                 ytick=data,
+                yticklabels={
+                    Use your own photo showing your\\face as your profile picture,
+                    Use your real and full name,
+                    {Put the date of birth, age\\and other information},
+                    Do not post information that\\could identify me,
+                },
+                yticklabel style={align=right},
                 axis x line=bottom,
                 axis y line=left,
                 xmin=0,
-                xmax=100,
+                xmax=80,
                 enlarge y limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
             ]
@@ -3054,10 +3061,20 @@ $\bullet$ Annual income
                 symbolic y coords={Sharing photos of children/family members who are minors,{Follow any elected officials, candidates for office or other political figures},{Follow celebrities, or people with some notoriety},{Post links to/from business, sport or articles},Post links to political stories or other articles,Post political or social opinions,I don't use social media},
                 bar width=12pt,
                 ytick=data,
+                yticklabels={
+                    Sharing photos of children/family\\members who are minors,
+                    {Follow any elected officials, candidates\\for office or other political figures},
+                    {Follow celebrities, or\\people with some notoriety},
+                    {Post links to/from business,\\sport or articles},
+                    Post links to political stories\\or other articles,
+                    Post political or\\social opinions,
+                    I don't use social media,
+                },
+                yticklabel style={align=right},
                 axis x line=bottom,
                 axis y line=left,
                 xmin=0,
-                xmax=100,
+                xmax=60,
                 enlarge y limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
             ]
@@ -3072,6 +3089,46 @@ $\bullet$ Annual income
 \subsection*{Section 5: Profile identification}
 
 1. Do you know the concept of profiling?
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{3cm} p{12cm}}
+        \hline
+        \textbf{Participant} & \textbf{Answer} \\
+        \hline
+        P1 & ``É aquele que estuda e analisa o comportamento de um indivíduo e os seus habitos'' \\
+        \hline
+        P2 & ``Reunir informações sobre um indivíduo de modo a poder caracteriza-lo.'' \\
+        \hline
+        P3 & ``Estudo do perfil online'' \\
+        \hline
+        P4 & ``Ideia geral de quem e a pessoa o que faz o qie gosta onde e quando vai a algum lugar quem sao amigos familiares etc'' \\
+        \hline
+        P5 & ``Identificar o perfil comportamental de uma pessoa, com base nas suas informações pessais'' \\
+        \hline
+        P6 & ``É quando uma empresa ou alguém forma um perfil da nossa identidade com a informação recolhida online'' \\
+        \hline
+        P7 & ``estratégia de marketing que ajuda a identificar clientes'' \\
+        \hline
+        P8 & ``É a criação de um perfil de utilizador consoante os seus interesses.'' \\
+        \hline
+        P9 & ``Prejudgement of a person based on the way they look (informed by social norms)'' \\
+        \hline
+        P10 & ``Somewhat, I think I know what it entails but couldn't name a perfect definition'' \\
+        \hline
+        P11 & ``Profiling is when companies collect data about us in order to improve their advertising. '' \\
+        \hline
+        P12 & ``Making a profile for a person based on their internet activity or something like that maybe'' \\
+        \hline
+        P13-P20 & Yes but do not know how to explain \\
+        \hline
+        P20-P45 & Do not know \\
+        \hline
+    \end{tabular}
+    \vspace{1em}
+    \caption{Responses to the question: ``What do you understand by Internet of Things?''.}
+    \label{table:survey_s5_q1}
+\end{table}
 
 2. If a law enforcement officer asks for your personal data, are you willing to share it?
 
@@ -3088,7 +3145,57 @@ $\bullet$ Annual income
 
 3. In what situations are you willing to provide personal data when data collection is disclosed?
 
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=13cm,
+                width=11cm,
+                xbar,
+                symbolic y coords={Renew your citizen card,{Medical consultation (face to face)},Take out health insurance,Create new bank account,For contact tracing,Confined in the hospital,Make a new Internet/Mobile plan,Online shopping,Apply for a bank loan,Online medical consultation,Request loyalty/discount cards,None},
+                bar width=12pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=70,
+                enlarge y limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+            ]
+                \addplot coordinates {(55.56,Renew your citizen card) (48.89,{Medical consultation (face to face)}) (31.11,Take out health insurance) (55.56,Create new bank account) (2.22,For contact tracing) (44.44,Confined in the hospital) (24.44,Make a new Internet/Mobile plan) (22.22,Online shopping) (37.78,Apply for a bank loan) (22.22,Online medical consultation) (6.67,Request loyalty/discount cards) (24.44,None)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Responses to the question: ``In what situations are you willing to provide personal data when data collection is disclosed?''.}
+        \label{fig:survey_s5_q3}
+    \end{center}
+\end{figure}
+
 4. In what situations are you willing to provide personal data when data collection is not disclosed?
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=13cm,
+                width=11cm,
+                xbar,
+                symbolic y coords={Renew your citizen card,{Medical consultation (face to face)},Take out health insurance,Create new bank account,For contact tracing,Confined in the hospital,Make a new Internet/Mobile plan,Online shopping,Apply for a bank loan,Online medical consultation,Request loyalty/discount cards,None},
+                bar width=12pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=70,
+                enlarge y limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+            ]
+                \addplot coordinates {(44.44,Renew your citizen card) (53.33,{Medical consultation (face to face)}) (26.67,Take out health insurance) (37.78,Create new bank account) (11.11,For contact tracing) (26.67,Confined in the hospital) (20,Make a new Internet/Mobile plan) (28.89,Online shopping) (33.33,Apply for a bank loan) (26.67,Online medical consultation) (17.78,Request loyalty/discount cards) (37.78,None)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Responses to the question: ``In what situations are you willing to provide personal data when data collection is not disclosed?''.}
+        \label{fig:survey_s5_q4}
+    \end{center}
+\end{figure}
 
 5. Do you usually answer online questionnaires when they are requested?
 
@@ -3179,11 +3286,69 @@ $\bullet$ Annual income
 
 7.1. If yes, why did you enter this false data?
 
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=10cm,
+                width=11cm,
+                xbar,
+                symbolic y coords={I am creating a temporary account,{I do not want to disclose any kind of personal data, I want maximum privacy},{I do not find this type of data(s) relevant},I want to access the content of the platform as soon as possible,I entered the data by mistake,I don't have a specific reason,The number of data to be inserted is too large},
+                bar width=12pt,
+                ytick=data,
+                yticklabels={
+                    I am creating a temporary account,
+                    {I do not want to disclose any kind\\of personal data, I want maximum privacy},
+                    {I do not find this\\type of data(s) relevant},
+                    I want to access the content\\of the platform as soon as possible,
+                    I entered the data by mistake,
+                    I don't have a specific reason,
+                    The number of data to be\\inserted is too large,
+                },
+                yticklabel style={align=right},
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=60,
+                enlarge y limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+            ]
+                \addplot coordinates {(44.44,I am creating a temporary account) (48.89,{I do not want to disclose any kind of personal data, I want maximum privacy}) (46.67,{I do not find this type of data(s) relevant}) (22.22,I want to access the content of the platform as soon as possible) (6.67,I entered the data by mistake) (6.67,I don't have a specific reason) (15.56,The number of data to be inserted is too large)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Responses to the question: ``If yes, why did you enter this false data?''.}
+        \label{fig:survey_s5_q7_1}
+    \end{center}
+\end{figure}
+
 7.2. When you have to enter false data, what types of false data do you enter?
 
-8. In your opinion, does the data you disclose on one platform influence the use of another? Justify.
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=21cm,
+                width=12cm,
+                xbar,
+                symbolic y coords={Age,Complete name,Date of birth,Genre,Religion,Complete name of parents,Marital status,Home address,Work address,Nationality,Qualifications,Professional experience,Height,Weight,Phone/mobile number,Region of birth,Ethnic group,Signature,Spouse's name,Email,Health condition,Face photo,Full body photography,Username,Copy of citizen card,Fingerprint,Licenses},
+                bar width=12pt,
+                ytick=data,
+                axis x line=bottom,
+                axis y line=left,
+                xmin=0,
+                xmax=60,
+                enlarge y limits=0.1,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+            ]
+                \addplot coordinates {(37.78,Age) (40,Complete name) (44.44,Date of birth) (11.11,Genre) (2.22,Religion) (8.89,Complete name of parents) (4.44,Marital status) (22.22,Home address) (8.89,Work address) (13.33,Nationality) (4.44,Qualifications) (2.22,Professional experience) (2.22,Height) (6.67,Weight) (22.22,Phone/mobile number) (11.11,Region of birth) (2.22,Ethnic group) (6.67,Signature) (6.67,Spouse's name) (33.33,Email) (2.22,Health condition) (15.56,Face photo) (4.44,Full body photography) (42.22,Username) (2.22,Copy of citizen card) (2.22,Fingerprint) (2.22,Licenses)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Responses to the question: ``When you have to enter false data, what types of false data do you enter?''.}
+        \label{fig:survey_s5_q7_2}
+    \end{center}
+\end{figure}
 
-9. Do you think companies sell your personal data? Justify.
+8. In your opinion, does the data you disclose on one platform influence the use of another? Justify.
 
 \begin{table}[H]
     % \centering
@@ -3192,85 +3357,133 @@ $\bullet$ Annual income
         \hline
         \textbf{Participant} & \textbf{Answer} \\
         \hline
-        P1 & ``Sim, para poder vender produtos e serviços acordes ao consumidor '' \\
+        P1 & ``Considero que sim, existe varias plataformas pelas quais verificam a procura de certo ou determinado produto e aparece uma panoplia de sugestões.'' \\
         \hline
-        P2 & ``Não acho, porque existem pessoas a trabalhar na base de proteção dos nossos dados pessoais, assim qualquer infração a empresa ou app será responsável '' \\
+        P2 & ``Não, pois assumo que são plataformas diferentes sem troca de informação'' \\
         \hline
-        P3 & ``Sim porque recebo emails e publicidades de sites que nunca acedi e desconheço. '' \\
+        P3 & ``Possivelmente. Pode haver partilha de informações entre plataformas.'' \\
         \hline
-        P4 & ``Sim, já recebi publicidade de terceiros.'' \\
+        P4 & ``Depende, se eu interagir com as mesmas pessoas em duas plataformas diferentes estas iram estar conscientes dessa informação independentemente da plataforma que eu utilize, mas se interagir com pessoas diferentes não influência.'' \\
         \hline
-        P5 & ``Sim. Porque e pratica comum entre todas elas e uma fonte de rendimento para as mesmas.'' \\
+        P5 & ``Sim, pois certas plataformas têm conteúdo restrito para menores.'' \\
         \hline
-        P6 & ``Sim, principalmente empresas `duvidosas'.'' \\
+        P6 & ``Sim, na net todo esta conectado'' \\
         \hline
-        P7 & ``Sim, especialmente empresas de venda de produtos online, pois acabamos sempre por receber ofertas de produtos para comprar que pesquisamos numa outra sessão no mesmo dispositivo.'' \\
+        P7 & ``podem ter se estiverem ligadas pela mesma empresa ou tiverem acordos de publicidade'' \\
         \hline
-        P8 & ``Sim, acho que para benéfico dos mesmos, estes utilizam qualquer meio possível.'' \\
+        P8 & ``Sim, porque muitas vezes as plataformas partilham dados entre si'' \\
         \hline
-        P9 & ``Alguns. Facebook/Meta, por exemplo, tem a controvérsia de entregar informações pessoais a empresas ou instituições, sem nenhum aviso prévio.'' \\
+        P9 & ``Sim, verifico alguma ligação entre Instagram/facebook'' \\
         \hline
-        P10 & ``Sim, os gostos  dos user são importantes para o marketing'' \\
+        P10 & ``Sim, a palavra-passe deve variar para manter a segurança, principalmente quando o website não parece ser fidedigno.'' \\
         \hline
-        P11 & ``não sei, talvez, existe muita corrupção e é uma possibilidade que isso aconteça'' \\
+        P11 & ``Penso que terá. Devido ao facto de receber notificações de outras plataformas'' \\
         \hline
-        P12 & ``Não quando há lei de proteção de dados'' \\
+        P12 & ``Of course it does. If I'm using chrome and then use my google account on my phone of another browser linked to it '' \\
         \hline
-        P13 & ``Por vezes, visto que por vezes existem coisas que me interessam que vão aparecendo noutras plataformas '' \\
+        P13 & ``Not really. I'm not influenced to use something just because I visited something else.'' \\
         \hline
-        P14 & ``Sim, para estudos estatísticos.'' \\
+        P14 & ``yes. it feels uneven to me if i disclose more to one platform than the other.'' \\
         \hline
-        P15 & ``Sim, pois tem um elevado valor de mercado.'' \\
+        P15 & ``yes. having one platform disclose more than the others is uneven to me, so i like all my platforms to similar.'' \\
         \hline
-        P16 & ``Sim. Atendendo à publicidade que recebo após alguma ação de registo.'' \\
+        P16 & ``Yes because platforms inform each other's data'' \\
         \hline
-        P17 & ``Quero crer que não'' \\
+        P17 & ``I would say so. Some companies have relationships and will often sell your data to other platforms'' \\
         \hline
-        P18 & ``Sim, uma vez que há troca de informação para perceber os interesses do utilizador e apresentar anúncios relevantes.'' \\
+        P18 & ``No. It's only one instance in an entire ocean of data all about me.'' \\
         \hline
-        P19 & ``Talvez. não tenho dados que fundamentem'' \\
-        \hline
-        P20 & ``It's certain they do. I know they say that they sometimes keep the data within their scope but some companies are lying when they say they don't sell to advertisers. You can't even use a new Samsung TV without accepting their terms (which is ridiculous)'' \\
-        \hline
-        P21 & ``Yes, although not all— many like Google, Meta, and Amazon, to my knowledge, mostly, if not exclusively, use it internally as they can make use of it without selling to third parties. Many companies make good revenue from selling data, though.'' \\
-        \hline
-        P22 & ``not as much as commonly suggested.  e.g. I always used to read about how facebook is bad because they sell your personal data.  er no I severely doubt they do, their entire business model is that THEY know who the 32 year olds from denmark who like rap and red wine are, so they can offer to target those people for advertisers.  if they just sold off the data they would have no competitive advantage / no function in the marketplace, because the advertisers would just buy the demographic data and not need facebook.  selling their userbase's data would be absolutely absurd for them.  that said some companies probably do sell some data.  the biggest risk scenario is possibly when companies go bankrupt and figure they can reclaim a bit of money for creditors etc by selling off their data'' \\
-        \hline
-        P23 & ``Friggin absolutely. They are listening too.'' \\
-        \hline
-        P24 & ``Yes. I can't justify their behavior; I think it's reprehensible.'' \\
-        \hline
-        P25 & ``Maybe, but they are false'' \\
-        \hline
-        P26 & ``yes i think they do because how else do i get spam calls, emails, and personalized ads?'' \\
-        \hline
-        P27 & ``yes. how else do i get spam calls, emails, or personalized ads?'' \\
-        \hline
-        P28 & ``Yes, I assume this is how many `free' websites or games stay `free''' \\
-        \hline
-        P29 & ``Yes, they get money from selling personal data'' \\
-        \hline
-        P30 & ``yes because it has been on th4e news'' \\
-        \hline
-        P31 & ``Yes I think so, I have heard a lot about it on the news'' \\
-        \hline
-        P32 & ``Completely. I have read countless articles stating this'' \\
-        \hline
-        P33 & ``yes. if not how can i get that many spam'' \\
-        \hline
-        P34 & ``Some of them do but I am not sure who does and who does not. '' \\
-        \hline
-        P35-P43 & Yes \\
-        \hline
-        P44 & No \\
-        \hline
-        P45 & Maybe \\
+        P19-P45 & Do not know \\
         \hline
     \end{longtable}
     \vspace{1em}
+    \caption{Responses to the question: ``In your opinion, does the data you disclose on one platform influence the use of another? Justify''.}
+    \label{table:survey_s5_q8}
+\end{table}
+
+9. Do you think companies sell your personal data? Justify.
+
+\begin{longtable}{p{3cm} p{13cm}}
+    \hline
+    \textbf{Participant} & \textbf{Answer} \\
+    \hline
+    P1 & ``Sim, para poder vender produtos e serviços acordes ao consumidor '' \\
+    \hline
+    P2 & ``Não acho, porque existem pessoas a trabalhar na base de proteção dos nossos dados pessoais, assim qualquer infração a empresa ou app será responsável '' \\
+    \hline
+    P3 & ``Sim porque recebo emails e publicidades de sites que nunca acedi e desconheço. '' \\
+    \hline
+    P4 & ``Sim, já recebi publicidade de terceiros.'' \\
+    \hline
+    P5 & ``Sim. Porque e pratica comum entre todas elas e uma fonte de rendimento para as mesmas.'' \\
+    \hline
+    P6 & ``Sim, principalmente empresas `duvidosas'.'' \\
+    \hline
+    P7 & ``Sim, especialmente empresas de venda de produtos online, pois acabamos sempre por receber ofertas de produtos para comprar que pesquisamos numa outra sessão no mesmo dispositivo.'' \\
+    \hline
+    P8 & ``Sim, acho que para benéfico dos mesmos, estes utilizam qualquer meio possível.'' \\
+    \hline
+    P9 & ``Alguns. Facebook/Meta, por exemplo, tem a controvérsia de entregar informações pessoais a empresas ou instituições, sem nenhum aviso prévio.'' \\
+    \hline
+    P10 & ``Sim, os gostos  dos user são importantes para o marketing'' \\
+    \hline
+    P11 & ``não sei, talvez, existe muita corrupção e é uma possibilidade que isso aconteça'' \\
+    \hline
+    P12 & ``Não quando há lei de proteção de dados'' \\
+    \hline
+    P13 & ``Por vezes, visto que por vezes existem coisas que me interessam que vão aparecendo noutras plataformas '' \\
+    \hline
+    P14 & ``Sim, para estudos estatísticos.'' \\
+    \hline
+    P15 & ``Sim, pois tem um elevado valor de mercado.'' \\
+    \hline
+    P16 & ``Sim. Atendendo à publicidade que recebo após alguma ação de registo.'' \\
+    \hline
+    P17 & ``Quero crer que não'' \\
+    \hline
+    P18 & ``Sim, uma vez que há troca de informação para perceber os interesses do utilizador e apresentar anúncios relevantes.'' \\
+    \hline
+    P19 & ``Talvez. não tenho dados que fundamentem'' \\
+    \hline
+    P20 & ``It's certain they do. I know they say that they sometimes keep the data within their scope but some companies are lying when they say they don't sell to advertisers. You can't even use a new Samsung TV without accepting their terms (which is ridiculous)'' \\
+    \hline
+    P21 & ``Yes, although not all— many like Google, Meta, and Amazon, to my knowledge, mostly, if not exclusively, use it internally as they can make use of it without selling to third parties. Many companies make good revenue from selling data, though.'' \\
+    \hline
+    P22 & ``not as much as commonly suggested.  e.g. I always used to read about how facebook is bad because they sell your personal data.  er no I severely doubt they do, their entire business model is that THEY know who the 32 year olds from denmark who like rap and red wine are, so they can offer to target those people for advertisers.  if they just sold off the data they would have no competitive advantage / no function in the marketplace, because the advertisers would just buy the demographic data and not need facebook.  selling their userbase's data would be absolutely absurd for them.  that said some companies probably do sell some data.  the biggest risk scenario is possibly when companies go bankrupt and figure they can reclaim a bit of money for creditors etc by selling off their data'' \\
+    \hline
+    P23 & ``Friggin absolutely. They are listening too.'' \\
+    \hline
+    P24 & ``Yes. I can't justify their behavior; I think it's reprehensible.'' \\
+    \hline
+    P25 & ``Maybe, but they are false'' \\
+    \hline
+    P26 & ``yes i think they do because how else do i get spam calls, emails, and personalized ads?'' \\
+    \hline
+    P27 & ``yes. how else do i get spam calls, emails, or personalized ads?'' \\
+    \hline
+    P28 & ``Yes, I assume this is how many `free' websites or games stay `free''' \\
+    \hline
+    P29 & ``Yes, they get money from selling personal data'' \\
+    \hline
+    P30 & ``yes because it has been on th4e news'' \\
+    \hline
+    P31 & ``Yes I think so, I have heard a lot about it on the news'' \\
+    \hline
+    P32 & ``Completely. I have read countless articles stating this'' \\
+    \hline
+    P33 & ``yes. if not how can i get that many spam'' \\
+    \hline
+    P34 & ``Some of them do but I am not sure who does and who does not. '' \\
+    \hline
+    P35-P43 & Yes \\
+    \hline
+    P44 & No \\
+    \hline
+    P45 & Maybe \\
+    \hline
     \caption{Responses to the question: ``Do you think companies sell your personal data? Justify.''.}
     \label{table:survey_s5_q9}
-\end{table}
+\end{longtable}
 
 10. Can the data I disclose serve to create a profile of my online habits?
 
@@ -3552,34 +3765,6 @@ $\bullet$ Annual income
         \label{fig:survey_s6_q3_3}
     \end{center}
 \end{figure}
-
-% \begin{table}
-%     \centering
-%     \begin{tabular}{c c c c c c c c c c c c c}
-%         \hline
-%         \textbf{Participants} & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} & \textbf{Q4} & \textbf{Q5} & \textbf{Q6} & \textbf{Q7} & \textbf{Q8} & \textbf{Q9} & \textbf{Q10} & \textbf{Corrected Sum} & \textbf{Score} \\
-%         \hline
-%         P1 & 7 & 1 & 7 & 1 & 7 & 1 & 7 & 6 & 7 & 1 & 55 & 91.67 \\
-%         \hline
-%         P2 & 7 & 2 & 6 & 1 & 7 & 1 & 7 & 1 & 7 & 1 & 58 & 96.67 \\
-%         \hline
-%         P3 & 6 & 1 & 4 & 1 & 7 & 1 & 7 & 1 & 5 & 2 & 54 & 90 \\
-%         \hline
-%         P4 & 6 & 1 & 7 & 1 & 7 & 1 & 7 & 1 & 7 & 1 & 59 & 98.33 \\
-%         \hline
-%         P5 & 5 & 1 & 7 & 6 & 7 & 1 & 7 & 1 & 7 & 2 & 51 & 85 \\
-%         \hline
-%         P6 & 6 & 1 & 7 & 1 & 7 & 1 & 7 & 1 & 7 & 2 & 58 & 96.67 \\
-%         \hline
-%         P7 & 6 & 2 & 6 & 7 & 7 & 2 & 7 & 2 & 6 & 2 & 47 & 78.33 \\
-%         \hline
-%         \textbf{Average} & 6.14 & 1.29 & 6.29 & 2.57 & 7 & 1.14 & 7 & 1.86 & 6.71 & 1.57 & 54.57 & 90.95 \\
-%         \hline
-%     \end{tabular}
-%     \vspace{1em}
-%     \caption{SUS scores of participants.}
-%     \label{table:sus_scoring}
-% \end{table}
 
 4. How familiar are you with the following terms?
 
