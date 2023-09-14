@@ -1380,12 +1380,12 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=7.5cm,
                 width=12cm,
                 ybar,
                 bar width=12pt,
                 ymin=0,
-                ymax=100,
+                ymax=80,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1401,12 +1401,16 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{1cm}
+
 2. ``I know techniques to guarantee privacy and the protection of my data when I use the Internet''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=7.5cm,
+                width=11cm,
                 ybar,
                 bar width=20pt,
                 ymin=0,
@@ -1424,6 +1428,8 @@ $\bullet$ Annual income
         \label{fig:survey_s1_q2}
     \end{center}
 \end{figure}
+
+\clearpage
 
 3. Could you give examples of techniques or strategies you use to guarantee the privacy and protection of your data?
 
@@ -1519,6 +1525,8 @@ $\bullet$ Annual income
     \label{table:survey_s1_q3}
 \end{longtable}
 
+\clearpage
+
 4. Do you think your data privacy is important?
 
 \begin{figure}[H]
@@ -1528,9 +1536,9 @@ $\bullet$ Annual income
                 height=7cm,
                 width=12cm,
                 ybar,
-                bar width=12pt,
+                bar width=13pt,
                 ymin=0,
-                ymax=100,
+                ymax=70,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1630,18 +1638,20 @@ $\bullet$ Annual income
     \label{table:survey_s1_q5}
 \end{longtable}
 
+\clearpage
+
 6. Do you think your data privacy is relevant nowadays?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=12cm,
                 ybar,
-                bar width=12pt,
+                bar width=16pt,
                 ymin=0,
-                ymax=100,
+                ymax=80,
                 xtick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1657,15 +1667,19 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 7. ``Data privacy is a human right''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=10cm,
                 xbar,
                 symbolic y coords={Do not know,Disagree,Agree},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1683,15 +1697,19 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\clearpage
+
 8. ``Data privacy is a consumer right''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=10cm,
                 xbar,
                 symbolic y coords={Do not know,Disagree,Agree},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1709,6 +1727,8 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 9. In your opinion, are security and privacy synonymous?
 
 \begin{figure}[H]
@@ -1720,6 +1740,8 @@ $\bullet$ Annual income
     \caption*{Responses to the question: ``In your opinion, are security and privacy synonymous?''.}
     \label{fig:survey_s1_q9}
 \end{figure}
+
+\clearpage
 
 10. How familiar are you with the following terms?
 
@@ -1774,9 +1796,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=12cm,
                 xbar,
                 symbolic y coords={Illegal means,Cookies,Online Surveys/Questionnaires,Image,Sound,Other means},
-                bar width=12pt,
+                bar width=14pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1793,15 +1817,19 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 13. What kind of information can be extracted using the collected data?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=12cm,
                 xbar,
                 symbolic y coords={Work productivity,Visited website information,Online shopping,Online habits,Georeferencing data},
-                bar width=12pt,
+                bar width=14pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1818,15 +1846,27 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\clearpage
+
 14. For what purposes can organizations use your data?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=7cm,
+                width=12cm,
                 xbar,
                 symbolic y coords={Targeted advertising,Customer profile,Selling data to third parties,Advertising adapted to the nearest location,Improve internet usage},
-                bar width=12pt,
+                yticklabels={
+                    Targeted advertising,
+                    Customer profile,
+                    Selling data to\\third parties,
+                    Advertising adapted to\\the nearest location,
+                    Improve internet usage,
+                },
+                yticklabel style={align=right},
+                bar width=14pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -1849,7 +1889,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=10cm,
+                height=13cm,
                 width=12cm,
                 xbar,
                 symbolic y coords={Amazon,Apple,Google,Meta,Microsoft,Samsung,IBM,ScienceSoft,PTC,Cisco,Huawei,GE Digital,Bosch,Siemens},
@@ -1876,7 +1916,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=10cm,
+                height=13cm,
                 width=12cm,
                 xbar,
                 symbolic y coords={Amazon,Apple,Google,Meta,Microsoft,Samsung,IBM,ScienceSoft,PTC,Cisco,Huawei,GE Digital,Bosch,Siemens,Bytedance},
@@ -1930,10 +1970,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=35,
                 % ytick=data,
@@ -1951,16 +1991,18 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 19. ``I consider that accessing the internet through my phone is safer than through a computer''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=30,
                 % ytick=data,
@@ -1978,16 +2020,18 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\clearpage
+
 20. ``I try to block the collection of data from applications installed on my phone''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=40,
                 % ytick=data,
@@ -2005,15 +2049,19 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 21. When using a website, do you usually read the privacy policy?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=10cm,
                 xbar,
                 symbolic y coords={Yes always,Yes almost always,No but I know what it means or what happens,No because I'm not interested},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2030,13 +2078,15 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\clearpage
+
 22. How often do you allow the use of cookies?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
                 xlabel={Agreement level},
@@ -2059,12 +2109,16 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 23. When you accept / become aware of the cookies policy, why do you take this decision?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8.5cm,
+                width=10cm,
                 xbar,
                 xmin=0,
                 xmax=100,
@@ -2076,7 +2130,7 @@ $\bullet$ Annual income
                     I don't understand what this is about\\but it doesn't seem relevant to me,
                 },
                 yticklabel style={align=right},
-                bar width=12pt,
+                bar width=20pt,
                 axis x line=bottom,
                 axis y line=left,
                 enlarge y limits=0.15,
@@ -2091,6 +2145,8 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\clearpage
+
 24. Are you aware of the concept of ``profiling'' or ``automated processing of personal information''?
 
 \begin{figure}[H]
@@ -2103,7 +2159,9 @@ $\bullet$ Annual income
     \label{fig:survey_s2_q24}
 \end{figure}
 
-25. Do you consider that your internet activity contributes to the development of profiling?
+\vspace{1cm}
+
+25. Do you consider that your internet activity contributes to the development of profiling?\\
 
 \begin{figure}[H]
     \centering
@@ -2124,7 +2182,7 @@ $\bullet$ Annual income
             \begin{axis}[
                 xbar,
                 symbolic y coords={Yes I fully understand the Regulation,Yes but it's not absolutely clear to me what it represents,No},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 yticklabels={
                     Yes I fully understand\\the Regulation,
@@ -2153,9 +2211,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=10cm,
+                width=10cm,
                 xbar,
                 symbolic y coords={Internet,Television,Newspapers,Friends,Work,School/University},
-                bar width=12pt,
+                bar width=16pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2178,10 +2238,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=16pt,
                 ymin=0,
                 ymax=30,
                 % ytick=\empty,
@@ -2205,9 +2265,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=10cm,
+                width=11cm,
                 xbar,
                 symbolic y coords={Everything I consider personal,Any information relating to an identifiedor identifiable natural person,{All of the above, medical informationand pictures of my face (biometric data)},All of the above and medical information,All of the above and bank details,{Just name, email, date of birth and tax identification number}},
-                bar width=12pt,
+                bar width=18pt,
                 ytick=data,
                 yticklabels={
                     Everything I consider personal,
@@ -2221,7 +2283,7 @@ $\bullet$ Annual income
                 axis x line=bottom,
                 axis y line=left,
                 xmin=0,
-                xmax=100,
+                xmax=70,
                 enlarge y limits=0.15,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
             ]
@@ -2239,10 +2301,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=14pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=50,
                 % ytick=\empty,
@@ -2260,6 +2322,8 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\clearpage
+
 \subsection*{Section 2: Disposition for sharing personal information}
 
 1. What kind of personal information are you willing to share at any time?
@@ -2268,7 +2332,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=20cm,
+                height=21cm,
                 width=12cm,
                 xbar,
                 symbolic y coords={Age,Complete name,Date of birth,Genre,Religion,Complete name of parents,Marital status,Home address,Work address,Nationality,Qualifications,Professional experience,Height,Weight,Phone/mobile number,Region of birth,Ethnic group,Signature,Spouse's name,Email,Health condition,Face photo,Full body photography,Username,Copy of citizen card,Fingerprint,Licenses},
@@ -2295,7 +2359,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=13cm,
+                height=11cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={Renew your citizen card,{Medical consultation (face to face)},Take out health insurance,Create new bank account,For contact tracing,Confined in the hospital,Make a new Internet/Mobile plan,Online shopping,Apply for a bank loan,Online medical consultation,Request loyalty/discount cards,None},
@@ -2350,7 +2414,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=10cm,
+                height=11cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={Social media,Instant messages,Email,Browser,{Navigation (ex. GPS)},Anti-virus,Online shopping,Digital wallet,Photo/video editing,Contact tracing,Online banking},
@@ -2377,11 +2441,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=8cm,
+                height=10cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={Privacy Policy,Terms and conditions,Purpose of data collection,Consent form,Privacy notice,Reliability of the organization,I do not consult any information},
-                bar width=12pt,
+                bar width=16pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2397,6 +2461,8 @@ $\bullet$ Annual income
         \label{fig:survey_s2_q6}
     \end{center}
 \end{figure}
+
+\vspace{1cm}
 
 7. How often do you find privacy policies?
 
@@ -2425,6 +2491,8 @@ $\bullet$ Annual income
     \label{fig:survey_s2_q8}
 \end{figure}
 
+\vspace{2cm}
+
 9. ``I am interested in knowing where and how my personal information is used''. Do you agree with this statement?
 
 \begin{figure}[H]
@@ -2438,17 +2506,19 @@ $\bullet$ Annual income
     \label{fig:survey_s2_q9}
 \end{figure}
 
+\clearpage
+
 10. ``I am not familiar with the purpose of data collection but would like to know more''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                % height=11cm,
-                % width=12cm,
+                height=8cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Disagree,Do not know,Agree},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2465,17 +2535,19 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 11. ``The length (or number of words) of the privacy notice affects my willingness to read it''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                % height=11cm,
-                % width=12cm,
+                height=8cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Disagree,Do not know,Agree},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2498,11 +2570,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                % height=11cm,
-                % width=12cm,
+                height=8cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Disagree,Do not know,Agree},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2519,17 +2591,19 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 13. ``Usually, I'm afraid I won't be able to use a product or service if I don't agree with the privacy notice''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                % height=11cm,
-                % width=12cm,
+                height=8cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Disagree,Do not know,Agree},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2552,11 +2626,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                % height=11cm,
-                % width=12cm,
+                height=8cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Disagree,Do not know,Agree},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2573,6 +2647,8 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 \subsection*{Section 3: Privacy concerns}
 
 1. How concerned are you about organizations collecting and using your online activity?
@@ -2581,10 +2657,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=35,
                 xtick=data,
@@ -2607,10 +2683,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=70,
                 xtick=data,
@@ -2627,16 +2703,18 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 3. How concerned are you about organizations tracking your online behavior and thus obtaining your personal data?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=60,
                 xtick=data,
@@ -2659,10 +2737,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=50,
                 xtick=data,
@@ -2679,16 +2757,18 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 5. How concerned are you that other people obtain your personal data without your consent?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=70,
                 xtick=data,
@@ -2711,10 +2791,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=50,
                 xtick=data,
@@ -2731,16 +2811,18 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 7. How concerned are you that other people are disclosing information about you without your knowledge?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=70,
                 xtick=data,
@@ -2763,10 +2845,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=60,
                 xtick=data,
@@ -2783,16 +2865,18 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 9. How concerned are you that other people publish your personal data (photos, address, mobile phone number, etc.) on the internet without your consent?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=80,
                 xtick=data,
@@ -2815,10 +2899,10 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=70,
                 xtick=data,
@@ -2835,16 +2919,18 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 11. How concerned are you about the possibility that someone may misuse your identity on the internet?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
-                bar width=12pt,
+                bar width=20pt,
                 ymin=0,
                 ymax=70,
                 xtick=data,
@@ -2869,11 +2955,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                % height=11cm,
-                % width=12cm,
+                height=8cm,
+                width=11cm,
                 xbar,
                 symbolic y coords={By WiFi or Ethernet cable,By mobile network,No},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -2890,7 +2976,9 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
-2. How often do you use the internet?
+\vspace{2cm}
+
+2. How often do you use the internet?\\
 
 \begin{figure}[H]
     \centering
@@ -2904,6 +2992,8 @@ $\bullet$ Annual income
     \caption*{Responses to the question: ``How often do you use the internet?''.}
     \label{fig:survey_s4_q2}
 \end{figure}
+
+\clearpage
 
 3. How much time do you spend per day surfing the internet?
 
@@ -2920,17 +3010,19 @@ $\bullet$ Annual income
     \label{fig:survey_s4_q3}
 \end{figure}
 
+\vspace{2cm}
+
 4. What device(s) do you use to access the internet?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                % height=11cm,
-                % width=12cm,
+                height=10cm,
+                width=11cm,
                 xbar,
                 symbolic y coords={Computer,Portable computer,Tablet,Phone},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -3021,11 +3113,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={Use your own photo showing your face as your profile picture,Use your real and full name,{Put the date of birth, age and other information},Do not post information that could identify me},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 yticklabels={
                     Use your own photo showing your\\face as your profile picture,
@@ -3055,11 +3147,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=10cm,
+                height=12cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={Sharing photos of children/family members who are minors,{Follow any elected officials, candidates for office or other political figures},{Follow celebrities, or people with some notoriety},{Post links to/from business, sport or articles},Post links to political stories or other articles,Post political or social opinions,I don't use social media},
-                bar width=12pt,
+                bar width=18pt,
                 ytick=data,
                 yticklabels={
                     Sharing photos of children/family\\members who are minors,
@@ -3149,7 +3241,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=13cm,
+                height=9.5cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={Renew your citizen card,{Medical consultation (face to face)},Take out health insurance,Create new bank account,For contact tracing,Confined in the hospital,Make a new Internet/Mobile plan,Online shopping,Apply for a bank loan,Online medical consultation,Request loyalty/discount cards,None},
@@ -3176,7 +3268,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=13cm,
+                height=9.5cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={Renew your citizen card,{Medical consultation (face to face)},Take out health insurance,Create new bank account,For contact tracing,Confined in the hospital,Make a new Internet/Mobile plan,Online shopping,Apply for a bank loan,Online medical consultation,Request loyalty/discount cards,None},
@@ -3203,7 +3295,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
                 ymin=0,
@@ -3226,13 +3318,15 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 6. When answering questionnaires, do you enter any false/incorrect information?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
                 ymin=0,
@@ -3261,7 +3355,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=8cm,
                 width=13cm,
                 ybar,
                 xlabel={Agreement level},
@@ -3290,11 +3384,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=10cm,
+                height=11cm,
                 width=11cm,
                 xbar,
                 symbolic y coords={I am creating a temporary account,{I do not want to disclose any kind of personal data, I want maximum privacy},{I do not find this type of data(s) relevant},I want to access the content of the platform as soon as possible,I entered the data by mistake,I don't have a specific reason,The number of data to be inserted is too large},
-                bar width=12pt,
+                bar width=16pt,
                 ytick=data,
                 yticklabels={
                     I am creating a temporary account,
@@ -3327,7 +3421,7 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=21cm,
+                height=22.5cm,
                 width=12cm,
                 xbar,
                 symbolic y coords={Age,Complete name,Date of birth,Genre,Religion,Complete name of parents,Marital status,Home address,Work address,Nationality,Qualifications,Professional experience,Height,Weight,Phone/mobile number,Region of birth,Ethnic group,Signature,Spouse's name,Email,Health condition,Face photo,Full body photography,Username,Copy of citizen card,Fingerprint,Licenses},
@@ -3485,13 +3579,15 @@ $\bullet$ Annual income
     \label{table:survey_s5_q9}
 \end{longtable}
 
+\vspace{2cm}
+
 10. Can the data I disclose serve to create a profile of my online habits?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7cm,
+                height=9cm,
                 width=13cm,
                 ybar,
                 xlabel={Agreement level},
@@ -3514,15 +3610,19 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\clearpage
+
 11. ``The information I disclose on the internet can serve to identify me''. Do you agree with this statement?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Do not know,Disagree,Agree},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -3539,7 +3639,9 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
-12. Are you aware of data brokers?
+\vspace{2cm}
+
+12. Are you aware of data brokers?\\
 
 \begin{figure}[H]
     \centering
@@ -3550,6 +3652,8 @@ $\bullet$ Annual income
     \caption*{Responses to the question: ``Are you aware of data brokers?''.}
     \label{fig:survey_s5_q12}
 \end{figure}
+
+\clearpage
 
 13. If so, explain what data brokers are and what they do.
 
@@ -3587,59 +3691,55 @@ $\bullet$ Annual income
 
 1. What do you understand by Internet of Things?
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{p{3cm} p{12cm}}
-        \hline
-        \textbf{Participant} & \textbf{Answer} \\
-        \hline
-        P1 & ``Rede de elementos que é capaz de transmitir dados'' \\
-        \hline
-        P2 & ``Rede de objetos do nosso quotidiano que trocam dados e informação com outros sistemas na internet.'' \\
-        \hline
-        P3 & ``Tudo o que esteja ligado a internet para poder funcionar'' \\
-        \hline
-        P4 & ``Dispositivos ligados entre si através da internet'' \\
-        \hline
-        P5 & ``São hardware que interligam-se entre si.'' \\
-        \hline
-        P6 & ``São dispositivos que tenham ou possam ter a funcionalidade de navegar ou utilizar a Internet como um computador (por exemplo, frigoríficos digitais, onde tem uma tela com funcionalidade de comunicar por Internet).'' \\
-        \hline
-        P7 & ``Hábitos que ten o user no día a día quando esta na net'' \\
-        \hline
-        P8 & ``Conexão de objetos com internet'' \\
-        \hline
-        P9 & ``a conectividade entre os objetos através da internet'' \\
-        \hline
-        P10 & ``É ter equipamentos do dia a dia ligados à internet.'' \\
-        \hline
-        P11 & ``a recolha  de dados com recurso a aplicacoes'' \\
-        \hline
-        P12 & ``Vários equipamentos domésticos ligados à internet.'' \\
-        \hline
-        P13 & ``Formas ou dispositivos que permitem identificar '' \\
-        \hline
-        P14 & ``if i remember correctly it's anything that can connect to a network '' \\
-        \hline
-        P15 & ``internet enabled fridge that orders milk when it detects you're low on milk, and such like'' \\
-        \hline
-        P16 & ``It's almost everything and anything that can be used to track people, places and things.'' \\
-        \hline
-        P17 & ``It's things connected to the internet like Alexa or your fridge.'' \\
-        \hline
-        P18 & ``Technical devices that can communicate with each other'' \\
-        \hline
-        P19 & ``I took a class in university that briefly talked about it. Basically everything will be connected online'' \\
-        \hline
-        P20 & ``physical objects with sensors, processing ability, software and other technologies that connect and exchange data with other devices and systems over the Internet or other communications networks.'' \\
-        \hline
-        P21-P45 & Do not know \\
-        \hline
-    \end{tabular}
-    \vspace{1em}
+\begin{longtable}{p{3cm} p{12cm}}
+    \hline
+    \textbf{Participant} & \textbf{Answer} \\
+    \hline
+    P1 & ``Rede de elementos que é capaz de transmitir dados'' \\
+    \hline
+    P2 & ``Rede de objetos do nosso quotidiano que trocam dados e informação com outros sistemas na internet.'' \\
+    \hline
+    P3 & ``Tudo o que esteja ligado a internet para poder funcionar'' \\
+    \hline
+    P4 & ``Dispositivos ligados entre si através da internet'' \\
+    \hline
+    P5 & ``São hardware que interligam-se entre si.'' \\
+    \hline
+    P6 & ``São dispositivos que tenham ou possam ter a funcionalidade de navegar ou utilizar a Internet como um computador (por exemplo, frigoríficos digitais, onde tem uma tela com funcionalidade de comunicar por Internet).'' \\
+    \hline
+    P7 & ``Hábitos que ten o user no día a día quando esta na net'' \\
+    \hline
+    P8 & ``Conexão de objetos com internet'' \\
+    \hline
+    P9 & ``a conectividade entre os objetos através da internet'' \\
+    \hline
+    P10 & ``É ter equipamentos do dia a dia ligados à internet.'' \\
+    \hline
+    P11 & ``a recolha  de dados com recurso a aplicacoes'' \\
+    \hline
+    P12 & ``Vários equipamentos domésticos ligados à internet.'' \\
+    \hline
+    P13 & ``Formas ou dispositivos que permitem identificar '' \\
+    \hline
+    P14 & ``if i remember correctly it's anything that can connect to a network '' \\
+    \hline
+    P15 & ``internet enabled fridge that orders milk when it detects you're low on milk, and such like'' \\
+    \hline
+    P16 & ``It's almost everything and anything that can be used to track people, places and things.'' \\
+    \hline
+    P17 & ``It's things connected to the internet like Alexa or your fridge.'' \\
+    \hline
+    P18 & ``Technical devices that can communicate with each other'' \\
+    \hline
+    P19 & ``I took a class in university that briefly talked about it. Basically everything will be connected online'' \\
+    \hline
+    P20 & ``physical objects with sensors, processing ability, software and other technologies that connect and exchange data with other devices and systems over the Internet or other communications networks.'' \\
+    \hline
+    P21-P45 & Do not know \\
+    \hline
     \caption*{Responses to the question: ``What do you understand by Internet of Things?''.}
     \label{table:survey_s6_q1}
-\end{table}
+\end{longtable}
 
 2. Have you ever used an Internet of Things device (smartwatch, contactless cards, air or sea traffic applications)?
 
@@ -3647,15 +3747,17 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=6cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={No,Yes},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
                 xmin=0,
                 xmax=100,
-                enlarge y limits=0.15,
+                enlarge y limits=0.2,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
             ]
                 \addplot coordinates {(33.33,No) (66.67,Yes)};
@@ -3672,15 +3774,17 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=6cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={No,Yes},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
                 xmin=0,
                 xmax=100,
-                enlarge y limits=0.15,
+                enlarge y limits=0.2,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
             ]
                 \addplot coordinates {(33.33,No) (66.67,Yes)};
@@ -3697,9 +3801,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=10cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Everyday,1 or 2 days a week,2-5 days a week,A few days a month,A few days a year},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -3716,15 +3822,19 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{2cm}
+
 3.2. And for what purposes do you use the device(s)?
 
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={For work,For convenience,For entertainment},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -3747,9 +3857,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=9cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Because of work,To feel safer/secure,Due to convenience,Because of curiosity,No reason in particular},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -3806,9 +3918,11 @@ $\bullet$ Annual income
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=10cm,
+                width=13cm,
                 xbar,
                 symbolic y coords={Do not know,Many,Hundreds,Thousands,Millions,Billions},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -3825,6 +3939,8 @@ $\bullet$ Annual income
     \end{center}
 \end{figure}
 
+\vspace{1cm}
+
 \subsection*{Demographic data}
 
 $\bullet$ Age
@@ -3833,6 +3949,8 @@ $\bullet$ Age
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=13cm,
                 ybar,
                 bar width=20pt,
                 ymin=0,
@@ -3858,6 +3976,8 @@ $\bullet$ Genre
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=8cm,
+                width=10cm,
                 ybar,
                 bar width=20pt,
                 ymin=0,
@@ -3883,8 +4003,8 @@ $\bullet$ Country
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=7.5cm,
-                width=17cm,
+                height=9cm,
+                width=16cm,
                 ybar,
                 bar width=20pt,
                 ymin=0,
@@ -3966,7 +4086,7 @@ $\bullet$ Professional area
         \begin{tikzpicture}
             \begin{axis}[
                 height=22cm,
-                width=10cm,
+                width=9cm,
                 xbar,
                 symbolic y coords={{Managers of hotels, restaurants, shops and other services},{Skilled construction and related workers, except electricians},{Specialists in legal, social, artistic and cultural matters},{Science and engineering technicians and professions, intermediate level},{Specialists in the physical sciences, mathematics, engineering and related techniques},{Data, accounting, statistics, financial services and registration operators},Market-orientated farmers and skilled agricultural and animal production workers,{Specialists in finance, accounting, administrative organisation, public and commercial relations},Teachers,{Specialists in information and communication technologies (ICT)},Health professionals,{Farmers, livestock breeders, fishermen, hunters and gatherers, subsistence},Intermediate level science and engineering technicians and professions,{Office workers, general secretaries and data processing operators},Sellers,Meal preparation assistants,{Qualified metallurgy, metalworking and similar workers},Another situation},
                 bar width=12pt,
