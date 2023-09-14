@@ -4,10 +4,10 @@
 %
 % @author Nelson Vieira <nelson0.vieira@gmail.com>
 % @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
-\section{Discussion}
+\section{Discussion}\label{section:discussion}
 
 \par
-This section serves to discusses the main takeaways found in the literature
+This chapter serves to discusses the main takeaways found in the literature
 review and address the results of the questionnaire and the usability tests,
 and any other interesting remarks found during the course of this work. The
 research questions that were posed in Chapter \ref{introduction} will also
@@ -20,7 +20,7 @@ issues or challenges in the Internet of Things, at least since 2015-2016
 where the number or papers jumped from 11 600 in 2015 to 19 400 in 2016
 and rising since then until reaching a peak of 74 400 in 2020 and slightly
 declining since then, and at least until August of 2023 there have been
-around 36 000 papers published, according to the data seen on Figure \ref{fig:iotprivacy_papers}.
+around 36 000 papers published, according to the data seen in Figure \ref{fig:iotprivacy_papers}.
 
 \begin{figure}
     \begin{center}
@@ -66,11 +66,12 @@ Baidu Scholar and RefSeek but these databases do not have good
 filters for advanced searching and/or have a small number of papers.
 
 There is a big focus on security, AI and blockchain in recent literature,
-specially from 2020 onward, these finding are in accordance with other
-similar studies \cite{dadkhah2020publications}.
+specially from 2020 onward. Some studies \cite{dadkhah2020publications, duygu2023analysis} have
+focused on this type of analysis.
 
 \begin{figure}
     \begin{center}
+        \pgfkeys{/pgf/number format/1000 sep={\,}}
         \begin{tikzpicture}
             \begin{axis}[
                 width=10cm,
@@ -109,7 +110,7 @@ similar studies \cite{dadkhah2020publications}.
                 \addlegendentry{CORE}
             \end{axis}
         \end{tikzpicture}
-        \caption{Distribution of papers on privacy in IoT, since 2020, by keywords searches on Google Scholar, BASE and CORE databases.}
+        \caption{Distribution of papers on privacy in IoT, since 2020, by keyword searches on Google Scholar, BASE and CORE databases.}
         \label{fig:privacy_keywords_papers}
     \end{center}
 \end{figure}
@@ -435,7 +436,7 @@ each.
 %     \label{table:literature}
 % \end{longtable}
 
-% A summary of the literature with the pros and cons can be seen on Table \ref{table:literature}.
+% A summary of the literature with the pros and cons can be seen in Table \ref{table:literature}.
 
 There are two main ways to provide privacy in IoT systems, through security
 or providing in some way user awareness like the in the case of using privacy

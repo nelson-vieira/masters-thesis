@@ -4,7 +4,7 @@
 %
 % @author Nelson Vieira <nelson0.vieira@gmail.com>
 % @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
-\section{Results}
+\section{Results}\label{section:results}
 
 \par
 This chapter presents the results of the questionnaire about participants'
@@ -15,9 +15,9 @@ tests that were conducted for the mobile application.
 
 As would be expected, the majority of participants agreed that data privacy
 is important to them and as such should be protected, as can be inferred
-on Figure \ref{fig:privacy_is_important_to_me}. Most participants
+in Figure \ref{fig:privacy_is_important_to_me}. Most participants
 also have some knowledge of behaviours or techniques to do
-in an online environment, as shown on Figure \ref{fig:techniques_to_guarantee_privacy}, be it connected to the internet or on some
+in an online environment, as shown in Figure \ref{fig:techniques_to_guarantee_privacy}, be it connected to the internet or on some
 local network, like not sharing too much private information
 (or none at all) with strangers, revealing only the bare minimum necessary
 information to use a particular system, use of VPNs, different and strong
@@ -79,7 +79,7 @@ skewed.
 \end{figure}
 
 Most participants consider data privacy as a human and consumer right,
-as shown on Figure \ref{fig:privacy_human_right_histogram}, even if they have
+as shown in Figure \ref{fig:privacy_human_right_histogram}, even if they have
 no knowledge of article 12 of the Universal Declaration of Human Rights.
 
 \begin{figure}[H]
@@ -113,11 +113,11 @@ When asked to define digital privacy, most participants did not know
 how to properly define it, giving generic answers while some even gave a one word answer,
 some participants gave incomplete or adjacent related answers. Only approximately
 16\% of participants supplied a concrete answer that was close to the definition
-presented in Section \ref{introduction}. Curiously, no one mentioned security,
+presented in Chapter \ref{introduction}. Curiously, no one mentioned security,
 which contradicts with the responses represented in Figure \ref{fig:security_equals_privacy},
 where 53.33\% of participants believe that privacy and security are synonymous.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1]{46.67/No,
@@ -168,7 +168,7 @@ are still mostly unknown to the majority of people like \textit{blockchain} or \
 
 Regarding users' online habits, all participants have, or have access to, a smartphone
 and they use it in their daily lives, most participants concede that they spend a lot
-of their daily time using it, like shown on Figure \ref{fig:phone_access}, and are
+of their daily time using it, like shown in Figure \ref{fig:phone_access}, and are
 somewhat worried but do not actively try to protect their data privacy, which
 goes against their earlier responses regarding their worry of personal data privacy.
 When asked if they accept
@@ -286,7 +286,7 @@ activity contributes to its development, see Figure \ref{fig:activity_contribute
 Regarding participants relation with regulations, most participants are
 aware of regulations related to digital privacy, like GDPR or CCPA, but
 it's not absolutely clear to them what they represent and they do not
-show a clear interest in know more about these regulations, as shown on Figure \ref{fig:privacy_regulations}. It is not
+show a clear interest in know more about these regulations, as shown in Figure \ref{fig:privacy_regulations}. It is not
 clear why there is a certain disinterest by most participants in regulations,
 it might be that most find it frustrating to read, or there is some
 faith that they work and as such there is no need to know more about them.
@@ -297,7 +297,7 @@ about GDPR's definition of personal data.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=8cm,
+                height=7cm,
                 width=14cm,
                 ybar,
                 bar width=12pt,
@@ -305,16 +305,19 @@ about GDPR's definition of personal data.
                 ymax=50,
                 % ytick=\empty,
                 xtick=data,
+                % ylabel={Responses \%},
+                % xlabel={Agreement level},
                 axis x line=bottom,
                 axis y line=left,
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                 every node near coord/.append style={rotate=90, anchor=west},
+                legend style={at={(0.5,-0.1)},anchor=north,cells={align=left}}
             ]
                 \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
-                % \addlegendentry{\textcolor{red}{TOFIX} Are you interested in finding out more about regulations or legislation related to digital privacy?}
+                \addlegendentry{Are you interested in finding out more about regulations\\or legislation related to digital privacy?}
                 \addplot coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
-                % \addlegendentry{\textcolor{red}{TOFIX} ``My data was more protected after the implementation of regulations such as the General Data Protection Regulation''.}
+                \addlegendentry{``My data was more protected after the implementation of\\regulations such as the General Data Protection Regulation''.}
             \end{axis}
         \end{tikzpicture}
         \caption{Responses related to privacy regulations.}
@@ -388,7 +391,7 @@ about GDPR's definition of personal data.
 % \end{figure}
 
 Most participants, 73.33\%, do not know what a data protection officer is
-or what are their duties, as can be seen on Figure \ref{fig:aware_dpo}.
+or what are their duties, as can be seen in Figure \ref{fig:aware_dpo}.
 An internal role known as a data protection officer acts as an independent
 spokesman for a company's policies regarding the processing and
 application of customer data. The GDPR, which requires the appointment
@@ -411,7 +414,7 @@ data-related concerns are current.
 
 As expressed before, participants consider the protection of private data important
 and as such 82.22\% are interested in knowing where and how their data is used by
-organizations, as shown on Figure \ref{fig:interested_where_how_information_used}.
+organizations, as shown in Figure \ref{fig:interested_where_how_information_used}.
 
 \begin{figure}
     \centering
@@ -424,7 +427,7 @@ organizations, as shown on Figure \ref{fig:interested_where_how_information_used
     \label{fig:interested_where_how_information_used}
 \end{figure}
 
-Figure \ref{fig:privacy_notices} depicts questions related to privacy notices.
+Questions related to privacy notices are displayed in Figure \ref{fig:privacy_notices}.
 Participants are interested in knowing how their data is used by organizations,
 and privacy notices are one way to convey such information, but not all privacy
 notices are created equal, specially in the IoT, yet 53.33\% are not familiar with
@@ -539,6 +542,14 @@ their consent or when others engage in identity theft.
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}[rotate=90]
+            \tikzset{
+                legendmatrix/.style={% style for legends
+                    draw,% draw a border for the legend
+                    outer sep=.3333em,% additional space to the axis label
+                    nodes={rotate=0,anchor=base west,outer sep=0pt},% rotate the nodes inside the matrix
+                    /pgfplots/every crossref picture/.append style={rotate=0,yshift=.75ex}% rotate the legend images
+                }
+            }
             \begin{axis}[
                 height=8cm,
                 width=25cm,
@@ -550,23 +561,37 @@ their consent or when others engage in identity theft.
                 axis x line=bottom,
                 axis y line=left,
                 enlarge x limits=0.1,
+                xticklabel style={rotate=270},
+                yticklabel style={rotate=270},
+                ylabel style = {rotate=180,name=ylabel2},
+                xlabel style = {rotate=270,at={(0.5,-0.25)},anchor=north},
+                ylabel={Responses \%},
+                xlabel={Agreement level},
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                 every node near coord/.append style={rotate=270, anchor=east},
-                legend style={at={(0.5,-0.1)},anchor=north}
+                % legend style={at={(0.5,0.8)},anchor=south}
             ]
-                \addplot coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};
-                \addlegendentry{How concerned are you about organizations collecting and using your online activity?}
-                \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,6.67) (5,13.33) (6,17.78) (7,57.78)};
-                \addlegendentry{How concerned are you about organizations sharing your data with third parties?}
-                \addplot coordinates {(1,4.44) (2,0) (3,4.44) (4,8.89) (5,24.44) (6,13.33) (7,44.44)};
-                \addlegendentry{How concerned are you about public institutions or intelligence services analyzing your online movements?}
-                \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,8.89) (5,11.11) (6,13.33) (7,62.22)};
-                \addlegendentry{How concerned are you that other people obtain your personal data without your consent?}
-                \addplot coordinates {(1,2.22) (2,0) (3,0) (4,11.11) (5,11.11) (6,2.22) (7,73.33)};
-                \addlegendentry{How concerned are you that other people publish your personal data on the internet without your consent?}
-                \addplot coordinates {(1,4.44) (2,4.44) (3,6.67) (4,8.89) (5,8.89) (6,6.67) (7,60)};
-                \addlegendentry{How concerned are you about an unknown person claiming to be you on the internet?}
+                \addplot coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};\label{plot:plot2_blue}
+                % \addlegendentry{How concerned are you about organizations collecting and using your online activity?}
+                \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,6.67) (5,13.33) (6,17.78) (7,57.78)};\label{plot:plot2_red}
+                % \addlegendentry{How concerned are you about organizations sharing your data with third parties?}
+                \addplot coordinates {(1,4.44) (2,0) (3,4.44) (4,8.89) (5,24.44) (6,13.33) (7,44.44)};\label{plot:plot2_brown}
+                % \addlegendentry{How concerned are you about public institutions or intelligence services analyzing your online movements?}
+                \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,8.89) (5,11.11) (6,13.33) (7,62.22)};\label{plot:plot2_black}
+                % \addlegendentry{How concerned are you that other people obtain your personal data without your consent?}
+                \addplot coordinates {(1,2.22) (2,0) (3,0) (4,11.11) (5,11.11) (6,2.22) (7,73.33)};\label{plot:plot2_purple}
+                % \addlegendentry{How concerned are you that other people publish your personal data on the internet without your consent?}
+                \addplot coordinates {(1,4.44) (2,4.44) (3,6.67) (4,8.89) (5,8.89) (6,6.67) (7,60)};\label{plot:plot2_green}
+                % \addlegendentry{How concerned are you about an unknown person claiming to be you on the internet?}
             \end{axis}
+            \matrix[legendmatrix,at={(ylabel2.south)},anchor=west]{% legend for Plot 2
+                \ref{plot:plot2_blue} & \node[align=left]{How concerned are\\you about organizations collecting\\and using your online activity?}; \\
+                \ref{plot:plot2_red} & \node[align=left]{How concerned are you\\about organizations sharing your\\data with third parties?}; \\
+                \ref{plot:plot2_brown} & \node[align=left]{How concerned are you\\about public institutions or\\intelligence services analyzing\\your online movements?}; \\
+                \ref{plot:plot2_black} & \node[align=left]{How concerned are you\\that other people obtain your\\personal data without your consent?}; \\
+                \ref{plot:plot2_purple} & \node[align=left]{How concerned are you\\that other people publish your\\personal data on the internet\\without your consent?}; \\
+                \ref{plot:plot2_green} & \node[align=left]{How concerned are you\\about an unknown person claiming\\to be you on the internet?}; \\
+            };
         \end{tikzpicture}
         \caption{Responses related to concerns of organizations and individuals handling of private data.}
         \label{fig:concerns}
@@ -908,9 +933,9 @@ their consent or when others engage in identity theft.
 % \end{figure}
 
 The majority of participants admitted to inputting varying amounts of
-incorrect information, with only 15.56\% of participants said they have
-never entered fake information when setting up an account on a platform,
-and 6.67\% said they always do, as demonstrated on Figure \ref{fig:creating_account_false_data}.
+incorrect information, with only 15.56\% of participants claiming to never
+have entered fake information when setting up an account on a platform,
+and 6.67\% said they always do, as demonstrated in Figure \ref{fig:creating_account_false_data}.
 The most typical inaccurate information
 entered by participants concerns their age, phone number, complete name,
 birthday, electronic mail, username, home address and country of citizenship.
@@ -1130,20 +1155,61 @@ technology or who had worked in fields connected to IT did not have any trouble
 completing each task, although only one of these participants had some knowledge
 of IoT.
 
+Figure \ref{fig:single_ease_questions} shows the average responses of the
+single ease questions. Participants found task 8, on average, to be the most difficult,
+in which they were asked to add an IoT device to the application. The
+participants that had the most difficulty also had very little knowledge
+about IoT, which made the task more difficult; they were unsure what type
+of information to insert, despite the fact that hints are provided in the
+form and the user is warned if any information entered is erroneous. In
+general the lack awareness about IoT correlates with the challenge faced when
+performing some tasks. The older age group of participants struggled more on the
+tests while the younger participants demonstrated no noticeable difficulties.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                height=7cm,
+                width=15cm,
+                ybar,
+                ymin=0,
+                ymax=7,
+                symbolic x coords={Task 1,Task 2,Task 3,Task 4,Task 5,Task 6,Task 7,Task 8,Task 9},
+                % ytick=\empty,
+                xtick=data,
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=0.1,
+                bar width=20pt,
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta}
+            ]
+                \addplot coordinates {(Task 1,5.86) (Task 2,6.29) (Task 3,5.86) (Task 4,6.14) (Task 5,6.57) (Task 6,6.43) (Task 7,6.6) (Task 8,5.29) (Task 9,6.43)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Average participant responses of the single ease questions.}
+        \label{fig:single_ease_questions}
+    \end{center}
+\end{figure}
+
 The system usability scale was used after the participants
 performed all tasks, using this system an average score of 90,95 was achieved.
-On Figure \ref{fig:system_usability_scale_scores} the scores of
+In Figure \ref{fig:system_usability_scale_scores} the scores of
 each participant can be seen.
-The 90,95 score was calculated by using the following formula:
-\[
-    Score = \frac{\sum_{i=1}^{7}x_i}{7}
-\]
-where $x$, representing each participants' response, is noted as:
-\[
+The score was calculated by using the following formula:
+\begin{equation}\label{sus}
+    Score = \frac{\sum_{i=1}^{n}f(P_i)}{n}
+\end{equation}
+where $n$ is the number of participants, which in this case is equal to 7,
+and $f(P)$, representing each participants' response ($P$), is noted as:
+\begin{equation}\label{individual_sus}
     ((Q1-1)+(7-Q2)+(Q3-1)+(7-Q4)+(Q5-1)+(7-Q6)+(Q7-1)+(7-Q8)+(Q9-1)+(7-Q10))*\frac{5}{3}
-\]
+\end{equation}
+where $Q1$, $Q2$, $Q3$, $Q4$, $Q5$, $Q6$, $Q7$, $Q8$, $Q9$ and $Q10$ refers to
+the score of a participant for each question.
+
 \nameref{appendix:sus} shows the scoring in more detail.
-This is a high score which would mean that the application provides
+The obtained value of 90,95 is a high score which would mean that the application provides
 a good user experience, even though some users experienced some
 hardships when using it when the first tests where being performed.
 The feedback given by these participants helped in improving the application,

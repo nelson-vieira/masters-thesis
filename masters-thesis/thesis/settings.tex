@@ -44,6 +44,8 @@
 \usepackage{pdflscape}
 \usepackage{tikz}
 \usepackage{nameref}
+\usepackage{cleveref}
+\usepackage{xparse}
 \usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{statistics}
 \usepgfplotslibrary{fillbetween}
@@ -90,3 +92,53 @@
 
 \makenomenclature
 
+%% Fix to allow short name on unnumbered sections using nameref package
+\makeatletter
+\let\latex@@section\section
+\RenewDocumentCommand{\section}{som}{%
+    \IfBooleanTF{#1}{%
+        \IfValueTF{#2}{%
+            \addcontentsline{toc}{section}{#3}%
+            \latex@@section*{#3}\edef\@currentlabelname{#2}%
+        }{%
+            \latex@@section*{#3}\edef\@currentlabelname{#3}%
+        }%
+    }{%
+        \IfValueTF{#2}{%
+            \latex@@section[#2]{#3}
+        }{%
+            \latex@@section{#3}
+        }%
+    }%
+}
+\makeatother
+
+%% Fix to allow short name on unnumbered sections using nameref package
+\makeatletter
+\let\latex@@chapter\chapter
+\RenewDocumentCommand{\chapter}{som}{%
+    \IfBooleanTF{#1}{%
+        \IfValueTF{#2}{%
+            \addcontentsline{toc}{chapter}{#3}%
+            \latex@@chapter*{#3}\edef\@currentlabelname{#2}%
+        }{%
+            \latex@@chapter*{#3}\edef\@currentlabelname{#3}%
+        }%
+    }{%
+        \IfValueTF{#2}{%
+            \addcontentsline{toc}{chapter}{#3}%
+            \latex@@chapter[#2]{#3}
+        }{%
+            \latex@@chapter{#3}
+        }%
+    }%
+}
+\makeatother
+
+\makeatletter
+% \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+% \renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{3.2em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{3.4em}{3.0em}}
+\renewcommand*\l@paragraph{\@dottedtocline{4}{5.8em}{3.7em}}
+% \renewcommand*\l@subparagraph{\@dottedtocline{5}{12em}{6em}}
+\makeatother
