@@ -179,7 +179,7 @@ importance on the user experience.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=8cm,
+                height=7cm,
                 width=15cm,
                 ybar,
                 bar width=10pt,
@@ -442,7 +442,7 @@ the organization and 33.33\% disagreeing.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=11cm,
+                height=9cm,
                 width=12cm,
                 xbar,
                 symbolic y coords={Disagree,Do not know,Agree},
@@ -944,7 +944,7 @@ information are when creating a temporary account or they
 find that the information is not relevant, some stated that they do
 not want to provide any information that may be used to identify them.
 
-\begin{figure}
+\begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
@@ -1014,7 +1014,7 @@ of a data broker, which plays an important role on data flow and can be an indiv
 or a company which specializes in collecting and selling private data, their decisions
 undoubtedly be affected by this knowledge.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1]{82.22/No,
@@ -1046,13 +1046,13 @@ of respondents do not know how to define they can recognize IoT devices.
             \begin{axis}[
                 xbar,
                 symbolic y coords={No,Yes},
-                bar width=12pt,
+                bar width=20pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
                 xmin=0,
                 xmax=100,
-                enlarge y limits=0.15,
+                enlarge y limits=0.3,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
@@ -1062,7 +1062,7 @@ of respondents do not know how to define they can recognize IoT devices.
                 \addlegendentry{Do you have an Internet of Things device in your home?}
             \end{axis}
         \end{tikzpicture}
-        \caption{Participant responses indicating whether they agree or disagree with these statements.}
+        \caption{Participant responses related to IoT usage.}
         \label{fig:internet_of_things_device_usage}
     \end{center}
 \end{figure}
