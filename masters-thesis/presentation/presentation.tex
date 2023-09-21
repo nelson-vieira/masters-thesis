@@ -48,8 +48,9 @@
 \usepackage{booktabs}
 % Listings extension
 \usepackage{listings}
+\usepackage{transparent}
 \usepackage{svg}
-\setsvg{inkscape = "C:/Program Files/Inkscape/bin/inkscape.exe" -z -D}
+\setsvg{inkscape = "C:/Program Files/Inkscape/bin/inkscape.exe"}
 \svgsetup{inkscapepath=svgsubdir}
 \def\myversion{0.1}
 
@@ -90,10 +91,10 @@
 \section{Introduction}
 
 \begin{frame}{Introduction}
-    % Internet of Things (IoT) devices are everywhere. These devices
-    % create new ways of collecting and process personal data from users and
-    % non-users. Most end users are not even aware or have little control over
-    % the information that is being collected by these systems.
+    Internet of Things (IoT) devices are everywhere. These devices
+    create new ways of collecting and process personal data from users and
+    non-users. Most end users are not even aware or have little control over
+    the information that is being collected by these systems.
 
     This work takes an holistic approach to this problem by doing:
     \begin{itemize}
@@ -103,19 +104,20 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Privacy}
+\note{
+    Some notes here.
+}
+
+\begin{frame}
     \begin{multicols}{2}
         \centering
-        \vspace*{\fill}
-        What is privacy?
-        % \begin{figure}
-        %     \centering\includegraphics[width=200pt]{assets/images/privacy_history.png}
-        %     \caption{Privacy history}
-        % \end{figure}
-        \vspace*{\fill}
+        {\footnotesize What is privacy?}
+        \begin{figure}
+            \centering\includegraphics[width=155pt]{assets/images/privacy_opinions.png}\\
+            \textcolor{gray}{{\tiny \textcopyright \href{https://xkcd.com/1269/}{Randall Munroe}, \href{https://creativecommons.org/licenses/by-nc/2.5/}{CC BY-NC 2.5 License}}}
+        \end{figure}
 
         \columnbreak
-        % \onslide*<2>
         \centering
         \vspace*{\fill}
         Privacy $\ne$ Security
@@ -123,94 +125,148 @@
     \end{multicols}
 \end{frame}
 
-\begin{frame}{Internet of Things}
-\end{frame}
+\note{
+    Some notes here.
+}
 
 \section{State of the Art}
 
 \begin{frame}{State of the Art}
 \end{frame}
 
+\note{
+    Some notes here.
+}
+
 \subsection{Literature Approaches}
 
 \begin{frame}{Literature Approaches}
 \end{frame}
 
+\note{
+    Some notes here.
+}
+
 \section{Methodology}
 
-% \subsection{Survey}
+\subsection{Survey}
 
-% \begin{frame}[shrink]{Survey}
-    % \begin{multicols}{2}
-    %     92 Questions
-    %     \begin{itemize}
-    %         \item General knowledge and attitudes towards privacy
-    %         \item Disposition for sharing personal information
-    %         \item Privacy concerns
-    %         \item Current online habits and practices
-    %         \item Profile identification
-    %         \item Knowledge and habits regarding the Internet of Things
-    %         \item Demographic data
-    %     \end{itemize}
+\begin{frame}[shrink]{Survey}
+    \begin{multicols}{2}
+        86 Questions
+        \begin{itemize}
+            \item General knowledge and attitudes towards privacy
+            \item Disposition for sharing personal information
+            \item Privacy concerns
+            \item Current online habits and practices
+            \item Profile identification
+            \item Knowledge and habits regarding the Internet of Things
+            \item Demographic data
+        \end{itemize}
 
-    %     \columnbreak
-    %     \begin{figure}
-    %         \centering\includegraphics[width=45pt]{assets/images/forms.png}
-    %         \caption{Google Forms}
-    %     \end{figure}
-    % \end{multicols}
-% \end{frame}
+        \columnbreak
+        \vspace*{\fill}
+        \begin{figure}
+            \centering
+            \includegraphics[width=45pt]{assets/images/forms.png}
+            % \caption{Google Forms}
+        \end{figure}
+        \vspace*{\fill}
+    \end{multicols}
+\end{frame}
+
+\note{
+    Some notes here.
+}
 
 \subsection{Application}
 
 \begin{frame}{Application}
-    % \begin{multicols}{2}
-    %     Will be composed of the following things:
-    %     \begin{itemize}
-    %         \item Show the geolocation of the IoT devices;
-    %         \item What type of device it is;
-    %         \item What type of data is being collect by the device;
-    %         \item Insert IoT devices and associated information about them.
-    %     \end{itemize}
+    \begin{multicols}{2}
+        What can the application do?
+        \begin{itemize}
+            \item Show the geolocation of the IoT devices;
+            \item Information about the devices, like category, collection purpose, stored time, owner, etc.;
+            \item Information about IoT privacy;
+            \item Addition and editing of device's information.
+        \end{itemize}
 
-    %     \columnbreak
-    %     \begin{figure}
-    %         \centering\includegraphics[width=120pt]{assets/images/flutter.png}
-    %         \caption{Flutter framework}
-    %     \end{figure}
-    %     \begin{figure}
-    %         \centering
-    %         \includesvg{assets/images/firebase}
-    %         \caption{Firebase cloud backend}
-    %     \end{figure}
-    % \end{multicols}
+        \columnbreak
+        \begin{figure}
+            \centering\includegraphics[width=120pt]{assets/images/flutter.png}
+            % \caption{Flutter framework}
+        \end{figure}
+        \begin{figure}
+            \centering
+            \includesvg[width=140pt]{assets/images/firebase}
+            % \caption{Firebase cloud backend}
+        \end{figure}
+    \end{multicols}
 \end{frame}
+
+\note{
+    Some notes here.
+}
+
+{
+\usebackgroundtemplate{{\transparent{0.1}\hspace*{0.2cm}\includegraphics[keepaspectratio,width=7.5cm]{../app/assets/images/icon.png}}}
+\begin{frame}
+    \centering
+    \vspace*{\fill}
+    {\Large Demonstration}
+    \vspace*{\fill}
+\end{frame}
+}
 
 \section{Conclusion and Future Work}
 
 \subsection{Future Work}
 
 \begin{frame}{Future Work}
+    \begin{itemize}
+        \item[$\bullet$]
+        Privacy literacy in IoT systems;
+        \item[$\bullet$]
+        Application of privacy in the design/development of IoT systems;
+        \item[$\bullet$]
+        Interoperability standards;
+        \item[$\bullet$]
+        User-centric approaches to IoT privacy.
+    \end{itemize}
 \end{frame}
+
+\note{
+    Some notes here.
+}
 
 \subsection{Conclusion}
 
 \begin{frame}{Conclusion}
-    % This project aims to do an exploratory analysis of privacy in
-    % IoT systems. It proposes a survey to better understand user's
-    % knowledge on this subject and an application that aims to
-    % create more users awareness and better inform about their
-    % environment, as well as the IoT devices that inhabit it and
-    % how they can respond accordingly.
+    This work contributed to the overall body of research by compiling and reviewing
+    other works with the perspective of privacy as a distinct subject matter rather than
+    an extension of security, as many publications imply. The survey conducted
+    on the perception of individuals on privacy in IoT systems portrays the majority
+    viewpoint of portuguese people, since 60\% of participants were portuguese. Additionally,
+    a mobile application was developed and tested revealing that it performs as it was
+    initially designed and envisioned since it reaches its purpose on its own without having
+    to rely on additional platforms.
 \end{frame}
+
+\note{
+    Some notes here.
+}
 
 \begin{frame}{Questions and Comments}
     Thank you for your attention. Any questions?
 \end{frame}
 
-\subsection{References}
+\note{
+    Some notes here.
+}
 
-\begin{frame}[allowframebreaks]{References}
+\section*{References}
+
+\begin{frame}[allowframebreaks]
     \bibliographystyle{IEEEtran}
     \bibliography{assets/references}
 \end{frame}
