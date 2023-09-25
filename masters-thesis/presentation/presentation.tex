@@ -189,7 +189,7 @@
             \begin{tikzpicture}
                 \begin{axis}[
                     width=180pt,
-                    height=140pt,
+                    height=136pt,
                     ybar,
                     bar width=10pt,
                     ymin=0,
@@ -213,8 +213,8 @@
             \begin{tikzpicture}
                 \begin{axis}[
                     width=180pt,
-                    height=140pt,
-                    symbolic x coords={IoT,Ubicomp,PA,Blockchain},
+                    height=136pt,
+                    symbolic x coords={IoT,Ubicomp,PA*,Blockchain},
                     ybar,
                     bar width=6pt,
                     ymin=0,
@@ -227,11 +227,11 @@
                     every node near coord/.append style={rotate=90, anchor=west, font=\tiny},
                     legend style={at={(0.99,0.90)},anchor=south}
                 ]
-                    \addplot coordinates {(IoT,22.22) (Ubicomp,4.44) (PA,13.33) (Blockchain,11.11)};
+                    \addplot coordinates {(IoT,22.22) (Ubicomp,4.44) (PA*,13.33) (Blockchain,11.11)};
                     \addlegendentry{{\tiny Very knowledgable}}
-                    \addplot coordinates {(IoT,37.78) (Ubicomp,28.89) (PA,28.89) (Blockchain,44.44)};
+                    \addplot coordinates {(IoT,37.78) (Ubicomp,28.89) (PA*,28.89) (Blockchain,44.44)};
                     \addlegendentry{{\tiny Some knowledge}}
-                    \addplot coordinates {(IoT,40) (Ubicomp,66.67) (PA,66.67) (Blockchain,44.44)};
+                    \addplot coordinates {(IoT,40) (Ubicomp,66.67) (PA*,66.67) (Blockchain,44.44)};
                     \addlegendentry{{\tiny No knowledge}}
                 \end{axis}
             \end{tikzpicture}
@@ -241,6 +241,7 @@
         \caption{Participant responses regarding: (a) privacy importance and (b) IT knowledge.}
         \label{fig:survey_responses_1}
     \end{figure}
+    {\tiny *PA - Privacy Assistant}
 \end{frame}
 
 \note{
