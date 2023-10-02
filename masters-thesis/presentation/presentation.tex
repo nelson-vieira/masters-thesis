@@ -131,7 +131,11 @@
 \end{frame}
 
 \note{
-    Some notes here.
+    There is some contention on the definition of privacy. Most literature assumes
+    that privacy is equal to security or that it is only a part of it, as such
+    by creating better security systems they assume to alse solve privacy problems.
+    This work takes privacy on its own and goes out looking for challenges and solutions
+    to solve privacy issues on IoT systems.
 }
 
 \section{State of the Art}
@@ -151,6 +155,10 @@
     + AI
     +/- Framework
     - Privacy notices
+
+    Most literature works are on blockchain and AI solutions,
+    followed by design or security frameworks and very few focus on privacy notices or legislation.
+    Even fewer on privacy literacy.
 }
 
 \begin{frame}{State of the Art}
@@ -194,7 +202,7 @@
 \end{frame}
 
 \note{
-    Some notes here.
+    Survey with varied questions from general privacy concerns to online habits and IoT literacy.
 }
 \begin{frame}
     \begin{figure}
@@ -216,7 +224,7 @@
                     every node near coord/.append style={rotate=80, anchor=west, font=\small},
                     legend style={at={(0.5,-0.1)},anchor=north}
                 ]
-                    \addplot coordinates {(1,0) (2,0) (3,1.48) (4,2.96) (5,7.41) (6,17.04) (7,71.11)};
+                    \addplot[blue!20!black,fill=blue!70!white] coordinates {(1,0) (2,0) (3,1.48) (4,2.96) (5,7.41) (6,17.04) (7,71.11)};
                 \end{axis}
             \end{tikzpicture}
             \caption{}
@@ -240,11 +248,11 @@
                     every node near coord/.append style={rotate=90, anchor=west, font=\tiny},
                     legend style={at={(0.99,0.90)},anchor=south}
                 ]
-                    \addplot coordinates {(IoT,22.22) (Ubicomp,4.44) (PA*,13.33) (Blockchain,11.11)};
+                    \addplot[green!20!black,fill=green!70!white] coordinates {(IoT,22.22) (Ubicomp,4.44) (PA*,13.33) (Blockchain,11.11)};
                     \addlegendentry{{\tiny Very knowledgable}}
-                    \addplot coordinates {(IoT,37.78) (Ubicomp,28.89) (PA*,28.89) (Blockchain,44.44)};
+                    \addplot[orange!20!black,fill=orange!70!white] coordinates {(IoT,37.78) (Ubicomp,28.89) (PA*,28.89) (Blockchain,44.44)};
                     \addlegendentry{{\tiny Some knowledge}}
-                    \addplot coordinates {(IoT,40) (Ubicomp,66.67) (PA*,66.67) (Blockchain,44.44)};
+                    \addplot[red!20!black,fill=red!70!white] coordinates {(IoT,40) (Ubicomp,66.67) (PA*,66.67) (Blockchain,44.44)};
                     \addlegendentry{{\tiny No knowledge}}
                 \end{axis}
             \end{tikzpicture}
@@ -258,7 +266,7 @@
 \end{frame}
 
 \note{
-    Some notes here.
+    Majority of respondents found that privacy is very important.
 }
 
 \begin{frame}
@@ -270,7 +278,7 @@
                     height=140pt,
                     xbar,
                     symbolic y coords={Disagree,Do not know,Agree},
-                    bar width=4pt,
+                    bar width=10pt,
                     ytick=data,
                     axis x line=bottom,
                     axis y line=left,
@@ -280,7 +288,7 @@
                     nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                     legend style={at={(0.5,-0.1)},anchor=north, font=\tiny}
                 ]
-                    \addplot coordinates {(14.44,Disagree) (18.33,Do not know) (67.22,Agree)};
+                    \addplot[yellow!10!black,fill=yellow!70!white] coordinates {(14.44,Disagree) (18.33,Do not know) (67.22,Agree)};
                 \end{axis}
             \end{tikzpicture}
             \caption{}
@@ -304,7 +312,7 @@
                     every node near coord/.append style={rotate=80, anchor=west, font=\small},
                     legend style={at={(0.5,-0.1)},anchor=north}
                 ]
-                    \addplot coordinates {(1,0) (2,0) (3,1.48) (4,2.96) (5,7.41) (6,17.04) (7,71.11)};
+                    \addplot[purple!20!black,fill=purple!70!white] coordinates {(1,0) (2,0) (3,1.48) (4,2.96) (5,7.41) (6,17.04) (7,71.11)};
                 \end{axis}
             \end{tikzpicture}
             \caption{}
@@ -382,14 +390,24 @@
 \subsection{Conclusion}
 
 \begin{frame}{Conclusion}
-    This work contributed to the overall body of research by compiling and reviewing
-    other works with the perspective of privacy as a distinct subject matter rather than
-    an extension of security, as many publications imply. The survey conducted
-    on the perception of individuals on privacy in IoT systems portrays the majority
-    viewpoint of portuguese people, since 60\% of participants were portuguese. Additionally,
-    a mobile application was developed and tested revealing that it performs as it was
-    initially designed and envisioned since it reaches its purpose on its own without having
-    to rely on additional platforms.
+    \begin{itemize}
+        \item[$\bullet$]
+        Standalone IoT privacy literature review;
+        \item[$\bullet$]
+        Tests from majority viewpoint of portuguese users;
+        \item[$\bullet$]
+        User testing reveals there is a large privacy knowledge gap;
+        \item[$\bullet$]
+        Application that aims to increase IoT privacy literacy.
+    \end{itemize}
+    % This work contributed to the overall body of research by compiling and reviewing
+    % other works with the perspective of privacy as a distinct subject matter rather than
+    % an extension of security, as many publications imply. The survey conducted
+    % on the perception of individuals on privacy in IoT systems portrays the majority
+    % viewpoint of portuguese people, since 60\% of participants were portuguese. Additionally,
+    % a mobile application was developed and tested revealing that it performs as it was
+    % initially designed and envisioned since it reaches its purpose on its own without having
+    % to rely on additional platforms.
 \end{frame}
 
 \note{
