@@ -113,7 +113,8 @@
     Some notes here.
 }
 
-\begin{frame}
+% Option [fragile] needed for lstlisting
+\begin{frame}[fragile]
     \begin{multicols}{2}
         \centering
         {\footnotesize What is privacy?}
@@ -126,6 +127,13 @@
         \centering
         \vspace*{\fill}
         Privacy $\ne$ Security
+        \begin{lstlisting}[language=sh,escapechar=\%]
+                diff
+            %\big\uparrow%    @@ -475,1 +475,1 @@
+            475 - Privacy
+            475 + Security
+            %\big\downarrow%    ...
+        \end{lstlisting}
         \vspace*{\fill}
     \end{multicols}
 \end{frame}
