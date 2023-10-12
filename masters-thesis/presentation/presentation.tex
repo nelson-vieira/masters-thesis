@@ -124,16 +124,14 @@
         \end{figure}
 
         \columnbreak
-        \centering
         \vspace*{\fill}
-        Privacy $\ne$ Security
-        \begin{lstlisting}[language=sh,escapechar=\%]
-                diff
-            %\big\uparrow%    @@ -475,1 +475,1 @@
-            475 - Privacy
-            475 + Security
-            %\big\downarrow%    ...
-        \end{lstlisting}
+\begin{lstlisting}[language=sh,escapechar=\%]
+    diff privacy.c
+    %\big\uparrow%     %\textcolor{blue}{@@ -42,1 +42,1 @@}%
+    42 %\textcolor{red}{- Privacy}%
+    42 %\textcolor{green!60!black!80}{+ Security}%
+    %\big\downarrow%     ...
+\end{lstlisting}
         \vspace*{\fill}
     \end{multicols}
 \end{frame}
@@ -143,19 +141,30 @@
     that privacy is equal to security or that it is only a part of it, as such
     by creating better security systems they assume to alse solve privacy problems.
     This work takes privacy on its own and goes out looking for challenges and solutions
-    to solve privacy issues on IoT systems.
+    to solve privacy issues on IoT systems. \cite{tsourela2020internet}
 }
 
 \section{State of the Art}
 
-\begin{frame}{Literature Approaches}
-    \begin{itemize}
-        \item Blockchain;
-        \item AI;
-        \item Legislation;
-        \item Framework;
-        \item Privacy notices.
-    \end{itemize}
+\begin{frame}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}
+            \pie[text=pin,scale=0.75,font=\scriptsize]{6.25/Smart vehicles,
+                6.25/IoT research,
+                6.25/Digital literacy,
+                6.25/IoT Regulation,
+                25/Networking,
+                6.25/Smart homes,
+                6.25/Healthcare,
+                12.5/IoT system design,
+                6.25/AI,
+                12.5/Mobile IoT applications,
+                6.25/Smart Cities}
+        \end{tikzpicture}
+        \caption{Distribution of literature per IoT domain.}
+        \label{fig:literature_domain}
+    \end{figure}
 \end{frame}
 
 \note{
@@ -178,7 +187,14 @@
 \end{frame}
 
 \note{
-    Some notes here.
+    + Blockchain
+    + AI
+    +/- Framework
+    - Privacy notices
+
+    Most literature works are on blockchain and AI solutions,
+    followed by design or security frameworks and very few focus on privacy notices or legislation.
+    Even fewer on privacy literacy.
 }
 
 \section{Methodology}
