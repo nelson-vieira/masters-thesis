@@ -57,10 +57,12 @@
 
 \onehalfspacing
 
+% Column types used in 7 point scale tabular
 \newcolumntype{P}{>{\centering\arraybackslash}p{0.50cm}}
 \newcolumntype{L}{>{\raggedright\arraybackslash}m{0.25\textwidth}}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}m{0.25\textwidth}}
 
+% Tabular used as 7 point scale
 \newcommand{\usetbl}{%
     \begin{tabular}{@{}|*7{P|}@{}}
         \hline
@@ -69,6 +71,10 @@
     \end{tabular}
 }
 
+% Command used for question, as input (#1), then representing a table as 7 point scale,
+% defined in the previous command, displayed as:
+%                 _ _ _ _ _ _ _
+% Question 1?    |_|_|_|_|_|_|_|
 \newcommand\prop[1]{%
     \item
     \parbox[t]{0.5\textwidth}{#1}%
@@ -113,7 +119,7 @@
 }
 \makeatother
 
-%% Fix to allow short name on unnumbered sections using nameref package
+%% Fix to allow short name on unnumbered chapters using nameref package
 \makeatletter
 \let\latex@@chapter\chapter
 \RenewDocumentCommand{\chapter}{som}{%
@@ -135,6 +141,7 @@
 }
 \makeatother
 
+%% Fix to add more space in ToC on subsubsection and paragraph between name and dotted lines
 \makeatletter
 % \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
 % \renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{3.2em}}
