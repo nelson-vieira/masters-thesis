@@ -16,7 +16,7 @@ uses georeferencing to show the location of the IoT devices. This application
 has two main objectives, the first is to inform and educate users in order improve
 their digital literacy on this particular field (privacy on IoT systems, and
 IoT in general) and the other being to give users a way to make informed decisions
-to protect their private data, in a concise and convenient place. Generally
+to protect their private data, in a concise and convenient place. Generally,
 the application will show the geolocation of the IoT devices, what type of
 device it is, what type of data is being collect by the device. The application
 will not detect the devices by itself, this will be done by the users themselves,
@@ -36,7 +36,7 @@ for this application.
 The first step before creating any prototypes or starting the development was
 the creation of a software requirements specification
 delineating the scope and vision for the application; the involved stakeholders;
-containing contextual, data-flow and swimlane diagrams; software requirements, including
+containing contextual, dataflow and swimlane diagrams; software requirements, including
 business, technology, functional and non-functional requirements; use cases
 and requirements prioritisation.
 
@@ -184,8 +184,8 @@ The following stakeholders have been identified for this application:
 
 \begin{itemize}
     \item[$\bullet$] \textbf{Software developer/Application administrator}: The programmers are the ones who create the application and even if they do not use it they are directly related to it.
-    \item[$\bullet$] \textbf{IoT Device Owners}: These device owners are be priority stakeholders being that the application in good part will be directed to them, device owners have an indirect influence.
-    \item[$\bullet$] \textbf{Application Users}: The users are be the main focus of this project, they are the ones that provide the information that will be inserted in the application, since they can change the course of the project they have a direct influence.
+    \item[$\bullet$] \textbf{IoT Device Owners}: The device owners are priority stakeholders being that the application in good part will be directed to them, device owners have an indirect influence.
+    \item[$\bullet$] \textbf{Application Users}: The users are the main focus of this project, they are the ones that provide the information that will be inserted in the application, since they can change the course of the project they have a direct influence.
     \item[$\bullet$] \textbf{Thesis advisor}: Because this application is implemented in the context of a master's thesis, the advisor has an indirect influence during the implementation and the final product.
     \item[$\bullet$] \textbf{University of Madeira}: Because this application is implemented in the context of a master's thesis, the university as an organization has an indirect influence on the final product.
     \item[$\bullet$] \textbf{Legislation}: The legislation in relation to the privacy of the collected data allows to impose rules on the use of the data. It has an indirect influence.
@@ -297,7 +297,7 @@ The technology requirements that have been identified for this project are as fo
 \begin{itemize}
     \item[$\bullet$] Firestore or similar database server
     \item[$\bullet$] Flutter framework with Dart being the main programming language
-    \item[$\bullet$] Accessible on any smartphone (iOS or Android) \newline \textbf{Note}: There will not be a web based version available.
+    \item[$\bullet$] Accessible on any smartphone (iOS or Android) \newline \textbf{Note}: There will not be a web-based version available.
 \end{itemize}
 These requirements have been chosen so that the system is available to as
 many users as possible regardless of the hardware they use. The database
@@ -429,7 +429,7 @@ following groups:
 
 \subsubsection{Use Cases Diagram}
 
-The use cases diagram \cite{wiegers2013software} provides a high level visualisation of the user
+The use cases diagram \cite{wiegers2013software} provides a high-level visualisation of the user
 requirements. The box represents the system boundary. An actor's arrow
 for a use case indicates that he is the primary actor for it.
 The primary actor initiates the use case and derives the primary value
@@ -460,7 +460,7 @@ actors.
 This technique describes the tasks that users need to perform with
 the system or the user-system interaction that may be important to some
 stakeholders. They also help in testing by checking that the functionality
-has been implemented correctly. The use cases uses an Unified Modeling
+has been implemented correctly. The use cases use an Unified Modeling
 Language (UML) notation.
 
 Based on the use cases represented in Figure \ref{fig:use_cases_diagram},
@@ -1012,7 +1012,7 @@ created. For the creation of the prototypes the following tools were used: Figma
 and GIMP. Figma was the primary tool for the design while GIMP was mostly used
 for image manipulation as it is a more specialized software tool.
 
-At first a low level prototype was made in order to understand the
+At first a low-level prototype was made in order to understand the
 general design and user interaction of the application. Figure \ref{fig:lowlevelprototype}
 shows tree pages of the low level prototype, these being the homepage, about
 and faq pages. This is a rough sketch, there are barely any details added to each page,
@@ -1084,7 +1084,7 @@ Another prototype version was created, this being the final one before
 the developed version. The high level version can be seen in Figure \ref{fig:highlevelprototype}
 which shows three pages: homepage, FAQ and IoT devices. This is the version
 that more closely resembles the developed application, although some design
-elements were changed. Between the medium and high level prototypes, more icons
+elements were changed. Between the medium and high-level prototypes, more icons
 were created, colours were changed and other pages were designed. More icons
 to the navigation footer were created, namely for the homepage and faq pages
 which were missing from previous versions even with those pages being designed.
@@ -1117,7 +1117,7 @@ identified.
 \end{figure}
 
 After doing the prototypes, development was started, although some overlap
-happened with the high level version prototype, as the icons for the categories
+happened with the high-level version prototype, as the icons for the categories
 were being created. Figure \ref{fig:live_app} represents the application pages:
 (\ref{fig:livehome}) homepage, (\ref{fig:liveabout}) about, (\ref{fig:livefaq}) more
 information, (\ref{fig:live_devices}) IoT devices, (\ref{fig:live_device_info}) device
@@ -1261,10 +1261,10 @@ the name, category and coordinates of the device, all other
 information is optional but should be provided for the sake of guaranteeing a good
 experience to other users of the application. The information provided
 should be verified by the user beforehand so that bogus data does not clutter
-the application, in this case there are no absolute ways of guaranteeing this
+the application, in this case there are no absolute ways of guaranteeing this,
 but the maintainer of the application edit wrong information or in some
 cases remove it, other users can also edit any device data. This is an
-open platform so it is expected that users act in good faith.
+open platform, so it is expected that users act in good faith.
 
 The usability tests were crucial to the development of the application,
 they improved significantly the user experience along with changes to the
