@@ -82,6 +82,7 @@ dependencies:
   graphic: ^2.2.0
   dropdown_button2: ^2.3.6
   provider: ^6.0.5
+  geocoding: ^2.1.1
 
 dev_dependencies:
   flutter_test:
