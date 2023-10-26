@@ -7,7 +7,7 @@
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:firebase_auth/firebase_auth.dart";
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import "dart:math" as math;
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/devices/create.dart";

@@ -8,7 +8,7 @@ import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:firebase_auth/firebase_auth.dart";
 import "package:url_launcher/url_launcher.dart";
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/devices/update.dart";
 import "package:iotprivacy/helpers/category.dart";

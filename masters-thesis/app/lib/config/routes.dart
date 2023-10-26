@@ -8,7 +8,7 @@ import "package:flutter/material.dart";
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/public/home.dart";
 import "package:iotprivacy/pages/public/about.dart";
-import 'package:iotprivacy/pages/public/more_info.dart';
+import "package:iotprivacy/pages/public/more_info.dart";
 import "package:iotprivacy/pages/auth/auth.dart";
 import "package:iotprivacy/pages/devices/devices.dart";
 import "package:iotprivacy/pages/devices/show.dart";

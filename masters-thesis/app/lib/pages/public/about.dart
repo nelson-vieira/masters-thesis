@@ -6,7 +6,7 @@
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:flutter/material.dart";
 import "package:url_launcher/url_launcher.dart";
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 
 class About extends StatelessWidget {
   static const String route = "/about";

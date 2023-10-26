@@ -7,7 +7,7 @@
 import "package:flutter/material.dart";
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:graphic/graphic.dart";
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import "package:iotprivacy/models/device.dart";
 
 class Statistics extends StatefulWidget {

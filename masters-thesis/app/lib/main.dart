@@ -5,15 +5,14 @@
 // @author Nelson Vieira <2080511@student.uma.pt>
 // @license AGPL-3.0 <https://www.gnu.org/licenses/agpl-3.0.txt>
 import "package:iotprivacy/config/routes.dart";
-import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:firebase_core/firebase_core.dart";
 import "config/firebase_options.dart";
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:flutter_localizations/flutter_localizations.dart";
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import "package:iotprivacy/pages/public/home.dart";
 import "package:iotprivacy/pages/public/about.dart";
-import 'package:iotprivacy/pages/public/more_info.dart';
+import "package:iotprivacy/pages/public/more_info.dart";
 import "package:iotprivacy/pages/auth/account.dart";
 import "package:iotprivacy/pages/devices/devices.dart";
 
