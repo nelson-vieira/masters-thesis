@@ -234,7 +234,7 @@
             \begin{tikzpicture}
                 \begin{axis}[
                     width=180pt,
-                    height=136pt,
+                    height=124pt,
                     ybar,
                     bar width=10pt,
                     ymin=0,
@@ -258,7 +258,7 @@
             \begin{tikzpicture}
                 \begin{axis}[
                     width=180pt,
-                    height=136pt,
+                    height=124pt,
                     symbolic x coords={IoT,Ubicomp,PA*,Blockchain},
                     ybar,
                     bar width=6pt,
@@ -267,7 +267,7 @@
                     xticklabel style={font=\tiny},
                     axis x line=bottom,
                     axis y line=left,
-                    enlarge x limits=0.1,
+                    enlarge x limits=0.2,
                     nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                     every node near coord/.append style={rotate=90, anchor=west, font=\tiny},
                     legend style={at={(0.99,0.90)},anchor=south}
@@ -283,8 +283,8 @@
             \caption{}
             \label{fig:survey_it_terms}
         \end{subfigure}
-        \caption{Participant responses regarding: (a) privacy importance and (b) IT knowledge.}
-        \label{fig:survey_responses_1}
+        \caption{{\small Participant responses regarding: (a) participants' privacy importance perception and (b) general IT knowledge.}}
+        \label{fig:survey_responses_privacy_importance_it_terms}
     \end{figure}
     {\tiny *PA - Privacy Assistant}
 \end{frame}
@@ -299,7 +299,7 @@
             \begin{tikzpicture}
                 \begin{axis}[
                     width=150pt,
-                    height=140pt,
+                    height=150pt,
                     xbar,
                     symbolic y coords={Disagree,Do not know,Agree},
                     bar width=10pt,
@@ -319,31 +319,58 @@
             \label{fig:survey_privacy_notices}
         \end{subfigure}
         \begin{subfigure}[t]{0.45\textwidth}
-            \begin{tikzpicture}
-                \begin{axis}[
-                    width=175pt,
-                    height=140pt,
-                    ybar,
-                    bar width=10pt,
-                    ymin=0,
-                    ymax=100,
-                    xtick=data,
-                    xticklabel style={font=\scriptsize},
-                    axis x line=bottom,
-                    axis y line=left,
-                    enlarge x limits=0.1,
-                    nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
-                    every node near coord/.append style={rotate=80, anchor=west, font=\small},
-                    legend style={at={(0.5,-0.1)},anchor=north}
-                ]
-                    \addplot[purple!20!black,fill=purple!80!white] coordinates {(1,0) (2,0) (3,1.48) (4,2.96) (5,7.41) (6,17.04) (7,71.11)};
-                \end{axis}
-            \end{tikzpicture}
-            \caption{}
-            \label{fig:survey_privacy_importance2}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        width=175pt,
+                        height=150pt,
+                        xbar,
+                        symbolic y coords={No,Yes},
+                        bar width=10pt,
+                        ytick=data,
+                        yticklabel style={font=\scriptsize},
+                        axis x line=bottom,
+                        axis y line=left,
+                        xmin=0,
+                        xmax=100,
+                        enlarge y limits=0.3,
+                        nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                        legend style={at={(0.8,0.63)},anchor=north}
+                    ]
+                        \addplot[lime!20!black,fill=lime!60!white] coordinates {(33.33,No) (66.67,Yes)};
+                        \addlegendentry{{\scriptsize Internet of Things usage}}
+                        \addplot[violet!20!black,fill=violet!70!white] coordinates {(64.44,No) (35.56,Yes)};
+                        \addlegendentry{{\scriptsize Internet of Things device at home}}
+                    \end{axis}
+                \end{tikzpicture}
+                \caption{}
+                \label{fig:internet_of_things_device_usage}
         \end{subfigure}
-        \caption{Participant responses regarding: (a) willingness to read privacy notices and (b) IoT usage.}
-        \label{fig:survey_responses_2}
+        % \begin{subfigure}[t]{0.45\textwidth}
+        %     \begin{tikzpicture}
+        %         \begin{axis}[
+        %             width=175pt,
+        %             height=140pt,
+        %             ybar,
+        %             bar width=10pt,
+        %             ymin=0,
+        %             ymax=100,
+        %             xtick=data,
+        %             xticklabel style={font=\scriptsize},
+        %             axis x line=bottom,
+        %             axis y line=left,
+        %             enlarge x limits=0.1,
+        %             nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+        %             every node near coord/.append style={rotate=80, anchor=west, font=\small},
+        %             legend style={at={(0.5,-0.1)},anchor=north}
+        %         ]
+        %             \addplot[purple!20!black,fill=purple!80!white] coordinates {(1,0) (2,0) (3,1.48) (4,2.96) (5,7.41) (6,17.04) (7,71.11)};
+        %         \end{axis}
+        %     \end{tikzpicture}
+        %     \caption{}
+        %     \label{fig:survey_privacy_importance2}
+        % \end{subfigure}
+        \caption{Participant responses regarding: (a) unwillingness to read privacy notices and (b) IoT usage.}
+        \label{fig:survey_responses_privacy_notices_iot_usage}
     \end{figure}
 \end{frame}
 
@@ -438,13 +465,27 @@
     Some notes here.
 }
 
-\begin{frame}{Questions and Comments}
-    Thank you for your attention. Any questions?
+\begin{frame}{Article submissions}
+    \begin{itemize}
+        \item[$\bullet$]
+        Submission to EURASIP Journal on Information Security, under special issue: Multimedia
+        Security and Privacy Protection in the Internet of Things (IoT) - \textit{Currently under review}
+        \item[$\bullet$]
+        Submission to e-Society 22nd International Conference 2024 - \textit{Currently under review}
+    \end{itemize}
 \end{frame}
 
 \note{
-    Some notes here.
+    There are currently 2 article submissions based on the work conducted for this thesis,
+    one submission for EURASIP Journal on Information Security,
+    the other for e-Society 2024 conference in Porto
 }
+
+\begin{frame}
+    \begin{center}
+        {\large Thank you for your attention.}
+    \end{center}
+\end{frame}
 
 \section*{References}
 
