@@ -50,7 +50,8 @@
 \usepackage{listings}
 \usepackage{transparent}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{subcaption}
+\usepackage[font=tiny]{caption}
+\usepackage[font=tiny]{subcaption}
 \usepackage{pgfplots}
 \usepackage{pgf-pie}
 \usepackage{tcolorbox}
@@ -180,14 +181,22 @@
 }
 
 \begin{frame}{State of the Art}
-    There are two main ways to provide privacy in IoT systems, through security
-    or providing in some way user awareness like the in the case of using privacy
-    notices, other ways like through legislation or with the
-    creation/usage of a framework or architecture that provides privacy mainly
-    fall into one these two categories.
+    \vspace*{\fill}
+    There are two main ways to provide privacy in IoT systems:
+    \vspace*{\fill}
+    \begin{itemize}
+        \item[$\bullet$]<1->
+        Through security;
+        \item[$\bullet$]<2->
+        Privacy notices;
+    \end{itemize}
+    \vspace*{\fill}
+    Legislation or a framework/architecture mainly fall into one these two categories.
+    \vspace*{\fill}
 \end{frame}
 
 \note{
+    abordagens
     Most literature approaches fall under privacy through security.
     Very few approach privacy as a unique concept with its own characteristics.
     Privacy literacy is barely taken on.
@@ -226,64 +235,98 @@
     86 questions under 7 main topics of interest from privacy attitudes, concerns, online habits to IoT knowledge and usage.
 }
 \begin{frame}
-    \begin{figure}
-        \begin{subfigure}[t]{0.45\textwidth}
-            \begin{tikzpicture}
-                \begin{axis}[
-                    width=180pt,
-                    height=124pt,
-                    ybar,
-                    bar width=10pt,
-                    ymin=0,
-                    ymax=100,
-                    xtick=data,
-                    xticklabel style={font=\scriptsize},
-                    axis x line=bottom,
-                    axis y line=left,
-                    enlarge x limits=0.1,
-                    nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
-                    every node near coord/.append style={rotate=80, anchor=west, font=\small},
-                    legend style={at={(0.5,-0.1)},anchor=north}
-                ]
-                    \addplot[blue!20!black,fill=blue!60!white] coordinates {(1,0) (2,0) (3,1.48) (4,2.96) (5,7.41) (6,17.04) (7,71.11)};
-                \end{axis}
-            \end{tikzpicture}
-            \caption{}
-            \label{fig:survey_privacy_importance}
-        \end{subfigure}
-        \begin{subfigure}[t]{0.45\textwidth}
-            \begin{tikzpicture}
-                \begin{axis}[
-                    width=180pt,
-                    height=124pt,
-                    symbolic x coords={IoT,Ubicomp,PA*,Blockchain},
-                    ybar,
-                    bar width=6pt,
-                    ymin=0,
-                    ymax=100,
-                    xticklabel style={font=\tiny},
-                    axis x line=bottom,
-                    axis y line=left,
-                    enlarge x limits=0.2,
-                    nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
-                    every node near coord/.append style={rotate=90, anchor=west, font=\tiny},
-                    legend style={at={(0.99,0.90)},anchor=south}
-                ]
-                    \addplot[green!20!black,fill=green!70!white] coordinates {(IoT,22.22) (Ubicomp,4.44) (PA*,13.33) (Blockchain,11.11)};
-                    \addlegendentry{{\tiny Very knowledgable}}
-                    \addplot[orange!20!black,fill=orange!70!white] coordinates {(IoT,37.78) (Ubicomp,28.89) (PA*,28.89) (Blockchain,44.44)};
-                    \addlegendentry{{\tiny Some knowledge}}
-                    \addplot[red!20!black,fill=red!70!white] coordinates {(IoT,40) (Ubicomp,66.67) (PA*,66.67) (Blockchain,44.44)};
-                    \addlegendentry{{\tiny No knowledge}}
-                \end{axis}
-            \end{tikzpicture}
-            \caption{}
-            \label{fig:survey_it_terms}
-        \end{subfigure}
-        \caption{{\small Participant responses regarding: (a) participants' privacy importance perception and (b) general IT knowledge.}}
-        \label{fig:survey_responses_privacy_importance_it_terms}
-    \end{figure}
-    {\tiny *PA - Privacy Assistant}
+    \begin{multicols}{2}
+        \begin{figure}
+            \adjustbox{minipage=1.3em,valign=t}{\subcaption{}\label{sfig:survey_privacy_importance}}%
+            \begin{subfigure}[t]{0.45\textwidth}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        width=175pt,
+                        height=96pt,
+                        ybar,
+                        bar width=10pt,
+                        ymin=0,
+                        ymax=100,
+                        xtick=data,
+                        xtick style={font=\tiny},
+                        ytick style={font=\tiny},
+                        xtick style={font=\tiny},
+                        ytick style={font=\tiny},
+                        xticklabel style={font=\tiny},
+                        yticklabel style={font=\tiny},
+                        ylabel style = {font=\tiny},
+                        xlabel style = {font=\tiny},
+                        axis x line=bottom,
+                        axis y line=left,
+                        enlarge x limits=0.1,
+                        nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                        every node near coord/.append style={rotate=80, anchor=west, font=\tiny},
+                        legend style={at={(0.5,-0.1)},anchor=north}
+                    ]
+                        \addplot[blue!20!black,fill=blue!60!white] coordinates {(1,0) (2,0) (3,1.48) (4,2.96) (5,7.41) (6,17.04) (7,71.11)};
+                    \end{axis}
+                \end{tikzpicture}
+                % \caption{}
+                % \label{fig:survey_privacy_importance}
+            \end{subfigure}
+            \adjustbox{minipage=1.3em,valign=t}{\subcaption{}\label{sfig:survey_it_terms}}%
+            \begin{subfigure}[t]{0.45\textwidth}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        width=175pt,
+                        height=96pt,
+                        symbolic x coords={IoT,Ubicomp,PA*,Blockchain},
+                        ybar,
+                        bar width=6pt,
+                        ymin=0,
+                        ymax=100,
+                        xtick style={font=\tiny},
+                        ytick style={font=\tiny},
+                        xtick style={font=\tiny},
+                        ytick style={font=\tiny},
+                        xticklabel style={font=\tiny},
+                        yticklabel style={font=\tiny},
+                        ylabel style = {font=\tiny},
+                        xlabel style = {font=\tiny},
+                        axis x line=bottom,
+                        axis y line=left,
+                        enlarge x limits=0.2,
+                        nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                        every node near coord/.append style={rotate=90, anchor=west, font=\tiny},
+                        legend style={at={(1.25,0.20)},anchor=south}
+                    ]
+                        \addplot[green!20!black,fill=green!70!white] coordinates {(IoT,22.22) (Ubicomp,4.44) (PA*,13.33) (Blockchain,11.11)};
+                        \addlegendentry{{\tiny Very knowledgable}}
+                        \addplot[orange!20!black,fill=orange!70!white] coordinates {(IoT,37.78) (Ubicomp,28.89) (PA*,28.89) (Blockchain,44.44)};
+                        \addlegendentry{{\tiny Some knowledge}}
+                        \addplot[red!20!black,fill=red!70!white] coordinates {(IoT,40) (Ubicomp,66.67) (PA*,66.67) (Blockchain,44.44)};
+                        \addlegendentry{{\tiny No knowledge}}
+                    \end{axis}
+                \end{tikzpicture}
+                % \caption{}
+                % \label{fig:survey_it_terms}
+            \end{subfigure}
+            \caption{{\tiny Participant responses regarding: (a) participants' privacy importance perception and (b) general IT knowledge.}}
+            \label{fig:survey_responses_privacy_importance_it_terms}
+        \end{figure}
+
+        \columnbreak
+        % \hspace{0.2\linewidth}
+        \begin{itemize}
+            \item[$\bullet$]
+            High regard for privacy, with some caveats;
+            \item[$\bullet$]
+            Some difficulty understating digital privacy;
+            % \item[$\bullet$]
+            % Different attitudes with different systems;
+            \item[$\bullet$]
+            Low literacy of technical jargon;
+        \end{itemize}
+        \vspace{2cm}
+        \begin{flushright}
+            {\tiny *PA - Privacy Assistant}
+        \end{flushright}
+    \end{multicols}
 \end{frame}
 
 \note{
@@ -304,6 +347,12 @@
                     ytick=data,
                     axis x line=bottom,
                     axis y line=left,
+                    % xtick style={font=\tiny},
+                    % ytick style={font=\tiny},
+                    % xticklabel style={font=\tiny},
+                    % yticklabel style={font=\tiny},
+                    % ylabel style = {font=\tiny},
+                    % xlabel style = {font=\tiny},
                     xmin=0,
                     xmax=100,
                     enlarge y limits=0.2,
@@ -313,7 +362,7 @@
                     \addplot[yellow!10!black,fill=yellow!80!white] coordinates {(14.44,Disagree) (18.33,Do not know) (67.22,Agree)};
                 \end{axis}
             \end{tikzpicture}
-            \caption{}
+            {\tiny\caption{}}
             \label{fig:survey_privacy_notices}
         \end{subfigure}
         \begin{subfigure}[t]{0.45\textwidth}
@@ -340,7 +389,7 @@
                         \addlegendentry{{\scriptsize IoT device(s) at home}}
                     \end{axis}
                 \end{tikzpicture}
-                \caption{}
+                {\tiny\caption{}}
                 \label{fig:internet_of_things_device_usage}
         \end{subfigure}
         \caption{Participant responses regarding: (a) unwillingness to read privacy notices and (b) IoT usage.}
