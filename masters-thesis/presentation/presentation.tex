@@ -335,66 +335,95 @@
 }
 
 \begin{frame}
-    \begin{figure}
-        \begin{subfigure}[t]{0.45\textwidth}
-            \begin{tikzpicture}
-                \begin{axis}[
-                    width=150pt,
-                    height=150pt,
-                    xbar,
-                    symbolic y coords={Disagree,Do not know,Agree},
-                    bar width=10pt,
-                    ytick=data,
-                    axis x line=bottom,
-                    axis y line=left,
-                    % xtick style={font=\tiny},
-                    % ytick style={font=\tiny},
-                    % xticklabel style={font=\tiny},
-                    % yticklabel style={font=\tiny},
-                    % ylabel style = {font=\tiny},
-                    % xlabel style = {font=\tiny},
-                    xmin=0,
-                    xmax=100,
-                    enlarge y limits=0.2,
-                    nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
-                    legend style={at={(0.5,-0.1)},anchor=north, font=\tiny}
-                ]
-                    \addplot[yellow!10!black,fill=yellow!80!white] coordinates {(14.44,Disagree) (18.33,Do not know) (67.22,Agree)};
-                \end{axis}
-            \end{tikzpicture}
-            {\tiny\caption{}}
-            \label{fig:survey_privacy_notices}
-        \end{subfigure}
-        \begin{subfigure}[t]{0.45\textwidth}
+    \begin{multicols}{2}
+        \begin{figure}
+            \begin{subfigure}[t]{0.45\textwidth}
                 \begin{tikzpicture}
                     \begin{axis}[
-                        width=175pt,
-                        height=150pt,
+                        width=150pt,
+                        height=95pt,
                         xbar,
-                        symbolic y coords={No,Yes},
-                        bar width=10pt,
+                        symbolic y coords={Disagree,Do not know,Agree},
+                        bar width=8pt,
                         ytick=data,
-                        yticklabel style={font=\scriptsize},
                         axis x line=bottom,
                         axis y line=left,
+                        xtick style={font=\tiny},
+                        ytick style={font=\tiny},
+                        xtick style={font=\tiny},
+                        ytick style={font=\tiny},
+                        xticklabel style={font=\tiny},
+                        yticklabel style={font=\tiny},
+                        ylabel style = {font=\tiny},
+                        xlabel style = {font=\tiny},
                         xmin=0,
                         xmax=100,
-                        enlarge y limits=0.3,
+                        enlarge y limits=0.2,
+                        y axis line style={->,shorten >=1pt},
                         nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
-                        legend style={at={(0.8,0.63)},anchor=north}
+                        every node near coord/.append style={font=\tiny},
+                        legend style={at={(0.5,-0.1)},anchor=north, font=\tiny}
                     ]
-                        \addplot[lime!20!black,fill=lime!60!white] coordinates {(33.33,No) (66.67,Yes)};
-                        \addlegendentry{{\scriptsize IoT usage}}
-                        \addplot[violet!20!black,fill=violet!70!white] coordinates {(64.44,No) (35.56,Yes)};
-                        \addlegendentry{{\scriptsize IoT device(s) at home}}
+                        \addplot[yellow!10!black,fill=yellow!80!white] coordinates {(14.44,Disagree) (18.33,Do not know) (67.22,Agree)};
                     \end{axis}
                 \end{tikzpicture}
                 {\tiny\caption{}}
-                \label{fig:internet_of_things_device_usage}
-        \end{subfigure}
-        \caption{Participant responses regarding: (a) unwillingness to read privacy notices and (b) IoT usage.}
-        \label{fig:survey_responses_privacy_notices_iot_usage}
-    \end{figure}
+                \label{fig:survey_privacy_notices}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.45\textwidth}
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            width=175pt,
+                            height=105pt,
+                            xbar,
+                            symbolic y coords={No,Yes},
+                            bar width=8pt,
+                            ytick=data,
+                            xtick style={font=\tiny},
+                            ytick style={font=\tiny},
+                            xtick style={font=\tiny},
+                            ytick style={font=\tiny},
+                            xticklabel style={font=\tiny},
+                            yticklabel style={font=\tiny},
+                            ylabel style = {font=\tiny},
+                            xlabel style = {font=\tiny},
+                            axis x line=bottom,
+                            axis y line=left,
+                            xmin=0,
+                            xmax=100,
+                            enlarge y limits=0.4,
+                            y axis line style={->,shorten >=0.5pt},
+                            nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+                            every node near coord/.append style={font=\tiny},
+                            legend style={at={(1.15,0.60)},anchor=north}
+                        ]
+                            \addplot[lime!20!black,fill=lime!60!white] coordinates {(33.33,No) (66.67,Yes)};
+                            \addlegendentry{{\tiny IoT usage}}
+                            \addplot[violet!20!black,fill=violet!70!white] coordinates {(64.44,No) (35.56,Yes)};
+                            \addlegendentry{{\tiny IoT device(s) at home}}
+                        \end{axis}
+                    \end{tikzpicture}
+                    {\tiny\caption{}}
+                    \label{fig:internet_of_things_device_usage}
+            \end{subfigure}
+            \caption{Participant responses regarding: (a) unwillingness to read privacy notices and (b) IoT usage.}
+            \label{fig:survey_responses_privacy_notices_iot_usage}
+        \end{figure}
+
+        \columnbreak
+        \hspace*{\fill}
+        \begin{itemize}
+            \item[$\bullet$]
+            Dismissal of privacy notices due to various factors;
+            \item[$\bullet$]
+            Some individuals use fake private data online;
+            \item[$\bullet$]
+            Some interaction with Internet of Things devices but low knowledge generally;
+            \item[$\bullet$]
+            Low grasp of IoT privacy;
+        \end{itemize}
+        \hspace*{\fill}
+    \end{multicols}
 \end{frame}
 
 \note{
