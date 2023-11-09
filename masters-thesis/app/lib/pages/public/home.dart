@@ -117,44 +117,58 @@ class _HomeState extends State<Home> {
     });
   }
 
-    // if (permission == LocationPermission.deniedForever) {
-    //   return Future.error("Location permanently denied");
-    // }
+//   Future<Position> getCurrentLocation() async {
+//     bool _serviceEnabled = await Geolocator.isLocationServiceEnabled();
+//     if (!_serviceEnabled) {
+//       return Future.error("Location is disabled");
+//     }
 
-    // currentLatLng =
-    //     LatLng(_currentPosition!.latitude, _currentPosition!.longitude);
-    return await Geolocator.getCurrentPosition();
-  }
+//     var locationPermission = await Geolocator.checkPermission();
+//     if (locationPermission == LocationPermission.denied) {
+//       locationPermission = await Geolocator.requestPermission();
+//       if (locationPermission == LocationPermission.deniedForever) {
+//         return Future.error("Location permission is denied");
+//       }
+//     }
 
-  getLatLng() {
-    getCurrentLocation().then((value) {
-      setState(() {
-        currentLatLng = LatLng(value.latitude, value.longitude);
-        options = MapOptions(
-          center: currentLatLng != null
-              ? currentLatLng
-              : LatLng(32.778295173354356, -16.737781931587615),
-          interactiveFlags: InteractiveFlag.all & ~InteractiveFlag.rotate,
-          zoom: 9,
-        );
-      });
-      streamLocation();
-    });
-  }
+//     // if (permission == LocationPermission.deniedForever) {
+//     //   return Future.error("Location permanently denied");
+//     // }
 
-  void streamLocation() {
-    LocationSettings locationSettings = const LocationSettings(
-      accuracy: LocationAccuracy.high,
-      distanceFilter: 100,
-    );
+//     // currentLatLng =
+//     //     LatLng(_currentPosition!.latitude, _currentPosition!.longitude);
+//     return await Geolocator.getCurrentPosition();
+//   }
 
-    Geolocator.getPositionStream(locationSettings: locationSettings)
-        .listen((Position position) {
-      setState(() {
-        currentLatLng = LatLng(position.latitude, position.longitude);
-      });
-    });
-  }
+//   getLatLng() {
+//     getCurrentLocation().then((value) {
+//       setState(() {
+//         latLng = LatLng(value.latitude, value.longitude);
+//         options = MapOptions(
+//           center: latLng != null
+//               ? latLng
+//               : LatLng(32.778295173354356, -16.737781931587615),
+//           interactiveFlags: InteractiveFlag.all & ~InteractiveFlag.rotate,
+//           zoom: 9,
+//         );
+//       });
+//       streamLocation();
+//     });
+//   }
+
+//   void streamLocation() {
+//     LocationSettings locationSettings = const LocationSettings(
+//       accuracy: LocationAccuracy.high,
+//       distanceFilter: 100,
+//     );
+
+//     Geolocator.getPositionStream(locationSettings: locationSettings)
+//         .listen((Position position) {
+//       setState(() {
+//         latLng = LatLng(position.latitude, position.longitude);
+//       });
+//     });
+//   }
 
   @override
   Widget build(BuildContext context) {
@@ -206,9 +220,10 @@ class _HomeState extends State<Home> {
               ),
             ),
             Text(
-              "${currentLatLng}",
+              _locationText,
               style: const TextStyle(
-                  color: Color.fromARGB(255, 245, 245, 245), fontSize: 16.0),
+                color: Color.fromARGB(255, 245, 245, 245),
+              ),
             ),
             // Row(
             //   children: [
