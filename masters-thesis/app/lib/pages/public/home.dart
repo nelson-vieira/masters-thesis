@@ -219,12 +219,12 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            Text(
-              _locationText,
-              style: const TextStyle(
-                color: Color.fromARGB(255, 245, 245, 245),
-              ),
-            ),
+            // Text(
+            //   _locationText,
+            //   style: const TextStyle(
+            //     color: Color.fromARGB(255, 245, 245, 245),
+            //   ),
+            // ),
             // Row(
             //   children: [
             //     ElevatedButton.icon(
