@@ -14,6 +14,7 @@ import "package:geolocator/geolocator.dart";
 import "package:iotprivacy/models/device.dart";
 import "package:iotprivacy/pages/devices/show.dart";
 import "package:iotprivacy/pages/devices/create.dart";
+import "package:iotprivacy/helpers/location_service.dart";
 
 class Home extends StatefulWidget {
   static const String route = "/";
@@ -26,11 +27,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final List<Marker> _markers = <Marker>[];
-//   late Position position;
   Position? _currentPosition;
-  late bool servicePermission = false;
-  late LocationPermission permission;
-  LatLng? currentLatLng;
+
+  String _locationText = "User location appears here!";
+
+  late LatLng latLng = LatLng(32.778295173354356, -16.737781931587615);
 //   LatLng _initialLatLng = LatLng(32.778295173354356, -16.737781931587615);
   late MapOptions options;
 
@@ -39,7 +40,7 @@ class _HomeState extends State<Home> {
     // This function runs whenever this page is loaded, very important so that
     // the data can be ready to show on the page
     getMarkersData();
-    getLatLng();
+    _getCurrentLocation();
     super.initState();
   }
 
@@ -102,19 +103,19 @@ class _HomeState extends State<Home> {
     });
   }
 
-  Future<Position> getCurrentLocation() async {
-    servicePermission = await Geolocator.isLocationServiceEnabled();
-    if (!servicePermission) {
-      return Future.error("Location is disabled");
+  void _getCurrentLocation() async {
+    try {
+      _currentPosition =
+          await LocationService.instance.getCurrentLocation(context);
+    } catch (e) {
+      print(e);
     }
 
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.deniedForever) {
-        return Future.error("Location permission is denied");
-      }
-    }
+    setState(() {
+      _locationText =
+          "Lat: ${_currentPosition!.latitude.toString()}, Long: ${_currentPosition!.longitude.toString()}";
+    });
+  }
 
     // if (permission == LocationPermission.deniedForever) {
     //   return Future.error("Location permanently denied");
@@ -172,7 +173,12 @@ class _HomeState extends State<Home> {
           children: [
             Flexible(
               child: FlutterMap(
-                options: options,
+                options: MapOptions(
+                  center: latLng,
+                  interactiveFlags:
+                      InteractiveFlag.all & ~InteractiveFlag.rotate,
+                  zoom: 9,
+                ),
                 nonRotatedChildren: [
                   AttributionWidget.defaultWidget(
                     source: "OpenStreetMap",
@@ -192,19 +198,7 @@ class _HomeState extends State<Home> {
                     child: FloatingActionButton(
                       child: const Icon(Icons.location_searching),
                       onPressed: () {
-                        getCurrentLocation().then((value) {
-                          setState(() {
-                            currentLatLng =
-                                LatLng(value.latitude, value.longitude);
-                            options = MapOptions(
-                              center: currentLatLng,
-                              interactiveFlags:
-                                  InteractiveFlag.all & ~InteractiveFlag.rotate,
-                              zoom: 9,
-                            );
-                          });
-                          streamLocation();
-                        });
+                        _getCurrentLocation();
                       },
                     ),
                   ),
