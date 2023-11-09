@@ -17,7 +17,7 @@ class LocationService {
 
     _serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!_serviceEnabled) {
-      _serviceEnabled = await Geolocator.openLocationSettings();
+      _serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!_serviceEnabled) {
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("Location is not enabled!")));
@@ -29,8 +29,8 @@ class LocationService {
       _locationPermission = await Geolocator.requestPermission();
       if (_locationPermission != LocationPermission.always ||
           _locationPermission != LocationPermission.whileInUse) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            content: Text("Location permissions are permanently denied.")));
+        // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        //     content: Text("Location permissions are permanently denied.")));
         return Future.microtask(() => throw PlatformException(
             code: "PERMISSION_DENIED",
             message: "Location permissions are denied",
