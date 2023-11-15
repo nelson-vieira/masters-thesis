@@ -3,7 +3,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 Copyright (c) 2023 Nelson Vieira
 
-@author Nelson Vieira <nelson0.vieira@gmail.com>
+@author Nelson Vieira <2080511@student.uma.pt>
 @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
 --->
 # Most relevant papers
