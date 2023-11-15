@@ -74,8 +74,6 @@ class _HomeState extends State<Home> {
   // Function to create a Marker and add to list
   void createMarker(Device device) async {
     final Marker marker = Marker(
-      width: 45,
-      height: 45,
       point:
           LatLng(double.parse(device.latitude), double.parse(device.longitude)),
       builder: (context) => GestureDetector(
@@ -84,6 +82,9 @@ class _HomeState extends State<Home> {
         },
         child: markerImage(device),
       ),
+      width: 27.0,
+      height: 41.85,
+      anchorPos: AnchorPos.exactly(Anchor(13.5, 0.0)),
     );
     // Only adds to the marker list with setState method
     setState(() {
