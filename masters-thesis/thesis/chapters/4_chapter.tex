@@ -316,12 +316,13 @@ This is important as it makes to managing requirements in the future easier.
 Knowing where the requirements came from makes it simpler to clarify any questions
 and refer back to the original source.
 \newline
-Table \ref{table:table1} lists all the features that have been identified, for
+Table \ref{table:requirements_table} lists all the features that have been identified, for
 each feature it was identified the stakeholders to which it applies, a description
 of the feature and its source. There have been identified 10 features that will
 compose the backbone of the application.
 
 \begin{longtable}{|l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.4\textwidth}|p{0.15\textwidth}|}
+    \caption{Requirements table.}\label{table:requirements_table}\\
     \hline
     \rowcolor{blue!5}
     \textbf{R\#} & \textbf{Feature} & \textbf{Applicable stakeholders} & \textbf{Description} & \textbf{Source} \\
@@ -346,8 +347,6 @@ compose the backbone of the application.
     \hline
     \textbf{10} & See more information about privacy in IoT & User & \textbf{User}: The system shall allow the user to check what the terms used in the application mean. & Survey results \\
     \hline
-    \caption{Requirements table.}
-    \label{table:table1}
 \end{longtable}
 
 % \begin{table}[H]
@@ -474,6 +473,9 @@ and use case ``Create an account'' has been detailed in Table \ref{table:use_cas
 
 \begin{table}[H]
     \centering
+    \caption{Use case 1 - device information query.}
+    \label{table:use_case1}
+    \vspace{1em}
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
@@ -527,13 +529,13 @@ and use case ``Create an account'' has been detailed in Table \ref{table:use_cas
             \hline
         \end{tabular}
     \end{adjustbox}
-    \vspace{1em}
-    \caption{Use case 1 - device information query.}
-    \label{table:use_case1}
 \end{table}
 
 \begin{table}[H]
     \centering
+    \caption{Use case 2 - statistics query.}
+    \label{table:use_case2}
+    \vspace{1em}
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
@@ -576,13 +578,13 @@ and use case ``Create an account'' has been detailed in Table \ref{table:use_cas
             \hline
         \end{tabular}
     \end{adjustbox}
-    \vspace{1em}
-    \caption{Use case 2 - statistics query.}
-    \label{table:use_case2}
 \end{table}
 
 \begin{table}[H]
     \centering
+    \caption{Use case 3 - add a device.}
+    \label{table:use_case3}
+    \vspace{1em}
     \begin{adjustbox}{width=1.15\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
@@ -628,13 +630,13 @@ and use case ``Create an account'' has been detailed in Table \ref{table:use_cas
             \hline
         \end{tabular}
     \end{adjustbox}
-    \vspace{1em}
-    \caption{Use case 3 - add a device.}
-    \label{table:use_case3}
 \end{table}
 
 \begin{table}[H]
     \centering
+    \caption{Use case 4 - edit a device's data.}
+    \label{table:use_case4}
+    \vspace{1em}
     \begin{adjustbox}{width=1.1\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
@@ -685,13 +687,13 @@ and use case ``Create an account'' has been detailed in Table \ref{table:use_cas
             \hline
         \end{tabular}
     \end{adjustbox}
-    \vspace{1em}
-    \caption{Use case 4 - edit a device's data.}
-    \label{table:use_case4}
 \end{table}
 
 \begin{table}[H]
     \centering
+    \caption{Use case 5 - delete a device.}
+    \label{table:use_case5}
+    \vspace{1em}
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
@@ -736,13 +738,13 @@ and use case ``Create an account'' has been detailed in Table \ref{table:use_cas
             \hline
         \end{tabular}
     \end{adjustbox}
-    \vspace{1em}
-    \caption{Use case 5 - delete a device.}
-    \label{table:use_case5}
 \end{table}
 
 \begin{table}[H]
     \centering
+    \caption{Use case 6 - create an account.}
+    \label{table:use_case6}
+    \vspace{1em}
     \begin{adjustbox}{width=1.2\textwidth,center=\textwidth}
         \begin{tabular}{|m{4cm}|m{12cm}|}
             \hline
@@ -794,9 +796,6 @@ and use case ``Create an account'' has been detailed in Table \ref{table:use_cas
             \hline
         \end{tabular}
     \end{adjustbox}
-    \vspace{1em}
-    \caption{Use case 6 - create an account.}
-    \label{table:use_case6}
 \end{table}
 
 \vspace*{\fill}
@@ -814,6 +813,9 @@ is a higher priority than the row one and if it is 0 the opposite is true.
 
 \begin{table}[H]
     \centering
+    \caption{Prioritisation table using the MoSCoW technique.}
+    \label{table:tabela moscow}
+    \vspace{1em}
     \begin{adjustbox}{width=0.8\textwidth,center=\textwidth}
         \begin{tabular}{|>{\columncolor{gray!5!white}}r|r|r|r|r|r|r|r|r|r|r|}
             \hline
@@ -845,9 +847,6 @@ is a higher priority than the row one and if it is 0 the opposite is true.
             \hline
         \end{tabular}
     \end{adjustbox}
-    \vspace{1em}
-    \caption{Prioritisation table using the MoSCoW technique.}
-    \label{table:tabela moscow}
 \end{table}
 
 After this initial selection, the prioritisation of requirements was estimated, as shown in Table \ref{table:prioritisation table},
@@ -859,6 +858,9 @@ also estimated.
     \vspace*{\fill}
     \begin{table}[H]
         \centering
+        \caption{Features prioritisation table.}
+        \label{table:prioritisation table}
+        \vspace{1em}
         \begin{adjustbox}{width=1.8\textwidth,center=\textwidth}
             \begin{tabular}{|>{\columncolor{gray!10!white}}r|r|r|r|r|r|r|r|r|r|r|}
                 \hline
@@ -890,9 +892,6 @@ also estimated.
                 \hline
             \end{tabular}
         \end{adjustbox}
-        \vspace{1em}
-        \caption{Features prioritisation table.}
-        \label{table:prioritisation table}
     \end{table}
     \vspace*{\fill}
 \end{landscape}
@@ -902,6 +901,9 @@ as seen in Table \ref{table:sorted requirements}.
 
 \begin{table}[H]
     \centering
+    \caption{Highest priority requirements ordered.}
+    \label{table:sorted requirements}
+    \vspace{1em}
     \begin{adjustbox}{width=0.8\textwidth,center=\textwidth}
         \begin{tabular}{|c|c|c|c|}
             \hline
@@ -930,9 +932,6 @@ as seen in Table \ref{table:sorted requirements}.
             \hline
         \end{tabular}
     \end{adjustbox}
-    \vspace{1em}
-    \caption{Highest priority requirements ordered.}
-    \label{table:sorted requirements}
 \end{table}
 
 \subsubsection{Acceptance Criteria}

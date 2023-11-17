@@ -194,6 +194,9 @@ is presented on \nameref{appendix:survey}.
 
 \begin{table}[H]
     \begin{center}
+        \caption{Structure of the questionnaire.}
+        \label{table:questionnaire}
+        \vspace{1em}
         \begin{tabular}{r *{3}{ p{6cm} }}
             \hline
             \textbf{\#}\hspace{0.5cm} & \textbf{Section} & \textbf{Details} \\
@@ -229,9 +232,6 @@ is presented on \nameref{appendix:survey}.
             \hline
         \end{tabular}
     \end{center}
-    \vspace{1em}
-    \caption{Structure of the questionnaire.}
-    \label{table:questionnaire}
 \end{table}
 
 Great care was taken when it comes to this questionnaire's data collection, in
@@ -307,7 +307,7 @@ have more than 65 years, as shown in Figure \ref{fig:age}.
                 enlarge x limits=0.2,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot coordinates {(Male,47) (Female,51) (Other,2)};
+                \addplot[blue!20!black,fill=blue!60!white] coordinates {(Male,47) (Female,51) (Other,2)};
             \end{axis}
         \end{tikzpicture}
         \caption{Genre distribution of participants.}
@@ -330,7 +330,7 @@ have more than 65 years, as shown in Figure \ref{fig:age}.
                 enlarge x limits=0.2,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot coordinates {(18-25,40) (26-35,31.11) (36-45,8.89) (46-65,17.78) (65+,2.22)};
+                \addplot[green!30!black,fill=green!60!white] coordinates {(18-25,40) (26-35,31.11) (36-45,8.89) (46-65,17.78) (65+,2.22)};
             \end{axis}
         \end{tikzpicture}
         \caption{Age ranges of participants.}
@@ -359,7 +359,7 @@ have a master's degree and 2.22\% have a doctorate, as pictured in Figure \ref{f
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot coordinates {(Basic education,2.22) (High school,17.78) (Bachelor's degree,66.67) (Master's degree,11.11) (Doctorate,2.22)};
+                \addplot[green!30!black,fill=green!60!white] coordinates {(Basic education,2.22) (High school,17.78) (Bachelor's degree,66.67) (Master's degree,11.11) (Doctorate,2.22)};
             \end{axis}
         \end{tikzpicture}
         \caption{Education qualifications distribution of participants.}
@@ -390,7 +390,7 @@ in Figure \ref{fig:country}.
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot coordinates {(Portugal,60) (USA,20) (UK,4.44) (Germany,2.22) (Australia,2.22) (Sweden,2.22) (Netherlands,2.22) (China,2.22) (Indonesia,2.22) (Canada,2.22)};
+                \addplot[cyan!30!black,fill=cyan!60!white] coordinates {(Portugal,60) (USA,20) (UK,4.44) (Germany,2.22) (Australia,2.22) (Sweden,2.22) (Netherlands,2.22) (China,2.22) (Indonesia,2.22) (Canada,2.22)};
             \end{axis}
         \end{tikzpicture}
         \caption{Distribution of participants by country of residence.}
