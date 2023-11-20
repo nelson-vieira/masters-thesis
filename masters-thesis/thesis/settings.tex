@@ -128,28 +128,6 @@
 }
 \makeatother
 
-%% Fix to allow short name on unnumbered chapters using nameref package
-\makeatletter
-\let\latex@@chapter\chapter
-\RenewDocumentCommand{\chapter}{som}{%
-    \IfBooleanTF{#1}{%
-        \IfValueTF{#2}{%
-            \addcontentsline{toc}{chapter}{#3}%
-            \latex@@chapter*{#3}\edef\@currentlabelname{#2}%
-        }{%
-            \latex@@chapter*{#3}\edef\@currentlabelname{#3}%
-        }%
-    }{%
-        \IfValueTF{#2}{%
-            \addcontentsline{toc}{chapter}{#3}%
-            \latex@@chapter[#2]{#3}
-        }{%
-            \latex@@chapter{#3}
-        }%
-    }%
-}
-\makeatother
-
 %% Fix to add more space in ToC on subsubsection and paragraph between name and dotted lines
 \makeatletter
 % \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
