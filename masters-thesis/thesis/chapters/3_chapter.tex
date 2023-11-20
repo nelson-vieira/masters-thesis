@@ -296,8 +296,10 @@ have more than 65 years, as shown in Figure \ref{fig:age}.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=7.5cm,
+                width=9cm,
                 ybar,
-                bar width=20pt,
+                bar width=25pt,
                 ymin=0,
                 ymax=60,
                 symbolic x coords={Male,Female,Other},
@@ -319,6 +321,8 @@ have more than 65 years, as shown in Figure \ref{fig:age}.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=7.5cm,
+                width=12cm,
                 ybar,
                 bar width=20pt,
                 ymin=0,
@@ -330,7 +334,7 @@ have more than 65 years, as shown in Figure \ref{fig:age}.
                 enlarge x limits=0.2,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot[green!30!black,fill=green!60!white] coordinates {(18-25,40) (26-35,31.11) (36-45,8.89) (46-65,17.78) (65+,2.22)};
+                \addplot[BlueViolet!30!black,fill=BlueViolet!60!white] coordinates {(18-25,40) (26-35,31.11) (36-45,8.89) (46-65,17.78) (65+,2.22)};
             \end{axis}
         \end{tikzpicture}
         \caption{Age ranges of participants.}
@@ -347,9 +351,9 @@ have a master's degree and 2.22\% have a doctorate, as pictured in Figure \ref{f
         \begin{tikzpicture}
             \begin{axis}[
                 height=7.5cm,
-                width=15cm,
+                width=16cm,
                 ybar,
-                bar width=20pt,
+                bar width=23pt,
                 ymin=0,
                 ymax=70,
                 symbolic x coords={Basic education,High school,Bachelor's degree,Master's degree,Doctorate},
@@ -359,7 +363,7 @@ have a master's degree and 2.22\% have a doctorate, as pictured in Figure \ref{f
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot[green!30!black,fill=green!60!white] coordinates {(Basic education,2.22) (High school,17.78) (Bachelor's degree,66.67) (Master's degree,11.11) (Doctorate,2.22)};
+                \addplot[RoyalBlue!30!black,fill=RoyalBlue!60!white] coordinates {(Basic education,2.22) (High school,17.78) (Bachelor's degree,66.67) (Master's degree,11.11) (Doctorate,2.22)};
             \end{axis}
         \end{tikzpicture}
         \caption{Education qualifications distribution of participants.}
@@ -390,7 +394,7 @@ in Figure \ref{fig:country}.
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot[cyan!30!black,fill=cyan!60!white] coordinates {(Portugal,60) (USA,20) (UK,4.44) (Germany,2.22) (Australia,2.22) (Sweden,2.22) (Netherlands,2.22) (China,2.22) (Indonesia,2.22) (Canada,2.22)};
+                \addplot[MidnightBlue!30!black,fill=MidnightBlue!60!white] coordinates {(Portugal,60) (USA,20) (UK,4.44) (Germany,2.22) (Australia,2.22) (Sweden,2.22) (Netherlands,2.22) (China,2.22) (Indonesia,2.22) (Canada,2.22)};
             \end{axis}
         \end{tikzpicture}
         \caption{Distribution of participants by country of residence.}
@@ -422,7 +426,7 @@ and 22.22\% of participants preferred not to disclose.
                 enlarge x limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot coordinates {(<10 000€,35.56) (10 000€ - 20 000€,17.78) (20 000€ - 50 000€,17.78) (50 000€ - 100 000€,6.67) (Prefer not to answer,22.22)};
+                \addplot[Turquoise!30!black,fill=Turquoise!60!white] coordinates {(<10 000€,35.56) (10 000€ - 20 000€,17.78) (20 000€ - 50 000€,17.78) (50 000€ - 100 000€,6.67) (Prefer not to answer,22.22)};
             \end{axis}
         \end{tikzpicture}
         \caption{Distribution of participants per annual income.}
