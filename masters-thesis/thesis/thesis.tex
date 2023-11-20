@@ -5,9 +5,17 @@
 % @author Nelson Vieira <2080511@student.uma.pt>
 % @contributor Mary Barreto <mary.barreto@staff.uma.pt>
 % @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
+%
+%% Workaround to avoid error:
+%%    ! LaTeX Error: Option clash for package xcolor.
+%%
+%%    The package xcolor has already been loaded with options:
+%%    []
+%%    There has now been an attempt to load it with options
+%%    [divpsnames]
+\PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[runningheads]{llncs}
 
-\RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{amsmath} % Fixes warning
 \RequirePackage{adjustbox}
 \RequirePackage{colortbl}
@@ -15,7 +23,7 @@
 
 \input{settings}
 
-%makeindex thesis.nlo -s nomencl.ist -o thesis.nls
+% makeindex thesis.nlo -s nomencl.ist -o thesis.nls
 \begin{document}
     \pagenumbering{roman}
     \selectlanguage{english}
