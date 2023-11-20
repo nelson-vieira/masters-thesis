@@ -44,11 +44,11 @@ skewed.
                 every node near coord/.append style={rotate=90, anchor=west},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
-                \addplot[green!20!black,fill=green!70!white] coordinates {(1,0) (2,0) (3,0) (4,2.22) (5,4.44) (6,20) (7,73.33)};
+                \addplot[Dandelion!30!black,fill=Dandelion!60!white] coordinates {(1,0) (2,0) (3,0) (4,2.22) (5,4.44) (6,20) (7,73.33)};
                 \addlegendentry{``Privacy is important to me''}
-                \addplot coordinates {(1,0) (2,0) (3,2.22) (4,2.22) (5,6.67) (6,22.22) (7,66.67)};
+                \addplot[Violet!30!black,fill=Violet!60!white] coordinates {(1,0) (2,0) (3,2.22) (4,2.22) (5,6.67) (6,22.22) (7,66.67)};
                 \addlegendentry{Do you think your data privacy is important?}
-                \addplot coordinates {(1,0) (2,0) (3,2.22) (4,4.44) (5,11.11) (6,8.89) (7,73.33)};
+                \addplot[SkyBlue!30!black,fill=SkyBlue!60!white] coordinates {(1,0) (2,0) (3,2.22) (4,4.44) (5,11.11) (6,8.89) (7,73.33)};
                 \addlegendentry{Do you think your data privacy is relevant nowadays?}
             \end{axis}
         \end{tikzpicture}
@@ -61,6 +61,8 @@ skewed.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
+                height=7.5cm,
+                width=12cm,
                 ybar,
                 bar width=20pt,
                 ymin=0,
@@ -71,7 +73,7 @@ skewed.
                 enlarge x limits=0.2,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot coordinates {(1,0) (2,13.33) (3,6.67) (4,26.67) (5,20) (6,13.33) (7,20)};
+                \addplot[TealBlue!30!black,fill=TealBlue!60!white] coordinates {(1,0) (2,13.33) (3,6.67) (4,26.67) (5,20) (6,13.33) (7,20)};
             \end{axis}
         \end{tikzpicture}
         \caption{Participant responses indicating whether they know techniques to guarantee privacy and the protection of their data when using the internet.}
@@ -89,7 +91,7 @@ no knowledge of article 12 of the Universal Declaration of Human Rights.
             \begin{axis}[
                 xbar,
                 symbolic y coords={Do not know,Disagree,Agree},
-                bar width=12pt,
+                bar width=15pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -99,9 +101,9 @@ no knowledge of article 12 of the Universal Declaration of Human Rights.
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
-                \addplot coordinates {(2.22,Do not know) (2.22,Disagree) (95.56,Agree)};
+                \addplot[YellowGreen!30!black,fill=YellowGreen!60!white] coordinates {(2.22,Do not know) (2.22,Disagree) (95.56,Agree)};
                 \addlegendentry{``Data privacy is a human right''}
-                \addplot coordinates {(4.44,Do not know) (0,Disagree) (95.56,Agree)};
+                \addplot[Purple!30!black,fill=Purple!60!white] coordinates {(4.44,Do not know) (0,Disagree) (95.56,Agree)};
                 \addlegendentry{``Data privacy is a consumer right''}
             \end{axis}
         \end{tikzpicture}
@@ -121,7 +123,9 @@ where 53.33\% of participants believe that privacy and security are synonymous.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \pie[explode = 0.1]{46.67/No,
+        \pie[explode = 0.1,
+            color={OrangeRed!70,YellowGreen!70}
+            ]{46.67/No,
             53.33/Yes}
     \end{tikzpicture}
     \caption{Responses to security and privacy being synonymous.}
@@ -154,11 +158,11 @@ are still mostly unknown to the majority of people like \textit{blockchain} or \
                 every node near coord/.append style={rotate=90, anchor=west},
                 legend style={at={(0.85,0.88)},anchor=south}
             ]
-                \addplot coordinates {(Cookie,44.44) (Wireless networks,55.56) (Wi-Fi,71.11) (Internet of Things,22.22) (Data protection,40) (Ad hoc network,20) (Ubiquitous computing,4.44) (Privacy assistant,13.33) (Blockchain,11.11) (Differential privacy,6.67)};
+                \addplot[LimeGreen!30!black,fill=LimeGreen!60!white] coordinates {(Cookie,44.44) (Wireless networks,55.56) (Wi-Fi,71.11) (Internet of Things,22.22) (Data protection,40) (Ad hoc network,20) (Ubiquitous computing,4.44) (Privacy assistant,13.33) (Blockchain,11.11) (Differential privacy,6.67)};
                 \addlegendentry{Very knowledgable}
-                \addplot coordinates {(Cookie,46.67) (Wireless networks,40) (Wi-Fi,26.67) (Internet of Things,37.78) (Data protection,53.33) (Ad hoc network,20) (Ubiquitous computing,28.89) (Privacy assistant,28.89) (Blockchain,44.44) (Differential privacy,28.89)};
+                \addplot[YellowOrange!30!black,fill=YellowOrange!60!white] coordinates {(Cookie,46.67) (Wireless networks,40) (Wi-Fi,26.67) (Internet of Things,37.78) (Data protection,53.33) (Ad hoc network,20) (Ubiquitous computing,28.89) (Privacy assistant,28.89) (Blockchain,44.44) (Differential privacy,28.89)};
                 \addlegendentry{Some knowledge}
-                \addplot coordinates {(Cookie,8.89) (Wireless networks,4.44) (Wi-Fi,2.22) (Internet of Things,40) (Data protection,6.67) (Ad hoc network,60) (Ubiquitous computing,66.67) (Privacy assistant,66.67) (Blockchain,44.44) (Differential privacy,57.78)};
+                \addplot[Red!30!black,fill=Red!60!white] coordinates {(Cookie,8.89) (Wireless networks,4.44) (Wi-Fi,2.22) (Internet of Things,40) (Data protection,6.67) (Ad hoc network,60) (Ubiquitous computing,66.67) (Privacy assistant,66.67) (Blockchain,44.44) (Differential privacy,57.78)};
                 \addlegendentry{No knowledge}
             \end{axis}
         \end{tikzpicture}
@@ -195,11 +199,11 @@ importance on the user experience.
                 every node near coord/.append style={rotate=90, anchor=west},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
-                \addplot coordinates {(1,2.22) (2,4.44) (3,4.44) (4,8.89) (5,6.67) (6,13.33) (7,60)};
+                \addplot[DarkOrchid!30!black,fill=DarkOrchid!60!white] coordinates {(1,2.22) (2,4.44) (3,4.44) (4,8.89) (5,6.67) (6,13.33) (7,60)};
                 \addlegendentry{During your day-to-day life, how often do you use your phone to access the internet?}
-                \addplot coordinates {(1,6.67) (2,6.67) (3,4.44) (4,11.11) (5,17.78) (6,24.44) (7,28.89)};
+                \addplot[Cerulean!30!black,fill=Cerulean!60!white] coordinates {(1,6.67) (2,6.67) (3,4.44) (4,11.11) (5,17.78) (6,24.44) (7,28.89)};
                 \addlegendentry{``I am concerned about my privacy when using my mobile phone when accessing the internet''}
-                \addplot coordinates {(1,2.22) (2,6.67) (3,13.33) (4,6.67) (5,33.33) (6,17.78) (7,20)};
+                \addplot[GreenYellow!30!black,fill=GreenYellow!60!white] coordinates {(1,2.22) (2,6.67) (3,13.33) (4,6.67) (5,33.33) (6,17.78) (7,20)};
                 \addlegendentry{``I try to block the collection of data from applications installed on my phone''}
             \end{axis}
         \end{tikzpicture}
@@ -251,9 +255,9 @@ activity contributes to its development, see Figure \ref{fig:activity_contribute
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
-                \addplot coordinates {(33.33,Do not know) (8.89,Disagree) (57.78,Agree)};
+                \addplot[SpringGreen!30!black,fill=SpringGreen!60!white] coordinates {(33.33,Do not know) (8.89,Disagree) (57.78,Agree)};
                 \addlegendentry{Do you consider that your internet activity contributes to the development of profiling?}
-                \addplot coordinates {(20,Do not know) (4.44,Disagree) (75.56,Agree)};
+                \addplot[Plum!30!black,fill=Plum!60!white] coordinates {(20,Do not know) (4.44,Disagree) (75.56,Agree)};
                 \addlegendentry{``The information I disclose on the internet can serve to identify me''.}
             \end{axis}
         \end{tikzpicture}
@@ -298,10 +302,10 @@ about GDPR's definition of personal data.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=10cm,
+                height=8.5cm,
                 width=15cm,
                 ybar,
-                bar width=12pt,
+                bar width=15pt,
                 ymin=0,
                 ymax=50,
                 % ytick=\empty,
@@ -315,9 +319,9 @@ about GDPR's definition of personal data.
                 every node near coord/.append style={rotate=90, anchor=west},
                 legend style={at={(0.5,-0.1)},anchor=north,cells={align=left}}
             ]
-                \addplot coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
+                \addplot[Fuchsia!30!black,fill=Fuchsia!60!white] coordinates {(1,6.67) (2,4.44) (3,4.44) (4,20) (5,20) (6,17.78) (7,26.67)};
                 \addlegendentry{Are you interested in finding out more about regulations\\or legislation related to digital privacy?}
-                \addplot coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
+                \addplot[Cyan!30!black,fill=Cyan!60!white] coordinates {(1,11.11) (2,2.22) (3,4.44) (4,44.44) (5,17.78) (6,11.11) (7,8.89)};
                 \addlegendentry{``My data was more protected after the implementation of\\regulations such as the General Data Protection Regulation''.}
             \end{axis}
         \end{tikzpicture}
@@ -406,7 +410,9 @@ data-related concerns are current.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \pie[explode = 0.1]{73.33/No,
+        \pie[explode = 0.1,
+            color={RubineRed!70,GreenYellow!70}
+            ]{73.33/No,
             26.67/Yes}
     \end{tikzpicture}
     \caption{Awareness of the duties of a data protection officer.}
@@ -420,7 +426,9 @@ organizations, as shown in Figure \ref{fig:interested_where_how_information_used
 \begin{figure}
     \centering
     \begin{tikzpicture}
-        \pie[explode = 0.1]{2.22/I disagree,
+        \pie[explode = 0.1,
+            color={Red!60!white,CadetBlue!60!white,LimeGreen!60!white}
+            ]{2.22/I disagree,
             15.56/I do not agree nor disagree,
             82.22/I agree}
     \end{tikzpicture}
@@ -443,11 +451,11 @@ the organization and 33.33\% disagreeing.
     \begin{center}
         \begin{tikzpicture}
             \begin{axis}[
-                height=12cm,
+                height=15cm,
                 width=14cm,
                 xbar,
                 symbolic y coords={Disagree,Do not know,Agree},
-                bar width=10pt,
+                bar width=15pt,
                 ytick=data,
                 axis x line=bottom,
                 axis y line=left,
@@ -457,15 +465,15 @@ the organization and 33.33\% disagreeing.
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
-                \addplot coordinates {(20,Disagree) (26.67,Do not know) (53.33,Agree)};
+                \addplot[Mulberry!30!black,fill=Mulberry!60!white] coordinates {(20,Disagree) (26.67,Do not know) (53.33,Agree)};
                 \addlegendentry{``I am not familiar with the purpose of data collection but would like to know more''.}
-                \addplot coordinates {(4.44,Disagree) (8.89,Do not know) (86.67,Agree)};
+                \addplot[Sepia!30!black,fill=Sepia!60!white] coordinates {(4.44,Disagree) (8.89,Do not know) (86.67,Agree)};
                 \addlegendentry{``The length of the privacy notice affects my willingness to read it''.}
-                \addplot coordinates {(13.33,Disagree) (8.89,Do not know) (77.78,Agree)};
+                \addplot[SpringGreen!30!black,fill=SpringGreen!60!white] coordinates {(13.33,Disagree) (8.89,Do not know) (77.78,Agree)};
                 \addlegendentry{``The font size of the privacy notice affects my willingness to read it''.}
-                \addplot coordinates {(6.67,Disagree) (22.22,Do not know) (71.11,Agree)};
+                \addplot[Goldenrod!30!black,fill=Goldenrod!60!white] coordinates {(6.67,Disagree) (22.22,Do not know) (71.11,Agree)};
                 \addlegendentry{``Usually, I am afraid I will not be able to use a product or service if I do not agree with the privacy notice''.}
-                \addplot coordinates {(33.33,Disagree) (33.33,Do not know) (33.33,Agree)};
+                \addplot[Periwinkle!30!black,fill=Periwinkle!60!white] coordinates {(33.33,Disagree) (33.33,Do not know) (33.33,Agree)};
                 \addlegendentry{``I do not need to read the privacy notice if I trust the institution''.}
             \end{axis}
         \end{tikzpicture}
@@ -572,26 +580,26 @@ their consent or when others engage in identity theft.
                 every node near coord/.append style={rotate=270, anchor=east},
                 % legend style={at={(0.5,0.8)},anchor=south}
             ]
-                \addplot coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};\label{plot:plot2_blue}
+                \addplot[Magenta!30!black,fill=Magenta!60!white] coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};\label{plot:organizations_collecting_using_online_activity}
                 % \addlegendentry{How concerned are you about organizations collecting and using your online activity?}
-                \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,6.67) (5,13.33) (6,17.78) (7,57.78)};\label{plot:plot2_red}
+                \addplot[MidnightBlue!30!black,fill=MidnightBlue!60!white] coordinates {(1,2.22) (2,0) (3,2.22) (4,6.67) (5,13.33) (6,17.78) (7,57.78)};\label{plot:organizations_sharing_third_parties}
                 % \addlegendentry{How concerned are you about organizations sharing your data with third parties?}
-                \addplot coordinates {(1,4.44) (2,0) (3,4.44) (4,8.89) (5,24.44) (6,13.33) (7,44.44)};\label{plot:plot2_brown}
+                \addplot[Yellow!30!black,fill=Yellow!60!white] coordinates {(1,4.44) (2,0) (3,4.44) (4,8.89) (5,24.44) (6,13.33) (7,44.44)};\label{plot:public_institutions_analyzing_online_movements}
                 % \addlegendentry{How concerned are you about public institutions or intelligence services analyzing your online movements?}
-                \addplot coordinates {(1,2.22) (2,0) (3,2.22) (4,8.89) (5,11.11) (6,13.33) (7,62.22)};\label{plot:plot2_black}
+                \addplot[LimeGreen!30!black,fill=LimeGreen!60!white] coordinates {(1,2.22) (2,0) (3,2.22) (4,8.89) (5,11.11) (6,13.33) (7,62.22)};\label{plot:other_people_your_data_without_consent}
                 % \addlegendentry{How concerned are you that other people obtain your personal data without your consent?}
-                \addplot coordinates {(1,2.22) (2,0) (3,0) (4,11.11) (5,11.11) (6,2.22) (7,73.33)};\label{plot:plot2_purple}
+                \addplot[Brown!30!black,fill=Brown!60!white] coordinates {(1,2.22) (2,0) (3,0) (4,11.11) (5,11.11) (6,2.22) (7,73.33)};\label{plot:other_people_publish_your_data_without_consent}
                 % \addlegendentry{How concerned are you that other people publish your personal data on the internet without your consent?}
-                \addplot coordinates {(1,4.44) (2,4.44) (3,6.67) (4,8.89) (5,8.89) (6,6.67) (7,60)};\label{plot:plot2_green}
+                \addplot[RedViolet!30!black,fill=RedViolet!70!white] coordinates {(1,4.44) (2,4.44) (3,6.67) (4,8.89) (5,8.89) (6,6.67) (7,60)};\label{plot:unknown_claiming_to_be_you_internet}
                 % \addlegendentry{How concerned are you about an unknown person claiming to be you on the internet?}
             \end{axis}
             \matrix[legendmatrix,at={(ylabel2.south)},anchor=west]{% legend for Plot 2
-                \ref{plot:plot2_blue} & \node[align=left]{How concerned are\\you about organizations collecting\\and using your online activity?}; \\
-                \ref{plot:plot2_red} & \node[align=left]{How concerned are you\\about organizations sharing your\\data with third parties?}; \\
-                \ref{plot:plot2_brown} & \node[align=left]{How concerned are you\\about public institutions or\\intelligence services analyzing\\your online movements?}; \\
-                \ref{plot:plot2_black} & \node[align=left]{How concerned are you\\that other people obtain your\\personal data without your consent?}; \\
-                \ref{plot:plot2_purple} & \node[align=left]{How concerned are you\\that other people publish your\\personal data on the internet\\without your consent?}; \\
-                \ref{plot:plot2_green} & \node[align=left]{How concerned are you\\about an unknown person claiming\\to be you on the internet?}; \\
+                \ref{plot:organizations_collecting_using_online_activity} & \node[align=left]{How concerned are\\you about organizations collecting\\and using your online activity?}; \\
+                \ref{plot:organizations_sharing_third_parties} & \node[align=left]{How concerned are you\\about organizations sharing your\\data with third parties?}; \\
+                \ref{plot:public_institutions_analyzing_online_movements} & \node[align=left]{How concerned are you\\about public institutions or\\intelligence services analyzing\\your online movements?}; \\
+                \ref{plot:other_people_your_data_without_consent} & \node[align=left]{How concerned are you\\that other people obtain your\\personal data without your consent?}; \\
+                \ref{plot:other_people_publish_your_data_without_consent} & \node[align=left]{How concerned are you\\that other people publish your\\personal data on the internet\\without your consent?}; \\
+                \ref{plot:unknown_claiming_to_be_you_internet} & \node[align=left]{How concerned are you\\about an unknown person claiming\\to be you on the internet?}; \\
             };
         \end{tikzpicture}
         \caption{Responses related to concerns of organizations and individuals handling of private data.}
@@ -964,7 +972,7 @@ not want to provide any information that may be used to identify them.
                 bar width=20pt,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
             ]
-                \addplot coordinates {(1,15.56) (2,11.11) (3,17.78) (4,13.33) (5,20) (6,15.56) (7,6.67)};
+                \addplot[NavyBlue!30!black,fill=NavyBlue!60!white] coordinates {(1,15.56) (2,11.11) (3,17.78) (4,13.33) (5,20) (6,15.56) (7,6.67)};
             \end{axis}
         \end{tikzpicture}
         \caption{Responses regarding the input of false personal data when creating an account on an online platform.}
@@ -1018,7 +1026,9 @@ undoubtedly be affected by this knowledge.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \pie[explode = 0.1]{82.22/No,
+        \pie[explode = 0.1,
+            color={RedOrange!70,JungleGreen!70}
+            ]{82.22/No,
             17.78/Yes}
     \end{tikzpicture}
     \caption{Awareness of data brokers.}
@@ -1059,9 +1069,9 @@ of respondents do not know how to define they can recognize IoT devices.
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
                 legend style={at={(0.5,-0.1)},anchor=north}
             ]
-                \addplot coordinates {(33.33,No) (66.67,Yes)};
+                \addplot[NavyBlue!30!black,fill=NavyBlue!60!white] coordinates {(33.33,No) (66.67,Yes)};
                 \addlegendentry{Have you ever used an Internet of Things device?}
-                \addplot coordinates {(64.44,No) (35.56,Yes)};
+                \addplot[Peach!30!black,fill=Peach!60!white] coordinates {(64.44,No) (35.56,Yes)};
                 \addlegendentry{Do you have an Internet of Things device in your home?}
             \end{axis}
         \end{tikzpicture}
@@ -1118,11 +1128,11 @@ qualifications or who work in IT or similar areas have knowledge of these concep
                 every node near coord/.append style={rotate=90, anchor=west},
                 legend style={at={(0.5,0.85)},anchor=south}
             ]
-                \addplot coordinates {(Zigbee,0) (Z-Wave,2.22) (Bluetooth Low Energy,15.56) (Smart Home,28.89) (Smart Vehicle,22.22) (Fully autonomous car,17.78) (Long-Term Evolution,11.11) (Smart City,8.89) (Wearable,24.44) (LORA,0)};
+                \addplot[SeaGreen!30!black,fill=SeaGreen!60!white] coordinates {(Zigbee,0) (Z-Wave,2.22) (Bluetooth Low Energy,15.56) (Smart Home,28.89) (Smart Vehicle,22.22) (Fully autonomous car,17.78) (Long-Term Evolution,11.11) (Smart City,8.89) (Wearable,24.44) (LORA,0)};
                 \addlegendentry{Very knowledgable}
-                \addplot coordinates {(Zigbee,13.33) (Z-Wave,11.11) (Bluetooth Low Energy,40) (Smart Home,55.56) (Smart Vehicle,48.89) (Fully autonomous car,48.89) (Long-Term Evolution,22.22) (Smart City,40) (Wearable,24.44) (LORA,11.11)};
+                \addplot[Dandelion!30!black,fill=Dandelion!60!white] coordinates {(Zigbee,13.33) (Z-Wave,11.11) (Bluetooth Low Energy,40) (Smart Home,55.56) (Smart Vehicle,48.89) (Fully autonomous car,48.89) (Long-Term Evolution,22.22) (Smart City,40) (Wearable,24.44) (LORA,11.11)};
                 \addlegendentry{Some knowledge}
-                \addplot coordinates {(Zigbee,86.67) (Z-Wave,86.67) (Bluetooth Low Energy,44.44) (Smart Home,15.56) (Smart Vehicle,28.89) (Fully autonomous car,33.33) (Long-Term Evolution,66.67) (Smart City,51.11) (Wearable,51.11) (LORA,88.89)};
+                \addplot[Maroon!30!black,fill=Maroon!60!white] coordinates {(Zigbee,86.67) (Z-Wave,86.67) (Bluetooth Low Energy,44.44) (Smart Home,15.56) (Smart Vehicle,28.89) (Fully autonomous car,33.33) (Long-Term Evolution,66.67) (Smart City,51.11) (Wearable,51.11) (LORA,88.89)};
                 \addlegendentry{No knowledge}
             \end{axis}
         \end{tikzpicture}
@@ -1181,7 +1191,7 @@ fact might have created some bias on the analysis of the tests.
         \begin{tikzpicture}
             \begin{axis}[
                 height=7.5cm,
-                width=15cm,
+                width=16cm,
                 ybar,
                 ymin=0,
                 ymax=7,
@@ -1194,7 +1204,7 @@ fact might have created some bias on the analysis of the tests.
                 bar width=20pt,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta}
             ]
-                \addplot coordinates {(Task 1,5.86) (Task 2,6.29) (Task 3,5.86) (Task 4,6.14) (Task 5,6.57) (Task 6,6.43) (Task 7,6.6) (Task 8,5.29) (Task 9,6.43)};
+                \addplot[ProcessBlue!30!black,fill=ProcessBlue!60!white] coordinates {(Task 1,5.86) (Task 2,6.29) (Task 3,5.86) (Task 4,6.14) (Task 5,6.57) (Task 6,6.43) (Task 7,6.6) (Task 8,5.29) (Task 9,6.43)};
             \end{axis}
         \end{tikzpicture}
         \caption{Average participant responses of the single ease questions.}
