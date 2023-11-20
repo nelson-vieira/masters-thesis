@@ -28,7 +28,7 @@ around 36 000 papers published, according to the data seen in Figure \ref{fig:io
         \pgfkeys{/pgf/number format/1000 sep={\,}}
         \begin{tikzpicture}
             \begin{axis}[
-                width=14cm,
+                width=15cm,
                 height=8cm,
                 xmin=2010,
                 xmax=2023,
@@ -40,8 +40,8 @@ around 36 000 papers published, according to the data seen in Figure \ref{fig:io
                 axis y line=left,
                 nodes near coords={\pgfmathprintnumber[fixed]\pgfplotspointmeta}
             ]
-            \addplot[draw=blue,samples=100,fill=blue,fill opacity=0.1] coordinates {(2010,1040) (2011,1520) (2012,2650) (2013,4150) (2014,6650) (2015,11600) (2016,19400) (2017,31100) (2018,48300) (2019,60800) (2020,74400) (2021,72300) (2022,67700) (2023,36000)}\closedcycle;
-            \addplot[blue,thick,samples=100,domain=2010:2023] coordinates {(2010,1040) (2011,1520) (2012,2650) (2013,4150) (2014,6650) (2015,11600) (2016,19400) (2017,31100) (2018,48300) (2019,60800) (2020,74400) (2021,72300) (2022,67700) (2023,36000)};
+            \addplot[draw=SkyBlue!70!white,samples=100,fill=SkyBlue!70!white,fill opacity=0.1] coordinates {(2010,1040) (2011,1520) (2012,2650) (2013,4150) (2014,6650) (2015,11600) (2016,19400) (2017,31100) (2018,48300) (2019,60800) (2020,74400) (2021,72300) (2022,67700) (2023,36000)}\closedcycle;
+            \addplot[blue!40!black,thick,samples=100,domain=2010:2023] coordinates {(2010,1040) (2011,1520) (2012,2650) (2013,4150) (2014,6650) (2015,11600) (2016,19400) (2017,31100) (2018,48300) (2019,60800) (2020,74400) (2021,72300) (2022,67700) (2023,36000)};
             \end{axis}
         \end{tikzpicture}
         \caption{Distribution of papers, per year since 2010, on privacy in the Internet of Things, based on Google Scholar database results.}
@@ -103,11 +103,11 @@ focused on this type of analysis.
                 legend style={at={(0.5,-0.1)},anchor=north},
                 % ticklabel style={font=\tiny},
             ]
-                \addplot coordinates {(249000,Privacy in the IoT) (1850,Privacy paradox in the IoT) (9520,Differential privacy in the IoT) (109000,Machine learning and privacy in the IoT) (75100,Deep learning and privacy in the IoT) (73300,Blockchain and privacy in the IoT) (196000,Security and privacy in the IoT) (99900,Privacy framework/architecture in the IoT) (23900,Privacy literacy in the IoT) (166000,Artificial intelligence and privacy in the Internet of things)};
+                \addplot[ForestGreen!30!black,fill=ForestGreen!60!white] coordinates {(249000,Privacy in the IoT) (1850,Privacy paradox in the IoT) (9520,Differential privacy in the IoT) (109000,Machine learning and privacy in the IoT) (75100,Deep learning and privacy in the IoT) (73300,Blockchain and privacy in the IoT) (196000,Security and privacy in the IoT) (99900,Privacy framework/architecture in the IoT) (23900,Privacy literacy in the IoT) (166000,Artificial intelligence and privacy in the Internet of things)};
                 \addlegendentry{Google Scholar}
-                \addplot coordinates {(8014,Privacy in the IoT) (18,Privacy paradox in the IoT) (229,Differential privacy in the IoT) (1401,Machine learning and privacy in the IoT) (554,Deep learning and privacy in the IoT) (1650,Blockchain and privacy in the IoT) (5600,Security and privacy in the IoT) (2724,Privacy framework/architecture in the IoT) (29,Privacy literacy in the IoT) (1247,Artificial intelligence and privacy in the Internet of things)};
+                \addplot[YellowOrange!30!black,fill=YellowOrange!60!white] coordinates {(8014,Privacy in the IoT) (18,Privacy paradox in the IoT) (229,Differential privacy in the IoT) (1401,Machine learning and privacy in the IoT) (554,Deep learning and privacy in the IoT) (1650,Blockchain and privacy in the IoT) (5600,Security and privacy in the IoT) (2724,Privacy framework/architecture in the IoT) (29,Privacy literacy in the IoT) (1247,Artificial intelligence and privacy in the Internet of things)};
                 \addlegendentry{BASE}
-                \addplot coordinates {(20641,Privacy in the IoT) (384,Privacy paradox in the IoT) (1020,Differential privacy in the IoT) (11255,Machine learning and privacy in the IoT) (6643,Deep learning and privacy in the IoT) (6663,Blockchain and privacy in the IoT) (17738,Security and privacy in the IoT) (16327,Privacy framework/architecture in the IoT) (2611,Privacy literacy in the IoT) (10868,Artificial intelligence and privacy in the Internet of things)};
+                \addplot[BlueViolet!30!black,fill=BlueViolet!60!white] coordinates {(20641,Privacy in the IoT) (384,Privacy paradox in the IoT) (1020,Differential privacy in the IoT) (11255,Machine learning and privacy in the IoT) (6643,Deep learning and privacy in the IoT) (6663,Blockchain and privacy in the IoT) (17738,Security and privacy in the IoT) (16327,Privacy framework/architecture in the IoT) (2611,Privacy literacy in the IoT) (10868,Artificial intelligence and privacy in the Internet of things)};
                 \addlegendentry{CORE}
             \end{axis}
         \end{tikzpicture}
@@ -346,7 +346,9 @@ each.
 \begin{figure}
     \centering
     \begin{tikzpicture}
-        \pie{6.25/Smart vehicles,
+        \pie[scale=1.2,
+            color={RoyalPurple!70!white,Rhodamine!70!white,Goldenrod!70!white,PineGreen!70!white,Red!70!white,Mulberry!70!white,OliveGreen!70!white,Sepia!70!white,Blue!70!white,YellowOrange!70!white,Tan!70!white}
+            ]{6.25/Smart vehicles,
             6.25/IoT research,
             6.25/Digital literacy,
             6.25/IoT Regulation,
