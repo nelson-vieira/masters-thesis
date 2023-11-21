@@ -107,27 +107,6 @@
 
 \makenomenclature
 
-%% Fix to allow short name on unnumbered sections using nameref package
-\makeatletter
-\let\latex@@section\section
-\RenewDocumentCommand{\section}{som}{%
-    \IfBooleanTF{#1}{%
-        \IfValueTF{#2}{%
-            \addcontentsline{toc}{section}{#3}%
-            \latex@@section*{#3}\edef\@currentlabelname{#2}%
-        }{%
-            \latex@@section*{#3}\edef\@currentlabelname{#3}%
-        }%
-    }{%
-        \IfValueTF{#2}{%
-            \latex@@section[#2]{#3}
-        }{%
-            \latex@@section{#3}
-        }%
-    }%
-}
-\makeatother
-
 %% Fix to add more space in ToC on subsubsection and paragraph between name and dotted lines
 \makeatletter
 % \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
