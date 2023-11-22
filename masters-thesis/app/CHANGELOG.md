@@ -23,13 +23,14 @@ and this application adheres to [Semantic Versioning](https://semver.org/spec/v2
 ### Changed
 
 - Recalibrate dark mode colors.
+- Upgrade dependencies: [url_launcher_web](https://github.com/flutter/packages/tree/main/packages/url_launcher/url_launcher_web), [_flutterfire_internals](), [cloud_firestore](https://github.com/firebase/flutterfire/tree/master/packages/cloud_firestore/cloud_firestore), [cloud_firestore_platform_interface](https://github.com/firebase/flutterfire/tree/master/packages/cloud_firestore/cloud_firestore_platform_interface), [cloud_firestore_web](https://github.com/firebase/flutterfire/tree/master/packages/cloud_firestore/cloud_firestore_web), [firebase_analytics](https://github.com/firebase/flutterfire/tree/master/packages/firebase_analytics/firebase_analytics), [firebase_analytics_platform_interface](https://github.com/firebase/flutterfire/tree/master/packages/firebase_analytics/firebase_analytics_platform_interface), [firebase_analytics_web](https://github.com/firebase/flutterfire/tree/master/packages/firebase_analytics/firebase_analytics_web), [firebase_auth](https://github.com/firebase/flutterfire/tree/master/packages/firebase_auth/firebase_auth), [firebase_auth_platform_interface](https://github.com/firebase/flutterfire/tree/master/packages/firebase_auth/firebase_auth_platform_interface), [firebase_auth_web](https://github.com/firebase/flutterfire/tree/master/packages/firebase_auth/firebase_auth_web), [firebase_core](https://github.com/firebase/flutterfire/tree/master/packages/firebase_core), [firebase_performance](https://github.com/firebase/flutterfire/tree/master/packages/firebase_performance/firebase_performance), [firebase_performance_platform_interface](https://github.com/firebase/flutterfire/tree/master/packages/firebase_performance/firebase_performance_platform_interface), [firebase_performance_web](https://github.com/firebase/flutterfire/tree/master/packages/firebase_performance/firebase_performance_web), [plugin_platform_interface](https://github.com/flutter/packages/tree/main/packages/plugin_platform_interface), [url_launcher_ios](https://github.com/flutter/packages/tree/main/packages/url_launcher/url_launcher_ios), [collection](https://github.com/dart-lang/collection), [meta](https://github.com/dart-lang/sdk/tree/main/pkg/meta), [sqflite_common](https://github.com/tekartik/sqflite/tree/master/sqflite_common), [stack_trace](https://github.com/dart-lang/stack_trace), [stream_channel](https://github.com/dart-lang/stream_channel), [test_api](https://github.com/dart-lang/test/tree/master/pkgs/test_api), [web](https://github.com/dart-lang/web), [win32](https://github.com/dart-windows/win32), [provider](https://github.com/rrousselGit/provider)
 
 ## [0.33.0] - 2023-07-21
 
 ### Added
 
 - Add device `Statistics` page
-- Add [graphic]() package
+- Add [graphic](https://github.com/entronad/graphic) package
 
 ### Fixed
 
