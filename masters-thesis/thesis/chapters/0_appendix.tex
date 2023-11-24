@@ -1780,7 +1780,7 @@ $\bullet$ Annual income
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1,
-            color={Red!70!white,SpringGreen!70!white},
+            color={Red!70!white,SpringGreen!90!white},
             ]{46.67/No,
             53.33/Yes}
     \end{tikzpicture}
@@ -1830,7 +1830,7 @@ $\bullet$ Annual income
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1,
-            color={CadetBlue!70!white,Maroon!70!white,LimeGreen!70!white},
+            color={CadetBlue!60!white,Maroon!70!white,LimeGreen!75!white},
             ]{4.44/I do not know,
             8.89/No,
             86.67/Yes}
@@ -2225,7 +2225,7 @@ $\bullet$ Annual income
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1,
-            color={CadetBlue!70!white,OrangeRed!80!white,LimeGreen!70!white},
+            color={CadetBlue!50!white,OrangeRed!80!white,LimeGreen!70!white},
             ]{33.33/Do not know,
             8.89/No,
             57.78/Yes}
@@ -2536,7 +2536,7 @@ $\bullet$ Annual income
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1,
-            color={CadetBlue!80!white,DarkOrchid!80!white,YellowOrange!80!white,Yellow!60!white,YellowGreen!60!white},
+            color={CadetBlue!80!white,DarkOrchid!80!white,YellowOrange!80!white,Yellow!70!white,YellowGreen!70!white},
             ]{6.67/Never,
             17.78/Very rarely,
             8.89/Once a month,
@@ -2553,7 +2553,7 @@ $\bullet$ Annual income
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1,
-            color={Red!60!white,PineGreen!60!white},
+            color={Red!60!white,PineGreen!70!white},
             ]{73.33/No,
             26.67/Yes}
     \end{tikzpicture}
@@ -2568,10 +2568,12 @@ $\bullet$ Annual income
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \pie[explode = 0.1,
-            color={Red!60!white,YellowOrange!60!white,OliveGreen!60!white},
+        \pie[/tikz/every pin/.style={align=center},
+            text=pin,
+            explode = 0.1,
+            color={Red!65!white,YellowOrange!60!white,OliveGreen!55!white},
             ]{2.22/I disagree,
-            15.56/I do not agree nor disagree,
+            15.56/I do not agree\\nor disagree,
             82.22/I agree}
     \end{tikzpicture}
     \caption*{Responses to the question: ```I am interested in knowing where and how my personal information is used'. Do you agree with this statement?''.}
@@ -3207,7 +3209,7 @@ $\bullet$ Annual income
                 enlarge y limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
             ]
-                \addplot[MidnightBlue!30!black,fill=MidnightBlue!65!white] coordinates {(66.67,Use your own photo showing your face as your profile picture) (44.44,Use your real and full name) (35.56,{Put the date of birth, age and other information}) (26.67,Do not post information that could identify me)};
+                \addplot[MidnightBlue!30!black,fill=MidnightBlue!60!white] coordinates {(66.67,Use your own photo showing your face as your profile picture) (44.44,Use your real and full name) (35.56,{Put the date of birth, age and other information}) (26.67,Do not post information that could identify me)};
             \end{axis}
         \end{tikzpicture}
         \caption*{Responses to the question: ``On social media, do you usually:''.}
@@ -3244,7 +3246,7 @@ $\bullet$ Annual income
                 enlarge y limits=0.1,
                 nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
             ]
-                \addplot[Blue!30!black,fill=Blue!65!white] coordinates {(8.89,Sharing photos of children/family members who are minors) (22.22,{Follow any elected officials, candidates for office or other political figures}) (55.56,{Follow celebrities, or people with some notoriety}) (24.44,{Post links to/from business, sport or articles}) (13.33,Post links to political stories or other articles) (15.56,Post political or social opinions) (26.67,I don't use social media)};
+                \addplot[Blue!30!black,fill=Blue!50!white] coordinates {(8.89,Sharing photos of children/family members who are minors) (22.22,{Follow any elected officials, candidates for office or other political figures}) (55.56,{Follow celebrities, or people with some notoriety}) (24.44,{Post links to/from business, sport or articles}) (13.33,Post links to political stories or other articles) (15.56,Post political or social opinions) (26.67,I don't use social media)};
             \end{axis}
         \end{tikzpicture}
         \caption*{Responses to the question: ``Your activity on social media goes through:''.}
@@ -3301,7 +3303,7 @@ $\bullet$ Annual income
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1,
-            color={CadetBlue!60!white,Red!70!white,SpringGreen!70!white},
+            color={CadetBlue!60!white,Red!70!white,SpringGreen!90!white},
             ]{35.56/I do not know,
             11.11/No,
             53.33/Yes}
@@ -3721,7 +3723,7 @@ $\bullet$ Annual income
     \centering
     \begin{tikzpicture}
         \pie[explode = 0.1,
-            color={Red!65!white,YellowGreen!70!white},
+            color={Red!65!white,YellowGreen!90!white},
             ]{82.22/No,
             17.78/Yes}
     \end{tikzpicture}

@@ -12,7 +12,7 @@ This chapter presents the results of the questionnaire about participants'
 perceptions of privacy, \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} and theirs online behaviors, as well as the usability
 tests that were conducted for the mobile application.
 
-\subsection{Stage 1: Survey}
+\subsection{Stage 1: Survey}\label{subsection:stage_1_survey}
 
 As would be expected, the majority of participants agreed that data privacy
 is important to them and as such should be protected, as can be inferred
@@ -123,7 +123,8 @@ where 53.33\% of participants believe that privacy and security are synonymous.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \pie[explode = 0.1,
+        \pie[scale=0.95,
+            explode = 0.1,
             color={OrangeRed!70,YellowGreen!70}
             ]{46.67/No,
             53.33/Yes}
@@ -580,7 +581,7 @@ their consent or when others engage in identity theft.
                 every node near coord/.append style={rotate=270, anchor=east},
                 % legend style={at={(0.5,0.8)},anchor=south}
             ]
-                \addplot[Magenta!30!black,fill=Magenta!60!white] coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};\label{plot:organizations_collecting_using_online_activity}
+                \addplot[Magenta!30!black,fill=Magenta!10!white] coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};\label{plot:organizations_collecting_using_online_activity}
                 % \addlegendentry{How concerned are you about organizations collecting and using your online activity?}
                 \addplot[MidnightBlue!30!black,fill=MidnightBlue!60!white] coordinates {(1,2.22) (2,0) (3,2.22) (4,6.67) (5,13.33) (6,17.78) (7,57.78)};\label{plot:organizations_sharing_third_parties}
                 % \addlegendentry{How concerned are you about organizations sharing your data with third parties?}
@@ -1141,7 +1142,7 @@ qualifications or who work in \DTLassign{acronyms}{13}{\acronym=Acronym}\hyperli
     \end{center}
 \end{figure}
 
-\subsection{Stage 2: Application}
+\subsection{Stage 2: Application}\label{subsection:stage_2_application}
 
 The usability test was given to each participant before giving a basic debrief
 of what the application is about. Participants would score the overall difficulty

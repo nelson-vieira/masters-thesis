@@ -134,8 +134,7 @@ and requirements prioritisation.
 % work the application might suffer alterations to the design, specially in
 % the testing stage, and also depending on the results of the study.
 
-\subsection{Software Requirements Specification}
-\label{subsection:software_requirements}
+\subsection{Software Requirements Specification}\label{subsection:software_requirements}
 
 A software requirements specification aims to define the details and principles
 of the privacy assisting
@@ -156,7 +155,7 @@ flow diagram explains in detail the outcomes of the specific actions. Finally,
 the technology requirements enable an understanding of the project's budget and
 the system's final design.
 
-\subsubsection{Scope and Vision}
+\subsubsection{Scope and Vision}\label{subsubsection:scope_and_vision}
 
 This application provides information about \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} devices in the users'
 surroundings like the type of information
@@ -169,7 +168,7 @@ online systems with the same scope as this project. The application offers
 an easier way to search for information about the \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} devices that are around users'
 location.
 
-\subsubsection{Stakeholders}
+\subsubsection{Stakeholders}\label{subsubsection:stakeholders}
 
 A stakeholder can be a person, group, or organisation that is involved in
 the project, is affected by its process and outcome or can influence its
@@ -191,7 +190,7 @@ The following stakeholders have been identified for this application:
     \item[$\bullet$] \textbf{Legislation}: The legislation in relation to the privacy of the collected data allows to impose rules on the use of the data. It has an indirect influence.
 \end{itemize}
 
-\subsubsection{Contextual Diagram}
+\subsubsection{Contextual Diagram}\label{subsubsection:contextual_diagram}
 
 The contextual diagram aims to establish links between the system
 and the other actors that interact with the application.
@@ -231,7 +230,7 @@ $\bullet$ All information related to the application\\
 
 $\bullet$ Information management
 
-\subsubsection{Data Flow Diagram}
+\subsubsection{Data Flow Diagram}\label{subsubsection:data_flow_diagram}
 
 A data flow diagram shows how information flows between the various entities
 in the system and their relationships.
@@ -251,7 +250,7 @@ the device in the application. The administrator of the application is responsib
 its maintenance by correcting or deleting incorrect data, implementing security
 measures and for the stability and reliability of the system.
 
-\subsubsection{Swimlane Diagram}
+\subsubsection{Swimlane Diagram}\label{subsubsection:swimlane_diagram}
 
 A swimlane diagram is a type of flowchart in which processes and decisions
 are grouped into lanes. Parallel lines divide the diagram into lanes, each
@@ -270,7 +269,7 @@ from the application's map, in Figure \ref{fig:diagram swimlane} the user can vi
 it on the map. The application administrator, as mentioned above, can modify the
 devices' data.
 
-\subsubsection{Business Requirements}
+\subsubsection{Business Requirements}\label{subsubsection:business_requirements}
 
 Business requirements describe in business terms what must be delivered
 or achieved to deliver value. It is what defines the way of doing business,
@@ -284,7 +283,7 @@ more functionalities of the system.
 \newline
 No business requirements have been identified for this project.
 
-\subsubsection{Technology Requirements}
+\subsubsection{Technology Requirements}\label{subsubsection:technology_requirements}
 
 Technology requirements describe what both hardware and software must be
 used in order for a system to be realizable. In terms of hardware, it describes
@@ -307,7 +306,7 @@ of time and just in time compilation with Dart as its programming language.
 Flutter has better performance than React Native or a PWA stack and as such it is the chosen framework for
 this application.
 
-\subsubsection{Requirements Table}
+\subsubsection{Requirements Table}\label{subsubsection:requirements_table}
 
 The requirements table identifies each feature and links each feature to an origin
 which can come from brainstorming sessions or interviews for example.
@@ -383,7 +382,7 @@ compose the backbone of the application.
 %     \label{table:table1}
 % \end{table}
 
-\subsubsection{Functional Requirements}
+\subsubsection{Functional Requirements}\label{subsubsection:functional_requirements}
 
 Functional requirements \cite{fulton2017chapter} define the functions of a system or its components,
 where functions are specifications or behaviours between system outputs and
@@ -394,7 +393,7 @@ After building the tracing table, the functional requirements that were needed
 were extracted for each feature and grouped appropriately according to the
 following groups:
 
-\paragraph{User Requirements}
+\paragraph{User Requirements}\label{paragraph:user_requirements}
 
 \textbf{UR1} - The system shall allow the user to navigate through the devices georeferences;
 \newline
@@ -410,7 +409,7 @@ following groups:
 \newline
 \textbf{UR8} - The system shall allow a logged in user to change associated data of a device;
 
-\paragraph{Administrator Requirements}
+\paragraph{Administrator Requirements}\label{paragraph:administrator_requirements}
 
 \textbf{AR1} - The system shall allow a logged in administrator to add a new device with name, category, data collected, location, etc.;
 \newline
@@ -418,15 +417,15 @@ following groups:
 \newline
 \textbf{AR3} - The system shall allow a logged in administrator to delete a device;
 
-\paragraph{System Requirements}
+\paragraph{System Requirements}\label{paragraph:system_requirements}
 
 \textbf{SR1} - The system shall generate statistics related to the \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} devices that reside in the database;
 
-\subsubsection{Non-Functional Requirements}
+\subsubsection{Non-Functional Requirements}\label{subsubsection:nonfunctional_requirements}
 
 \textbf{NFR1} - The system shall behave the same in different platforms (Android and iOS);
 
-\subsubsection{Use Cases Diagram}
+\subsubsection{Use Cases Diagram}\label{subsubsection:use_cases_diagram}
 
 The use cases diagram \cite{wiegers2013software} provides a high-level visualisation of the user
 requirements. The box represents the system boundary. An actor's arrow
@@ -449,7 +448,7 @@ tasks as a regular user.
     \label{fig:use_cases_diagram}
 \end{figure}
 
-\subsubsection{Use Cases}
+\subsubsection{Use Cases}\label{subsubsection:use_cases}
 
 A use case is a type of classifier representing a
 coherent functional unit provided by the system, subsystem, or class manifested
@@ -799,7 +798,7 @@ and use case ``Create an account'' has been detailed in Table \ref{table:use_cas
 
 \vspace*{\fill}
 
-\subsubsection{Requirements Prioritisation}
+\subsubsection{Requirements Prioritisation}\label{subsubsection:requirements_prioritisation}
 
 Regarding the prioritization of requirements, the Quality Function Deployment technique
 proposed by Cohen in 1995 \cite{cohen1995quality} is used to estimate the priority of a group of requirements.
@@ -933,7 +932,7 @@ as seen in Table \ref{table:sorted requirements}.
     \end{adjustbox}
 \end{table}
 
-\subsubsection{Acceptance Criteria}
+\subsubsection{Acceptance Criteria}\label{subsubsection:acceptance_criteria}
 
 To make it easier to test whether the highest priority features that were chosen
 previously were well implemented, these acceptance criteria were created for each
@@ -950,7 +949,7 @@ For these acceptance criteria, the following was considered:
     \item[$\bullet$] Legal or contractual restrictions (that have to be met for the system to be accepted)
 \end{itemize}
 
-\paragraph{Features}
+\paragraph{Features}\label{paragraph:features}
 
 \begin{itemize}
     \item[$\bullet$] Add a device
@@ -1004,7 +1003,7 @@ For these acceptance criteria, the following was considered:
     \end{itemize}
 \end{itemize}
 
-\subsection{Prototype}
+\subsection{Prototype}\label{subsection:prototype}
 
 After creating the software requirements specification, the prototypes were
 created. For the creation of the prototypes the following tools were used: Figma
@@ -1167,7 +1166,7 @@ were not used.
     \label{fig:live_app}
 \end{figure}
 
-\subsection{Development}
+\subsection{Development}\label{subsection:development}
 
 As was defined in the system requirements specification, the Flutter
 framework was the development tool used for the reasons described.

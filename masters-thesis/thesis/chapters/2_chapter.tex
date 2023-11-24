@@ -5,13 +5,13 @@
 % @author Nelson Vieira <2080511@student.uma.pt>
 % @contributor Mary Barreto <mary.barreto@staff.uma.pt>
 % @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
-\section{State of the Art} \label{section:state_of_the_art}
+\section{State of the Art}\label{section:state_of_the_art}
 
 \par
-This section provides an overview of the recent literature with the themes
-that were found to be more relevant for this work.
+This chapter provides an overview of the recent literature with the themes
+that were found to be most relevant for this work.
 
-\subsection{Privacy Paradox}
+\subsection{Privacy Paradox}\label{subsection:privacy_paradox}
 
 The use of a variety of digital devices has numerous advantages, but they
 also bring with them the ubiquity of data capturing equipment, therefore,
@@ -38,7 +38,7 @@ ethics, and who do so to the best of their ability, to the context of privacy.
 Individuals' decision-making processes can be greatly influenced by a variety
 of cognitive biases and heuristics, and these decisions can vary greatly from
 individual to individual, according to several studies on individual choice behaviour \cite{knijnenburg2013dimensionality, wakefield2013influence, flender2012type}.
-According to several articles \cite{dienlin2015privacy, baek2014solving},
+According to some articles \cite{dienlin2015privacy, baek2014solving},
 this paradox might be explained by the fact that some people have genuinely
 experienced online privacy assaults and that most privacy views are therefore
 based on heuristics or second-hand accounts. Taddicken's study \cite{taddicken2014privacy}
@@ -60,7 +60,7 @@ Another concept worth analysing is differential privacy \DTLassign{acronyms}{6}{
 closely to the survey that will be conducted but also to the general
 collection and analysis of user data by applications and systems.
 
-\subsection{Differential Privacy}
+\subsection{Differential Privacy}\label{subsection:differential_privacy}
 
 The notion of differential privacy, according to Michael Kearns \cite{kearns2019ethical},
 is based on three important principles. The first being that ``differential
@@ -88,7 +88,7 @@ unstructured data. The authors present \DTLassign{acronyms}{6}{\acronym=Acronym}
 sensitive content in image, audio, video, and text data. They compare the
 various methods and perform utility analyses for each method, highlighting
 the benefits and drawbacks of each, the utility loss is measured in experimental
-evaluations between the actual data and its obfuscated variant. They come
+evaluations between the actual data and its obfuscated variant. They came
 to the conclusion that \DTLassign{acronyms}{6}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} as well as its variations give
 stringent privacy protections for unstructured data against attackers with
 unpredictable background knowledge. They also suggest potential future study
@@ -105,7 +105,7 @@ required to establish the validity of these mechanisms on production systems.
 No future research subjects are provided, only the intention of applying
 these mechanisms to deep neural networks.
 
-Similar to differential privacy, there exists different algorithms that aim to
+Similar to differential privacy, there exist different algorithms that aim to
 preserve privacy such as Google's box blurring algorithm \cite{FromeLarge}
 that is used in the Google Map's street view, Microsoft's Visor \cite{poddar2020visor}
 which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
@@ -113,7 +113,7 @@ which is a video-analytics-as-a-service tool and Shokri and Shmatikov's
 general, these algorithms struggle with high computational cost, internal
 attacks, or non-provable privacy.
 
-\subsection{Privacy in IoT: Approaches}
+\subsection{Approaches to Privacy in IoT}\label{subsection:privacy_in_iot_approaches}
 
 There have been a number of \DTLassign{acronyms}{26}{\acronym=Acronym}\hyperlink{\acronym}{\acronym}s \cite{Gupta2022Privacy, Kuhtreiber2022survey, sicari2015security, LinSurvey, yang2022overview, zubaydi2023leveraging}
 and systematic mapping reviews \cite{porras2018security, ahmed2019aspects}
@@ -269,13 +269,13 @@ the following are the most prominent privacy concerns in \DTLassign{acronyms}{14
     of unauthorized access and data leakage.
 \end{enumerate}
 
-\subsection{Proposed Solutions}
+\subsection{Proposed Solutions}\label{subsection:proposed_solutions}
 
-\par This chapter presents a variety of solutions separated by themes that arose
+\par This section presents a variety of solutions separated by themes that arose
 from the structured literature research in order to address the disconnect
 between privacy ideas across systems and users.
 
-\subsubsection{User Awareness}
+\subsubsection{User Awareness}\label{subsubsection:user_awareness}
 
 Although individuals have a certain expectation of privacy when using \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym}
 devices, privacy preferences are complex, as noted by \cite{naeini2017privacy},
@@ -301,7 +301,7 @@ An interactive theatre experience was developed by Skirpan et al. \cite{SkirpanP
 as a case study of an innovative approach to gather user awareness about their
 online behaviour with regard to privacy. This was created to try to prove
 that a simulated experience with a credible privacy problem may encourage
-people to take action before actually encountering a catastrophe. The plot
+people to take action before actually encountering a disaster. The plot
 of the play consists in a fledgling tech company that unveiled its revolutionary
 artificial intelligence \DTLassign{acronyms}{1}{\acronym=Acronym}(\hyperlink{\acronym}{\acronym}) technology while dealing with a company whistleblower and an untimely
 zero-day hack on their system. The public is able to interact with the actors
@@ -314,7 +314,7 @@ participated in this data collection, they also noted that after contacting
 people months after the interviews that they did not really changed their
 behaviour regarding their privacy rights.
 
-\subsubsection{Legislation}
+\subsubsection{Legislation}\label{subsubsection:legislation}
 
 Some papers seek to improve legislation \cite{WEBER2015618, FabianoInternet}
 because otherwise, in their view, privacy rights will not be respected if they
@@ -354,7 +354,7 @@ supervisory authority, but it is also important to involve civil society, the pr
 sector, and academia in the process to ensure success. This approach is known as
 multistakeholder governance development.
 
-\subsubsection{Privacy through Security}
+\subsubsection{Privacy through Security}\label{subsubsection:privacy_through_security}
 
 Sun et al. \cite{SunSecure} design a lightweight communication strategy
 for a remote-control system, employing two types of Virtual-Spaces to achieve
@@ -377,7 +377,7 @@ must optimally tune their privacy preferences and trade off privacy with
 bandwidth. For further research the authors suggested addressing timing side-channel
 attacks.
 
-\subsubsection{Architecture / Frameworks}
+\subsubsection{Architecture / Frameworks}\label{subsubsection:architecture_frameworks}
 
 Antunes et al. \cite{AntunesFederated} do a \DTLassign{acronyms}{26}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} on federated learning in
 the area of healthcare and make an architecture proposal. The procedure
@@ -439,7 +439,7 @@ with a 3\% to 4\% improvement, but the \DTLassign{acronyms}{21}{\acronym=Acronym
 without a noticeable classification accuracy drop while still preserving
 individual's private data.
 
-There exists frameworks like the \DTLassign{acronyms}{18}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} Cybersecurity Framework \cite{barrett2018framework},
+There exist frameworks like the \DTLassign{acronyms}{18}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} Cybersecurity Framework \cite{barrett2018framework},
 published by the National Institute of Standards and Technology \DTLassign{acronyms}{18}{\acronym=Acronym}(\hyperlink{\acronym}{\acronym}),
 which includes a number of recommendations for reducing organizational
 cybersecurity risks. Although this framework is primarily focused on
@@ -455,7 +455,7 @@ but there may be some overlap between these standards. Even those \DTLassign{acr
 standards have a good amount of intersection with security related
 guidelines.
 
-\subsubsection{Blockchain}
+\subsubsection{Blockchain}\label{subsubsection:blockchain}
 
 Blockchain is an option to guarantee privacy in \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} because of zero-knowledge
 proofs\cite{sun2021survey}, ring signatures \cite{mercer2016privacy} and mixing \cite{stone2021trustless}
@@ -517,9 +517,9 @@ management. Blockchain smart contracts are used in the proposed `modular
 consortium' architecture to regulate access while establishing responsibility
 for both data owners and other parties that users grant access to.
 
-\subsubsection{Privacy Assistants}
+\subsubsection{Privacy Assistants}\label{subsubsection:privacy_assistants}
 
-There exists a number of privacy assistants in the market. Privacy assistants
+There exist a number of privacy assistants in the market. Privacy assistants
 have the objective of giving the user flexibility in choosing the preferred
 privacy options in available applications, most are used in smartphones,
 very few are made for devices in the \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym}.
@@ -528,7 +528,7 @@ The Carnegie Mellon University CyLab, which is the university's security
 and privacy research institute, started developing in 2019 an \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} Infrastructure
 that intended to be free of privacy leaks and software covered by their
 Secure and Private \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} Initiative 2019, this project would fall under
-their main research theme of Trust. In this project they started the design
+their main research theme of Trust. In this project the researchers started the design
 of a Personalized Privacy Assistant \DTLassign{acronyms}{20}{\acronym=Acronym}(\hyperlink{\acronym}{\acronym}) \cite{ColnagoInforming}, this
 would involve the use of semi-structured interviews with 17 participants
 to examine user perceptions of three hypothetical \DTLassign{acronyms}{20}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} implementations,
@@ -620,7 +620,7 @@ gathered, retention, the recipients of the data, and more. Additionally,
 it discloses any user-configurable privacy settings that might be connected
 to a particular resource.
 
-\subsubsection{Other Proposals}
+\subsubsection{Other Proposals}\label{subsubsection:other_proposals}
 
 Zhu et al. \cite{ZhuIntegrating} present a hybrid sensor system that safeguards
 privacy while also monitoring parking availability. The authors merged \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym}
@@ -657,7 +657,7 @@ to private user data or provider assistance. Despite the presence of multipath,
 LTEye uses a revolutionary extension of synthetic aperture radar to communication
 signals in order to precisely pinpoint mobile users.
 
-\subsection{Privacy Challenges}
+\subsection{Privacy Challenges}\label{subsubsection:privacy_challenges}
 
 \DTLassign{acronyms}{14}{\acronym=Acronym}\hyperlink{\acronym}{\acronym} is a composed of a complex web of architectures, applications and technologies.
 In terms of architectures, it can be decomposed in three layers: the perception
