@@ -1,0 +1,60 @@
+% SPDX-License-Identifier: CC-BY-4.0
+%
+% Copyright (c) 2023 Nelson Vieira
+%
+% @author Nelson Vieira <2080511@student.uma.pt>
+% @license CC-BY-4.0 <https://creativecommons.org/licenses/by/4.0/legalcode.txt>
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\begin{document}
+\begin{tikzpicture}
+    \tikzset{
+        legendmatrix/.style={% style for legends
+            draw,% draw a border for the legend
+            outer sep=.3333em,% additional space to the axis label
+            nodes={rotate=0,anchor=base west,outer sep=0pt},% rotate the nodes inside the matrix
+            /pgfplots/every crossref picture/.append style={rotate=0,yshift=.75ex}% rotate the legend images
+        }
+    }
+    \begin{axis}[
+        height=8cm,
+        width=25cm,
+        ybar,
+        bar width=10pt,
+        ymin=0,
+        ymax=80,
+        xtick=data,
+        axis x line=bottom,
+        axis y line=left,
+        enlarge x limits=0.1,
+        ylabel style = {name=ylabel2},
+        ylabel={Responses \%},
+        xlabel={Agreement level},
+        nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%},
+        every node near coord/.append style={rotate=90, anchor=west}
+    ]
+        \addplot[magenta!30!black,fill=magenta!10!white] coordinates {(1,2.22) (2,0) (3,4.44) (4,15.56) (5,22.22) (6,26.67) (7,28.89)};\label{plot:organizations_collecting_using_online_activity}
+        % \addlegendentry{How concerned are you about organizations collecting and using your online activity?}
+        \addplot[blue!30!black,fill=blue!60!white] coordinates {(1,2.22) (2,0) (3,2.22) (4,6.67) (5,13.33) (6,17.78) (7,57.78)};\label{plot:organizations_sharing_third_parties}
+        % \addlegendentry{How concerned are you about organizations sharing your data with third parties?}
+        \addplot[yellow!30!black,fill=yellow!60!white] coordinates {(1,4.44) (2,0) (3,4.44) (4,8.89) (5,24.44) (6,13.33) (7,44.44)};\label{plot:public_institutions_analyzing_online_movements}
+        % \addlegendentry{How concerned are you about public institutions or intelligence services analyzing your online movements?}
+        \addplot[lime!30!black,fill=lime!60!white] coordinates {(1,2.22) (2,0) (3,2.22) (4,8.89) (5,11.11) (6,13.33) (7,62.22)};\label{plot:other_people_your_data_without_consent}
+        % \addlegendentry{How concerned are you that other people obtain your personal data without your consent?}
+        \addplot[brown!30!black,fill=brown!60!white] coordinates {(1,2.22) (2,0) (3,0) (4,11.11) (5,11.11) (6,2.22) (7,73.33)};\label{plot:other_people_publish_your_data_without_consent}
+        % \addlegendentry{How concerned are you that other people publish your personal data on the internet without your consent?}
+        \addplot[violet!30!black,fill=violet!70!white] coordinates {(1,4.44) (2,4.44) (3,6.67) (4,8.89) (5,8.89) (6,6.67) (7,60)};\label{plot:unknown_claiming_to_be_you_internet}
+        % \addlegendentry{How concerned are you about an unknown person claiming to be you on the internet?}
+    \end{axis}
+    \matrix[legendmatrix,at={(4.0,1.5)},anchor=south]{% legend for Plot 2
+        \ref{plot:organizations_collecting_using_online_activity} & \node[align=left]{How concerned are\\you about organizations collecting\\and using your online activity?}; \\
+        \ref{plot:organizations_sharing_third_parties} & \node[align=left]{How concerned are you\\about organizations sharing your\\data with third parties?}; \\
+        \ref{plot:public_institutions_analyzing_online_movements} & \node[align=left]{How concerned are you\\about public institutions or\\intelligence services analyzing\\your online movements?}; \\
+        \ref{plot:other_people_your_data_without_consent} & \node[align=left]{How concerned are you\\that other people obtain your\\personal data without your consent?}; \\
+        \ref{plot:other_people_publish_your_data_without_consent} & \node[align=left]{How concerned are you\\that other people publish your\\personal data on the internet\\without your consent?}; \\
+        \ref{plot:unknown_claiming_to_be_you_internet} & \node[align=left]{How concerned are you\\about an unknown person claiming\\to be you on the internet?}; \\
+    };
+\end{tikzpicture}
+\end{document}
