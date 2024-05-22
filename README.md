@@ -12,7 +12,7 @@ This repository is a monorepo of the master's thesis, it contains the preparatio
 
 Partly inspired by extreme openness, which I first came across on [Thang Luong's thesis](https://github.com/lmthang/thesis), and by the free and open source software (FOSS) principles, I started hosting this work here since I first started working on it. Hopefully this will be useful to someone. This repository at least provides transparency to the whole process, as anyone can see every commit made.
 
-Feel free to submit comments or feedback in the [`Issues` tab](https://github.com/nelson-vieira/masters-thesis/issues).
+Feel free to submit comments or feedback regarding the [application](masters-thesis/app) in the [`Issues` tab](https://github.com/nelson-vieira/masters-thesis/issues).
 
 ---
 
